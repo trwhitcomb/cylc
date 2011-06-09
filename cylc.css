@@ -1,0 +1,238 @@
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: "MS Trebuchet", Verdana, Geneva, Arial, Helvetica, sans-serif;	
+	font-size: 75%;
+	line-height: 135%;
+	background-image: url("images/bkg.gif");
+	color:  #424242;
+	text-align: center;
+}
+
+a{
+	color: #2b9a82;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:visited{
+	color: #4bbaa2;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+h3{
+	color: #2b9a82;
+	font-size: 120%;
+	margin-top: 30px;
+	margin-bottom: 0;
+	padding-left:25px;
+	position: relative;
+	background-image: url("images/bullet.gif");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+h3 span{
+	background-color: #fff;
+}
+
+p{
+	margin: 10px 0 5px 0;
+}
+
+#container{
+	position: relative;
+	background-image: url("images/footer.gif");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	width: 738px;
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	/*border-top: 0;*/
+	margin: 0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align: left;
+}
+
+#pageHeader {
+}
+
+#pageHeader h1{
+	width: 738px;
+	height: 88px;
+	background-image: url("images/header1.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	margin-top:0;
+}
+
+#pageHeader h1 span {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+#pageHeader h2{
+  margin-left:120px;
+	width: 571px;
+	height: 29px;
+	background-image: url("images/header2.gif");
+	margin-top: -42px;
+	margin-bottom: 30px;
+}
+
+#pageHeader h2 span {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+#banner{
+	background-color: #2b9a82;
+	color: #fff;
+	margin-bottom: 10px;
+	line-height: 125%;
+	font-size: 110%;
+}
+
+#banner .p1{
+	position: relative;
+	padding: 20px 20px 0 20px;
+	background: #2b9a82 url("images/banner1.gif"); 
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+#banner .p2{
+	position: relative;
+	padding: 0 15px 25px 18px;
+	background: #2b9a82 url("images/banner2.gif") no-repeat bottom left ;
+}
+
+#banner a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#banner a:visited{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+#banner a:hover{
+	text-decoration: none;
+}
+
+#niwa-logo{
+  background: url("images/niwa-colour-small.png") top right no-repeat;
+	height:49px;
+}
+
+#niwa-logo span{
+		display:block;
+		width:0;
+		height:0;
+		overflow:hidden;
+}
+
+#preamble{
+	margin-left: 220px;
+	margin-top:-60px;
+	padding-right: 10px;
+	font-size: 90%;
+}
+
+#mainpage{
+	margin-left: 220px;
+	padding-right: 10px;
+	font-size: 90%;
+}
+
+#features{
+	position: relative; 
+	margin-left: -180px; 
+	width: 650px;
+}
+
+
+#requirements{
+	position: relative; 
+	width: 650px;
+}
+
+#requirements .p5{
+	font-size: 80%;
+	margin: 10px;
+}
+
+#tape{
+	position: relative; 
+	left: -180px; 
+	padding: 65px 10px 30px 20px;
+	background-image: url("images/tape.gif");
+	background-repeat: no-repeat;
+	background-position: 0 55px;
+}
+
+#navlist {
+	position: absolute;
+	left: 20px;
+	top: 286px;
+	width: 178px;
+	padding: 0 2px 0 0;
+	font-size: 80%;
+	line-height: 140%;
+}
+
+#navlist h3{
+	/*background: #2b9a82;*/
+	margin: 0;
+	height:40px;
+	padding: 10px 0 5px 10px;
+	text-transform: lowercase;
+	color: #fff;
+	font-size: 100%;
+	background-image: url("images/listheader.gif");
+	background-repeat: repeat-x;
+	background-position: top left;
+}
+
+#navlist h3 span{
+	background: transparent;
+}
+
+#navlist ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding: 0px 0px 20px 20px;
+	/*background-image: url("images/izqdaul.gif");
+	background-repeat: repeat-x;*/
+}
+
+#navlist li{
+	padding-left: 18px; 
+	background: transparent url("images/navbullet.gif") 0 2px no-repeat;
+	margin-bottom: 7px;	
+	color: #818181;
+}
+
+#navlist li a{
+	color: #2b9a82;
+}
+
+#navlist li a.c{
+	color: #818181;
+}
+
+#lcode{
+	/*background: transparent url("images/izqda.gif") bottom no-repeat;*/
+	padding-bottom: 20px;
+}

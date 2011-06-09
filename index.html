@@ -1,3 +1,245 @@
-The Cylc Home Page On GitHub
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+	<meta name="author" content="Hilary James Oliver"/>
+	<meta name="keywords" content="cylc, forecast, suite, metascheduler"/>
+	<meta name="description" content="The cylc metascheduler home page on GitHub." />
+	<meta name="robots" content="all" />
 
-This is a temporary place holder.
+	<title>The Cylc MetaScheduler</title>
+
+	<!-- correct the unsightly Flash of Unstyled Content. http://www.bluerobot.com/web/css/fouc.asp -->
+	<script type="text/javascript"></script>
+	
+	<style type="text/css" title="currentStyle" media="screen">
+		@import "cylc.css";
+	</style>
+    <!--<link rel="Shortcut Icon" type="image/x-icon" href="http://foo.bar.ico"/>-->
+</head>
+
+<body>
+
+<div id="container">
+	<div id="intro">
+		<div id="pageHeader">
+			<h1><span>Cylc</span></h1>
+			<h2><span>Forecast Suite Metascheduler</span></h2>
+		</div>
+
+		<div id="banner">
+            <p class="p1"><span>Cylc is an advanced
+								metascheduler for cycling weather and
+								environmental forecasting systems. It has been developed by
+								Dr Hilary James Oliver at the <em>National Institute of
+										Water and Atmospheric Research  (NIWA)</em>, New
+								Zealand, since 2008, and was released under the GNU GPL in 2011.
+            </span></p>
+						<p class="p2"><span>Cylc is pronounced "<em>silk</em>".</span></p>
+		</div>
+
+        <div id="niwa-logo">
+            <span>NIWA logo</span>
+        </div>
+
+		<div id="preamble">
+
+                            <b>PAGE UNDER DEVELOPMENT</b>
+
+			<h3><span>Overview</span></h3>
+
+            <!--<p class="p2"><span>Environmental forecasting suites may
+                contain many scientific models and associated data
+                processing tasks that each repeat on some interval, or
+                <em>forecast cycle</em> (which may vary by task). 
+                The dependencies between tasks form a tree-like Directed
+								Acyclic Graph.</span></p> -->
+
+						<!-- <p class="p1"><span> Forecasting metaschedulers have
+								traditionally ignored dependencies between tasks in 
+								different forecast cycles, such as the restart
+								dependencies of warm cycled models, because (a) they
+								create a complicated never-ending dependency graph 
+								instead of the familiar sequence of distinct cycles;
+								and (b) they are satisfied implicitly in normal real
+								time operation when each cycle necessarily completes
+								before the next starts. But this <em>requires</em> 
+								whole-suite sequential cycling, in order to avoid
+								dependency violations, even in delayed operation when
+								the driving data for the next cycle are available in
+								advance. This is at best inefficient, and for
+								resource-limited operations that have little down time
+								between cycles it can result in long catchup times and
+								cycle overruns. </span></p> -->
+
+
+								<p class="p1"><span>Cylc decides when members of a suite
+										of interdependent cycling tasks are ready to
+										run. Its self-organising scheduling algorithm, which
+										explicitly manages dependencies between as well as
+										within forecast cycles, allows it to optimally
+								interleave tasks from multiple cycles without violating
+								dependencies, potentially achieving very fast catchup
+								from delays even in resource limited operations with
+								little down time between cycles.  Cylc suites
+								organically transition between delayed and real time
+								operation as required; they adapt to insertion and
+								removal of tasks at run time; and they flow around
+								failed or delayed tasks while problems are addressed -
+								after which the delayed tasks catch up as quickly as
+								possible.  </span></p>
+
+				</div>
+             
+	<div id="mainpage">
+
+		<div id="requirements">
+			<h3><span>Requirements</span></h3>
+			<ul>
+			<li>Unix or Linux</li>
+			<li>Python</li>
+			<li>Pyro 3 (Python Remote Objects)</li>
+			<li>Graphviz (graph layout engine)</li>
+			<li>Pygraphviz (a Python graphviz wrapper)</li>
+			</ul>
+            <p class="p1"><span>(see the User Guide for details)</span></p>
+		</div>
+
+		<div id="download">
+			<h3><span>Download</span></h3>
+
+            <p class="p1"><span>Latest stable release: 3.0.5.</span></p>
+
+            <p class="p2"><span>Go to 
+                <a href="http://github.com/hjoliver/cylc">the cylc source repository on GitHub</a>,
+                click on "Downloads", and choose the first gzipped tarball under
+                "DOWNLOAD PACKAGES" (do not use the "DOWNLOAD SOURCE" buttons 
+                or automatically loaded version tags unless you know what you're 
+                doing).</span></p>
+
+            <p class="p3"><span>We will set up a mailing list and wiki when/if we
+                get some external users. In the meantime please
+                email Hilary Oliver at <b>h.oliver@niwa.co.nz</b> if you're
+                planning to try cylc.</span></p>
+		</div>
+
+		<div id="features">
+
+			<h3><span>Notable Features</span></h3>
+				<ul>
+                        <li> Tasks can be distributed across multiple
+                        heterogeneous hosts, with multiple job
+                        submission methods.</li>
+
+                        <li> Most existing models and processing jobs
+                        can be used without modification as cylc
+                        tasks.</li>
+
+                        <li>Simple, structured, intuitive suite
+                        definition: "draw"
+                        a dependency graph in concise textual form, and
+                        configure the execution environment and command
+                        line for each task.
+
+            <li>Suite definitions are automatically validated against a
+            comprehensive specification.</li>
+	
+						<li> Self-documenting unified command line interface
+						covering all functionality from suite editing,
+						searching, graphing, and validation; to 
+						interrogation and suite control.</li>
+
+						<li> Graphical interfaces covering the same, including 
+						a graph-based suite control interface. See screen shots.</li>
+
+                        <li> Crypographic suite security - prevents users from 
+                        accidentally or maliciously intervening in the operation
+                        of suite's owned by others.</li>
+
+						<li> Run single tasks exactly as the suite would run them </li>
+
+						<li> A network lockserver to prevent accidental invocation 
+						of multiple instances of the same suite or task at the same
+						time.</li>
+
+						<li> Suite databases to enable sharing of suites among
+						users.</li>
+
+						<li> Suites can be stopped and restarted in any state of
+						operation. </li>
+
+                        <li> Insertion and deletion of tasks at run time</li>
+
+                        <li> Recursive purge: remove an entire sub-tree
+                        of tasks through to some future cycle time.
+
+                        <li> Conditional prerequisites </li>
+
+                        <li> Task families </li>
+
+                        <li> Central alerting and timeouts for operational suites </li>
+
+                        <li> Portable suites: copy and run</li>
+
+                        <li> Simulation mode: get the scheduling right,
+                        on an accelerated clock, without running the
+                        real tasks</li>
+
+				</ul>
+
+			<h3><span>Coming Soon</span></h3>
+				<ul>
+						<li> Network server access to the central suite database</li>
+						<li> Tasks with cycling intervals of less than 1 hour</li>
+						<li> Asynchronous tasks for processing satellite passes 
+						(back port from prototype in cylc-2).
+						</li>
+				</ul>
+
+		</div>
+
+
+		<div id="tape">
+			Copyright Hilary Oliver, NIWA, 2008-2011; GNU GPL v3.0
+		</div>
+
+	</div>
+
+	
+	<div id="navlist">
+		<div id="navlist2">
+			<div id="lselect">
+				<h3 class="select"><span>Documentation:</span></h3>
+				<ul>
+				  <li> <a href="CylcUserGuide-3.0.5.pdf">Cylc User Guide (PDF)</a> </li>
+				</ul>
+			</div>
+
+			<div id="foo">
+				<h3 class="foo"><span>Screen Shots:</span></h3>
+				<ul>
+				  <li> <a href="screenshots/commandhelp.png">command line</a></li>
+				  <li> <a href="screenshots/db.png">gcylc suite database GUI</a></li>
+				  <li> <a href="screenshots/simple-suiterc.png">editing a suite in vim</a></li>
+				  <li> <a href="screenshots/QuickStartB-graph18.png">same suite graphed</a></li>
+				  <li> <a href="screenshots/control-trad.png">tree view control GUI</a></li>
+				  <li> <a href="screenshots/control-graph.png">graph based control GUI</a></li>
+				  <li> <a href="screenshots/ecox-1.png">large suite 1</a></li>
+				  <li> <a href="screenshots/ecox-2.png">large suite 2</a></li>
+				  <li> <a href="screenshots/QuickStartA-ControlRunning.png">multiple cycles</a></li>
+				  <li> <a href="screenshots/suite-log.png">A suite log, via gcylc</a></li>
+				  <li> <a href="screenshots/validate-eg.png">Suite validation, via gcylc</a></li>
+
+				</ul>
+            </div>
+		</div>
+	</div>
+</div>
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+</body>
+</html>
