@@ -31,69 +31,65 @@
 		<div id="banner">
             <p class="p1"><span>Cylc (<em>"silk"</em>) is an advanced
                 metascheduler that makes it easy to construct and
-                control powerful, portable, suites for cycling numerical
-                weather and environmental forecasting systems .</span></p>
+                control powerful, portable, suites for cycling 
+                weather and environmental forecasting systems.</span></p>
             <p class="p2"><span></span></p>
 		</div>
 
-        <!--<div id="niwa-logo">
-            <span>NIWA logo</span>
-        </div>
-        -->
-
 		<div id="preamble">
-
-				<!--                            <b>PAGE UNDER CONSTRUCTION</b>-->
 
 			<h3><span>Provenance</span></h3>
 
-    <p class="p1"><span> Cylc has been developed by Dr Hilary James
-        Oliver at NIWA (the National Institute of Water and Atmospheric
-        Research, New Zealand) since 2008, and was released as free open
-        source software under the terms of the GNU GPL in 2011.
+    <p class="p1"><span> Cylc is developed by Dr Hilary James Oliver at
+        NIWA (the National Institute of Water and Atmospheric Research,
+        New Zealand). It was first prototyped in 2008, has been used to
+        run NIWA's operational forecasting systems since 2010, and in
+        2011 was released as free open source software under the terms
+        of the GNU General Public License.</span></p>
+
+    <h3><span>Overview</span></h3>
+
+    <p class="p1"><span>Cylc decides when members of a suite of
+        inter-dependent cycling tasks are ready to be submitted to a
+        scheduler to be queued for execution.
+    </scan></p>
+        
+    <p class="p2"><span>
+        Dependence between forecast cycles can usually be ignored
+        in real time operation, but this places severe restrictions on
+        catchup/delayed operation when it should be possible to run
+        tasks from multiple cycles at once. Even simple suites <a
+            href="intro/dep-one-cycle.png">like this one</a> become
+        complicated <a href="intro/dep-multi-cycle.png">like this</a>
+        when intercycle dependence is taken into account (a, b, and c
+        are warm-cycled forecast models).  
+    </scan></p>
+
+
+    <p class="p3"><span>
+        Cylc's self-organizing scheduling algorithm explicitly manages
+        dependencies between as well as within forecast cycles, allowing
+        it to optimally interleave tasks from multiple cycles without
+        dependency violations, potentially achieving very fast catchup
+        from delays even in resource limited operations with little down
+        time between cycles - as shown in
+        <a href="intro/timeline-three.png">this job schedule</a> (cylc
+        is above the time line).         
     </span></p>
 
+    <p class="p3"><span>
+        Cylc also has very flexible and adaptive run time behaviour.        
+        Suites organically transition between delayed and real time
+        operation as required; they adapt to insertion and removal of
+        tasks; and they flow around failed or delayed tasks
+        while problems are addressed - after which the delayed tasks
+        catch up as quickly as possible.</span></p>
 
-			<h3><span>Overview</span></h3>
+    <p class="p3"></span></p> See the introductory
+        section of the User Guide for a more detailed discussion.
+    </span></p>
 
-            <p class="p1"><span>Cylc decides when members of a suite of
-                interdependent cycling tasks are ready to be submitted
-                to a scheduler to be queued for execution. Its
-                self-organising scheduling algorithm, which explicitly
-                manages dependencies between as well as within forecast
-                cycles, allows it to optimally interleave tasks from
-                multiple cycles without violating dependencies,
-                potentially achieving very fast catchup from delays even
-                in resource limited operations with little down time
-                between cycles.  Cylc suites organically transition
-                between delayed and real time operation as required;
-                they adapt to insertion and removal of tasks at run
-                time; and they flow around failed or delayed tasks while
-                problems are addressed - after which the delayed tasks
-                catch up as quickly as possible.</span></p>
-
-
-			<h3><span>An Illustration</span></h3>
-
-            <p class="p1"><span>Inter-forecast-cycle dependence can usually be
-                ignored in real time operation, but this places severe
-                restrictions on what can be done in catchup/delayed (or
-                case study) operation. Even simple suites
-            <a href="intro/dep-one-cycle.png">like this one</a> become
-            complicated <a href="intro/dep-multi-cycle.png">like this</a> 
-            (a, b, and c are warm cycled forecast models)
-            when all dependencies are taken into account. 
-            Cylc's self-organizing algorithm handles this with ease,
-            however, achieving optimal scheduling in
-            all states of operation as shown in
-            <a href="intro/timeline-three.png">this job schedule</a> 
-            (cylc is above the time line). As a side
-            effect, cylc also has very flexible adaptive run time
-            behaviour. See the introductory section of the User
-            Guide for a more detailed discussion.
-        </span></p>
-
-				</div>
+    </div>
              
 	<div id="mainpage">
 
@@ -170,13 +166,19 @@
 						<li> Suite databases enable sharing of suites among
 						users.</li>
 
-						<li> Suites can be stopped and restarted in any state of
-						operation. </li>
-
                         <li> Insertion and deletion of tasks at run time</li>
 
                         <li> Explicit handling of cold start processing to 
                         bootstrap warm-cycling suites from scratch.</li>
+
+                        <li> Suites can be cold started, warm started, or restarted 
+                        from a previous state.</li>
+
+						<li> Suites can be stopped and restarted in any state of
+						operation.</li>
+
+                        <li> Restart states are automtically dumped prior to 
+                        actioning any intervention in a running suite.</li>
 
                         <li> In-suite spin-up processing via insertion
                         of temporary tasks and addition of temporary
@@ -193,7 +195,7 @@
 
                         <li> Central alerting and timeouts for operational suites </li>
 
-                        <li> Portable suites: copy and run</li>
+                        <li> Portable suites: just copy and run</li>
 
                         <li> Simulation mode: get the scheduling right,
                         on an accelerated clock, without running 
