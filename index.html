@@ -144,27 +144,27 @@
                         line for each task.
 
             <li>Suite definitions are automatically validated against a
-            comprehensive specification.</li>
+            comprehensive spec file, to catch most errors before run time.</li>
 	
 						<li> Self-documenting unified command line interface
 						covering all functionality from suite editing,
 						searching, graphing, and validation; to 
-						interrogation and suite control.</li>
+						interrogation and control.</li>
 
 						<li> Graphical interfaces covering the same, including 
 						a graph-based suite control interface. See screen shots.</li>
 
-                        <li> Crypographic suite security - prevents users from 
-                        accidentally or maliciously intervening in the operation
-                        of suite's owned by others.</li>
+                        <li> Cryptographic suite security to prevent users from 
+                        intervening in the operation of suites owned by others.</li>
 
-						<li> Run single tasks exactly as the suite would run them </li>
+                        <li> Run single tasks exactly as the suite would
+                        run them (job submission method and execution environment) </li>
 
-						<li> A network lockserver to prevent accidental invocation 
+						<li> A network lockserver prevents accidental invocation 
 						of multiple instances of the same suite or task at the same
 						time.</li>
 
-						<li> Suite databases to enable sharing of suites among
+						<li> Suite databases enable sharing of suites among
 						users.</li>
 
 						<li> Suites can be stopped and restarted in any state of
@@ -184,18 +184,20 @@
                         <li> Portable suites: copy and run</li>
 
                         <li> Simulation mode: get the scheduling right,
-                        on an accelerated clock, without running the
+                        on an accelerated clock, without running 
                         real tasks</li>
 
 				</ul>
 
 			<h3><span>Coming Soon</span></h3>
 				<ul>
-						<li> Network server access to the central suite database</li>
-						<li> Tasks with cycling intervals of less than 1 hour</li>
+						<li> Central suite database access via a network server </li>
+                        <li> Tasks with cycling intervals of less than 1 hour 
+                        (in development)</li>
 						<li> Asynchronous tasks for processing satellite passes 
-						(back port from prototype in cylc-2).
+						(back-port from prototype in cylc-2).
 						</li>
+                        <li> Initiate and popuplate the cylc repository issue tracker.</li>
 				</ul>
 
             <h3><span>Acknowledgements</span></h3>
