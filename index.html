@@ -53,60 +53,32 @@
 
 			<h3><span>Overview</span></h3>
 
-            <!--<p class="p2"><span>Environmental forecasting suites may
-                contain many scientific models and associated data
-                processing tasks that each repeat on some interval, or
-                <em>forecast cycle</em> (which may vary by task). 
-                The dependencies between tasks form a tree-like Directed
-								Acyclic Graph.</span></p> -->
-
-						<!-- <p class="p1"><span> Forecasting metaschedulers have
-								traditionally ignored dependencies between tasks in 
-								different forecast cycles, such as the restart
-								dependencies of warm cycled models, because (a) they
-								create a complicated never-ending dependency graph 
-								instead of the familiar sequence of distinct cycles;
-								and (b) they are satisfied implicitly in normal real
-								time operation when each cycle necessarily completes
-								before the next starts. But this <em>requires</em> 
-								whole-suite sequential cycling, in order to avoid
-								dependency violations, even in delayed operation when
-								the driving data for the next cycle are available in
-								advance. This is at best inefficient, and for
-								resource-limited operations that have little down time
-								between cycles it can result in long catchup times and
-								cycle overruns. </span></p> -->
-
-
-								<p class="p1"><span>Cylc decides when members of a suite
-										of interdependent cycling tasks are ready to
-                                        be submitted to a scheduler to be queued for
-                                        execution. Its self-organising
-                                        scheduling algorithm, which
-										explicitly manages dependencies between as well as
-										within forecast cycles, allows it to optimally
-								interleave tasks from multiple cycles without violating
-								dependencies, potentially achieving very fast catchup
-								from delays even in resource limited operations with
-								little down time between cycles.  Cylc suites
-								organically transition between delayed and real time
-								operation as required; they adapt to insertion and
-								removal of tasks at run time; and they flow around
-								failed or delayed tasks while problems are addressed -
-								after which the delayed tasks catch up as quickly as
-								possible.  </span></p>
+            <p class="p1"><span>Cylc decides when members of a suite of
+                interdependent cycling tasks are ready to be submitted
+                to a scheduler to be queued for execution. Its
+                self-organising scheduling algorithm, which explicitly
+                manages dependencies between as well as within forecast
+                cycles, allows it to optimally interleave tasks from
+                multiple cycles without violating dependencies,
+                potentially achieving very fast catchup from delays even
+                in resource limited operations with little down time
+                between cycles.  Cylc suites organically transition
+                between delayed and real time operation as required;
+                they adapt to insertion and removal of tasks at run
+                time; and they flow around failed or delayed tasks while
+                problems are addressed - after which the delayed tasks
+                catch up as quickly as possible.  </span></p>
 
 
 			<h3><span>An Illustration</span></h3>
 
-            <p class="p1"><span>Intercycle dependencies can usually be
-                ignored in real time
-            operation, but this places severe restrictions on what can
-            be done in catchup/delayed (or case study) operation. Even
-            simple suites
+            <p class="p1"><span>Inter-forecast-cycle dependence can usually be
+                ignored in real time operation, but this places severe
+                restrictions on what can be done in catchup/delayed (or
+                case study) operation. Even simple suites
             <a href="intro/dep-one-cycle.png">like this one</a> become
             complicated <a href="intro/dep-multi-cycle.png">like this</a> 
-            (tasks a, b, and c are warm cycled forecast models)
+            (a, b, and c are warm cycled forecast models)
             when all dependencies are taken into account. 
             Cylc's self-organizing algorithm handles this with ease,
             however, achieving optimal scheduling in
