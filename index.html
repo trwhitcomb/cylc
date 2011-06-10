@@ -29,14 +29,18 @@
 		</div>
 
 		<div id="banner">
-            <p class="p1"><span>Cylc is an advanced
+            <p class="p1"><span>Cylc (pronounced <em>silk</em>) is an advanced
 								metascheduler for cycling weather and
-								environmental forecasting systems. It has been developed by
-								Dr Hilary James Oliver at the <em>National Institute of
-										Water and Atmospheric Research  (NIWA)</em>, New
-								Zealand, since 2008, and was released under the GNU GPL in 2011.
-            </span></p>
-						<p class="p2"><span>Cylc is pronounced "<em>silk</em>".</span></p>
+								environmental forecasting systems.</span></p>
+
+            <p class="p2"><span> Cylc makes it easy to construct and  
+                control powerful, portable, suites for numerical
+                forecasting and related processing. It has been
+                developed by Dr Hilary James Oliver at NIWA (the
+                National Institute of Water and Atmospheric Research,
+                New Zealand) since 2008, and was released as free open
+                source software under the terms of the GNU GPL in 2011.
+                            </span></p>
 		</div>
 
         <div id="niwa-logo">
@@ -45,7 +49,7 @@
 
 		<div id="preamble">
 
-                            <b>PAGE UNDER DEVELOPMENT</b>
+                            <b>PAGE UNDER CONSTRUCTION</b>
 
 			<h3><span>Overview</span></h3>
 
@@ -76,7 +80,9 @@
 
 								<p class="p1"><span>Cylc decides when members of a suite
 										of interdependent cycling tasks are ready to
-										run. Its self-organising scheduling algorithm, which
+                                        be submitted to a scheduler to be queued for
+                                        execution. Its self-organising
+                                        scheduling algorithm, which
 										explicitly manages dependencies between as well as
 										within forecast cycles, allows it to optimally
 								interleave tasks from multiple cycles without violating
@@ -90,20 +96,43 @@
 								after which the delayed tasks catch up as quickly as
 								possible.  </span></p>
 
+
+			<h3><span>An Illustration</span></h3>
+
+            <p class="p1"><span>Intercycle dependencies can usually be
+                ignored in real time
+            operation, but this places severe restrictions on what can
+            be done in catchup/delayed (or case study) operation. Even
+            simple suites
+            <a href="intro/dep-one-cycle.png">like this one</a> become
+            complicated <a href="intro/dep-multi-cycle.png">like this</a> 
+            (tasks a, b, and c are warm cycled forecast models)
+            when all dependencies are taken into account. 
+            Cylc's self-organizing algorithm handles this with ease,
+            however, achieving optimal scheduling in
+            all states of operation as shown in
+            <a href="intro/timeline-three.png">this job schedule</a> 
+            (cylc is above the time line). As a side
+            effect, it also has very flexible adaptive run time
+            behaviour. See the introductory section of the Cylc User
+            Guide for a more detailed discussion.
+        </span></p>
+
 				</div>
              
 	<div id="mainpage">
 
 		<div id="requirements">
+
 			<h3><span>Requirements</span></h3>
+
 			<ul>
-			<li>Unix or Linux</li>
-			<li>Python</li>
+			<li>Operating System: Unix or Linux</li>
+            <li>The Python programming language</li>
 			<li>Pyro 3 (Python Remote Objects)</li>
 			<li>Graphviz (graph layout engine)</li>
 			<li>Pygraphviz (a Python graphviz wrapper)</li>
 			</ul>
-            <p class="p1"><span>(see the User Guide for details)</span></p>
 		</div>
 
 		<div id="download">
@@ -197,11 +226,18 @@
 						</li>
 				</ul>
 
+            <h3><span>Acknowledgements</span></h3>
+
+            <p class="p1"><span>We gratefully acknowledge the authors of
+                the open source ConfigObj and xdot projects,
+                modified versions of which have been incorporated into
+                cylc.</span></p>
+
 		</div>
 
 
 		<div id="tape">
-			Copyright Hilary Oliver, NIWA, 2008-2011; GNU GPL v3.0
+            Cylc is free software under the terms of the GNU GPL v3
 		</div>
 
 	</div>
