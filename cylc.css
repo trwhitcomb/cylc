@@ -130,6 +130,7 @@ p{
 	text-decoration: none;
 }
 
+/*
 #niwa-logo{
   background: url("images/niwa-colour-small.png") 0 10px no-repeat;
 	height:69px;
@@ -141,10 +142,10 @@ p{
 		height:0;
 		overflow:hidden;
 }
+*/
 
 #preamble{
 	margin-left: 220px;
-	margin-top:-70px;
 	padding-right: 10px;
 	font-size: 90%;
 }
