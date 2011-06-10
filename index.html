@@ -29,7 +29,7 @@
 		</div>
 
 		<div id="banner">
-            <p class="p1"><span>Cylc (pronounced <em>silk</em>) is an advanced
+            <p class="p1"><span>Cylc (<em>"silk"</em>) is an advanced
 								metascheduler for cycling weather and
 								environmental forecasting systems.</span></p>
 
@@ -172,12 +172,21 @@
 
                         <li> Insertion and deletion of tasks at run time</li>
 
+                        <li> Explicit handling of cold start processing to 
+                        bootstrap warm-cycling suites from scratch.</li>
+
+                        <li> In-suite spin-up processing via insertion
+                        of temporary tasks and addition of temporary
+                        prequisites on the fly.</li>
+
                         <li> Recursive purge: remove an entire sub-tree
                         of tasks through to some future cycle time.
 
                         <li> Conditional prerequisites </li>
 
                         <li> Task families </li>
+
+                        <li> Task retry for automated failure recovery </li>
 
                         <li> Central alerting and timeouts for operational suites </li>
 
@@ -197,6 +206,10 @@
 						<li> Asynchronous tasks for processing satellite passes 
 						(back-port from prototype in cylc-2).
 						</li>
+                        <li> Loose prerequisites allowing use of "most recent 
+                        available" outputs from slower-cycling upstream tasks
+						(back-port from prototype in cylc-2).</li>
+
                         <li> Initiate and popuplate the cylc repository issue tracker.</li>
 				</ul>
 

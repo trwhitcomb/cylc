@@ -184,7 +184,7 @@ p{
 #navlist {
 	position: absolute;
 	left: 20px;
-	top: 300px;
+	top: 350px;
 	width: 178px;
 	padding: 0 2px 0 0;
 	font-size: 80%;
@@ -192,7 +192,6 @@ p{
 }
 
 #navlist h3{
-	/*background: #2b9a82;*/
 	margin: 0;
 	height:40px;
 	padding: 10px 0 5px 10px;
