@@ -185,11 +185,12 @@ p{
 #navlist {
 	position: absolute;
 	left: 20px;
-	top: 350px;
+	top: 240px;
 	width: 178px;
-	padding: 0 2px 0 0;
+	padding: 100px 2px 0 0;
 	font-size: 80%;
 	line-height: 140%;
+  background: url("images/niwa-colour-small.png") 0 10px no-repeat;
 }
 
 #navlist h3{
