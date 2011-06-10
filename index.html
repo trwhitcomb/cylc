@@ -31,7 +31,7 @@
 		<div id="banner">
             <p class="p1"><span>Cylc (<em>"silk"</em>) is an advanced
                 metascheduler that makes it easy to construct and
-                control powerful, portable, suites for cycling 
+                control powerful, portable suites for cycling 
                 weather and environmental forecasting systems.</span></p>
             <p class="p2"><span>.</span></p> <!-- p2 is required to get
 						the lower banner background image, and the . is required
@@ -45,43 +45,45 @@
 
     <p class="p1"><span> Cylc is developed by Dr Hilary James Oliver at
         NIWA (the National Institute of Water and Atmospheric Research,
-        New Zealand). It was first prototyped in 2008, has been used to
-        run NIWA's operational forecasting systems since 2010, and in
-        2011 was released as free open source software under the terms
-        of the GNU General Public License.</span></p>
+        New Zealand). It was prototyped in 2008, has been used to
+        run NIWA's operational forecasting systems since 2010, and was
+        released as free open source software under the terms
+        of the GNU General Public License in 2011.</span></p>
 
     <h3><span>Overview</span></h3>
 
-    <p class="p1"><span>Cylc decides when members of a suite of
-        inter-dependent cycling tasks are ready to be submitted to a
-        scheduler to be queued for execution.
+    <p class="p1"><span>A metascheduler (in this context) is a <em>suite 
+            control system</em> that decides when
+        members of a group of inter-dependent tasks are <em>ready</em>
+        to be submitted to a batch scheduler to be queued for execution.
+        Cylc does this for suites of inter-dependent <em>cycling</em>
+        tasks.
     </scan></p>
         
     <p class="p2"><span>
-        Dependence between forecast cycles can usually be ignored
-        in real time operation, but this places severe restrictions on
-        catchup/delayed operation when it should be possible to run
-        tasks from multiple cycles at once. Even simple suites <a
-            href="intro/dep-one-cycle.png">like this one</a> become
+        Dependence between tasks in different forecast cycles can
+        usually be ignored in real time operation, but this places
+        severe restrictions on catchup/delayed operation when it should
+        be possible to run tasks from multiple cycles at once. Even
+        simple suites <a
+            href="intro/dep-one-cycle.png">like this</a> become
         complicated <a href="intro/dep-multi-cycle.png">like this</a>
-        when intercycle dependence is taken into account (a, b, and c
+        when inter-cycle dependence is taken into account (a, b, and c
         are warm-cycled forecast models).  
     </scan></p>
 
-
     <p class="p3"><span>
         Cylc's self-organizing scheduling algorithm explicitly manages
-        dependencies between as well as within forecast cycles, allowing
-        it to optimally interleave tasks from multiple cycles without
-        dependency violations, potentially achieving very fast catchup
-        from delays even in resource limited operations with little down
-        time between cycles - as shown in
+        inter-cycle dependence, allowing it to optimally interleave
+        tasks from multiple cycles, potentially achieving
+        very fast catch up from delays even in resource limited
+        operations with little down time between cycles - as shown in
         <a href="intro/timeline-three.png">this job schedule</a> (cylc
         is above the time line).         
     </span></p>
 
     <p class="p3"><span>
-        Cylc also has very flexible and adaptive run time behaviour.        
+        Cylc also has very flexible, adaptive run time behaviour.        
         Suites organically transition between delayed and real time
         operation as required; they adapt to insertion and removal of
         tasks; and they flow around failed or delayed tasks
@@ -132,12 +134,12 @@ and the introductory section of the User Guide for a more detailed discussion.
 			<h3><span>Notable Features</span></h3>
 				<ul>
                         <li> Tasks can be distributed across multiple
-                        heterogeneous hosts, with multiple job
+                        hosts on a heterogeneous network, with multiple job
                         submission methods.</li>
 
                         <li> Most existing models and processing jobs
                         can be used without modification as cylc
-                        tasks.</li>
+                        tasks; some require minimal modification.</li>
 
                         <li>Simple, structured, intuitive suite
                         definition: "draw"
@@ -160,7 +162,7 @@ and the introductory section of the User Guide for a more detailed discussion.
                         intervening in the operation of suites owned by others.</li>
 
                         <li> Run single tasks exactly as the suite would
-                        run them (job submission method and execution environment) </li>
+                        run them (job submission method and execution environment).</li>
 
 						<li> A network lockserver prevents accidental invocation 
 						of multiple instances of the same suite or task at the same
@@ -169,7 +171,7 @@ and the introductory section of the User Guide for a more detailed discussion.
 						<li> Suite databases enable sharing of suites among
 						users.</li>
 
-                        <li> Insertion and deletion of tasks at run time</li>
+                        <li> Insertion and deletion of tasks at run time.</li>
 
                         <li> Explicit handling of cold start processing to 
                         bootstrap warm-cycling suites from scratch.</li>
@@ -190,27 +192,30 @@ and the introductory section of the User Guide for a more detailed discussion.
                         <li> Recursive purge: remove an entire sub-tree
                         of tasks through to some future cycle time.
 
-                        <li> Conditional prerequisites </li>
+                        <li> Conditional prerequisites.</li>
 
-                        <li> Task families </li>
+                        <li> Task families.</li>
 
-                        <li> Task retry for automated failure recovery </li>
+                        <li> Task retry for automated failure recovery.</li>
 
-                        <li> Central alerting and timeouts for operational suites </li>
+                        <li> Central alerting and timeouts for operational suites.</li>
 
-                        <li> Portable suites: just copy and run</li>
+                        <li> Entirely portable suites can easily be
+                        constructed (no hardwired paths for suite
+                        control files or output directories, etc. - just
+                        copy a suite and run it).</li>
 
                         <li> Simulation mode: get the scheduling right,
                         on an accelerated clock, without running 
-                        real tasks</li>
+                        real tasks.</li>
 
 				</ul>
 
 			<h3><span>Coming Soon</span></h3>
 				<ul>
-						<li> Central suite database access via a network server </li>
+						<li> Central suite database access via a network server. </li>
                         <li> Tasks with cycling intervals of less than 1 hour 
-                        (in development)</li>
+                        (in development).</li>
 						<li> Asynchronous tasks for processing satellite passes 
 						(back-port from prototype in cylc-2).
 						</li>
@@ -218,7 +223,7 @@ and the introductory section of the User Guide for a more detailed discussion.
                         available" outputs from slower-cycling upstream tasks
 						(back-port from cylc-2).</li>
 
-                        <li> Initiate and popuplate the cylc repository issue tracker.</li>
+                        <li> Initiate and populate the GitHub cylc repository issue tracker.</li>
 				</ul>
 
             <h3><span>Acknowledgements</span></h3>

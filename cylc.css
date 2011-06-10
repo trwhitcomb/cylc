@@ -103,7 +103,7 @@ p{
 
 #banner .p1{
 	position: relative;
-	padding: 20px 20px 0 20px;
+	padding: 20px 10px 0 20px;
 	background: #2b9a82 url("images/banner1.gif"); 
 	background-position: top left;
 	background-repeat: no-repeat;
@@ -111,7 +111,7 @@ p{
 
 #banner .p2{
 	position: relative;
-	padding: 0 15px 25px 18px;
+	/*padding: 0 15px 25px 18px;*/  /* uncomment if p2 is used */
 	background: #2b9a82 url("images/banner2.gif") no-repeat bottom left ;
 }
 
