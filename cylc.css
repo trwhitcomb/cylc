@@ -131,8 +131,8 @@ p{
 }
 
 #niwa-logo{
-  background: url("images/niwa-colour-small.png") top right no-repeat;
-	height:49px;
+  background: url("images/niwa-colour-small.png") 0 10px no-repeat;
+	height:69px;
 }
 
 #niwa-logo span{
@@ -144,7 +144,7 @@ p{
 
 #preamble{
 	margin-left: 220px;
-	margin-top:-50px;
+	margin-top:-70px;
 	padding-right: 10px;
 	font-size: 90%;
 }
