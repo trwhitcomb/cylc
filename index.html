@@ -88,15 +88,22 @@
     </span></p>
 
     <p class="p3"><span>
-        Cylc also has very flexible, adaptive run time behaviour.        
+        This novel scheduling algorithm also gives very flexible,
+        adaptive run time behaviour.        
         Suites organically transition between delayed and real time
         operation as required; they adapt to insertion and removal of
         tasks; and they flow around failed or delayed tasks
         while problems are addressed - after which the delayed tasks
         catch up as quickly as possible.</span></p>
+    </span></p>
 
-    <p class="p3"></span></p> See <a href="#features">Notable Features</a> below,
-and the introductory section of the User Guide for a more detailed discussion.
+    <p class="p3"><span>
+        Cylc has a simple, intuitive suite design paradigm: 
+        "draw" a dependency graph in concise textual form, then
+        configure the execution environment and command line for each
+        task. A simple example: the <em>dependencies</em> section in 
+        <a href="screenshots/simple-suiterc.png">this suite definition</a> 
+        defines <a href="screenshots/QuickStartB-graph18.png">this suite</a>.
     </span></p>
 
     </div>
@@ -105,7 +112,7 @@ and the introductory section of the User Guide for a more detailed discussion.
 
 		<div id="features">
 
-			<h3><span>Notable Features</span></h3>
+			<h3><span>Other Notable Features</span></h3>
 				<ul>
                         <li> Tasks can be distributed across multiple
                         hosts on a heterogeneous network, with multiple job
@@ -114,12 +121,6 @@ and the introductory section of the User Guide for a more detailed discussion.
                         <li> Most existing models and processing jobs
                         can be used without modification as cylc
                         tasks; some require minimal modification.</li>
-
-                        <li>Simple, structured, intuitive suite
-                        definition: "draw"
-                        a dependency graph in concise textual form, and
-                        configure the execution environment and command
-                        line for each task.
 
             <li>Suite definitions are automatically validated against a
             comprehensive spec file, to catch most errors prior to run time.</li>
