@@ -156,7 +156,7 @@ p{
 	font-size: 90%;
 }
 
-#features, #download{
+#features, #download, #development, #acknowledgements, #support{
 	position: relative; 
 	margin-left: -180px; 
 	width: 650px;

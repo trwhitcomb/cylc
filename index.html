@@ -32,10 +32,11 @@
             <p class="p1"><span>Cylc (<em>"silk"</em>) is an advanced
                 metascheduler that makes it easy to construct and
                 control flexible, portable suites for cycling 
-                weather and environmental forecasting systems. Cylc
-                suites automatically and optimally run tasks from
-                multiple forecast cycles at once whenever the oportunity
-                arises.</span></p>
+                weather and environmental forecasting systems, and 
+                related data processing. Cylc
+                suites optimally run tasks from multiple forecast cycles
+                at once whenever the opportunity arises.  Open source software
+                license: GNU GPL v3.</span></p>
             <p class="p2"><span>.</span></p> <!-- p2 is required to get
 						the lower banner background image, and the . is required
 						to get IE from MS Windows XP to display it for an empty
@@ -59,30 +60,31 @@
             control system</em> that decides when
         members of a group of inter-dependent tasks are <em>ready</em>
         to be submitted to a batch scheduler to be queued for execution.
-        Cylc does this for suites of inter-dependent <em>cycling</em>
-        tasks.
+        Cylc controls suites of <em>cycling</em>
+        tasks that relate to each other in terms of their respective 
+        forecast <em>cycle times</em>.
     </scan></p>
         
     <p class="p2"><span>
         Dependence between tasks in different forecast cycles can
         usually be ignored in real time operation, but this places
-        severe restrictions on catchup/delayed operation when it should
-        be possible to run tasks from multiple cycles at once. Even
-        simple suites <a
+        severe restrictions on catch up / delayed operation when in 
+        principle it is possible to run tasks from multiple cycles at
+        once.  Even simple suites <a
             href="intro/dep-one-cycle.png">like this</a> become
         complicated <a href="intro/dep-multi-cycle.png">like this</a>
-        when inter-cycle dependence is taken into account (a, b, and c
-        are warm-cycled forecast models).  
+        when inter-cycle dependence is taken into account (in the
+        illustration a, b, and c are warm-cycled forecast models).  
     </scan></p>
 
     <p class="p3"><span>
-        Cylc's self-organizing scheduling algorithm explicitly manages
-        inter-cycle dependence, allowing it to optimally interleave
-        tasks from multiple cycles, potentially achieving
-        very fast catch up from delays even in resource limited
-        operations with little down time between cycles - as shown in
-        <a href="intro/timeline-three.png">this job schedule</a> (cylc
-        is above the time line).         
+        Cylc's self-organizing scheduling algorithm manages all dependence 
+        equally, and does not use global cycling mechanisms to advance
+        the suite. This allows optimal interleaving of tasks from
+        multiple forecast cycles, potentially achieving 
+        <a href="intro/timeline-three.png"> very fast catch up from delays</a> 
+        (cylc is shown above the time line) even in resource limited
+        operations with little down time between cycles .         
     </span></p>
 
     <p class="p3"><span>
@@ -100,37 +102,6 @@ and the introductory section of the User Guide for a more detailed discussion.
     </div>
              
 	<div id="mainpage">
-
-		<div id="requirements">
-
-			<h3><span>Requirements</span></h3>
-
-			<ul>
-			<li>Operating System: Unix or Linux</li>
-            <li>The Python programming language</li>
-			<li>Pyro 3 (Python Remote Objects)</li>
-			<li>Graphviz (graph layout engine)</li>
-			<li>Pygraphviz (a Python graphviz wrapper)</li>
-			</ul>
-		</div>
-
-		<div id="download">
-			<h3><span>How To Get The Latest Cylc Release</span></h3>
-
-            <p class="p1"><span>Latest stable release: 3.0.5.</span></p>
-
-            <p class="p2"><span>Go to 
-                <a href="http://github.com/hjoliver/cylc">the cylc source repository on GitHub</a>,
-                click on "Downloads", and choose the first gzipped tarball under
-                "DOWNLOAD PACKAGES" (do not use the "DOWNLOAD SOURCE" buttons 
-                or automatically loaded version tags unless you know what you're 
-                doing).</span></p>
-
-            <p class="p3"><span>We will set up a mailing list and wiki when/if we
-                get some external users. In the meantime please
-                email Hilary Oliver at <b>h.oliver@niwa.co.nz</b> if you're
-                planning to try cylc.</span></p>
-		</div>
 
 		<div id="features">
 
@@ -229,14 +200,96 @@ and the introductory section of the User Guide for a more detailed discussion.
                         <li> Initiate and populate the GitHub cylc repository issue tracker.</li>
 				</ul>
 
+
+
+		</div>
+
+
+		<div id="requirements">
+
+			<h3><span>Requirements</span></h3>
+
+			<ul>
+			<li>Operating System: Unix or Linux</li>
+            <li>The Python programming language</li>
+			<li>Pyro 3 (Python Remote Objects)</li>
+			<li>Graphviz (graph layout engine)</li>
+			<li>Pygraphviz (a Python graphviz wrapper)</li>
+			</ul>
+		</div>
+
+		<div id="download">
+			<h3><span>Download Cylc</span></h3>
+
+            <p class="p1"><span>
+                Download cylc-3.0.5.tar.gz from GitHub 
+                <a href="https://github.com/downloads/hjoliver/cylc/cylc-3.0.5.tar.gz">here</a>
+                <b>NOTE: the download is currently not working</b> - for the 
+                moment email Hilary Oliver at h.oliver@niwa.co.nz to get
+                a copy of cylc. 
+            </span></p>
+
+
+			<h3><span>Installation</span></h3>
+
+            <p class="p1"><span>
+                Unpack the release tarball and follow the installation
+                instructions in <code>doc/CylcUserGuide-3.0.5.pdf</code>
+                (also available from the menu on this page).
+            </span></p>
+
+		</div>
+
+		<div id="development">
+            <h3><span>Development</span></h3>
+
+            <p class="p1"><span>
+                Cylc uses the powerful Git distributed source code management system. 
+              The master repository is <a href="http://github.com/hjoliver/cylc">here</a> on GitHub.
+            </span></p>
+
+            <p class="p2"><span>
+                At this stage the collaborative development model is envisioned as follows:
+                Collaborators should:
+                <ul>
+                    <li> Clone the cylc master repository on GitHub.</li>
+                    <li> Develop new features in a new branch of their own repository.</li>
+                    <li> Finally, merge in any new changes from the master repository, and,</li>
+                    <li> Send a pull request to the master repository maintainer.</li>
+                </ul>
+                The master repository maintainer can then pull the new branch, review the changes,
+                and merge into the main branch for future releases.
+            </span></p>
+
+            <p class="p3"><span>
+                This model applies specifically to the top tier of cylc
+                developers who need to interact directly with the
+                master cylc repository. There can in principle be other
+                tiers of development, within a particular organisation
+                say, that work similarly below the top collaborator
+                repositories.
+            </span></p>
+
+		</div>
+
+        <div id="support">
+            <h3><span>Support</span></h3>
+
+            <p class="p2"><span>A cylc mailing list and wiki will be 
+                set up when/if we get some external users. In the
+                meantime please email Hilary Oliver at
+                <b>h.oliver@niwa.co.nz</b> if you're
+                planning to try cylc.</span></p>
+		</div>
+
+        <div id="acknowledgements">
             <h3><span>Acknowledgements</span></h3>
 
             <p class="p1"><span>We gratefully acknowledge the authors of
                 the open source ConfigObj and xdot projects,
                 modified versions of which have been incorporated into
                 cylc.</span></p>
-
-		</div>
+        </div>
 
 
 		<div id="tape">
