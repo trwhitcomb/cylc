@@ -33,11 +33,15 @@
                 metascheduler that makes it easy to construct and
                 control flexible, portable suites for cycling 
                 weather and environmental forecasting systems, and 
-                related data processing. Cylc
-                suites optimally run tasks from multiple forecast cycles
-                at once whenever the opportunity arises.  Open source software
-                license: GNU GPL v3.</span></p>
-            <p class="p2"><span>.</span></p> <!-- p2 is required to get
+                related data processing.
+            <!--    </span></p>
+        <p class="p2"><span>-->
+                Cylc suites optimally interleave tasks from multiple
+                forecast cycles for fast catch up from delays, fast
+                case studies, and fast offset parallel test suites. 
+
+        <p class="p2"><span>.
+                </span></p> <!-- p2 is required to get
 						the lower banner background image, and the . is required
 						to get IE from MS Windows XP to display it for an empty
 						paragraph-->
@@ -49,59 +53,53 @@
 
     <p class="p1"><span> Cylc is developed by Dr Hilary James Oliver at
         NIWA (the National Institute of Water and Atmospheric Research,
-        New Zealand). It was prototyped in 2008, has been used to
-        run NIWA's operational forecasting systems since 2010, and was
-        released as free open source software under the terms
-        of the GNU General Public License in 2011.</span></p>
+        New Zealand). It was prototyped in 2008, has controlled NIWA's
+        multi-model operational forecasting systems since 2010, and was
+        released under the GNU General Public License in 2011.</span></p>
 
     <h3><span>Overview</span></h3>
 
-    <p class="p1"><span>A metascheduler (in this context) is a <em>suite 
-            control system</em> that decides when
-        members of a group of inter-dependent tasks are <em>ready</em>
+    <p class="p1"><span>A metascheduler (in this context) is a 
+        <em>control system</em> that decides when
+        members of a suite of inter-dependent tasks are <em>ready</em>
         to be submitted to a batch scheduler to be queued for execution.
-        Cylc controls suites of <em>cycling</em>
-        tasks that relate to each other in terms of their respective 
-        forecast <em>cycle times</em>.
-    </scan></p>
+        Cylc manages <em>cycling</em> (repeating) tasks related in terms
+        of their respective forecast <em>cycle times</em>.
+        </scan></p>
         
     <p class="p2"><span>
         Dependence between tasks in different forecast cycles can
-        usually be ignored in real time operation, but this places
-        severe restrictions on catch up / delayed operation when in 
-        principle it is possible to run tasks from multiple cycles at
-        once.  Even simple suites <a
-            href="intro/dep-one-cycle.png">like this</a> become
-        complicated <a href="intro/dep-multi-cycle.png">like this</a>
+        usually be ignored in real time operation, but this severely
+        restricts scheduling in delayed operation when it should be
+        possible to run tasks from multiple cycles at once. Even  
+        <a href="intro/dep-one-cycle.png">simple suites</a> become
+        <a href="intro/dep-multi-cycle.png">complicated</a>
         when inter-cycle dependence is taken into account (in the
-        illustration a, b, and c are warm-cycled forecast models).  
+        illustrations a, b, and c are warm-cycled forecast models).  
     </scan></p>
 
     <p class="p3"><span>
-        Cylc's self-organizing scheduling algorithm manages all dependence 
-        equally, and does not use global cycling mechanisms to advance
-        the suite. This allows optimal interleaving of tasks from
+        Cylc's self-organizing scheduling algorithm addresses this
+        problem and does not use global cycling mechanisms to advance
+        in time. This allows optimal interleaving of tasks from
         multiple forecast cycles, potentially achieving 
-        very fast catch up from delays 
-        even in resource limited
+        very fast catch up from delays even in resource limited
         operations with little down time between cycles
-        (<a href="intro/timeline-three.png">here</a> is a job schedule
-        for the example of the previous paragraph; cylc is shown above
-        the time line). 
+        (as shown 
+        <a href="intro/timeline-three.png">here</a> above the time line 
+        for the example of the previous paragraph). 
     </span></p>
 
     <p class="p3"><span>
-        This novel scheduling algorithm also gives very flexible,
-        adaptive run time behaviour.        
-        Suites organically transition between delayed and real time
+        Cylc also has very flexible, adaptive run time behaviour:
+        suites organically transition between delayed and real time
         operation as required; they adapt to insertion and removal of
-        tasks; and they flow around failed or delayed tasks
-        while problems are addressed - after which the delayed tasks
-        catch up as quickly as possible.</span></p>
+        tasks; and they flow around failed or delayed tasks - which
+        catch up as quickly as possible once the problem is addressed.</span></p>
     </span></p>
 
     <p class="p3"><span>
-        Cylc has a simple, intuitive suite design paradigm: 
+        Cylc's suite design paradigm is simple and intuitive: 
         "draw" a dependency graph in concise textual form, then
         configure the execution environment and command line for each
         task. A simple example: the <em>dependencies</em> section in 
@@ -178,10 +176,10 @@
 
                         <li> Central alerting and timeouts for operational suites.</li>
 
-                        <li> Entirely portable suites can easily be
-                        constructed (no hardwired paths for suite
-                        control files or output directories, etc. - just
-                        copy a suite and run it).</li>
+                        <li> Portable suites can easily be constructed
+                        (no hardwired paths for suite control files or
+                        output directories, etc. - just copy a suite and
+                        run it).</li>
 
                         <li> Simulation mode: get the scheduling right,
                         on an accelerated clock, without running 
@@ -197,9 +195,10 @@
 						<li> Asynchronous tasks for processing satellite passes 
 						(back-port from prototype in cylc-2).
 						</li>
-                        <li> Loose prerequisites allowing use of "most recent 
-                        available" outputs from slower-cycling upstream tasks
-						(back-port from cylc-2).</li>
+                        <li> Loose prerequisites: trigger off the "most
+                        recent available" (variable offset) instance of
+                        a slower-cycling upstream task (back-port from
+                        cylc-2).</li>
 
                         <li> Initiate and populate the GitHub cylc repository issue tracker.</li>
 				</ul>
@@ -244,6 +243,16 @@
 
 		</div>
 
+        <div id="support">
+            <h3><span>Support</span></h3>
+
+            <p class="p2"><span>A cylc mailing list and wiki will be 
+                set up when/if we get some external users. In the
+                meantime please email Hilary Oliver at
+                <b>h.oliver@niwa.co.nz</b> if you're
+                planning to try cylc.</span></p>
+		</div>
+
 		<div id="development">
             <h3><span>Development</span></h3>
 
@@ -253,7 +262,7 @@
             </span></p>
 
             <p class="p2"><span>
-                At this stage the collaborative development model is envisioned as follows:
+                At this stage the collaborative development model is envisioned as follows.
                 Collaborators should:
                 <ul>
                     <li> Clone the cylc master repository on GitHub.</li>
@@ -268,22 +277,12 @@
             <p class="p3"><span>
                 This model applies specifically to the top tier of cylc
                 developers who need to interact directly with the
-                master cylc repository. There can in principle be other
-                tiers of development, within a particular organisation
+                master cylc repository. There can be lower tiers of
+                development, within a particular organisation
                 say, that work similarly below the top collaborator
                 repositories.
             </span></p>
 
-		</div>
-
-        <div id="support">
-            <h3><span>Support</span></h3>
-
-            <p class="p2"><span>A cylc mailing list and wiki will be 
-                set up when/if we get some external users. In the
-                meantime please email Hilary Oliver at
-                <b>h.oliver@niwa.co.nz</b> if you're
-                planning to try cylc.</span></p>
 		</div>
 
         <div id="acknowledgements">

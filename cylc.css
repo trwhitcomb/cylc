@@ -111,7 +111,7 @@ p{
 
 #banner .p2{
 	position: relative;
-	/*padding: 0 15px 25px 18px;*/  /* uncomment if p2 is used */
+/*	padding: 0 15px 25px 18px;*/  /* comment out if p2 is not used */
 	background: #2b9a82 url("images/banner2.gif") no-repeat bottom left ;
 }
 
