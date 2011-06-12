@@ -130,20 +130,6 @@ p{
 	text-decoration: none;
 }
 
-/*
-#niwa-logo{
-  background: url("images/niwa-colour-small.png") 0 10px no-repeat;
-	height:69px;
-}
-
-#niwa-logo span{
-		display:block;
-		width:0;
-		height:0;
-		overflow:hidden;
-}
-*/
-
 #preamble{
 	margin-left: 220px;
 	padding-right: 10px;
@@ -186,7 +172,7 @@ p{
 #navlist {
 	position: absolute;
 	left: 20px;
-	top: 230px;
+	top: 250px;
 	width: 178px;
 	padding: 80px 2px 0 0;
 	font-size: 80%;
