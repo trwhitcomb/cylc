@@ -60,42 +60,40 @@
     <h3><span>Overview</span></h3>
 
     <p class="p1"><span>A metascheduler (in this context) is a 
-        <em>control system</em> that decides when
-        members of a suite of inter-dependent tasks are <em>ready</em>
+        control system that decides when
+        members of a suite of inter-dependent tasks are ready
         to be submitted to a batch scheduler to be queued for execution.
-        Cylc manages <em>cycling</em> (repeating) tasks related in terms
-        of their respective forecast <em>cycle times</em>.
+        Cylc does this for suites of <em>cycling</em> tasks.
         </scan></p>
         
     <p class="p2"><span>
         Dependence between tasks in different forecast cycles can
-        usually be ignored in real time operation, but this severely
-        restricts scheduling in delayed operation when it should be
-        possible to run tasks from multiple cycles at once. Even  
+        usually be ignored in real time operation. This severely
+        restricts scheduling after delays when it should be
+        possible to run tasks from multiple cycles at once, but even  
         <a href="intro/dep-one-cycle.png">simple suites</a> become
         <a href="intro/dep-multi-cycle.png">complicated</a>
         when inter-cycle dependence is taken into account (in the
-        illustrations a, b, and c are warm-cycled forecast models).  
+        illustrations a, b, and c represent warm-cycled forecast models).  
     </scan></p>
 
     <p class="p3"><span>
-        Cylc's self-organizing scheduling algorithm addresses this
-        problem and does not use global cycling mechanisms to advance
-        in time. This allows optimal interleaving of tasks from
-        multiple forecast cycles, potentially achieving 
-        very fast catch up from delays even in resource limited
-        operations with little down time between cycles
-        (as shown 
-        <a href="intro/timeline-three.png">here</a> above the time line 
-        for the example of the previous paragraph). 
+        Cylc solves this problem; it optimally interleaves tasks from
+        multiple forecast cycles whenever the opportunity arises,
+        potentially achieving 
+        <a href="intro/timeline-three.png">very fast catch up from delays</a> 
+        even in resource limited operations with little down time
+        between cycles. The same occurs for processing historical data,
+        or running parallel test suites that start behind the main
+        operation.
     </span></p>
 
     <p class="p3"><span>
         Cylc also has very flexible, adaptive run time behaviour:
-        suites organically transition between delayed and real time
+        suites naturally transition between delayed and real time
         operation as required; they adapt to insertion and removal of
-        tasks; and they flow around failed or delayed tasks - which
-        catch up as quickly as possible once the problem is addressed.</span></p>
+        tasks; and they flow around failed or delayed tasks (which
+        catch up as quickly as possible once the problem is addressed).</span></p>
     </span></p>
 
     <p class="p3"><span>
@@ -126,31 +124,31 @@
             <li>Suite definitions are automatically validated against a
             comprehensive spec file, to catch most errors prior to run time.</li>
 	
-						<li> Self-documenting unified command line interface
-						covering all functionality from suite editing,
-						searching, graphing, and validation; to 
-						interrogation and control.</li>
+						<li> Self-documenting command line interface
+                        covering all functionality from suite editing to
+                        suite control.</li>
 
 						<li> Graphical interfaces covering the same, including 
 						a graph-based suite control interface. See screen shots.</li>
 
-                        <li> Cryptographic suite security to prevent users from 
-                        intervening in the operation of suites owned by others.</li>
+                        <li> Cryptographic suite security: users cannot 
+                        intervene in the operation of suites owned by others.</li>
 
                         <li> Run single tasks exactly as the suite would
                         run them (job submission method and execution environment).</li>
 
-						<li> A network lockserver prevents accidental invocation 
-						of multiple instances of the same suite or task at the same
-						time.</li>
+						<li> Network lockservers prevent accidental invocation 
+                        of multiple instances of the same suite or task
+                        at the same time.</li>
 
 						<li> Suite databases enable sharing of suites among
 						users.</li>
 
                         <li> Insertion and deletion of tasks at run time.</li>
 
-                        <li> Explicit handling of cold start processing to 
-                        bootstrap warm-cycling suites from scratch.</li>
+                        <li> Explicit 
+                        <a href="screenshots/QuickStartB-graph18.png">cold start processing</a>
+                        to bootstrap warm-cycling suites from scratch.</li>
 
                         <li> Suites can be cold started, warm started, or restarted 
                         from a previous state.</li>
@@ -168,7 +166,7 @@
                         <li> Recursive purge: remove an entire sub-tree
                         of tasks through to some future cycle time.
 
-                        <li> Conditional prerequisites.</li>
+                        <li> Conditional prerequisites (triggers).</li>
 
                         <li> Task families.</li>
 
@@ -176,10 +174,8 @@
 
                         <li> Central alerting and timeouts for operational suites.</li>
 
-                        <li> Portable suites can easily be constructed
-                        (no hardwired paths for suite control files or
-                        output directories, etc. - just copy a suite and
-                        run it).</li>
+                        <li> Portable suites are easy to construct -
+                        just copy another user's suite and run it.</li>
 
                         <li> Simulation mode: get the scheduling right,
                         on an accelerated clock, without running 
@@ -253,7 +249,7 @@
             <p class="p1"><span>
                 Unpack the release tarball and follow the installation
                 instructions in <code>doc/CylcUserGuide-3.0.5.pdf</code>
-                (also available from the menu on this page).
+                (the User Guide is also available from the menu on this page).
             </span></p>
 
 		</div>
@@ -288,7 +284,7 @@
                     <li> Send a pull request to the master repository maintainer.</li>
                 </ul>
                 The master repository maintainer can then pull the new branch, review the changes,
-                and merge into the main branch for future releases.
+                and merge them into the main branch for future releases.
             </span></p>
 
             <p class="p3"><span>
