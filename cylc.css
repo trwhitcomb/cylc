@@ -23,7 +23,7 @@ a:hover{
 	text-decoration: underline;
 }
 
-h3{
+h3, h4{
 	color: #2b9a82;
 	font-size: 120%;
 	margin-top: 30px;
@@ -37,6 +37,13 @@ h3{
 
 h3 span{
 	background-color: #fff;
+}
+
+h4 {
+	color: black;
+	font-size:100%;
+	background:none;
+	margin-top: 10px;
 }
 
 p{
@@ -142,22 +149,10 @@ p{
 	font-size: 90%;
 }
 
-#features, #download, #development, #acknowledgements, #support{
+#features, #getting, #documentation, #development, #acknowledgements, #support{
 	position: relative; 
 	margin-left: -180px; 
 	width: 650px;
-}
-
-
-#requirements{
-	position: relative; 
-	margin-left: -180px;
-	width: 650px;
-}
-
-#requirements .p5{
-	font-size: 80%;
-	margin: 10px;
 }
 
 #tape{
@@ -218,6 +213,10 @@ p{
 
 #navlist li a.c{
 	color: #818181;
+}
+
+code {
+		font-size:130%;
 }
 
 #lcode{
