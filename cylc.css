@@ -11,12 +11,15 @@ body{
 }
 
 a{
-	color: #2b9a82;
+		color: #f64;
+	/*color: #2b7ac2;*/
+	/* color: #ff3a02;*/
 	font-weight: bold;
 	text-decoration: none;
 }
 a:visited{
-	color: #4bbaa2;
+	color: #d85;
+	/* color: #cc5a42; */
 	text-decoration: none;
 }
 a:hover{
@@ -60,8 +63,8 @@ p{
 	border-bottom: 0;
 	/*border-top: 0;*/
 	margin: 0 auto;
-	margin-top:10px;
-	margin-bottom:10px;
+	margin-top:20px;
+	margin-bottom:800px;
 	text-align: left;
 }
 
@@ -208,7 +211,7 @@ p{
 }
 
 #navlist li a{
-	color: #2b9a82;
+	color: #2b9af2;
 }
 
 #navlist li a.c{
