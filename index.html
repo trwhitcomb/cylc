@@ -58,6 +58,7 @@
         multi-model operational forecasting systems since 2010, and was
         released under the GNU General Public License in 2011.</span></p>
 
+    <a id="overview"></a>
     <h3><span>Overview</span></h3>
 
     <p class="p1"><span>A metascheduler controls the order in which
@@ -216,8 +217,7 @@
 				  <li> <a href="screenshots/QuickStartB-graph18.png">The same suite graphed</a></li>
 				  <li> <a href="screenshots/control-trad.png">Tree view suite control GUI</a></li>
 				  <li> <a href="screenshots/control-graph.png">Graph view suite control GUI</a></li>
-				  <li> <a href="screenshots/ecox-1.png">A large operational suite, view 1</a></li>
-				  <li> <a href="screenshots/ecox-2.png">A large operational suite, view 2</a></li>
+				  <li> <a href="screenshots/ecox-1.png">A large operational suite</a></li>
 				  <li> <a href="screenshots/QuickStartA-ControlRunning.png">Running multiple cycles at once</a></li>
 				  <li> <a href="screenshots/suite-log.png">A suite log, via gcylc</a></li>
 				  <li> <a href="screenshots/validate-eg.png">Suite validation results, via gcylc</a></li>
@@ -296,31 +296,47 @@
             <h3><span>Development</span></h3>
 
             <p class="p1"><span>
-                Cylc uses the powerful Git distributed source code management system. 
-              The master repository is <a href="http://github.com/hjoliver/cylc">here</a> on GitHub.
+                Cylc uses the powerful <a href="git-scm.com">Git</a>
+                distributed source code management system.  The 
+                <a href="http://github.com/hjoliver/cylc">cylc master repository</a> 
+                is hosted on <a href="http://github.com">GitHub</a>.
             </span></p>
 
             <p class="p2"><span>
-                At this stage the collaborative development model is envisioned as follows.
-                Collaborators should:
-                <ul>
-                    <li> Clone the cylc master repository on GitHub.</li>
-                    <li> Develop new features in a new branch of their own repository.</li>
-                    <li> Finally, merge in any new changes from the master repository, and,</li>
-                    <li> Send a pull request to the master repository maintainer.</li>
-                </ul>
-                The master repository maintainer can then pull the new branch, review the changes,
-                and merge them into the main branch for future releases.
+                To develop a new feature (or fix a bug, etc.) collaborators should:
+                <ol>
+                    <li> Fork (clone) the cylc master repository on GitHub</li>
+                    <li> Clone a local copy of their cylc fork on GitHub</li>
+                    <li> Develop and test their changes in a new branch of their repository</li>
+                    <li> Merge in any new master repository changes and resolve any conflicts</li>
+                    <li> Push their changes back to their cylc fork on GitHub</li>
+                    <li> Send a pull request to Hilary Oliver</li>
+                </ol>
+                Hilary Oliver (the master repository maintainer) can then:
+                <ol>
+                    <li> fetch the new branch to the master repository</li>
+                    <li> review the changes</li>
+                    <li> merge them into the cylc trunk for future releases</li>
+                </ol>
+                
             </span></p>
 
             <p class="p3"><span>
-                This model applies specifically to the top tier of cylc
-                developers who need to interact directly with the
-                master cylc repository. There can be lower tiers of
-                development, within a particular organisation
-                say, that work similarly below the top collaborator
-                repositories.
+                This model applies specifically to a top tier of
+                official collaborators. There can be lower tiers of
+                development, e.g. within a particular organisation, that
+                only interact directly with their associated
+                cylc collaborator repository (although there is nothing
+                to stop anybody from easily collaborating with anybody
+                else, given network access and permissions, with git).
             </span></p>
+
+            <!--
+            <p class="p3"><span>
+                Finally, note that it is not strictly necessary for
+                collaborators to fork cylc on github, it just makes life easier.
+            </span></p>
+            -->
 
     <p class="p3"><span><a href="#container">(top)</a></span></p>
 
@@ -349,7 +365,7 @@
 			<div id="lselect">
 				<h3 class="select"><span>Page Navigation:</span></h3>
 				<ul>
-				  <li> <a href="#preamble">Overview</a> </li>
+				  <li> <a href="#overview">Overview</a> </li>
 				  <li> <a href="#features">Features</a> </li>
 				  <li> <a href="#screenshots">Screen Shots</a> </li>
 				  <li> <a href="#documentation">Documentation</a> </li>
