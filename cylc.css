@@ -12,8 +12,6 @@ body{
 
 a{
 		color: #f64;
-	/*color: #2b7ac2;*/
-	/* color: #ff3a02;*/
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -43,7 +41,7 @@ h3 span{
 }
 
 h4 {
-	color: #4b4b4b;
+	color: #4baaa2;
 	font-size:100%;
 	background:none;
 	margin-top: 10px;
@@ -126,21 +124,6 @@ p{
 	background: #2b9a82 url("images/banner2.gif") no-repeat bottom left ;
 }
 
-#banner a{
-	color: #fff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-#banner a:visited{
-	color: #CCCCCC;
-	text-decoration: none;
-}
-
-#banner a:hover{
-	text-decoration: none;
-}
-
 #topbox{
 		position:relative;
 }
@@ -179,7 +162,7 @@ p{
 #navlist {
   position:absolute;
 	left: 20px;
-	top: 20px;
+	top: 30px;
 	width: 178px;
 	padding: 8px 2px 0 0;
 	font-size: 80%;
@@ -220,7 +203,12 @@ p{
 }
 
 #navlist li a{
-	color: #2b9af2;
+	color: #2b9ac2;
+}
+
+p.nav a{
+	color: #2b9ac2;
+	
 }
 
 #navlist li a.c{

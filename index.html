@@ -54,7 +54,8 @@
     <a id="overview"></a>
     <h3><span>Overview</span></h3>
 
-    <p class="p1"><span>A metascheduler is a <em>control system</em>
+    <p class="p1"><span>A metascheduler, in this context, is a
+        <em>control system</em>
         that determines when members of a suite of interdependent tasks
         are ready to execute (usually by submission to a batch queue
         scheduler). Cylc does this for suites of <em>cycling</em> tasks.
@@ -62,21 +63,22 @@
         
     <p class="p2"><span>
         Dependence between tasks in different forecast cycles can
-        usually be ignored in real time operation, but this severely
+        be ignored in real time operation, but this severely
         restricts scheduling after delays when it should be
         possible to run tasks from multiple cycles at once. Even  
         <a href="intro/dep-one-cycle.png">simple suites</a> appear
         <a href="intro/dep-multi-cycle.png">complicated</a>
-        when intercycle dependence is taken into account (in the
-        illustrations a, b, and c represent warm-cycled forecast
-        models). Cylc solves this problem, and as a result it can
+        when intercycle dependence is taken into account (a, b, and c
+        represent warm-cycled forecast models). Cylc's self-organising
+        scheduling algorithm solves this problem, and as a result it can
         optimally interleave tasks from multiple forecast cycles
         whenever the opportunity arises, potentially achieving 
         <a href="intro/timeline-three.png">very fast catch up from delays</a> 
-        (cylc is on top) even in resource limited operations with little
-        down time between cycles. The same goes for processing
-        historical data, or running parallel test suites that start
-        behind the main operation.
+        (cylc on top) even in resource limited operations with little
+        down time between cycles. The same goes for
+        <a href="intro/timeline-two.png">processing historical data</a>
+        (cylc on top) or running parallel test suites that start behind
+        the main operation.
     </span></p>
 
     <p class="p3"><span>
@@ -97,7 +99,7 @@
 <a href="screenshots/QuickStartB-graph18.png">dependency graph</a>.
     </span></p>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
     </div>  <!--preamble-->
  
@@ -139,7 +141,7 @@
         multi-model operational forecasting systems since 2010, and was
         released under the GNU General Public License in 2011.</span></p>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
         </div> <!--provenance-->
 
@@ -165,7 +167,8 @@
                         suite control.</li>
 
 						<li> Graphical interfaces covering the same, including 
-						a graph-based suite control interface. See screen shots.</li>
+                        a graph-based suite control interface. See 
+                        <a href="#screenshots">screen shots</a>.</li>
 
                         <li> Cryptographic suite security: users cannot 
                         intervene in the operation of suites owned by others.</li>
@@ -235,7 +238,7 @@
                         <li> Initiate and populate the GitHub cylc repository issue tracker.</li>
 				</ul>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--features-->
 
@@ -255,7 +258,7 @@
 
 				</ul>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--screenshots-->
 
@@ -271,7 +274,7 @@
 	
             </span></p>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--documentation-->
 
@@ -305,7 +308,7 @@
 								<code>doc</code> sub-directory.
             </span></p>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--getting-->
 
@@ -319,7 +322,7 @@
                 and feel free to email Hilary Oliver at
                 <b>h.oliver@niwa.co.nz</b> with any questions.</span></p>
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--support-->
 
@@ -369,7 +372,7 @@
             </span></p>
             -->
 
-    <p class="p3"><span><a href="#">(back to top)</a></span></p>
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--development-->
 
@@ -381,7 +384,7 @@
                 modified versions of which have been incorporated into
                 cylc.</span></p>
 
-            <p class="p3"><span><a href="#">(back to top)</a></span></p>
+            <p class="nav"><span><a href="#">(back to top)</a></span></p>
 				</div> <!--acknowledgements-->
 
 
