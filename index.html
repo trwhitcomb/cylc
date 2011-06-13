@@ -62,8 +62,8 @@
     <h3><span>Overview</span></h3>
 
     <p class="p1"><span>A metascheduler controls the order in which
-        members of a suite of inter-dependent tasks are executed
-        (usually by submission to a batch queue scheduler) in order to
+        members of a suite of inter-dependent tasks are executed,
+        usually by submission to a batch queue scheduler, to
         avoid dependency violations. Cylc does this for suites
         of <em>cycling</em> tasks.
         </scan></p>
@@ -80,9 +80,11 @@
     </scan></p>
 
     <p class="p3"><span>
-        Cylc solves this problem; it optimally interleaves tasks from
-        multiple forecast cycles whenever the opportunity arises,
-        potentially achieving 
+        Cylc's self-organising scheduling algorithm treats <em>all</em>
+        dependence equally and does not use global cycling mechanisms
+        to advance a suite. It can optimally interleave
+        tasks from multiple forecast cycles whenever the opportunity
+        arises, potentially achieving 
         <a href="intro/timeline-three.png">very fast catch up from delays</a> 
         even in resource limited operations with little down time
         between cycles. The same occurs for processing historical data,
@@ -117,6 +119,8 @@
 		<div id="features">
 
 			<h3><span>Other Notable Features</span></h3>
+
+            <p class="p1"><span>First, see the <a href="#overview">Overview</a> above.</span></p>
 				<ul>
                         <li> Tasks can be distributed across multiple
                         hosts on a heterogeneous network, with multiple job
@@ -297,38 +301,38 @@
 
             <p class="p1"><span>
                 Cylc uses the powerful <a href="git-scm.com">Git</a>
-                distributed source code management system.  The 
+                distributed source code management system.  Git makes
+                branching and merging, forking/cloning, and pushing and
+                pulling changes between repositories very easy. The 
                 <a href="http://github.com/hjoliver/cylc">cylc master repository</a> 
                 is hosted on <a href="http://github.com">GitHub</a>.
             </span></p>
 
             <p class="p2"><span>
-                To develop a new feature (or fix a bug, etc.) collaborators should:
-                <ol>
-                    <li> Fork (clone) the cylc master repository on GitHub</li>
-                    <li> Clone a local copy of their cylc fork on GitHub</li>
-                    <li> Develop and test their changes in a new branch of their repository</li>
-                    <li> Merge in any new master repository changes and resolve any conflicts</li>
-                    <li> Push their changes back to their cylc fork on GitHub</li>
-                    <li> Send a pull request to Hilary Oliver</li>
-                </ol>
-                Hilary Oliver (the master repository maintainer) can then:
-                <ol>
-                    <li> fetch the new branch to the master repository</li>
-                    <li> review the changes</li>
-                    <li> merge them into the cylc trunk for future releases</li>
-                </ol>
-                
+                At this stage we envision using the 
+                <em>fork and pull</em> model
+            of collaborative development. Anyone can fork the cylc 
+            repository on GitHub (or just locally) and push changes to
+            their personal fork (or just work in their local clone)
+            without requiring write access to the master repository. The
+            changes must then be pulled into the
+            source repository, reviewed, and merged, by the project
+            maintainer. Thus we avoid the overhead, and potential problems, 
+            of managing permissions for multiple users and many personal
+            branches within the one repository, and without restricting
+            development (because everyone gets their own fully
+            functional cylc repository).
             </span></p>
 
             <p class="p3"><span>
-                This model applies specifically to a top tier of
-                official collaborators. There can be lower tiers of
-                development, e.g. within a particular organisation, that
-                only interact directly with their associated
-                cylc collaborator repository (although there is nothing
-                to stop anybody from easily collaborating with anybody
-                else, given network access and permissions, with git).
+                Ultimately, to reduce the burden of maintainance on the
+                master repository, we could have a top tier of official
+                forks that the project maintainer collaborates with 
+                directly, and others below, perhaps within specific cylc
+                sites, that interact with the official collaborators. 
+                (But note that if circumstances warrant, anybody can
+                easily and safely collaborate with anybody else using
+                git, given read access to their respective repositories).
             </span></p>
 
             <!--
