@@ -60,7 +60,7 @@ p{
 	background-repeat: repeat-x;
 	background-position: bottom;
 	width: 738px;
-	border: 1px solid #ccc;
+	border: 1px solid	#2b9a82;
 	border-bottom: 0;
 	/*border-top: 0;*/
 	margin: 0 auto;
@@ -141,6 +141,10 @@ p{
 	text-decoration: none;
 }
 
+#topbox{
+		position:relative;
+}
+
 #preamble{
   float:right;
 	margin-left: 220px;
@@ -149,20 +153,19 @@ p{
 }
 
 #mainpage{
+  position:relative;
+	/*top: 20px;*/
+	/*border: 1px solid black;*/
 	clear:both;
+  background: url("images/niwa-colour-small.png") 528px 20px no-repeat;
 	padding-right: 10px;
 	padding-left: 20px;
 	font-size: 90%;
 }
 
-#topbox{
-		position:relative;
-		background:yellow;
-}
-
-#features, #screenshots, #getting, #documentation, #development, #acknowledgements, #support{
-	position: relative; 
-	width: 650px;
+#provenance{
+	position:relative;
+  margin-right:200px;
 }
 
 #tape{
@@ -176,12 +179,12 @@ p{
 #navlist {
   position:absolute;
 	left: 20px;
-	top:20px;
+	top: 20px;
 	width: 178px;
-	padding: 80px 2px 0 0;
+	padding: 8px 2px 0 0;
 	font-size: 80%;
 	line-height: 140%; 
-  background: url("images/niwa-colour-small.png") 0 10px no-repeat;
+  /*background: url("images/niwa-colour-small.png") 0 10px no-repeat;*/
 }
 
 #navlist h3{
