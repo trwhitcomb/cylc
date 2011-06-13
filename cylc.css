@@ -142,26 +142,31 @@ p{
 }
 
 #preamble{
+  float:right;
 	margin-left: 220px;
 	padding-right: 10px;
 	font-size: 90%;
 }
 
 #mainpage{
-	margin-left: 220px;
+	clear:both;
 	padding-right: 10px;
+	padding-left: 20px;
 	font-size: 90%;
+}
+
+#topbox{
+		position:relative;
+		background:yellow;
 }
 
 #features, #screenshots, #getting, #documentation, #development, #acknowledgements, #support{
 	position: relative; 
-	margin-left: -180px; 
 	width: 650px;
 }
 
 #tape{
 	position: relative; 
-	left: -180px; 
 	padding: 65px 10px 30px 20px;
 	background-image: url("images/tape.gif");
 	background-repeat: no-repeat;
@@ -169,13 +174,13 @@ p{
 }
 
 #navlist {
-	position: absolute;
+  position:absolute;
 	left: 20px;
-	top: 250px;
+	top:20px;
 	width: 178px;
 	padding: 80px 2px 0 0;
 	font-size: 80%;
-	line-height: 140%;
+	line-height: 140%; 
   background: url("images/niwa-colour-small.png") 0 10px no-repeat;
 }
 
