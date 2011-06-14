@@ -151,16 +151,16 @@ p{
 
 #tape{
 	position: relative; 
-	padding: 65px 10px 30px 20px;
+	padding: 65px 10px 30px 80px;
 	background-image: url("images/tape.gif");
 	background-repeat: no-repeat;
-	background-position: 0 55px;
+	background-position: 65px 55px;
 }
 
 #navlist {
   position:absolute;
 	left: 20px;
-	top: 10px;
+	top: 20px;
 	width: 178px;
 	padding: 75px 2px 0 0;
 	font-size: 80%;
