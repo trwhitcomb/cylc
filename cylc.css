@@ -137,18 +137,16 @@ p{
 
 #mainpage{
   position:relative;
-	/*top: 20px;*/
-	/*border: 1px solid black;*/
 	clear:both;
-  background: url("images/niwa-colour-small.png") 528px 20px no-repeat;
 	padding-right: 10px;
 	padding-left: 20px;
 	font-size: 90%;
 }
 
-#provenance{
-	position:relative;
-  margin-right:200px;
+#niwalogo{
+  float:right;
+	width:200px;
+	height:49px;
 }
 
 #tape{
@@ -162,12 +160,12 @@ p{
 #navlist {
   position:absolute;
 	left: 20px;
-	top: 30px;
+	top: 10px;
 	width: 178px;
-	padding: 8px 2px 0 0;
+	padding: 75px 2px 0 0;
 	font-size: 80%;
 	line-height: 140%; 
-  /*background: url("images/niwa-colour-small.png") 0 10px no-repeat;*/
+  background: url("images/niwa-colour-small.png") top left no-repeat;
 }
 
 #navlist h3{
