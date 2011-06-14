@@ -40,6 +40,8 @@ h3 span{
 	background-color: #fff;
 }
 
+#h3
+
 h4 {
 	color: #4baaa2;
 	font-size:100%;
@@ -218,6 +220,13 @@ code {
 }
 
 #lcode{
-	/*background: transparent url("images/izqda.gif") bottom no-repeat;*/
 	padding-bottom: 20px;
+}
+
+#footnotes{
+		font-size: 80%;
+}
+
+#footnotes h3{
+		background: none;
 }
