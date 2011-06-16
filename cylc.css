@@ -11,13 +11,14 @@ body{
 }
 
 a{
-		color: #f64;
+  /*color: #f64;*/
+  color: #33f; 
 	font-weight: bold;
 	text-decoration: none;
 }
 a:visited{
-	color: #d85;
-	/* color: #cc5a42; */
+	/*color: #d85;*/
+		color: #008;
 	text-decoration: none;
 }
 a:hover{
