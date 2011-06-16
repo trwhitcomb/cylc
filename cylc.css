@@ -12,13 +12,13 @@ body{
 
 a{
   /*color: #f64;*/
-  color: #26a; 
+	color: #048;
 	font-weight: bold;
 	text-decoration: none;
 }
 a:visited{
 	/*color: #d85;*/
-		color: #048;
+  color: #26a; 
 	text-decoration: none;
 }
 a:hover{
