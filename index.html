@@ -116,6 +116,7 @@
             <li> <a href="#overview">Overview</a> </li>
             <li> <a href="#features">Features</a> </li>
             <li> <a href="#screenshots">Screen Shots</a> </li>
+            <li> <a href="#performance">Performance</a> </li>
             <li> <a href="#documentation">Documentation</a> </li>
             <li> <a href="#getting">Download</a> </li>
             <li> <a href="#development">Development</a> </li>
@@ -139,6 +140,10 @@
 
             <p class="p1"><span>First, see the <a href="#overview">Overview</a> above.</span></p>
 				<ul>
+                        <li> Cylc can handle many 
+                        hundreds of tasks in a single suite (see 
+                        <a href="#performance">performance)</a>.</li>
+
                         <li> Tasks can be distributed across multiple
                         hosts on a heterogeneous network, with multiple job
                         submission methods.</li>
@@ -230,7 +235,7 @@
 
 </div> <!--features-->
 
-			<div id="screenshots">
+<div id="screenshots">
 				<h3 class="foo"><span>Screen Shots</span></h3>
 				<ul>
 				  <li> <a href="screenshots/commandhelp.png">The command line interface</a></li>
@@ -252,6 +257,21 @@
 
 </div> <!--screenshots-->
 
+<div id="performance">
+				<h3 class="foo"><span>Performance</span></h3>
+
+                <p class="p2">As of version 3.2.0 cylc can easily manage
+                1000 tasks in single suite. Beyond several hundred tasks
+                the suite control GUIs may struggle - they have not yet
+                been optimized for huge suites; for now you can run very
+                large suites using cylc command line control and
+                monitoring tools.</p> 
+
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
+
+</div> <!--performance-->
+
+
         <div id="documentation">
             <h3><span>Documentation</span></h3>
 
@@ -260,7 +280,7 @@
                 the Cylc User Guide - which can be found in the
                 <code>doc</code> sub-directory of a cylc installation 
                 or downloaded from GitHub: 
-                <a href="https://github.com/downloads/hjoliver/cylc/CylcUserGuide-3.1.0.pdf">CylcUserGuide-3.1.0.pdf</a>.
+                <a href="https://github.com/downloads/hjoliver/cylc/CylcUserGuide-3.2.0.pdf">CylcUserGuide-3.2.0.pdf</a>.
 	
             </span></p>
 
@@ -316,7 +336,7 @@ install them):
 
 <p class="p1"><span>
     You can download the latest release tarball from GitHub:
-    <a href="https://github.com/downloads/hjoliver/cylc/cylc-3.1.0.tgz">cylc-3.1.0.tgz</a>.
+    <a href="https://github.com/downloads/hjoliver/cylc/cylc-3.2.0.tgz">cylc-3.2.0.tgz</a>.
 </span></p>
 
 <p class="p1"><span>
