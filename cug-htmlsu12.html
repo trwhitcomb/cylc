@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Starting Your Lockserver Daemon</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 680--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu13.html" >next</a>] [<a 
+href="cug-htmlsu11.html" >prev</a>] [<a 
+href="cug-htmlsu11.html#tailcug-htmlsu11.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu12.html">tail</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu12.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
+ id="x24-190005.2"></a>Starting Your Lockserver Daemon</h4>
+<!--l. 684--><p class="noindent" >Each cylc user should run a lockserver to prevent accidental invocation of multiple instances of the same suite or
+task at the same time. The suite and task locks brokered by the lockserver are analogous to traditional lock files, but
+they work across a network, even for distributed suites containing tasks that start executing on one host and finish
+on another.
+</p><!--l. 691--><p class="indent" >   The lockserver daemon can be started at any time and left running. </p><!--l. 692-->
+   <div class="lstlisting" id="listing-10"><span class="label"><a 
+ id="x24-19001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">lockserver</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">start</span>
+   
+   </div>
+<!--l. 696--><p class="indent" >   Check that it is running, </p><!--l. 697-->
+   <div class="lstlisting" id="listing-11"><span class="label"><a 
+ id="x24-19002r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">lockserver</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">status</span>
+   
+   </div>
+<!--l. 701--><p class="indent" >   For detailed usage information, </p><!--l. 702-->
+   <div class="lstlisting" id="listing-12"><span class="label"><a 
+ id="x24-19003r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">lockserver</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">help</span>
+   
+   </div>
+<!--l. 706--><p class="indent" >   There is a command line client interface, <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">lockclient</span></span>, for interrogating the lockserver
+and managing locks manually (e.g.&#x00A0;releasing locks if a suite was killed before it could clean up after
+itself).
+</p><!--l. 712--><p class="indent" >   You can also choose not to use the lockserver for a particular suite, by setting the following switch in its suite.rc
+(suite definition) file, </p><!--l. 714-->
+   <div class="lstlisting" id="listing-13"><span class="label"><a 
+ id="x24-19004r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-19005r2"></a></span><span 
+class="pcrr7t-">use</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">lockserver</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">False</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">not</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">recommended</span><span 
+class="pcrro7t-">!</span>
+   
+   </div>
+                                                                                         
+
+                                                                                         
+   <!--l. 719--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu13.html" >next</a>] [<a 
+href="cug-htmlsu11.html" >prev</a>] [<a 
+href="cug-htmlsu11.html#tailcug-htmlsu11.html" >prev-tail</a>] [<a 
+href="cug-htmlsu12.html" >front</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu12.html" >up</a>] </p></div>
+<!--l. 719--><p class="indent" >   <a 
+ id="tailcug-htmlsu12.html"></a> </p> 
+</body></html> 

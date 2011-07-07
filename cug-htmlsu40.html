@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Whither Task stdout And stderr?</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 3033--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu41.html" >next</a>] [<a 
+href="cug-htmlsu39.html" >prev</a>] [<a 
+href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu40.html">tail</a>] [<a 
+href="cug-htmlse9.html#cug-htmlsu40.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">9.3   </span> <a 
+ id="x63-960009.3"></a>Whither Task stdout And stderr?</h4>
+<!--l. 3036--><p class="noindent" >When a task is ready to run cylc generates task-specific stdout and stderr filenames containing the task
+name, cycle time, and a random component so that rerunning the task won&#8217;t overwrite the old output,
+e.g.:
+</p>
+   <!--l. 3041-->
+   <div class="lstlisting" id="listing-74"><span class="label"><a 
+ id="x63-96001r1"></a></span><span 
+class="pcrr7t-">ColdB</span><span 
+class="pcrr7t-">%2011101300-</span><span 
+class="pcrr7t-">N3pBYv</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">out</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x63-96002r2"></a></span><span 
+class="pcrr7t-">ColdB</span><span 
+class="pcrr7t-">%2011101300-</span><span 
+class="pcrr7t-">N3pBYv</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">err</span>
+   
+   </div>
+<!--l. 3046--><p class="indent" >   You can set the location for these task output logs in the suite.rc file; the default is, </p><!--l. 3048-->
+   <div class="lstlisting" id="listing-75"><span class="label"><a 
+ id="x63-96003r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x63-96004r2"></a></span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submission</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CylcLogs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_NAME</span>
+   
+   </div>
+<!--l. 3053--><p class="indent" >   How the stdout and stderr streams are directed into these files depends on the job submission method. The
+<span class="lstinline"><span 
+class="pcrr7t-">background</span></span> method just uses appropriate output redirection on the command line. The <span class="lstinline"><span 
+class="pcrr7t-">loadleveler</span></span> method
+writes appropriate directives to the job script that is submitted to loadleveler.
+</p><!--l. 3059--><p class="indent" >   Cylc obviously has no control over the stdout and stderr output from tasks that do their own internal output
+management (e.g.&#x00A0;tasks that resubmit sub-jobs and direct the output thereof to other files). For less internally
+complex tasks, however, these job logs will capture all stdout and stderr for your tasks, and <span 
+class="cmti-10">they can be viewed</span>
+<span 
+class="cmti-10">updating in real time in the suite control GUI</span>.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 3066--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu41.html" >next</a>] [<a 
+href="cug-htmlsu39.html" >prev</a>] [<a 
+href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
+href="cug-htmlsu40.html" >front</a>] [<a 
+href="cug-htmlse9.html#cug-htmlsu40.html" >up</a>] </p></div>
+<!--l. 3066--><p class="indent" >   <a 
+ id="tailcug-htmlsu40.html"></a> </p> 
+</body></html> 

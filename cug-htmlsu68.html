@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>[cylc local environment]</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 1268--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu69.html" >next</a>] [<a 
+href="cug-htmlsu67.html" >prev</a>] [<a 
+href="cug-htmlsu67.html#tailcug-htmlsu67.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu68.html">tail</a>] [<a 
+href="cug-htmlse12.html#cug-htmlsu68.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.12   </span> <a 
+ id="x100-202000A.12"></a>[cylc local environment]</h4>
+<!--l. 1269--><p class="noindent" >Use this section to add variables to the environment in which cylc itself runs. These variables will be
+available to processes spawned directly by cylc, namely timeout and alert hook scripts. <span 
+class="cmti-10">Do not use</span>
+<span 
+class="cmti-10">this section to alter the task execution environment - use the plain [environment] sections for that -</span>
+<span 
+class="cmti-10">variables defined in this section will only be available to tasks if local direct job submission methods are</span>
+<span 
+class="cmti-10">used</span>.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.12.1   </span> <a 
+ id="x100-203000A.12.1"></a><span 
+class="cmmi-10">&#x003C;</span>MANY<span 
+class="cmmi-10">&#x003E;</span></h5>
+<!--l. 1277--><p class="noindent" >Replace MANY with each cylc local environment variable definition.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[cylc local environment]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>string
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>None
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span>any valid environment variable assignment expression. White space around the &#8216;=&#8217; is fine
+     (the <span class="lstinline"><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span></span> file is not a shell script).
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">examples: </span>for the bash shell:
+         <ul class="itemize2">
+         <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">FOO</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">baz</span></span>
+         </li>
+         <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">BAZ</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">world</span><span 
+class="pcrr7t-">")</span></span>
+         </li>
+         <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">WAZ</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">{</span><span 
+class="pcrr7t-">FOO</span><span 
+class="pcrr7t-">%.</span><span 
+class="pcrr7t-">jpg</span><span 
+class="pcrr7t-">}.</span><span 
+class="pcrr7t-">png</span></span></li></ul>
+     </li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 1293--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu69.html" >next</a>] [<a 
+href="cug-htmlsu67.html" >prev</a>] [<a 
+href="cug-htmlsu67.html#tailcug-htmlsu67.html" >prev-tail</a>] [<a 
+href="cug-htmlsu68.html" >front</a>] [<a 
+href="cug-htmlse12.html#cug-htmlsu68.html" >up</a>] </p></div>
+<!--l. 1293--><p class="indent" >   <a 
+ id="tailcug-htmlsu68.html"></a>  </p> 
+</body></html> 

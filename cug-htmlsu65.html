@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>[simulation mode]</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 1115--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu66.html" >next</a>] [<a 
+href="cug-htmlsu64.html" >prev</a>] [<a 
+href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu65.html">tail</a>] [<a 
+href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.9   </span> <a 
+ id="x97-185000A.9"></a>[simulation mode]</h4>
+<!--l. 1116--><p class="noindent" >Configuration items specific to running suites in simulation mode.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.1   </span> <a 
+ id="x97-186000A.9.1"></a>clock offset from initial cycle time in hours </h5>
+<!--l. 1118--><p class="noindent" >Specify a clock offset of 0 to simulate real time operation, greater than zero to simulate catching up from a delay
+and transitioning to real time operation.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>24
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">initial</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hours</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">6</span></span></li></ul>
+<!--l. 1129--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.2   </span> <a 
+ id="x97-187000A.9.2"></a>clock rate in seconds per simulation hour </h5>
+<!--l. 1130--><p class="noindent" >This determines the speed at which the simulation mode clock runs. A value of 10, for example, means it will take
+10 simulation seconds to simulate one hour of real time operation.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">per</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">simulation</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hour</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">20</span><span 
+class="pcrr7t-">&#x00A0;</span></span></li></ul>
+<!--l. 1142--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.3   </span> <a 
+ id="x97-188000A.9.3"></a>task run time in seconds </h5>
+<!--l. 1143--><p class="noindent" >Set the approximate number of <span 
+class="cmbx-10">real </span>seconds that a dummy task takes to execute.  </p>
+                                                                                         
+
+                                                                                         
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">20</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 1155--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu66.html" >next</a>] [<a 
+href="cug-htmlsu64.html" >prev</a>] [<a 
+href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
+href="cug-htmlsu65.html" >front</a>] [<a 
+href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
+<!--l. 1155--><p class="indent" >   <a 
+ id="tailcug-htmlsu65.html"></a>  </p> 
+</body></html> 

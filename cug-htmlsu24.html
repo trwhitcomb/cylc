@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Private Suite Databases</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 1323--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu25.html" >next</a>] [<a 
+href="cug-htmlse6.html" >prev</a>] [<a 
+href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu24.html">tail</a>] [<a 
+href="cug-htmlse6.html#cug-htmlsu24.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">6.1   </span> <a 
+ id="x39-410006.1"></a>Private Suite Databases</h4>
+<!--l. 1325--><p class="noindent" >Your private suite registration database simply maps suites, organised by GROUP and NAME, to their suite
+definition locations (see <span 
+class="cmti-10">Suite Definition</span>, Section&#x00A0;<a 
+href="cug-htmlse7.html#x42-450007">7<!--tex4ht:ref: SuiteDefinition --></a>). You can then refer to your suites concisely &#8220;by name&#8221; without
+having to specify, or even remember, where the suite definition resides. For example this command lists all the tasks
+in suite &#8216;foo&#8217; of the &#8216;oper&#8217; group. </p><!--l. 1331-->
+   <div class="lstlisting" id="listing-23"><span class="label"><a 
+ id="x39-41001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">info</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">list</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">foo</span>
+   
+   </div>
+<!--l. 1335--><p class="indent" >   By right-clicking on a suite in the private database, or using cylc commands, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x39-41003x1">start a suite control GUI to run the suite (or connect to a running suite),
+     </li>
+     <li 
+  class="enumerate" id="x39-41005x2">submit a single task to run, just as it would be submitted by its suite,
+     </li>
+     <li 
+  class="enumerate" id="x39-41007x3">view the cylc stdout and stderr streams for the suite,
+     </li>
+     <li 
+  class="enumerate" id="x39-41009x4">view the cylc log for the suite (which records all events and messages),
+     </li>
+     <li 
+  class="enumerate" id="x39-41011x5">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x39-41013x6">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x39-41015x7">edit the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x39-41017x8">plot the suite dependency graph,
+                                                                                         
+
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x39-41019x9">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x39-41021x10">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x39-41023x11">copy the suite or group,
+     </li>
+     <li 
+  class="enumerate" id="x39-41025x12">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x39-41027x13">export the suite or group to the central database,
+     </li>
+     <li 
+  class="enumerate" id="x39-41029x14">unreregister the suite or group,
+     </li>
+     <li 
+  class="enumerate" id="x39-41031x15">reregister the suite or group.</li></ol>
+<!--l. 1354--><p class="indent" >   Note that the suite title shown in gcylc is parsed from the suite.rc file at the time of initial registration; if you
+change the title (by editing the suite.rc file) use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">refresh</span></span> or gcylc View <span 
+class="cmsy-10">&#x2192; </span>Refresh to update the
+database.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1361--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu25.html" >next</a>] [<a 
+href="cug-htmlse6.html" >prev</a>] [<a 
+href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+href="cug-htmlsu24.html" >front</a>] [<a 
+href="cug-htmlse6.html#cug-htmlsu24.html" >up</a>] </p></div>
+<!--l. 1361--><p class="indent" >   <a 
+ id="tailcug-htmlsu24.html"></a> </p> 
+</body></html> 

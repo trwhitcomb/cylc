@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>The Cylc Scheduling Algorithm</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 298--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse2.html" >next</a>] [<a 
+href="cug-htmlsu3.html" >prev</a>] [<a 
+href="cug-htmlsu3.html#tailcug-htmlsu3.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu4.html">tail</a>] [<a 
+href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x7-70001.4"></a>The Cylc Scheduling Algorithm</h4>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x7-700110"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 302--><p class="noindent" >
+
+</p><!--l. 303--><p class="noindent" ><img 
+src="images/task-pool.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;10: </span><span  
+class="content"><span 
+class="cmr-9">How cylc sees a suite, in contrast to the multicycle dependency graph of Figure</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="cug-htmlsu3.html#x6-60016"><span 
+class="cmr-9">6</span><!--tex4ht:ref: fig-dep-multi --></a><span 
+class="cmr-9">. Task colors represent</span>
+<span 
+class="cmr-9">different cycle times, and the small squares and circles represent different prerequisites and outputs. A task can run</span>
+<span 
+class="cmr-9">when its prerequisites are satisfied by the outputs of other tasks in the pool.</span></span></div><!--tex4ht:label?: x7-700110 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 314--><p class="indent" >   Cylc manages a pool of proxy objects that represent real tasks in the forecasting suite. A task proxy can run the
+real task that it represents when its prerequisites are satisfied, and can receive reports of completed outputs from
+the real task as it runs. There is no global cycling mechanism to advance the suite in time; instead each individual
+task proxy has a private cycle time and spawns its own successor. Task proxies are self-contained
+- they just know their own prerequisites and outputs and are not aware of the wider suite context.
+Intercycle dependencies are not treated as special, and the task pool can be populated with tasks from
+many different cycle times. The cylc task pool is illustrated in Figure&#x00A0;<a 
+href="#x7-700110">10<!--tex4ht:ref: fig-task-pool --></a>. Now, <span 
+class="cmti-10">whenever any task</span>
+<span 
+class="cmti-10">changes state due to completion of an output, every task checks to see if its own prerequisites are now</span>
+<span 
+class="cmti-10">satisfied.</span><span class="footnote-mark"><a 
+href="cug-html8.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x7-7002f2"></a> 
+Moreover, this matching of prerequisites and outputs involves the entire task pool, regardless of individual cycle
+times, so that inter- and intra-cycle dependencies are handled with ease.
+</p><!--l. 335--><p class="indent" >   Thus without using global cycling mechanisms, and treating all dependencies equally, cylc in effect gets a pool of
+tasks to self-organise by negotiating their own dependencies so that optimal scheduling, as described in the previous
+section, emerges naturally at run time.
+</p>
+   <!--l. 349--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse2.html" >next</a>] [<a 
+href="cug-htmlsu3.html" >prev</a>] [<a 
+href="cug-htmlsu3.html#tailcug-htmlsu3.html" >prev-tail</a>] [<a 
+href="cug-htmlsu4.html" >front</a>] [<a 
+href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
+<!--l. 349--><p class="indent" >   <a 
+ id="tailcug-htmlsu4.html"></a> </p> 
+</body></html> 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Following What&#8217;s Happening In A Running Suite</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 1163--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu21.html" >next</a>] [<a 
+href="cug-htmlsu19.html" >prev</a>] [<a 
+href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu20.html">tail</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">5.10   </span> <a 
+ id="x34-330005.10"></a>Following What&#8217;s Happening In A Running Suite</h4>
+<!--l. 1165--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.1   </span> <a 
+ id="x34-340005.10.1"></a>Suite Stdout and Stderr</h5>
+<!--l. 1167--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each task is
+submitted, to the stdout stream. If you start a suite at the command line, what happens to this output
+is entirely up to you. If you start a suite via gcylc, however, the output is directed to a special file,
+<span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/.</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">out</span></span> that can be accessed again later if you reconnect to the suite with a new control
+GUI.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x34-3400127"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1176--><p class="noindent" >
+
+</p><!--l. 1177--><p class="noindent" ><img 
+src="screenshots/suite-output.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;27: </span><span  
+class="content"><span 
+class="cmr-9">Cylc suite stdout/stderr example.</span></span></div><!--tex4ht:label?: x34-3400127 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.2   </span> <a 
+ id="x34-350005.10.2"></a>Suite Logs</h5>
+<!--l. 1185--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
+the event. The top level logging directory, under which a suite-specific log is written, is configurable in the suite.rc
+file. Suite logs are (optionally) rolled over at start up and the 5 most recent back ups are automatically
+kept.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x34-3500128"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1192--><p class="noindent" >
+
+</p><!--l. 1193--><p class="noindent" ><img 
+src="screenshots/suite-log.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;28: </span><span  
+class="content"><span 
+class="cmr-9">A cylc suite log viewed via gcylc.</span></span></div><!--tex4ht:label?: x34-3500128 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1199--><p class="indent" >   Figure&#x00A0;<a 
+href="#x34-3500128">28<!--tex4ht:ref: fig-suite-log --></a> shows a suite log viewed from within gcylc. The <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">log</span></span> command also enables viewing and
+filtering of suite logs without having to remember the actual log file location.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.3   </span> <a 
+ id="x34-360005.10.3"></a>Task Stdout and Stderr Logs</h5>
+<!--l. 1205--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
+class="cmti-10">job submission log directory</span>,
+default location <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CylcLogs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">GROUP</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">NAME</span><span 
+class="pcrr7t-">/</span></span>.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1210--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu21.html" >next</a>] [<a 
+href="cug-htmlsu19.html" >prev</a>] [<a 
+href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
+href="cug-htmlsu20.html" >front</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
+<!--l. 1210--><p class="indent" >   <a 
+ id="tailcug-htmlsu20.html"></a>  </p> 
+</body></html> 

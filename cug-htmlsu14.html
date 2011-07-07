@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Importing The QuickStart Suites To Your Private Database</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 748--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu15.html" >next</a>] [<a 
+href="cug-htmlsu13.html" >prev</a>] [<a 
+href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu14.html">tail</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">5.4   </span> <a 
+ id="x26-220005.4"></a>Importing The QuickStart Suites To Your Private Database</h4>
+<!--l. 750--><p class="noindent" >You can register new suites directly in your private database using gcylc or <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">register</span></span>, or you can
+import suites from the central database.
+</p><!--l. 754--><p class="indent" >   Find the suites registered under the <span 
+class="cmti-10">admin:examples </span>group in the central database (replace &#8216;admin&#8217; with the
+name of the user account under which cylc was installed). If there are a lot of suites in the central database,
+use View <span 
+class="cmsy-10">&#x2192; </span>Filter to restrict the view (you can leave the dialog open and refilter as often as you
+like).
+</p><!--l. 760--><p class="indent" >   Now right click on the <span 
+class="cmti-10">examples </span>group and choose &#8216;Import&#8217; to copy the whole group of suites to your private
+database. A dialog box will pop up allowing you to register your copy under a different group (leave
+this as it is) and a destination for the suite definition directories in the group (choose something like
+<span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span></span>).
+</p><!--l. 767--><p class="indent" >   <span 
+class="cmti-10">Note that you can also import individual suites, and that registration groups do not need to be created explicitly,</span>
+<span 
+class="cmti-10">they are automatically created and deleted as required.</span>
+</p><!--l. 771--><p class="indent" >   Now use the Database menu to switch back to your private database, and confirm that you now have a copy of
+the example suites.
+</p><!--l. 774--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.4.1   </span> <a 
+ id="x26-230005.4.1"></a>By The Command Line</h5>
+<!--l. 776--><p class="noindent" >Here&#8217;s how to do the same thing on the command line:
+</p>
+   <!--l. 779-->
+   <div class="lstlisting" id="listing-15"><span class="label"><a 
+ id="x26-23001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">import</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23002r2"></a></span><span 
+class="pcrr7t-">Matched</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG73</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG74</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS3</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">FFHook</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">FFTask</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23011r11"></a></span><span 
+class="pcrr7t-">Locking</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/.</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">LDB</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23012r12"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">1</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23013r13"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23014r14"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG73</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Graph</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG73</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23015r15"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23016r16"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG74</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">two</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG74</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23017r17"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23018r18"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">1</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG_QS1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23019r19"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23020r20"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">2</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG_QS2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23021r21"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23022r22"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">CUG_QS3</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">3</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG_QS3</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23023r23"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23024r24"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">FFHook</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">script</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">example</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">FFHook</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23025r25"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23026r26"></a></span><span 
+class="pcrr7t-">REGISTERED</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">FFTask</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">example</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">FFTask</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23027r27"></a></span><span 
+class="pcrr7t-">Copying</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23028r28"></a></span><span 
+class="pcrr7t-">Unlocking</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/.</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">LDB</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x26-23029r29"></a></span><span 
+class="pcrr7t-">DONE</span>
+   
+   </div>
+<!--l. 810--><p class="indent" >   (suite title strings have been truncated again to reduce line length).
+</p><!--l. 813--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.4.2   </span> <a 
+ id="x26-240005.4.2"></a>Private Suite Database Actions</h5>
+<!--l. 815--><p class="noindent" >By right-clicking on a suite in your private database, or using the cylc command line, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x26-24002x1">start a suite control GUI to run the suite (or connect to a running suite),
+     </li>
+     <li 
+  class="enumerate" id="x26-24004x2">submit a single task to run, just as it would be submitted by its suite
+     </li>
+     <li 
+  class="enumerate" id="x26-24006x3">view the cylc stdout and stderr streams for the suite,
+     </li>
+     <li 
+  class="enumerate" id="x26-24008x4">view the cylc log for the suite (which records all events and messages),
+                                                                                         
+
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x26-24010x5">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x26-24012x6">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x26-24014x7">edit the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x26-24016x8">plot the suite dependency graph,
+     </li>
+     <li 
+  class="enumerate" id="x26-24018x9">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x26-24020x10">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x26-24022x11">copy the suite or group,
+     </li>
+     <li 
+  class="enumerate" id="x26-24024x12">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x26-24026x13">export the suite or group to the central database,
+     </li>
+     <li 
+  class="enumerate" id="x26-24028x14">unreregister the suite or group,
+     </li>
+     <li 
+  class="enumerate" id="x26-24030x15">reregister the suite or group.</li></ol>
+                                                                                         
+
+                                                                                         
+   <!--l. 836--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu15.html" >next</a>] [<a 
+href="cug-htmlsu13.html" >prev</a>] [<a 
+href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
+href="cug-htmlsu14.html" >front</a>] [<a 
+href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
+<!--l. 836--><p class="indent" >   <a 
+ id="tailcug-htmlsu14.html"></a>  </p> 
+</body></html> 

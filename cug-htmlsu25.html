@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>The Central Suite Database</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2011-07-07 12:29:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 1361--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu26.html" >next</a>] [<a 
+href="cug-htmlsu24.html" >prev</a>] [<a 
+href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu25.html">tail</a>] [<a 
+href="cug-htmlse6.html#cug-htmlsu25.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">6.2   </span> <a 
+ id="x40-420006.2"></a>The Central Suite Database</h4>
+<!--l. 1363--><p class="noindent" >The central suite database facilitates sharing of suites among cylc users without cluttering the public namespace
+with suites that are partially completed, broken, or not generally useful. It works similarly to a private suite
+database except that suites are organised by <span 
+class="cmti-10">owner </span>as well as group and name. Users can export suites to the central
+database to make them available to others. During export you can choose to have the suite definition copied to the
+database (the suite definition itself isn&#8217;t &#8220;stored in the database&#8221; but the new registration will refer to
+the new centrally located suite definition) or you can have to central database reference the original
+suite.
+</p><!--l. 1374--><p class="indent" >   Suites in the central database can be inspected by various means, but you can&#8217;t run them without <span 
+class="cmti-10">importing</span>
+them to your private database.
+</p><!--l. 1377--><p class="indent" >   By right-clicking on a suite in the central database, or using the cylc command line, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x40-42002x1">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x40-42004x2">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x40-42006x3">view the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x40-42008x4">plot the suite dependency graph,
+     </li>
+     <li 
+  class="enumerate" id="x40-42010x5">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x40-42012x6">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x40-42014x7">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x40-42016x8">import the suite or group to your private database,
+     </li>
+     <li 
+  class="enumerate" id="x40-42018x9">unreregister or delete the suite or group (if you own it),
+     </li>
+     <li 
+  class="enumerate" id="x40-42020x10">reregister the suite or group (if you own it).</li></ol>
+<!--l. 1392--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">6.2.1   </span> <a 
+ id="x40-430006.2.1"></a>Can Suites Be Shared Across The Network?</h5>
+<!--l. 1394--><p class="noindent" >The central suite database is not currently accessible on the network, it is local to the cylc host and accessed
+through the filesystem. Consequently it has to be world, or at least group, writeable, which is not very
+secure.
+</p><!--l. 1405--><p class="indent" >   <span 
+class="cmti-10">We intend to develop a client/server interface to the public suite database so that users can easily share suites</span>
+<span 
+class="cmti-10">across the network</span>. The required server functionality is essentially identical to that of the cylc lockserver, so this will
+not be difficult. In the meantime, &#8220;importing&#8221; a suite manually from another user on another host is simply
+                                                                                         
+
+                                                                                         
+a matter of copying the suite definition directory over and registering the new copy in your private
+database.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1413--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu26.html" >next</a>] [<a 
+href="cug-htmlsu24.html" >prev</a>] [<a 
+href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
+href="cug-htmlsu25.html" >front</a>] [<a 
+href="cug-htmlse6.html#cug-htmlsu25.html" >up</a>] </p></div>
+<!--l. 1413--><p class="indent" >   <a 
+ id="tailcug-htmlsu25.html"></a>  </p> 
+</body></html> 
