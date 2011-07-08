@@ -4,532 +4,84 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Viewing The examples:CUG_QS1 Suite Definition</title> 
+<head><title>Starting The gcylc GUI</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 836--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 860--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu16.html" >next</a>] [<a 
 href="cug-htmlsu14.html" >prev</a>] [<a 
 href="cug-htmlsu14.html#tailcug-htmlsu14.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu15.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu15.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.5   </span> <a 
- id="x27-250005.5"></a>Viewing The examples:CUG_QS1 Suite Definition</h4>
-<!--l. 838--><p class="noindent" >Right-click on the suite and choose &#8216;Edit&#8217;, or use the edit command, </p><!--l. 839-->
-   <div class="lstlisting" id="listing-16"><span class="label"><a 
- id="x27-25001r1"></a></span><span 
+   <h4 class="subsectionHead"><span class="titlemark">5.3   </span> <a 
+ id="x27-260005.3"></a>Starting The gcylc GUI</h4>
+<!--l. 862--><p class="noindent" >At the command prompt: </p><!--l. 863-->
+   <div class="lstlisting" id="listing-22"><span class="label"><a 
+ id="x27-26001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">gcylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span>
+class="pcrr7t-">&amp;</span>
    
    </div>
-<!--l. 842--><p class="indent" >   to view the suite definition (suite.rc file) in your editor.
-</p><!--l. 844--><p class="indent" >   This moves to the suite definition directory (so that you can easily open other suite files in the same edit session)
-and opens the suite.rc file in your chosen editor. You can of course do this manually, but the automated way is quick
-and convenient, you don&#8217;t have to remember suite definition directory locations, and for suite.rc files that contain
-include files you can optionally <span 
-class="cmti-10">edit the file inlined - it will be split back into its constituent include-files when you</span>
-<span 
-class="cmti-10">save the file and exit the editor</span>.
-</p><!--l. 853--><p class="indent" >   If you use the vim editor you can have nice cylc-specific syntax highlighting and section folding; see Section&#x00A0;<a 
-href="cug-htmlsu28.html#x44-500007.2.3">7.2.3<!--tex4ht:ref: SyntaxHighlighting --></a>
-for a screenshot and instructions.
-</p><!--l. 857--><p class="indent" >   You should see the following suite.rc file in your editor:
+<!--l. 866--><p class="indent" >   and use the Database menu to switch to the central database, which displays suites accessible to all users, in a
+treeview organized by owner, group, and name (see Figure&#x00A0;<a 
+href="cug-htmlse3.html#x21-2100313">13<!--tex4ht:ref: fig-cdb --></a>).
+</p><!--l. 870--><p class="noindent" >
 </p>
-   <!--l. 859--><div class="lstinputlisting">
-<a 
- id="x27-25002"></a>
-   <span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25003r1"></a></span><span 
-class="pcrr7t-">title</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Cylc</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">User</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Guide</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">1</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25004r2"></a></span><span 
-class="pcrr7t-">description</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">See</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Cylc</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">User</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Guide</span><span 
-class="pcrr7t-">)</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25005r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25006r4"></a></span><span 
-class="pcrr7t-">runahead</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">limit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">hours</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">12</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25007r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25008r6"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25009r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">startup</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25010r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">clock</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">triggered</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">(1)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25011r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25012r10"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25013r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">0,6,12,18</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25014r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25015r13"></a></span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25016r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6,18</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25017r15"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25018r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25019r17"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">optional</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25020r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">groups</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25021r19"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25022r20"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25023r21"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">unfilled</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">blue</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">shape</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">rectangle</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25024r22"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">seagreen2</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25025r23"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25026r24"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">yellow3</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">shape</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">septagon</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25027r25"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">shape</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">box</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">bold</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red3</span><span 
-class="pcrr7t-">"</span>
-   
-   </div>
-<!--l. 861--><p class="indent" >   This defines a complete, valid, runnable suite. To understand suite.rc files in detail, read <span 
-class="cmti-10">Suite Definition</span>
-(Section&#x00A0;<a 
-href="cug-htmlse7.html#x42-450007">7<!--tex4ht:ref: SuiteDefinition --></a>); but here&#8217;s how to interpret this suite.rc file means:
-</p><!--l. 866--><p class="indent" >   At 0, 6, 12, and 18 hours each day a clock-triggered task called GetData triggers 1 hour after the wall clock
-reaches its (GetData&#8217;s) nominal cycle time; then a task called Model triggers when GetData finishes; and a task
-called PostA triggers when Model is finished. Additionally, Model depends on its own previous instance
-from 6 hours earlier; and twice per day at 6 and 18 hours another task called PostB also triggers off
-Model.
-</p><!--l. 873--><p class="indent" >   All the tasks in this suite can run in parallel with their own previous instances if the opportunity arises (i.e.&#x00A0;if
-their prerequisites happen to be satisfied before the previous instance is finished). Most tasks should be capable of
-this (see Section&#x00A0;<a 
-href="cug-htmlsu47.html#x72-10500011.5">11.5<!--tex4ht:ref: LimitPID --></a>) but if necessary you can force particular tasks to run sequentially without using an explicit
-trigger on their own previous instance, e.g.: </p><!--l. 879-->
-   <div class="lstlisting" id="listing-17"><span class="label"><a 
- id="x27-25028r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25029r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x27-25030r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">sequential</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span>
-   
-   </div>
-<!--l. 885--><p class="indent" >   Finally, when the suite is first <span 
-class="cmti-10">cold started </span>from scratch it is made to wait on a special <span 
-class="cmti-10">startup </span>task called Prep.
-Startup tasks are one off tasks (non-spawning) that are only used at suite startup, and any dependence on a startup
-task in the suite graph only applies at suite startup.
-</p><!--l. 891--><p class="indent" >   The optional visualization section, fairly obviously, just defines properties used to plot the suite graph, which
-we&#8217;ll do next.
+   <h5 class="subsubsectionHead"><span class="titlemark">5.3.1   </span> <a 
+ id="x27-270005.3.1"></a>Central Suite Database Actions</h5>
+<!--l. 872--><p class="noindent" >By right-clicking on a suite in the central database, or using the cylc command line, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x27-27002x1">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x27-27004x2">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x27-27006x3">view the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x27-27008x4">plot the suite dependency graph,
+     </li>
+     <li 
+  class="enumerate" id="x27-27010x5">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x27-27012x6">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x27-27014x7">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x27-27016x8">import the suite or group to your private database,
+     </li>
+     <li 
+  class="enumerate" id="x27-27018x9">unreregister or delete the suite or group (if you own it),
+     </li>
+     <li 
+  class="enumerate" id="x27-27020x10">reregister the suite or group (if you own it).</li></ol>
+<!--l. 886--><p class="noindent" >But you can only <span 
+class="cmti-10">run </span>suites that are registered in your private database.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 894--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 889--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu16.html" >next</a>] [<a 
 href="cug-htmlsu14.html" >prev</a>] [<a 
 href="cug-htmlsu14.html#tailcug-htmlsu14.html" >prev-tail</a>] [<a 
 href="cug-htmlsu15.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu15.html" >up</a>] </p></div>
-<!--l. 894--><p class="indent" >   <a 
- id="tailcug-htmlsu15.html"></a> </p> 
+<!--l. 889--><p class="indent" >   <a 
+ id="tailcug-htmlsu15.html"></a>  </p> 
 </body></html> 

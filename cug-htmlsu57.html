@@ -4,65 +4,43 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Include Files</title> 
+<head><title>Clock-triggered Tasks Should Wait On External Data</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 32--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3628--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu58.html" >next</a>] [<a 
-href="cug-htmlse12.html" >prev</a>] [<a 
-href="cug-htmlse12.html#tailcug-htmlse12.html" >prev-tail</a>] [<a 
+href="cug-htmlsu56.html" >prev</a>] [<a 
+href="cug-htmlsu56.html#tailcug-htmlsu56.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu57.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu57.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
- id="x85-117000A.1"></a>Include Files</h4>
-<!--l. 34--><p class="noindent" >Include-files can be used to help organize the task definition sections of large suites, or to group common
-environment variable settings into one file that can be included in multiple task environment sections (instead of
-polluting the global namespace for <span 
-class="cmti-10">all </span>tasks). Include-file boundaries are arbitrary (they can cross suite.rc section
-boundaries). They can be multiply included and nested. </p><!--l. 40-->
-   <div class="lstlisting" id="listing-84"><span class="label"><a 
- id="x85-117001r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">include</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">myfile</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span>
-   
-                                                                                         
-
-                                                                                         
-   </div>
-<!--l. 43--><p class="indent" >   Include-file paths should be specified portably<span class="footnote-mark"><a 
-href="cug-html86.html#fn16x0"><sup class="textsuperscript">16</sup></a></span><a 
- id="x85-117002f16"></a> 
-relative to the suite definition directory. The <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span></span> command can optionally provide an inlined version of a
-suite.rc file that is automatically split back into its constituent include-files when you save the file and exit the
-editor.
+href="cug-htmlse11.html#cug-htmlsu57.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">11.13   </span> <a 
+ id="x84-12000011.13"></a>Clock-triggered Tasks Should Wait On External Data</h4>
+<!--l. 3630--><p class="noindent" >All tasks in a cylc suite know their own private cycle time, but most don&#8217;t care about the wall clock time - they just
+run when their prerequisites are satisfied. The exception to this is <span 
+class="cmti-10">clock-triggered </span>tasks, which wait on a wall clock
+time expressed as an offset from their own cycle time, in addition to any other prerequisites. The usual purpose of
+these tasks is to retrieve real time data from the external world, triggering at roughly the expected time of
+availability of the data. Triggering the task at the right time is up to cylc, but the task itself should go into a
+check-and-wait loop in case the data is delayed; only on successful detection or retrieval should the task report
+success and then exit (or perhaps report failure and then exit if the data has not arrived by some cutoff
+time).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 50--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3643--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu58.html" >next</a>] [<a 
-href="cug-htmlse12.html" >prev</a>] [<a 
-href="cug-htmlse12.html#tailcug-htmlse12.html" >prev-tail</a>] [<a 
+href="cug-htmlsu56.html" >prev</a>] [<a 
+href="cug-htmlsu56.html#tailcug-htmlsu56.html" >prev-tail</a>] [<a 
 href="cug-htmlsu57.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu57.html" >up</a>] </p></div>
-<!--l. 50--><p class="indent" >   <a 
+href="cug-htmlse11.html#cug-htmlsu57.html" >up</a>] </p></div>
+<!--l. 3643--><p class="indent" >   <a 
  id="tailcug-htmlsu57.html"></a> </p> 
 </body></html> 

@@ -4,61 +4,152 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[task insertion groups]</title> 
+<head><title>[simulation mode]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1255--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1113--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu68.html" >next</a>] [<a 
 href="cug-htmlsu66.html" >prev</a>] [<a 
 href="cug-htmlsu66.html#tailcug-htmlsu66.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu67.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu67.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.11   </span> <a 
- id="x99-200000A.11"></a>[task insertion groups]</h4>
-<!--l. 1256--><p class="noindent" >Define named groups of tasks that can be inserted into a suite en mass, as if inserting a single task. May be useful
-for groups of related cold start tasks, for instance.
+   <h4 class="subsectionHead"><span class="titlemark">A.9   </span> <a 
+ id="x99-191000A.9"></a>[simulation mode]</h4>
+<!--l. 1114--><p class="noindent" >Configuration items specific to running suites in simulation mode.
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.11.1   </span> <a 
- id="x99-201000A.11.1"></a> <span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></h5>
-<!--l. 1260--><p class="noindent" >Replace MANY with each task insertion group.  </p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.1   </span> <a 
+ id="x99-192000A.9.1"></a>clock offset from initial cycle time in hours </h5>
+<!--l. 1116--><p class="noindent" >Specify a clock offset of 0 to simulate real time operation, greater than zero to simulate catching up from a delay
+and transitioning to real time operation.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[task insertion groups]
+class="cmti-10">section: </span>[simulation mode]
      </li>
      <li class="itemize"><span 
-class="cmti-10">type: </span>list of task names
+class="cmti-10">type: </span>integer
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span>None
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>24
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">NWPCold</span><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">initial</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hours</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdX</span><span 
-class="pcrr7t-">,</span><span 
+class="pcrr7t-">6</span></span></li></ul>
+<!--l. 1127--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.2   </span> <a 
+ id="x99-193000A.9.2"></a>clock rate in seconds per simulation hour </h5>
+<!--l. 1128--><p class="noindent" >This determines the speed at which the simulation mode clock runs. A value of 10, for example, means it will take
+10 simulation seconds to simulate one hour of real time operation.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdY</span></span></li></ul>
+class="pcrr7t-">rate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">per</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">simulation</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hour</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">20</span><span 
+class="pcrr7t-">&#x00A0;</span></span></li></ul>
+<!--l. 1140--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.3   </span> <a 
+ id="x99-194000A.9.3"></a>task run time in seconds </h5>
+<!--l. 1141--><p class="noindent" >Set the approximate number of <span 
+class="cmbx-10">real </span>seconds that a dummy task takes to execute.  </p>
                                                                                          
 
                                                                                          
-   <!--l. 1268--><div class="crosslinks"><p class="noindent">[<a 
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">20</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 1153--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu68.html" >next</a>] [<a 
 href="cug-htmlsu66.html" >prev</a>] [<a 
 href="cug-htmlsu66.html#tailcug-htmlsu66.html" >prev-tail</a>] [<a 
 href="cug-htmlsu67.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu67.html" >up</a>] </p></div>
-<!--l. 1268--><p class="indent" >   <a 
+<!--l. 1153--><p class="indent" >   <a 
  id="tailcug-htmlsu67.html"></a>  </p> 
 </body></html> 

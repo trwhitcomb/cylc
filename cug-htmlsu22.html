@@ -4,35 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Validating A Suite</title> 
+<head><title>Following What&#8217;s Happening In A Running Suite</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1256--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1304--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu23.html" >next</a>] [<a 
 href="cug-htmlsu21.html" >prev</a>] [<a 
 href="cug-htmlsu21.html#tailcug-htmlsu21.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu22.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu22.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.12   </span> <a 
- id="x36-380005.12"></a>Validating A Suite</h4>
-<!--l. 1258--><p class="noindent" >After editing a suite always validate it to check for errors, via gcylc or the <span class="lstinline"><span 
+   <h4 class="subsectionHead"><span class="titlemark">5.10   </span> <a 
+ id="x36-390005.10"></a>Following What&#8217;s Happening In A Running Suite</h4>
+<!--l. 1306--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.1   </span> <a 
+ id="x36-400005.10.1"></a>Suite Stdout and Stderr</h5>
+<!--l. 1308--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each task is
+submitted, to the stdout stream. If you start a suite at the command line, what happens to this output
+is entirely up to you. If you start a suite via gcylc, however, the output is directed to a special file,
+<span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/.</span><span 
 class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span></span> command.
-Figure&#x00A0;<a 
-href="#x36-3800129">29<!--tex4ht:ref: fig-validate-eg --></a> shows validation of <span 
-class="cmti-10">examples:CUG73 </span>(unfortunately the suite was registered under a different name
-when the screenshot was taken). Note the warnings that the tasks will be dummied out, as discussed
-above.
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">out</span></span> that can be accessed again later if you reconnect to the suite with a new control
+GUI.
 </p>
    <hr class="figure" /><div class="figure" 
 >
@@ -40,37 +46,88 @@ above.
 
                                                                                          
 <a 
- id="x36-3800129"></a>
+ id="x36-4000127"></a>
                                                                                          
 
                                                                                          
 <div class="center" 
 >
-<!--l. 1266--><p class="noindent" >
+<!--l. 1317--><p class="noindent" >
 
-</p><!--l. 1267--><p class="noindent" ><img 
-src="screenshots/validate-eg.png" alt="PIC"  
+</p><!--l. 1318--><p class="noindent" ><img 
+src="screenshots/suite-output.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
-><span class="id">Figure&#x00A0;29: </span><span  
+><span class="id">Figure&#x00A0;27: </span><span  
 class="content"><span 
-class="cmr-9">Suite examples:CUG73 Validation.</span></span></div><!--tex4ht:label?: x36-3800129 -->
+class="cmr-9">Cylc suite stdout/stderr example.</span></span></div><!--tex4ht:label?: x36-4000127 -->
                                                                                          
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 1274--><p class="indent" >   For more information on suite validation see Section&#x00A0;<a 
-href="cug-htmlsu31.html#x51-780007.5">7.5<!--tex4ht:ref: Validation --></a>.
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.2   </span> <a 
+ id="x36-410005.10.2"></a>Suite Logs</h5>
+<!--l. 1326--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
+the event. The top level logging directory, under which a suite-specific log is written, is configurable in the suite.rc
+file. Suite logs are (optionally) rolled over at start up and the 5 most recent back ups are automatically
+kept.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x36-4100128"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1333--><p class="noindent" >
+
+</p><!--l. 1334--><p class="noindent" ><img 
+src="screenshots/suite-log.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;28: </span><span  
+class="content"><span 
+class="cmr-9">A cylc suite log viewed via gcylc.</span></span></div><!--tex4ht:label?: x36-4100128 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1340--><p class="indent" >   Figure&#x00A0;<a 
+href="#x36-4100128">28<!--tex4ht:ref: fig-suite-log --></a> shows a suite log viewed from within gcylc. The <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">log</span></span> command also enables viewing and
+filtering of suite logs without having to remember the actual log file location.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.10.3   </span> <a 
+ id="x36-420005.10.3"></a>Task Stdout and Stderr Logs</h5>
+<!--l. 1346--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
+class="cmti-10">job submission log directory</span>,
+default location <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CylcJobLogs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">GROUP</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">NAME</span><span 
+class="pcrr7t-">/</span></span>.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1278--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1351--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu23.html" >next</a>] [<a 
 href="cug-htmlsu21.html" >prev</a>] [<a 
 href="cug-htmlsu21.html#tailcug-htmlsu21.html" >prev-tail</a>] [<a 
 href="cug-htmlsu22.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu22.html" >up</a>] </p></div>
-<!--l. 1278--><p class="indent" >   <a 
- id="tailcug-htmlsu22.html"></a> </p> 
+<!--l. 1351--><p class="indent" >   <a 
+ id="tailcug-htmlsu22.html"></a>  </p> 
 </body></html> 
