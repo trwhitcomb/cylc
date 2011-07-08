@@ -4,59 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Put Task Cycle Time In All Output File Paths</title> 
+<head><title>Make Models Rerunnable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3323--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3424--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu49.html" >next</a>] [<a 
 href="cug-htmlsu47.html" >prev</a>] [<a 
 href="cug-htmlsu47.html#tailcug-htmlsu47.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu48.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu48.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.6   </span> <a 
- id="x73-10600011.6"></a>Put Task Cycle Time In All Output File Paths</h4>
-<!--l. 3326--><p class="noindent" >Having all filenames, or perhaps the names of their containing directories, stamped with the cycle time of the
-generating task greatly aids in managing suite disk usage, both for archiving and cleanup. It also enables
-the aforementioned task rerunnability recommendation by avoiding overwrite of important files from
-one cycle to the next. Cylc has powerful utilities for cycle time offset based filename templating and
-housekeeping.
-</p><!--l. 3334--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">11.6.1   </span> <a 
- id="x73-10700011.6.1"></a>Use Cylc&#8217;s Cycle Time Filename Template Utility</h5>
-<!--l. 3336--><p class="noindent" >The command line utility program <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span></span> determines filenames based on a template string
-containing YYYYMMDDHH (or variations thereof) by substituting the current cycle time, or some
-offset from it, into the template. This can be used in the suite.rc environment sections, or in task
-implementation scripts if necessary, to instantly generate cycle time appropriate filenames for any purpose in the
-suite.
-</p><!--l. 3344--><p class="indent" >   See <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">util</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span></span> for more information.
+   <h4 class="subsectionHead"><span class="titlemark">11.4   </span> <a 
+ id="x73-11000011.4"></a>Make Models Rerunnable</h4>
+<!--l. 3426--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
+next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
+files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold start). Instead,
+consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
+simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
+given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
+archive.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3346--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3438--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu49.html" >next</a>] [<a 
 href="cug-htmlsu47.html" >prev</a>] [<a 
 href="cug-htmlsu47.html#tailcug-htmlsu47.html" >prev-tail</a>] [<a 
 href="cug-htmlsu48.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu48.html" >up</a>] </p></div>
-<!--l. 3346--><p class="indent" >   <a 
- id="tailcug-htmlsu48.html"></a>  </p> 
+<!--l. 3438--><p class="indent" >   <a 
+ id="tailcug-htmlsu48.html"></a> </p> 
 </body></html> 

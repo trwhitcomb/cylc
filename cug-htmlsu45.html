@@ -4,42 +4,47 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Tasks Rerunnable</title> 
+<head><title>Make Fine-Grained Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3273--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3380--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
-href="cug-htmlsu44.html" >prev</a>] [<a 
-href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu45.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu45.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.3   </span> <a 
- id="x70-10300011.3"></a>Make Tasks Rerunnable</h4>
-<!--l. 3275--><p class="noindent" >It should be possible to rerun a task by simply resubmitting it for the same cycle time. In other words, failure at any
-point during execution of a task should not render a rerun impossible by corrupting the state of some internal-use
-file, or whatever. It&#8217;s difficult to overstate the usefulness of being able to rerun the same task multiple times, either
-outside of the suite with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>, or by retriggering it within the running suite, when debugging a
-problem.
+   <h4 class="subsectionHead"><span class="titlemark">11.1   </span> <a 
+ id="x70-10700011.1"></a>Make Fine-Grained Suites</h4>
+<!--l. 3383--><p class="noindent" >A suite can contain a small number of large, internally complex tasks; a large number of small, simple tasks; or
+anything in between. Cylc can easily handle a large number of tasks, however, so there are definite advantages to
+fine-graining:
+</p>
+     <ul class="itemize1">
+     <li class="itemize">a more modular and transparent suite.
+     </li>
+     <li class="itemize">better functional parallelism (multiple tasks running at the same time).
+     </li>
+     <li class="itemize">faster debugging and failure recovery: rerun just the tasks(s) that failed.
+     </li>
+     <li class="itemize">code reuse: similar tasks can often call the same script or command with differing task-specific input
+     parameters (consider tasks that move files around, for example).
+     </li></ul>
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 3283--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3403--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
-href="cug-htmlsu44.html" >prev</a>] [<a 
-href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="cug-htmlsu45.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu45.html" >up</a>] </p></div>
-<!--l. 3283--><p class="indent" >   <a 
+<!--l. 3403--><p class="indent" >   <a 
  id="tailcug-htmlsu45.html"></a> </p> 
 </body></html> 

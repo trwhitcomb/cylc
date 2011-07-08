@@ -4,46 +4,253 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Orderly Product Generation?</title> 
+<head><title>Make Tasks As Self-Contained As Possible</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-07 12:29:00" /> 
+<meta name="date" content="2011-07-08 19:08:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3466--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3559--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu55.html" >next</a>] [<a 
 href="cug-htmlsu53.html" >prev</a>] [<a 
 href="cug-htmlsu53.html#tailcug-htmlsu53.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu54.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu54.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.12   </span> <a 
- id="x81-11300011.12"></a>Orderly Product Generation?</h4>
-<!--l. 3469--><p class="noindent" >Correct scheduling is not equivalent to &#8220;orderly generation of products by cycle time&#8221;. Under cylc, a product
-generation task will trigger as soon as its prerequisites are satisfied (i.e.&#x00A0;when its input files are ready,
-generally) regardless of whether other tasks with the same cycle time have finished or have yet to
-run. If your product delivery or presentation system demands that all products for one cycle time
-are uploaded (or whatever) before any from the next cycle, then be aware that this may be quite
-inefficient if your suite is ever faced with catching up from a significant delay or running over historical
-data.
-</p><!--l. 3479--><p class="indent" >   If you must, however, you can introduce artificial dependencies into your suite to ensure that the final products
-never arrive out of sequence. One way of doing this would be to have a final &#8220;product upload&#8221; task that depends on
-completion of all the real product generation tasks at the same cycle time, and then declare it to be
-sequential so that successive instances cannot run out of sequence, or in parallel, even if the opportunity
-arises.
+   <h4 class="subsectionHead"><span class="titlemark">11.10   </span> <a 
+ id="x79-11700011.10"></a>Make Tasks As Self-Contained As Possible</h4>
+<!--l. 3561--><p class="noindent" >Where possible, no task should rely on the action of another task, except for the prerequisites embodied in the suite
+dependency graph that it has no choice but to depend on. If this rule is followed, your suite will be as flexible as
+possible in terms of being able to run single tasks, or subsets of the suite, whilst debugging or developing new
+features.<span class="footnote-mark"><a 
+href="cug-html80.html#fn14x0"><sup class="textsuperscript">14</sup></a></span><a 
+ id="x79-117001f14"></a> 
+For example, every task should create its own output directories if they do not already exist, instead of assuming
+their existence due to the action of some another task; then you will be able to run single tasks without having to
+manually create output directories first.
+</p>
+   <!--l. 3574-->
+   <div class="lstlisting" id="listing-91"><span class="label"><a 
+ id="x79-117002r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">manual</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">scripting</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117003r2"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">1/</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">create</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">OUTDIR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">if</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">it</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">doesn</span><span 
+class="pcrro7t-">'</span><span 
+class="pcrro7t-">t</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">already</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">exist</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117004r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">mkdir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">OUTDIR</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117005r4"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">2/</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">create</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">parent</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">directory</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">of</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">OUTFILE</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">if</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">it</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">doesn</span><span 
+class="pcrro7t-">'</span><span 
+class="pcrro7t-">t</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">exist</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117006r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">mkdir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dirname</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">OUTFILE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117007r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117008r7"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">OR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">using</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">cylc</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">checkvars</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">utility</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117009r8"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">1/</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">check</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">vars</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">are</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">defined</span><span 
+class="pcrro7t-">,</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">and</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">create</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">directories</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">if</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">necessary</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117010r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">util</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">checkvars</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTDIR1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTDIR2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117011r10"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">2/</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">check</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">vars</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">are</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">defined</span><span 
+class="pcrro7t-">,</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">and</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">create</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">parent</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">dirs</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">if</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">necessary</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x79-117012r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">util</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">checkvars</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTFILE1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTFILE2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">...</span>
+   
+   </div>
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 3487--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3588--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu55.html" >next</a>] [<a 
 href="cug-htmlsu53.html" >prev</a>] [<a 
 href="cug-htmlsu53.html#tailcug-htmlsu53.html" >prev-tail</a>] [<a 
 href="cug-htmlsu54.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu54.html" >up</a>] </p></div>
-<!--l. 3487--><p class="indent" >   <a 
+<!--l. 3588--><p class="indent" >   <a 
  id="tailcug-htmlsu54.html"></a> </p> 
 </body></html> 
