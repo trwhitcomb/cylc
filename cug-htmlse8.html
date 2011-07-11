@@ -10,45 +10,45 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-08 19:08:00" /> 
+<meta name="date" content="2011-07-11 22:34:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2659--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu34.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+   <!--l. 2754--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlsu34.html" >prev</a>] [<a 
+href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse8.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
- id="x54-870008"></a>Task Implementation</h3>
-<!--l. 2662--><p class="noindent" >This section lays out the minimal requirements on external commands, scripts, or executables invoked by cylc to
+ id="x55-910008"></a>Task Implementation</h3>
+<!--l. 2757--><p class="noindent" >This section lays out the minimal requirements on external commands, scripts, or executables invoked by cylc to
 carry out task processing.
-</p><!--l. 2665--><p class="noindent" >
+</p><!--l. 2760--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >8.1 <a 
-href="cug-htmlsu34.html#x55-880008.1">Most Tasks Require No Modification For Cylc</a></span>
+href="cug-htmlsu35.html#x56-920008.1">Most Tasks Require No Modification For Cylc</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.2 <a 
-href="cug-htmlsu35.html#x56-890008.2">Suite.rc Inlined Tasks</a></span>
+href="cug-htmlsu36.html#x57-930008.2">Suite.rc Inlined Tasks</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.3 <a 
-href="cug-htmlsu36.html#x57-900008.3">Return Non-zero Exit Status On Error</a></span>
+href="cug-htmlsu37.html#x58-940008.3">Return Non-zero Exit Status On Error</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.4 <a 
-href="cug-htmlsu37.html#x58-910008.4">Modifying Scripts For Cylc</a></span>
+href="cug-htmlsu38.html#x59-950008.4">Modifying Scripts For Cylc</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.1 <a 
-href="cug-htmlsu37.html#x58-920008.4.1" id="QQ2-58-127">Voluntary Messaging</a></span>
+href="cug-htmlsu38.html#x59-960008.4.1" id="QQ2-59-131">Voluntary Messaging</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.2 <a 
-href="cug-htmlsu37.html#x58-930008.4.2" id="QQ2-58-128">Reporting Internal Outputs Completed</a></span>
+href="cug-htmlsu38.html#x59-970008.4.2" id="QQ2-59-132">Reporting Internal Outputs Completed</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.3 <a 
-href="cug-htmlsu37.html#x58-940008.4.3" id="QQ2-58-129">Tasks With Initiating Processes That Detach And Exit Early</a></span>
+href="cug-htmlsu38.html#x59-980008.4.3" id="QQ2-59-133">Tasks With Initiating Processes That Detach And Exit Early</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.4 <a 
-href="cug-htmlsu37.html#x58-950008.4.4" id="QQ2-58-130">A Custom Task Wrapper Example</a></span>
+href="cug-htmlsu38.html#x59-990008.4.4" id="QQ2-59-134">A Custom Task Wrapper Example</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.5 <a 
-href="cug-htmlsu38.html#x60-960008.5">Running Local Tasks Under Other User Accounts</a></span>
+href="cug-htmlsu39.html#x61-1000008.5">Running Local Tasks Under Other User Accounts</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.6 <a 
-href="cug-htmlsu39.html#x61-970008.6">Running Tasks On A Remote Host</a></span>
+href="cug-htmlsu40.html#x62-1010008.6">Running Tasks On A Remote Host</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.6.1 <a 
-href="cug-htmlsu39.html#x61-980008.6.1" id="QQ2-61-137">Remote Task Log Directories</a></span>
+href="cug-htmlsu40.html#x62-1020008.6.1" id="QQ2-62-141">Remote Task Log Directories</a></span>
    </div>
 
 
@@ -58,12 +58,12 @@ href="cug-htmlsu39.html#x61-980008.6.1" id="QQ2-61-137">Remote Task Log Director
                                                                                          
 
                                                                                          
-   <!--l. 3019--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu34.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+   <!--l. 3114--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlsu34.html" >prev</a>] [<a 
+href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
 href="cug-htmlse8.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
-<!--l. 3019--><p class="indent" >   <a 
+<!--l. 3114--><p class="indent" >   <a 
  id="tailcug-htmlse8.html"></a> </p> 
 </body></html> 

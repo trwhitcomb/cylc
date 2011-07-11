@@ -4,113 +4,58 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Private Suite Databases</title> 
+<head><title>Using Example Suites To Understand Cylc</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-08 19:08:00" /> 
+<meta name="date" content="2011-07-11 22:34:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1464--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu27.html" >next</a>] [<a 
-href="cug-htmlse6.html" >prev</a>] [<a 
-href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+   <!--l. 1512--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
+href="cug-htmlsu25.html" >prev</a>] [<a 
+href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu26.html">tail</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu26.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.1   </span> <a 
- id="x41-470006.1"></a>Private Suite Databases</h4>
-<!--l. 1466--><p class="noindent" >Your private suite registration database simply maps suites, organised by GROUP and NAME, to their suite
-definition locations (see <span 
-class="cmti-10">Suite Definition</span>, Section&#x00A0;<a 
-href="cug-htmlse7.html#x44-510007">7<!--tex4ht:ref: SuiteDefinition --></a>). You can then refer to your suites concisely &#8220;by name&#8221; without
-having to specify, or even remember, where the suite definition resides. For example this command lists all the tasks
-in suite &#8216;foo&#8217; of the &#8216;oper&#8217; group. </p><!--l. 1472-->
-   <div class="lstlisting" id="listing-31"><span class="label"><a 
- id="x41-47001r1"></a></span><span 
+href="cug-htmlse5.html#cug-htmlsu26.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">5.14   </span> <a 
+ id="x40-490005.14"></a>Using Example Suites To Understand Cylc</h4>
+<!--l. 1514--><p class="noindent" >Cylc has been designed from the ground up to make testing and prototyping very easy. Simply drawing (in text) a
+dependency graph in a new suite.rc file creates a valid suite that you can run. The tasks will default to emitting an
+identifying message, sleeping for a few seconds, and then exiting; but you can then arrange for particular tasks to do
+more complex things (to fail, for example) by supplying appropriate task command lines to replace the default
+&#8220;dummy&#8221; one.
+</p><!--l. 1522--><p class="indent" >   Cylc&#8217;s example suites run quickly and are portable: you can copy and run them immediately without
+modification, even those with real task implementations that generate real (albeit zero-sized) output files. You can
+even run multiple copies of the same example suite at once (even multiple <span 
+class="cmti-10">instances </span>of the exact same suite, in fact),
+under different registrations, because the suite group and name are used in all I/O paths (without being hardwired
+anywhere).
+</p><!--l. 1530--><p class="indent" >   You can copy an example suite in an instant, using the cylc commands or GUI, make a few changes according to
+your needs, and then run it to see what happens.
+</p><!--l. 1534--><p class="indent" >   You can also run real suites in simulation mode, wherein each real task is replaced by the default dummy task
+(above) and the suite runs quickly on an accelerated clock. As far as cylc is concerned this is almost identical to real
+operation, so simulation mode can be used to test recovery strategies for certain kinds of failure, for instance. In
+simulation mode you can watch how any suite catches up and transitions from delayed to real time
+operation.
+</p><!--l. 1542--><p class="indent" >   The lockserver will let you run multiple instances of any suite, under different registrations, if the suite declares
+<span 
+class="cmti-10">allow multiple simultaneous instances = True </span>in its suite.rc file. This should only be used if <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">info</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">list</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">oper</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">foo</span>
-   
-   </div>
-<!--l. 1476--><p class="indent" >   By right-clicking on a suite in the private database, or using cylc commands, you can:
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x41-47003x1">start a suite control GUI to run the suite (or connect to a running suite),
-     </li>
-     <li 
-  class="enumerate" id="x41-47005x2">submit a single task to run, just as it would be submitted by its suite,
-     </li>
-     <li 
-  class="enumerate" id="x41-47007x3">view the cylc stdout and stderr streams for the suite,
-     </li>
-     <li 
-  class="enumerate" id="x41-47009x4">view the cylc log for the suite (which records all events and messages),
-     </li>
-     <li 
-  class="enumerate" id="x41-47011x5">retrieve the suite description,
-     </li>
-     <li 
-  class="enumerate" id="x41-47013x6">list tasks in the suite,
-     </li>
-     <li 
-  class="enumerate" id="x41-47015x7">edit the suite definition in your editor,
-     </li>
-     <li 
-  class="enumerate" id="x41-47017x8">plot the suite dependency graph,
-                                                                                         
-
-                                                                                         
-     </li>
-     <li 
-  class="enumerate" id="x41-47019x9">search the suite definition and bin scripts,
-     </li>
-     <li 
-  class="enumerate" id="x41-47021x10">validate the suite definition,
-     </li>
-     <li 
-  class="enumerate" id="x41-47023x11">copy the suite or group,
-     </li>
-     <li 
-  class="enumerate" id="x41-47025x12">compare (difference) the suite with another suite,
-     </li>
-     <li 
-  class="enumerate" id="x41-47027x13">export the suite or group to the central database,
-     </li>
-     <li 
-  class="enumerate" id="x41-47029x14">unreregister the suite or group,
-     </li>
-     <li 
-  class="enumerate" id="x41-47031x15">reregister the suite or group.</li></ol>
-<!--l. 1495--><p class="indent" >   Note that the suite title shown in gcylc is parsed from the suite.rc file at the time of initial registration; if you
-change the title (by editing the suite.rc file) use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">refresh</span></span> or gcylc View <span 
-class="cmsy-10">&#x2192; </span>Refresh to update the
-database.
-                                                                                         
-
-                                                                                         
+class="pcrr7t-">CYLC_SUITE_GROUP</span></span>
+and <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_NAME</span></span> are used in all I/O paths so that the different suite instances will not interfere with each
+other.
 </p>
-   <!--l. 1502--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu27.html" >next</a>] [<a 
-href="cug-htmlse6.html" >prev</a>] [<a 
-href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+   <!--l. 1550--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
+href="cug-htmlsu25.html" >prev</a>] [<a 
+href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
 href="cug-htmlsu26.html" >front</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu26.html" >up</a>] </p></div>
-<!--l. 1502--><p class="indent" >   <a 
+href="cug-htmlse5.html#cug-htmlsu26.html" >up</a>] </p></div>
+<!--l. 1550--><p class="indent" >   <a 
  id="tailcug-htmlsu26.html"></a> </p> 
 </body></html> 

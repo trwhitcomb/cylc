@@ -4,46 +4,48 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Orderly Product Generation?</title> 
+<head><title>Make Suites As Self-Contained As Possible</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-08 19:08:00" /> 
+<meta name="date" content="2011-07-11 22:34:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3607--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3683--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu57.html" >next</a>] [<a 
 href="cug-htmlsu55.html" >prev</a>] [<a 
 href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu56.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu56.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.12   </span> <a 
- id="x83-11900011.12"></a>Orderly Product Generation?</h4>
-<!--l. 3610--><p class="noindent" >Correct scheduling is not equivalent to &#8220;orderly generation of products by cycle time&#8221;. Under cylc, a product
-generation task will trigger as soon as its prerequisites are satisfied (i.e.&#x00A0;when its input files are ready,
-generally) regardless of whether other tasks with the same cycle time have finished or have yet to
-run. If your product delivery or presentation system demands that all products for one cycle time
-are uploaded (or whatever) before any from the next cycle, then be aware that this may be quite
-inefficient if your suite is ever faced with catching up from a significant delay or running over historical
-data.
-</p><!--l. 3620--><p class="indent" >   If you must, however, you can introduce artificial dependencies into your suite to ensure that the final products
-never arrive out of sequence. One way of doing this would be to have a final &#8220;product upload&#8221; task that depends on
-completion of all the real product generation tasks at the same cycle time, and then declare it to be
-sequential so that successive instances cannot run out of sequence, or in parallel, even if the opportunity
-arises.
+   <h4 class="subsectionHead"><span class="titlemark">11.11   </span> <a 
+ id="x82-12200011.11"></a>Make Suites As Self-Contained As Possible</h4>
+<!--l. 3685--><p class="noindent" >The only compulsory content of a cylc suite definition directory is the suite.rc file (and you&#8217;ll almost certainly
+have a suite <span class="lstinline"><span 
+class="pcrr7t-">bin</span></span> sub-directory too). However, you can store whatever you like in a suite definition
+directory;<span class="footnote-mark"><a 
+href="cug-html83.html#fn15x0"><sup class="textsuperscript">15</sup></a></span><a 
+ id="x82-122001f15"></a> 
+other files there will be ignored by cylc but suite tasks can access them via the <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DIR</span></span> variable that
+cylc automatically exports into the task execution environment. Disk space is cheap - if all programs, ancillary files,
+control files (etc.) required by the suite are stored in the suite definition directory instead of having the suite
+reference external build directories (etc.), you can turn the directory into a revision control repository and be
+virtually assured of the ability to exactly reproduce earlier versions as required, regardless of suite
+complexity.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3628--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3702--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu57.html" >next</a>] [<a 
 href="cug-htmlsu55.html" >prev</a>] [<a 
 href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
 href="cug-htmlsu56.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu56.html" >up</a>] </p></div>
-<!--l. 3628--><p class="indent" >   <a 
+<!--l. 3702--><p class="indent" >   <a 
  id="tailcug-htmlsu56.html"></a> </p> 
 </body></html> 

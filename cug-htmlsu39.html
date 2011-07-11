@@ -4,234 +4,68 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Running Tasks On A Remote Host</title> 
+<head><title>Running Local Tasks Under Other User Accounts</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-08 19:08:00" /> 
+<meta name="date" content="2011-07-11 22:34:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2940--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse9.html" >next</a>] [<a 
+   <!--l. 3012--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlsu38.html" >prev</a>] [<a 
 href="cug-htmlsu38.html#tailcug-htmlsu38.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu39.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu39.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">8.6   </span> <a 
- id="x61-970008.6"></a>Running Tasks On A Remote Host</h4>
-<!--l. 2943--><p class="noindent" ><span 
-class="cmti-10">You should not need this functionality if you have a cross-platform resource manager, such as loadleveler, that allows</span>
-<span 
-class="cmti-10">you to submit a job locally to run on the remote host</span>.
-</p><!--l. 2947--><p class="indent" >   If a task declares a remote host and owner in its suite.rc task section, cylc will copy the task job script to the
-remote host by <span class="lstinline"><span 
-class="pcrr7t-">scp</span></span>, and then run it on the remote host (using the right job submission method for the task) by
-<span class="lstinline"><span 
-class="pcrr7t-">ssh</span></span>.
-</p><!--l. 2952--><p class="indent" >   <span 
-class="cmti-10">Remote host, task owner, and directories can be declared globally and/or by task. Use the global settings if all or</span>
-<span 
-class="cmti-10">most of your tasks need to run on the same remote host</span>.
-</p>
-   <!--l. 2956-->
-   <div class="lstlisting" id="listing-78"><span class="label"><a 
- id="x61-97001r1"></a></span><span 
+   <h4 class="subsectionHead"><span class="titlemark">8.5   </span> <a 
+ id="x61-1000008.5"></a>Running Local Tasks Under Other User Accounts</h4>
+<!--l. 3014--><p class="noindent" >If a task declares an owner other than the suite owner, and does not declare a remote host: </p><!--l. 3016-->
+   <div class="lstlisting" id="listing-79"><span class="label"><a 
+ id="x61-100001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97003r3"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">GLOBAL</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">remote</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">host</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">settings</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97004r4"></a></span><span 
-class="pcrr7t-">owner</span><span 
+ id="x61-100002r2"></a></span><span 
+class="pcrr7t-">owned</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">task</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">alice</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97005r5"></a></span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">host</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">niwa</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">co</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">nz</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97006r6"></a></span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">installation</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97007r7"></a></span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">definition</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97008r8"></a></span><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
+class="pcrr7t-">execution</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">method</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">loadleveler</span><span 
+class="pcrr7t-">sudo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">or</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ssh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97009r9"></a></span><span 
+ id="x61-100003r3"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">tasks</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97010r10"></a></span><span 
+ id="x61-100004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">[[</span><span 
-class="pcrr7t-">TaskA</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97011r11"></a></span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">(</span><span 
-class="pcrro7t-">no</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">task</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">specific</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">remote</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">host</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">settings</span><span 
-class="pcrro7t-">:</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">this</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">task</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">runs</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">on</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">foo</span><span 
-class="pcrro7t-">)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97012r12"></a></span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97013r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">TaskB</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97014r14"></a></span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">TASK</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">remote</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">host</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">settings</span><span 
-class="pcrro7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97015r15"></a></span><span 
+ id="x61-100005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -246,109 +80,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bob</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97016r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">host</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">niwa</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">co</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">nz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">but</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">this</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">one</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">runs</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">on</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97017r17"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">installation</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97018r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">definition</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97019r19"></a></span><span 
+ id="x61-100006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -365,58 +97,34 @@ class="pcrr7t-">method</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at_now</span>
+class="pcrr7t-">loadleveler</span>
    
    </div>
-<!--l. 2978--><p class="indent" >   Specifying the remote cylc directory gives remote tasks access to cylc commands; and the remote suite directory
-gives them access to suite files via <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_DIR</span></span>, and to the suite bin directory via <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">PATH</span></span> (automatically
-configured by the cylc environment script).
-</p>
-     <ul class="itemize1">
-     <li class="itemize">passwordless ssh must be configured between the suite owner on the suite host and the task owner on
-     the remote host.
-     </li>
-     <li class="itemize">cylc (and Pyro) must be installed on the remote host, so that the remote task can communicate with
-     its parent suite.
-     </li>
-     <li class="itemize">the suite definition directory must be installed on the remote host, if the task needs access to scripts
-     in the suite bin directory or to any other files stored there.</li></ul>
-<!--l. 2994--><p class="indent" >   <span 
-class="cmti-10">Note that you can easily run the cylc example suites on a remote host by simply setting the global remote hosting</span>
+<!--l. 3024--><p class="indent" >   cylc will attempt to execute the task, by the configured <span 
+class="cmti-10">job submission method </span>(e.g.&#x00A0;loadleveler), as the specified
+owner, using the configured <span 
+class="cmti-10">owned task execution method</span>. To use sudo with llsubmit (loadleveler), for example,
+<span class="lstinline"><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">etc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">sudoers</span></span> must be configured to allow the suite owner to execute the llsubmit command as the
+task owner. For ssh, passwordless ssh must be configured between the suite owner and task owner
+accounts.
+</p><!--l. 3032--><p class="indent" >   <span 
+class="cmti-10">A task owner can also be declared globally, if all or most of your tasks need to run under a different username</span>
 <span 
-class="cmti-10">suite.rc configuration items </span>(if cylc is installed on the remote host). For the example suites with real task
-implementations that work with &#8220;real&#8221; files, you&#8217;ll have to run <span 
-class="cmti-10">all </span>tasks on the same remote host so that they can
-all access their required input and output files. To distribute a suite across several hosts you must
-arrange (using additional tasks) to transfer files between the hosts as required to satisfy the real I/O
-dependencies.
-</p><!--l. 3004--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.6.1   </span> <a 
- id="x61-980008.6.1"></a>Remote Task Log Directories</h5>
-<!--l. 3006--><p class="noindent" >The stdout and stderr from local tasks is directed into files in the <span 
-class="cmti-10">job submission log directory </span>(specified in the
-suite.rc file) as explained in Section&#x00A0;<a 
-href="cug-htmlsu42.html#x65-1020009.3">9.3<!--tex4ht:ref: WhitherStdoutAndStderr --></a>.
+class="cmti-10">than the suite owner.</span>
                                                                                          
 
                                                                                          
-</p><!--l. 3010--><p class="indent" >   <span 
-class="cmti-10">Remote task stdout and stderr, however, currently ends up in the remote task owner&#8217;s home directory</span>, ignoring
-any suite.rc job log directory settings. This is simply because at cylc&#8217;s home institution we now have cross platform
-job submission via loadleveler so we don&#8217;t need cylc&#8217;s remote task functionality &#x2026;and consequently cylc needs
-updating slightly in this respect.
 </p>
-   <!--l. 3019--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse9.html" >next</a>] [<a 
+   <!--l. 3035--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlsu38.html" >prev</a>] [<a 
 href="cug-htmlsu38.html#tailcug-htmlsu38.html" >prev-tail</a>] [<a 
 href="cug-htmlsu39.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu39.html" >up</a>] </p></div>
-<!--l. 3019--><p class="indent" >   <a 
- id="tailcug-htmlsu39.html"></a>  </p> 
+<!--l. 3035--><p class="indent" >   <a 
+ id="tailcug-htmlsu39.html"></a> </p> 
 </body></html> 
