@@ -3,7 +3,7 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: "MS Trebuchet", Verdana, Geneva, Arial, Helvetica, sans-serif;	
-	font-size: 75%;
+	font-size: 100%;
 	line-height: 135%;
 	/*background-image: url("images/bkg.gif");
 	*/
@@ -76,7 +76,7 @@ p{
 
 #pageHeader h1{
 	width: 738px;
-	height: 88px;
+	/*height: 88px;*/
 	/*background-image: url("images/header1.gif");
 	background-position: top left;
 	background-repeat: no-repeat;
@@ -85,10 +85,10 @@ p{
 }
 
 #pageHeader h1 span {
-	display: block;
-	width: 0;
-	height: 0;
-	overflow: hidden;
+	/*display: block;*/
+	/*width: 0;
+	height: 0;*/
+	/*overflow: hidden;*/
 }
 
 #pageHeader h2{
@@ -102,10 +102,10 @@ p{
 }
 
 #pageHeader h2 span {
-	display: block;
+	/*display: block;
 	width: 0;
 	height: 0;
-	overflow: hidden;
+	overflow: hidden;*/
 }
 
 #banner{
