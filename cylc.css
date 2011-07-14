@@ -87,6 +87,21 @@ p{
 	overflow: hidden;
 }
 
+#pageHeader h2{
+	width: 571px;
+	height: 29px;
+	background-image: url("images/header2.gif");
+	margin-top:-42px;
+	margin-bottom: 30px;
+}
+
+#pageHeader h2 span {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
 #banner{
 	background-color: #2b9a82;
 	color: #fff;
