@@ -32,7 +32,7 @@ h3, h4{
 	font-size: 120%;
 	margin-top: 30px;
 	margin-bottom: 0;
-	padding-left:25px;
+	/*padding-left:25px;*/
 	position: relative;
 	/*background-image: url("images/bullet.gif");
 	background-repeat: no-repeat;
@@ -89,6 +89,23 @@ p{
 	/*width: 0;
 	height: 0;*/
 	/*overflow: hidden;*/
+  color: #0b7a62;
+}
+
+#pageHeader h2{
+	width: 571px;
+	height: 29px;
+	/*background-image: url("images/header2.gif");*/
+	/*margin-top:-42px;
+	margin-bottom: 30px;*/
+}
+
+#pageHeader h2 span {
+	/*display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;*/
+  color: #0b7a62;
 }
 
 #banner{
@@ -165,7 +182,7 @@ p{
 	height:40px;
 	padding: 10px 0 5px 10px;
 	text-transform: lowercase;
-	color: #fff;
+	color: #0b7a62;
 	font-size: 100%;
 	/*background-image: url("images/listheader.gif");
 	background-repeat: repeat-x;
