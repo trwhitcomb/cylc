@@ -76,17 +76,17 @@
         be ignored in real time operation, but this severely
         restricts scheduling after delays when it should be
         possible to run tasks from multiple cycles at once. Even  
-        <a href="intro/dep-one-cycle.png">simple suites</a> appear
-        <a href="intro/dep-multi-cycle.png">complicated</a>
+        <a href="intro-graphics/dep-one-cycle.png">simple suites</a> appear
+        <a href="intro-graphics/dep-multi-cycle.png">complicated</a>
         when intercycle dependence is taken into account (a, b, and c
         represent warm-cycled forecast models). Cylc's self-organising
         scheduling algorithm solves this problem, and as a result it can
         optimally interleave tasks from multiple forecast cycles
         whenever the opportunity arises, potentially achieving 
-        <a href="intro/timeline-three.png">very fast catch up from delays</a> 
+        <a href="intro-graphics/timeline-three.png">very fast catch up from delays</a> 
         (cylc on top) even in resource limited operations with little
         down time between cycles. The same goes for
-        <a href="intro/timeline-two.png">processing historical data</a>
+        <a href="intro-graphics/timeline-two.png">processing historical data</a>
         (cylc on top) or running parallel test suites that start behind
         the main operation.
     </span></p>
