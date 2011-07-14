@@ -172,7 +172,7 @@ p{
 	margin: 0;
 	height:40px;
 	padding: 10px 0 5px 10px;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 	color: #fff;
 	font-size: 100%;
 	background-image: url("images/listheader.gif");
