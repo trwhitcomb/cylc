@@ -11,21 +11,26 @@
 	<title>The Cylc MetaScheduler</title>
 
 	<!-- correct the unsightly Flash of Unstyled Content. http://www.bluerobot.com/web/css/fouc.asp -->
-	<script type="text/javascript"></script>
+    <!--<script type="text/javascript"></script>-->
 	
-	<style type="text/css" title="currentStyle" media="screen">
-		@import "cylc.css";
-	</style>
+	<link rel="stylesheet" type="text/css" href="cylc.css" media="screen" title="default" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="plain" href="plain.css" />
+
     <!--<link rel="Shortcut Icon" type="image/x-icon" href="http://foo.bar.ico"/>-->
+    <script src="styleswitcher.js" type="text/javascript">
+    </script>
 </head>
 
 <body>
-
+    <form id="switchform">
+        Style: 
+        <input type="radio" name="choice" value="default" onClick="setActiveStyleSheet(this.value)">Gritty </input>
+        <input type="radio" name="choice" value="plain" onClick="setActiveStyleSheet(this.value)">Plain</input>
+    </form>
 <div id="container">
 
 		<div id="pageHeader">
-			<h1><span>Cylc</span></h1>
-			<h2><span>Forecast Suite Metascheduler</span></h2>
+			<h1><span>The Cylc Forecast Suite Metascheduler</span></h2>
      	</div> <!--pageHeader-->
 
 		<div id="banner">
