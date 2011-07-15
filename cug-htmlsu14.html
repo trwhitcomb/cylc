@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 858--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 861--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu15.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
@@ -22,11 +22,11 @@ href="#tailcug-htmlsu14.html">tail</a>] [<a
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
  id="x26-280005.2"></a>Starting Your Lockserver Daemon</h4>
-<!--l. 862--><p class="noindent" >Each cylc user should run a lockserver to prevent accidental invocation of multiple instances of the same suite or
+<!--l. 865--><p class="noindent" >Each cylc user should run a lockserver to prevent accidental invocation of multiple instances of the same suite or
 task at the same time. The suite and task locks brokered by the lockserver are analogous to traditional lock files, but
 they work across a network, even for distributed suites containing tasks that start executing on one host and finish
 on another.
-</p><!--l. 869--><p class="indent" >   The lockserver daemon can be started at any time and left running. </p><!--l. 870-->
+</p><!--l. 872--><p class="indent" >   The lockserver daemon can be started at any time and left running. </p><!--l. 873-->
    <div class="lstlisting" id="listing-19"><span class="label"><a 
  id="x26-28001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -38,7 +38,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">start</span>
    
    </div>
-<!--l. 874--><p class="indent" >   Check that it is running, </p><!--l. 875-->
+<!--l. 877--><p class="indent" >   Check that it is running, </p><!--l. 878-->
    <div class="lstlisting" id="listing-20"><span class="label"><a 
  id="x26-28002r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -50,7 +50,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">status</span>
    
    </div>
-<!--l. 879--><p class="indent" >   For detailed usage information, </p><!--l. 880-->
+<!--l. 882--><p class="indent" >   For detailed usage information, </p><!--l. 883-->
    <div class="lstlisting" id="listing-21"><span class="label"><a 
  id="x26-28003r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -63,14 +63,14 @@ class="pcrr7t-">--</span><span
 class="pcrr7t-">help</span>
    
    </div>
-<!--l. 884--><p class="indent" >   There is a command line client interface, <span class="lstinline"><span 
+<!--l. 887--><p class="indent" >   There is a command line client interface, <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">lockclient</span></span>, for interrogating the lockserver
 and managing locks manually (e.g.&#x00A0;releasing locks if a suite was killed before it could clean up after
 itself).
-</p><!--l. 890--><p class="indent" >   You can also choose not to use the lockserver for a particular suite, by setting the following switch in its suite.rc
-(suite definition) file, </p><!--l. 892-->
+</p><!--l. 893--><p class="indent" >   You can also choose not to use the lockserver for a particular suite, by setting the following switch in its suite.rc
+(suite definition) file, </p><!--l. 895-->
    <div class="lstlisting" id="listing-22"><span class="label"><a 
  id="x26-28004r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -101,12 +101,12 @@ class="pcrro7t-">!</span>
                                                                                          
 
                                                                                          
-   <!--l. 897--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 900--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu15.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
 href="cug-htmlsu14.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
-<!--l. 897--><p class="indent" >   <a 
+<!--l. 900--><p class="indent" >   <a 
  id="tailcug-htmlsu14.html"></a> </p> 
 </body></html> 

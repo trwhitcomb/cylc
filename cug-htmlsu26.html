@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1512--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1510--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu25.html" >prev</a>] [<a 
 href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
@@ -22,25 +22,25 @@ href="#tailcug-htmlsu26.html">tail</a>] [<a
 href="cug-htmlse5.html#cug-htmlsu26.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.14   </span> <a 
  id="x40-490005.14"></a>Using Example Suites To Understand Cylc</h4>
-<!--l. 1514--><p class="noindent" >Cylc has been designed from the ground up to make testing and prototyping very easy. Simply drawing (in text) a
+<!--l. 1512--><p class="noindent" >Cylc has been designed from the ground up to make testing and prototyping very easy. Simply drawing (in text) a
 dependency graph in a new suite.rc file creates a valid suite that you can run. The tasks will default to emitting an
 identifying message, sleeping for a few seconds, and then exiting; but you can then arrange for particular tasks to do
 more complex things (to fail, for example) by supplying appropriate task command lines to replace the default
 &#8220;dummy&#8221; one.
-</p><!--l. 1522--><p class="indent" >   Cylc&#8217;s example suites run quickly and are portable: you can copy and run them immediately without
+</p><!--l. 1520--><p class="indent" >   Cylc&#8217;s example suites run quickly and are portable: you can copy and run them immediately without
 modification, even those with real task implementations that generate real (albeit zero-sized) output files. You can
 even run multiple copies of the same example suite at once (even multiple <span 
 class="cmti-10">instances </span>of the exact same suite, in fact),
 under different registrations, because the suite group and name are used in all I/O paths (without being hardwired
 anywhere).
-</p><!--l. 1530--><p class="indent" >   You can copy an example suite in an instant, using the cylc commands or GUI, make a few changes according to
+</p><!--l. 1528--><p class="indent" >   You can copy an example suite in an instant, using the cylc commands or GUI, make a few changes according to
 your needs, and then run it to see what happens.
-</p><!--l. 1534--><p class="indent" >   You can also run real suites in simulation mode, wherein each real task is replaced by the default dummy task
+</p><!--l. 1532--><p class="indent" >   You can also run real suites in simulation mode, wherein each real task is replaced by the default dummy task
 (above) and the suite runs quickly on an accelerated clock. As far as cylc is concerned this is almost identical to real
 operation, so simulation mode can be used to test recovery strategies for certain kinds of failure, for instance. In
 simulation mode you can watch how any suite catches up and transitions from delayed to real time
 operation.
-</p><!--l. 1542--><p class="indent" >   The lockserver will let you run multiple instances of any suite, under different registrations, if the suite declares
+</p><!--l. 1540--><p class="indent" >   The lockserver will let you run multiple instances of any suite, under different registrations, if the suite declares
 <span 
 class="cmti-10">allow multiple simultaneous instances = True </span>in its suite.rc file. This should only be used if <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
@@ -50,12 +50,12 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">CYLC_SUITE_NAME</span></span> are used in all I/O paths so that the different suite instances will not interfere with each
 other.
 </p>
-   <!--l. 1550--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1548--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu25.html" >prev</a>] [<a 
 href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
 href="cug-htmlsu26.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu26.html" >up</a>] </p></div>
-<!--l. 1550--><p class="indent" >   <a 
+<!--l. 1548--><p class="indent" >   <a 
  id="tailcug-htmlsu26.html"></a> </p> 
 </body></html> 

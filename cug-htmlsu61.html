@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -788,8 +788,8 @@ class="cmti-10">owner&#8217;s home directory. </span>(This will be addressed in 
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.18   </span> <a 
  id="x90-146000A.2.18"></a>task EVENT hook scripts</h5>
-<!--l. 340--><p class="noindent" >Task event hooks facilitate centralized alerting for critical events in operational suites. You can name script(s) to
-attach to various events using one or more of the following items:  </p>
+<!--l. 340--><p class="noindent" >Task event hooks facilitate centralized alerting for critical events. The following hooks are available:
+</p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmbx-10">task submitted hook script</span>
@@ -808,30 +808,35 @@ class="cmbx-10">task failed hook script</span>
      </li>
      <li class="itemize"><span 
 class="cmbx-10">task timeout hook script</span></li></ul>
-<!--l. 351--><p class="noindent" >These items set suite level defaults that can be overridden by specific tasks; or you can omit the defaults and just
-handle alerts for certain critical tasks. Hook scripts can be located in the suite bin directory. <span 
-class="cmti-10">They are called by cylc</span>
-with the following arguments: </p><!--l. 355-->
+<!--l. 350--><p class="noindent" >These suite level defaults can be overridden by specific tasks, or you can omit the defaults and just attach hook
+scripts for critical tasks. Cylc provides a hook script that sends emails: cylc email-alert. Your own
+hook scripts can be located in suite bin directories. Hook scripts are passed the following arguments:
+</p><!--l. 355-->
    <div class="lstlisting" id="listing-96"><span class="label"><a 
  id="x90-146001r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">hook</span><span 
+class="pcrr7t-">-</span><span 
 class="pcrr7t-">script</span><span 
 class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
 class="pcrr7t-">EVENT</span><span 
-class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SUITE</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TASK</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYCLE_TIME</span><span 
+class="pcrr7t-">CYCLETIME</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">MESSAGE</span>
    
    </div>
-<!--l. 358--><p class="indent" >   where MESSAGE describes what has happened, and EVENT is the same as in the item name except that
-&#8216;submission failed&#8217; becomes &#8216;submit_failed&#8217;.  </p>
+<!--l. 358--><p class="indent" >   where MESSAGE describes what has happened, and EVENT is either &#8216;submitted&#8217;, &#8216;started&#8217;, &#8216;succeeded&#8217;, &#8216;failed&#8217;,
+&#8216;timeout&#8217;, or &#8216;submit_failed&#8217;. Note that <span 
+class="cmti-10">hook scripts are called by cylc, not by tasks, </span>so if you wish to pass in
+additional information via the environment, use the [cylc local environment] section, not [environment].
+</p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmti-10">section: </span>(top level)
@@ -841,6 +846,9 @@ class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>None
+                                                                                         
+
+                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
@@ -854,25 +862,24 @@ class="pcrr7t-">script</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">alerts</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">sh</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-<!--l. 370--><p class="noindent" >
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">email</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">alert</span></span></li></ul>
+<!--l. 373--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.19   </span> <a 
  id="x90-147000A.2.19"></a>task EVENT timeout in minutes</h5>
-<!--l. 371--><p class="noindent" >You can set timeout intervals for task submission or execution with the following items:  </p>
+<!--l. 374--><p class="noindent" >You can set timeout intervals for task submission or execution with the following items:  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmbx-10">task submission timeout in minutes</span>
      </li>
      <li class="itemize"><span 
 class="cmbx-10">task execution timeout in minutes</span></li></ul>
-<!--l. 377--><p class="noindent" >If a task has not started (or finished) this number of minutes after it was submitted (or started), the task timeout hook
-script will be called by cylc with the following arguments: </p><!--l. 380-->
+<!--l. 380--><p class="noindent" >If a task has not started (or finished) this number of minutes after it was submitted (or started), the task timeout hook
+script will be called by cylc with the following arguments: </p><!--l. 383-->
    <div class="lstlisting" id="listing-97"><span class="label"><a 
  id="x90-147001r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -880,18 +887,18 @@ class="pcrr7t-">&#x003C;</span><span
 class="pcrr7t-">script</span><span 
 class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
 class="pcrr7t-">EVENT</span><span 
-class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SUITE</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TASK</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYCLE_TIME</span><span 
+class="pcrr7t-">CYCLETIME</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">MESSAGE</span>
    
    </div>
-<!--l. 383--><p class="indent" >   where EVENT is &#8216;submission&#8217; or &#8216;execution&#8217;. Like the hook scripts themselves, these suite level settings can be
+<!--l. 386--><p class="indent" >   where EVENT is &#8216;submission&#8217; or &#8216;execution&#8217;. Like the hook scripts themselves, these suite level settings can be
 overridden by specific tasks.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
@@ -918,11 +925,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">10</span></span></li></ul>
-<!--l. 393--><p class="noindent" >
+<!--l. 396--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.20   </span> <a 
  id="x90-148000A.2.20"></a>reset execution timeout on incoming messages </h5>
-<!--l. 394--><p class="noindent" >If True, and you have set an execution timeout, the timer will reset to zero every time a message is received from a
+<!--l. 397--><p class="noindent" >If True, and you have set an execution timeout, the timer will reset to zero every time a message is received from a
 running task. Otherwise, the task will timeout if it does not finish in time, even if it last sent a message (and was, by
 implication, still alive) within the timeout interval.  </p>
      <ul class="itemize1">
@@ -952,15 +959,15 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">False</span></span></li></ul>
-<!--l. 406--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.21   </span> <a 
- id="x90-149000A.2.21"></a>pre-command scripting </h5>
-<!--l. 407--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, before the task command, for every task.
-</p>
                                                                                          
 
                                                                                          
+<!--l. 409--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.2.21   </span> <a 
+ id="x90-149000A.2.21"></a>pre-command scripting </h5>
+<!--l. 410--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, before the task command, for every task.
+</p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmti-10">section: </span>(top level)
@@ -972,7 +979,7 @@ class="cmti-10">type: </span>multiline string
 class="cmti-10">default: </span>empty
      </li>
      <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 414-->
+class="cmti-10">example: </span><!--l. 417-->
      <div class="lstlisting" id="listing-98"><span class="label"><a 
  id="x90-149001r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1024,11 +1031,11 @@ class="pcrr7t-">!"""</span>
      
      </div>
      </li></ul>
-<!--l. 421--><p class="noindent" >
+<!--l. 424--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.22   </span> <a 
  id="x90-150000A.2.22"></a>post-command scripting </h5>
-<!--l. 422--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, immediately after the task command, for
+<!--l. 425--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, immediately after the task command, for
 every task.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
@@ -1041,7 +1048,7 @@ class="cmti-10">type: </span>multiline string
 class="cmti-10">default: </span>empty
      </li>
      <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 429-->
+class="cmti-10">example: </span><!--l. 432-->
      <div class="lstlisting" id="listing-99"><span class="label"><a 
  id="x90-150001r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1093,24 +1100,24 @@ class="pcrr7t-">!"""</span>
      
      </div>
      </li></ul>
-<!--l. 436--><p class="noindent" >
+<!--l. 439--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.23   </span> <a 
  id="x90-151000A.2.23"></a>owned task execution method </h5>
-<!--l. 437--><p class="noindent" >This specifies the means by which the chosen job submission method is invoked for tasks that are owned by a user other than
+<!--l. 440--><p class="noindent" >This specifies the means by which the chosen job submission method is invoked for tasks that are owned by a user other than
 the suite owner.<span class="footnote-mark"><a 
 href="cug-html91.html#fn17x0"><sup class="textsuperscript">17</sup></a></span><a 
  id="x90-151001f17"></a> 
 </p>
+                                                                                         
+
+                                                                                         
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmti-10">section: </span>(top level)
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>string
-                                                                                         
-
-                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">legal values:</span>
@@ -1135,7 +1142,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">ssh</span></span></li></ul>
-<!--l. 455--><p class="noindent" >To use sudo with loadleveler, for example, <span class="lstinline"><span 
+<!--l. 458--><p class="noindent" >To use sudo with loadleveler, for example, <span class="lstinline"><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">etc</span><span 
 class="pcrr7t-">/</span><span 
@@ -1146,7 +1153,7 @@ accounts of the suite and task owners.
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.24   </span> <a 
  id="x90-152000A.2.24"></a>ignore task owners </h5>
-<!--l. 462--><p class="noindent" >This item allows you to turn off the special treatment of owned tasks (namely invocation of the task job submission
+<!--l. 465--><p class="noindent" >This item allows you to turn off the special treatment of owned tasks (namely invocation of the task job submission
 method via sudo or ssh as task owner), which can be useful when testing parts of a suite containing owned tasks
 outside of its normal operational environment.  </p>
      <ul class="itemize1">
@@ -1170,11 +1177,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">True</span></span></li></ul>
-<!--l. 473--><p class="noindent" >
+<!--l. 476--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.25   </span> <a 
  id="x90-153000A.2.25"></a>use quick task elimination </h5>
-<!--l. 474--><p class="noindent" >If quick task elimination is switched on (it is by default) cylc will remove spent tasks from the suite sooner
+<!--l. 477--><p class="noindent" >If quick task elimination is switched on (it is by default) cylc will remove spent tasks from the suite sooner
 if they are known to have no downstream dependents in subsequent forecast cycles. Otherwise the
 generic spent task elimination algorithm will be used for all tasks. (Mainly used in cylc development).
 </p>
@@ -1187,6 +1194,9 @@ class="cmti-10">type: </span>boolean
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>True
+                                                                                         
+
+                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
@@ -1201,14 +1211,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">False</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-<!--l. 487--><p class="noindent" >
+<!--l. 490--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.26   </span> <a 
  id="x90-154000A.2.26"></a>simulation mode only </h5>
-<!--l. 488--><p class="noindent" >If True, cylc will abort cleanly if you try to run the suite in real mode. This can be used for demo suites
+<!--l. 491--><p class="noindent" >If True, cylc will abort cleanly if you try to run the suite in real mode. This can be used for demo suites
 that can&#8217;t run in real mode because they&#8217;ve been copied out of their normal operating environment.
 </p>
      <ul class="itemize1">
@@ -1232,11 +1239,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">True</span></span></li></ul>
-<!--l. 499--><p class="noindent" >
+<!--l. 502--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.27   </span> <a 
  id="x90-155000A.2.27"></a>allow multiple simultaneous instances </h5>
-<!--l. 500--><p class="noindent" >If True, the lockserver will allow multiple instances of this suite to run at the same time under different
+<!--l. 503--><p class="noindent" >If True, the lockserver will allow multiple instances of this suite to run at the same time under different
 registrations. You can do this if the I/O paths of every task in the suite are dynamically configured to be suite
 specific (i.e.&#x00A0;they all contain the suite registration group and name).  </p>
      <ul class="itemize1">
@@ -1262,11 +1269,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">True</span></span></li></ul>
-<!--l. 513--><p class="noindent" >
+<!--l. 516--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.28   </span> <a 
  id="x90-156000A.2.28"></a>job submission shell </h5>
-<!--l. 515--><p class="noindent" >This is the shell used to interpret the job script submitted by cylc when a task is ready to run. <span 
+<!--l. 518--><p class="noindent" >This is the shell used to interpret the job script submitted by cylc when a task is ready to run. <span 
 class="cmti-10">It has no bearing on</span>
 <span 
 class="cmti-10">the shell used in task implementations. </span>Global pre- and post-command scripting, and the content of the task
@@ -1283,15 +1290,15 @@ class="pcrr7t-">value</span></span> is entirely user-defined) so cylc would have
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmti-10">section: </span>(top level)
+                                                                                         
+
+                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
 class="cmti-10">legal values:</span>
-                                                                                         
-
-                                                                                         
          <ul class="itemize2">
          <li class="itemize"><span class="lstinline"><span 
 class="pcrr7t-">/</span><span 
@@ -1342,11 +1349,11 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">bin</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">ksh</span></span></li></ul>
-<!--l. 539--><p class="noindent" >
+<!--l. 542--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.29   </span> <a 
  id="x90-157000A.2.29"></a>manual task completion messaging </h5>
-<!--l. 540--><p class="noindent" >If a task&#8217;s initiating process detaches and exits before task processing is finished, then cylc cannot arrange for the
+<!--l. 543--><p class="noindent" >If a task&#8217;s initiating process detaches and exits before task processing is finished, then cylc cannot arrange for the
 task to automatically signal when it has succeeded or failed. In such cases you must insert some minimal cylc
 messaging in appropriate places in the task implementation. Use this global setting in the unlikely
 event that all, or most, of your tasks are in this category; otherwise you can set it on a per task basis.
@@ -1378,12 +1385,12 @@ class="pcrr7t-">True</span></span></li></ul>
                                                                                          
 
                                                                                          
-   <!--l. 554--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 557--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu62.html" >next</a>] [<a 
 href="cug-htmlsu60.html" >prev</a>] [<a 
 href="cug-htmlsu60.html#tailcug-htmlsu60.html" >prev-tail</a>] [<a 
 href="cug-htmlsu61.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu61.html" >up</a>] </p></div>
-<!--l. 554--><p class="indent" >   <a 
+<!--l. 557--><p class="indent" >   <a 
  id="tailcug-htmlsu61.html"></a>  </p> 
 </body></html> 

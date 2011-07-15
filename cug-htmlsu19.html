@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1101--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1099--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu20.html" >next</a>] [<a 
 href="cug-htmlsu18.html" >prev</a>] [<a 
 href="cug-htmlsu18.html#tailcug-htmlsu18.html" >prev-tail</a>] [<a 
@@ -22,10 +22,10 @@ href="#tailcug-htmlsu19.html">tail</a>] [<a
 href="cug-htmlse5.html#cug-htmlsu19.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.7   </span> <a 
  id="x32-360005.7"></a>Running The examples:CUG_QS1 Suite</h4>
-<!--l. 1103--><p class="noindent" >Each cylc task has command scripting that is called to invoke task processing when the task is ready to run. No task
+<!--l. 1101--><p class="noindent" >Each cylc task has command scripting that is called to invoke task processing when the task is ready to run. No task
 commands have been defined in our example suite so the tasks all default to the <span 
 class="cmti-10">dummy task </span>command line:
-</p><!--l. 1108-->
+</p><!--l. 1106-->
    <div class="lstlisting" id="listing-28"><span class="label"><a 
  id="x32-36001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -77,7 +77,7 @@ class="pcrr7t-">CYLC_SIMULATION_SLEEP</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 1114--><p class="indent" >   where <span class="lstinline"><span 
+<!--l. 1112--><p class="indent" >   where <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">TASK_ID</span></span> is <span class="lstinline"><span 
 class="pcrr7t-">NAME</span><span 
@@ -86,7 +86,7 @@ class="pcrr7t-">YYYYMMDDHH</span></span>) and <span class="lstinline"><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SIMULATION_SLEEP</span></span> defaults to 10 seconds. This just
 writes an identifying message to stdout and then sleeps for a few seconds before exiting.
-</p><!--l. 1119--><p class="indent" >   Now start a suite control GUI by right-clicking on the suite in gcylc and choosing &#8216;Control (graph)&#8217;. You can also
+</p><!--l. 1117--><p class="indent" >   Now start a suite control GUI by right-clicking on the suite in gcylc and choosing &#8216;Control (graph)&#8217;. You can also
 open a treeview control GUI for the same suite, if you like. Multiple GUIs running at the same time will
 automatically connect to the same running suite (they won&#8217;t try to run separate instances). Note also that if you
 shut down a suite control GUI, the suite will keep running. You can reconnect to it later by opening another control
@@ -94,18 +94,18 @@ GUI. <span
 class="cmti-10">See </span>The Graph-Based Suite Control GUI<span 
 class="cmti-10">, Section</span><span 
 class="cmti-10">&#x00A0;</span><a 
-href="cug-htmlse14.html#x108-285000C"><span 
+href="cug-htmlse14.html#x108-286000C"><span 
 class="cmti-10">C</span><!--tex4ht:ref: TheGraphBasedSuiteControlGUI --></a><span 
 class="cmti-10">.</span>
-</p><!--l. 1129--><p class="indent" >   In the control GUI click on Control <span 
+</p><!--l. 1127--><p class="indent" >   In the control GUI click on Control <span 
 class="cmsy-10">&#x2192; </span>Run, enter an initial cold start cycle time (e.g.&#x00A0;2011052306), and select
 &#8220;Hold (pause) on startup&#8221; so that the suite will start in the held state (tasks will not be submitted even if they are
 ready to run).
-</p><!--l. 1134--><p class="indent" >   <span 
+</p><!--l. 1132--><p class="indent" >   <span 
 class="cmti-10">Do not choose an initial cycle time in the future, unless you&#8217;re running in simulation mode, or nothing will</span>
 <span 
 class="cmti-10">happen until that time.</span>
-</p><!--l. 1137--><p class="indent" >   If the initial cycle time ends in 06 or 18 the suite controller should look like Figure&#x00A0;<a 
+</p><!--l. 1135--><p class="indent" >   If the initial cycle time ends in 06 or 18 the suite controller should look like Figure&#x00A0;<a 
 href="#x32-3600521">21<!--tex4ht:ref: fig-QuickStartA-ControlStart06 --></a>, or otherwise (00 or 12)
 like Figure&#x00A0;<a 
 href="#x32-3600622">22<!--tex4ht:ref: fig-QuickStartA-ControlStart00 --></a>.
@@ -122,9 +122,9 @@ href="#x32-3600622">22<!--tex4ht:ref: fig-QuickStartA-ControlStart00 --></a>.
                                                                                          
 <div class="center" 
 >
-<!--l. 1144--><p class="noindent" >
+<!--l. 1142--><p class="noindent" >
 
-</p><!--l. 1145--><p class="noindent" ><img 
+</p><!--l. 1143--><p class="noindent" ><img 
 src="screenshots/QuickStartA-ControlStart06.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
@@ -152,9 +152,9 @@ class="cmr-9">indicate tasks in the waiting state.</span></span></div><!--tex4ht
                                                                                          
 <div class="center" 
 >
-<!--l. 1155--><p class="noindent" >
+<!--l. 1153--><p class="noindent" >
 
-</p><!--l. 1156--><p class="noindent" ><img 
+</p><!--l. 1154--><p class="noindent" ><img 
 src="screenshots/QuickStartA-ControlStart00.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
@@ -172,13 +172,13 @@ class="cmr-9">that aren&#8217;t currently live in the suite.</span></span></div>
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 1167--><p class="indent" >   The reason for the difference in graph structure between the two figures is this: cylc starts up with every task
+<!--l. 1165--><p class="indent" >   The reason for the difference in graph structure between the two figures is this: cylc starts up with every task
 present, in the waiting state (blue), at the initial cycle time <span 
 class="cmti-10">or </span>at the first subsequent valid cycle time for the task -
 and PostB does not run at 00 or 12. The off-white tasks are from the base graph, defined in the suite.rc file, and
 aren&#8217;t actually present in the suite as yet (they are shown in the graph in order to put the live tasks in
 context).
-</p><!--l. 1175--><p class="indent" >   Now, click on Control <span 
+</p><!--l. 1173--><p class="indent" >   Now, click on Control <span 
 class="cmsy-10">&#x2192; </span>Release in the suite control GUI to <span 
 class="cmti-10">release the hold on the suite</span>, and observe what
 happens: the GetData tasks will rapidly go off in parallel out to a few cycles ahead , and then the suite will stall, as
@@ -198,9 +198,9 @@ href="#x32-3600824">24<!--tex4ht:ref: fig-QuickStartA-ControlStalled --></a>.
                                                                                          
 <div class="center" 
 >
-<!--l. 1183--><p class="noindent" >
+<!--l. 1181--><p class="noindent" >
 
-</p><!--l. 1184--><p class="noindent" ><img 
+</p><!--l. 1182--><p class="noindent" ><img 
 src="screenshots/QuickStartA-ControlRunning.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
@@ -228,9 +228,9 @@ class="cmr-9">running at once.</span></span></div><!--tex4ht:label?: x32-3600723
                                                                                          
 <div class="center" 
 >
-<!--l. 1192--><p class="noindent" >
+<!--l. 1190--><p class="noindent" >
 
-</p><!--l. 1193--><p class="noindent" ><img 
+</p><!--l. 1191--><p class="noindent" ><img 
 src="screenshots/QuickStartA-ControlStalled.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
@@ -246,7 +246,7 @@ class="cmr-9">Model&#8217;s previous-cycle dependence and the suite runahead lim
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 1203--><p class="indent" >   The Prep task runs immediately because it has no prerequisites and is not clock-triggered. The
+<!--l. 1201--><p class="indent" >   The Prep task runs immediately because it has no prerequisites and is not clock-triggered. The
 clock-triggered GetData tasks then all go off at once because they have no prerequisites (i.e.&#x00A0;they do not have
 to wait on any upstream tasks), their trigger time has long passed (the initial cycle time was in the
 past), and they are not sequential tasks (so they are able to run in parallel - try declaring GetData
@@ -261,7 +261,7 @@ them.
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">5.7.1   </span> <a 
  id="x32-370005.7.1"></a>Viewing Task States</h5>
-<!--l. 1222--><p class="noindent" >If you&#8217;re wondering why a particular task has not triggered yet in a running suite you can view the current state of
+<!--l. 1220--><p class="noindent" >If you&#8217;re wondering why a particular task has not triggered yet in a running suite you can view the current state of
 its prerequisites by right-clicking on the task and choosing &#8216;View State&#8217;, or using <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -282,9 +282,9 @@ href="#x32-3700125">25<!--tex4ht:ref: fig-QuickStartA-ModelState --></a>.
                                                                                          
 <div class="center" 
 >
-<!--l. 1230--><p class="noindent" >
+<!--l. 1228--><p class="noindent" >
 
-</p><!--l. 1231--><p class="noindent" ><img 
+</p><!--l. 1229--><p class="noindent" ><img 
 src="screenshots/QuickStartA-ModelState.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
@@ -301,25 +301,25 @@ class="cmr-9">command.</span></span></div><!--tex4ht:label?: x32-3700125 -->
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 1239--><p class="indent" >   It is clear that the reason the task is not running, and consequently, by virtue of the runahead limit, why the
+<!--l. 1237--><p class="indent" >   It is clear that the reason the task is not running, and consequently, by virtue of the runahead limit, why the
 suite as a whole has stalled, is that Model(T) is waiting on Model(T-6) which does not exist at suite startup. Model
 represents a warm-cycled forecast model that depends on a &#8220;model background&#8221; or &#8220;restart file(s)&#8221; generated by its
 own previous run.
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">5.7.2   </span> <a 
  id="x32-380005.7.2"></a>Triggering Tasks Manually</h5>
-<!--l. 1248--><p class="noindent" >Right-click on the waiting Model task and choose Trigger, or use <span class="lstinline"><span 
+<!--l. 1246--><p class="noindent" >Right-click on the waiting Model task and choose Trigger, or use <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">trigger</span></span>, to force the task to trigger, and
 thereby get the suite up and running. In a real suite this would not be sufficient: the real forecast model that Model
 represents would fail for lack of the real restart files that it requires as input. Well see how to handle this properly
 shortly.
-</p><!--l. 1255--><p class="noindent" >
+</p><!--l. 1253--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">5.7.3   </span> <a 
  id="x32-390005.7.3"></a>Shutting Down And Restarting A Suite</h5>
-<!--l. 1257--><p class="noindent" >Having watched the <span 
+<!--l. 1255--><p class="noindent" >Having watched the <span 
 class="cmti-10">examples:CUG</span><span 
 class="cmti-10">_QS1 </span>suite run for a while, choose Stop from the Control menu, or <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
@@ -328,7 +328,7 @@ class="pcrr7t-">stop</span></span>,
 to shut it down. The default stop method waits for any tasks that are currently running to finish before
 shutting the suite down, so that the final recorded suite state is perfectly consistent with what actually
 happened.
-</p><!--l. 1263--><p class="indent" >   You can restart the suite from where it left off by choosing Control <span 
+</p><!--l. 1261--><p class="indent" >   You can restart the suite from where it left off by choosing Control <span 
 class="cmsy-10">&#x2192; </span>Run and selecting the &#8216;restart&#8217; option, or
 using <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
@@ -343,12 +343,12 @@ class="cmti-10">case you make a mistake.</span>
 
                                                                                          
 </p>
-   <!--l. 1270--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1268--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu20.html" >next</a>] [<a 
 href="cug-htmlsu18.html" >prev</a>] [<a 
 href="cug-htmlsu18.html#tailcug-htmlsu18.html" >prev-tail</a>] [<a 
 href="cug-htmlsu19.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu19.html" >up</a>] </p></div>
-<!--l. 1270--><p class="indent" >   <a 
+<!--l. 1268--><p class="indent" >   <a 
  id="tailcug-htmlsu19.html"></a>  </p> 
 </body></html> 

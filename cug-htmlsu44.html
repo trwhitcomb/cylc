@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3302--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3300--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse10.html" >next</a>] [<a 
 href="cug-htmlsu43.html" >prev</a>] [<a 
 href="cug-htmlsu43.html#tailcug-htmlsu43.html" >prev-tail</a>] [<a 
@@ -22,9 +22,9 @@ href="#tailcug-htmlsu44.html">tail</a>] [<a
 href="cug-htmlse9.html#cug-htmlsu44.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">9.4   </span> <a 
  id="x67-1070009.4"></a>Defining New Job Submission Methods</h4>
-<!--l. 3304--><p class="noindent" >Defining a new job submission method requires some minimal amount of Python programming. You can derive (in
+<!--l. 3302--><p class="noindent" >Defining a new job submission method requires some minimal amount of Python programming. You can derive (in
 the sense of object oriented programming inheritance) new methods from one of the existing ones, or directly from
-cylc&#8217;s job submission base class, </p><!--l. 3308-->
+cylc&#8217;s job submission base class, </p><!--l. 3306-->
    <div class="lstlisting" id="listing-86"><span class="label"><a 
  id="x67-107001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -41,12 +41,12 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">py</span>
    
    </div>
-<!--l. 3311--><p class="indent" >   using the existing methods as examples. Most often this should be merely be a matter of defining the command
-line used to execute the aforementioned job scripts, using the provided stdout and stderr file paths appropriately.
-For example, here is the entire class code for the <span class="lstinline"><span 
+<!--l. 3309--><p class="indent" >   using the existing methods as examples. Most often this should merely be a matter of defining the command line
+used to execute the aforementioned job scripts, using the provided stdout and stderr file paths appropriately. For
+example, here is the entire class code for the <span class="lstinline"><span 
 class="pcrr7t-">background</span></span> method:
 </p>
-   <!--l. 3319-->
+   <!--l. 3317-->
    <div class="lstlisting" id="listing-87"><span class="label"><a 
  id="x67-107002r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -250,10 +250,10 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">EOF</span>
    
    </div>
-<!--l. 3335--><p class="indent" >   Here is the <span class="lstinline"><span 
+<!--l. 3333--><p class="indent" >   Here is the <span class="lstinline"><span 
 class="pcrr7t-">at_now</span></span> method:
 </p>
-   <!--l. 3337-->
+   <!--l. 3335-->
    <div class="lstlisting" id="listing-88"><span class="label"><a 
  id="x67-107015r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -441,10 +441,10 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">EOF</span>
    
    </div>
-<!--l. 3352--><p class="indent" >   Finally, even the <span class="lstinline"><span 
+<!--l. 3350--><p class="indent" >   Finally, even the <span class="lstinline"><span 
 class="pcrr7t-">loadleveler</span></span> method is quite simple:
 </p>
-   <!--l. 3354-->
+   <!--l. 3352-->
    <div class="lstlisting" id="listing-89"><span class="label"><a 
  id="x67-107027r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -844,8 +844,8 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">EOF</span>
    
    </div>
-<!--l. 3384--><p class="indent" >   To use your new method, save it in a source file with the same name as the job submission class (see examples
-above), install it in the cylc source tree, </p><!--l. 3387-->
+<!--l. 3382--><p class="indent" >   To use your new method, save it in a source file with the same name as the job submission class (see examples
+above), install it in the cylc source tree, </p><!--l. 3385-->
    <div class="lstlisting" id="listing-90"><span class="label"><a 
  id="x67-107054r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -862,7 +862,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">py</span>
    
    </div>
-<!--l. 3390--><p class="indent" >   and, in the spec file <span class="lstinline"><span 
+<!--l. 3388--><p class="indent" >   and, in the spec file <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
@@ -874,12 +874,12 @@ class="pcrr7t-">spec</span></span>, add its name to the list of allowed values f
 suite.rc <span 
 class="cmti-10">job submission method </span>configuration items at suite level and in the tasks section.
 </p>
-   <!--l. 3399--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3397--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse10.html" >next</a>] [<a 
 href="cug-htmlsu43.html" >prev</a>] [<a 
 href="cug-htmlsu43.html#tailcug-htmlsu43.html" >prev-tail</a>] [<a 
 href="cug-htmlsu44.html" >front</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu44.html" >up</a>] </p></div>
-<!--l. 3399--><p class="indent" >   <a 
+<!--l. 3397--><p class="indent" >   <a 
  id="tailcug-htmlsu44.html"></a> </p> 
 </body></html> 

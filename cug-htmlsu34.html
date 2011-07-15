@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2683--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2681--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse8.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
@@ -22,7 +22,7 @@ href="#tailcug-htmlsu34.html">tail</a>] [<a
 href="cug-htmlse7.html#cug-htmlsu34.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">7.5   </span> <a 
  id="x54-880007.5"></a>Suite Validation</h4>
-<!--l. 2686--><p class="noindent" >Suite validation is designed to catch most suite definition errors before run time. First the suite.rc file is validated
+<!--l. 2684--><p class="noindent" >Suite validation is designed to catch most suite definition errors before run time. First the suite.rc file is validated
 against the spec file <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
@@ -38,7 +38,7 @@ href="cug-htmlse12.html#x87-126000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
 errors, illegal items, and illegal values; then some global consistency checking is done; and finally the
 validator attempts to create each suite task proxy according to information parsed from the suite.rc
 file.
-</p><!--l. 2697--><p class="indent" >   Here&#8217;s an example of a successful validation, </p><!--l. 2698-->
+</p><!--l. 2695--><p class="indent" >   Here&#8217;s an example of a successful validation, </p><!--l. 2696-->
    <div class="lstlisting" id="listing-66"><span class="label"><a 
  id="x54-88001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -156,13 +156,13 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrr7t-">DONE</span>
    
    </div>
-<!--l. 2712--><p class="noindent" >
+<!--l. 2710--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">7.5.1   </span> <a 
  id="x54-890007.5.1"></a>Validation Errors</h5>
-<!--l. 2714--><p class="noindent" >The validator reports the line numbers of detected errors.
+<!--l. 2712--><p class="noindent" >The validator reports the line numbers of detected errors.
 </p>
-   <!--l. 2716-->
+   <!--l. 2714-->
    <div class="lstlisting" id="listing-67"><span class="label"><a 
  id="x54-89001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -228,20 +228,20 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">1</span>
    
    </div>
-<!--l. 2724--><p class="indent" >   If the suite.rc file contains include-files, use the <span class="lstinline"><span 
+<!--l. 2722--><p class="indent" >   If the suite.rc file contains include-files, use the <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">inline</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">SUITE</span></span> command (or the gcylc right-click &#8216;Edit&#8217;
 option) to view an inlined copy with correct line numbers.
-</p><!--l. 2729--><p class="noindent" >
+</p><!--l. 2727--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">7.5.2   </span> <a 
  id="x54-900007.5.2"></a>Validation Warnings</h5>
-<!--l. 2731--><p class="noindent" >Warnings are emitted by the validator if any tasks in the dependency graph are not defined in the
+<!--l. 2729--><p class="noindent" >Warnings are emitted by the validator if any tasks in the dependency graph are not defined in the
 [tasks] section, or if any tasks defined in the [tasks] section are not used in the dependency graph:
-</p><!--l. 2734-->
+</p><!--l. 2732-->
    <div class="lstlisting" id="listing-68"><span class="label"><a 
  id="x54-90001r1"></a></span><span 
 class="pcrr7t-">Parsing</span><span 
@@ -484,15 +484,15 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrr7t-">DONE</span>
    
    </div>
-<!--l. 2750--><p class="indent" >   These are not necessarily errors - a task defined by graph alone will run as a dummy task, and you can
+<!--l. 2748--><p class="indent" >   These are not necessarily errors - a task defined by graph alone will run as a dummy task, and you can
 temporarily disable a defined task by commenting it out of the dependency graph.
 </p>
-   <!--l. 2754--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2752--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse8.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
 href="cug-htmlsu34.html" >front</a>] [<a 
 href="cug-htmlse7.html#cug-htmlsu34.html" >up</a>] </p></div>
-<!--l. 2754--><p class="indent" >   <a 
+<!--l. 2752--><p class="indent" >   <a 
  id="tailcug-htmlsu34.html"></a>  </p> 
 </body></html> 

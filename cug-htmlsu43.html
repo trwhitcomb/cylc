@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3269--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3267--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu44.html" >next</a>] [<a 
 href="cug-htmlsu42.html" >prev</a>] [<a 
 href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
@@ -22,11 +22,11 @@ href="#tailcug-htmlsu43.html">tail</a>] [<a
 href="cug-htmlse9.html#cug-htmlsu43.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">9.3   </span> <a 
  id="x66-1060009.3"></a>Whither Task stdout And stderr?</h4>
-<!--l. 3272--><p class="noindent" >When a task is ready to run cylc generates task-specific stdout and stderr filenames containing the task
+<!--l. 3270--><p class="noindent" >When a task is ready to run cylc generates task-specific stdout and stderr filenames containing the task
 name, cycle time, and a random component so that rerunning the task won&#8217;t overwrite the old output,
 e.g.:
 </p>
-   <!--l. 3277-->
+   <!--l. 3275-->
    <div class="lstlisting" id="listing-84"><span class="label"><a 
  id="x66-106001r1"></a></span><span 
 class="pcrr7t-">ColdB</span><span 
@@ -43,7 +43,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">err</span>
    
    </div>
-<!--l. 3282--><p class="indent" >   You can set the location for these task output logs in the suite.rc file; the default is, </p><!--l. 3284-->
+<!--l. 3280--><p class="indent" >   You can set the location for these task output logs in the suite.rc file; the default is, </p><!--l. 3282-->
    <div class="lstlisting" id="listing-85"><span class="label"><a 
  id="x66-106003r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -75,12 +75,12 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">CYLC_SUITE_NAME</span>
    
    </div>
-<!--l. 3289--><p class="indent" >   How the stdout and stderr streams are directed into these files depends on the job submission method. The
+<!--l. 3287--><p class="indent" >   How the stdout and stderr streams are directed into these files depends on the job submission method. The
 <span class="lstinline"><span 
 class="pcrr7t-">background</span></span> method just uses appropriate output redirection on the command line. The <span class="lstinline"><span 
 class="pcrr7t-">loadleveler</span></span> method
 writes appropriate directives to the job script that is submitted to loadleveler.
-</p><!--l. 3295--><p class="indent" >   Cylc obviously has no control over the stdout and stderr output from tasks that do their own internal output
+</p><!--l. 3293--><p class="indent" >   Cylc obviously has no control over the stdout and stderr output from tasks that do their own internal output
 management (e.g.&#x00A0;tasks that resubmit sub-jobs and direct the output thereof to other files). For less internally
 complex tasks, however, these job logs will capture all stdout and stderr for your tasks, and <span 
 class="cmti-10">they can be viewed</span>
@@ -90,12 +90,12 @@ class="cmti-10">updating in real time in the suite control GUI</span>.
 
                                                                                          
 </p>
-   <!--l. 3302--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3300--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu44.html" >next</a>] [<a 
 href="cug-htmlsu42.html" >prev</a>] [<a 
 href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
 href="cug-htmlsu43.html" >front</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu43.html" >up</a>] </p></div>
-<!--l. 3302--><p class="indent" >   <a 
+<!--l. 3300--><p class="indent" >   <a 
  id="tailcug-htmlsu43.html"></a> </p> 
 </body></html> 

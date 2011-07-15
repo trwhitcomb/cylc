@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1019--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1017--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu18.html" >next</a>] [<a 
 href="cug-htmlsu16.html" >prev</a>] [<a 
 href="cug-htmlsu16.html#tailcug-htmlsu16.html" >prev-tail</a>] [<a 
@@ -22,7 +22,7 @@ href="#tailcug-htmlsu17.html">tail</a>] [<a
 href="cug-htmlse5.html#cug-htmlsu17.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.5   </span> <a 
  id="x29-340005.5"></a>Viewing The examples:CUG_QS1 Suite Definition</h4>
-<!--l. 1021--><p class="noindent" >Right-click on the suite and choose &#8216;Edit&#8217;, or use the edit command, </p><!--l. 1022-->
+<!--l. 1019--><p class="noindent" >Right-click on the suite and choose &#8216;Edit&#8217;, or use the edit command, </p><!--l. 1020-->
    <div class="lstlisting" id="listing-25"><span class="label"><a 
  id="x29-34001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -36,20 +36,20 @@ class="pcrr7t-">:</span><span
 class="pcrr7t-">CUG_QS1</span>
    
    </div>
-<!--l. 1025--><p class="indent" >   to view the suite definition (suite.rc file) in your editor.
-</p><!--l. 1027--><p class="indent" >   This moves to the suite definition directory (so that you can easily open other suite files in the same edit session)
+<!--l. 1023--><p class="indent" >   to view the suite definition (suite.rc file) in your editor.
+</p><!--l. 1025--><p class="indent" >   This moves to the suite definition directory (so that you can easily open other suite files in the same edit session)
 and opens the suite.rc file in your chosen editor. You can of course do this manually, but the automated way is quick
 and convenient, you don&#8217;t have to remember suite definition directory locations, and for suite.rc files that contain
 include files you can optionally <span 
 class="cmti-10">edit the file inlined - it will be split back into its constituent include-files when you</span>
 <span 
 class="cmti-10">save the file and exit the editor</span>.
-</p><!--l. 1036--><p class="indent" >   If you use the vim editor you can have nice cylc-specific syntax highlighting and section folding; see Section&#x00A0;<a 
+</p><!--l. 1034--><p class="indent" >   If you use the vim editor you can have nice cylc-specific syntax highlighting and section folding; see Section&#x00A0;<a 
 href="cug-htmlsu31.html#x47-600007.2.3">7.2.3<!--tex4ht:ref: SyntaxHighlighting --></a>
 for a screenshot and instructions.
-</p><!--l. 1040--><p class="indent" >   You should see the following suite.rc file in your editor:
+</p><!--l. 1038--><p class="indent" >   You should see the following suite.rc file in your editor:
 </p>
-   <!--l. 1042--><div class="lstinputlisting">
+   <!--l. 1040--><div class="lstinputlisting">
 <a 
  id="x29-34002"></a>
    <span 
@@ -472,20 +472,20 @@ class="pcrr7t-">red3</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 1044--><p class="indent" >   This defines a complete, valid, runnable suite. To understand suite.rc files in detail, read <span 
+<!--l. 1042--><p class="indent" >   This defines a complete, valid, runnable suite. To understand suite.rc files in detail, read <span 
 class="cmti-10">Suite Definition</span>
 (Section&#x00A0;<a 
 href="cug-htmlse7.html#x45-550007">7<!--tex4ht:ref: SuiteDefinition --></a>). Here&#8217;s how to interpret this one:
-</p><!--l. 1049--><p class="indent" >   At 0, 6, 12, and 18 hours each day a clock-triggered task called GetData triggers 1 hour after the wall clock
+</p><!--l. 1047--><p class="indent" >   At 0, 6, 12, and 18 hours each day a clock-triggered task called GetData triggers 1 hour after the wall clock
 reaches its (GetData&#8217;s) nominal cycle time; then a task called Model triggers when GetData finishes; and a task
 called PostA triggers when Model is finished. Additionally, Model depends on its own previous instance
 from 6 hours earlier; and twice per day at 6 and 18 hours another task called PostB also triggers off
 Model.
-</p><!--l. 1056--><p class="indent" >   All the tasks in this suite can run in parallel with their own previous instances if the opportunity arises (i.e.&#x00A0;if
+</p><!--l. 1054--><p class="indent" >   All the tasks in this suite can run in parallel with their own previous instances if the opportunity arises (i.e.&#x00A0;if
 their prerequisites happen to be satisfied before the previous instance is finished). Most tasks should be capable of
 this (see Section&#x00A0;<a 
 href="cug-htmlsu50.html#x75-11500011.5">11.5<!--tex4ht:ref: LimitPID --></a>) but if necessary you can force particular tasks to run sequentially without using an explicit
-trigger on their own previous instance, e.g.: </p><!--l. 1062-->
+trigger on their own previous instance, e.g.: </p><!--l. 1060-->
    <div class="lstlisting" id="listing-26"><span class="label"><a 
  id="x29-34028r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -513,23 +513,23 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">GetData</span>
    
    </div>
-<!--l. 1068--><p class="indent" >   Finally, when the suite is first <span 
+<!--l. 1066--><p class="indent" >   Finally, when the suite is first <span 
 class="cmti-10">cold started </span>from scratch it is made to wait on a special <span 
 class="cmti-10">startup </span>task called Prep.
 Startup tasks are one off tasks (non-spawning) that are only used at suite startup, and any dependence on a startup
 task in the suite graph only applies at suite startup.
-</p><!--l. 1074--><p class="indent" >   The optional visualization section, fairly obviously, just defines properties used to plot the suite graph, which
+</p><!--l. 1072--><p class="indent" >   The optional visualization section, fairly obviously, just defines properties used to plot the suite graph, which
 we&#8217;ll do next.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1077--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1075--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu18.html" >next</a>] [<a 
 href="cug-htmlsu16.html" >prev</a>] [<a 
 href="cug-htmlsu16.html#tailcug-htmlsu16.html" >prev-tail</a>] [<a 
 href="cug-htmlsu17.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu17.html" >up</a>] </p></div>
-<!--l. 1077--><p class="indent" >   <a 
+<!--l. 1075--><p class="indent" >   <a 
  id="tailcug-htmlsu17.html"></a> </p> 
 </body></html> 

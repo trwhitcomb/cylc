@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -347,17 +347,27 @@ class="pcrr7t-">install</span>
 local installation section of your cylc environment script (above) provides access to the graphviz executables in this
 bin directory, although you will probably not need to use them. The graphviz lib and include locations are required
 when installing Pygraphviz (next).
-</p><!--l. 586--><p class="noindent" >
+</p><!--l. 586--><p class="indent" >   <span 
+class="cmti-10">Note that graphviz may fail to build on a system that does not have QT installed</span>. Lack of QT is not important for
+our purposes and you can disable it with <span class="lstinline"><span 
+class="pcrr7t-">./</span><span 
+class="pcrr7t-">configure</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">with</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">qt</span></span>no=.
+</p><!--l. 590--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">2.7.6   </span> <a 
  id="x19-210002.7.6"></a>Pygraphviz</h5>
-<!--l. 588--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
+<!--l. 592--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installed</span></span> as follows: </p><!--l. 590-->
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 594-->
    <div class="lstlisting" id="listing-10"><span class="label"><a 
  id="x19-21001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -391,7 +401,7 @@ class="pcrr7t-">pygraphviz</span><span
 class="pcrr7t-">-1.1</span>
    
    </div>
-<!--l. 595--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 597-->
+<!--l. 599--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 601-->
    <div class="lstlisting" id="listing-11"><span class="label"><a 
  id="x19-21004r1"></a></span><span 
 class="pcrr7t-">library_path</span><span 
@@ -436,11 +446,11 @@ class="pcrr7t-">graphviz</span><span
 class="pcrr7t-">'</span>
    
    </div>
-<!--l. 601--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
+<!--l. 605--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span></span> environment variable.
 Check that these are the correct library and include paths by inspecting the contents of the specified directories, and
-adjust them if necessary. Finally, install pygraphviz: </p><!--l. 606-->
+adjust them if necessary. Finally, install pygraphviz: </p><!--l. 610-->
    <div class="lstlisting" id="listing-12"><span class="label"><a 
  id="x19-21006r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -493,8 +503,8 @@ class="pcrr7t-">installed</span>
 
                                                                                          
    </div>
-<!--l. 610--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
-as the Pyro modules, e.g.: </p><!--l. 612-->
+<!--l. 614--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
+as the Pyro modules, e.g.: </p><!--l. 616-->
    <div class="lstlisting" id="listing-13"><span class="label"><a 
  id="x19-21008r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -543,9 +553,9 @@ class="pcrr7t-">-</span><span
 class="pcrr7t-">info</span>
    
    </div>
-<!--l. 616--><p class="indent" >   If not, add the correct Pyraphviz installation path to the PYTHONPATH variable in your cylc environment
+<!--l. 620--><p class="indent" >   If not, add the correct Pyraphviz installation path to the PYTHONPATH variable in your cylc environment
 script.
-</p><!--l. 619--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python session
+</p><!--l. 623--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python session
 (type <span 
 class="cmti-10">python </span>after sourcing the cylc environment script to configure your PYTHONPATH) then type <span 
 class="cmti-10">import</span>
@@ -562,11 +572,11 @@ graphviz itself has not been installed properly (or if the graphviz libraries ha
 installed pygraphviz) then the initial pygraphiz import will be successful but a lower level import will fail
 when the pygraphviz modules cannot load the underlying graphviz libraries - in that case, reinstall
 graphviz.
-</p><!--l. 635--><p class="noindent" >
+</p><!--l. 639--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">2.7.7   </span> <a 
  id="x19-220002.7.7"></a>What Next?</h5>
-<!--l. 637--><p class="noindent" >You should now have access to all cylc functionality. Create the central suite database and upload the example
+<!--l. 641--><p class="noindent" >You should now have access to all cylc functionality. Create the central suite database and upload the example
 suites now, if you have not done so already (Section&#x00A0;<a 
 href="cug-htmlsu8.html#x16-120002.4">2.4<!--tex4ht:ref: CreatingTheCentralSuiteDatabase --></a>), then test your cylc installation by running the automated
 suite database test (Section&#x00A0;<a 
@@ -580,12 +590,12 @@ href="cug-htmlse5.html#x23-260005">5<!--tex4ht:ref: QuickStartGuide --></a>).
 
                                                                                          
 </p>
-   <!--l. 646--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 650--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu12.html" >next</a>] [<a 
 href="cug-htmlsu10.html" >prev</a>] [<a 
 href="cug-htmlsu10.html#tailcug-htmlsu10.html" >prev-tail</a>] [<a 
 href="cug-htmlsu11.html" >front</a>] [<a 
 href="cug-htmlse2.html#cug-htmlsu11.html" >up</a>] </p></div>
-<!--l. 646--><p class="indent" >   <a 
+<!--l. 650--><p class="indent" >   <a 
  id="tailcug-htmlsu11.html"></a>  </p> 
 </body></html> 

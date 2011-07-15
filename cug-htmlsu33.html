@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-11 22:34:00" /> 
+<meta name="date" content="2011-07-15 12:40:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2532--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2530--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu34.html" >next</a>] [<a 
 href="cug-htmlsu32.html" >prev</a>] [<a 
 href="cug-htmlsu32.html#tailcug-htmlsu32.html" >prev-tail</a>] [<a 
@@ -22,22 +22,22 @@ href="#tailcug-htmlsu33.html">tail</a>] [<a
 href="cug-htmlse7.html#cug-htmlsu33.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">7.4   </span> <a 
  id="x53-800007.4"></a>Task Definition</h4>
-<!--l. 2535--><p class="noindent" >A task&#8217;s position in the suite dependency graph determines its relationship to other tasks and its valid cycle times.
+<!--l. 2533--><p class="noindent" >A task&#8217;s position in the suite dependency graph determines its relationship to other tasks and its valid cycle times.
 Other properties such as execution environment and the command scripting used to invoke task processing are
 defined under the suite.rc <span class="lstinline"><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">tasks</span><span 
 class="pcrr7t-">]</span></span> section.
-</p><!--l. 2541--><p class="indent" >   Note that there is not necessarily a one-to-one mapping between tasks defined in the suite.rc file and the external
+</p><!--l. 2539--><p class="indent" >   Note that there is not necessarily a one-to-one mapping between tasks defined in the suite.rc file and the external
 commands, scripts, or programs that implement them. Multiple tasks can call the same script (etc.) with varying
 inputs supplied by their respective command lines and execution environments.
-</p><!--l. 2547--><p class="noindent" >
+</p><!--l. 2545--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">7.4.1   </span> <a 
  id="x53-810007.4.1"></a>A Task Definition Example</h5>
-<!--l. 2550--><p class="noindent" >The following rather trivial suite of two tasks illustrates the important aspects of task definition:
+<!--l. 2548--><p class="noindent" >The following rather trivial suite of two tasks illustrates the important aspects of task definition:
 </p>
-   <!--l. 2553-->
+   <!--l. 2551-->
    <div class="lstlisting" id="listing-61"><span class="label"><a 
  id="x53-81001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -497,22 +497,22 @@ class="pcrr7t-">}.</span><span
 class="pcrr7t-">txt</span>
    
    </div>
-<!--l. 2576--><p class="indent" >   Note the task names in the suite dependency graph, the command scripting for each task, and the global and
+<!--l. 2574--><p class="indent" >   Note the task names in the suite dependency graph, the command scripting for each task, and the global and
 task-specific environment sections.
-</p><!--l. 2579--><p class="noindent" >
+</p><!--l. 2577--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">7.4.2   </span> <a 
  id="x53-820007.4.2"></a>Task Names</h5>
-<!--l. 2582--><p class="noindent" >Task names can contain letters, digits, and underscores. Task names should not be hard wired into task
+<!--l. 2580--><p class="noindent" >Task names can contain letters, digits, and underscores. Task names should not be hard wired into task
 implementations (scripts, models, etc.) because task and suite identity can be extracted portably from the task
 execution environment supplied by the suite (Section&#x00A0;<a 
 href="#x53-830007.4.3">7.4.3<!--tex4ht:ref: TaskExecutionEnvironment --></a>) - then to rename a task, just change the name in the
 suite.rc file.
-</p><!--l. 2589--><p class="noindent" >
+</p><!--l. 2587--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">7.4.3   </span> <a 
  id="x53-830007.4.3"></a>Task Execution Environment</h5>
-<!--l. 2592--><p class="noindent" >The task execution environment comprises variables automatically defined by cylc, and global and task-specific
+<!--l. 2590--><p class="noindent" >The task execution environment comprises variables automatically defined by cylc, and global and task-specific
 variables defined in the suite.rc file. These variables are explicitly exported prior to executing the task command
 scripting (to see how this is implemented go to Section&#x00A0;<a 
 href="cug-htmlse9.html#x63-1030009">9<!--tex4ht:ref: TaskExecution --></a>, <span 
@@ -520,29 +520,29 @@ class="cmti-10">Task Execution</span>).
                                                                                          
 
                                                                                          
-</p><!--l. 2599--><p class="noindent" >
+</p><!--l. 2597--><p class="noindent" >
 </p>
-<!--l. 2599--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2597--><p class="noindent" ><span class="paragraphHead"><a 
  id="x53-840007.4.3.1"></a><span 
 class="cmbx-10">Suite And Task Identify</span></span>
    The task&#8217;s name and cycle time are defined before the global variables, so global variables can actually be made
 task- and cycle-specific by referencing them.
-</p><!--l. 2606--><p class="indent" >   An executing task will almost certainly need to use its own cycle time: </p><!--l. 2607-->
+</p><!--l. 2604--><p class="indent" >   An executing task will almost certainly need to use its own cycle time: </p><!--l. 2605-->
    <div class="lstlisting" id="listing-62"><span class="label"><a 
  id="x53-84001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYCLE_TIME</span>
    
    </div>
-<!--l. 2610--><p class="indent" >   It may also need the location of its suite definition directory, to access files stored there, </p><!--l. 2612-->
+<!--l. 2608--><p class="indent" >   It may also need the location of its suite definition directory, to access files stored there, </p><!--l. 2610-->
    <div class="lstlisting" id="listing-63"><span class="label"><a 
  id="x53-84002r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYCLE_SUITE_DIR</span>
    
    </div>
-<!--l. 2615--><p class="indent" >   And it may need to use the task and suite identity variables (e.g.&#x00A0;to make portable suites that write all output
-to suite-specific locations): </p><!--l. 2617-->
+<!--l. 2613--><p class="indent" >   And it may need to use the task and suite identity variables (e.g.&#x00A0;to make portable suites that write all output
+to suite-specific locations): </p><!--l. 2615-->
    <div class="lstlisting" id="listing-64"><span class="label"><a 
  id="x53-84003r1"></a></span><span 
 class="pcrr8c-">$</span><span 
@@ -641,16 +641,16 @@ class="pcrro7t-">X</span><span
 class="pcrro7t-">%2011051118</span>
    
    </div>
-<!--l. 2625--><p class="indent" >   These variables are also used automatically by the cylc task messaging commands, to target the right task proxy
+<!--l. 2623--><p class="indent" >   These variables are also used automatically by the cylc task messaging commands, to target the right task proxy
 object in the right suite.
-</p><!--l. 2628--><p class="noindent" >
+</p><!--l. 2626--><p class="noindent" >
 </p>
-<!--l. 2628--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2626--><p class="noindent" ><span class="paragraphHead"><a 
  id="x53-850007.4.3.2"></a><span 
 class="cmbx-10">Task Access To Cylc</span></span>
    Task execution environments are automatically configured to give the executing task access to cylc commands
 and utilities. This is done prior to exporting user-defined variables so that cylc utility commands can be used in
-variable assignment expressions. For example: </p><!--l. 2634-->
+variable assignment expressions. For example: </p><!--l. 2632-->
    <div class="lstlisting" id="listing-65"><span class="label"><a 
  id="x53-85001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -689,19 +689,19 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">)</span>
    
    </div>
-<!--l. 2640--><p class="noindent" >
+<!--l. 2638--><p class="noindent" >
 </p>
-<!--l. 2640--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2638--><p class="noindent" ><span class="paragraphHead"><a 
  id="x53-860007.4.3.3"></a><span 
 class="cmbx-10">Global And Task-Specific Environment Variables</span></span>
    Generally speaking, parameters common to several tasks should be defined once in the global environment
 section of the suite.rc file; and those needed by a single task, in the task-specific environment section. Task-specific
 variables can reference global variables.
-</p><!--l. 2647--><p class="indent" >   Order of definition is preserved for user-defined global and task-specific environment variables, so you can safely
+</p><!--l. 2645--><p class="indent" >   Order of definition is preserved for user-defined global and task-specific environment variables, so you can safely
 refer to previously defined variables.
-</p><!--l. 2651--><p class="noindent" >
+</p><!--l. 2649--><p class="noindent" >
 </p>
-<!--l. 2651--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2649--><p class="noindent" ><span class="paragraphHead"><a 
  id="x53-870007.4.3.4"></a><span 
 class="cmbx-10">When Are Environment Variables Evaluated?</span></span>
                                                                                          
@@ -720,12 +720,12 @@ suite).
 
                                                                                          
 </p>
-   <!--l. 2683--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2681--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu34.html" >next</a>] [<a 
 href="cug-htmlsu32.html" >prev</a>] [<a 
 href="cug-htmlsu32.html#tailcug-htmlsu32.html" >prev-tail</a>] [<a 
 href="cug-htmlsu33.html" >front</a>] [<a 
 href="cug-htmlse7.html#cug-htmlsu33.html" >up</a>] </p></div>
-<!--l. 2683--><p class="indent" >   <a 
+<!--l. 2681--><p class="indent" >   <a 
  id="tailcug-htmlsu33.html"></a>   </p> 
 </body></html> 
