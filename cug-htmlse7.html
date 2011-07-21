@@ -10,77 +10,77 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1659--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu30.html" >next</a>] [<a 
-href="cug-htmlsu29.html" >prev</a>] [<a 
-href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
+   <!--l. 1615--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu29.html" >next</a>] [<a 
+href="cug-htmlsu28.html" >prev</a>] [<a 
+href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse7.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
- id="x45-550007"></a>Suite Definition</h3>
-<!--l. 1662--><p class="noindent" >A cylc suite is defined entirely by a single structured, validated, <span 
+ id="x44-540007"></a>Suite Definition</h3>
+<!--l. 1618--><p class="noindent" >A cylc suite is defined entirely by a single structured, validated, <span 
 class="cmti-10">suite.rc file </span>that concisely specifies the properties of,
 and the relationships between, the various tasks managed by the suite.
-</p><!--l. 1666--><p class="indent" >   This section of the User Guide deals with the format and content of the suite.rc file, including task definition.
+</p><!--l. 1622--><p class="indent" >   This section of the User Guide deals with the format and content of the suite.rc file, including task definition.
 Task <span 
 class="cmti-10">implementation </span>- what&#8217;s required of the real commands, scripts, or programs that do the processing that the
 tasks represent, is covered in Section&#x00A0;<a 
-href="cug-htmlse8.html#x55-910008">8<!--tex4ht:ref: TaskImplementation --></a>.
-</p><!--l. 1680--><p class="noindent" >
+href="cug-htmlse8.html#x54-900008">8<!--tex4ht:ref: TaskImplementation --></a>.
+</p><!--l. 1636--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >7.1 <a 
-href="cug-htmlsu30.html#x46-560007.1">The Suite Definition Directory</a></span>
+href="cug-htmlsu29.html#x45-550007.1">The Suite Definition Directory</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
-href="cug-htmlsu31.html#x47-570007.2">The suite.rc File</a></span>
+href="cug-htmlsu30.html#x46-560007.2">The suite.rc File</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.1 <a 
-href="cug-htmlsu31.html#x47-580007.2.1" id="QQ2-47-89">Syntax</a></span>
+href="cug-htmlsu30.html#x46-570007.2.1" id="QQ2-46-88">Syntax</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.2 <a 
-href="cug-htmlsu31.html#x47-590007.2.2" id="QQ2-47-90">An Example</a></span>
+href="cug-htmlsu30.html#x46-580007.2.2" id="QQ2-46-89">An Example</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.3 <a 
-href="cug-htmlsu31.html#x47-600007.2.3" id="QQ2-47-93">Syntax Highlighting In Vim</a></span>
+href="cug-htmlsu30.html#x46-590007.2.3" id="QQ2-46-92">Syntax Highlighting In Vim</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
-href="cug-htmlsu32.html#x48-610007.3">Dependency Graphs</a></span>
+href="cug-htmlsu31.html#x47-600007.3">Dependency Graphs</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.1 <a 
-href="cug-htmlsu32.html#x48-620007.3.1" id="QQ2-48-96">Graph Syntax</a></span>
+href="cug-htmlsu31.html#x47-610007.3.1" id="QQ2-47-95">Graph Syntax</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.2 <a 
-href="cug-htmlsu32.html#x48-630007.3.2" id="QQ2-48-97">Valid Cycle Times For Each Task</a></span>
+href="cug-htmlsu31.html#x47-620007.3.2" id="QQ2-47-96">Valid Cycle Times For Each Task</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.3 <a 
-href="cug-htmlsu32.html#x48-640007.3.3" id="QQ2-48-98">Partitioning The Graph</a></span>
+href="cug-htmlsu31.html#x47-630007.3.3" id="QQ2-47-97">Partitioning The Graph</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.4 <a 
-href="cug-htmlsu32.html#x48-650007.3.4" id="QQ2-48-99">Task Succeeded Triggers</a></span>
+href="cug-htmlsu31.html#x47-640007.3.4" id="QQ2-47-98">Task Succeeded Triggers</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.5 <a 
-href="cug-htmlsu32.html#x48-660007.3.5" id="QQ2-48-100">Task Failed Triggers</a></span>
+href="cug-htmlsu31.html#x47-650007.3.5" id="QQ2-47-99">Task Failed Triggers</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.6 <a 
-href="cug-htmlsu32.html#x48-670007.3.6" id="QQ2-48-101">Internal Triggers</a></span>
+href="cug-htmlsu31.html#x47-660007.3.6" id="QQ2-47-100">Internal Triggers</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.7 <a 
-href="cug-htmlsu32.html#x48-680007.3.7" id="QQ2-48-102">Intercycle Triggers</a></span>
+href="cug-htmlsu31.html#x47-670007.3.7" id="QQ2-47-101">Intercycle Triggers</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.8 <a 
-href="cug-htmlsu32.html#x48-690007.3.8" id="QQ2-48-103">Conditional Triggers</a></span>
+href="cug-htmlsu31.html#x47-680007.3.8" id="QQ2-47-102">Conditional Triggers</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.9 <a 
-href="cug-htmlsu32.html#x48-730007.3.9" id="QQ2-48-107">Satisfying Intercycle Dependencies At Startup</a></span>
+href="cug-htmlsu31.html#x47-720007.3.9" id="QQ2-47-106">Satisfying Intercycle Dependencies At Startup</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.10 <a 
-href="cug-htmlsu32.html#x48-760007.3.10" id="QQ2-48-110">Model Restart Dependencies</a></span>
+href="cug-htmlsu31.html#x47-750007.3.10" id="QQ2-47-109">Model Restart Dependencies</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.11 <a 
-href="cug-htmlsu32.html#x48-770007.3.11" id="QQ2-48-111">Task Families</a></span>
+href="cug-htmlsu31.html#x47-760007.3.11" id="QQ2-47-110">Task Families</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
-href="cug-htmlsu33.html#x53-800007.4">Task Definition</a></span>
+href="cug-htmlsu32.html#x52-790007.4">Task Definition</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.1 <a 
-href="cug-htmlsu33.html#x53-810007.4.1" id="QQ2-53-116">A Task Definition Example</a></span>
+href="cug-htmlsu32.html#x52-800007.4.1" id="QQ2-52-115">A Task Definition Example</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.2 <a 
-href="cug-htmlsu33.html#x53-820007.4.2" id="QQ2-53-117">Task Names</a></span>
+href="cug-htmlsu32.html#x52-810007.4.2" id="QQ2-52-116">Task Names</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.3 <a 
-href="cug-htmlsu33.html#x53-830007.4.3" id="QQ2-53-118">Task Execution Environment</a></span>
+href="cug-htmlsu32.html#x52-820007.4.3" id="QQ2-52-117">Task Execution Environment</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
-href="cug-htmlsu34.html#x54-880007.5">Suite Validation</a></span>
+href="cug-htmlsu33.html#x53-870007.5">Suite Validation</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.5.1 <a 
-href="cug-htmlsu34.html#x54-890007.5.1" id="QQ2-54-124">Validation Errors</a></span>
+href="cug-htmlsu33.html#x53-880007.5.1" id="QQ2-53-123">Validation Errors</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.5.2 <a 
-href="cug-htmlsu34.html#x54-900007.5.2" id="QQ2-54-125">Validation Warnings</a></span>
+href="cug-htmlsu33.html#x53-890007.5.2" id="QQ2-53-124">Validation Warnings</a></span>
    </div>
 
 
@@ -89,12 +89,12 @@ href="cug-htmlsu34.html#x54-900007.5.2" id="QQ2-54-125">Validation Warnings</a><
                                                                                          
 
                                                                                          
-   <!--l. 2752--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu30.html" >next</a>] [<a 
-href="cug-htmlsu29.html" >prev</a>] [<a 
-href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
+   <!--l. 2708--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu29.html" >next</a>] [<a 
+href="cug-htmlsu28.html" >prev</a>] [<a 
+href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
 href="cug-htmlse7.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
-<!--l. 2752--><p class="indent" >   <a 
+<!--l. 2708--><p class="indent" >   <a 
  id="tailcug-htmlse7.html"></a> </p> 
 </body></html> 

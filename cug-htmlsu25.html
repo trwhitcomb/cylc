@@ -4,73 +4,51 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Validating A Suite</title> 
+<head><title>Using Example Suites To Understand Cylc</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1489--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu26.html" >next</a>] [<a 
+   <!--l. 1469--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu24.html" >prev</a>] [<a 
 href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu25.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu25.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.13   </span> <a 
- id="x39-480005.13"></a>Validating A Suite</h4>
-<!--l. 1491--><p class="noindent" >After editing a suite always validate it to check for errors, via gcylc or the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span></span> command.
-Figure&#x00A0;<a 
-href="#x39-4800129">29<!--tex4ht:ref: fig-validate-eg --></a> shows validation of <span 
-class="cmti-10">examples:CUG73 </span>(unfortunately the suite was registered under a different name
-when the screenshot was taken). Note the warnings that the tasks will be dummied out, as discussed
-above.
+ id="x39-480005.13"></a>Using Example Suites To Understand Cylc</h4>
+<!--l. 1471--><p class="noindent" >Cylc has been designed from the ground up to make testing and prototyping very easy. Simply drawing (in text) a
+dependency graph in a new suite.rc file creates a valid suite that you can run. The tasks will default to emitting an
+identifying message, sleeping for a few seconds, and then exiting; but you can then arrange for particular tasks to do
+more complex things (to fail, for example) by supplying appropriate task command lines to replace the default
+&#8220;dummy&#8221; one.
+</p><!--l. 1479--><p class="indent" >   Cylc&#8217;s example suites run quickly and are portable: you can copy and run them immediately without
+modification, even those with real task implementations that generate real (albeit zero-sized) output files. You can
+even run multiple copies of the same example suite at once (even multiple <span 
+class="cmti-10">instances </span>of the exact same suite, in fact),
+under different registrations, because the suite group and name are used in all I/O paths (without being hardwired
+anywhere).
+</p><!--l. 1487--><p class="indent" >   You can copy an example suite in an instant, using the cylc commands or GUI, make a few changes according to
+your needs, and then run it to see what happens.
+</p><!--l. 1491--><p class="indent" >   You can also run real suites in simulation mode, wherein each real task is replaced by the default dummy task
+(above) and the suite runs quickly on an accelerated clock. As far as cylc is concerned this is almost identical to real
+operation, so simulation mode can be used to test recovery strategies for certain kinds of failure, for instance. In
+simulation mode you can watch how any suite catches up and transitions from delayed to real time
+operation.
+</p><!--l. 1499--><p class="indent" >   The examples suites all use registration specific I/O paths so that you can run multiple instances of them at once
+without interference.
 </p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x39-4800129"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1499--><p class="noindent" >
-
-</p><!--l. 1500--><p class="noindent" ><img 
-src="screenshots/validate-eg.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;29: </span><span  
-class="content"><span 
-class="cmr-9">Suite examples:CUG73 Validation.</span></span></div><!--tex4ht:label?: x39-4800129 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-<!--l. 1507--><p class="indent" >   For more information on suite validation see Section&#x00A0;<a 
-href="cug-htmlsu34.html#x54-880007.5">7.5<!--tex4ht:ref: Validation --></a>.
-                                                                                         
-
-                                                                                         
-</p>
-   <!--l. 1510--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu26.html" >next</a>] [<a 
+   <!--l. 1503--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu24.html" >prev</a>] [<a 
 href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
 href="cug-htmlsu25.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu25.html" >up</a>] </p></div>
-<!--l. 1510--><p class="indent" >   <a 
+<!--l. 1503--><p class="indent" >   <a 
  id="tailcug-htmlsu25.html"></a> </p> 
 </body></html> 

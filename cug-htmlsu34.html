@@ -4,495 +4,418 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite Validation</title> 
+<head><title>Most Tasks Require No Modification For Cylc</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2681--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse8.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+   <!--l. 2714--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlse8.html" >prev</a>] [<a 
+href="cug-htmlse8.html#tailcug-htmlse8.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu34.html">tail</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu34.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">7.5   </span> <a 
- id="x54-880007.5"></a>Suite Validation</h4>
-<!--l. 2684--><p class="noindent" >Suite validation is designed to catch most suite definition errors before run time. First the suite.rc file is validated
-against the spec file <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">conf</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suiterc</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">spec</span></span>, which is the ultimate arbiter of what&#8217;s legal in a cylc
-suite definition (see the <span 
-class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
-href="cug-htmlse12.html#x87-126000A">A<!--tex4ht:ref: SuiteRCReference --></a>). Validation detects any formatting errors, typographic
-errors, illegal items, and illegal values; then some global consistency checking is done; and finally the
-validator attempts to create each suite task proxy according to information parsed from the suite.rc
-file.
-</p><!--l. 2695--><p class="indent" >   Here&#8217;s an example of a successful validation, </p><!--l. 2696-->
-   <div class="lstlisting" id="listing-66"><span class="label"><a 
- id="x54-88001r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">simple</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88002r2"></a></span><span 
-class="pcrr7t-">Parsing</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Config</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">File</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88003r3"></a></span><span 
-class="pcrr7t-">Instantiating</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Proxies</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88008r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88009r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88010r10"></a></span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">simple</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validates</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-88011r11"></a></span><span 
-class="pcrr7t-">DONE</span>
-   
-   </div>
-<!--l. 2710--><p class="noindent" >
+href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">8.1   </span> <a 
+ id="x55-910008.1"></a>Most Tasks Require No Modification For Cylc</h4>
+<!--l. 2716--><p class="noindent" >Any existing command, script, or executable can function as a cylc task if the following conditions are met:
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">7.5.1   </span> <a 
- id="x54-890007.5.1"></a>Validation Errors</h5>
-<!--l. 2712--><p class="noindent" >The validator reports the line numbers of detected errors.
-</p>
-   <!--l. 2714-->
-   <div class="lstlisting" id="listing-67"><span class="label"><a 
- id="x54-89001r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">simple</span><span 
+     <ul class="itemize1">
+     <li class="itemize">The task must have no <span 
+class="cmti-10">internal outputs </span>that others trigger off - otherwise it must be modified to report
+     when those internal outputs are completed.
+     </li>
+     <li class="itemize">The script or process that invokes the task must not exit before all task processing is finished - otherwise
+     it must be modified to report final success or failure itself.
+     </li>
+     <li class="itemize">Task scripting must return non-zero exit status on error, to allow automatic detection of successful
+     completion or failure.</li></ul>
+<!--l. 2729--><p class="indent" >   If these requirements are not met see <span 
+class="cmti-10">Modifying Scripts For Cylc</span>, Section&#x00A0;<a 
+href="cug-htmlsu37.html#x58-940008.4">8.4<!--tex4ht:ref: TaskModsForCylc --></a>. Reporting internal outputs is easy.
+Manual completion messaging is more involved, but is typically only needed for large models with internally
+complex native job submission processes.
+</p><!--l. 2735--><p class="indent" >   The following suite.rc listing shows several tasks that run external scripts, <span class="lstinline"><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span></span>, which do not
+know about cylc: </p><!--l. 2738-->
+   <div class="lstlisting" id="listing-65"><span class="label"><a 
+ id="x55-91001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-89002r2"></a></span><span 
-class="pcrr7t-">Parsing</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Config</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">File</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-89003r3"></a></span><span 
-class="pcrr7t-">ERROR</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x55-91002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
 class="pcrr7t-">tasks</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-89004r4"></a></span><span 
-class="pcrr7t-">NestingError</span><span 
-class="pcrr7t-">('</span><span 
-class="pcrr7t-">Cannot</span><span 
+ id="x55-91003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">compute</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">section</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">depth</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">line</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">19.',)</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-89005r5"></a></span><span 
-class="pcrr7t-">_validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">simple</span><span 
+ id="x55-91004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">failed</span><span 
-class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">1</span>
-   
-   </div>
-<!--l. 2722--><p class="indent" >   If the suite.rc file contains include-files, use the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inline</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span></span> command (or the gcylc right-click &#8216;Edit&#8217;
-option) to view an inlined copy with correct line numbers.
-</p><!--l. 2727--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">7.5.2   </span> <a 
- id="x54-900007.5.2"></a>Validation Warnings</h5>
-<!--l. 2729--><p class="noindent" >Warnings are emitted by the validator if any tasks in the dependency graph are not defined in the
-[tasks] section, or if any tasks defined in the [tasks] section are not used in the dependency graph:
-</p><!--l. 2732-->
-   <div class="lstlisting" id="listing-68"><span class="label"><a 
- id="x54-90001r1"></a></span><span 
-class="pcrr7t-">Parsing</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Config</span><span 
+class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">File</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90002r2"></a></span><span 
-class="pcrr7t-">WARNING</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">is</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">defined</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">by</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">it</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">will</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">as</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dummy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">that</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90003r3"></a></span><span 
-class="pcrr7t-">WARNING</span><span 
-class="pcrr7t-">:</span><span 
+ id="x55-91005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OPTIONS</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ARGUMENTS</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">description</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">that</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
-class="pcrr7t-">Prep</span><span 
 class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">is</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">defined</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">but</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">not</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">used</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">HELLO</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91010r10"></a></span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">bar</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90004r4"></a></span><span 
-class="pcrr7t-">Instantiating</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Proxies</span><span 
-class="pcrr7t-">:</span><span 
+ id="x55-91011r11"></a></span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">BYE</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
+ id="x55-91012r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90006r6"></a></span><span 
+ id="x55-91013r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90007r7"></a></span><span 
+ id="x55-91014r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90009r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90010r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">WARNING</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">no</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">hours</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">][[</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">]];</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x2423;</span><span 
 class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">can</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">be</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90011r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">submit</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">ed</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">but</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">not</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inserted</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">into</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">that</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">runs</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">baz</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">retries</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">on</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">failure</span><span 
+class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90012r12"></a></span><span 
+ id="x55-91015r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">attempt</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">No</span><span 
+class="pcrr7t-">.1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90013r13"></a></span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">simple</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validates</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
+ id="x55-91016r16"></a></span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">baz</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x54-90014r14"></a></span><span 
-class="pcrr7t-">DONE</span>
+ id="x55-91017r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">attempt</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">No</span><span 
+class="pcrr7t-">.2</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">only</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">invoked</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">if</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">try</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">No</span><span 
+class="pcrr7t-">.1</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">fails</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-91018r18"></a></span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">retry</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span>
    
+                                                                                         
+
+                                                                                         
    </div>
-<!--l. 2748--><p class="indent" >   These are not necessarily errors - a task defined by graph alone will run as a dummy task, and you can
-temporarily disable a defined task by commenting it out of the dependency graph.
-</p>
-   <!--l. 2752--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse8.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+                                                                                         
+
+                                                                                         
+   <!--l. 2759--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlse8.html" >prev</a>] [<a 
+href="cug-htmlse8.html#tailcug-htmlse8.html" >prev-tail</a>] [<a 
 href="cug-htmlsu34.html" >front</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu34.html" >up</a>] </p></div>
-<!--l. 2752--><p class="indent" >   <a 
- id="tailcug-htmlsu34.html"></a>  </p> 
+href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
+<!--l. 2759--><p class="indent" >   <a 
+ id="tailcug-htmlsu34.html"></a> </p> 
 </body></html> 

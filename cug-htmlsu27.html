@@ -4,113 +4,94 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Private Suite Databases</title> 
+<head><title>The Central Suite Database</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1557--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1550--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu28.html" >next</a>] [<a 
-href="cug-htmlse6.html" >prev</a>] [<a 
-href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+href="cug-htmlsu26.html" >prev</a>] [<a 
+href="cug-htmlsu26.html#tailcug-htmlsu26.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu27.html">tail</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu27.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.1   </span> <a 
- id="x42-510006.1"></a>Private Suite Databases</h4>
-<!--l. 1559--><p class="noindent" >Your private suite registration database simply maps suites, organised by GROUP and NAME, to their suite
-definition locations (see <span 
-class="cmti-10">Suite Definition</span>, Section&#x00A0;<a 
-href="cug-htmlse7.html#x45-550007">7<!--tex4ht:ref: SuiteDefinition --></a>). You can then refer to your suites concisely &#8220;by name&#8221; without
-having to specify, or even remember, where the suite definition resides. For example this command lists all the tasks
-in suite &#8216;foo&#8217; of the &#8216;oper&#8217; group. </p><!--l. 1565-->
-   <div class="lstlisting" id="listing-33"><span class="label"><a 
- id="x42-51001r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">info</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">list</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">oper</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">foo</span>
-   
-   </div>
-<!--l. 1569--><p class="indent" >   By right-clicking on a suite in the private database, or using cylc commands, you can:
+   <h4 class="subsectionHead"><span class="titlemark">6.2   </span> <a 
+ id="x42-510006.2"></a>The Central Suite Database</h4>
+<!--l. 1552--><p class="noindent" >The central suite database facilitates sharing of suites among cylc users without cluttering the public namespace
+with suites that are partially completed, broken, or not generally useful. It works similarly to a private suite
+database except that suites are organised by <span 
+class="cmti-10">owner </span>as well as group and name. Users can export suites to the central
+database to make them available to others. During export you can choose to have the suite definition copied to the
+database (the suite definition itself isn&#8217;t &#8220;stored in the database&#8221; but the new registration will refer to
+the new centrally located suite definition) or you can have to central database reference the original
+suite.
+</p><!--l. 1563--><p class="indent" >   Suites in the central database can be inspected by various means, but you can&#8217;t run them without <span 
+class="cmti-10">importing</span>
+them to your private database.
+</p><!--l. 1566--><p class="indent" >   By right-clicking on a suite in the central database, or using the cylc command line, you can:
      </p><ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x42-51003x1">start a suite control GUI to run the suite (or connect to a running suite),
+  class="enumerate" id="x42-51002x1">retrieve the suite description,
      </li>
      <li 
-  class="enumerate" id="x42-51005x2">submit a single task to run, just as it would be submitted by its suite,
+  class="enumerate" id="x42-51004x2">list tasks in the suite,
      </li>
      <li 
-  class="enumerate" id="x42-51007x3">view the cylc stdout and stderr streams for the suite,
+  class="enumerate" id="x42-51006x3">view the suite definition in your editor,
      </li>
      <li 
-  class="enumerate" id="x42-51009x4">view the cylc log for the suite (which records all events and messages),
+  class="enumerate" id="x42-51008x4">plot the suite dependency graph,
      </li>
      <li 
-  class="enumerate" id="x42-51011x5">retrieve the suite description,
+  class="enumerate" id="x42-51010x5">search the suite definition and bin scripts,
      </li>
      <li 
-  class="enumerate" id="x42-51013x6">list tasks in the suite,
+  class="enumerate" id="x42-51012x6">validate the suite definition,
      </li>
      <li 
-  class="enumerate" id="x42-51015x7">edit the suite definition in your editor,
+  class="enumerate" id="x42-51014x7">compare (difference) the suite with another suite,
      </li>
      <li 
-  class="enumerate" id="x42-51017x8">plot the suite dependency graph,
+  class="enumerate" id="x42-51016x8">import the suite or group to your private database,
+     </li>
+     <li 
+  class="enumerate" id="x42-51018x9">unreregister or delete the suite or group (if you own it),
+     </li>
+     <li 
+  class="enumerate" id="x42-51020x10">reregister the suite or group (if you own it).</li></ol>
+<!--l. 1581--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">6.2.1   </span> <a 
+ id="x42-520006.2.1"></a>Can Suites Be Shared Across The Network?</h5>
+<!--l. 1583--><p class="noindent" >The central suite database is not currently accessible on the network, it is local to the cylc host and accessed
+through the filesystem. Consequently it has to be world, or at least group, writeable, which is not very
+secure.
+</p><!--l. 1594--><p class="indent" >   <span 
+class="cmti-10">We intend to develop a client/server interface to the public suite database so that users can easily share suites</span>
+<span 
+class="cmti-10">across the network</span>. The required server functionality is essentially identical to that of the cylc lockserver (see
+Appendix&#x00A0;<a 
+href="cug-htmlse14.html#x107-285000C">C<!--tex4ht:ref: TheCylcLockserver --></a>) so this will not be difficult. In the meantime, &#8220;importing&#8221; a suite manually from another user on
                                                                                          
 
                                                                                          
-     </li>
-     <li 
-  class="enumerate" id="x42-51019x9">search the suite definition and bin scripts,
-     </li>
-     <li 
-  class="enumerate" id="x42-51021x10">validate the suite definition,
-     </li>
-     <li 
-  class="enumerate" id="x42-51023x11">copy the suite or group,
-     </li>
-     <li 
-  class="enumerate" id="x42-51025x12">compare (difference) the suite with another suite,
-     </li>
-     <li 
-  class="enumerate" id="x42-51027x13">export the suite or group to the central database,
-     </li>
-     <li 
-  class="enumerate" id="x42-51029x14">unreregister the suite or group,
-     </li>
-     <li 
-  class="enumerate" id="x42-51031x15">reregister the suite or group.</li></ol>
-<!--l. 1588--><p class="indent" >   Note that the suite title shown in gcylc is parsed from the suite.rc file at the time of initial registration; if you
-change the title (by editing the suite.rc file) use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">refresh</span></span> or gcylc View <span 
-class="cmsy-10">&#x2192; </span>Refresh to update the
-database.
+another host is simply a matter of copying the suite definition directory over and registering the new copy in your
+private database.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1595--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1603--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu28.html" >next</a>] [<a 
-href="cug-htmlse6.html" >prev</a>] [<a 
-href="cug-htmlse6.html#tailcug-htmlse6.html" >prev-tail</a>] [<a 
+href="cug-htmlsu26.html" >prev</a>] [<a 
+href="cug-htmlsu26.html#tailcug-htmlsu26.html" >prev-tail</a>] [<a 
 href="cug-htmlsu27.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu27.html" >up</a>] </p></div>
-<!--l. 1595--><p class="indent" >   <a 
- id="tailcug-htmlsu27.html"></a> </p> 
+<!--l. 1603--><p class="indent" >   <a 
+ id="tailcug-htmlsu27.html"></a>  </p> 
 </body></html> 

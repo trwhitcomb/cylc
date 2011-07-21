@@ -4,52 +4,45 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Switching A Suite Between Simulation And Live Modes?</title> 
+<head><title>Pre-3.0</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3872--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse16.html" >next</a>] [<a 
-href="cug-htmlsu75.html" >prev</a>] [<a 
-href="cug-htmlsu75.html#tailcug-htmlsu75.html" >prev-tail</a>] [<a 
+   <!--l. 4013--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu77.html" >next</a>] [<a 
+href="cug-htmlse17.html" >prev</a>] [<a 
+href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu76.html">tail</a>] [<a 
-href="cug-htmlse15.html#cug-htmlsu76.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">D.2   </span> <a 
- id="x111-289000D.2"></a>Switching A Suite Between Simulation And Live Modes?</h4>
-<!--l. 3874--><p class="noindent" >The scheduler mode (simulation or live) is recorded in the suite state dump file. <span 
-class="cmti-10">Cylc will not let you restart a</span>
-<span 
-class="cmti-10">simulation mode suite in live, or a live mode suite in simulation mode </span>- any attempt to do the former must certainly
-be a mistake, and doing the latter, while feasible, would corrupt your live suite state dump and turn it over to
-simulation mode. Note, however, that if you really want to run the current state of a live suite forward in simulation
-mode, all you need to do is this:
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x111-289002x1">back up the live state dump (or take note of the filename of the relevant automatic dump when you
-     do the final suite shutdown intervention).
-     </li>
-     <li 
-  class="enumerate" id="x111-289004x2">edit the mode line in the state dump file, and restart the suite in simulation mode.
-     </li>
-     <li 
-  class="enumerate" id="x111-289006x3">later, restart the live suite from the pre simulation mode state dump backup</li></ol>
-<!--l. 3892--><p class="indent" >   <span 
-class="cmti-10">Cylc can also create an instant dummy mode clone of the current state of any running or stopped suite, but this</span>
-<span 
-class="cmti-10">&#8220;practice mode&#8221; has been disabled in the current release pending testing.</span>
+href="cug-htmlse17.html#cug-htmlsu76.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">F.1   </span> <a 
+ id="x113-291000F.1"></a>Pre-3.0</h4>
+<!--l. 4015--><p class="noindent" >Early versions of cylc were focused on developing and testing the new scheduling algorithm, and the suite design
+interface at the time was essentially the quickest route to that end. A suite was a collection of &#8220;task definition files&#8221;
+that encoded the prerequisites and outputs of each task in a direct reflection of cylc&#8217;s internal task proxies. This way
+of defining suites exposed cylc&#8217;s self-organising nature to the user, and it did have some nice properties. For instance
+a group of tasks could be transferred directly from one suite to another by simply copying the taskdef files over
+(and checking that prerequisite and output messages were consistent with the new suite). However,
+ensuring consistency of prerequisites and outputs across a large suite could be tedious; a few edge
+cases associated with suite startup and forecast model restart dependencies were, arguably, difficult to
+understand; and the global structure of a suite was not readily apparent until run time (although to
+counter this cylc 2.x could generate run-time resolved dependency graphs very quickly in simulation
+mode).
+                                                                                         
+
+                                                                                         
 </p>
-   <!--l. 3994--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse16.html" >next</a>] [<a 
-href="cug-htmlsu75.html" >prev</a>] [<a 
-href="cug-htmlsu75.html#tailcug-htmlsu75.html" >prev-tail</a>] [<a 
+   <!--l. 4032--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu77.html" >next</a>] [<a 
+href="cug-htmlse17.html" >prev</a>] [<a 
+href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
 href="cug-htmlsu76.html" >front</a>] [<a 
-href="cug-htmlse15.html#cug-htmlsu76.html" >up</a>] </p></div>
-<!--l. 3994--><p class="indent" >   <a 
+href="cug-htmlse17.html#cug-htmlsu76.html" >up</a>] </p></div>
+<!--l. 4032--><p class="indent" >   <a 
  id="tailcug-htmlsu76.html"></a> </p> 
 </body></html> 

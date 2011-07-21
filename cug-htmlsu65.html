@@ -4,170 +4,76 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[environment]</title> 
+<head><title>[directives]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 733--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 771--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu66.html" >next</a>] [<a 
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu65.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.6   </span> <a 
- id="x97-170000A.6"></a>[environment]</h4>
-<!--l. 734--><p class="noindent" >Use this section to define the global task execution environment, i.e.&#x00A0;variables made available to all tasks.
-Order of definition is preserved. Even global variables can reference task name and cycle time because
-suite and task identity are exported in the cylc job script prior to the user-defined environment. Cylc
-utility commands can be used in variable assignment expressions because the cylc environment is
-exported prior to user-defined variables. See <span 
-class="cmti-10">Task Execution Environment</span>, Section&#x00A0;<a 
-href="cug-htmlsu33.html#x53-830007.4.3">7.4.3<!--tex4ht:ref: TaskExecutionEnvironment --></a>, for more
-information.
+   <h4 class="subsectionHead"><span class="titlemark">A.7   </span> <a 
+ id="x97-171000A.7"></a>[directives]</h4>
+<!--l. 772--><p class="noindent" >Use this section to define batch queue scheduler directives, or similar, for all tasks in the suite. These are written to
+the top of the job script that cylc submits when a task is ready to run. Whether or not directives defined here are
+used depends on the task&#8217;s job submission method, which should also define the directive comment prefix (&#8216;<span class="lstinline"><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">@</span></span>&#8217; for
+loadleveler) and final directive (&#8217;<span class="lstinline"><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">@</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queue</span></span>&#8217;).
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.6.1   </span> <a 
- id="x97-171000A.6.1"></a><span 
+   <h5 class="subsubsectionHead"><span class="titlemark">A.7.1   </span> <a 
+ id="x97-172000A.7.1"></a><span 
 class="cmmi-10">&#x003C;</span>MANY<span 
 class="cmmi-10">&#x003E;</span></h5>
-<!--l. 743--><p class="noindent" >Replace MANY with each global environment variable definition  </p>
+<!--l. 780--><p class="noindent" >Replace MANY with each batch queue scheduler directive, e.g.&#x00A0;</p><!--l. 781-->
+   <div class="lstlisting" id="listing-97"><span class="label"><a 
+ id="x97-172001r1"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">class</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">parallel</span>
+   
+   </div>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[environment]
+class="cmti-10">section: </span>[directives]
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span>None
+class="cmti-10">legal values: </span>any legal directive for your batch scheduler
      </li>
      <li class="itemize"><span 
-class="cmti-10">legal  values:  </span>any  environment  variable  assignment  expression  valid  in  the  <span 
-class="cmti-10">job  submission  shell</span>
-     (Appendix&#x00A0;<a 
-href="cug-htmlsu61.html#x90-156000A.2.28">A.2.28<!--tex4ht:ref: JobSubShell --></a>). White space around the &#8216;=&#8217; is allowed (the <span class="lstinline"><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span></span> file is not itself a shell
-     script).
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">examples </span>for the bash shell:
-         <ul class="itemize2">
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">baz</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">BAR</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">}</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">GLOBALVAR</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">BAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">echo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">hello</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">world</span><span 
-class="pcrr7t-">")</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">WAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">%.</span><span 
-class="pcrr7t-">jpg</span><span 
-class="pcrr7t-">}.</span><span 
-class="pcrr7t-">png</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">NEXT_CYCLE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycletime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">)</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">PREV_CYCLE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycletime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">s</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6&#8216;</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ZAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">}"</span></span></li></ul>
-     <!--l. 762--><p class="noindent" >Variable expansion expressions containing the hash character must be quoted because hash is the suite.rc
-     comment delimiter.</p></li></ul>
+class="cmti-10">default: </span>None</li></ul>
                                                                                          
 
                                                                                          
-   <!--l. 766--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 791--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu66.html" >next</a>] [<a 
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="cug-htmlsu65.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
-<!--l. 766--><p class="indent" >   <a 
+<!--l. 791--><p class="indent" >   <a 
  id="tailcug-htmlsu65.html"></a>  </p> 
 </body></html> 

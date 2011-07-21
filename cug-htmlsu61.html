@@ -4,449 +4,98 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite Level Items</title> 
+<head><title>[special tasks]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 50--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 562--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu62.html" >next</a>] [<a 
 href="cug-htmlsu60.html" >prev</a>] [<a 
 href="cug-htmlsu60.html#tailcug-htmlsu60.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu61.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu61.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.2   </span> <a 
- id="x90-128000A.2"></a>Suite Level Items</h4>
-<!--l. 52--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
+ id="x91-157000A.3"></a>[special tasks]</h4>
+<!--l. 563--><p class="noindent" >This section identifies any tasks with special behaviour. By default tasks:  </p>
+     <ul class="itemize1">
+     <li class="itemize">start running as soon as their prerequisites are satisfied
+     </li>
+     <li class="itemize">spawns a successor at its next valid cycle time as soon as it enters the running state<span class="footnote-mark"><a 
+href="cug-html92.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x91-157001f18"></a> </li></ul>
+<!--l. 571--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.1   </span> <a 
- id="x90-129000A.2.1"></a>title </h5>
-<!--l. 53--><p class="noindent" >The suite title is displayed in the gcylc suite database window, and can also be retrieved from a suite at run time
-using the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> command.  </p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
+ id="x91-158000A.3.1"></a> clock-triggered </h5>
+<!--l. 572--><p class="noindent" >Clock-triggered tasks wait on a wall clock time specified as an offset <span 
+class="cmti-10">in hours </span>relative to their own cycle time, in
+addition to any dependence they have on other tasks. Generally speaking, only tasks that wait on external real time
+data need to be clock-triggered.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
+class="cmti-10">section: </span>[special tasks]
      </li>
      <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8221;No title supplied&#8221;
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">title</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Foo</span><span 
-class="pcrr7t-">"</span></span></li></ul>
-<!--l. 63--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.2   </span> <a 
- id="x90-130000A.2.2"></a>description </h5>
-<!--l. 64--><p class="noindent" >The suite description can be retrieved by gcylc right-click menu and the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> command.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8221;No description supplied&#8221;
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 71-->
-     <div class="lstlisting" id="listing-95"><span class="label"><a 
- id="x90-130001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">description</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"""</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-130002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Here</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">s</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">what</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">this</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">does</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-130003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">good</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">day</span><span 
-class="pcrr7t-">"""</span>
-     
-     </div>
-     </li></ul>
-<!--l. 78--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.3   </span> <a 
- id="x90-131000A.2.3"></a>job submission method </h5>
-<!--l. 79--><p class="noindent" >The default job submission method for the suite. This determines how cylc job scripts are executed when a task is
-ready to run - see Section&#x00A0;<a 
-href="cug-htmlse9.html#x63-1030009">9<!--tex4ht:ref: TaskExecution --></a>.  </p>
-                                                                                         
-
-                                                                                         
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values:</span>
-         <ul class="itemize2">
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">background</span></span> - direct subshell execution in the background
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">at_now</span></span> - the rudimentary Unix &#8216;at&#8217; scheduler
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">loadleveler</span></span> - loadleveler, generic
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_ecox</span></span> - loadleveler, customized for EcoConnect triplicate environment at NIWA
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_raw</span></span> - loadleveler, for existing job scripts</li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr7t-">background</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">method</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at_now</span></span></li></ul>
-<!--l. 98--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.4   </span> <a 
- id="x90-132000A.2.4"></a>use lockserver </h5>
-<!--l. 99--><p class="noindent" >Use of the cylc lockserver prevents invocation of multiple instances of the same suite at the same time,
-or invocation of a task (using <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>) if the same task is already running (in its suite or by
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>). It will only allow multiple instances of a suite to run under different registrations if the
-suite declares itself capable of that (see <span class="lstinline"><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span></span> item &#8220;allow multiple simultaneous instances&#8221;).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>True
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">use</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockserver</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-<!--l. 115--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.5   </span> <a 
- id="x90-133000A.2.5"></a>remote host </h5>
-<!--l. 116--><p class="noindent" >If a suite level remote host is specified cylc will attempt to run every task on that host, except for particular tasks
-that override the host setting, by passwordless ssh. Use this if all of your tasks, or at least the bulk of them, run on
-the same remote host, otherwise define remote hosts at task level. The relevant suite task scripts and executables,
-and cylc itself, must be installed on the remote host. The items <span 
-class="cmti-10">remote cylc directory </span>and <span 
-class="cmti-10">remote suite</span>
-<span 
-class="cmti-10">directory </span>must also be specified at suite and/or task level, and <span 
-class="cmti-10">owner </span>must be defined (at suite and/or
-                                                                                         
-
-                                                                                         
-task level) if the task owner&#8217;s username on the remote host is not the same as the local suite owner&#8217;s.
-Passwordless ssh must be configured between the local suite owner and remote task owner accounts.
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>a valid hostname on your network
+class="cmti-10">type: </span>list of tasknames followed by parenthesized offsets, in hours
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>None
      </li>
      <li class="itemize"><span 
+class="cmti-10">legal values: </span>The offset, in hours, can be positive or negative.
+     </li>
+     <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">host</span><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">triggered</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">niwa</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">co</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">nz</span></span></li></ul>
-<!--l. 137--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.6   </span> <a 
- id="x90-134000A.2.6"></a>remote cylc directory </h5>
-<!--l. 138--><p class="noindent" >For tasks that declare a remote host at suite level, this defines the path to the remote cylc installation
-(i.e.&#x00A0;<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span></span>). Use this if all of your tasks, or at least the bulk of them, run on the same remote host, otherwise
-define the remote cylc directory at task level. on the remote host.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>a valid directory path on the remote host
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">remote</span><span 
+class="pcrr7t-">(1.5),</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">(2.25)</span></span></li></ul>
+<!--l. 585--><p class="noindent" >Clock-triggered tasks currently can&#8217;t be triggered manually prior to their trigger time. This will change in a future cylc
+release. In the meantime if you need to do this you can kill the task with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
+class="pcrr7t-">remove</span></span>, run it manually outside of
+the suite with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">host</span></span></li></ul>
-<!--l. 152--><p class="noindent" >This item is compulsory for remotely hosted tasks.
-</p><!--l. 154--><p class="noindent" >
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submit</span></span>, and then manually trigger any direct downstream dependencies of the killed
+task.
+</p><!--l. 592--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.7   </span> <a 
- id="x90-135000A.2.7"></a>remote suite directory </h5>
-<!--l. 155--><p class="noindent" >For tasks that declare a remote host at suite level, this specifies the path to the suite definition directory on the
-remote host, in order to give remote tasks access to files stored there (via <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_DIR</span></span>) and
-to the suite bin directory (via <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">PATH</span></span>). Use this suite level item if all of your tasks, or at least the
-bulk of them, run on the same remote host, otherwise define the remote suite directory at task level.
-</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
+ id="x91-159000A.3.2"></a> startup </h5>
+<!--l. 593--><p class="noindent" >Startup tasks are one off tasks that are only used when <span 
+class="cmti-10">cold starting a suite</span>, i.e.&#x00A0;when starting up without assuming
+any previous cycle. A startup task can be used to clean out or prepare a suite workspace, for example, before other
+tasks run.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>a valid directory path on the remote host
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">remote</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">host</span></span></li></ul>
-<!--l. 170--><p class="noindent" >This item is not compulsory for remotely hosted tasks, because some tasks may not require access to files in the suite
-definition directory.
-</p><!--l. 174--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.8   </span> <a 
- id="x90-136000A.2.8"></a>owner </h5>
-<!--l. 175--><p class="noindent" >If a task has a defined owner, cylc will attempt to execute the task as that user, according to the suite level <span 
-class="cmti-10">owned</span>
-<span 
-class="cmti-10">task execution method</span>. Use this if all of your tasks, or at least the bulk of them, run under the same username,
-otherwise define task owners at task level (or not at all, if all tasks run as the suite owner, which is the usual
-situation).  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>a valid username on the task host
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">owner</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bob</span></span></li></ul>
-<!--l. 189--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.9   </span> <a 
- id="x90-137000A.2.9"></a>use secure passphrase </h5>
-<!--l. 190--><p class="noindent" >If True, any intervention in a running suite will require a special passphrase to be present, with secure permissions
-(as for ssh keys) in the file <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">security</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">GROUP</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">NAME</span></span>. The passphrase file must be present in any
-user account that needs access to the suite (remotely hosted tasks for instance). The passphrase itself is never
-transferred across the network (a secure MD5 checksum is). This guarantees suite security so long as your user
-account isn&#8217;t breached.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>False
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">use</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">secure</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">passphrase</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-<!--l. 206--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.10   </span> <a 
- id="x90-138000A.2.10"></a>tasks to exclude at startup </h5>
-<!--l. 207--><p class="noindent" >Any task listed here will be excluded from the initial task pool (this goes for restarts too). If an <span 
-class="cmti-10">inclusion </span>list is also
-specified, the initial pool will contain only included tasks that have not been excluded. Excluded tasks can
-still be inserted at run time. Other tasks may still depend on excluded tasks if they have not been
-removed from the suite dependency graph (in which case some manual triggering may be required).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
+class="cmti-10">section: </span>[special tasks]
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span>empty
+class="cmti-10">default: </span>empty list
+                                                                                         
+
+                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">exclude</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">startup</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -454,943 +103,164 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">TaskA</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskB</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskC</span></span></li></ul>
-<!--l. 221--><p class="noindent" >
+class="pcrr7t-">TaskB</span></span></li></ul>
+<!--l. 604--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.11   </span> <a 
- id="x90-139000A.2.11"></a>tasks to include at startup </h5>
-<!--l. 222--><p class="noindent" >If this list is not empty, any task NOT listed in it will be excluded from the initial task pool (this goes for restarts
-too). If an <span 
-class="cmti-10">exclusion </span>list is also specified, the initial pool will contain only included tasks that have not been
-excluded. Excluded tasks can still be inserted at run time. Other tasks may still depend on excluded tasks if they
-have not been removed from the suite dependency graph (in which case some manual triggering may be required).
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.3   </span> <a 
+ id="x91-160000A.3.3"></a> cold start </h5>
+<!--l. 605--><p class="noindent" >A cold start task (or possibly a sequence of them) is used to satisfy the dependence of an associated task with the
+same cycle time, on outputs from a previous cycle - when those outputs are not available. The primary use for this is
+to cold start a warm-cycled forecast model that normally depends on restart files (e.g.&#x00A0;model background fields)
+generated by its previous forecast, when there is no previous forecast. This is required when cold starting the
+suite, but cold start tasks can also be inserted into a running suite to restart a model that has had to
+skip some cycles after running into a serious problem (e.g.&#x00A0;critical inputs not available). Cold start
+tasks can invoke real cold start processing, or they can just be dummy tasks (which don&#8217;t specify a
+command) that stand in for some external process that has to be completed before the suite is started.
 </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
+class="cmti-10">section: </span>[special tasks]
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span>empty
+class="cmti-10">default: </span>empty list
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">cold</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
+class="pcrr7t-">start</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">include</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at</span><span 
+class="pcrr7t-">ColdA</span><span 
+class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">startup</span><span 
+class="pcrr7t-">TaskF</span></span></li></ul>
+<!--l. 627--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.4   </span> <a 
+ id="x91-161000A.3.4"></a> sequential </h5>
+<!--l. 628--><p class="noindent" >By default, a cylc task spawns a successor when it starts running, so that successive instances of the same task can
+run in parallel if the opportunity arises (i.e.&#x00A0;if their prerequisites happen to be satisfied before their predecessor has
+finished). <span 
+class="cmti-10">Sequential tasks</span>, however, will not spawn a successor until they have finished successfully. This should be
+used for (a) <span 
+class="cmti-10">tasks that cannot run in parallel with their own previous instances </span>because they would somehow
+interfere with each other (use cycle time in all I/O paths to avoid this); and (b) <span 
+class="cmti-10">Warm cycled forecast models that</span>
+<span 
+class="cmti-10">write out restart files for multiple cycles ahead </span>(exception: see &#8220;models with explicit restart outputs&#8221;
+below).<span class="footnote-mark"><a 
+href="cug-html93.html#fn19x0"><sup class="textsuperscript">19</sup></a></span><a 
+ id="x91-161001f19"></a> 
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+                                                                                         
+
+                                                                                         
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">sequential</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ModelA</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostProcB</span></span></li></ul>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.5   </span> <a 
+ id="x91-162000A.3.5"></a> one off </h5>
+<!--l. 654--><p class="noindent" >One off tasks do not spawn a successor -they run once and are then removed from the suite when they are no longer
+needed. <span 
+class="cmti-10">Startup </span>and <span 
+class="cmti-10">cold start </span>tasks are automatically one off tasks and do not need to be listed here.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">one</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">off</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TaskA</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskB</span><span 
+class="pcrr7t-">TaskB</span></span></li></ul>
+<!--l. 665--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.6   </span> <a 
+ id="x91-163000A.3.6"></a> models with explicit restart outputs </h5>
+<!--l. 668--><p class="noindent" >This is only required in the unlikely event that you want a warm cycled forecast model to be able to start at the
+instant its restart files are ready (if other prerequisites are satisfied) <span 
+class="cmti-10">before its previous instance has finished</span>. If so,
+the task has to depend on a special output message emitted by the previous instance as soon as its restart files are
+ready, instead of just on the previous instance finishing. Tasks in this category must define special restart output
+messages, <span 
+class="cmti-10">which must contain the word &#8220;restart&#8221;</span>, in [tasks] <span 
+class="cmsy-10">&#x2192; </span>[[TASK]] <span 
+class="cmsy-10">&#x2192; </span>[[[outputs]]] - see Section&#x00A0;<a 
+href="cug-htmlsu66.html#x98-192000A.8.1.16">A.8.1.16<!--tex4ht:ref: outputs --></a>.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">models</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">with</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">explicit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">restart</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">outputs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskC</span></span></li></ul>
-<!--l. 236--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.12   </span> <a 
- id="x90-140000A.2.12"></a>runahead limit in hours </h5>
-<!--l. 237--><p class="noindent" >If a task&#8217;s cycle time is ahead of the oldest non-failed task in the suite by more than this limit, it will be prevented
-from spawning a successor until the slowest tasks catch up sufficiently. Failed tasks (which are not automatically
-removed from a suite) do not activate the runahead limit (but downstream dependencies that can&#8217;t run because of
-them will). In real time operation the runahead limit is of little consequence because the suite will be constrained by
-its real time clock-triggered tasks (however, it must be long enough to cover the range of tasks present
-in the suite; for example a task that only runs once per day needs to spawn 24 hours ahead). The
-runahead limit is intended to stop fast tasks from running off far into the future in historical case studies.
-</p>
+class="pcrr7t-">B</span></span></li></ul>
                                                                                          
 
                                                                                          
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>integer
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span><span 
-class="cmmi-10">&#x003E;</span>= 0
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>24
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">runahead</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">limit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">hours</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">48</span></span></li></ul>
-<!--l. 259--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.13   </span> <a 
- id="x90-141000A.2.13"></a>suite log directory </h5>
-<!--l. 260--><p class="noindent" >Cylc logs all events to a suite log file. The main log and its automatic backups are stored under this directory. <span 
-class="cmti-10">You</span>
-<span 
-class="cmti-10">must ensure the directory is suite-specific; this can be done without hard wiring by using suite identity environment</span>
-<span 
-class="cmti-10">variables as the default value does.</span>  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>absolute path, may contain environment variables such as <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span></span>.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcSuiteLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_NAME</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CSL</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_NAME</span></span></li></ul>
-<!--l. 273--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.14   </span> <a 
- id="x90-142000A.2.14"></a>roll log at startup </h5>
-<!--l. 274--><p class="noindent" >Roll the cylc log for the suite (i.e.&#x00A0;relabel ordered backups and start the main log anew) when the suite is started or
-restarted.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>True
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">roll</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">startup</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">False</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-<!--l. 284--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.15   </span> <a 
- id="x90-143000A.2.15"></a>state dump directory </h5>
-<!--l. 285--><p class="noindent" >Suite state dump files allow cylc to restart suites from previous states. The default state dump and its backups, and
-special pre-intervention state dumps are all stored under this directory. <span 
-class="cmti-10">You must ensure the directory is</span>
-<span 
-class="cmti-10">suite-specific; this can be done without hard wiring by using suite identity environment variables as the default value</span>
-<span 
-class="cmti-10">does.</span>  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>absolute path, may contain environment variables such as <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span></span>.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcStateDumps</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_NAME</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">state</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dump</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CSD</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_NAME</span></span></li></ul>
-<!--l. 300--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.16   </span> <a 
- id="x90-144000A.2.16"></a>number of state dump backups </h5>
-<!--l. 301--><p class="noindent" >Length, in number of changes, of the automatic rolling archive of state dump files that allows you to restart a suite
-from a previous state. Every time a task changes state cylc updates the state dump and rolls previous states back
-one on the archive. You&#8217;ll probably only ever need the latest (most recent) state dump, which is automatically used
-in a restart, but any previous state still in the archive can be used. <span 
-class="cmti-10">Additionally, special labeled state dumps</span>
-<span 
-class="cmti-10">that can also be used to restart the suite are written out prior to actioning any suite intervention.</span>
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>integer
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span><span 
-class="cmmi-10">&#x003E;</span>= 1
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>10
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">number</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">state</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dump</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">backups</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">20</span></span></li></ul>
-<!--l. 319--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.17   </span> <a 
- id="x90-145000A.2.17"></a>job submission log directory </h5>
-<!--l. 320--><p class="noindent" >The directory in which to put the stdout and stderr log files for the job scripts submitted by cylc when tasks are
-ready to run. For monolithic tasks (which don&#8217;t resubmit sub-jobs themselves) these will be the complete job logs
-for the task. For owned tasks, the suite owner&#8217;s home directory will be replaced by the task owner&#8217;s.
-</p>
-                                                                                         
-
-                                                                                         
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>absolute path, may contain environment variables such as <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span></span>.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcJobLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_NAME</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">Logs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE</span></span></li></ul>
-<!--l. 333--><p class="noindent" ><span 
-class="cmti-10">For remotely hosted tasks this configuration item is currently ignored - task output logs are written to the remote task</span>
-<span 
-class="cmti-10">owner&#8217;s home directory. </span>(This will be addressed in a future cylc release).
-</p><!--l. 339--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.18   </span> <a 
- id="x90-146000A.2.18"></a>task EVENT hook scripts</h5>
-<!--l. 340--><p class="noindent" >Task event hooks facilitate centralized alerting for critical events. The following hooks are available:
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmbx-10">task submitted hook script</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task submission failed hook script</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task started hook script</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task succeeded hook script</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task failed hook script</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task timeout hook script</span></li></ul>
-<!--l. 350--><p class="noindent" >These suite level defaults can be overridden by specific tasks, or you can omit the defaults and just attach hook
-scripts for critical tasks. Cylc provides a hook script that sends emails: cylc email-alert. Your own
-hook scripts can be located in suite bin directories. Hook scripts are passed the following arguments:
-</p><!--l. 355-->
-   <div class="lstlisting" id="listing-96"><span class="label"><a 
- id="x90-146001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">hook</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">script</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EVENT</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TASK</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYCLETIME</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">MESSAGE</span>
-   
-   </div>
-<!--l. 358--><p class="indent" >   where MESSAGE describes what has happened, and EVENT is either &#8216;submitted&#8217;, &#8216;started&#8217;, &#8216;succeeded&#8217;, &#8216;failed&#8217;,
-&#8216;timeout&#8217;, or &#8216;submit_failed&#8217;. Note that <span 
-class="cmti-10">hook scripts are called by cylc, not by tasks, </span>so if you wish to pass in
-additional information via the environment, use the [cylc local environment] section, not [environment].
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">failed</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">hook</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">script</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">email</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">alert</span></span></li></ul>
-<!--l. 373--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.19   </span> <a 
- id="x90-147000A.2.19"></a>task EVENT timeout in minutes</h5>
-<!--l. 374--><p class="noindent" >You can set timeout intervals for task submission or execution with the following items:  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmbx-10">task submission timeout in minutes</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">task execution timeout in minutes</span></li></ul>
-<!--l. 380--><p class="noindent" >If a task has not started (or finished) this number of minutes after it was submitted (or started), the task timeout hook
-script will be called by cylc with the following arguments: </p><!--l. 383-->
-   <div class="lstlisting" id="listing-97"><span class="label"><a 
- id="x90-147001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">script</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EVENT</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TASK</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYCLETIME</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">MESSAGE</span>
-   
-   </div>
-<!--l. 386--><p class="indent" >   where EVENT is &#8216;submission&#8217; or &#8216;execution&#8217;. Like the hook scripts themselves, these suite level settings can be
-overridden by specific tasks.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>float (minutes)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">execution</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">timeout</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">minutes</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">10</span></span></li></ul>
-<!--l. 396--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.20   </span> <a 
- id="x90-148000A.2.20"></a>reset execution timeout on incoming messages </h5>
-<!--l. 397--><p class="noindent" >If True, and you have set an execution timeout, the timer will reset to zero every time a message is received from a
-running task. Otherwise, the task will timeout if it does not finish in time, even if it last sent a message (and was, by
-implication, still alive) within the timeout interval.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>True
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">reset</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">execution</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">timeout</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">on</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">incoming</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">messages</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">False</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-<!--l. 409--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.21   </span> <a 
- id="x90-149000A.2.21"></a>pre-command scripting </h5>
-<!--l. 410--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, before the task command, for every task.
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>multiline string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>empty
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 417-->
-     <div class="lstlisting" id="listing-98"><span class="label"><a 
- id="x90-149001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">pre</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">command</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">scripting</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"""</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-149002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-149003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">echo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Hello</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">from</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE</span><span 
-class="pcrr7t-">!"""</span>
-     
-     </div>
-     </li></ul>
-<!--l. 424--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.22   </span> <a 
- id="x90-150000A.2.22"></a>post-command scripting </h5>
-<!--l. 425--><p class="noindent" >Scripting to be executed verbatim in the task execution environment, immediately after the task command, for
-every task.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>multiline string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>empty
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 432-->
-     <div class="lstlisting" id="listing-99"><span class="label"><a 
- id="x90-150001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">command</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">scripting</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"""</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-150002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-150003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">echo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Goodbye</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">from</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE</span><span 
-class="pcrr7t-">!"""</span>
-     
-     </div>
-     </li></ul>
-<!--l. 439--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.23   </span> <a 
- id="x90-151000A.2.23"></a>owned task execution method </h5>
-<!--l. 440--><p class="noindent" >This specifies the means by which the chosen job submission method is invoked for tasks that are owned by a user other than
-the suite owner.<span class="footnote-mark"><a 
-href="cug-html91.html#fn17x0"><sup class="textsuperscript">17</sup></a></span><a 
- id="x90-151001f17"></a> 
-</p>
-                                                                                         
-
-                                                                                         
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values:</span>
-         <ul class="itemize2">
-         <li class="itemize">sudo
-         </li>
-         <li class="itemize">ssh</li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>sudo
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">owned</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">execution</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">method</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ssh</span></span></li></ul>
-<!--l. 458--><p class="noindent" >To use sudo with loadleveler, for example, <span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">etc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">sudoers</span></span> must be configured to allow the suite owner to execute the
-<span class="lstinline"><span 
-class="pcrr7t-">llsubmit</span></span> command as the designated task owner. To use ssh, passwordless ssh must be configured between the
-accounts of the suite and task owners.
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.24   </span> <a 
- id="x90-152000A.2.24"></a>ignore task owners </h5>
-<!--l. 465--><p class="noindent" >This item allows you to turn off the special treatment of owned tasks (namely invocation of the task job submission
-method via sudo or ssh as task owner), which can be useful when testing parts of a suite containing owned tasks
-outside of its normal operational environment.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>False
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">ignore</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">owners</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-<!--l. 476--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.25   </span> <a 
- id="x90-153000A.2.25"></a>use quick task elimination </h5>
-<!--l. 477--><p class="noindent" >If quick task elimination is switched on (it is by default) cylc will remove spent tasks from the suite sooner
-if they are known to have no downstream dependents in subsequent forecast cycles. Otherwise the
-generic spent task elimination algorithm will be used for all tasks. (Mainly used in cylc development).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>True
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">use</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">elimination</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">False</span></span></li></ul>
-<!--l. 490--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.26   </span> <a 
- id="x90-154000A.2.26"></a>simulation mode only </h5>
-<!--l. 491--><p class="noindent" >If True, cylc will abort cleanly if you try to run the suite in real mode. This can be used for demo suites
-that can&#8217;t run in real mode because they&#8217;ve been copied out of their normal operating environment.
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>False
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">simulation</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mode</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-<!--l. 502--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.27   </span> <a 
- id="x90-155000A.2.27"></a>allow multiple simultaneous instances </h5>
-<!--l. 503--><p class="noindent" >If True, the lockserver will allow multiple instances of this suite to run at the same time under different
-registrations. You can do this if the I/O paths of every task in the suite are dynamically configured to be suite
-specific (i.e.&#x00A0;they all contain the suite registration group and name).  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>False
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">allow</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">multiple</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">simultaneous</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">instances</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-<!--l. 516--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.28   </span> <a 
- id="x90-156000A.2.28"></a>job submission shell </h5>
-<!--l. 518--><p class="noindent" >This is the shell used to interpret the job script submitted by cylc when a task is ready to run. <span 
-class="cmti-10">It has no bearing on</span>
-<span 
-class="cmti-10">the shell used in task implementations. </span>Global pre- and post-command scripting, and the content of the task
-commands themselves, must be valid in the job submission shell. The suite environment sections must be converted
-similarly; this is currently hardwired into cylc as <span class="lstinline"><span 
-class="pcrr7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">value</span></span> (which works for both bash and ksh
-because <span class="lstinline"><span 
-class="pcrr7t-">value</span></span> is entirely user-defined) so cylc would have to be modified slightly if other shells are needed.
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values:</span>
-         <ul class="itemize2">
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bash</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">ksh</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">usr</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bash</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">usr</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">ksh</span></span></li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bash</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">shell</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">ksh</span></span></li></ul>
-<!--l. 542--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.2.29   </span> <a 
- id="x90-157000A.2.29"></a>manual task completion messaging </h5>
-<!--l. 543--><p class="noindent" >If a task&#8217;s initiating process detaches and exits before task processing is finished, then cylc cannot arrange for the
-task to automatically signal when it has succeeded or failed. In such cases you must insert some minimal cylc
-messaging in appropriate places in the task implementation. Use this global setting in the unlikely
-event that all, or most, of your tasks are in this category; otherwise you can set it on a per task basis.
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>(top level)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr7t-">False</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">manual</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">completion</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">messaging</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-   <!--l. 557--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 685--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu62.html" >next</a>] [<a 
 href="cug-htmlsu60.html" >prev</a>] [<a 
 href="cug-htmlsu60.html#tailcug-htmlsu60.html" >prev-tail</a>] [<a 
 href="cug-htmlsu61.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu61.html" >up</a>] </p></div>
-<!--l. 557--><p class="indent" >   <a 
+<!--l. 685--><p class="indent" >   <a 
  id="tailcug-htmlsu61.html"></a>  </p> 
 </body></html> 

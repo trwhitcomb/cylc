@@ -4,91 +4,47 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Advanced Topics</title> 
+<head><title>Make Fine-Grained Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-15 12:40:00" /> 
+<meta name="date" content="2011-07-21 14:53:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3447--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse11.html" >next</a>] [<a 
-href="cug-htmlse10.html" >prev</a>] [<a 
-href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
+   <!--l. 3441--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu46.html" >next</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu45.html">tail</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu45.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">10.1   </span> <a 
- id="x69-10900010.1"></a>Advanced Topics</h4>
+href="cug-htmlse11.html#cug-htmlsu45.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">11.1   </span> <a 
+ id="x70-11000011.1"></a>Make Fine-Grained Suites</h4>
+<!--l. 3444--><p class="noindent" >A suite can contain a small number of large, internally complex tasks; a large number of small, simple tasks; or
+anything in between. Cylc can easily handle a large number of tasks, however, so there are definite advantages to
+fine-graining:
+</p>
      <ul class="itemize1">
-     <li class="itemize">spin-up processes via temporary tasks and adding prerequisites on-the-fly
+     <li class="itemize">a more modular and transparent suite.
      </li>
-     <li class="itemize">how to recover from certain kinds of task failure
+     <li class="itemize">better functional parallelism (multiple tasks running at the same time).
      </li>
-     <li class="itemize">instant simulation mode clones of a running suite
+     <li class="itemize">faster debugging and failure recovery: rerun just the tasks(s) that failed.
      </li>
-     <li class="itemize">fuzzy prerequisites - triggering of the <span 
-class="cmti-10">most recent available</span>, within limits, instance of an upstream task
-     </li>
-     <li class="itemize">asynchronous tasks (no cycle time) - for running a tree of tasks initiated by a random event such as a
-     satellite pass.
-     </li>
-     <li class="itemize">subsuites - running another suite inside a task: <!--l. 3459-->
-     <div class="lstlisting" id="listing-91"><span class="label"><a 
- id="x69-109001r1"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x69-109002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x69-109003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">command</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYCLE_TIME</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">until</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYCLE_TIME</span><span 
-class="pcrr7t-">"</span>
-     
-     </div>
+     <li class="itemize">code reuse: similar tasks can often call the same script or command with differing task-specific input
+     parameters (consider tasks that move files around, for example).
      </li></ul>
-   <!--l. 3468--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse11.html" >next</a>] [<a 
-href="cug-htmlse10.html" >prev</a>] [<a 
-href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
+                                                                                         
+
+                                                                                         
+   <!--l. 3464--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu46.html" >next</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="cug-htmlsu45.html" >front</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu45.html" >up</a>] </p></div>
-<!--l. 3468--><p class="indent" >   <a 
+href="cug-htmlse11.html#cug-htmlsu45.html" >up</a>] </p></div>
+<!--l. 3464--><p class="indent" >   <a 
  id="tailcug-htmlsu45.html"></a> </p> 
 </body></html> 
