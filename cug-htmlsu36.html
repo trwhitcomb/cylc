@@ -4,104 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Return Non-zero Exit Status On Error</title> 
+<head><title>Suite.rc Inlined Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2769--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2778--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu36.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">8.3   </span> <a 
- id="x57-930008.3"></a>Return Non-zero Exit Status On Error</h4>
-<!--l. 2771--><p class="noindent" >The requirement to abort with non-zero exit status on error (which should be normal scripting practice in any case)
-allows the job script to trap errors and send a <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">failed</span></span> message to alert the suite. You can use
-<span class="lstinline"><span 
-class="pcrb7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">e</span></span> to avoid writing explicit error checks for every operation:
-</p>
-   <!--l. 2778-->
-   <div class="lstlisting" id="listing-66"><span class="label"><a 
- id="x57-93001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">!/</span><span 
-class="pcrro7t-">bin</span><span 
-class="pcrro7t-">/</span><span 
-class="pcrro7t-">bash</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-93002r2"></a></span><span 
-class="pcrb7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">e</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">abort</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">on</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">error</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-93003r3"></a></span><span 
-class="pcrr7t-">mkdir</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">illegal</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">dir</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">this</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">error</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">will</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">abort</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">script</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">with</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">non</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">zero</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">exit</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">status</span>
-   
-   </div>
+   <h4 class="subsectionHead"><span class="titlemark">8.2   </span> <a 
+ id="x57-930008.2"></a>Suite.rc Inlined Tasks</h4>
+<!--l. 2780--><p class="noindent" >Simple tasks can be entirely implemented within the suite.rc file because the task <span 
+class="cmti-10">command </span>string can
+contain multiple lines of scripting (or a list of such strings, to retry on failure). The command string is
+written verbatim to the task job script after configuring the execution environment - see <span 
+class="cmti-10">Task Execution</span>,
+Section&#x00A0;<a 
+href="cug-htmlse9.html#x63-1030009">9<!--tex4ht:ref: TaskExecution --></a>.
                                                                                          
 
                                                                                          
-   <!--l. 2784--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 2788--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
 href="cug-htmlsu36.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
-<!--l. 2784--><p class="indent" >   <a 
+<!--l. 2788--><p class="indent" >   <a 
  id="tailcug-htmlsu36.html"></a> </p> 
 </body></html> 

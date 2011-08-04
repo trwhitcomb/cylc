@@ -4,59 +4,42 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Put Task Cycle Time In All Output File Paths</title> 
+<head><title>Make Tasks Rerunnable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3525--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3580--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu51.html" >next</a>] [<a 
 href="cug-htmlsu49.html" >prev</a>] [<a 
 href="cug-htmlsu49.html#tailcug-htmlsu49.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu50.html">tail</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu50.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.6   </span> <a 
- id="x75-11500011.6"></a>Put Task Cycle Time In All Output File Paths</h4>
-<!--l. 3528--><p class="noindent" >Having all filenames, or perhaps the names of their containing directories, stamped with the cycle time of the
-generating task greatly aids in managing suite disk usage, both for archiving and cleanup. It also enables
-the aforementioned task rerunnability recommendation by avoiding overwrite of important files from
-one cycle to the next. Cylc has powerful utilities for cycle time offset based filename templating and
-housekeeping.
-</p><!--l. 3536--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">11.6.1   </span> <a 
- id="x75-11600011.6.1"></a>Use Cylc&#8217;s Cycle Time Filename Template Utility</h5>
-<!--l. 3538--><p class="noindent" >The command line utility program <span class="lstinline"><span 
+href="cug-htmlse12.html#cug-htmlsu50.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.3   </span> <a 
+ id="x76-11900012.3"></a>Make Tasks Rerunnable</h4>
+<!--l. 3582--><p class="noindent" >It should be possible to rerun a task by simply resubmitting it for the same cycle time. In other words, failure at any
+point during execution of a task should not render a rerun impossible by corrupting the state of some internal-use
+file, or whatever. It&#8217;s difficult to overstate the usefulness of being able to rerun the same task multiple times, either
+outside of the suite with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span></span> determines filenames based on a template string
-containing YYYYMMDDHH (or variations thereof) by substituting the current cycle time, or some
-offset from it, into the template. This can be used in the suite.rc environment sections, or in task
-implementation scripts if necessary, to instantly generate cycle time appropriate filenames for any purpose in the
-suite.
-</p><!--l. 3546--><p class="indent" >   See <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">util</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span></span> for more information.
+class="pcrr7t-">submit</span></span>, or by retriggering it within the running suite, when debugging a
+problem.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3548--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3590--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu51.html" >next</a>] [<a 
 href="cug-htmlsu49.html" >prev</a>] [<a 
 href="cug-htmlsu49.html#tailcug-htmlsu49.html" >prev-tail</a>] [<a 
 href="cug-htmlsu50.html" >front</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu50.html" >up</a>] </p></div>
-<!--l. 3548--><p class="indent" >   <a 
- id="tailcug-htmlsu50.html"></a>  </p> 
+href="cug-htmlse12.html#cug-htmlsu50.html" >up</a>] </p></div>
+<!--l. 3590--><p class="indent" >   <a 
+ id="tailcug-htmlsu50.html"></a> </p> 
 </body></html> 

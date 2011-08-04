@@ -4,43 +4,138 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Use Include-Files For Groups Of Related Tasks</title> 
+<head><title>One-off Asynchronous Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3464--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3463--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
-href="cug-htmlsu45.html" >prev</a>] [<a 
-href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu46.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu46.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.2   </span> <a 
- id="x71-11100011.2"></a>Use Include-Files For Groups Of Related Tasks</h4>
-<!--l. 3466--><p class="noindent" >Suite.rc include-files can be used just to help organise tasks into convenient groups in very large suites (and with
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
+   <h4 class="subsectionHead"><span class="titlemark">11.1   </span> <a 
+ id="x71-11100011.1"></a>One-off Asynchronous Tasks</h4>
+<!--l. 3465--><p class="noindent" >These tasks are defined with no sub-heading under [dependencies] in the suite.rc file:
+</p>
+   <!--l. 3468-->
+   <div class="lstlisting" id="listing-88"><span class="label"><a 
+ id="x71-111001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x71-111002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x71-111003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span></span> you can edit a temporarily inlined file to get a global view). But they are most useful for handling the
-repetitive definition of groups of similar tasks, because the same inclusion can be used multiple times in the same
-suite.rc file. See <span 
-class="cmti-10">Include Files </span>(Section&#x00A0;<a 
-href="cug-htmlsu59.html#x87-126000A.1">A.1<!--tex4ht:ref: IncludeFiles --></a>).
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x71-111004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[0,12]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x71-111005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">CyclingA</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">CyclingB</span><span 
+class="pcrr7t-">"</span>
+   
+   </div>
+<!--l. 3476--><p class="indent" >   In this listing two cycling tasks are made to wait on a chain of three one-off asynchronous tasks
+(they can be used in entirely non-cycling suites, or for initial processing prior to starting the cycling
+tasks).
+</p><!--l. 3480--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">11.1.1   </span> <a 
+ id="x71-11200011.1.1"></a>Comparison with One-off Non-asynchronous &#8220;startup&#8221; Tasks</h5>
+<!--l. 3482--><p class="noindent" >One-off non-asynchronous startup tasks run only when a cycling suite is <span 
+class="cmti-10">cold started </span>and they are often associated
+with subsequent one-off <span 
+class="cmti-10">cold start tasks </span>used to bootstrap a cycling suite into existence. The distinction between
+cold and warm starting is only meaningful for cycling tasks, however, so <span 
+class="cmti-10">one-off asynchronous tasks run every time a</span>
+<span 
+class="cmti-10">suite is started </span>(restarts just resurrect the prior suite state, as usual). Thus, while one-off asynchronous tasks can
+precede cycling tasks in the same suite, as shown above, it may be that non-asynchronous startup tasks are more
+appropriate for this purpose, and that one-off asynchronous tasks are best used in constructing entirely non-cycling
+suites.
+                                                                                         
+
+                                                                                         
+</p><!--l. 3494--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">11.1.2   </span> <a 
+ id="x71-11300011.1.2"></a>One-off Asynchronous Example Suite</h5>
+<!--l. 3496--><p class="noindent" >See suite <span class="lstinline"><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">]:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">async_oneoff</span></span>
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3475--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3498--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
-href="cug-htmlsu45.html" >prev</a>] [<a 
-href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="cug-htmlsu46.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu46.html" >up</a>] </p></div>
-<!--l. 3475--><p class="indent" >   <a 
- id="tailcug-htmlsu46.html"></a> </p> 
+<!--l. 3498--><p class="indent" >   <a 
+ id="tailcug-htmlsu46.html"></a>  </p> 
 </body></html> 

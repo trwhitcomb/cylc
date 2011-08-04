@@ -4,80 +4,54 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite Design Principles</title> 
+<head><title>Asynchronous Tasks (No Cycle Time)</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3436--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu45.html" >next</a>] [<a 
-href="cug-htmlsu44.html" >prev</a>] [<a 
-href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
+   <!--l. 3453--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu46.html" >next</a>] [<a 
+href="cug-htmlsu45.html" >prev</a>] [<a 
+href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse11.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse11.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">11   </span> <a 
- id="x69-10900011"></a>Suite Design Principles</h3>
-<!--l. 3441--><p class="noindent" >
+ id="x70-11000011"></a>Asynchronous Tasks (No Cycle Time)</h3>
+<!--l. 3456--><p class="noindent" ><span 
+class="cmti-10">Documentation of this new feature (post version 3.4.0) will eventually be integrated into the preceding sections of the</span>
+<span 
+class="cmti-10">User Guide</span>.
+</p><!--l. 3459--><p class="indent" >   Asynchronous tasks have an arbitrary integer tag instead of a cycle time. Cylc can manage both asynchronous
+and cycling tasks within the same suite.
+</p><!--l. 3463--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >11.1 <a 
-href="cug-htmlsu45.html#x70-11000011.1">Make Fine-Grained Suites</a></span>
+href="cug-htmlsu46.html#x71-11100011.1">One-off Asynchronous Tasks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >11.1.1 <a 
+href="cug-htmlsu46.html#x71-11200011.1.1" id="QQ2-71-151">Comparison with One-off Non-asynchronous &#8220;startup&#8221; Tasks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >11.1.2 <a 
+href="cug-htmlsu46.html#x71-11300011.1.2" id="QQ2-71-152">One-off Asynchronous Example Suite</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >11.2 <a 
-href="cug-htmlsu46.html#x71-11100011.2">Use Include-Files For Groups Of Related Tasks</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.3 <a 
-href="cug-htmlsu47.html#x72-11200011.3">Make Tasks Rerunnable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.4 <a 
-href="cug-htmlsu48.html#x73-11300011.4">Make Models Rerunnable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.5 <a 
-href="cug-htmlsu49.html#x74-11400011.5">Limit Previous-Instance Dependence</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.6 <a 
-href="cug-htmlsu50.html#x75-11500011.6">Put Task Cycle Time In All Output File Paths</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >11.6.1 <a 
-href="cug-htmlsu50.html#x75-11600011.6.1" id="QQ2-75-155">Use Cylc&#8217;s Cycle Time Filename Template Utility</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.7 <a 
-href="cug-htmlsu51.html#x76-11700011.7">How To Manage Input/Output File Dependencies</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.8 <a 
-href="cug-htmlsu52.html#x77-11800011.8">Use Generic Task Scripts</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.9 <a 
-href="cug-htmlsu53.html#x78-11900011.9">Make Suites Portable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.10 <a 
-href="cug-htmlsu54.html#x79-12000011.10">Make Tasks As Self-Contained As Possible</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.11 <a 
-href="cug-htmlsu55.html#x81-12100011.11">Make Suites As Self-Contained As Possible</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.12 <a 
-href="cug-htmlsu56.html#x83-12200011.12">Orderly Product Generation?</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.13 <a 
-href="cug-htmlsu57.html#x84-12300011.13">Clock-triggered Tasks Should Wait On External Data</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.14 <a 
-href="cug-htmlsu58.html#x85-12400011.14">Do Not Treat Real Time Operation As Special</a></span>
+href="cug-htmlsu47.html#x72-11400011.2">Repeating Asynchronous Tasks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >11.2.1 <a 
+href="cug-htmlsu47.html#x72-11500011.2.1" id="QQ2-72-154">Repeating Asynchronous Example Suite</a></span>
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                                                                                          
 
                                                                                          
-   <!--l. 3725--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu45.html" >next</a>] [<a 
-href="cug-htmlsu44.html" >prev</a>] [<a 
-href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
+   <!--l. 3541--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu46.html" >next</a>] [<a 
+href="cug-htmlsu45.html" >prev</a>] [<a 
+href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="cug-htmlse11.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse11.html" >up</a>] </p></div>
-<!--l. 3725--><p class="indent" >   <a 
+<!--l. 3541--><p class="indent" >   <a 
  id="tailcug-htmlse11.html"></a> </p> 
 </body></html> 

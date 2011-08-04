@@ -4,170 +4,263 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[environment]</title> 
+<head><title>[special tasks]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 738--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 597--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu65.html" >next</a>] [<a 
 href="cug-htmlsu63.html" >prev</a>] [<a 
 href="cug-htmlsu63.html#tailcug-htmlsu63.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu64.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu64.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.6   </span> <a 
- id="x96-169000A.6"></a>[environment]</h4>
-<!--l. 739--><p class="noindent" >Use this section to define the global task execution environment, i.e.&#x00A0;variables made available to all tasks.
-Order of definition is preserved. Even global variables can reference task name and cycle time because
-suite and task identity are exported in the cylc job script prior to the user-defined environment. Cylc
-utility commands can be used in variable assignment expressions because the cylc environment is
-exported prior to user-defined variables. See <span 
-class="cmti-10">Task Execution Environment</span>, Section&#x00A0;<a 
-href="cug-htmlsu32.html#x52-820007.4.3">7.4.3<!--tex4ht:ref: TaskExecutionEnvironment --></a>, for more
-information.
+href="cug-htmlse13.html#cug-htmlsu64.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
+ id="x95-166000A.3"></a>[special tasks]</h4>
+<!--l. 598--><p class="noindent" >This section identifies any tasks with special behaviour. By default tasks:  </p>
+     <ul class="itemize1">
+     <li class="itemize">start running as soon as their prerequisites are satisfied
+     </li>
+     <li class="itemize">spawns a successor at its next valid cycle time as soon as it enters the running state<span class="footnote-mark"><a 
+href="cug-html96.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x95-166001f18"></a> </li></ul>
+<!--l. 606--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.6.1   </span> <a 
- id="x96-170000A.6.1"></a><span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></h5>
-<!--l. 748--><p class="noindent" >Replace MANY with each global environment variable definition  </p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
+ id="x95-167000A.3.1"></a> clock-triggered </h5>
+<!--l. 607--><p class="noindent" >Clock-triggered tasks wait on a wall clock time specified as an offset <span 
+class="cmti-10">in hours </span>relative to their own cycle time, in
+addition to any dependence they have on other tasks. Generally speaking, only tasks that wait on external real time
+data need to be clock-triggered.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[environment]
+class="cmti-10">section: </span>[special tasks]
      </li>
      <li class="itemize"><span 
-class="cmti-10">type: </span>string
+class="cmti-10">type: </span>list of tasknames followed by parenthesized offsets, in hours
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>None
      </li>
      <li class="itemize"><span 
-class="cmti-10">legal  values:  </span>any  environment  variable  assignment  expression  valid  in  the  <span 
-class="cmti-10">job  submission  shell</span>
-     (Appendix&#x00A0;<a 
-href="cug-htmlsu60.html#x89-155000A.2.28">A.2.28<!--tex4ht:ref: JobSubShell --></a>). White space around the &#8216;=&#8217; is allowed (the <span class="lstinline"><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span></span> file is not itself a shell
-     script).
+class="cmti-10">legal values: </span>The offset, in hours, can be positive or negative.
      </li>
      <li class="itemize"><span 
-class="cmti-10">examples </span>for the bash shell:
-         <ul class="itemize2">
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">FOO</span><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">triggered</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">(1.5),</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">baz</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">BAR</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">}</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">GLOBALVAR</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">BAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">echo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">hello</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">world</span><span 
-class="pcrr7t-">")</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">WAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">%.</span><span 
-class="pcrr7t-">jpg</span><span 
-class="pcrr7t-">}.</span><span 
-class="pcrr7t-">png</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">NEXT_CYCLE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(2.25)</span></span></li></ul>
+<!--l. 620--><p class="noindent" >Clock-triggered tasks currently can&#8217;t be triggered manually prior to their trigger time. This will change in a future cylc
+release. In the meantime if you need to do this you can kill the task with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycletime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">)</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">PREV_CYCLE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;</span><span 
+class="pcrr7t-">remove</span></span>, run it manually outside of
+the suite with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycletime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">s</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6&#8216;</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ZAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">}"</span></span></li></ul>
-     <!--l. 767--><p class="noindent" >Variable expansion expressions containing the hash character must be quoted because hash is the suite.rc
-     comment delimiter.</p></li></ul>
+class="pcrr7t-">submit</span></span>, and then manually trigger any direct downstream dependencies of the killed
+task.
+</p><!--l. 627--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
+ id="x95-168000A.3.2"></a> startup </h5>
+<!--l. 628--><p class="noindent" >Startup tasks are one off tasks that are only used when <span 
+class="cmti-10">cold starting a suite</span>, i.e.&#x00A0;when starting up without assuming
+any previous cycle. A startup task can be used to clean out or prepare a suite workspace, for example, before other
+tasks run.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
                                                                                          
 
                                                                                          
-   <!--l. 771--><div class="crosslinks"><p class="noindent">[<a 
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">startup</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskA</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskB</span></span></li></ul>
+<!--l. 639--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.3   </span> <a 
+ id="x95-169000A.3.3"></a> cold start </h5>
+<!--l. 640--><p class="noindent" >A cold start task (or possibly a sequence of them) is used to satisfy the dependence of an associated task with the
+same cycle time, on outputs from a previous cycle - when those outputs are not available. The primary use for this is
+to cold start a warm-cycled forecast model that normally depends on restart files (e.g.&#x00A0;model background fields)
+generated by its previous forecast, when there is no previous forecast. This is required when cold starting the
+suite, but cold start tasks can also be inserted into a running suite to restart a model that has had to
+skip some cycles after running into a serious problem (e.g.&#x00A0;critical inputs not available). Cold start
+tasks can invoke real cold start processing, or they can just be dummy tasks (which don&#8217;t specify a
+command) that stand in for some external process that has to be completed before the suite is started.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">cold</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdA</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskF</span></span></li></ul>
+<!--l. 662--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.4   </span> <a 
+ id="x95-170000A.3.4"></a> sequential </h5>
+<!--l. 663--><p class="noindent" >By default, a cylc task spawns a successor when it starts running, so that successive instances of the same task can
+run in parallel if the opportunity arises (i.e.&#x00A0;if their prerequisites happen to be satisfied before their predecessor has
+finished). <span 
+class="cmti-10">Sequential tasks</span>, however, will not spawn a successor until they have finished successfully. This should be
+used for (a) <span 
+class="cmti-10">tasks that cannot run in parallel with their own previous instances </span>because they would somehow
+interfere with each other (use cycle time in all I/O paths to avoid this); and (b) <span 
+class="cmti-10">Warm cycled forecast models that</span>
+<span 
+class="cmti-10">write out restart files for multiple cycles ahead </span>(exception: see &#8220;models with explicit restart outputs&#8221;
+below).<span class="footnote-mark"><a 
+href="cug-html97.html#fn19x0"><sup class="textsuperscript">19</sup></a></span><a 
+ id="x95-170001f19"></a> 
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+                                                                                         
+
+                                                                                         
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">sequential</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ModelA</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostProcB</span></span></li></ul>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.5   </span> <a 
+ id="x95-171000A.3.5"></a> one off </h5>
+<!--l. 689--><p class="noindent" >One off tasks do not spawn a successor -they run once and are then removed from the suite when they are no longer
+needed. <span 
+class="cmti-10">Startup </span>and <span 
+class="cmti-10">cold start </span>tasks are automatically one off tasks and do not need to be listed here.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">one</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">off</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskA</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskB</span></span></li></ul>
+<!--l. 700--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.3.6   </span> <a 
+ id="x95-172000A.3.6"></a> models with explicit restart outputs </h5>
+<!--l. 703--><p class="noindent" >This is only required in the unlikely event that you want a warm cycled forecast model to be able to start at the
+instant its restart files are ready (if other prerequisites are satisfied) <span 
+class="cmti-10">before its previous instance has finished</span>. If so,
+the task has to depend on a special output message emitted by the previous instance as soon as its restart files are
+ready, instead of just on the previous instance finishing. Tasks in this category must define special restart output
+messages, <span 
+class="cmti-10">which must contain the word &#8220;restart&#8221;</span>, in [tasks] <span 
+class="cmsy-10">&#x2192; </span>[[TASK]] <span 
+class="cmsy-10">&#x2192; </span>[[[outputs]]] - see Section&#x00A0;<a 
+href="cug-htmlsu69.html#x102-203000A.8.1.16">A.8.1.16<!--tex4ht:ref: outputs --></a>.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[special tasks]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty list
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">models</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">with</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">explicit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">restart</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">outputs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 720--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu65.html" >next</a>] [<a 
 href="cug-htmlsu63.html" >prev</a>] [<a 
 href="cug-htmlsu63.html#tailcug-htmlsu63.html" >prev-tail</a>] [<a 
 href="cug-htmlsu64.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu64.html" >up</a>] </p></div>
-<!--l. 771--><p class="indent" >   <a 
+href="cug-htmlse13.html#cug-htmlsu64.html" >up</a>] </p></div>
+<!--l. 720--><p class="indent" >   <a 
  id="tailcug-htmlsu64.html"></a>  </p> 
 </body></html> 

@@ -4,13 +4,13 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Configuring Your Environment For Cylc</title> 
+<head><title>New Features Not Yet Covered In the Quick Start Guide</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -21,171 +21,32 @@ href="cug-htmlse5.html#tailcug-htmlse5.html" >prev-tail</a>] [<a
 href="#tailcug-htmlsu13.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu13.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
- id="x24-270005.1"></a>Configuring Your Environment For Cylc</h4>
+ id="x24-270005.1"></a>New Features Not Yet Covered In the Quick Start Guide</h4>
                                                                                          
 
                                                                                          
-<!--l. 824--><p class="noindent" >To gain access to cylc you just need to source the cylc environment script. Put the
-following code in your login script, or do the same at the terminal prompt before using
-cylc.<span class="footnote-mark"><a 
-href="cug-html25.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
- id="x24-27001f6"></a> 
-</p><!--l. 828-->
-   <div class="lstlisting" id="listing-15"><span class="label"><a 
- id="x24-27002r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27003r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">=/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">installation</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27004r3"></a></span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">environment</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">sh</span>
-   
-   </div>
-<!--l. 833--><p class="indent" >   The variable <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span></span> is required inside the environment script, so don&#8217;t skip the export step. You should
-now be able to run cylc commands: </p><!--l. 836-->
-   <div class="lstlisting" id="listing-16"><span class="label"><a 
- id="x24-27005r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">version</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27006r2"></a></span><span 
-class="pcrr7t-">3.</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">y</span>
-   
-   </div>
-<!--l. 841--><p class="indent" >   You should also specify the graphical and terminal editors you want to use to edit suites, by setting the following
-environment variables in your <span class="lstinline"><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">profile</span></span>: </p><!--l. 844-->
-   <div class="lstlisting" id="listing-17"><span class="label"><a 
- id="x24-27007r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27008r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GEDITOR</span><span 
-class="pcrr7t-">='</span><span 
-class="pcrr7t-">gvim</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">f</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">GUI</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">editor</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">launched</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">by</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27009r3"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EDITOR</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">vim</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">terminal</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">editor</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">launched</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">by</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">'</span><span 
-class="pcrro7t-">cylc</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">edit</span><span 
-class="pcrro7t-">'</span>
-   
-   </div>
-<!--l. 849--><p class="indent" >   See <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span></span> (Appendix&#x00A0;<a 
-href="cug-htmlsu73.html#x106-238000B.2.11">B.2.11<!--tex4ht:ref: edit --></a>) for other editor examples. And finally, you must ensure that
-<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span></span> is defined in your environment, for example: </p><!--l. 852-->
-   <div class="lstlisting" id="listing-18"><span class="label"><a 
- id="x24-27010r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x24-27011r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TMPDIR</span><span 
-class="pcrr7t-">=/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">USER</span>
-   
-   </div>
+     <ul class="itemize1">
+     <li class="itemize">One-off asynchronous tasks (no associated cycle time).
+     </li>
+     <li class="itemize">Repeating asynchronous tasks for parallel processing of satellite passes.</li></ul>
+<!--l. 829--><p class="noindent" >Asynchronous tasks, and their new example suites, are partially documented in Section&#x00A0;<a 
+href="cug-htmlse11.html#x70-11000011">11<!--tex4ht:ref: AsynchronousTasks --></a>.
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Suite graphing now has default start and end cycles, and you may define your own default start and
+     end cycles for graphing in the suite.rc file.
+     </li>
+     <li class="itemize">Default initial and final cycle times for running a suite can now optionally be defined in the suite.rc
+     file, so you don&#8217;t have to keep typing them on the command line, or GUI panel, for repetitive testing.</li></ul>
                                                                                          
 
                                                                                          
-   <!--l. 859--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 841--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
 href="cug-htmlse5.html" >prev</a>] [<a 
 href="cug-htmlse5.html#tailcug-htmlse5.html" >prev-tail</a>] [<a 
 href="cug-htmlsu13.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu13.html" >up</a>] </p></div>
-<!--l. 859--><p class="indent" >   <a 
+<!--l. 841--><p class="indent" >   <a 
  id="tailcug-htmlsu13.html"></a> </p> 
 </body></html> 

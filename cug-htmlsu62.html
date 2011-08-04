@@ -4,70 +4,65 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[task families]</title> 
+<head><title>Include Files</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 685--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 32--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu63.html" >next</a>] [<a 
-href="cug-htmlsu61.html" >prev</a>] [<a 
-href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
+href="cug-htmlse13.html" >prev</a>] [<a 
+href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu62.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu62.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.4   </span> <a 
- id="x94-164000A.4"></a>[task families]</h4>
-<!--l. 686--><p class="noindent" >A task family is a named group of tasks that appears as a single task in the suite dependency graph. Thus the entire
-family triggers as a group, and downstream tasks can trigger off the entire family finishing. Task families can have
-internal dependencies, and family members can also appear in the graph as non-family tasks. See Section&#x00A0;<a 
-href="cug-htmlsu31.html#x47-760007.3.11">7.3.11<!--tex4ht:ref: TaskFamilies --></a> for
-more information on task families.
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.4.1   </span> <a 
- id="x94-165000A.4.1"></a> <span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></h5>
-<!--l. 693--><p class="noindent" >Replace MANY with each task family definition.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[task families]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of task names (the family members)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">ObsProc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSurface</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSonde</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsAircraft</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSat</span></span></li></ul>
+href="cug-htmlse13.html#cug-htmlsu62.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
+ id="x91-133000A.1"></a>Include Files</h4>
+<!--l. 34--><p class="noindent" >Include-files can be used to help organize the task definition sections of large suites, or to group common
+environment variable settings into one file that can be included in multiple task environment sections (instead of
+polluting the global namespace for <span 
+class="cmti-10">all </span>tasks). Include-file boundaries are arbitrary (they can cross suite.rc section
                                                                                          
 
                                                                                          
-   <!--l. 701--><div class="crosslinks"><p class="noindent">[<a 
+boundaries). They can be multiply included and nested. </p><!--l. 40-->
+   <div class="lstlisting" id="listing-92"><span class="label"><a 
+ id="x91-133001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">include</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">myfile</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span>
+   
+   </div>
+<!--l. 43--><p class="indent" >   Include-file paths should be specified portably<span class="footnote-mark"><a 
+href="cug-html92.html#fn16x0"><sup class="textsuperscript">16</sup></a></span><a 
+ id="x91-133002f16"></a> 
+relative to the suite definition directory. The <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edit</span></span> command can optionally provide an inlined version of a
+suite.rc file that is automatically split back into its constituent include-files when you save the file and exit the
+editor.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 50--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu63.html" >next</a>] [<a 
-href="cug-htmlsu61.html" >prev</a>] [<a 
-href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
+href="cug-htmlse13.html" >prev</a>] [<a 
+href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
 href="cug-htmlsu62.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu62.html" >up</a>] </p></div>
-<!--l. 701--><p class="indent" >   <a 
- id="tailcug-htmlsu62.html"></a>  </p> 
+href="cug-htmlse13.html#cug-htmlsu62.html" >up</a>] </p></div>
+<!--l. 50--><p class="indent" >   <a 
+ id="tailcug-htmlsu62.html"></a> </p> 
 </body></html> 

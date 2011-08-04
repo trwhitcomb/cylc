@@ -4,42 +4,283 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Tasks Rerunnable</title> 
+<head><title>Repeating Asynchronous Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3475--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu48.html" >next</a>] [<a 
+   <!--l. 3498--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse12.html" >next</a>] [<a 
 href="cug-htmlsu46.html" >prev</a>] [<a 
 href="cug-htmlsu46.html#tailcug-htmlsu46.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu47.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu47.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.3   </span> <a 
- id="x72-11200011.3"></a>Make Tasks Rerunnable</h4>
-<!--l. 3477--><p class="noindent" >It should be possible to rerun a task by simply resubmitting it for the same cycle time. In other words, failure at any
-point during execution of a task should not render a rerun impossible by corrupting the state of some internal-use
-file, or whatever. It&#8217;s difficult to overstate the usefulness of being able to rerun the same task multiple times, either
-outside of the suite with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>, or by retriggering it within the running suite, when debugging a
-problem.
-                                                                                         
-
-                                                                                         
+   <h4 class="subsectionHead"><span class="titlemark">11.2   </span> <a 
+ id="x72-11400011.2"></a>Repeating Asynchronous Tasks</h4>
+<!--l. 3500--><p class="noindent" >These tasks can be used to construct suites for processing asynchronous satellite datasets, wherein the data arrives
+at (effectively) random intervals. The first task in the suite should be of the <span 
+class="cmti-10">daemon </span>type, which runs indefinitely
+watching for incoming data. When new data is detected it sends a message that matches a registered pattern
+containing some unique data ID. The daemon task proxy extracts the ID and dynamically registers a new output,
+containing the actual ID, that downstream tasks can trigger off. The downstream tasks likewise have prerequisites
+containing the pattern, and when these are satisfied the actual ID is substituted into their registered outputs. Each
+asynchronous task proxy passes the ID to its real task as <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">ASYNCID</span></span> so that it can process the correct dataset.
+Repeating asynchronous tasks are defined under special sub-headings in the [dependencies] section of the suite.rc
+graph, e.g.:
 </p>
-   <!--l. 3485--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu48.html" >next</a>] [<a 
+   <!--l. 3515-->
+   <div class="lstlisting" id="listing-89"><span class="label"><a 
+ id="x72-114001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">SATID</span><span 
+class="pcrr7t-">-\</span><span 
+class="pcrr7t-">d</span><span 
+class="pcrr7t-">+]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">watcher</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">daemon</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">watcher</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114006r6"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">watcher</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114008r8"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">outputs</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">New</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">dataset</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">ready</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114011r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114012r12"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114013r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">outputs</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114014r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Products</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">generated</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr7t-">dataset</span><span 
+class="pcrr7t-">&#x2423;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x72-114015r15"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span>
+   
+   </div>
+<!--l. 3533--><p class="indent" >   If the asynchronous datasets happen to become available in quick succession, entire trees of asynchronous
+processing can run in parallel.
+</p><!--l. 3536--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">11.2.1   </span> <a 
+ id="x72-11500011.2.1"></a>Repeating Asynchronous Example Suite</h5>
+<!--l. 3538--><p class="noindent" >See suite <span class="lstinline"><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">]:</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">async_repeat</span></span>
+</p>
+   <!--l. 3541--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse12.html" >next</a>] [<a 
 href="cug-htmlsu46.html" >prev</a>] [<a 
 href="cug-htmlsu46.html#tailcug-htmlsu46.html" >prev-tail</a>] [<a 
 href="cug-htmlsu47.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu47.html" >up</a>] </p></div>
-<!--l. 3485--><p class="indent" >   <a 
- id="tailcug-htmlsu47.html"></a> </p> 
+<!--l. 3541--><p class="indent" >   <a 
+ id="tailcug-htmlsu47.html"></a>  </p> 
 </body></html> 

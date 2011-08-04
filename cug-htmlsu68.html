@@ -4,386 +4,76 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[visualization]</title> 
+<head><title>[directives]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1164--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 823--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu69.html" >next</a>] [<a 
 href="cug-htmlsu67.html" >prev</a>] [<a 
 href="cug-htmlsu67.html#tailcug-htmlsu67.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu68.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu68.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.10   </span> <a 
- id="x100-198000A.10"></a>[visualization]</h4>
-<!--l. 1165--><p class="noindent" >Graph plotting (suite.rc and run-time) configuration items. These do not affect the graph-based suite control
-interface.
+href="cug-htmlse13.html#cug-htmlsu68.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.7   </span> <a 
+ id="x101-182000A.7"></a>[directives]</h4>
+<!--l. 824--><p class="noindent" >Use this section to define batch queue scheduler directives, or similar, for all tasks in the suite. These are written to
+the top of the job script that cylc submits when a task is ready to run. Whether or not directives defined here are
+used depends on the task&#8217;s job submission method, which should also define the directive comment prefix (&#8216;<span class="lstinline"><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">@</span></span>&#8217; for
+loadleveler) and final directive (&#8217;<span class="lstinline"><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">@</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queue</span></span>&#8217;).
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.1   </span> <a 
- id="x100-199000A.10.1"></a>run time graph cutoff in hours </h5>
-<!--l. 1168--><p class="noindent" >Cylc generates a run time graph of resolved dependencies, from the start of every run until each task has passed this
-cutoff. Use simulation mode to generate run time graphs quickly.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>integer
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span><span 
-class="cmmi-10">&#x003E;</span>= 0
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>24
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">run</span><span 
+   <h5 class="subsubsectionHead"><span class="titlemark">A.7.1   </span> <a 
+ id="x101-183000A.7.1"></a><span 
+class="cmmi-10">&#x003C;</span>MANY<span 
+class="cmmi-10">&#x003E;</span></h5>
+<!--l. 832--><p class="noindent" >Replace MANY with each batch queue scheduler directive, e.g.&#x00A0;</p><!--l. 833-->
+   <div class="lstlisting" id="listing-99"><span class="label"><a 
+ id="x101-183001r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cutoff</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">class</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">12</span></span></li></ul>
-<!--l. 1179--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.2   </span> <a 
- id="x100-200000A.10.2"></a>run time graph directory </h5>
-<!--l. 1180--><p class="noindent" >Where to put the run time graph file, called <span class="lstinline"><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">dot</span></span>.  </p>
+class="pcrr7t-">parallel</span>
+   
+   </div>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
+class="cmti-10">section: </span>[directives]
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
-class="cmti-10">legal values: </span>a valid local file path
+class="cmti-10">legal values: </span>any legal directive for your batch scheduler
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">graphing</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">mygraph</span></span></li></ul>
-<!--l. 1189--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.3   </span> <a 
- id="x100-201000A.10.3"></a>show family members </h5>
-<!--l. 1191--><p class="noindent" >Whether to plot task family members, or the family as a whole.  </p>
+class="cmti-10">default: </span>None</li></ul>
                                                                                          
 
                                                                                          
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>False
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">show</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">family</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">members</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span></span></li></ul>
-<!--l. 1199--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.4   </span> <a 
- id="x100-202000A.10.4"></a>use node color for edges </h5>
-<!--l. 1200--><p class="noindent" >Outgoing graph edges (dependency arrows) can be plotted in the same color as the upstream node (task); this can
-make it easier to follow a path through a complex graph.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>boolean
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>True
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">use</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edges</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">False</span></span></li></ul>
-<!--l. 1210--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.5   </span> <a 
- id="x100-203000A.10.5"></a>default node attributes </h5>
-<!--l. 1211--><p class="noindent" >Set the default attributes (color and style etc.) of graph nodes (tasks). Attribute pairs must be quoted to hide the <span class="lstinline"><span 
-class="pcrr7t-">=</span></span>
-character in them.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of <span 
-class="cmti-10">quoted </span><span class="lstinline"><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">attribute</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">value</span><span 
-class="pcrr7t-">'</span></span> pairs
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">unfilled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">black</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">shape</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">ellipse</span><span 
-class="pcrr7t-">'</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">default</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">shape</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">box</span><span 
-class="pcrr7t-">'</span></span></li></ul>
-<!--l. 1221--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.6   </span> <a 
- id="x100-204000A.10.6"></a>default edge attributes </h5>
-<!--l. 1222--><p class="noindent" >Set the default attributes (color and style etc.) of graph edges (dependency arrows). Attribute pairs must be quoted
-to hide the <span class="lstinline"><span 
-class="pcrr7t-">=</span></span> character in them.  </p>
-                                                                                         
-
-                                                                                         
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of graph edge attributes
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span><span class="lstinline"><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">black</span><span 
-class="pcrr7t-">'</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">default</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edge</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">'</span></span></li></ul>
-<!--l. 1233--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.7   </span> <a 
- id="x100-205000A.10.7"></a>[[node groups]]</h5>
-<!--l. 1234--><p class="noindent" >Define named groups of graph nodes (tasks) that can have attributes assigned to them en masse in the [[node
-attributes]] section.
-</p>
-<!--l. 1236--><p class="noindent" ><span class="paragraphHead"><a 
- id="x100-206000A.10.7.1"></a> <span 
-class="cmmib-10">&#x003C;</span><span 
-class="cmbx-10">MANY</span><span 
-class="cmmib-10">&#x003E;</span></span>
-   Replace MANY with each node group. Tasks can appear in multiple groups.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization] <span 
-class="cmsy-10">&#x2192; </span>[[node groups]]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of task names
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>empty
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">BigModels</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskX</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskY</span></span></li></ul>
-<!--l. 1246--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.10.8   </span> <a 
- id="x100-207000A.10.8"></a>[[node attributes]]</h5>
-<!--l. 1247--><p class="noindent" >Here you can assign graph node attributes to specific tasks or named groups of tasks defined in the [[node groups]]
-section.
-</p>
-<!--l. 1249--><p class="noindent" ><span class="paragraphHead"><a 
- id="x100-208000A.10.8.1"></a> <span 
-class="cmmib-10">&#x003C;</span><span 
-class="cmbx-10">MANY</span><span 
-class="cmmib-10">&#x003E;</span></span>
-   Replace MANY for any specific tasks or named groups that you want to assign attributes to.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[visualization] <span 
-class="cmsy-10">&#x2192; </span>[[node attributes]]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of <span 
-class="cmti-10">quoted </span><span class="lstinline"><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">attribute</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">value</span><span 
-class="pcrr7t-">'</span></span> pairs
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 1258-->
-     <div class="lstlisting" id="listing-103"><span class="label"><a 
- id="x100-208001r1"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">BigModels</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">blue</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x100-208002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TaskX</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">color</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">'</span>
-     
-     </div>
-     </li></ul>
-                                                                                         
-
-                                                                                         
-   <!--l. 1264--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 843--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu69.html" >next</a>] [<a 
 href="cug-htmlsu67.html" >prev</a>] [<a 
 href="cug-htmlsu67.html#tailcug-htmlsu67.html" >prev-tail</a>] [<a 
 href="cug-htmlsu68.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu68.html" >up</a>] </p></div>
-<!--l. 1264--><p class="indent" >   <a 
- id="tailcug-htmlsu68.html"></a>   </p> 
+href="cug-htmlse13.html#cug-htmlsu68.html" >up</a>] </p></div>
+<!--l. 843--><p class="indent" >   <a 
+ id="tailcug-htmlsu68.html"></a>  </p> 
 </body></html> 

@@ -4,550 +4,565 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Comparing Suites</title> 
+<head><title>Searching A Suite</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1398--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1371--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu23.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu23.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.11   </span> <a 
- id="x37-460005.11"></a>Comparing Suites</h4>
-<!--l. 1400--><p class="noindent" >Cylc can also compare suites and report differences by suite.rc section and item. For instance, comparing the
-example suites <span class="lstinline"><span 
-class="pcrr7t-">CUG_QS1</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">CUG_QS2</span></span> by GUI or command line results in:
-</p>
-   <!--l. 1405-->
-   <div class="lstlisting" id="listing-28"><span class="label"><a 
+ id="x37-460005.11"></a>Searching A Suite</h4>
+<!--l. 1373--><p class="noindent" >The cylc suite search tool reports matches in the suite.rc file by line number, suite section, and file, even if nested
+include-files are used, and by file and line number for matches in the suite bin directory. The following output listing
+is from a search of the <span 
+class="cmti-10">examples:CUG3 </span>suite, which has some task scripts in the suite bin directory.
+</p><!--l. 1379-->
+   <div class="lstlisting" id="listing-27"><span class="label"><a 
  id="x37-46001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">diff</span><span 
+class="pcrr7t-">grep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">examples</span><span 
 class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
+class="pcrr7t-">CUG3</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46002r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46003r3"></a></span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">definitions</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">examples</span><span 
 class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">differ</span><span 
-class="pcrr7t-">.</span><span 
+class="pcrr7t-">CUG_QS3</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46004r4"></a></span><span 
+class="pcrr7t-">PATTERN</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46005r5"></a></span><span 
-class="pcrr7t-">1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(&#x003C;)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46006r6"></a></span><span 
+class="pcrr7t-">FILE</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG5</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SECTION</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]-&#x003E;[[</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">]]-&#x003E;[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[47]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GETDATA_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">']</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SECTION</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]-&#x003E;[[</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">]]-&#x003E;[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46010r10"></a></span><span 
-class="pcrr7t-">3</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(&#x003E;)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[54]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46011r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SECTION</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]-&#x003E;[[</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">]]-&#x003E;[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46012r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[62]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46013r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SECTION</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">models</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">']</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]-&#x003E;[[</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">]]-&#x003E;[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46014r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[70]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">POSTA_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">lightblue</span><span 
-class="pcrr7t-">']</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46015r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SECTION</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]-&#x003E;[[</span><span 
+class="pcrr7t-">PostB</span><span 
+class="pcrr7t-">]]-&#x003E;[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46016r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">groups</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x37-46017r17"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">models</span><span 
+class="pcrr7t-">[77]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">POSTB_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">']</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">WORKSPACE</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46017r17"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46018r18"></a></span><span 
+class="pcrr7t-">FILE</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG5</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46019r19"></a></span><span 
-class="pcrr7t-">7</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">common</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">differ</span><span 
+class="pcrr7t-">[7]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">(&#x003C;)</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">(&#x003E;)</span><span 
+class="pcrr7t-">checkvars</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">POSTA_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46020r20"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">(</span><span 
-class="pcrro7t-">some</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">have</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">been</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">omitted</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">here</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">for</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">inclusion</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">in</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">User</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">Guide</span><span 
-class="pcrro7t-">!)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[21]:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">touch</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">POSTA_OUTPUT_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">surface</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">wind</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">products</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46021r21"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46022r22"></a></span><span 
+class="pcrr7t-">FILE</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">top</span><span 
-class="pcrr7t-">)</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG5</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46023r23"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[6]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
+class="pcrr7t-">checkvars</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">c</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcSuiteLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
+class="pcrr7t-">GETDATA_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46024r24"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[11]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
+class="pcrr7t-">touch</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">GETDATA_OUTPUT_DIR</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcSuiteLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">{</span><span 
+class="pcrr7t-">CYCLE_TIME</span><span 
+class="pcrr7t-">}.</span><span 
+class="pcrr7t-">nc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46025r25"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46026r26"></a></span><span 
+class="pcrr7t-">FILE</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG5</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">PostB</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46027r27"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[7]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
+class="pcrr7t-">checkvars</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">c</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[]</span><span 
+class="pcrr7t-">POSTB_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46028r28"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[21]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
+class="pcrr7t-">touch</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">']</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">POSTB_OUTPUT_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">precip</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">products</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46029r29"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46030r30"></a></span><span 
+class="pcrr7t-">FILE</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[0,6,12,18]]</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CUG5</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46031r31"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[11]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">checkvars</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">c</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">MODEL_RUNNING_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46032r32"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[54]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">touch</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">surface</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">winds</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">{</span><span 
+class="pcrr7t-">CYCLE_TIME</span><span 
+class="pcrr7t-">}.</span><span 
+class="pcrr7t-">nc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46033r33"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[55]:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
+class="pcrr7t-">touch</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">precipitation</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">{</span><span 
+class="pcrr7t-">CYCLE_TIME</span><span 
+class="pcrr7t-">}.</span><span 
+class="pcrr7t-">nc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-46034r34"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x37-46035r35"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x37-46036r36"></a></span><span 
 class="pcrr7t-">DONE</span>
    
    </div>
-<!--l. 1443--><p class="indent" >   (some output has been omitted for brevity). Note that the <span 
-class="cmti-10">suite log directory </span>items differ even though they are
-not explicitly defined in either suite. That is because their default values (see the <span 
-class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
-href="cug-htmlse12.html#x86-125000A">A<!--tex4ht:ref: SuiteRCReference --></a>)
-are suite-specific.
+<!--l. 1415--><p class="indent" >   (The same thing can of course be done via the gcylc right-click menu).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1448--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1417--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="cug-htmlsu23.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu23.html" >up</a>] </p></div>
-<!--l. 1448--><p class="indent" >   <a 
+<!--l. 1417--><p class="indent" >   <a 
  id="tailcug-htmlsu23.html"></a> </p> 
 </body></html> 

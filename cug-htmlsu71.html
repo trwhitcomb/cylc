@@ -4,35 +4,90 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[experimental]</title> 
+<head><title>[visualization]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1302--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse13.html" >next</a>] [<a 
+   <!--l. 1220--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu72.html" >next</a>] [<a 
 href="cug-htmlsu70.html" >prev</a>] [<a 
 href="cug-htmlsu70.html#tailcug-htmlsu70.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu71.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu71.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.13   </span> <a 
- id="x103-213000A.13"></a>[experimental]</h4>
-<!--l. 1303--><p class="noindent" >Section for experimenting with new configuration items
+href="cug-htmlse13.html#cug-htmlsu71.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.10   </span> <a 
+ id="x104-209000A.10"></a>[visualization]</h4>
+<!--l. 1221--><p class="noindent" >Graph plotting configuration items for suite.rc and run time graphs. These do not affect the graph-based suite
+control interface.
+</p><!--l. 1224--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.13.1   </span> <a 
- id="x103-214000A.13.1"></a>live graph movie </h5>
-<!--l. 1305--><p class="noindent" >Turning this item on will result in a new dot file being written to the suite graphing directory every time the
-suite state changes. These can later be converted into movie frames and animated with appropriate
-image processing tools. A script for automating this is currently in the cylc development repository.
-</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.1   </span> <a 
+ id="x104-210000A.10.1"></a>initial cycle time </h5>
+<!--l. 1225--><p class="noindent" >Initial cycle time for graph plotting.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[experimental]
+class="cmti-10">section: </span>[visualization]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>2999010106
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">initial</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2011052318</span></span></li></ul>
+<!--l. 1233--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.2   </span> <a 
+ id="x104-211000A.10.2"></a>final cycle time </h5>
+<!--l. 1234--><p class="noindent" >Final cycle time for graph plotting. This should typically be just far enough ahead of the initial cycle time to show
+the full suite.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>2999010206
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">final</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2011052318</span></span></li></ul>
+<!--l. 1243--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.3   </span> <a 
+ id="x104-212000A.10.3"></a>show family members </h5>
+<!--l. 1245--><p class="noindent" >Whether to plot task family members, or the family as a whole.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization]
+                                                                                         
+
+                                                                                         
      </li>
      <li class="itemize"><span 
 class="cmti-10">type: </span>boolean
@@ -42,21 +97,375 @@ class="cmti-10">default: </span>False
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">live</span><span 
+class="pcrr7t-">show</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
+class="pcrr7t-">family</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">movie</span><span 
+class="pcrr7t-">members</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">True</span></span></li></ul>
-   <!--l. 3764--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse13.html" >next</a>] [<a 
+<!--l. 1253--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.4   </span> <a 
+ id="x104-213000A.10.4"></a>use node color for edges </h5>
+<!--l. 1254--><p class="noindent" >Outgoing graph edges (dependency arrows) can be plotted in the same color as the upstream node (task); this can
+make it easier to follow a path through a complex graph.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>boolean
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>True
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">use</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">node</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edges</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">False</span></span></li></ul>
+<!--l. 1264--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.5   </span> <a 
+ id="x104-214000A.10.5"></a>default node attributes </h5>
+<!--l. 1265--><p class="noindent" >Set the default attributes (color and style etc.) of graph nodes (tasks). Attribute pairs must be quoted to hide the <span class="lstinline"><span 
+class="pcrr7t-">=</span></span>
+character in them.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of <span 
+class="cmti-10">quoted </span><span class="lstinline"><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">attribute</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">value</span><span 
+class="pcrr7t-">'</span></span> pairs
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span><span class="lstinline"><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">style</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">unfilled</span><span 
+class="pcrr7t-">',</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">black</span><span 
+class="pcrr7t-">',</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">shape</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">ellipse</span><span 
+class="pcrr7t-">'</span></span>
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">default</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">node</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">attributes</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">style</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">filled</span><span 
+class="pcrr7t-">',</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">shape</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">box</span><span 
+class="pcrr7t-">'</span></span></li></ul>
+<!--l. 1275--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.6   </span> <a 
+ id="x104-215000A.10.6"></a>default edge attributes </h5>
+<!--l. 1276--><p class="noindent" >Set the default attributes (color and style etc.) of graph edges (dependency arrows). Attribute pairs must be quoted
+to hide the <span class="lstinline"><span 
+class="pcrr7t-">=</span></span> character in them.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization]
+                                                                                         
+
+                                                                                         
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of graph edge attributes
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span><span class="lstinline"><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">black</span><span 
+class="pcrr7t-">'</span></span>
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">default</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edge</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">attributes</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">'</span></span></li></ul>
+<!--l. 1287--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.7   </span> <a 
+ id="x104-216000A.10.7"></a>[[node groups]]</h5>
+<!--l. 1288--><p class="noindent" >Define named groups of graph nodes (tasks) that can have attributes assigned to them en masse in the [[node
+attributes]] section.
+</p>
+<!--l. 1290--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x104-217000A.10.7.1"></a> <span 
+class="cmmib-10">&#x003C;</span><span 
+class="cmbx-10">MANY</span><span 
+class="cmmib-10">&#x003E;</span></span>
+   Replace MANY with each node group. Tasks can appear in multiple groups.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization] <span 
+class="cmsy-10">&#x2192; </span>[[node groups]]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of task names
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>empty
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">BigModels</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskX</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskY</span></span></li></ul>
+<!--l. 1300--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.8   </span> <a 
+ id="x104-218000A.10.8"></a>[[node attributes]]</h5>
+<!--l. 1301--><p class="noindent" >Here you can assign graph node attributes to specific tasks or named groups of tasks defined in the [[node groups]]
+section.
+</p>
+<!--l. 1303--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x104-219000A.10.8.1"></a> <span 
+class="cmmib-10">&#x003C;</span><span 
+class="cmbx-10">MANY</span><span 
+class="cmmib-10">&#x003E;</span></span>
+   Replace MANY for any specific tasks or named groups that you want to assign attributes to.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization] <span 
+class="cmsy-10">&#x2192; </span>[[node attributes]]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>list of <span 
+class="cmti-10">quoted </span><span class="lstinline"><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">attribute</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">value</span><span 
+class="pcrr7t-">'</span></span> pairs
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span>see graphviz or pygraphviz documentation
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>None
+                                                                                         
+
+                                                                                         
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><!--l. 1312-->
+     <div class="lstlisting" id="listing-105"><span class="label"><a 
+ id="x104-219001r1"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">BigModels</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">style</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">filled</span><span 
+class="pcrr7t-">',</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">blue</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x104-219002r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TaskX</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">color</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">'</span>
+     
+     </div>
+     </li></ul>
+<!--l. 1318--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.10.9   </span> <a 
+ id="x104-220000A.10.9"></a>[[run time graph]]</h5>
+<!--l. 1319--><p class="noindent" >Cylc can generate run time graphs of resolved dependencies, i.e. what actually triggers off what as the suite runs.
+Use simulation mode to generate run time graphs very quickly.
+</p><!--l. 1323--><p class="noindent" >
+</p>
+<!--l. 1323--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x104-221000A.10.9.1"></a><span 
+class="cmbx-10">enable </span></span>
+   Run time graphing is disabled by default because it is mainly intended for cylc development and debugging (the
+run time graph can be compared with the suite.rc graph to ensure that new suite.rc graph elements are parsed
+correctly).  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization][[run time graph]]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>boolean
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>False
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">enable</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">True</span></span></li></ul>
+<!--l. 1335--><p class="noindent" >
+</p>
+<!--l. 1335--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x104-222000A.10.9.2"></a><span 
+class="cmbx-10">cutoff in hours </span></span>
+   Each new task will be added to the run time graph, as the suite runs, unless its cycle time exceeds the initial
+cycle time by more than this cutoff value.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization][[run time graph]]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmmi-10">&#x003E;</span>= 0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>24
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">cutoff</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hours</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">12</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+<!--l. 1347--><p class="noindent" >
+</p>
+<!--l. 1347--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x104-223000A.10.9.3"></a><span 
+class="cmbx-10">directory </span></span>
+   Where to put the run time graph file, called <span class="lstinline"><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">dot</span></span>.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[visualization][[run time graph]]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>string
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span>a valid local file path
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span><span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">graphing</span></span>
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">mygraph</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 1357--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu72.html" >next</a>] [<a 
 href="cug-htmlsu70.html" >prev</a>] [<a 
 href="cug-htmlsu70.html#tailcug-htmlsu70.html" >prev-tail</a>] [<a 
 href="cug-htmlsu71.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu71.html" >up</a>] </p></div>
-<!--l. 3764--><p class="indent" >   <a 
- id="tailcug-htmlsu71.html"></a>  </p> 
+href="cug-htmlse13.html#cug-htmlsu71.html" >up</a>] </p></div>
+<!--l. 1357--><p class="indent" >   <a 
+ id="tailcug-htmlsu71.html"></a>   </p> 
 </body></html> 

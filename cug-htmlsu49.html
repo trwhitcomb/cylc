@@ -4,44 +4,43 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Limit Previous-Instance Dependence</title> 
+<head><title>Use Include-Files For Groups Of Related Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3499--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3569--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu50.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu49.html">tail</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu49.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.5   </span> <a 
- id="x74-11400011.5"></a>Limit Previous-Instance Dependence</h4>
-<!--l. 3502--><p class="noindent" >Cylc does not require that successive instances of the same task run sequentially. In order to task advantage of this
-and achieve maximum functional parallelism whenever the opportunity arises (usually when catching up from a
-delay) you should ensure that tasks that in principle do not depend on their own previous instances (the vast
-majority of tasks in most suites, in fact) do not do so in practice. In other words, they should be
-able to run as soon as their prerequisites are satisfied regardless of whether or not their predecessors
-have finished yet. This generally just means ensuring that all file I/O contains the generating task&#8217;s
-cycle time in the file or directory name so that there is no interference between successive instances.
-If this is difficult to achieve in particular cases, however, you can declare the offending tasks to be
-<span 
-class="cmti-10">sequential</span>.
+href="cug-htmlse12.html#cug-htmlsu49.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.2   </span> <a 
+ id="x75-11800012.2"></a>Use Include-Files For Groups Of Related Tasks</h4>
+<!--l. 3571--><p class="noindent" >Suite.rc include-files can be used just to help organise tasks into convenient groups in very large suites (and with
+<span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edit</span></span> you can edit a temporarily inlined file to get a global view). But they are most useful for handling the
+repetitive definition of groups of similar tasks, because the same inclusion can be used multiple times in the same
+suite.rc file. See <span 
+class="cmti-10">Include Files </span>(Section&#x00A0;<a 
+href="cug-htmlsu62.html#x91-133000A.1">A.1<!--tex4ht:ref: IncludeFiles --></a>).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3525--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3580--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu50.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="cug-htmlsu49.html" >front</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu49.html" >up</a>] </p></div>
-<!--l. 3525--><p class="indent" >   <a 
+href="cug-htmlse12.html#cug-htmlsu49.html" >up</a>] </p></div>
+<!--l. 3580--><p class="indent" >   <a 
  id="tailcug-htmlsu49.html"></a> </p> 
 </body></html> 

@@ -4,108 +4,152 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[cylc local environment]</title> 
+<head><title>[simulation mode]</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-07-21 14:53:00" /> 
+<meta name="date" content="2011-08-04 16:18:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1277--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1180--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu71.html" >next</a>] [<a 
 href="cug-htmlsu69.html" >prev</a>] [<a 
 href="cug-htmlsu69.html#tailcug-htmlsu69.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu70.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu70.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.12   </span> <a 
- id="x102-211000A.12"></a>[cylc local environment]</h4>
-<!--l. 1278--><p class="noindent" >Use this section to add variables to the environment in which cylc itself runs. These variables will be
-available to processes spawned directly by cylc, namely timeout and alert hook scripts. <span 
-class="cmti-10">Do not use</span>
-<span 
-class="cmti-10">this section to alter the task execution environment - use the plain [environment] sections for that -</span>
-<span 
-class="cmti-10">variables defined in this section will only be available to tasks if local direct job submission methods are</span>
-<span 
-class="cmti-10">used</span>.
+href="cug-htmlse13.html#cug-htmlsu70.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.9   </span> <a 
+ id="x103-205000A.9"></a>[simulation mode]</h4>
+<!--l. 1181--><p class="noindent" >Configuration items specific to running suites in simulation mode.
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.12.1   </span> <a 
- id="x102-212000A.12.1"></a><span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></h5>
-<!--l. 1286--><p class="noindent" >Replace MANY with each cylc local environment variable definition.  </p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.1   </span> <a 
+ id="x103-206000A.9.1"></a>clock offset from initial cycle time in hours </h5>
+<!--l. 1183--><p class="noindent" >Specify a clock offset of 0 to simulate real time operation, greater than zero to simulate catching up from a delay
+and transitioning to real time operation.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
-class="cmti-10">section: </span>[cylc local environment]
+class="cmti-10">section: </span>[simulation mode]
      </li>
      <li class="itemize"><span 
-class="cmti-10">type: </span>string
+class="cmti-10">type: </span>integer
      </li>
      <li class="itemize"><span 
-class="cmti-10">default: </span>None
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
      </li>
      <li class="itemize"><span 
-class="cmti-10">legal values: </span>any valid environment variable assignment expression. White space around the &#8216;=&#8217; is fine
-     (the <span class="lstinline"><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span></span> file is not a shell script).
+class="cmti-10">default: </span>24
      </li>
      <li class="itemize"><span 
-class="cmti-10">examples: </span>for the bash shell:
-         <ul class="itemize2">
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">FOO</span><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">initial</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hours</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">baz</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">BAZ</span><span 
+class="pcrr7t-">6</span></span></li></ul>
+<!--l. 1194--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.2   </span> <a 
+ id="x103-207000A.9.2"></a>clock rate in seconds per simulation hour </h5>
+<!--l. 1195--><p class="noindent" >This determines the speed at which the simulation mode clock runs. A value of 10, for example, means it will take
+10 simulation seconds to simulate one hour of real time operation.  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">per</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">simulation</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hour</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">echo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">hello</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">world</span><span 
-class="pcrr7t-">")</span></span>
-         </li>
-         <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">WAZ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">{</span><span 
-class="pcrr7t-">FOO</span><span 
-class="pcrr7t-">%.</span><span 
-class="pcrr7t-">jpg</span><span 
-class="pcrr7t-">}.</span><span 
-class="pcrr7t-">png</span></span></li></ul>
-     </li></ul>
+class="pcrr7t-">20</span><span 
+class="pcrr7t-">&#x00A0;</span></span></li></ul>
+<!--l. 1207--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.9.3   </span> <a 
+ id="x103-208000A.9.3"></a>task run time in seconds </h5>
+<!--l. 1208--><p class="noindent" >Set the approximate number of <span 
+class="cmbx-10">real </span>seconds that a dummy task takes to execute.  </p>
                                                                                          
 
                                                                                          
-   <!--l. 1302--><div class="crosslinks"><p class="noindent">[<a 
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">section: </span>[simulation mode]
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">type: </span>integer
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">legal values: </span><span 
+class="cmsy-10">&#x2265; </span>0
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>10
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example: </span><span class="lstinline"><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">seconds</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">20</span></span></li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 1220--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu71.html" >next</a>] [<a 
 href="cug-htmlsu69.html" >prev</a>] [<a 
 href="cug-htmlsu69.html#tailcug-htmlsu69.html" >prev-tail</a>] [<a 
 href="cug-htmlsu70.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu70.html" >up</a>] </p></div>
-<!--l. 1302--><p class="indent" >   <a 
+href="cug-htmlse13.html#cug-htmlsu70.html" >up</a>] </p></div>
+<!--l. 1220--><p class="indent" >   <a 
  id="tailcug-htmlsu70.html"></a>  </p> 
 </body></html> 
