@@ -132,7 +132,6 @@
             <li> <a href="#requirements">Requirements</a> </li>
             <li> <a href="#download">Download</a> </li>
             <li> <a href="#development">Development</a> </li>
-            <li> <a href="#changelog">Change Log</a> </li>
             <li> <a href="#acknowledgements">Acknowledgements</a> </li>
             <li> <a href="http://github.com/hjoliver/cylc">Source Repository</a></li>
     </ul>
@@ -348,7 +347,7 @@ install them):
 
     <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
-<a id="download" />
+<div id="download" />
 <h3><span>Download</span></h3>
 
 <p class="p1"><span>
@@ -369,9 +368,25 @@ install them):
     <code>doc</code> sub-directory.
 </span></p>
 
-    <p class="nav"><span><a href="#">(back to top)</a></span></p>
+    <h4><span>Change Log</span></h4>
 
-</div> <!--getting-->
+    <p class="p1"><span>The cylc release change log was initialized at
+        version 3.0.3, the first GNU GPL release on GitHub. You can view
+        it <a href="changelog.txt">here</a>.</span></p>
+
+    <h4><span>Pending Changes</span></h4>
+
+    <pre style="font-size:120%">
+3.5.0 PENDING
+ + Fixed a bug, introduced in 3.4.0, in the lockserver client program
+  for manual lock management.
+ + The cylc code base is now largely a Python library, and the cylc
+ environment script is no longer needed - the 'cylc' and 'gcylc'
+ commands automatically configure access to cylc sub commands and 
+ library modules at run time.</pre>
+
+    <p class="nav"><span><a href="#">(back to top)</a></span></p>
+</div> <!--download-->
 
         <div id="support">
             <h3><span>Support</span></h3>
@@ -436,16 +451,6 @@ install them):
     <p class="nav"><span><a href="#">(back to top)</a></span></p>
 
 </div> <!--development-->
-
-<div id="changelog">
-    <h3><span>Change Log</span></h3>
-
-    <p class="p1"><span>The cylc release change log was initialized at
-        version 3.0.3, the first GNU GPL release on GitHub. You can view
-        it <a href="changelog.txt">here</a>.</span></p>
-
-    <p class="nav"><span><a href="#">(back to top)</a></span></p>
-</div> <!--changelog-->
 
 <div id="acknowledgements">
     <h3><span>Acknowledgements</span></h3>
