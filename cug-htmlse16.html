@@ -4,56 +4,53 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>The Graph-Based Suite Control GUI</title> 
+<head><title>Simulation Mode</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3929--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse17.html" >next</a>] [<a 
+   <!--l. 3981--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu77.html" >next</a>] [<a 
 href="cug-htmlse15.html" >prev</a>] [<a 
 href="cug-htmlse15.html#tailcug-htmlse15.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse16.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse16.html" >up</a>] </p></div>
-   <h3 class="sectionHead"><span class="titlemark">D   </span> <a 
- id="x112-301000D"></a>The Graph-Based Suite Control GUI</h3>
-<!--l. 3932--><p class="noindent" >The graph-based suite control GUI has the advantage that it shows the structure of a suite very clearly as it evolves.
-It works remarkably well even for very large suites, on the order of one hundred tasks or more <span 
-class="cmti-10">but </span>on the downside,
-the graphviz engine does a new global optimization every time the graph changes, so the layout is often not very
-stable. This may or may not be a solvable problem - it seems likely that making continual incremental changes to
-an existing graph without redoing the global layout would inevitably result in some kind of horrible
-mess.
-</p><!--l. 3942--><p class="indent" >   The following features of the graph-based control GUI go a long way toward mitigating the changing layout
-problem:
+   <h3 class="sectionHead"><span class="titlemark">E   </span> <a 
+ id="x111-304000E"></a>Simulation Mode</h3>
+<!--l. 3984--><p class="noindent" >If you start a suite in simulation mode (a command line option for the cold-, warm-, raw-, and re-start commands,
+and a checkbutton in the gcylc suite start panel) then cylc will run on an accelerated clock and submit dummy
+programs instead of the real tasks. These masquerade as the real tasks by reporting the correct outputs complete
+after a short interval, reporting success, and then exiting. This is essentially indistinguishable, to cylc, from real
+operation. Simulation mode was, and remains, an important aid to cylc development because it allows testing of
+every aspect of scheduling without having to run real tasks in real time. Prior to cylc-3 it was also a
+useful aid to suite development - a simulation run would quickly identify any mismatch between the
+user-defined prerequisites and outputs across the suite, so you could get the scheduling right without
+running the real tasks. Post cylc-3.0 this is less important because task prerequisites and outputs are
+implicitly defined by the dependency graph and, short of a bug in cylc, the suite will run according to the
+graph.
+</p><!--l. 4001--><p class="noindent" >
 </p>
-     <ul class="itemize1">
-     <li class="itemize">The disconnect button can be used to temporarily prevent the graph from changing as the content of
-     the suite changes (and in real time operation suites evolve quite slowly anyway)
-     </li>
-     <li class="itemize">Right-click on a task and choose the &#8220;Focus&#8221; option to restrict the graph display to that task&#8217;s cycle
-     time. Anything interesting happening in other cycles will show up as disconnected rectangular nodes
-     to the right of the graph (and you can click on those to intantly refocus to their cycles).
-     </li>
-     <li class="itemize">Task filtering is the ultimate quick route to temporarily focusing on just the tasks you&#8217;re interested in
-     (but this will destroy the graph structure, to state the obvious).</li></ul>
-<!--l. 3959--><p class="indent" >   In future cylc releases we plan to keep the graph centered, after layout changes, on the most recently clicked-on
-task.
+   <div class="subsectionTOCS">
+   &#x00A0;<span class="subsectionToc" >E.1 <a 
+href="cug-htmlsu77.html#x112-305000E.1">Clock Rate and Offset</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >E.2 <a 
+href="cug-htmlsu78.html#x113-306000E.2">Switching A Suite Between Simulation And Live Modes?</a></span>
+   </div>
+
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 3963--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse17.html" >next</a>] [<a 
+   <!--l. 4135--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu77.html" >next</a>] [<a 
 href="cug-htmlse15.html" >prev</a>] [<a 
 href="cug-htmlse15.html#tailcug-htmlse15.html" >prev-tail</a>] [<a 
 href="cug-htmlse16.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse16.html" >up</a>] </p></div>
-<!--l. 3963--><p class="indent" >   <a 
+<!--l. 4135--><p class="indent" >   <a 
  id="tailcug-htmlse16.html"></a> </p> 
 </body></html> 

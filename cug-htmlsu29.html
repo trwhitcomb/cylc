@@ -4,339 +4,374 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Database Operations</title> 
+<head><title>The Suite Definition Directory</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1622--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
-href="cug-htmlsu28.html" >prev</a>] [<a 
-href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
+   <!--l. 1593--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlse7.html" >prev</a>] [<a 
+href="cug-htmlse7.html#tailcug-htmlse7.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu29.html">tail</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu29.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.3   </span> <a 
- id="x44-540006.3"></a>Database Operations</h4>
-<!--l. 1624--><p class="noindent" >On the command line, the &#8216;database&#8217; (or &#8216;db&#8217;) command category contains commands to implement the
-aforementioned operations.
+href="cug-htmlse7.html#cug-htmlsu29.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.1   </span> <a 
+ id="x44-550007.1"></a>The Suite Definition Directory</h4>
+<!--l. 1595--><p class="noindent" >A cylc <span 
+class="cmti-10">suite definition directory </span>contains:  </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10">a suite.rc file</span>: this is <span 
+class="cmti-10">the </span>suite definition
+                                                                                         
+
+                                                                                         
+     </li>
+     <li class="itemize">any include-files used by the suite.rc file (see Appendix&#x00A0;<a 
+href="cug-htmlsu62.html#x89-135000A.1">A.1<!--tex4ht:ref: IncludeFiles --></a>)
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">a bin directory </span>for scripts and programs that implement, or are used by, suite tasks
+         <ul class="itemize2">
+         <li class="itemize">technically optional - tasks can call external commands, scripts, or programs
+         </li>
+         <li class="itemize">tasks get automatic access to their own suite bin directory</li></ul>
+     </li>
+     <li class="itemize">any other suite-related documentation, control files, etc.
+         <ul class="itemize2">
+         <li class="itemize">whole suite definition directories are copied if you copy a suite
+         </li>
+         <li class="itemize">files in the suite definition directory can be accessed portably by tasks at run time through the
+         environment variable <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DIR</span></span> supplied by the suite (see <span 
+class="cmti-10">Task Execution Environment</span>
+         (Section&#x00A0;<a 
+href="cug-htmlsu32.html#x51-830007.4.4">7.4.4<!--tex4ht:ref: TaskExecutionEnvironment --></a>)
+         </li>
+         <li class="itemize">holding everything in one place makes revision control easy</li></ul>
+     </li></ul>
+<!--l. 1627--><p class="indent" >   Here&#8217;s an imaginary example,
 </p>
-   <!--l. 1628--><div class="lstinputlisting">
-<a 
- id="x44-54001"></a>
-   <span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54002r1"></a></span><span 
-class="pcrr7t-">CATEGORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54003r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54004r3"></a></span><span 
-class="pcrr7t-">HELP</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span><span 
-class="pcrr7t-">,--</span><span 
-class="pcrr7t-">help</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54005r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">You</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">can</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">abbreviate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54006r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">category</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">may</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">be</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">omitted</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54007r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54008r7"></a></span><span 
-class="pcrr7t-">COMMANDS</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54009r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Graphical</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">User</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Interface</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54010r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">register</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Add</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+   <!--l. 1629-->
+   <div class="lstlisting" id="listing-25"><span class="label"><a 
+ id="x44-55001r1"></a></span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">/</span><span 
 class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54011r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">reregister</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..........</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Change</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">my</span><span 
+class="pcrr7t-">/</span><span 
 class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54012r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">unregister</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">delete</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Remove</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">from</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54013r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">cp</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">group</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54014r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54015r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">dir</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
+class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">definition</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">path</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54016r15"></a></span><span 
+ id="x44-55002r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Export</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;--</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">DEFINITION</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">FILE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54017r16"></a></span><span 
+ id="x44-55003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">import</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Import</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">scripts</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">programs</span><span 
+class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-54018r17"></a></span><span 
+ id="x44-55004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">refresh</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">check</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.......</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Check</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">OPTIONAL</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">any</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">other</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">related</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">files</span><span 
+class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">invalid</span><span 
+class="pcrr7t-">example</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">update</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">titles</span>
+class="pcrr7t-">inc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">include</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">files</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">globals</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55011r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55012r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">doc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">documentation</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55013r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">control</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">control</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">files</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55014r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ancil</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ancillary</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">files</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x44-55015r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span>
    
    </div>
-<!--l. 1630--><p class="indent" >   The same functionality is also available by right-clicking on suites or groups in the gcylc GUI, as shown in
-Figure&#x00A0;<a 
-href="cug-htmlse3.html#x21-2400212">12<!--tex4ht:ref: fig-db --></a>.
-</p>
-   <!--l. 1634--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
-href="cug-htmlsu28.html" >prev</a>] [<a 
-href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
+                                                                                         
+
+                                                                                         
+   <!--l. 1647--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlse7.html" >prev</a>] [<a 
+href="cug-htmlse7.html#tailcug-htmlse7.html" >prev-tail</a>] [<a 
 href="cug-htmlsu29.html" >front</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu29.html" >up</a>] </p></div>
-<!--l. 1634--><p class="indent" >   <a 
+href="cug-htmlse7.html#cug-htmlsu29.html" >up</a>] </p></div>
+<!--l. 1647--><p class="indent" >   <a 
  id="tailcug-htmlsu29.html"></a> </p> 
 </body></html> 

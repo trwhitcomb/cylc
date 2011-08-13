@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -19,20 +19,20 @@ href="cug-htmlsu65.html" >next</a>] [<a
 href="cug-htmlsu63.html" >prev</a>] [<a 
 href="cug-htmlsu63.html#tailcug-htmlsu63.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu64.html">tail</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu64.html" >up</a>] </p></div>
+href="cug-htmlse12.html#cug-htmlsu64.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
- id="x95-166000A.3"></a>[special tasks]</h4>
+ id="x93-168000A.3"></a>[special tasks]</h4>
 <!--l. 598--><p class="noindent" >This section identifies any tasks with special behaviour. By default tasks:  </p>
      <ul class="itemize1">
      <li class="itemize">start running as soon as their prerequisites are satisfied
      </li>
      <li class="itemize">spawns a successor at its next valid cycle time as soon as it enters the running state<span class="footnote-mark"><a 
-href="cug-html96.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
- id="x95-166001f18"></a> </li></ul>
+href="cug-html94.html#fn17x0"><sup class="textsuperscript">17</sup></a></span><a 
+ id="x93-168001f17"></a> </li></ul>
 <!--l. 606--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
- id="x95-167000A.3.1"></a> clock-triggered </h5>
+ id="x93-169000A.3.1"></a> clock-triggered </h5>
 <!--l. 607--><p class="noindent" >Clock-triggered tasks wait on a wall clock time specified as an offset <span 
 class="cmti-10">in hours </span>relative to their own cycle time, in
 addition to any dependence they have on other tasks. Generally speaking, only tasks that wait on external real time
@@ -76,7 +76,7 @@ task.
 </p><!--l. 627--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
- id="x95-168000A.3.2"></a> startup </h5>
+ id="x93-170000A.3.2"></a> startup </h5>
 <!--l. 628--><p class="noindent" >Startup tasks are one off tasks that are only used when <span 
 class="cmti-10">cold starting a suite</span>, i.e.&#x00A0;when starting up without assuming
 any previous cycle. A startup task can be used to clean out or prepare a suite workspace, for example, before other
@@ -107,7 +107,7 @@ class="pcrr7t-">TaskB</span></span></li></ul>
 <!--l. 639--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.3   </span> <a 
- id="x95-169000A.3.3"></a> cold start </h5>
+ id="x93-171000A.3.3"></a> cold start </h5>
 <!--l. 640--><p class="noindent" >A cold start task (or possibly a sequence of them) is used to satisfy the dependence of an associated task with the
 same cycle time, on outputs from a previous cycle - when those outputs are not available. The primary use for this is
 to cold start a warm-cycled forecast model that normally depends on restart files (e.g.&#x00A0;model background fields)
@@ -142,7 +142,7 @@ class="pcrr7t-">TaskF</span></span></li></ul>
 <!--l. 662--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.4   </span> <a 
- id="x95-170000A.3.4"></a> sequential </h5>
+ id="x93-172000A.3.4"></a> sequential </h5>
 <!--l. 663--><p class="noindent" >By default, a cylc task spawns a successor when it starts running, so that successive instances of the same task can
 run in parallel if the opportunity arises (i.e.&#x00A0;if their prerequisites happen to be satisfied before their predecessor has
 finished). <span 
@@ -154,8 +154,8 @@ class="cmti-10">Warm cycled forecast models that</span>
 <span 
 class="cmti-10">write out restart files for multiple cycles ahead </span>(exception: see &#8220;models with explicit restart outputs&#8221;
 below).<span class="footnote-mark"><a 
-href="cug-html97.html#fn19x0"><sup class="textsuperscript">19</sup></a></span><a 
- id="x95-170001f19"></a> 
+href="cug-html95.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x93-172001f18"></a> 
 </p>
      <ul class="itemize1">
      <li class="itemize"><span 
@@ -181,7 +181,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostProcB</span></span></li></ul>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.5   </span> <a 
- id="x95-171000A.3.5"></a> one off </h5>
+ id="x93-173000A.3.5"></a> one off </h5>
 <!--l. 689--><p class="noindent" >One off tasks do not spawn a successor -they run once and are then removed from the suite when they are no longer
 needed. <span 
 class="cmti-10">Startup </span>and <span 
@@ -212,7 +212,7 @@ class="pcrr7t-">TaskB</span></span></li></ul>
 <!--l. 700--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.6   </span> <a 
- id="x95-172000A.3.6"></a> models with explicit restart outputs </h5>
+ id="x93-174000A.3.6"></a> models with explicit restart outputs </h5>
 <!--l. 703--><p class="noindent" >This is only required in the unlikely event that you want a warm cycled forecast model to be able to start at the
 instant its restart files are ready (if other prerequisites are satisfied) <span 
 class="cmti-10">before its previous instance has finished</span>. If so,
@@ -222,7 +222,7 @@ messages, <span
 class="cmti-10">which must contain the word &#8220;restart&#8221;</span>, in [tasks] <span 
 class="cmsy-10">&#x2192; </span>[[TASK]] <span 
 class="cmsy-10">&#x2192; </span>[[[outputs]]] - see Section&#x00A0;<a 
-href="cug-htmlsu69.html#x102-203000A.8.1.16">A.8.1.16<!--tex4ht:ref: outputs --></a>.
+href="cug-htmlsu69.html#x100-205000A.8.1.16">A.8.1.16<!--tex4ht:ref: outputs --></a>.
 </p>
      <ul class="itemize1">
      <li class="itemize"><span 
@@ -260,7 +260,7 @@ href="cug-htmlsu65.html" >next</a>] [<a
 href="cug-htmlsu63.html" >prev</a>] [<a 
 href="cug-htmlsu63.html#tailcug-htmlsu63.html" >prev-tail</a>] [<a 
 href="cug-htmlsu64.html" >front</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu64.html" >up</a>] </p></div>
+href="cug-htmlse12.html#cug-htmlsu64.html" >up</a>] </p></div>
 <!--l. 720--><p class="indent" >   <a 
  id="tailcug-htmlsu64.html"></a>  </p> 
 </body></html> 

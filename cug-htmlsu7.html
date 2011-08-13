@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 403--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 405--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu8.html" >next</a>] [<a 
 href="cug-htmlsu6.html" >prev</a>] [<a 
 href="cug-htmlsu6.html#tailcug-htmlsu6.html" >prev-tail</a>] [<a 
@@ -22,14 +22,200 @@ href="#tailcug-htmlsu7.html">tail</a>] [<a
 href="cug-htmlse2.html#cug-htmlsu7.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
  id="x15-110002.3"></a>Configuring Your Environment For Cylc</h4>
-<!--l. 405--><p class="noindent" >To gain access to cylc type the following at the command prompt: </p><!--l. 406-->
-   <div class="lstlisting" id="listing-1"><span class="label"><a 
- id="x15-11001r1"></a></span><span 
+<!--l. 408--><p class="noindent" >The file <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">profile</span></span> documents the minimal user environment configuration required for
+interactive cylc usage:
+</p>
+   <!--l. 411--><div class="lstinputlisting">
+<a 
+ id="x15-11001"></a>
+   <span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11002r1"></a></span><span 
+class="pcrr7t-">#!/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11003r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11004r3"></a></span><span 
+class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">CYLC</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">USER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">LOGIN</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SCRIPT</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">EXAMPLE</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Copy</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">following</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">your</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">profile</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11005r4"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">adapt</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">according</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">your</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">preferences</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">installation</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11006r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11007r6"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">These</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">variables</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">are</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">required</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">interactive</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">usage</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11008r7"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Access</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">by</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">running</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">is</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">automatically</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">configured</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">by</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11009r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11010r9"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">_______________________________________________________________________</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11011r10"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Add</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">The</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">gcylc</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">commands</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11012r11"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">configure</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">access</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sub</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">commands</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">python</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">modules</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">at</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11013r12"></a></span><span 
 class="pcrr7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">=/</span><span 
 class="pcrr7t-">path</span><span 
 class="pcrr7t-">/</span><span 
@@ -37,31 +223,352 @@ class="pcrr7t-">to</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installation</span><span 
-class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x15-11002r2"></a></span><span 
-class="pcrr8c-">$</span><span 
+ id="x15-11014r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11015r14"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">_______________________________________________________________________</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11016r15"></a></span><span 
+class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">For</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edit</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">or</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">gcylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Edit</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">set</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">terminal</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GUI</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">editors</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11017r16"></a></span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">EDITOR</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">vim</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11018r17"></a></span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GEDITOR</span><span 
+class="pcrr7t-">='</span><span 
+class="pcrr7t-">gvim</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">f</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11019r18"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">See</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">edit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">help</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">examples</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">of</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">other</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">editors</span><span 
+class="pcrr7t-">).</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11020r19"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11021r20"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">_______________________________________________________________________</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11022r21"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">To</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">access</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">User</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Guide</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">gcylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GUI</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">menus</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11023r22"></a></span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PDF_READER</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">evince</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11024r23"></a></span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">HTML_READER</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">firefox</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11025r24"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">The</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">HTML</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">guide</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">is</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">opened</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">file</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">not</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">http</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">URL</span><span 
+class="pcrr7t-">).</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11026r25"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11027r26"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">_______________________________________________________________________</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11028r27"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Some</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">commands</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">require</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">be</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">set</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">writeable</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11029r28"></a></span><span 
+class="pcrr7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">TMPDIR</span><span 
+class="pcrr7t-">=/</span><span 
+class="pcrr7t-">path</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">environment</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">sh</span>
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">my</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">temporary</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11030r29"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11031r30"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">_______________________________________________________________________</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11032r31"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">For</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">user</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">install</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">of</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pyro</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Graphviz</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pygraphviz</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">if</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">you</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11033r32"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">can</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">t</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">easily</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">them</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">at</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">system</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">level</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">on</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">host</span><span 
+class="pcrr7t-">):</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11034r33"></a></span><span 
+class="pcrr7t-">###</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib64</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">python2</span><span 
+class="pcrr7t-">.6/</span><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11035r34"></a></span><span 
+class="pcrr7t-">###</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PATH</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x15-11036r35"></a></span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">See</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">User</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Guide</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Installation</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Section</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">instructions</span><span 
+class="pcrr7t-">).</span>
    
    </div>
-<!--l. 410--><p class="indent" >   Put this into your <span class="lstinline"><span 
+<!--l. 413--><p class="indent" >   Copy this into your <span class="lstinline"><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">profile</span></span> login script to configure cylc access automatically. The variable <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span></span> is
-required inside the environment script, so don&#8217;t skip the export step. You should now be able to run cylc commands:
-</p><!--l. 414-->
-   <div class="lstlisting" id="listing-2"><span class="label"><a 
- id="x15-11003r1"></a></span><span 
+class="pcrr7t-">profile</span></span> login script and adapt appropriately for your environment. After sourcing your
+modified login script, or logging in again, you should be able to run cylc:
+</p>
+   <!--l. 417-->
+   <div class="lstlisting" id="listing-1"><span class="label"><a 
+ id="x15-11039r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -69,7 +576,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">version</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x15-11004r2"></a></span><span 
+ id="x15-11040r2"></a></span><span 
 class="pcrr7t-">3.</span><span 
 class="pcrr7t-">x</span><span 
 class="pcrr7t-">.</span><span 
@@ -79,12 +586,12 @@ class="pcrr7t-">y</span>
                                                                                          
 
                                                                                          
-   <!--l. 433--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 422--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu8.html" >next</a>] [<a 
 href="cug-htmlsu6.html" >prev</a>] [<a 
 href="cug-htmlsu6.html#tailcug-htmlsu6.html" >prev-tail</a>] [<a 
 href="cug-htmlsu7.html" >front</a>] [<a 
 href="cug-htmlse2.html#cug-htmlsu7.html" >up</a>] </p></div>
-<!--l. 433--><p class="indent" >   <a 
+<!--l. 422--><p class="indent" >   <a 
  id="tailcug-htmlsu7.html"></a> </p> 
 </body></html> 

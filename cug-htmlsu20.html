@@ -4,278 +4,45 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>examples:CUG_QS2 - Handling Model Cold Starts Properly</title> 
+<head><title>examples:CUG_QS3 - With Task Implementation</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1246--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1243--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu20.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.8   </span> <a 
- id="x34-400005.8"></a>examples:CUG_QS2 - Handling Model Cold Starts Properly</h4>
-<!--l. 1248--><p class="noindent" >Now take a look at <span 
+ id="x33-400005.8"></a>examples:CUG_QS3 - With Task Implementation</h4>
+<!--l. 1245--><p class="noindent" >The suite <span 
 class="cmti-10">examples:CUG</span><span 
-class="cmti-10">_QS2</span>, which is a minor modification of <span 
+class="cmti-10">_QS3 </span>is the same as <span 
 class="cmti-10">examples:CUG</span><span 
-class="cmti-10">_QS1</span>. Its suite.rc file has a
-new <span 
-class="cmti-10">cold start </span>task called ColdModel,
-</p>
-   <!--l. 1252-->
-   <div class="lstlisting" id="listing-25"><span class="label"><a 
- id="x34-40001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40002r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span>
-   
-   </div>
-<!--l. 1257--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
-href="#x34-4001226">26<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this: </p><!--l. 1259-->
-   <div class="lstlisting" id="listing-26"><span class="label"><a 
- id="x34-40004r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40005r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40006r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">0,6,12,18</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40007r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40008r5"></a></span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40009r6"></a></span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40010r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">6,18</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-40011r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">"</span>
-   
-   </div>
-<!--l. 1270--><p class="indent" >   In other words, Model can trigger off <span 
-class="cmti-10">either </span>its previous-cycle self <span 
-class="cmti-10">or </span>ColdModel in the same cycle.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x34-4001226"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1274--><p class="noindent" >
-
-</p><!--l. 1275--><p class="noindent" ><img 
-src="screenshots/QuickStartB-graph18.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;26: </span><span  
-class="content"><span 
-class="cmr-9">The </span><span 
-class="cmti-9">examples:CUG</span><span 
-class="cmti-9">_QS2 </span><span 
-class="cmr-9">dependency graph showing a model cold start task.</span></span></div><!--tex4ht:label?: x34-4001226 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-<!--l. 1283--><p class="indent" >   A cold start task is a one off task used to satisfy the previous-cycle dependence of a cotemporal task whose
-previous-cycle trigger is not available. The obvious use for this is to cold start warm-cycled forecast models at suite
-startup, when there is no previous cycle. Unlike startup tasks though, cold start dependencies are not restricted to
-suite startup because it is sometimes useful to be able to insert a cold start task into a running suite, to get a model
-restarted after it had to skip one or more cycles due to problems, without having to restart the whole
-suite.
-</p><!--l. 1293--><p class="indent" >   <span 
-class="cmti-10">A model cold start task in a real suite often submits a real &#8220;cold start forecast&#8221; to generate the previous-cycle</span>
-<span 
-class="cmti-10">input files required by its associated model</span>. Or it could just stand in for some external spinup process, or similar,
-that has to be completed before the suite starts - in this case the cold start task would be a dummy task
-that just reports successful completion in order to satisfy the initial previous-cycle dependence of the
-model.
-</p><!--l. 1301--><p class="indent" >   If you run <span 
-class="cmti-10">examples:CUG</span><span 
-class="cmti-10">_QS2 </span>you&#8217;ll see that no manually triggering is required to get the suite started this
-time.
+class="cmti-10">_QS2 </span>except that it has real task implementations -
+scripts located in the suite bin directory that generate output files and consume input files in such a way that they
+have to run according to the graph of Figure&#x00A0;<a 
+href="cug-htmlsu19.html#x32-3901226">26<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>. The suite gets them to run together out of a common I/O
+workspace, configured via the suite.rc file.
+</p><!--l. 1253--><p class="indent" >   By studying this suite and its tasks, and by making quick copies of it to modify and run, you should be able to
+learn a lot about how to build real cylc suites.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1305--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1257--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="cug-htmlsu20.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
-<!--l. 1305--><p class="indent" >   <a 
+<!--l. 1257--><p class="indent" >   <a 
  id="tailcug-htmlsu20.html"></a> </p> 
 </body></html> 

@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -19,20 +19,20 @@ href="cug-htmlsu66.html" >next</a>] [<a
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu65.html">tail</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu65.html" >up</a>] </p></div>
+href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">A.4   </span> <a 
- id="x98-173000A.4"></a>[task families]</h4>
-<!--l. 721--><p class="noindent" >A task family is a named group of tasks that appears as a single task in the suite dependency graph. Thus the entire
+ id="x96-175000A.4"></a>[task families]</h4>
+<!--l. 722--><p class="noindent" >A task family is a named group of tasks that appears as a single task in the suite dependency graph. The entire
 family triggers as a group, and downstream tasks can trigger off the entire family finishing. Task families can have
 internal dependencies, and family members can also appear in the graph as non-family tasks. See Section&#x00A0;<a 
-href="cug-htmlsu32.html#x48-770007.3.11">7.3.11<!--tex4ht:ref: TaskFamilies --></a> for
+href="cug-htmlsu31.html#x46-760007.3.11">7.3.11<!--tex4ht:ref: TaskFamilies --></a> for
 more information on task families.
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.1   </span> <a 
- id="x98-174000A.4.1"></a> <span 
+ id="x96-176000A.4.1"></a> <span 
 class="cmmi-10">&#x003C;</span>MANY<span 
 class="cmmi-10">&#x003E;</span></h5>
-<!--l. 728--><p class="noindent" >Replace MANY with each task family definition.  </p>
+<!--l. 729--><p class="noindent" >Replace MANY with each task family definition.  </p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmti-10">section: </span>[task families]
@@ -44,7 +44,7 @@ class="cmti-10">type: </span>list of task names (the family members)
 class="cmti-10">default: </span>None
      </li>
      <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
+class="cmti-10">example (explicit): </span><span class="lstinline"><span 
 class="pcrr7t-">ObsProc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -58,16 +58,68 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">ObsAircraft</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSat</span></span></li></ul>
+class="pcrr7t-">ObsSat</span></span>
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">example (expression): </span><span class="lstinline"><span 
+class="pcrr7t-">ensemble</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">list</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">m</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">+</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">str</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">i</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">i</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">range</span><span 
+class="pcrr7t-">(1,6))'</span></span></li></ul>
+<!--l. 737--><p class="noindent" >The list of family members may be defined by an explicit list of task names or a list-generating Python expression (a
+&#8220;list comprehension&#8221;). The Python expression must be of the form <span class="lstinline"><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">list</span><span 
+class="pcrr7t-">(...)'</span></span> and not <span class="lstinline"><span 
+class="pcrr7t-">'[...]'</span></span>, and it must
+be quoted to hide the internal comma in the range expression from the suite.rc parser. The example above generates
+the task names <span class="lstinline"><span 
+class="pcrr7t-">m1</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m2</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m5</span></span>. If tasks in a family share most configuration details, they can be defined all at
+once in a single subsection under <span class="lstinline"><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]</span></span>.
                                                                                          
 
                                                                                          
-   <!--l. 736--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 747--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu66.html" >next</a>] [<a 
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="cug-htmlsu65.html" >front</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu65.html" >up</a>] </p></div>
-<!--l. 736--><p class="indent" >   <a 
+href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
+<!--l. 747--><p class="indent" >   <a 
  id="tailcug-htmlsu65.html"></a>  </p> 
 </body></html> 

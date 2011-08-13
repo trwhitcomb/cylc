@@ -4,185 +4,84 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Configuring Your Environment For Cylc</title> 
+<head><title>Starting The gcylc GUI</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 841--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 816--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu15.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu14.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
- id="x25-280005.2"></a>Configuring Your Environment For Cylc</h4>
-<!--l. 843--><p class="noindent" >To gain access to cylc you just need to source the cylc environment script. Put the
-following code in your login script, or do the same at the terminal prompt before using
-cylc.<span class="footnote-mark"><a 
-href="cug-html26.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
- id="x25-28001f6"></a> 
-</p><!--l. 847-->
-   <div class="lstlisting" id="listing-15"><span class="label"><a 
- id="x25-28002r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28003r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">=/</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">installation</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28004r3"></a></span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x25-280005.2"></a>Starting The gcylc GUI</h4>
+<!--l. 818--><p class="noindent" >At the command prompt: </p><!--l. 819-->
+   <div class="lstlisting" id="listing-14"><span class="label"><a 
+ id="x25-28001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">environment</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">sh</span>
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">gcylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span>
    
    </div>
-<!--l. 852--><p class="indent" >   The variable <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span></span> is required inside the environment script, so don&#8217;t skip the export step. You should
-now be able to run cylc commands: </p><!--l. 855-->
-   <div class="lstlisting" id="listing-16"><span class="label"><a 
- id="x25-28005r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">version</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28006r2"></a></span><span 
-class="pcrr7t-">3.</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">y</span>
-   
-   </div>
-<!--l. 860--><p class="indent" >   You should also specify the graphical and terminal editors you want to use to edit suites, by setting the following
-environment variables in your <span class="lstinline"><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">profile</span></span>: </p><!--l. 863-->
-   <div class="lstlisting" id="listing-17"><span class="label"><a 
- id="x25-28007r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28008r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GEDITOR</span><span 
-class="pcrr7t-">='</span><span 
-class="pcrr7t-">gvim</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">f</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">GUI</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">editor</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">launched</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">by</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28009r3"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EDITOR</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">vim</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">terminal</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">editor</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">launched</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">by</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">'</span><span 
-class="pcrro7t-">cylc</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">edit</span><span 
-class="pcrro7t-">'</span>
-   
-   </div>
-<!--l. 868--><p class="indent" >   See <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span></span> (Appendix&#x00A0;<a 
-href="cug-htmlsu76.html#x110-253000B.2.11">B.2.11<!--tex4ht:ref: edit --></a>) for other editor examples. And finally, you must ensure that
-<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span></span> is defined in your environment, for example: </p><!--l. 871-->
-   <div class="lstlisting" id="listing-18"><span class="label"><a 
- id="x25-28010r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">profile</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-28011r2"></a></span><span 
-class="pcrb7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TMPDIR</span><span 
-class="pcrr7t-">=/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">USER</span>
-   
-   </div>
+<!--l. 822--><p class="indent" >   and use the Database menu to switch to the central database, which displays suites accessible to all users, in a
+treeview organized by owner, group, and name (see Figure&#x00A0;<a 
+href="cug-htmlse3.html#x21-2400313">13<!--tex4ht:ref: fig-cdb --></a>).
+</p><!--l. 826--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.2.1   </span> <a 
+ id="x25-290005.2.1"></a>Central Suite Database Actions</h5>
+<!--l. 828--><p class="noindent" >By right-clicking on a suite in the central database, or using the cylc command line, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x25-29002x1">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x25-29004x2">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x25-29006x3">view the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x25-29008x4">plot the suite dependency graph,
+     </li>
+     <li 
+  class="enumerate" id="x25-29010x5">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x25-29012x6">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x25-29014x7">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x25-29016x8">import the suite or group to your private database,
+     </li>
+     <li 
+  class="enumerate" id="x25-29018x9">unreregister or delete the suite or group (if you own it),
+     </li>
+     <li 
+  class="enumerate" id="x25-29020x10">reregister the suite or group (if you own it).</li></ol>
+<!--l. 842--><p class="noindent" >But you can only <span 
+class="cmti-10">run </span>suites that are registered in your private database.
                                                                                          
 
                                                                                          
-   <!--l. 878--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 845--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu15.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
 href="cug-htmlsu14.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
-<!--l. 878--><p class="indent" >   <a 
- id="tailcug-htmlsu14.html"></a> </p> 
+<!--l. 845--><p class="indent" >   <a 
+ id="tailcug-htmlsu14.html"></a>  </p> 
 </body></html> 

@@ -4,128 +4,56 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>The Cylc Lockserver</title> 
+<head><title>The Graph-Based Suite Control GUI</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3878--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3947--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse16.html" >next</a>] [<a 
-href="cug-htmlsu76.html" >prev</a>] [<a 
-href="cug-htmlsu76.html#tailcug-htmlsu76.html" >prev-tail</a>] [<a 
+href="cug-htmlse14.html" >prev</a>] [<a 
+href="cug-htmlse14.html#tailcug-htmlse14.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse15.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse15.html" >up</a>] </p></div>
-   <h3 class="sectionHead"><span class="titlemark">C   </span> <a 
- id="x111-300000C"></a>The Cylc Lockserver</h3>
-<!--l. 3881--><p class="noindent" >Each cylc user can optionally run his/her own lockserver to prevent accidental invocation of multiple instances of
-the same suite or task at the same time. The suite and task locks brokered by the lockserver are analogous to
-traditional lock files, but they work across a network, even for distributed suites containing tasks that start
-executing on one host and finish on another.
-</p><!--l. 3888--><p class="indent" >   Accidental invocation of multiple instances of the same suite or task at the same time can have serious
-consequences, so use of the lockserver should be considered for important operational suites, but it may be
-considered an unnecessary complication for general less critical usage, so it is currently disabled by
-default.
-</p><!--l. 3894--><p class="indent" >   To enable the lockserver: </p><!--l. 3895-->
-   <div class="lstlisting" id="listing-106"><span class="label"><a 
- id="x111-300001r1"></a></span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x111-300002r2"></a></span><span 
-class="pcrr7t-">use</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockserver</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span>
-   
-   </div>
-<!--l. 3900--><p class="indent" >   The suite will now abort at startup if it cannot connect to the lockserver. To start your lockserver daemon,
-</p><!--l. 3902-->
-   <div class="lstlisting" id="listing-107"><span class="label"><a 
- id="x111-300003r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockserver</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span>
-   
-   </div>
-<!--l. 3906--><p class="indent" >   To check that it is running, </p><!--l. 3907-->
-   <div class="lstlisting" id="listing-108"><span class="label"><a 
- id="x111-300004r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockserver</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">status</span>
-   
-   </div>
-<!--l. 3911--><p class="indent" >   For detailed usage information, </p><!--l. 3912-->
-   <div class="lstlisting" id="listing-109"><span class="label"><a 
- id="x111-300005r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockserver</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">help</span>
-   
-   </div>
-<!--l. 3916--><p class="indent" >   There is a command line client interface, </p><!--l. 3917-->
-   <div class="lstlisting" id="listing-110"><span class="label"><a 
- id="x111-300006r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockclient</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">help</span>
-   
-   </div>
-<!--l. 3920--><p class="indent" >   for interrogating the lockserver and managing locks manually (e.g.&#x00A0;releasing locks if a suite was killed before it
-could clean up after itself).
-</p><!--l. 3924--><p class="indent" >   To watch suite locks being acquired and released as a suite runs, </p><!--l. 3925-->
-   <div class="lstlisting" id="listing-111"><span class="label"><a 
- id="x111-300007r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">watch</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lockclient</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">print</span>
-   
-   </div>
+   <h3 class="sectionHead"><span class="titlemark">D   </span> <a 
+ id="x110-303000D"></a>The Graph-Based Suite Control GUI</h3>
+<!--l. 3950--><p class="noindent" >The graph-based suite control GUI has the advantage that it shows the structure of a suite very clearly as it evolves.
+It works remarkably well even for very large suites, on the order of one hundred tasks or more <span 
+class="cmti-10">but </span>on the downside,
+the graphviz engine does a new global optimization every time the graph changes, so the layout is often not very
+stable. This may or may not be a solvable problem - it seems likely that making continual incremental changes to
+an existing graph without redoing the global layout would inevitably result in some kind of horrible
+mess.
+</p><!--l. 3960--><p class="indent" >   The following features of the graph-based control GUI go a long way toward mitigating the changing layout
+problem:
+</p>
+     <ul class="itemize1">
+     <li class="itemize">The disconnect button can be used to temporarily prevent the graph from changing as the content of
+     the suite changes (and in real time operation suites evolve quite slowly anyway)
+     </li>
+     <li class="itemize">Right-click on a task and choose the &#8220;Focus&#8221; option to restrict the graph display to that task&#8217;s cycle
+     time. Anything interesting happening in other cycles will show up as disconnected rectangular nodes
+     to the right of the graph (and you can click on those to intantly refocus to their cycles).
+     </li>
+     <li class="itemize">Task filtering is the ultimate quick route to temporarily focusing on just the tasks you&#8217;re interested in
+     (but this will destroy the graph structure, to state the obvious).</li></ul>
+<!--l. 3977--><p class="indent" >   In future cylc releases we plan to keep the graph centered, after layout changes, on the most recently clicked-on
+task.
                                                                                          
 
                                                                                          
-   <!--l. 3929--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 3981--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse16.html" >next</a>] [<a 
-href="cug-htmlsu76.html" >prev</a>] [<a 
-href="cug-htmlsu76.html#tailcug-htmlsu76.html" >prev-tail</a>] [<a 
+href="cug-htmlse14.html" >prev</a>] [<a 
+href="cug-htmlse14.html#tailcug-htmlse14.html" >prev-tail</a>] [<a 
 href="cug-htmlse15.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse15.html" >up</a>] </p></div>
-<!--l. 3929--><p class="indent" >   <a 
+<!--l. 3981--><p class="indent" >   <a 
  id="tailcug-htmlse15.html"></a> </p> 
 </body></html> 

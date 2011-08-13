@@ -4,73 +4,98 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Available Methods</title> 
+<head><title>Whither Task stdout And stderr?</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-05 11:37:00" /> 
+<meta name="date" content="2011-08-14 00:27:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3209--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3240--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu43.html" >next</a>] [<a 
 href="cug-htmlsu41.html" >prev</a>] [<a 
 href="cug-htmlsu41.html#tailcug-htmlsu41.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu42.html">tail</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu42.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">9.2   </span> <a 
- id="x65-1050009.2"></a>Available Methods</h4>
-<!--l. 3214--><p class="noindent" >There are two basic methods that should be available on any platform, sufficient for running cylc&#8217;s example suites if
-not real forecasting systems:
+   <h4 class="subsectionHead"><span class="titlemark">9.3   </span> <a 
+ id="x64-1060009.3"></a>Whither Task stdout And stderr?</h4>
+<!--l. 3243--><p class="noindent" >When a task is ready to run cylc generates task-specific stdout and stderr filenames containing the task
+name, cycle time, and a random component so that rerunning the task won&#8217;t overwrite the old output,
+e.g.:
 </p>
-     <ul class="itemize1">
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">background</span></span> - run tasks directly in a background shell.
-     </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">at_now</span></span> - submit tasks to the rudimentary <span class="lstinline"><span 
-class="pcrr7t-">at</span></span> scheduler (<span class="lstinline"><span 
-class="pcrr7t-">atd</span></span> must be running).
-     </li></ul>
-<!--l. 3227--><p class="indent" >   Tasks in a real forecasting system should be submitted to a batch queue scheduler or cross-platform resource
-manager such as <span 
-class="cmti-10">loadleveler </span>(IBM). Methods currently available are:
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">loadleveler</span></span> - This method submits general (non loadleveler-specific) task scripts to loadleveler. Any
-     <span 
-class="cmti-10">directives </span>you provide in the suite.rc file will be written to the job script, which will then be submitted
-     to run via <span class="lstinline"><span 
-class="pcrr7t-">llsubmit</span></span>.
-     </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_raw</span></span> - This method submits loadleveler-ready scripts (i.e.&#x00A0;scripts containing hardwired directives)
-     to loadleveler. This may be necessary for complex (e.g.&#x00A0;multi-step) jobs. The original script is copied
-     to make the temporary job script, and cylc environment scripting is inserted into it immediately after
-     the loadleveler directives.
-     </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_ecox</span></span> - This is derived from the basic <span class="lstinline"><span 
-class="pcrr7t-">loadleveler</span></span> method. It automatically adapts certain task
-     parameters (such as owner username) to NIWA&#8217;s EcoConnect operational environment so that the
-     same suite definition can be used in distinct <span 
-class="cmti-10">oper</span>, <span 
-class="cmti-10">test, </span>and <span 
-class="cmti-10">devel </span>environments in which the suite and
-     task owners, and their home directories, vary accordingly.
-     </li></ul>
+   <!--l. 3248-->
+   <div class="lstlisting" id="listing-75"><span class="label"><a 
+ id="x64-106001r1"></a></span><span 
+class="pcrr7t-">ColdB</span><span 
+class="pcrr7t-">%2011101300-</span><span 
+class="pcrr7t-">N3pBYv</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">out</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x64-106002r2"></a></span><span 
+class="pcrr7t-">ColdB</span><span 
+class="pcrr7t-">%2011101300-</span><span 
+class="pcrr7t-">N3pBYv</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">err</span>
+   
+   </div>
+<!--l. 3253--><p class="indent" >   You can set the location for these task output logs in the suite.rc file; the default is, </p><!--l. 3255-->
+   <div class="lstlisting" id="listing-76"><span class="label"><a 
+ id="x64-106003r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x64-106004r2"></a></span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submission</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CylcJobLogs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_GROUP</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_NAME</span>
+   
+   </div>
+<!--l. 3260--><p class="indent" >   How the stdout and stderr streams are directed into these files depends on the job submission method. The
+<span class="lstinline"><span 
+class="pcrr7t-">background</span></span> method just uses appropriate output redirection on the command line. The <span class="lstinline"><span 
+class="pcrr7t-">loadleveler</span></span> method
+writes appropriate directives to the job script that is submitted to loadleveler.
+</p><!--l. 3266--><p class="indent" >   Cylc obviously has no control over the stdout and stderr output from tasks that do their own internal output
+management (e.g.&#x00A0;tasks that resubmit sub-jobs and direct the output thereof to other files). For less internally
+complex tasks, however, these job logs will capture all stdout and stderr for your tasks, and <span 
+class="cmti-10">they can be viewed</span>
+<span 
+class="cmti-10">updating in real time in the suite control GUI</span>.
                                                                                          
 
                                                                                          
-   <!--l. 3259--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 3273--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu43.html" >next</a>] [<a 
 href="cug-htmlsu41.html" >prev</a>] [<a 
 href="cug-htmlsu41.html#tailcug-htmlsu41.html" >prev-tail</a>] [<a 
 href="cug-htmlsu42.html" >front</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu42.html" >up</a>] </p></div>
-<!--l. 3259--><p class="indent" >   <a 
+<!--l. 3273--><p class="indent" >   <a 
  id="tailcug-htmlsu42.html"></a> </p> 
 </body></html> 
