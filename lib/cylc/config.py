@@ -650,6 +650,10 @@ class config( CylcConfigObj ):
     def generate_nodes_and_edges( self, lexpression, lnames, r, ttype, validity, suicide=False ):
         rright = graphnode(r)
         right = rright.name
+        rfamily_dep = False
+        if rright.family_dep:
+            rfamily_dep = True
+
         conditional = False
         if re.search( '\|', lexpression ):
             # plot conditional triggers differently
@@ -662,7 +666,7 @@ class config( CylcConfigObj ):
             if left in self.async_oneoff_tasks + self.async_repeating_tasks:
                 sasl = True
             family_dep = False
-            if lleft.family_dep or rright.family_dep:
+            if lleft.family_dep or rfamily_dep:
                 family_dep = True
             e = edge( left, right, sasl, suicide, conditional, family_dep )
             if ttype == 'async_oneoff':
@@ -720,7 +724,6 @@ class config( CylcConfigObj ):
     def generate_triggers( self, lexpression, lnames, r, section, asyncid_pattern, suicide ):
         rnode = graphnode(r)
         right = rnode.name
-
         if not right:
             # lefts are lone nodes; no more triggers to define.
             return

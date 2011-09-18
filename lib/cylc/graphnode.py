@@ -49,6 +49,11 @@ class graphnode( object ):
 
         self.family_dep = None
 
+        if not node:
+            # can be called for None in case of lone nodes
+            self.name = None
+            return
+
         # family dependency indicator
         m = re.match( '__(\w+)__', node )
         if m:
