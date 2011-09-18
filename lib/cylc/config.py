@@ -47,6 +47,17 @@ except:
 else:
     graphing_disabled = False
 
+class StripFamDep( object ):
+    def __init__( self, node ):
+        self.family_dep = False
+        self.node = node
+        if not node:
+            return
+        m = re.match( '__(\w+)__', node )
+        if m:
+            self.family_dep = m.groups()[0]
+            self.node = re.sub( '__(\w+)__', '', node )
+
 class SuiteConfigError( Exception ):
     """
     Attributes:
@@ -647,11 +658,11 @@ class config( CylcConfigObj ):
                 self.generate_taskdefs( lnames, r, ttype, section, asyncid_pattern )
                 self.generate_triggers( lexpression, lnames, r, section, asyncid_pattern, suicide )
 
-    def generate_nodes_and_edges( self, lexpression, lnames, r, ttype, validity, suicide=False ):
-        rright = graphnode(r)
-        right = rright.name
+    def generate_nodes_and_edges( self, lexpression, lnames, right, ttype, validity, suicide=False ):
+        foo = StripFamDep(right)
+        right = foo.node
         rfamily_dep = False
-        if rright.family_dep:
+        if foo.family_dep:
             rfamily_dep = True
 
         conditional = False
@@ -660,15 +671,15 @@ class config( CylcConfigObj ):
             conditional = True
  
         sasl = False
-        for llleft in lnames:
-            lleft = graphnode(llleft)
-            left = lleft.name
+        for left in lnames:
+            foo = StripFamDep(left)
+            left = foo.node
+            lfamily_dep = False
+            if foo.family_dep:
+                lfamily_dep = True
             if left in self.async_oneoff_tasks + self.async_repeating_tasks:
                 sasl = True
-            family_dep = False
-            if lleft.family_dep or rfamily_dep:
-                family_dep = True
-            e = edge( left, right, sasl, suicide, conditional, family_dep )
+            e = edge( left, right, sasl, suicide, conditional, lfamily_dep or rfamily_dep )
             if ttype == 'async_oneoff':
                 if e not in self.async_oneoff_edges:
                     self.async_oneoff_edges.append( e )
@@ -684,6 +695,7 @@ class config( CylcConfigObj ):
 
     def generate_taskdefs( self, lnames, right, ttype, section, asyncid_pattern ):
         for node in lnames + [right]:
+            node = StripFamDep(node).node
             if not node:
                 # if right is None, lefts are lone nodes
                 # for which we still define the taskdefs
@@ -721,14 +733,14 @@ class config( CylcConfigObj ):
             elif ttype == 'cycling':
                 self.taskdefs[ name ].set_valid_hours( section )
 
-    def generate_triggers( self, lexpression, lnames, r, section, asyncid_pattern, suicide ):
-        rnode = graphnode(r)
-        right = rnode.name
+    def generate_triggers( self, lexpression, lnames, right, section, asyncid_pattern, suicide ):
         if not right:
             # lefts are lone nodes; no more triggers to define.
             return
+        right = StripFamDep(right).node
         ctrig = {}
         for left in lnames:
+            left = StripFamDep(left).node
             lnode = graphnode(left)  # (GraphNodeError checked above)
             if lnode.intercycle:
                 self.taskdefs[lnode.name].intercycle = True
