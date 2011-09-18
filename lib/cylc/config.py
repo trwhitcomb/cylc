@@ -59,12 +59,13 @@ class SuiteConfigError( Exception ):
         return repr(self.msg)
 
 class edge( object):
-    def __init__( self, l, r, sasl=False, suicide=False, conditional=False ):
+    def __init__( self, l, r, sasl=False, suicide=False, conditional=False, fam=False ):
         self.left = l
         self.right = r
         self.sasl = sasl
         self.suicide = suicide
         self.conditional = conditional
+        self.fam = fam
 
     def get_right( self, tag, not_first_cycle, raw, startup_only, exclude ):
         # (exclude was briefly used - April 2011 - to stop plotting temporary tasks)
@@ -538,23 +539,30 @@ class config( CylcConfigObj ):
             raise SuiteConfigError( 'ERROR: Illegal graph validity type: ' + section )
 
         # REPLACE FAMILY NAMES WITH THE TRUE MEMBER DEPENDENCIES
+        self.qmembers = {}
         for fam in self.members:
+            self.qmembers[fam] = []
+            for m in self.members[fam]:
+                self.qmembers[fam].append( '__' + fam + '__' + m )
             # fam:fail - replace with conditional expressing this:
             # "one or more members failed AND (all members either
             # succeeded or failed)":
             # ( a:fail | b:fail ) & ( a | a:fail ) & ( b|b:fail )
             if re.search( r'\b' + fam + ':fail' + r'\b', line ):
-                mem0 = self.members[fam][0]
+                #mem0 = self.members[fam][0]
+                mem0 = self.qmembers[fam][0]
                 cond1 = mem0 + ':fail'
                 cond2 = '( ' + mem0 + ' | ' + mem0 + ':fail )' 
-                for mem in self.members[fam][1:]:
+                #for mem in self.members[fam][1:]:
+                for mem in self.qmembers[fam][1:]:
                     cond1 += ' | ' + mem + ':fail'
                     cond2 += ' & ( ' + mem + ' | ' + mem + ':fail )'
                 cond = '( ' + cond1 + ') & ' + cond2 
                 line = re.sub( r'\b' + fam + ':fail' + r'\b', cond, line )
             # fam - replace with members
             if re.search( r'\b' + fam + r'\b', line ):
-                mems = ' & '.join( self.members[fam] )
+                #mems = ' & '.join( self.members[fam] )
+                mems = ' & '.join( self.qmembers[fam] )
                 line = re.sub( r'\b' + fam + r'\b', mems, line )
 
         # Split line on dependency arrows.
@@ -639,17 +647,24 @@ class config( CylcConfigObj ):
                 self.generate_taskdefs( lnames, r, ttype, section, asyncid_pattern )
                 self.generate_triggers( lexpression, lnames, r, section, asyncid_pattern, suicide )
 
-    def generate_nodes_and_edges( self, lexpression, lnames, right, ttype, validity, suicide=False ):
+    def generate_nodes_and_edges( self, lexpression, lnames, r, ttype, validity, suicide=False ):
+        rright = graphnode(r)
+        right = rright.name
         conditional = False
         if re.search( '\|', lexpression ):
             # plot conditional triggers differently
             conditional = True
  
         sasl = False
-        for left in lnames:
+        for llleft in lnames:
+            lleft = graphnode(llleft)
+            left = lleft.name
             if left in self.async_oneoff_tasks + self.async_repeating_tasks:
                 sasl = True
-            e = edge( left, right, sasl, suicide, conditional )
+            family_dep = False
+            if lleft.family_dep or rright.family_dep:
+                family_dep = True
+            e = edge( left, right, sasl, suicide, conditional, family_dep )
             if ttype == 'async_oneoff':
                 if e not in self.async_oneoff_edges:
                     self.async_oneoff_edges.append( e )
@@ -702,7 +717,10 @@ class config( CylcConfigObj ):
             elif ttype == 'cycling':
                 self.taskdefs[ name ].set_valid_hours( section )
 
-    def generate_triggers( self, lexpression, lnames, right, section, asyncid_pattern, suicide ):
+    def generate_triggers( self, lexpression, lnames, r, section, asyncid_pattern, suicide ):
+        rnode = graphnode(r)
+        right = rnode.name
+
         if not right:
             # lefts are lone nodes; no more triggers to define.
             return
@@ -791,7 +809,7 @@ class config( CylcConfigObj ):
             right = e.get_right(1, False, False, [], [])
             left  = e.get_left( 1, False, False, [], [])
             nl, nr = self.close_families( left, right )
-            gr_edges.append( (nl, nr, False, e.suicide, e.conditional) )
+            gr_edges.append( (nl, nr, False, e.suicide, e.conditional, e.fam) )
 	
         cycles = self.edges.keys()
 
@@ -825,6 +843,7 @@ class config( CylcConfigObj ):
                     for e in self.edges[hour]:
                         suicide = e.suicide
                         conditional = e.conditional
+                        fam = e.fam
                         right = e.get_right(ctime, started, raw, startup_exclude_list, [])
                         left  = e.get_left( ctime, started, raw, startup_exclude_list, [])
 
@@ -849,7 +868,7 @@ class config( CylcConfigObj ):
                             rname = None
                             lctime = None
                         nl, nr = self.close_families( left, right )
-                        gr_edges.append( ( nl, nr, False, e.suicide, e.conditional ) )
+                        gr_edges.append( ( nl, nr, False, e.suicide, e.conditional, e.fam ) )
 
                     # next cycle
                     started = True
@@ -872,7 +891,7 @@ class config( CylcConfigObj ):
         # jumping around (does this help? -if not discard)
         gr_edges.sort()
         for e in gr_edges:
-            l, r, dashed, suicide, conditional = e
+            l, r, dashed, suicide, conditional, fam = e
             if l== None and r == None:
                 pass
             elif l == None:
@@ -889,6 +908,9 @@ class config( CylcConfigObj ):
                     arrowhead='dot'
                 if conditional:
                     arrowhead='onormal'
+                if fam:
+                    style='dashed'
+
                 graph.add_edge( l, r, False, style=style, arrowhead=arrowhead )
 
         for n in graph.nodes():

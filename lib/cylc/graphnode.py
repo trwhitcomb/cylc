@@ -47,6 +47,14 @@ class graphnode( object ):
         self.offset = None
         self.output = None
 
+        self.family_dep = None
+
+        # family dependency indicator
+        m = re.match( '__(\w+)__', node )
+        if m:
+            self.family_dep = m.groups()[0]
+            node = re.sub( '__(\w+)__', '', node )
+
         # parse and strip special output: foo[T-6]:m1 -> foo[T-6]
         m = re.match( '(.*):(\w+)', node )
         if m:
