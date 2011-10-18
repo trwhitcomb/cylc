@@ -4,204 +4,57 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite.rc Reference</title> 
+<head><title>Suite Design Principles</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3848--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu62.html" >next</a>] [<a 
-href="cug-htmlsu61.html" >prev</a>] [<a 
-href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
+   <!--l. 3674--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu43.html" >next</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse12.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse12.html" >up</a>] </p></div>
-   <h3 class="sectionHead"><span class="titlemark">A   </span> <a 
- id="x88-134000A"></a>Suite.rc Reference</h3>
-<!--l. 3851--><p class="noindent" >This section documents all legal entries in a suite.rc file. The information is extracted from the specification file
-<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">conf</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suiterc</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">spec</span></span> during document processing, so that the User Guide is automatically kept up
-to date. Section headings are generated with the same nesting structure as the file itself to make it
-easy to get at the documentation you need by clicking on hyperlinks in the PDF document contents
-page.
-</p><!--l. 3859--><p class="indent" >   Most suites will only need a few of these settings - many configuration items have default values
-that should be sufficient, some are probably only needed for critical operational suites (e.g.&#x00A0;secure
-passphrases and task event hooks), and some are primarily used for cylc development (e.g.&#x00A0;simulation mode
-configuration). In general your suite.rc files shouldn&#8217;t be a lot more complicated than those of the cylc example
-suites.
-</p><!--l. 32--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12   </span> <a 
+ id="x70-10700012"></a>Suite Design Principles</h3>
+<!--l. 3679--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
-   &#x00A0;<span class="subsectionToc" >A.1 <a 
-href="cug-htmlsu62.html#x89-135000A.1">Include Files</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.2 <a 
-href="cug-htmlsu63.html#x91-136000A.2">Suite Level Items</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.1 <a 
-href="cug-htmlsu63.html#x91-137000A.2.1" id="QQ2-91-177">title </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.2 <a 
-href="cug-htmlsu63.html#x91-138000A.2.2" id="QQ2-91-178">description </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.3 <a 
-href="cug-htmlsu63.html#x91-139000A.2.3" id="QQ2-91-179">initial cycle time </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.4 <a 
-href="cug-htmlsu63.html#x91-140000A.2.4" id="QQ2-91-180">final cycle time </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.5 <a 
-href="cug-htmlsu63.html#x91-141000A.2.5" id="QQ2-91-181">job submission method </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.6 <a 
-href="cug-htmlsu63.html#x91-142000A.2.6" id="QQ2-91-182">use lockserver </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.7 <a 
-href="cug-htmlsu63.html#x91-143000A.2.7" id="QQ2-91-183">remote host </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.8 <a 
-href="cug-htmlsu63.html#x91-144000A.2.8" id="QQ2-91-184">remote cylc directory </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.9 <a 
-href="cug-htmlsu63.html#x91-145000A.2.9" id="QQ2-91-185">remote suite directory </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.10 <a 
-href="cug-htmlsu63.html#x91-146000A.2.10" id="QQ2-91-186">owner </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.11 <a 
-href="cug-htmlsu63.html#x91-147000A.2.11" id="QQ2-91-187">use secure passphrase </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.12 <a 
-href="cug-htmlsu63.html#x91-148000A.2.12" id="QQ2-91-188">tasks to exclude at startup </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.13 <a 
-href="cug-htmlsu63.html#x91-149000A.2.13" id="QQ2-91-189">tasks to include at startup </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.14 <a 
-href="cug-htmlsu63.html#x91-150000A.2.14" id="QQ2-91-190">runahead limit in hours </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.15 <a 
-href="cug-htmlsu63.html#x91-151000A.2.15" id="QQ2-91-191">suite log directory </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.16 <a 
-href="cug-htmlsu63.html#x91-152000A.2.16" id="QQ2-91-192">roll log at startup </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.17 <a 
-href="cug-htmlsu63.html#x91-153000A.2.17" id="QQ2-91-193">state dump directory </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.18 <a 
-href="cug-htmlsu63.html#x91-154000A.2.18" id="QQ2-91-194">number of state dump backups </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.19 <a 
-href="cug-htmlsu63.html#x91-155000A.2.19" id="QQ2-91-195">job submission log directory </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.20 <a 
-href="cug-htmlsu63.html#x91-156000A.2.20" id="QQ2-91-196">task EVENT hook scripts</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.21 <a 
-href="cug-htmlsu63.html#x91-157000A.2.21" id="QQ2-91-197">task EVENT timeout in minutes</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.22 <a 
-href="cug-htmlsu63.html#x91-158000A.2.22" id="QQ2-91-198">reset execution timeout on incoming messages </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.23 <a 
-href="cug-htmlsu63.html#x91-159000A.2.23" id="QQ2-91-199">pre-command scripting </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.24 <a 
-href="cug-htmlsu63.html#x91-160000A.2.24" id="QQ2-91-200">post-command scripting </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.25 <a 
-href="cug-htmlsu63.html#x91-161000A.2.25" id="QQ2-91-201">owned task execution method </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.26 <a 
-href="cug-htmlsu63.html#x91-162000A.2.26" id="QQ2-91-202">ignore task owners </a></span>
-                                                                                         
-
-                                                                                         
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.27 <a 
-href="cug-htmlsu63.html#x91-163000A.2.27" id="QQ2-91-203">use quick task elimination </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.28 <a 
-href="cug-htmlsu63.html#x91-164000A.2.28" id="QQ2-91-204">simulation mode only </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.29 <a 
-href="cug-htmlsu63.html#x91-165000A.2.29" id="QQ2-91-205">allow multiple simultaneous instances </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.30 <a 
-href="cug-htmlsu63.html#x91-166000A.2.30" id="QQ2-91-206">job submission shell </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.31 <a 
-href="cug-htmlsu63.html#x91-167000A.2.31" id="QQ2-91-207">manual task completion messaging </a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.3 <a 
-href="cug-htmlsu64.html#x93-168000A.3">[special tasks]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.1 <a 
-href="cug-htmlsu64.html#x93-169000A.3.1" id="QQ2-93-209"> clock-triggered </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.2 <a 
-href="cug-htmlsu64.html#x93-170000A.3.2" id="QQ2-93-210"> startup </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.3 <a 
-href="cug-htmlsu64.html#x93-171000A.3.3" id="QQ2-93-211"> cold start </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.4 <a 
-href="cug-htmlsu64.html#x93-172000A.3.4" id="QQ2-93-212"> sequential </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.5 <a 
-href="cug-htmlsu64.html#x93-173000A.3.5" id="QQ2-93-213"> one off </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.6 <a 
-href="cug-htmlsu64.html#x93-174000A.3.6" id="QQ2-93-214"> models with explicit restart outputs </a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.4 <a 
-href="cug-htmlsu65.html#x96-175000A.4">[task families]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.1 <a 
-href="cug-htmlsu65.html#x96-176000A.4.1" id="QQ2-96-216"> <span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.5 <a 
-href="cug-htmlsu66.html#x97-177000A.5">[dependencies]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.1 <a 
-href="cug-htmlsu66.html#x97-178000A.5.1" id="QQ2-97-218"> graph </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.2 <a 
-href="cug-htmlsu66.html#x97-179000A.5.2" id="QQ2-97-219">[[<span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span>]]</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.6 <a 
-href="cug-htmlsu67.html#x98-182000A.6">[environment]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.6.1 <a 
-href="cug-htmlsu67.html#x98-183000A.6.1" id="QQ2-98-223"><span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.7 <a 
-href="cug-htmlsu68.html#x99-184000A.7">[directives]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.7.1 <a 
-href="cug-htmlsu68.html#x99-185000A.7.1" id="QQ2-99-225"><span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.8 <a 
-href="cug-htmlsu69.html#x100-186000A.8">[tasks]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.8.1 <a 
-href="cug-htmlsu69.html#x100-187000A.8.1" id="QQ2-100-227">[[<span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span>]]</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.9 <a 
-href="cug-htmlsu70.html#x101-207000A.9">[simulation mode]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.9.1 <a 
-href="cug-htmlsu70.html#x101-208000A.9.1" id="QQ2-101-248">clock offset from initial cycle time in hours </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.9.2 <a 
-href="cug-htmlsu70.html#x101-209000A.9.2" id="QQ2-101-249">clock rate in seconds per simulation hour </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.9.3 <a 
-href="cug-htmlsu70.html#x101-210000A.9.3" id="QQ2-101-250">task run time in seconds </a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.10 <a 
-href="cug-htmlsu71.html#x102-211000A.10">[visualization]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.1 <a 
-href="cug-htmlsu71.html#x102-212000A.10.1" id="QQ2-102-252">initial cycle time </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.2 <a 
-href="cug-htmlsu71.html#x102-213000A.10.2" id="QQ2-102-253">final cycle time </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.3 <a 
-href="cug-htmlsu71.html#x102-214000A.10.3" id="QQ2-102-254">show family members </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.4 <a 
-href="cug-htmlsu71.html#x102-215000A.10.4" id="QQ2-102-255">use node color for edges </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.5 <a 
-href="cug-htmlsu71.html#x102-216000A.10.5" id="QQ2-102-256">default node attributes </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.6 <a 
-href="cug-htmlsu71.html#x102-217000A.10.6" id="QQ2-102-257">default edge attributes </a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.7 <a 
-href="cug-htmlsu71.html#x102-218000A.10.7" id="QQ2-102-258">[[node groups]]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.8 <a 
-href="cug-htmlsu71.html#x102-220000A.10.8" id="QQ2-102-260">[[node attributes]]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.10.9 <a 
-href="cug-htmlsu71.html#x102-222000A.10.9" id="QQ2-102-262">[[run time graph]]</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.11 <a 
-href="cug-htmlsu72.html#x103-226000A.11">[task insertion groups]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.11.1 <a 
-href="cug-htmlsu72.html#x103-227000A.11.1" id="QQ2-103-267"> <span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.12 <a 
-href="cug-htmlsu73.html#x104-228000A.12">[cylc local environment]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.12.1 <a 
-href="cug-htmlsu73.html#x104-229000A.12.1" id="QQ2-104-269"><span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></a></span>
-<br />   &#x00A0;<span class="subsectionToc" >A.13 <a 
-href="cug-htmlsu74.html#x105-230000A.13">[experimental]</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.13.1 <a 
-href="cug-htmlsu74.html#x105-231000A.13.1" id="QQ2-105-271">live graph movie </a></span>
+   &#x00A0;<span class="subsectionToc" >12.1 <a 
+href="cug-htmlsu43.html#x71-10800012.1">Make Fine-Grained Suites</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.2 <a 
+href="cug-htmlsu44.html#x72-10900012.2">Use Include-Files For Groups Of Related Tasks</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.3 <a 
+href="cug-htmlsu45.html#x73-11000012.3">Make Tasks Rerunnable</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.4 <a 
+href="cug-htmlsu46.html#x74-11100012.4">Make Models Rerunnable</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.5 <a 
+href="cug-htmlsu47.html#x75-11200012.5">Limit Previous-Instance Dependence</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.6 <a 
+href="cug-htmlsu48.html#x76-11300012.6">Put Task Cycle Time In All Output File Paths</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >12.6.1 <a 
+href="cug-htmlsu48.html#x76-11400012.6.1" id="QQ2-76-161">Use Cylc&#8217;s Cycle Time Filename Template Utility</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.7 <a 
+href="cug-htmlsu49.html#x77-11500012.7">How To Manage Input/Output File Dependencies</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.8 <a 
+href="cug-htmlsu50.html#x78-11600012.8">Use Generic Task Scripts</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.9 <a 
+href="cug-htmlsu51.html#x79-11700012.9">Make Suites Portable</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.10 <a 
+href="cug-htmlsu52.html#x80-11800012.10">Make Tasks As Self-Contained As Possible</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.11 <a 
+href="cug-htmlsu53.html#x82-11900012.11">Make Suites As Self-Contained As Possible</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.12 <a 
+href="cug-htmlsu54.html#x84-12000012.12">Orderly Product Generation?</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.13 <a 
+href="cug-htmlsu55.html#x85-12100012.13">Clock-triggered Tasks Wait On External Data</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.14 <a 
+href="cug-htmlsu56.html#x86-12200012.14">Do Not Treat Real Time Operation As Special</a></span>
    </div>
 
 
@@ -215,15 +68,16 @@ href="cug-htmlsu74.html#x105-231000A.13.1" id="QQ2-105-271">live graph movie </a
 
 
 
+
                                                                                          
 
                                                                                          
-   <!--l. 3887--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu62.html" >next</a>] [<a 
-href="cug-htmlsu61.html" >prev</a>] [<a 
-href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu43.html" >next</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="cug-htmlse12.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse12.html" >up</a>] </p></div>
-<!--l. 3887--><p class="indent" >   <a 
+<!--l. 1--><p class="indent" >   <a 
  id="tailcug-htmlse12.html"></a> </p> 
 </body></html> 

@@ -4,66 +4,92 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Task Implementation</title> 
+<head><title>Suite Definition</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2705--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu34.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+   <!--l. 1622--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlsu29.html" >prev</a>] [<a 
+href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse8.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
- id="x53-910008"></a>Task Implementation</h3>
-<!--l. 2708--><p class="noindent" >This section lays out the minimal requirements on external commands, scripts, or executables invoked by cylc to
-carry out task processing.
-</p><!--l. 2711--><p class="noindent" >
+ id="x45-510008"></a>Suite Definition</h3>
+<!--l. 1625--><p class="noindent" >A cylc suite is defined entirely by a single structured, validated, configuration file called <span 
+class="cmti-10">suite.rc </span>that concisely
+specifies the properties of, and the relationships between, the various tasks managed by the suite. This section of the
+User Guide deals with the format and content of the suite.rc file, including task definition. Task implementation
+- what&#8217;s required of the real commands, scripts, or programs that do the processing that the tasks
+represent - is covered in Section&#x00A0;<a 
+href="cug-htmlse9.html#x58-920009">9<!--tex4ht:ref: TaskImplementation --></a>; and task job submission - how tasks are submitted to run - is in
+Section&#x00A0;<a 
+href="cug-htmlse10.html#x64-10100010">10<!--tex4ht:ref: TaskJobSubmission --></a>.
+</p><!--l. 1635--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >8.1 <a 
-href="cug-htmlsu34.html#x54-920008.1">Most Tasks Require No Modification For Cylc</a></span>
+href="cug-htmlsu30.html#x46-520008.1">Suite Definition Directories</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.2 <a 
-href="cug-htmlsu35.html#x55-930008.2">Suite.rc Inlined Tasks</a></span>
+href="cug-htmlsu31.html#x47-530008.2">Suite.rc Overview</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.1 <a 
+href="cug-htmlsu31.html#x47-540008.2.1" id="QQ2-47-88">Syntax</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.2 <a 
+href="cug-htmlsu31.html#x47-560008.2.2" id="QQ2-47-90">Gross File Structure</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.3 <a 
+href="cug-htmlsu31.html#x47-570008.2.3" id="QQ2-47-91">Validation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.4 <a 
+href="cug-htmlsu31.html#x47-580008.2.4" id="QQ2-47-92">String Interpolation</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.3 <a 
-href="cug-htmlsu36.html#x56-940008.3">Return Non-zero Exit Status On Error</a></span>
+href="cug-htmlsu32.html#x50-590008.3">Scheduling - Dependency Graphs</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.1 <a 
+href="cug-htmlsu32.html#x50-600008.3.1" id="QQ2-50-95">Graph String Syntax</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.2 <a 
+href="cug-htmlsu32.html#x50-610008.3.2" id="QQ2-50-96">Interpreting Graph Strings</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.3 <a 
+href="cug-htmlsu32.html#x50-620008.3.3" id="QQ2-50-97">Graph Types (VALIDITY)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.4 <a 
+href="cug-htmlsu32.html#x50-680008.3.4" id="QQ2-50-108">Trigger Types</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.5 <a 
+href="cug-htmlsu32.html#x50-760008.3.5" id="QQ2-50-117">Satisfying Intercycle Dependence At Start-Up</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.6 <a 
+href="cug-htmlsu32.html#x50-790008.3.6" id="QQ2-50-120">Model Restart Dependencies</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.4 <a 
-href="cug-htmlsu37.html#x57-950008.4">Modifying Scripts For Cylc</a></span>
+href="cug-htmlsu33.html#x55-800008.4">Runtime - Namespaces</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.1 <a 
-href="cug-htmlsu37.html#x57-960008.4.1" id="QQ2-57-132">Voluntary Messaging</a></span>
+href="cug-htmlsu33.html#x55-810008.4.1" id="QQ2-55-123">Namespace Names</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.2 <a 
-href="cug-htmlsu37.html#x57-970008.4.2" id="QQ2-57-133">Reporting Internal Outputs Completed</a></span>
+href="cug-htmlsu33.html#x55-820008.4.2" id="QQ2-55-124">Root - Runtime Defaults</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.3 <a 
-href="cug-htmlsu37.html#x57-980008.4.3" id="QQ2-57-134">Tasks With Initiating Processes That Detach And Exit Early</a></span>
+href="cug-htmlsu33.html#x55-830008.4.3" id="QQ2-55-125">Defining Multiple Namespaces At Once</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.4 <a 
-href="cug-htmlsu37.html#x57-990008.4.4" id="QQ2-57-135">A Custom Task Wrapper Example</a></span>
+href="cug-htmlsu33.html#x55-840008.4.4" id="QQ2-55-126">Task Execution Environment</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.5 <a 
+href="cug-htmlsu33.html#x55-880008.4.5" id="QQ2-55-130">Remote Task Hosting</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.5 <a 
-href="cug-htmlsu38.html#x59-1000008.5">Running Local Tasks Under Other User Accounts</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >8.6 <a 
-href="cug-htmlsu39.html#x60-1010008.6">Running Tasks On A Remote Host</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.6.1 <a 
-href="cug-htmlsu39.html#x60-1020008.6.1" id="QQ2-60-142">Remote Task Log Directories</a></span>
+href="cug-htmlsu34.html#x57-900008.5">Visualization</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.5.1 <a 
+href="cug-htmlsu34.html#x57-910008.5.1" id="QQ2-57-133">Collapsible Task Families In Suite Graphing And GUIs</a></span>
    </div>
 
 
 
 
-
                                                                                          
 
                                                                                          
-   <!--l. 3065--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu34.html" >next</a>] [<a 
-href="cug-htmlsu33.html" >prev</a>] [<a 
-href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
+   <!--l. 3029--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlsu29.html" >prev</a>] [<a 
+href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
 href="cug-htmlse8.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
-<!--l. 3065--><p class="indent" >   <a 
+<!--l. 3029--><p class="indent" >   <a 
  id="tailcug-htmlse8.html"></a> </p> 
 </body></html> 

@@ -4,35 +4,261 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Validating A Suite</title> 
+<head><title>QuickStart.b - Handling Cold-Starts Properly</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1405--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1330--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu25.html" >next</a>] [<a 
 href="cug-htmlsu23.html" >prev</a>] [<a 
 href="cug-htmlsu23.html#tailcug-htmlsu23.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu24.html">tail</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu24.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.12   </span> <a 
- id="x37-470005.12"></a>Validating A Suite</h4>
-<!--l. 1407--><p class="noindent" >After editing a suite always validate it to check for errors, via gcylc or the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
+href="cug-htmlse7.html#cug-htmlsu24.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.7   </span> <a 
+ id="x39-420007.7"></a>QuickStart.b - Handling Cold-Starts Properly</h4>
+<!--l. 1332--><p class="noindent" >Now take a look at <span 
+class="cmti-10">QuickStart.b</span>, which is a minor modification of <span 
+class="cmti-10">QuickStart.a</span>. Its suite.rc file has a new <span 
+class="cmti-10">cold-start</span>
+task called ColdModel,  </p><!--l. 1336-->
+   <div class="lstlisting" id="listing-28"><span class="label"><a 
+ id="x39-42001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span></span> command.
-Figure&#x00A0;<a 
-href="#x37-4700129">29<!--tex4ht:ref: fig-validate-eg --></a> shows validation of <span 
-class="cmti-10">examples:CUG73 </span>(unfortunately the suite was registered under a different name
-when the screenshot was taken). Note the warnings that the tasks will be dummied out, as discussed
-above.
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">special</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cold</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span>
+   
+   </div>
+<!--l. 1343--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
+href="#x39-4201426">26<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1346-->
+   <div class="lstlisting" id="listing-29"><span class="label"><a 
+ id="x39-42005r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42006r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42007r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42008r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">0,6,12,18</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42009r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Prep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42010r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42011r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">T</span><span 
+class="pcrr7t-">-6]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42012r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">6,18</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-42013r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostB</span><span 
+class="pcrr7t-">"</span>
+   
+   </div>
+<!--l. 1358--><p class="indent" >   In other words, Model[T] can trigger off <span 
+class="cmti-10">either </span>Model[T-6] <span 
+class="cmti-10">or </span>ColdModel[T].
 </p>
    <hr class="figure" /><div class="figure" 
 >
@@ -40,37 +266,51 @@ above.
 
                                                                                          
 <a 
- id="x37-4700129"></a>
+ id="x39-4201426"></a>
                                                                                          
 
                                                                                          
 <div class="center" 
 >
-<!--l. 1415--><p class="noindent" >
+<!--l. 1362--><p class="noindent" >
 
-</p><!--l. 1416--><p class="noindent" ><img 
-src="screenshots/validate-eg.png" alt="PIC"  
+</p><!--l. 1363--><p class="noindent" ><img 
+src="screenshots/QuickStartB-graph18.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
-><span class="id">Figure&#x00A0;29: </span><span  
+><span class="id">Figure&#x00A0;26: </span><span  
 class="content"><span 
-class="cmr-9">Suite examples:CUG73 Validation.</span></span></div><!--tex4ht:label?: x37-4700129 -->
+class="cmr-7">The </span><span 
+class="cmti-7">QuickStart.b </span><span 
+class="cmr-7">dependency graph showing a model cold start task.</span></span></div><!--tex4ht:label?: x39-4201426 -->
                                                                                          
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 1423--><p class="indent" >   For more information on suite validation see Section&#x00A0;<a 
-href="cug-htmlsu33.html#x52-880007.5">7.5<!--tex4ht:ref: Validation --></a>.
+<!--l. 1371--><p class="indent" >   A cold-start task is a one-off task used to satisfy the previous-cycle dependence of a cotemporal task whose
+previous-cycle trigger is not available. The obvious use for this is to cold-start warm-cycled forecast models at suite
+start-up, when there is no previous cycle. Unlike start-up tasks though, cold-start dependencies are not restricted to
+suite start-up because it is sometimes useful to be able to insert a cold-start task into a running suite, to get a
+model restarted after it had to skip one or more cycles due to problems, without having to restart the whole
+suite.
+</p><!--l. 1381--><p class="indent" >   A model cold-start task in a real suite may submit a real &#8220;cold start forecast&#8221; to generate the previous-cycle
+input files required by its associated model, or it may just stand in for some external spinup process, or similar, that
+has to be completed before the suite is started (in the latter case the cold-start task would be a dummy task
+that just reports successful completion in order to satisfy the initial previous-cycle dependence of the
+model).
+</p><!--l. 1389--><p class="indent" >   Run <span 
+class="cmti-10">QuickStart.b </span>to confirm that that no manual triggering is required to get the suite started
+now.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1426--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1392--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu25.html" >next</a>] [<a 
 href="cug-htmlsu23.html" >prev</a>] [<a 
 href="cug-htmlsu23.html#tailcug-htmlsu23.html" >prev-tail</a>] [<a 
 href="cug-htmlsu24.html" >front</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu24.html" >up</a>] </p></div>
-<!--l. 1426--><p class="indent" >   <a 
+href="cug-htmlse7.html#cug-htmlsu24.html" >up</a>] </p></div>
+<!--l. 1392--><p class="indent" >   <a 
  id="tailcug-htmlsu24.html"></a> </p> 
 </body></html> 

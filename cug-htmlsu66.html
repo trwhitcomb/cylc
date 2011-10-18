@@ -4,344 +4,52 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[dependencies]</title> 
+<head><title>Switching A Suite Between Simulation And Live Modes?</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 747--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu67.html" >next</a>] [<a 
+   <!--l. 4104--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
 href="cug-htmlsu65.html" >prev</a>] [<a 
 href="cug-htmlsu65.html#tailcug-htmlsu65.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu66.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu66.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.5   </span> <a 
- id="x97-177000A.5"></a>[dependencies]</h4>
-<!--l. 748--><p class="noindent" >The suite dependency graph should be defined under this section.
-</p><!--l. 750--><p class="noindent" >
+href="cug-htmlse17.html#cug-htmlsu66.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">E.2   </span> <a 
+ id="x103-294000E.2"></a>Switching A Suite Between Simulation And Live Modes?</h4>
+<!--l. 4106--><p class="noindent" >The scheduler mode (simulation or live) is recorded in the suite state dump file. <span 
+class="cmti-10">Cylc will not let you restart a</span>
+<span 
+class="cmti-10">simulation mode suite in live, or a live mode suite in simulation mode </span>- any attempt to do the former must certainly
+be a mistake, and doing the latter, while feasible, would corrupt your live suite state dump and turn it over to
+simulation mode. Note, however, that if you really want to run the current state of a live suite forward in simulation
+mode, all you need to do is this:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x103-294002x1">back up the live state dump (or take note of the filename of the relevant automatic dump when you
+     do the final suite shutdown intervention).
+     </li>
+     <li 
+  class="enumerate" id="x103-294004x2">edit the mode line in the state dump file, and restart the suite in simulation mode.
+     </li>
+     <li 
+  class="enumerate" id="x103-294006x3">later, restart the live suite from the pre simulation mode state dump backup</li></ol>
+<!--l. 4124--><p class="indent" >   <span 
+class="cmti-10">Cylc can also create an instant dummy mode clone of the current state of any running or stopped suite, but this</span>
+<span 
+class="cmti-10">&#8220;practice mode&#8221; has been disabled in the current release pending testing.</span>
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.1   </span> <a 
- id="x97-178000A.5.1"></a> graph </h5>
-<!--l. 751--><p class="noindent" >Define the graph of any one-off asynchronous tasks (no cycle time) here. See Section&#x00A0;<a 
-href="#x97-180000A.5.2.1">A.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below for
-details.
-</p><!--l. 754--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.2   </span> <a 
- id="x97-179000A.5.2"></a>[[<span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span>]]</h5>
-<!--l. 755--><p class="noindent" >Replace MANY with each list of hours preceding a section of the suite dependency graph, as required for differing
-dependencies at different hours, <span 
-class="cmti-10">and </span>with any repeated asynchronous graph sections for satellite data processing or
-similar.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[dependencies]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of integer hours, <span 
-class="cmti-10">or </span>string (for repeated asynchronous)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: </span>0 <span 
-class="cmsy-10">&#x2264; </span><span 
-class="cmmi-10">hour </span><span 
-class="cmsy-10">&#x2264; </span>23, <span 
-class="cmti-10">or </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">[[0,6,12,18]]</span></span>, <span 
-class="cmti-10">or </span><span class="lstinline"><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">ASYNID</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">SAT</span><span 
-class="pcrr7t-">-\</span><span 
-class="pcrr7t-">d</span><span 
-class="pcrr7t-">+]]</span></span></li></ul>
-<!--l. 767--><p class="noindent" >
-</p>
-<!--l. 767--><p class="noindent" ><span class="paragraphHead"><a 
- id="x97-180000A.5.2.1"></a> <span 
-class="cmbx-10">graph </span></span>
-   Define the dependency graph valid for specified list of hours or asynchronous ID pattern. You can use the
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span></span> command, or right click Graph in gcylc, to plot the dependency graph as you work on it. See
-Section&#x00A0;<a 
-href="cug-htmlsu31.html#x46-600007.3">7.3<!--tex4ht:ref: DependencyGraphs --></a> for details.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[dependencies] <span 
-class="cmsy-10">&#x2192; </span>[[HOURS]]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>multiline string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">legal values: refer to section</span><span 
-class="cmti-10">&#x00A0;</span><a 
-href="cug-htmlsu31.html#x46-600007.3"><span 
-class="cmti-10">7.3</span><!--tex4ht:ref: DependencyGraphs --></a>
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 779-->
-     <div class="lstlisting" id="listing-93"><span class="label"><a 
- id="x97-180001r1"></a></span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"""</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">waz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">waz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">both</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">trigger</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">off</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">out1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">faz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">faz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">triggers</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">off</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">an</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">internal</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">output</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdFoo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">restart</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">X</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">fail</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Y</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Y</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">triggers</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">if</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">X</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">fails</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">X</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">X</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">fail</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">triggers</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">if</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">X</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">finishes</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">fails</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x97-180007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"""</span>
-     
-     </div>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None</li></ul>
-<!--l. 791--><p class="noindent" >
-</p>
-<!--l. 791--><p class="noindent" ><span class="paragraphHead"><a 
- id="x97-181000A.5.2.2"></a><span 
-class="cmbx-10">daemon </span></span>
-   For [[ASYNCID:pattern]] graph sections only, list any <span 
-class="cmti-10">asynchronous daemon </span>tasks by name.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[tasks] <span 
-class="cmsy-10">&#x2192; </span>[[ASYNCID:pattern]]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of task names
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>empty list
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example: </span><span class="lstinline"><span 
-class="pcrr7t-">daemon</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">A</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">B</span></span></li></ul>
-                                                                                         
-
-                                                                                         
-   <!--l. 801--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu67.html" >next</a>] [<a 
+   <!--l. 4226--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
 href="cug-htmlsu65.html" >prev</a>] [<a 
 href="cug-htmlsu65.html#tailcug-htmlsu65.html" >prev-tail</a>] [<a 
 href="cug-htmlsu66.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu66.html" >up</a>] </p></div>
-<!--l. 801--><p class="indent" >   <a 
- id="tailcug-htmlsu66.html"></a>   </p> 
+href="cug-htmlse17.html#cug-htmlsu66.html" >up</a>] </p></div>
+<!--l. 4226--><p class="indent" >   <a 
+ id="tailcug-htmlsu66.html"></a> </p> 
 </body></html> 

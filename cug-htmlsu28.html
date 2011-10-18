@@ -4,339 +4,459 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Database Operations</title> 
+<head><title>Comparing Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1560--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
+   <!--l. 1543--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu29.html" >next</a>] [<a 
 href="cug-htmlsu27.html" >prev</a>] [<a 
 href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu28.html">tail</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu28.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.3   </span> <a 
- id="x42-530006.3"></a>Database Operations</h4>
-<!--l. 1562--><p class="noindent" >On the command line, the &#8216;database&#8217; (or &#8216;db&#8217;) command category contains commands to implement the
-aforementioned operations.
-</p>
-   <!--l. 1566--><div class="lstinputlisting">
-<a 
- id="x42-53001"></a>
-   <span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53002r1"></a></span><span 
-class="pcrr7t-">CATEGORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
+href="cug-htmlse7.html#cug-htmlsu28.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.11   </span> <a 
+ id="x43-490007.11"></a>Comparing Suites</h4>
+<!--l. 1545--><p class="noindent" >Cylc can also compare suites and report differences by suite.rc section and item. For instance, comparing the
+example suites <span class="lstinline"><span 
+class="pcrr7t-">QuickStart</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53003r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53004r3"></a></span><span 
-class="pcrr7t-">HELP</span><span 
-class="pcrr7t-">:</span><span 
+class="pcrr7t-">a</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span></span> by GUI or command line results in:  </p><!--l. 1550-->
+   <div class="lstlisting" id="listing-35"><span class="label"><a 
+ id="x43-49001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">]</span><span 
+class="pcrr7t-">diff</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span><span 
-class="pcrr7t-">,--</span><span 
-class="pcrr7t-">help</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span>
+   
+   </div>
+   <!--l. 1554-->
+   <div class="lstlisting" id="listing-36"><span class="label"><a 
+ id="x43-49002r1"></a></span><span 
+class="pcrr7t-">Parsing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53005r4"></a></span><span 
+ id="x43-49003r2"></a></span><span 
+class="pcrr7t-">Parsing</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49004r3"></a></span><span 
+class="pcrr7t-">Suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">You</span><span 
+class="pcrr7t-">definitions</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">can</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">abbreviate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">and</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">differ</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53006r5"></a></span><span 
+ id="x43-49005r4"></a></span><span 
+class="pcrr7t-">!</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">!</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49006r5"></a></span><span 
+class="pcrr7t-">13</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">common</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
+class="pcrr7t-">items</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">category</span><span 
+class="pcrr7t-">differ</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">may</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">be</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">omitted</span><span 
+class="pcrr7t-">QuickStart</span><span 
 class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">(&#x003C;)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">(&#x003E;)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53007r6"></a></span><span 
+ id="x43-49007r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">top</span><span 
+class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53008r7"></a></span><span 
-class="pcrr7t-">COMMANDS</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53009r8"></a></span><span 
+ id="x43-49008r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">gcylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
+class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">see</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Graphical</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">User</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Interface</span><span 
+class="pcrr7t-">Guide</span><span 
+class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53010r9"></a></span><span 
+ id="x43-49009r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">register</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">............</span><span 
+class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Add</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53011r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">reregister</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..........</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Change</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53012r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">unregister</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">delete</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Remove</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">from</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53013r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">cp</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Copy</span><span 
+class="pcrr7t-">plus</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">group</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53014r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53015r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
+class="pcrr7t-">cold</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">dir</span><span 
+class="pcrr7t-">start</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49010r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
+class="pcrr7t-">&#x003C;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">definition</span><span 
+class="pcrr7t-">title</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49011r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">title</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49012r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49013r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">logging</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49014r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">directory</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">path</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53016r15"></a></span><span 
+ id="x43-49015r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
+class="pcrr7t-">directory</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Export</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53017r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">import</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Import</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
+ id="x43-49016r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x42-53018r17"></a></span><span 
+ id="x43-49017r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">refresh</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">0,6,12,18</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49018r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Prep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49019r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">T</span><span 
+class="pcrr7t-">-6)</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49020r19"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Prep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49021r20"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49022r21"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
-class="pcrr7t-">check</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.......</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">T</span><span 
+class="pcrr7t-">-6)</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Check</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">invalid</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">update</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">titles</span>
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x43-49023r22"></a></span><span 
+class="pcrr7t-">!</span><span 
+class="pcrr7t-">SNIP</span><span 
+class="pcrr7t-">!</span>
    
    </div>
-<!--l. 1568--><p class="indent" >   The same functionality is also available by right-clicking on suites or groups in the gcylc GUI, as shown in
-Figure&#x00A0;<a 
-href="cug-htmlse3.html#x21-2400212">12<!--tex4ht:ref: fig-db --></a>.
+<!--l. 1579--><p class="indent" >   (much of the diff output has been omitted here for the sake of brevity). Note that suite log directories and the
+like may differ even though they are not explicitly configured in either suite, because their default values (see the
+<span 
+class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>) are suite-registration-specific.
+                                                                                         
+
+                                                                                         
 </p>
-   <!--l. 1572--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
+   <!--l. 1585--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu29.html" >next</a>] [<a 
 href="cug-htmlsu27.html" >prev</a>] [<a 
 href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
 href="cug-htmlsu28.html" >front</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu28.html" >up</a>] </p></div>
-<!--l. 1572--><p class="indent" >   <a 
+href="cug-htmlse7.html#cug-htmlsu28.html" >up</a>] </p></div>
+<!--l. 1585--><p class="indent" >   <a 
  id="tailcug-htmlsu28.html"></a> </p> 
 </body></html> 

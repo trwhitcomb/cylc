@@ -4,99 +4,314 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite Definition</title> 
+<head><title>Quick Start Guide</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1572--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu29.html" >next</a>] [<a 
-href="cug-htmlsu28.html" >prev</a>] [<a 
-href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
+   <!--l. 973--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu18.html" >next</a>] [<a 
+href="cug-htmlsu17.html" >prev</a>] [<a 
+href="cug-htmlsu17.html#tailcug-htmlsu17.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse7.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
- id="x43-540007"></a>Suite Definition</h3>
-<!--l. 1575--><p class="noindent" >A cylc suite is defined entirely by a single structured, validated, <span 
-class="cmti-10">suite.rc file </span>that concisely specifies the properties of,
-and the relationships between, the various tasks managed by the suite.
-</p><!--l. 1579--><p class="indent" >   This section of the User Guide deals with the format and content of the suite.rc file, including task definition.
-Task <span 
-class="cmti-10">implementation </span>- what&#8217;s required of the real commands, scripts, or programs that do the processing that the
-tasks represent, is covered in Section&#x00A0;<a 
-href="cug-htmlse8.html#x53-910008">8<!--tex4ht:ref: TaskImplementation --></a>.
-</p><!--l. 1593--><p class="noindent" >
+ id="x31-320007"></a>Quick Start Guide</h3>
+<!--l. 976--><p class="noindent" >This section works through some basic cylc functionality using the &#8220;QuickStart&#8221; example suites, which should have
+been registered in the central suite database, under the cylc admin username (replace <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;</span></span> below with the
+correct username for your system) during cylc installation,
+</p>
+   <!--l. 982-->
+   <div class="lstlisting" id="listing-17"><span class="label"><a 
+ id="x31-32001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">central</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">tree</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32002r2"></a></span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x31-32008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">z</span>
+   
+   </div>
+<!--l. 993--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >7.1 <a 
-href="cug-htmlsu29.html#x44-550007.1">The Suite Definition Directory</a></span>
+href="cug-htmlsu18.html#x32-330007.1">Configure Your Environment</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
-href="cug-htmlsu30.html#x45-560007.2">The suite.rc File</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.1 <a 
-href="cug-htmlsu30.html#x45-570007.2.1" id="QQ2-45-89">Syntax</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.2 <a 
-href="cug-htmlsu30.html#x45-580007.2.2" id="QQ2-45-90">An Example</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.3 <a 
-href="cug-htmlsu30.html#x45-590007.2.3" id="QQ2-45-93">Syntax Highlighting In Vim</a></span>
+href="cug-htmlsu19.html#x33-340007.2">Starting The gcylc GUI</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
-href="cug-htmlsu31.html#x46-600007.3">Dependency Graphs</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.1 <a 
-href="cug-htmlsu31.html#x46-610007.3.1" id="QQ2-46-96">Graph Syntax</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.2 <a 
-href="cug-htmlsu31.html#x46-620007.3.2" id="QQ2-46-97">Valid Cycle Times For Each Task</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.3 <a 
-href="cug-htmlsu31.html#x46-630007.3.3" id="QQ2-46-98">Partitioning The Graph</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.4 <a 
-href="cug-htmlsu31.html#x46-640007.3.4" id="QQ2-46-99">Task Succeeded Triggers</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.5 <a 
-href="cug-htmlsu31.html#x46-650007.3.5" id="QQ2-46-100">Task Failed Triggers</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.6 <a 
-href="cug-htmlsu31.html#x46-660007.3.6" id="QQ2-46-101">Internal Triggers</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.7 <a 
-href="cug-htmlsu31.html#x46-670007.3.7" id="QQ2-46-102">Intercycle Triggers</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.8 <a 
-href="cug-htmlsu31.html#x46-680007.3.8" id="QQ2-46-103">Conditional Triggers</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.9 <a 
-href="cug-htmlsu31.html#x46-720007.3.9" id="QQ2-46-107">Satisfying Intercycle Dependencies At Startup</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.10 <a 
-href="cug-htmlsu31.html#x46-750007.3.10" id="QQ2-46-110">Model Restart Dependencies</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.3.11 <a 
-href="cug-htmlsu31.html#x46-760007.3.11" id="QQ2-46-111">Task Families</a></span>
+href="cug-htmlsu20.html#x34-350007.3">Import The QuickStart Suites</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
-href="cug-htmlsu32.html#x51-790007.4">Task Definition</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.1 <a 
-href="cug-htmlsu32.html#x51-800007.4.1" id="QQ2-51-116">A Task Definition Example</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.2 <a 
-href="cug-htmlsu32.html#x51-810007.4.2" id="QQ2-51-117">Task Names</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.3 <a 
-href="cug-htmlsu32.html#x51-820007.4.3" id="QQ2-51-118">Defining Multiple Tasks At Once</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.4.4 <a 
-href="cug-htmlsu32.html#x51-830007.4.4" id="QQ2-51-119">Task Execution Environment</a></span>
+href="cug-htmlsu21.html#x35-360007.4">View The QuickStart.a Suite Definition</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
-href="cug-htmlsu33.html#x52-880007.5">Suite Validation</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.5.1 <a 
-href="cug-htmlsu33.html#x52-890007.5.1" id="QQ2-52-125">Validation Errors</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.5.2 <a 
-href="cug-htmlsu33.html#x52-900007.5.2" id="QQ2-52-126">Validation Warnings</a></span>
+href="cug-htmlsu22.html#x36-370007.5">Plotting The QuickStart.a Dependency Graph</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.6 <a 
+href="cug-htmlsu23.html#x37-380007.6">Run The QuickStart.a Suite</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.1 <a 
+href="cug-htmlsu23.html#x37-390007.6.1" id="QQ2-37-67">Viewing The State Of Tasks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.2 <a 
+href="cug-htmlsu23.html#x37-400007.6.2" id="QQ2-37-69">Triggering Tasks Manually</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.3 <a 
+href="cug-htmlsu23.html#x37-410007.6.3" id="QQ2-37-70">Suite Shut-Down And Restart</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.7 <a 
+href="cug-htmlsu24.html#x39-420007.7">QuickStart.b - Handling Cold-Starts Properly</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.8 <a 
+href="cug-htmlsu25.html#x40-430007.8">QuickStart.c - Real Task Implementations</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.9 <a 
+href="cug-htmlsu26.html#x41-440007.9">Monitoring Running Suites</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.1 <a 
+href="cug-htmlsu26.html#x41-450007.9.1" id="QQ2-41-77">Suite stdout And stderr</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.2 <a 
+href="cug-htmlsu26.html#x41-460007.9.2" id="QQ2-41-79">Suite Logs</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.3 <a 
+href="cug-htmlsu26.html#x41-470007.9.3" id="QQ2-41-81">Task stdout And stderr Logs</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.10 <a 
+href="cug-htmlsu27.html#x42-480007.10">Searching A Suite</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.11 <a 
+href="cug-htmlsu28.html#x43-490007.11">Comparing Suites</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.12 <a 
+href="cug-htmlsu29.html#x44-500007.12">Validating A Suite</a></span>
    </div>
 
 
 
 
+
+
+
+
+
+
+
                                                                                          
 
                                                                                          
-   <!--l. 2705--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu29.html" >next</a>] [<a 
-href="cug-htmlsu28.html" >prev</a>] [<a 
-href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
+   <!--l. 1622--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu18.html" >next</a>] [<a 
+href="cug-htmlsu17.html" >prev</a>] [<a 
+href="cug-htmlsu17.html#tailcug-htmlsu17.html" >prev-tail</a>] [<a 
 href="cug-htmlse7.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
-<!--l. 2705--><p class="indent" >   <a 
+<!--l. 1622--><p class="indent" >   <a 
  id="tailcug-htmlse7.html"></a> </p> 
 </body></html> 

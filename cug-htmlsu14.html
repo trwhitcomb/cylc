@@ -4,84 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Starting The gcylc GUI</title> 
+<head><title>Choosing The Initial Cycle Time</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 816--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu15.html" >next</a>] [<a 
+   <!--l. 830--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu14.html">tail</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
- id="x25-280005.2"></a>Starting The gcylc GUI</h4>
-<!--l. 818--><p class="noindent" >At the command prompt: </p><!--l. 819-->
-   <div class="lstlisting" id="listing-14"><span class="label"><a 
- id="x25-28001r1"></a></span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span>
-   
-   </div>
-<!--l. 822--><p class="indent" >   and use the Database menu to switch to the central database, which displays suites accessible to all users, in a
-treeview organized by owner, group, and name (see Figure&#x00A0;<a 
-href="cug-htmlse3.html#x21-2400313">13<!--tex4ht:ref: fig-cdb --></a>).
-</p><!--l. 826--><p class="noindent" >
+ id="x26-260005.2"></a>Choosing The Initial Cycle Time</h4>
+<!--l. 832--><p class="noindent" >When running any suite in live mode (or at least suites that depend on clock-triggered tasks) do not give an initial
+cycle time in the future unless you want nothing to happen until that time. However, you can also run any suite in
+<span 
+class="cmti-10">simulation mode </span>(Section&#x00A0;<a 
+href="cug-htmlse17.html#x101-292000E">E<!--tex4ht:ref: SimulationMode --></a>) in which case a future start time is fine. In simulation mode each task is replaced by
+the default dummy task (above) and the suite runs quickly on an accelerated clock. As far as cylc is
+concerned this is almost identical to real operation, so simulation mode can be used to test recovery
+strategies for certain kinds of failure, for instance. In simulation mode, by configuring how the accelerated
+clock is initialized, you can watch how any suite catches up and transitions from delayed to real time
+operation.
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">5.2.1   </span> <a 
- id="x25-290005.2.1"></a>Central Suite Database Actions</h5>
-<!--l. 828--><p class="noindent" >By right-clicking on a suite in the central database, or using the cylc command line, you can:
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x25-29002x1">retrieve the suite description,
-     </li>
-     <li 
-  class="enumerate" id="x25-29004x2">list tasks in the suite,
-     </li>
-     <li 
-  class="enumerate" id="x25-29006x3">view the suite definition in your editor,
-     </li>
-     <li 
-  class="enumerate" id="x25-29008x4">plot the suite dependency graph,
-     </li>
-     <li 
-  class="enumerate" id="x25-29010x5">search the suite definition and bin scripts,
-     </li>
-     <li 
-  class="enumerate" id="x25-29012x6">validate the suite definition,
-     </li>
-     <li 
-  class="enumerate" id="x25-29014x7">compare (difference) the suite with another suite,
-     </li>
-     <li 
-  class="enumerate" id="x25-29016x8">import the suite or group to your private database,
-     </li>
-     <li 
-  class="enumerate" id="x25-29018x9">unreregister or delete the suite or group (if you own it),
-     </li>
-     <li 
-  class="enumerate" id="x25-29020x10">reregister the suite or group (if you own it).</li></ol>
-<!--l. 842--><p class="noindent" >But you can only <span 
-class="cmti-10">run </span>suites that are registered in your private database.
-                                                                                         
-
-                                                                                         
-</p>
-   <!--l. 845--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu15.html" >next</a>] [<a 
+   <!--l. 846--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
 href="cug-htmlsu13.html" >prev</a>] [<a 
 href="cug-htmlsu13.html#tailcug-htmlsu13.html" >prev-tail</a>] [<a 
 href="cug-htmlsu14.html" >front</a>] [<a 
 href="cug-htmlse5.html#cug-htmlsu14.html" >up</a>] </p></div>
-<!--l. 845--><p class="indent" >   <a 
- id="tailcug-htmlsu14.html"></a>  </p> 
+<!--l. 846--><p class="indent" >   <a 
+ id="tailcug-htmlsu14.html"></a> </p> 
 </body></html> 

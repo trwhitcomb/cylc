@@ -14,17 +14,11 @@
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-        <div class="footnote-text">
-   <!--l. 417--><p class="indent" >     <span class="footnote-mark"><a 
- id="fn19x0">  <sup class="textsuperscript">19</sup></a></span><span 
-class="cmr-8">This is because you don&#8217;t want Model(T) waiting around to trigger off Model(T-12) if Model(T-6) has not finished yet. If Model</span>
-   <span 
-class="cmr-8">is forced to be sequential this can&#8217;t happen because Model(T) won&#8217;t exist in the suite until Model(T-6) has finished. But if Model(T-6)</span>
-   <span 
-class="cmr-8">fails, it can be spawned-and-removed from the suite so that Model(T) can </span><span 
-class="cmti-8">then </span><span 
-class="cmr-8">trigger off Model(T-12), which is the correct</span>
-   <span 
-class="cmr-8">behaviour.</span></p></div>
-       
+      <div class="footnote-text">
+  <!--l. 1276--><p class="indent" >     <span class="footnote-mark"><a 
+ id="fn7x0">   <sup class="textsuperscript">7</sup></a></span><span 
+class="cmr-8">So long as the runahead limit is sufficient to span the normal range of cycle times present in the suite - task that only run once</span>
+  <span 
+class="cmr-8">per day, for example, have to spawn a successor that is 24 hours ahead.</span></p></div>
+      
 </body></html> 

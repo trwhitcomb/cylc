@@ -152,3 +152,135 @@ Version number X.Y.Z incrementing:
   suite.rc graph strings (i.e. tasks with different triggers at 
   different cycle times). 
 
+4.0.0 PENDING
+
++ WARNING cylc-4.0 IS NOT ENTIRELY BACKWARD COMPATIBLE with 3.x
+due to significant changes to suite.rc structure and item names. 
+ Suggested suite upgrade strategy: 
+    1/ read this changelog, then
+    2/ use 'cylc validate' to see which items are no longer valid ...
+    3/ ... then consult the suite.rc reference, and 
+    4/ examine the cylc example suites if necessary
+Future changes will be more incremental and we will ensure backward
+compatibility or provide a clear (possibly automated) upgrade path.
+
++ UTC Mode: optionally run a suite on UTC time even if the suite
+ host's system clock is not in UTC mode.
+
++ Fixed a suite graph plotting bug: if the graph initial hour was 
+ greater than the section hour for single hour graph sections, the
+ section would be skipped even if the graph range encompassed the
+ section, due to miss-handling of the 24-hour boundary.
+
++ Fixed a subtle bug in environment variable overriding: if a variable
+ was defined twice, the second definition would override the first as
+ it should, but it would retain the position (in the list of defined
+ variables) of the first.
+
++ General parenthesized conditional triggers
+  - WARNING: This required a change in intercycle dependency notation
+    from ROUND to SQUARE brackets (to avoid clashing with parentheses 
+    in conditional expressions):
+       foo(T-6) becomes foo[T-6]
+
++ Embedded list-generating Python expressions can now be used to
+ generate related dependencies in the graph (e.g. for the internal
+ dependencies of an ensemble); and lists of task names or
+ list-generating Python expressions in task config section headings,
+ to define multiple tasks at once.
+
++ Configurable command template for at_now, background and loadleveler.
+ Some example use cases might be:
+  - a user may want to use batch instead of at now.
+  - a user may want to use an option of llsubmit.
+  - a user may want to use nice with a background submit.
+
++ Configurable ssh command template.
+  - no longer require scp - use stdin to transfer job file.
+  - -oBatchMode=yes prevents any hang ups.
+  - (but ssh command is bit more complex.)
+
++ sudo job submission (for other owner on the suite host) removed. Now
+use ssh as for remote hosts.
+
++ New default directory structure.
+  - $HOME/cylc-run/$CYLC_SUITE_REG_NAME/{log/suite,log/job,state}
+
++ Task logs now go to the proper directory tree on remote hosts (and remote 
+directories are created on the fly if necessary).
+
++ Use microseconds since epoch instead of random string for tagging a job task.
+   - this allows "ls" to list things in the right order.
+   - stdout and stderr files are now named after their task job scripts.
+
++ Fixed a bug preventing use of :fail triggers with asynchronous tasks.
+
+ + New "suicide" triggers: graph = "A => !B" means B will take itself out of 
+ the suite (after spawning, if it is a cycling task) if A succeeds. This can
+ be used for automated recovery from task failures using sub-trees of tasks
+ that tag along with a model (say) waiting for it to fail, but which
+ automatically remove themselves if the model does not fail.
+
++ MAJOR CHANGE TO SUITE.RC STRUCTURE: 
+  * better organization under new top level sections:
+  [cylc] - non task-related suite config. 
+  [scheduling] - determines when tasks are ready to run
+  [runtime] - determines what runs, and how and where, when a task is ready
+  * under [runtime] family and task properties are defined by a
+  "namespace inheritance hierarchy" that allows common configuration of
+  related tasks without repetition. 
+WARNING: there are a number of changes associated with this item that
+will break existing suite.rc files.
+
++ Task families are now defined by the runtime namespace hierarchy.
+  * when used in the graph, they are suite definition shorthand only
+   (no pseudo-task representing the family appears in the task pool). 
+  * can be individually expanded or collapsed for graph plotting, and in
+   the graph-based suite control GUI.
+
++ 'command =' config item changed to 'command scripting =' for consistency
+  with 'pre-' and 'post-command scripting', and because it has long since
+  ceased to be a single command.
+
++ New command 'cylc get-config' to retrieve any suite configuration data.
+
++ gcylc entry labels made consistent with command help, and gcylc Help
+ buttons now call command help on the fly.
+
++ MAJOR CHANGE TO SUITE REGISTRATION SYNTAX:
+   - changed from GROUP:NAME to an arbitrarily nested path (foo,
+     foo.bar, foo.bar.baz, etc.)  Delimiter changed from colon to dot to
+     avoid problems with use of suite identity in PATH variables.
+
++ suite identity variables changed for new registration names:
+    CYLC_SUITE_REG_NAME    # foo.bar.baz
+    CYLC_SUITE_REG_PATH    # foo/bar/baz
+    CYLC_SUITE_DEF_PATH    # suite definition directory
++ task identity variables made consistent with suite identity variables:
+    CYLC_TASK_ID
+    CYLC_TASK_NAME
+    CYLC_TASK_CYCLE_TIME
+    CYLC_TASK_NAMESPACE_HIERARCHY  # <-- new
+
++ 'cylc admin test-suite' now detects failures properly.
+
++ Updated the User Guide for all the above.
+
++ suite hold is now implemented by holding all waiting tasks instead of
+just not running them - this is more transparent to the user.
+
++ RUNAHEAD LIMIT:
+    - now implemented by putting tasks into a special 'runahead' held
+      state, rather than just delaying spawning. This is more
+      transparent to the user.
+    - now applies if (Ttask-Toldest) >= limit (was '>'). This generally 
+    makes the limit shorter by one cycle, but is more intuitive.
+
++ Default start and stop times, if defined, are now displayed in the 
+ GUI start panel (and the same for suite graph plotting).
+
++ Inlined editing of suite.rc files that use include-files: the 
+ temporarily inlined file is now the live file during the editing
+ session - i.e. changes take effect, for graphing or running the
+ suite etc., whenever the inlined file is saved rather than on
+ exiting the edit session.

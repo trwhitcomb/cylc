@@ -1,5 +1,7 @@
  
 /* start css.sty */
+.cmr-7{font-size:70%;}
+.cmmi-7{font-size:70%;font-style: italic;}
 .cmmi-10{font-style: italic;}
 .cmr-17{font-size:170%;}
 .cmr-12{font-size:120%;}
@@ -13,20 +15,17 @@
 .cmr-9{font-size:90%;}
 .cmbx-10{ font-weight: bold;}
 .cmbx-10{ font-weight: bold;}
-.cmti-9{font-size:90%; font-style: italic;}
-.cmmi-9{font-size:90%;font-style: italic;}
+.cmti-7{font-size:70%; font-style: italic;}
 .pcrr8c-{ font-family: monospace;}
 .pcrr8c-{ font-family: monospace;}
-.pcrb7t-{ font-family: monospace; font-weight: bold;}
 .pcrro7t-{font-family: monospace;    font-style: oblique;}
-.pcrbo7t-{font-family: monospace; font-weight: bold; font-style: oblique;}
-.pcrr7t-x-x-90{font-size:90%;font-family: monospace;}
+.pcrro8c-{ font-family: monospace;    font-style: oblique;}
+.pcrb7t-{ font-family: monospace; font-weight: bold;}
 .pcrr7t-x-x-80{font-size:80%;font-family: monospace;}
 .pcrr8c-x-x-80{font-size:80%; font-family: monospace;}
 .pcrr8c-x-x-80{ font-family: monospace;}
-.pcrro8c-{ font-family: monospace;    font-style: oblique;}
+.pcrr7t-x-x-70{font-size:70%;font-family: monospace;}
 .cmti-8{font-size:80%; font-style: italic;}
-.cmmib-10{font-style: italic; font-weight: bold;}
 .cmcsc-10x-x-144{font-size:144%;}
 .small-caps{font-variant: small-caps; }
 @media print {span.next {visibility:hidden;}}
@@ -158,5 +157,6 @@ table.gather {width:100%;}
 div.gather-star {text-align:center;}
 div.verbatiminput {font-family: monospace; white-space: nowrap; }
 .figure img.graphics {margin-left:10%;}
+ .lstlisting { color : red; } .lstinputlisting { color : red; } 
 /* end css.sty */
 

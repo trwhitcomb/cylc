@@ -4,122 +4,43 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>[task families]</title> 
+<head><title>Clock Rate and Offset</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 720--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4092--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu66.html" >next</a>] [<a 
-href="cug-htmlsu64.html" >prev</a>] [<a 
-href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
+href="cug-htmlse17.html" >prev</a>] [<a 
+href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu65.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.4   </span> <a 
- id="x96-175000A.4"></a>[task families]</h4>
-<!--l. 722--><p class="noindent" >A task family is a named group of tasks that appears as a single task in the suite dependency graph. The entire
-family triggers as a group, and downstream tasks can trigger off the entire family finishing. Task families can have
-internal dependencies, and family members can also appear in the graph as non-family tasks. See Section&#x00A0;<a 
-href="cug-htmlsu31.html#x46-760007.3.11">7.3.11<!--tex4ht:ref: TaskFamilies --></a> for
-more information on task families.
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.4.1   </span> <a 
- id="x96-176000A.4.1"></a> <span 
-class="cmmi-10">&#x003C;</span>MANY<span 
-class="cmmi-10">&#x003E;</span></h5>
-<!--l. 729--><p class="noindent" >Replace MANY with each task family definition.  </p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">section: </span>[task families]
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">type: </span>list of task names (the family members)
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>None
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example (explicit): </span><span class="lstinline"><span 
-class="pcrr7t-">ObsProc</span><span 
+href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">E.1   </span> <a 
+ id="x102-293000E.1"></a>Clock Rate and Offset</h4>
+<!--l. 4094--><p class="noindent" >Simulation mode suites run on an accelerated clock so that you can test things very quickly. You can set the clock
+rate and offset with respect to the initial cycle time with options to the <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSurface</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSonde</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsAircraft</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ObsSat</span></span>
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">example (expression): </span><span class="lstinline"><span 
-class="pcrr7t-">ensemble</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">list</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">m</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">+</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">str</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">i</span><span 
-class="pcrr7t-">)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">i</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">range</span><span 
-class="pcrr7t-">(1,6))'</span></span></li></ul>
-<!--l. 737--><p class="noindent" >The list of family members may be defined by an explicit list of task names or a list-generating Python expression (a
-&#8220;list comprehension&#8221;). The Python expression must be of the form <span class="lstinline"><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">list</span><span 
-class="pcrr7t-">(...)'</span></span> and not <span class="lstinline"><span 
-class="pcrr7t-">'[...]'</span></span>, and it must
-be quoted to hide the internal comma in the range expression from the suite.rc parser. The example above generates
-the task names <span class="lstinline"><span 
-class="pcrr7t-">m1</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">m2</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">m5</span></span>. If tasks in a family share most configuration details, they can be defined all at
-once in a single subsection under <span class="lstinline"><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span></span>.
+class="pcrr7t-">run</span></span> command. An offset of 10 hours,
+say, means that the simulation mode clock starts at 10 hours prior to the suite&#8217;s initial cycle time. You can thus
+simulate the behaviour of the suite as it catches up from a delay and transitions to real time operation. By default,
+the clock runs at a rate of 10 seconds real time to 1 hour suite time, and with an initial offset of 10
+hours.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 747--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4104--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu66.html" >next</a>] [<a 
-href="cug-htmlsu64.html" >prev</a>] [<a 
-href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
+href="cug-htmlse17.html" >prev</a>] [<a 
+href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
 href="cug-htmlsu65.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu65.html" >up</a>] </p></div>
-<!--l. 747--><p class="indent" >   <a 
- id="tailcug-htmlsu65.html"></a>  </p> 
+href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
+<!--l. 4104--><p class="indent" >   <a 
+ id="tailcug-htmlsu65.html"></a> </p> 
 </body></html> 

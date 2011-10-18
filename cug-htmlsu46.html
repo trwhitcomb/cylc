@@ -4,44 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Default Start And End Cycles</title> 
+<head><title>Make Models Rerunnable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3478--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3723--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu46.html">tail</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">10.3   </span> <a 
- id="x69-11600010.3"></a>Default Start And End Cycles</h4>
-<!--l. 3480--><p class="noindent" ><span 
-class="cmti-10">Introduced at version </span>3<span 
-class="cmmi-10">.</span>4<span 
-class="cmmi-10">.</span>0
-</p>
-     <ul class="itemize1">
-     <li class="itemize">Suite graphing now has default start and end cycles, and you may define your own default start and
-     end cycles for graphing in the suite.rc file.
-     </li>
-     <li class="itemize">Default initial and final cycle times for running a suite can now optionally be defined in the suite.rc
-     file, so you don&#8217;t have to keep typing them on the command line, or GUI panel, for repetitive testing.</li></ul>
+href="cug-htmlse12.html#cug-htmlsu46.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.4   </span> <a 
+ id="x74-11100012.4"></a>Make Models Rerunnable</h4>
+<!--l. 3725--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
+next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
+files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold-start). Instead,
+consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
+simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
+given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
+archive.
                                                                                          
 
                                                                                          
-   <!--l. 3491--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 3737--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="cug-htmlsu46.html" >front</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
-<!--l. 3491--><p class="indent" >   <a 
+href="cug-htmlse12.html#cug-htmlsu46.html" >up</a>] </p></div>
+<!--l. 3737--><p class="indent" >   <a 
  id="tailcug-htmlsu46.html"></a> </p> 
 </body></html> 

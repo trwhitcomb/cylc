@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 298--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 301--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse2.html" >next</a>] [<a 
 href="cug-htmlsu3.html" >prev</a>] [<a 
 href="cug-htmlsu3.html#tailcug-htmlsu3.html" >prev-tail</a>] [<a 
@@ -34,28 +34,28 @@ href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
                                                                                          
 <div class="center" 
 >
-<!--l. 302--><p class="noindent" >
+<!--l. 305--><p class="noindent" >
 
-</p><!--l. 303--><p class="noindent" ><img 
+</p><!--l. 306--><p class="noindent" ><img 
 src="images/task-pool.png" alt="PIC"  
  /></p></div>
 <br /> <div class="caption" 
 ><span class="id">Figure&#x00A0;10: </span><span  
 class="content"><span 
-class="cmr-9">How cylc sees a suite, in contrast to the multicycle dependency graph of Figure</span><span 
-class="cmr-9">&#x00A0;</span><a 
+class="cmr-7">How cylc sees a suite, in contrast to the multicycle dependency graph of Figure</span><span 
+class="cmr-7">&#x00A0;</span><a 
 href="cug-htmlsu3.html#x6-60016"><span 
-class="cmr-9">6</span><!--tex4ht:ref: fig-dep-multi --></a><span 
-class="cmr-9">. Task colors represent</span>
+class="cmr-7">6</span><!--tex4ht:ref: fig-dep-multi --></a><span 
+class="cmr-7">. Task colors represent different cycle</span>
 <span 
-class="cmr-9">different cycle times, and the small squares and circles represent different prerequisites and outputs. A task can run</span>
+class="cmr-7">times, and the small squares and circles represent different prerequisites and outputs. A task can run when its prerequisites are satisfied</span>
 <span 
-class="cmr-9">when its prerequisites are satisfied by the outputs of other tasks in the pool.</span></span></div><!--tex4ht:label?: x7-700110 -->
+class="cmr-7">by the outputs of other tasks in the pool.</span></span></div><!--tex4ht:label?: x7-700110 -->
                                                                                          
 
                                                                                          
    </div><hr class="endfigure" />
-<!--l. 314--><p class="indent" >   Cylc manages a pool of proxy objects that represent real tasks in the forecasting suite. A task proxy can run the
+<!--l. 317--><p class="indent" >   Cylc manages a pool of proxy objects that represent real tasks in the forecasting suite. A task proxy can run the
 real task that it represents when its prerequisites are satisfied, and can receive reports of completed outputs from
 the real task as it runs. There is no global cycling mechanism to advance the suite in time; instead each individual
 task proxy has a private cycle time and spawns its own successor. Task proxies are self-contained
@@ -72,16 +72,16 @@ href="cug-html8.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a
  id="x7-7002f2"></a> 
 Moreover, this matching of prerequisites and outputs involves the entire task pool, regardless of individual cycle
 times, so that inter- and intra-cycle dependence is handled with ease.
-</p><!--l. 335--><p class="indent" >   Thus without using global cycling mechanisms, and treating all inter-task dependence equally, cylc in effect gets
+</p><!--l. 338--><p class="indent" >   Thus without using global cycling mechanisms, and treating all inter-task dependence equally, cylc in effect gets
 a pool of tasks to self-organise by negotiating their own dependencies so that optimal scheduling, as described in the
 previous section, emerges naturally at run time.
 </p>
-   <!--l. 349--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 345--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse2.html" >next</a>] [<a 
 href="cug-htmlsu3.html" >prev</a>] [<a 
 href="cug-htmlsu3.html#tailcug-htmlsu3.html" >prev-tail</a>] [<a 
 href="cug-htmlsu4.html" >front</a>] [<a 
 href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
-<!--l. 349--><p class="indent" >   <a 
+<!--l. 345--><p class="indent" >   <a 
  id="tailcug-htmlsu4.html"></a> </p> 
 </body></html> 

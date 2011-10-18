@@ -4,550 +4,381 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Comparing Suites</title> 
+<head><title>Run The QuickStart.a Suite</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1355--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1149--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu23.html">tail</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu23.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.11   </span> <a 
- id="x36-460005.11"></a>Comparing Suites</h4>
-<!--l. 1357--><p class="noindent" >Cylc can also compare suites and report differences by suite.rc section and item. For instance, comparing the
-example suites <span class="lstinline"><span 
-class="pcrr7t-">CUG_QS1</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">CUG_QS2</span></span> by GUI or command line results in:
-</p>
-   <!--l. 1362-->
-   <div class="lstlisting" id="listing-23"><span class="label"><a 
- id="x36-46001r1"></a></span><span 
-class="pcrr8c-">$</span><span 
+href="cug-htmlse7.html#cug-htmlsu23.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.6   </span> <a 
+ id="x37-380007.6"></a>Run The QuickStart.a Suite</h4>
+<!--l. 1151--><p class="noindent" >Each cylc task defines command scripting to invoke the right external processing when the task is ready to run. This
+has not been explicilty configured in the example suite, so it defaults, for all tasks, to the <span 
+class="cmti-10">dummy task </span>scripting
+inherited from the <span 
+class="cmti-10">root namespace </span>(see Section&#x00A0;<a 
+href="cug-htmlse8.html#x45-510008">8<!--tex4ht:ref: SuiteDefinition --></a>): </p><!--l. 1156-->
+   <div class="lstlisting" id="listing-26"><span class="label"><a 
+ id="x37-38001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">diff</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46003r3"></a></span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">definitions</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">differ</span><span 
+class="pcrr7t-">QuickStart</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46005r5"></a></span><span 
-class="pcrr7t-">1</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(&#x003C;)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46008r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">']</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46009r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46010r10"></a></span><span 
-class="pcrr7t-">3</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">only</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(&#x003E;)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46011r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46012r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46013r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">models</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">red</span><span 
-class="pcrr7t-">']</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46014r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">lightblue</span><span 
-class="pcrr7t-">']</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46015r15"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46016r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">groups</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46017r17"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">models</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">']</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46018r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46019r19"></a></span><span 
-class="pcrr7t-">7</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">common</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">items</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">differ</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">(&#x003C;)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">(&#x003E;)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46020r20"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">(</span><span 
-class="pcrro7t-">some</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">have</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">been</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">omitted</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">here</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">for</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">inclusion</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">in</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">User</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">Guide</span><span 
-class="pcrro7t-">!)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46021r21"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46022r22"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">top</span><span 
-class="pcrr7t-">)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46023r23"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcSuiteLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46024r24"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CylcSuiteLogs</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46025r25"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46026r26"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46027r27"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46028r28"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cold</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">['</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">']</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46029r29"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46030r30"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[0,6,12,18]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46031r31"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">GetData</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">command</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46032r32"></a></span><span 
+ id="x37-38002r2"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrr7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">DUMMY</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span><span 
+class="pcrr7t-">;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sleep</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">10;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46033r33"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46034r34"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46035r35"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ColdModel</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x36-46036r36"></a></span><span 
-class="pcrr7t-">DONE</span>
+class="pcrr7t-">BYE</span><span 
+class="pcrr7t-">']</span>
    
    </div>
-<!--l. 1400--><p class="indent" >   (some output has been omitted for brevity). Note that the <span 
-class="cmti-10">suite log directory </span>items differ even though they are
-not explicitly defined in either suite. That is because their default values (see the <span 
-class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
-href="cug-htmlse12.html#x88-134000A">A<!--tex4ht:ref: SuiteRCReference --></a>)
-are suite-specific.
+<!--l. 1160--><p class="indent" >   where <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span></span> is the unique identifier by which cylc knows the task (<span class="lstinline"><span 
+class="pcrr7t-">NAME</span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">CYCLE</span></span>)
+exported to each task&#8217;s execution environment by cylc. The command arguments reflect the suite
+definition section nesting. If it were explicitly configured in the example suite it would look like this:
+</p><!--l. 1166-->
+   <div class="lstlisting" id="listing-27"><span class="label"><a 
+ id="x37-38003r1"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-38004r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-38005r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">DUMMY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span><span 
+class="pcrr7t-">;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sleep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">10;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">BYE</span><span 
+class="pcrr7t-">"</span>
+   
+   </div>
+<!--l. 1173--><p class="indent" >   Now start a suite control GUI by right-clicking on the suite in gcylc and choosing &#8216;Control (graph)&#8217;. You can also
+open a text treeview control GUI for the same suite, if you like. Multiple GUIs running at the same time will
+automatically connect to the same running suite (they won&#8217;t try to run separate instances). Note also that if you
+shut down a suite control GUI, the suite will keep running. You can reconnect to it later by opening another control
+GUI.
+</p><!--l. 1183--><p class="indent" >   In the control GUI click on Control <span 
+class="cmsy-10">&#x2192; </span>Run, enter an initial cold-start cycle time (e.g.&#x00A0;2011052306), and select
+&#8220;Hold (pause) on start-up&#8221; so that the suite will start in the held state (tasks will not be submitted even if they are
+ready to run).
+</p><!--l. 1188--><p class="indent" >   <span 
+class="cmti-10">Do not choose an initial cycle time in the future unless you&#8217;re running in simulation mode, or nothing much will</span>
+<span 
+class="cmti-10">happen until that time.</span>
+</p><!--l. 1192--><p class="indent" >   If the initial cycle time ends in 06 or 18 the suite controller should look like Figure&#x00A0;<a 
+href="#x37-3800621">21<!--tex4ht:ref: fig-QuickStartA-ControlStart06 --></a>, or otherwise (00 or 12)
+like Figure&#x00A0;<a 
+href="#x37-3800722">22<!--tex4ht:ref: fig-QuickStartA-ControlStart00 --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x37-3800621"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1199--><p class="noindent" >
+
+</p><!--l. 1200--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStart06.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;21: </span><span  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart:one </span><span 
+class="cmr-7">at start-up with an initial cycle time ending in 06 or 18 hours. Yellow nodes represent waiting</span>
+<span 
+class="cmr-7">tasks in the held state.</span></span></div><!--tex4ht:label?: x37-3800621 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x37-3800722"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1210--><p class="noindent" >
+
+</p><!--l. 1211--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStart00.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;22: </span><span  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">at start-up with an initial cycle time ending in 00 or 12 hours. Yellow nodes represent waiting tasks</span>
+<span 
+class="cmr-7">in the held state and off-white nodes are tasks from the base graph, defined in the suite.rc file, that aren&#8217;t currently live in the suite.</span></span></div><!--tex4ht:label?: x37-3800722 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1222--><p class="indent" >   The reason for the difference in graph structure between the two figures is this: cylc starts up with every task
+present in the waiting state (blue) at the initial cycle time <span 
+class="cmti-10">or </span>at the first subsequent valid cycle time for the task -
+and PostB does not run at 00 or 12. The off-white tasks are from the base graph, defined in the suite.rc file, and
+aren&#8217;t actually present in the suite as yet (they are shown in the graph in order to put the live tasks in
+context).
+</p><!--l. 1230--><p class="indent" >   Now, click on Control <span 
+class="cmsy-10">&#x2192; </span>Release in the suite control GUI to <span 
+class="cmti-10">release the hold on the suite</span>, and observe what
+happens: the GetData tasks will rapidly go off in parallel out to a few cycles ahead (how far ahead depends
+on the suite runahead limit, explained below) and then the suite will stall, as shown in Figures&#x00A0;<a 
+href="#x37-3800823">23<!--tex4ht:ref: fig-QuickStartA-ControlRunning --></a>
+and&#x00A0;<a 
+href="#x37-3800924">24<!--tex4ht:ref: fig-QuickStartA-ControlStalled --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x37-3800823"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1239--><p class="noindent" >
+
+</p><!--l. 1240--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlRunning.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;23: </span><span  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">running, showing several consecutive instances of the clock-triggered GetData task running at once,</span>
+<span 
+class="cmr-7">out to the suite runahead limit of 12 hours.</span></span></div><!--tex4ht:label?: x37-3800823 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x37-3800924"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1249--><p class="noindent" >
+
+</p><!--l. 1250--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStalled.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;24: </span><span  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">stalled after the clock-triggered GetData tasks have finished, because of Model&#8217;s previous-cycle</span>
+<span 
+class="cmr-7">dependence and the suite runahead limit (see main text).</span></span></div><!--tex4ht:label?: x37-3800924 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1260--><p class="indent" >   The Prep task runs immediately because it has no prerequisites and is not clock-triggered. The clock-triggered
+GetData tasks then all go off at once because they have no prerequisites (i.e.&#x00A0;they do not have to wait on any
+upstream tasks), their trigger time has long passed (the initial cycle time was in the past), and they are not
+sequential tasks (so they are able to run in parallel - try declaring GetData sequential to see the difference). Beyond
+the suite <span 
+class="cmti-10">runahead limit </span>of 12 hours (set in the suite.rc file), however, GetData is put into a special &#8216;runahead&#8217; held
+state indicated by the darker blue graph node. The task will be released from this state once the slower tasks
+in the suite have caught up sufficiently. The runahead limit is designed to stop free tasks like this
+from running off too far into the future in delayed operation. It is of little conseqence in real time
+operation<span class="footnote-mark"><a 
+href="cug-html38.html#fn7x0"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x37-38010f7"></a> 
+because clock triggered tasks are then constrained by the wall clock, and other tasks have to wait on them, generally
+speaking.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.6.1   </span> <a 
+ id="x37-390007.6.1"></a>Viewing The State Of Tasks</h5>
+<!--l. 1282--><p class="noindent" >If you&#8217;re wondering why a particular task has not triggered yet in a running suite you can view the current state of
+its prerequisites by right-clicking on the task and choosing &#8216;View State&#8217;, or using <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">show</span></span>. Do this for the
+first Model task, which appears to be stuck in the waiting state; it will pop up a small window as in
+Figure&#x00A0;<a 
+href="#x37-3900125">25<!--tex4ht:ref: fig-QuickStartA-ModelState --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x37-3900125"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1290--><p class="noindent" >
+
+</p><!--l. 1291--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ModelState.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;25: </span><span  
+class="content"><span 
+class="cmr-7">Viewing current task state after right-clicking on a task in gcylc. The same information is available from the </span><span class="lstinline"><span 
+class="pcrr7t-x-x-70">cylc</span><span 
+class="pcrr7t-x-x-70">&#x00A0;</span><span 
+class="pcrr7t-x-x-70">show</span></span>
+<span 
+class="cmr-7">command.</span></span></div><!--tex4ht:label?: x37-3900125 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1299--><p class="indent" >   It is clear that the reason the task is not running, and consequently, by virtue of the runahead limit, why the
+suite has stalled, is that Model[T] is waiting on Model[T-6] which does not exist at suite start-up. Model represents
+a warm-cycled forecast model that depends on a model background state or restart file(s) generated by its own
+previous run.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.6.2   </span> <a 
+ id="x37-400007.6.2"></a>Triggering Tasks Manually</h5>
+<!--l. 1308--><p class="noindent" >Right-click on the waiting Model task and choose Trigger, or use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">trigger</span></span>, to force the task to trigger, and
+thereby get the suite up and running. In a real suite this would not be sufficient: the real forecast model that Model
+represents would fail for lack of the real restart files that it requires as input. Well see how to handle this properly
+shortly.
+</p><!--l. 1315--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.6.3   </span> <a 
+ id="x37-410007.6.3"></a>Suite Shut-Down And Restart</h5>
+<!--l. 1317--><p class="noindent" >Having watched the <span 
+class="cmti-10">QuickStart.a </span>suite run for a while, choose Stop from the Control menu, or <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">stop</span></span>, to
+shut it down. The default stop method waits for any tasks that are currently running to finish before
+shutting the suite down, so that the final recorded suite state is perfectly consistent with what actually
+happened.
+</p><!--l. 1323--><p class="indent" >   You can restart the suite from where it left off by choosing Control <span 
+class="cmsy-10">&#x2192; </span>Run and selecting the &#8216;restart&#8217; option, or
+using <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">restart</span></span>. Note that cylc always writes a special state dump, and logs its name, prior to actioning any
+intervention, and you can also restart a suite from one of these states, rather than the default most recent
+state.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1405--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1330--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="cug-htmlsu23.html" >front</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu23.html" >up</a>] </p></div>
-<!--l. 1405--><p class="indent" >   <a 
- id="tailcug-htmlsu23.html"></a> </p> 
+href="cug-htmlse7.html#cug-htmlsu23.html" >up</a>] </p></div>
+<!--l. 1330--><p class="indent" >   <a 
+ id="tailcug-htmlsu23.html"></a>  </p> 
 </body></html> 

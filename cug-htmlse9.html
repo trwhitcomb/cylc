@@ -4,41 +4,45 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Task Execution</title> 
+<head><title>Task Implementation</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3065--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu40.html" >next</a>] [<a 
-href="cug-htmlsu39.html" >prev</a>] [<a 
-href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
+   <!--l. 3029--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlsu34.html" >prev</a>] [<a 
+href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse9.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse9.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
- id="x61-1030009"></a>Task Execution</h3>
-<!--l. 3068--><p class="noindent" ><span 
-class="cmti-10">Task Implementation </span>(Section&#x00A0;<a 
-href="cug-htmlse8.html#x53-910008">8<!--tex4ht:ref: TaskImplementation --></a>) describes what requirements a command, script, or program, must fulfill in order
-to function as a cylc task.
-</p><!--l. 3072--><p class="indent" >   This section explains how tasks are executed when they are ready to run, and how to define new task job
-submission methods.
-</p><!--l. 3075--><p class="noindent" >
+ id="x58-920009"></a>Task Implementation</h3>
+<!--l. 3032--><p class="noindent" >This section lays out the minimal requirements on external commands, scripts, or executables invoked by cylc to
+carry out task processing.
+</p><!--l. 3035--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >9.1 <a 
-href="cug-htmlsu40.html#x62-1040009.1">Task Job Scripts</a></span>
+href="cug-htmlsu35.html#x59-930009.1">Most Tasks Require No Modification For Cylc</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >9.2 <a 
-href="cug-htmlsu41.html#x63-1050009.2">Available Methods</a></span>
+href="cug-htmlsu36.html#x60-940009.2">Suite.rc Inlined Tasks</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >9.3 <a 
-href="cug-htmlsu42.html#x64-1060009.3">Whither Task stdout And stderr?</a></span>
+href="cug-htmlsu37.html#x61-950009.3">Return Non-zero Exit Status On Error</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >9.4 <a 
-href="cug-htmlsu43.html#x65-1070009.4">Defining New Job Submission Methods</a></span>
+href="cug-htmlsu38.html#x62-960009.4">Some Tasks Require Modification For Cylc</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.4.1 <a 
+href="cug-htmlsu38.html#x62-970009.4.1" id="QQ2-62-140">Voluntary Messaging</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.4.2 <a 
+href="cug-htmlsu38.html#x62-980009.4.2" id="QQ2-62-141">Reporting Internal Outputs Completed</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.4.3 <a 
+href="cug-htmlsu38.html#x62-990009.4.3" id="QQ2-62-142">Tasks With Initiating Processes That Detach And Exit Early</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.4.4 <a 
+href="cug-htmlsu38.html#x62-1000009.4.4" id="QQ2-62-143">A Custom Task Wrapper Example</a></span>
    </div>
 
 
@@ -46,12 +50,12 @@ href="cug-htmlsu43.html#x65-1070009.4">Defining New Job Submission Methods</a></
                                                                                          
 
                                                                                          
-   <!--l. 3371--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu40.html" >next</a>] [<a 
-href="cug-htmlsu39.html" >prev</a>] [<a 
-href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
+   <!--l. 3300--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu35.html" >next</a>] [<a 
+href="cug-htmlsu34.html" >prev</a>] [<a 
+href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
 href="cug-htmlse9.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse9.html" >up</a>] </p></div>
-<!--l. 3371--><p class="indent" >   <a 
+<!--l. 3300--><p class="indent" >   <a 
  id="tailcug-htmlse9.html"></a> </p> 
 </body></html> 

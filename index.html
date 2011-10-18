@@ -57,13 +57,14 @@
 
 		<div id="preamble">
 
-   <p class="p1"><span> Cylc is developed by Dr Hilary James Oliver at
-        <a href="http://www.niwa.co.nz">NIWA</a> 
+   <p class="p1"><span> Cylc has been developed to date mainly by Dr
+   Hilary James Oliver at <a href="http://www.niwa.co.nz">NIWA</a> 
         (National Institute of Water &amp; Atmospheric Research,
         New Zealand). It was prototyped in 2008, has controlled NIWA's
-        multi-model operational forecasting systems since 2010, and was
+        operational forecasting systems since 2010, and was
         released under the GNU General Public License in 2011.</span></p>
 
+        <div style="color:red; font-weight:bold; background:yellow">NEW Oct 18 2011: cylc-4.0.0-rc1 released.</div>
 
     <a id="overview"></a>
     <h3><span>Overview</span></h3>
@@ -148,42 +149,34 @@
             <p class="p1"><span>First, see the <a href="#overview">Overview</a> above.</span></p>
 				<ul>
                         <li> Cylc can handle many 
-                        hundreds of tasks in a single suite (see 
+                        <b>hundreds of tasks</b> in a single suite (see 
                         <a href="#performance">performance)</a>.</li>
 
-                        <li> Tasks can be distributed across multiple
+                        <li> <b>Suite tasks can be distributed</b> across multiple
                         hosts on a heterogeneous network, with multiple job
                         submission methods.</li>
 
-                        <li> Most existing models and processing jobs
-                        can be used without modification as cylc
-                        tasks; some require minimal modification.</li>
+                        <li> <b>Most existing tasks require no modification for cylc.</b> </li>
 
-            <li>Suite definitions are automatically validated against a
-            comprehensive spec file, to catch most errors prior to run time.</li>
+            <li> <b>Suites are validated</b>, to catch most errors prior to run time.</li>
 	
-						<li> Self-documenting command line interface
-                        covering all functionality from suite editing to
-                        suite control.</li>
+                        <li> Self-documenting <b>command line</b> and
+                        <b>graphical interfaces</b> covering all functionality.</li>
 
-						<li> Graphical interfaces covering the same, including 
-                        a graph-based suite control interface. See 
-                        <a href="#screenshots">screen shots</a>.</li>
-
-                        <li> Cryptographic suite security: users cannot 
+                        <li> <b>Cryptographic suite security:</b> users cannot 
                         intervene in the operation of suites owned by others.</li>
 
-                        <li> Run single tasks exactly as the suite would
-                        run them (job submission method and execution environment).</li>
+                        <li> <b>Submit single tasks</b> exactly as the suite would
+                        (job submission method and execution environment).</li>
 
-                        <li> Optional network lockservers prevent
-                        accidental invocation of multiple instances of
-                        the same suite or task at the same time.</li>
+                        <li> A <b>lockserver</b> prevents accidental invocation
+                        of multiple instances of a suite or task at the same time.</li>
 
-						<li> Suite databases enable sharing of suites among
+                        <li> <b>Suite databases</b> enable sharing of suites among
 						users.</li>
 
-                        <li> Insertion and deletion of tasks at run time.</li>
+                        <li> <b>Suites adapt to insertion and removal of tasks at run time.</b></li>
+                        <li> <b>Suites flow around failed or delayed tasks.</b></li>
 
                         <li> Explicit 
                         <a href="screenshots/QuickStartB-graph18.png">cold start processing</a>
@@ -205,27 +198,25 @@
                         <li> Recursive purge: remove an entire sub-tree
                         of tasks through to some future cycle time.</li>
 
-                        <li> Conditional prerequisites (triggers).</li>
+                        <li> <b>General conditional triggers</b>.</li>
 
-                        <li> Task families.</li>
+                        <li> <b>Task families</b> (for common runtime properties and for triggering).</li>
 
-                        <li> Task retry for automated failure recovery.</li>
+                        <li> <b>Automated failure recovery:</b> task retry and alternate paths.</li>
 
-                        <li> Central alerting and timeouts for operational suites.</li>
+                        <li> <b>Event hooks</b> for central alerting and timeouts.</li>
 
-                        <li> Portable suites are easy to construct -
+                        <li> <b>Portable suites</b> are easy to construct -
                         just copy another user's suite and run it.</li>
 
-                        <li> Simulation mode: get the scheduling right,
-                        on an accelerated clock, without running 
-                        real tasks.</li>
+                        <li> <b>Simulation mode</b>: get the scheduling right,
+                        on an accelerated clock, without running real tasks.</li>
 
-                        <li> One-off asynchronous tasks for constructing 
+                        <li> <b>One-off asynchronous tasks</b> for constructing 
                         one-off suites of non-cycling tasks.</li>
 
-                        <li> Repeating asynchronous tasks for processing 
-                        real time satellite datasets (in parallel if the
-                        data comes in quickly).</li>
+                        <li> <b>Repeating asynchronous tasks</b> for parallel processing 
+                        of real time satellite datasets.</li>
 				</ul>
 
 			<h4><span>Coming Soon</span></h4>
@@ -290,12 +281,12 @@
             </span></p>
 
             <p class="p2"><span><em>The Cylc User Guide for the 
-                    latest release <b>cylc-3.5.1</b></em> is also
+                    latest release <b>cylc-4.0.0-rc1</b></em> is also
                 held online here:
             </span></p>
 
             <ul>
-                <li> <a href="CylcUserGuide.pdf">Cylc User Guide (PDF, ~5MB)</a></li>
+                <li> <a href="CylcUserGuide.pdf">Cylc User Guide (PDF, ~5.5MB)</a></li>
                 <li> <a href="cug-html.html">Cylc User Guide (HTML) </a> </li>
             </ul>
 
@@ -342,7 +333,7 @@ install them):
     graph viewer (LGPL license)</li>
     <li> the 
     <a href="http://www.voidspace.org.uk/python">ConfigObj and Validate</a>
-    modules (BSD license)</li>
+    Python modules (BSD license)</li>
 </ul>
 
     <p class="nav"><span><a href="#">(back to top)</a></span></p>
@@ -350,9 +341,12 @@ install them):
 <div id="download" />
 <h3><span>Download</span></h3>
 
+<div style="color:red; font-weight:bold; background:yellow">WARNING, Oct
+18 2011: cylc-4.0.0-rc1 is not backward compatible with cylc-3.x.</div>
+
 <p class="p1"><span>
     You can download the latest release tarball from GitHub:
-    <a href="https://github.com/downloads/hjoliver/cylc/cylc-3.5.1.tgz">cylc-3.5.1.tgz</a>.
+    <a href="https://github.com/downloads/hjoliver/cylc/cylc-4.0.0-rc1.tgz">cylc-4.0.0-rc1.tgz</a>.
 </span></p>
 
 <p class="p1"><span>
@@ -390,8 +384,8 @@ system clock is not in UTC mode.</pre>
             <h3><span>Support</span></h3>
 
                <p class="p1"><span>A cylc mailing list and wiki will be 
-                set up when/if we get some external users. In the
-                meantime you can refer to the existing  
+                set up when we get a sufficient number of external
+                users. In the meantime you can refer to the existing  
                 <a href="#documentation">cylc documentation</a>, 
                 and feel free to email Hilary Oliver at
                 <b>h.oliver@niwa.co.nz</b> with any questions.</span></p>

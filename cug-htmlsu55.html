@@ -4,38 +4,43 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Use Generic Task Scripts</title> 
+<head><title>Clock-triggered Tasks Wait On External Data</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3704--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3927--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu56.html" >next</a>] [<a 
 href="cug-htmlsu54.html" >prev</a>] [<a 
 href="cug-htmlsu54.html#tailcug-htmlsu54.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu55.html">tail</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu55.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">11.8   </span> <a 
- id="x79-12700011.8"></a>Use Generic Task Scripts</h4>
-<!--l. 3706--><p class="noindent" >If your suite contains multiple logically distinct tasks that actually have similar functionality (e.g.&#x00A0;for moving files
-around, or for generating similar products from the output of several similar models) have the corresponding cylc
-tasks all call the same command, script, or executable - just provide different input parameters via the task
-command scripting and/or execution environment, in the suite.rc file.
+href="cug-htmlse12.html#cug-htmlsu55.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.13   </span> <a 
+ id="x85-12100012.13"></a>Clock-triggered Tasks Wait On External Data</h4>
+<!--l. 3929--><p class="noindent" >All tasks in a cylc suite know their own private cycle time, but most don&#8217;t care about the wall clock time - they just
+run when their prerequisites are satisfied. The exception to this is <span 
+class="cmti-10">clock-triggered </span>tasks, which wait on a wall clock
+time expressed as an offset from their own cycle time, in addition to any other prerequisites. The usual purpose of
+these tasks is to retrieve real time data from the external world, triggering at roughly the expected time of
+availability of the data. Triggering the task at the right time is up to cylc, but the task itself should go into a
+check-and-wait loop in case the data is delayed; only on successful detection or retrieval should the task report
+success and then exit (or perhaps report failure and then exit if the data has not arrived by some cutoff
+time).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3715--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3942--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu56.html" >next</a>] [<a 
 href="cug-htmlsu54.html" >prev</a>] [<a 
 href="cug-htmlsu54.html#tailcug-htmlsu54.html" >prev-tail</a>] [<a 
 href="cug-htmlsu55.html" >front</a>] [<a 
-href="cug-htmlse11.html#cug-htmlsu55.html" >up</a>] </p></div>
-<!--l. 3715--><p class="indent" >   <a 
+href="cug-htmlse12.html#cug-htmlsu55.html" >up</a>] </p></div>
+<!--l. 3942--><p class="indent" >   <a 
  id="tailcug-htmlsu55.html"></a> </p> 
 </body></html> 

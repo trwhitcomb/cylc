@@ -4,80 +4,165 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite Design Principles</title> 
+<head><title>Other Topics In Brief</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3559--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu48.html" >next</a>] [<a 
-href="cug-htmlsu47.html" >prev</a>] [<a 
-href="cug-htmlsu47.html#tailcug-htmlsu47.html" >prev-tail</a>] [<a 
+   <!--l. 3611--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse12.html" >next</a>] [<a 
+href="cug-htmlsu42.html" >prev</a>] [<a 
+href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse11.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse11.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">11   </span> <a 
- id="x71-11800011"></a>Suite Design Principles</h3>
-<!--l. 3564--><p class="noindent" >
+ id="x69-10600011"></a>Other Topics In Brief</h3>
+<!--l. 3613--><p class="noindent" >For more help on any topic, see cylc command line help (which is comprehensive, and is included verbatim in
+Section&#x00A0;<a 
+href="cug-htmlse14.html#x96-216000B">B<!--tex4ht:ref: CommandReference --></a>); the suite.rc reference (Section&#x00A0;<a 
+href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>); the gcylc help menus; and the <span 
+class="cmti-10">Quick Start Guide </span>(Section&#x00A0;<a 
+href="cug-htmlse7.html#x31-320007">7<!--tex4ht:ref: QuickStartGuide --></a>); and all
+of the examples suites installed into the central suite database.
 </p>
-   <div class="subsectionTOCS">
-   &#x00A0;<span class="subsectionToc" >11.1 <a 
-href="cug-htmlsu48.html#x72-11900011.1">Make Fine-Grained Suites</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.2 <a 
-href="cug-htmlsu49.html#x73-12000011.2">Use Include-Files For Groups Of Related Tasks</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.3 <a 
-href="cug-htmlsu50.html#x74-12100011.3">Make Tasks Rerunnable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.4 <a 
-href="cug-htmlsu51.html#x75-12200011.4">Make Models Rerunnable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.5 <a 
-href="cug-htmlsu52.html#x76-12300011.5">Limit Previous-Instance Dependence</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.6 <a 
-href="cug-htmlsu53.html#x77-12400011.6">Put Task Cycle Time In All Output File Paths</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >11.6.1 <a 
-href="cug-htmlsu53.html#x77-12500011.6.1" id="QQ2-77-165">Use Cylc&#8217;s Cycle Time Filename Template Utility</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.7 <a 
-href="cug-htmlsu54.html#x78-12600011.7">How To Manage Input/Output File Dependencies</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.8 <a 
-href="cug-htmlsu55.html#x79-12700011.8">Use Generic Task Scripts</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.9 <a 
-href="cug-htmlsu56.html#x80-12800011.9">Make Suites Portable</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.10 <a 
-href="cug-htmlsu57.html#x81-12900011.10">Make Tasks As Self-Contained As Possible</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.11 <a 
-href="cug-htmlsu58.html#x83-13000011.11">Make Suites As Self-Contained As Possible</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.12 <a 
-href="cug-htmlsu59.html#x85-13100011.12">Orderly Product Generation?</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.13 <a 
-href="cug-htmlsu60.html#x86-13200011.13">Clock-triggered Tasks Wait On External Data</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >11.14 <a 
-href="cug-htmlsu61.html#x87-13300011.14">Do Not Treat Real Time Operation As Special</a></span>
-   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+     <ul class="itemize1">
+     <li class="itemize">The difference between cold-, warm-, raw-, and re-starting, a suite (see <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span>)
+     </li>
+     <li class="itemize">Intervening in suites, e.g.&#x00A0;stopping, removing, inserting tasks; (see <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">control</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span>)
+     </li>
+     <li class="itemize">Interrogating       suites       and       tasks       (<span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">info</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span>,       <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">show</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span>,       and
+     <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">discovery</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span>)
+     </li>
+     <li class="itemize">Understanding cylc suite evolution, particularly in catch up operation (the <span 
+class="cmti-10">Quick Start Guide </span>will also
+     help here, along with the cylc example suites, and running your real suites in simulation mode)
+     </li>
+     <li class="itemize">suite security - use of secure passphrases (this is trivial to configure, see documentation of the <span 
+class="cmti-10">use</span>
+     <span 
+class="cmti-10">secure passphrase </span>configuration item in the <span 
+class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>)
+     </li>
+     <li class="itemize">automatic state dump backups, named pre-intervention state dumps (mentioned in the <span 
+class="cmti-10">Quick Start</span>
+     <span 
+class="cmti-10">Guide</span>; watch the suite log after intervening in a suite)
+     </li>
+     <li class="itemize">centralized alerting and timeouts (see documentation of <span 
+class="cmti-10">task event hooks </span>in the <span 
+class="cmti-10">Suite.rc Reference</span>,
+     Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>)
+     </li>
+     <li class="itemize">Recursive purge - this is a powerful suite intervention but you need to understand how it works before
+     using it. See <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">purge</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span> for details.
+     </li>
+     <li class="itemize">Handling   spin-up   processes   via   temporary   tasks   and   adding   prerequisites   on-the-fly   -   see
+     <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">depend</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">help</span></span>, and note that when you insert a task into a running suite (a) the initial cycle
+     time can be in the past; and (b) you can give a final cycle time after which the task will be eliminated
+     from the suite.
+     </li>
+     <li class="itemize">Sub-suites - running another suite inside a task:  <!--l. 3665-->
+     <div class="lstlisting" id="listing-104"><span class="label"><a 
+ id="x69-106001r1"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x69-106002r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x69-106003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">until</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">"</span>
+     
+     </div>
+     </li></ul>
                                                                                          
 
                                                                                          
-   <!--l. 3848--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu48.html" >next</a>] [<a 
-href="cug-htmlsu47.html" >prev</a>] [<a 
-href="cug-htmlsu47.html#tailcug-htmlsu47.html" >prev-tail</a>] [<a 
+   <!--l. 3674--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse12.html" >next</a>] [<a 
+href="cug-htmlsu42.html" >prev</a>] [<a 
+href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
 href="cug-htmlse11.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse11.html" >up</a>] </p></div>
-<!--l. 3848--><p class="indent" >   <a 
+<!--l. 3674--><p class="indent" >   <a 
  id="tailcug-htmlse11.html"></a> </p> 
 </body></html> 

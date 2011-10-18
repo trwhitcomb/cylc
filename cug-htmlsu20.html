@@ -4,45 +4,395 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>examples:CUG_QS3 - With Task Implementation</title> 
+<head><title>Import The QuickStart Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1243--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1008--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu20.html">tail</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.8   </span> <a 
- id="x33-400005.8"></a>examples:CUG_QS3 - With Task Implementation</h4>
-<!--l. 1245--><p class="noindent" >The suite <span 
-class="cmti-10">examples:CUG</span><span 
-class="cmti-10">_QS3 </span>is the same as <span 
-class="cmti-10">examples:CUG</span><span 
-class="cmti-10">_QS2 </span>except that it has real task implementations -
-scripts located in the suite bin directory that generate output files and consume input files in such a way that they
-have to run according to the graph of Figure&#x00A0;<a 
-href="cug-htmlsu19.html#x32-3901226">26<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>. The suite gets them to run together out of a common I/O
-workspace, configured via the suite.rc file.
-</p><!--l. 1253--><p class="indent" >   By studying this suite and its tasks, and by making quick copies of it to modify and run, you should be able to
-learn a lot about how to build real cylc suites.
+href="cug-htmlse7.html#cug-htmlsu20.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.3   </span> <a 
+ id="x34-350007.3"></a>Import The QuickStart Suites</h4>
+<!--l. 1010--><p class="noindent" >You can register new suites directly in your private database, via gcylc or <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">register</span></span>, or you can import
+suites from the central database that is visible to all users. Suites in the central database can be view, validated, and
+graphed, etc., but you have to import them in order to run them. Section&#x00A0;<a 
+href="cug-htmlse6.html#x27-270006">6<!--tex4ht:ref: SuiteRegistration --></a> explains exactly what actions can be
+performed on suites in central and private databases.
+</p><!--l. 1018--><p class="indent" >   In gcylc, find the Quick Start suites (use View <span 
+class="cmsy-10">&#x2192; </span>Filter to filter for &#8220;QuickStart&#8221; if you like), right click on the
+<span 
+class="cmti-10">QuickStart </span>group and choose &#8216;Import&#8217; to copy the whole group to your private database. In the dialog box that pops
+up, enter &#8216;QuickStart&#8217; as the TARGET suite name, and <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span></span> (or some other directory of your choice)
+as a destination for the suite definition directories in the group. Equivalently, on the command line:
+</p><!--l. 1025-->
+   <div class="lstlisting" id="listing-19"><span class="label"><a 
+ id="x34-35001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">import</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;.</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quickstart</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35002r2"></a></span><span 
+class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TO</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35004r4"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35005r5"></a></span><span 
+class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TO</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35007r7"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35008r8"></a></span><span 
+class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TO</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35010r10"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span>
+   
+   </div>
+<!--l. 1038--><p class="indent" >   Note that you can also import individual suites, and that registration groups do not need to be created explicitly
+- they are automatically created and deleted as required.
+</p><!--l. 1042--><p class="indent" >   Now switch gcylc back to your private database and confirm that you have a copy of the example suites; on the
+command line: </p><!--l. 1044-->
+   <div class="lstlisting" id="listing-20"><span class="label"><a 
+ id="x34-35011r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pr</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">t</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35012r2"></a></span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35013r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35014r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35015r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x34-35016r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">z</span>
+   
+   </div>
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 1257--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1053--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="cug-htmlsu20.html" >front</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu20.html" >up</a>] </p></div>
-<!--l. 1257--><p class="indent" >   <a 
+href="cug-htmlse7.html#cug-htmlsu20.html" >up</a>] </p></div>
+<!--l. 1053--><p class="indent" >   <a 
  id="tailcug-htmlsu20.html"></a> </p> 
 </body></html> 

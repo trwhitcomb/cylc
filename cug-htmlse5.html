@@ -4,217 +4,63 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Quick Start Guide</title> 
+<head><title>Cylc&#8217;s Example Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-08-15 17:29:00" /> 
+<meta name="date" content="2011-10-18 14:03:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 789--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 762--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu13.html" >next</a>] [<a 
 href="cug-htmlse4.html" >prev</a>] [<a 
 href="cug-htmlse4.html#tailcug-htmlse4.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse5.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse5.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
- id="x23-260005"></a>Quick Start Guide</h3>
-<!--l. 794--><p class="noindent" >This section works through some basic cylc functionality using the &#8220;QuickStart&#8221; example suites, which should have
-been registered in the central suite database during cylc installation,
-</p>
-   <!--l. 799-->
-   <div class="lstlisting" id="listing-13"><span class="label"><a 
- id="x23-26001r1"></a></span><span 
+ id="x24-240005"></a>Cylc&#8217;s Example Suites</h3>
+<!--l. 764--><p class="noindent" >Cylc has been designed from the ground up to make prototyping and testing new suites very easy. Simply drawing
+(in text) a dependency graph in a new suite definition creates a valid suite that you can run (the tasks will be
+<span 
+class="cmti-10">dummy tasks </span>that default to emitting an identifying message, sleeping for a few seconds, and then exiting; but you
+can then arrange for particular tasks to do more complex things by configuring task runtime properties
+appropriately).
+</p><!--l. 772--><p class="indent" >   Cylc has quite a number of example suites intended to illustrate most facets of suite construction. These are held
+centrally under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">grep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x23-26002r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">SNIP</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">1</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~</span><span 
-class="pcrr7t-">admin</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG5</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">one</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x23-26003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">SNIP</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">2</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG5</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">two</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x23-26004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">CUG_QS3</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">SNIP</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x2423;</span><span 
-class="pcrr7t-">3</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CUG5</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">three</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x23-26005r5"></a></span><span 
-class="pcrr7t-">DONE</span>
-   
-   </div>
-<!--l. 807--><p class="indent" >   (suite titles have been truncated above to reduce line length).
-</p><!--l. 810--><p class="noindent" >
+class="pcrr7t-">examples</span></span> and are exported to the central suite database, accessible to all users, when
+cylc is installed. They all run &#8220;out the box&#8221; and can be copied and modified by users to test almost
+anything. Some of them just configure a suite dependency graph, in which case cylc will run dummy
+tasks according to the graph; some also configure task runtime properties (e.g.&#x00A0;command scripting
+and environment variables) within the suite definition; and some have real task implementations that
+generate and consume real files and which will fail if they are not executed in the right order. All of the
+example suites use their registration names, portably via suite and task identity variable supplied by cylc
+(this is in fact the default situation) in all suite and task I/O paths, so you can run multiple copies
+of the same example suite at once, under different names, without changing anything in the suite
+definition.
+</p><!--l. 789--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >5.1 <a 
-href="cug-htmlsu13.html#x24-270005.1">Configuring Your Environment For Cylc</a></span>
+href="cug-htmlsu13.html#x25-250005.1">Using The Example Suites</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >5.2 <a 
-href="cug-htmlsu14.html#x25-280005.2">Starting The gcylc GUI</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.2.1 <a 
-href="cug-htmlsu14.html#x25-290005.2.1" id="QQ2-25-49">Central Suite Database Actions</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.3 <a 
-href="cug-htmlsu15.html#x26-300005.3">Importing The QuickStart Suites To Your Private Database</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.1 <a 
-href="cug-htmlsu15.html#x26-310005.3.1" id="QQ2-26-51">By The Command Line</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.2 <a 
-href="cug-htmlsu15.html#x26-320005.3.2" id="QQ2-26-52">Private Suite Database Actions</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.4 <a 
-href="cug-htmlsu16.html#x27-330005.4">Viewing The examples:CUG_QS1 Suite Definition</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.5 <a 
-href="cug-htmlsu17.html#x28-340005.5">Plotting The examples:CUG_QS1 Dependency Graph</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.6 <a 
-href="cug-htmlsu18.html#x30-350005.6">Running The examples:CUG_QS1 Suite</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.6.1 <a 
-href="cug-htmlsu18.html#x30-360005.6.1" id="QQ2-30-62">Viewing Task States</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.6.2 <a 
-href="cug-htmlsu18.html#x30-370005.6.2" id="QQ2-30-64">Triggering Tasks Manually</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.6.3 <a 
-href="cug-htmlsu18.html#x30-380005.6.3" id="QQ2-30-65">Shutting Down And Restarting A Suite</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.7 <a 
-href="cug-htmlsu19.html#x32-390005.7">examples:CUG_QS2 - Handling Model Cold Starts Properly</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.8 <a 
-href="cug-htmlsu20.html#x33-400005.8">examples:CUG_QS3 - With Task Implementation</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.9 <a 
-href="cug-htmlsu21.html#x34-410005.9">Following What&#8217;s Happening In A Running Suite</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.9.1 <a 
-href="cug-htmlsu21.html#x34-420005.9.1" id="QQ2-34-70">Suite Stdout and Stderr</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.9.2 <a 
-href="cug-htmlsu21.html#x34-430005.9.2" id="QQ2-34-72">Suite Logs</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.9.3 <a 
-href="cug-htmlsu21.html#x34-440005.9.3" id="QQ2-34-74">Task Stdout and Stderr Logs</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.10 <a 
-href="cug-htmlsu22.html#x35-450005.10">Searching A Suite</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.11 <a 
-href="cug-htmlsu23.html#x36-460005.11">Comparing Suites</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.12 <a 
-href="cug-htmlsu24.html#x37-470005.12">Validating A Suite</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.13 <a 
-href="cug-htmlsu25.html#x38-480005.13">Using Example Suites To Understand Cylc</a></span>
+href="cug-htmlsu14.html#x26-260005.2">Choosing The Initial Cycle Time</a></span>
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
                                                                                          
 
                                                                                          
-   <!--l. 1460--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 846--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu13.html" >next</a>] [<a 
 href="cug-htmlse4.html" >prev</a>] [<a 
 href="cug-htmlse4.html#tailcug-htmlse4.html" >prev-tail</a>] [<a 
 href="cug-htmlse5.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse5.html" >up</a>] </p></div>
-<!--l. 1460--><p class="indent" >   <a 
+<!--l. 846--><p class="indent" >   <a 
  id="tailcug-htmlse5.html"></a> </p> 
 </body></html> 
