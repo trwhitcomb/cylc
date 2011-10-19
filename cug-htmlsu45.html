@@ -4,42 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Tasks Rerunnable</title> 
+<head><title>Make Models Rerunnable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3713--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3742--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu45.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu45.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">12.3   </span> <a 
- id="x73-11000012.3"></a>Make Tasks Rerunnable</h4>
-<!--l. 3715--><p class="noindent" >It should be possible to rerun a task by simply resubmitting it for the same cycle time. In other words, failure at any
-point during execution of a task should not render a rerun impossible by corrupting the state of some internal-use
-file, or whatever. It&#8217;s difficult to overstate the usefulness of being able to rerun the same task multiple times, either
-outside of the suite with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>, or by retriggering it within the running suite, when debugging a
-problem.
+ id="x73-11100012.3"></a>Make Models Rerunnable</h4>
+<!--l. 3744--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
+next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
+files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold-start). Instead,
+consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
+simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
+given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
+archive.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3723--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3756--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="cug-htmlsu45.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu45.html" >up</a>] </p></div>
-<!--l. 3723--><p class="indent" >   <a 
+<!--l. 3756--><p class="indent" >   <a 
  id="tailcug-htmlsu45.html"></a> </p> 
 </body></html> 

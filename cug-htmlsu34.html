@@ -10,41 +10,41 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 2893--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2907--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu34.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.5   </span> <a 
- id="x57-900008.5"></a>Visualization</h4>
-<!--l. 2896--><p class="noindent" >This is the final major section in the suite.rc file. It is used to configure suite graph plotting - principally graph node
+ id="x57-910008.5"></a>Visualization</h4>
+<!--l. 2910--><p class="noindent" >This is the final major section in the suite.rc file. It is used to configure suite graph plotting - principally graph node
 (task) and edge (dependency arrow) style attributes. Tasks can be grouped for the purpose of applying common
 style attributes. See the suite.rc reference (Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>) for details.
-</p><!--l. 2902--><p class="noindent" >
+href="cug-htmlse13.html#x86-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>) for details.
+</p><!--l. 2916--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.5.1   </span> <a 
- id="x57-910008.5.1"></a>Collapsible Task Families In Suite Graphing And GUIs</h5>
-   <!--l. 2905-->
-   <div class="lstlisting" id="listing-83"><span class="label"><a 
- id="x57-91001r1"></a></span><span 
+ id="x57-920008.5.1"></a>Collapsible Task Families In Suite Graphing And GUIs</h5>
+   <!--l. 2919-->
+   <div class="lstlisting" id="listing-84"><span class="label"><a 
+ id="x57-92001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91002r2"></a></span><span 
+ id="x57-92002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">visualization</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91003r3"></a></span><span 
+ id="x57-92003r3"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -69,7 +69,7 @@ class="pcrro7t-">collapsed</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">form</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91004r4"></a></span><span 
+ id="x57-92004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -86,21 +86,21 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">family2</span>
    
    </div>
-<!--l. 2913--><p class="indent" >   Nested families from the namespace inheritance hierarchy, even if they are not used as family triggers in the
+<!--l. 2927--><p class="indent" >   Nested families from the namespace inheritance hierarchy, even if they are not used as family triggers in the
 graph, can be expanded or collapsed in suite graphs and by menu options in the graph-based suite control GUI (this
 will also be added to the text treeview control GUI in a future release).
-</p><!--l. 2919--><p class="indent" >   Family nodes in the graph-based suite control GUI are not currently color-coded in real time according to what
+</p><!--l. 2933--><p class="indent" >   Family nodes in the graph-based suite control GUI are not currently color-coded in real time according to what
 state their members are in. However, any ungraphed tasks, which includes the members of collapsed families, are
 automatically plotted as rectangular nodes to the right of the main graph if they are doing anything interesting
 (submitted, running, or failed).
-</p><!--l. 2926--><p class="indent" >   Note that family relationships can be defined purely for visualization purposes - you can group tasks at root level
+</p><!--l. 2940--><p class="indent" >   Note that family relationships can be defined purely for visualization purposes - you can group tasks at root level
 in the inheritance hierarchy prior to defining real properties at higher levels.
-</p><!--l. 2930--><p class="indent" >   Figure&#x00A0;<a 
-href="#x57-9102036">36<!--tex4ht:ref: fig-namespaces --></a> illustrates successive expansion of nested task families in the <span 
+</p><!--l. 2944--><p class="indent" >   Figure&#x00A0;<a 
+href="#x57-9202036">36<!--tex4ht:ref: fig-namespaces --></a> illustrates successive expansion of nested task families in the <span 
 class="cmti-10">namespaces </span>example suite, which has the
-following namespace hierarchy: </p><!--l. 2933-->
-   <div class="lstlisting" id="listing-84"><span class="label"><a 
- id="x57-91005r1"></a></span><span 
+following namespace hierarchy: </p><!--l. 2947-->
+   <div class="lstlisting" id="listing-85"><span class="label"><a 
+ id="x57-92005r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -120,22 +120,22 @@ class="pcrr7t-">z</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">namespaces</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91006r2"></a></span><span 
+ id="x57-92006r2"></a></span><span 
 class="pcrr7t-">root</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91007r3"></a></span><span 
+ id="x57-92007r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">GEN</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91008r4"></a></span><span 
+ id="x57-92008r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">OPS</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91009r5"></a></span><span 
+ id="x57-92009r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -154,7 +154,7 @@ class="pcrr7t-">obs</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">processing</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91010r6"></a></span><span 
+ id="x57-92010r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -176,7 +176,7 @@ class="pcrr7t-">obs</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">processing</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91011r7"></a></span><span 
+ id="x57-92011r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -191,14 +191,14 @@ class="pcrr7t-">ATOVS</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">postprocessing</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91012r8"></a></span><span 
+ id="x57-92012r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
 class="pcrr7t-">VAR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91013r9"></a></span><span 
+ id="x57-92013r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -219,7 +219,7 @@ class="pcrr7t-">VAR</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">AnalysePF</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91014r10"></a></span><span 
+ id="x57-92014r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -239,12 +239,12 @@ class="pcrr7t-">VAR</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">ConfigureLS</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91015r11"></a></span><span 
+ id="x57-92015r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91016r12"></a></span><span 
+ id="x57-92016r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -267,7 +267,7 @@ class="pcrr7t-">of</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91017r13"></a></span><span 
+ id="x57-92017r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -290,7 +290,7 @@ class="pcrr7t-">of</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91018r14"></a></span><span 
+ id="x57-92018r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">foo</span><span 
@@ -312,7 +312,7 @@ class="pcrr7t-">description</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">provided</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x57-91019r15"></a></span><span 
+ id="x57-92019r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
 class="pcrr7t-">prepobs</span><span 
@@ -335,46 +335,46 @@ class="pcrr7t-">preprocessing</span>
 
                                                                                          
 <a 
- id="x57-9102036"></a>
+ id="x57-9202036"></a>
                                                                                          
 
                                                                                          
 <div class="minipage"><div class="center" 
 >
-<!--l. 2953--><p class="noindent" >
+<!--l. 2967--><p class="noindent" >
 
-</p><!--l. 2954--><p class="noindent" ><img 
+</p><!--l. 2968--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-2.png" alt="PIC"  
  /></p></div></div>                            <div class="minipage"><div class="center" 
 >
-<!--l. 2959--><p class="noindent" >
+<!--l. 2973--><p class="noindent" >
 
-</p><!--l. 2960--><p class="noindent" ><img 
+</p><!--l. 2974--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-3.png" alt="PIC"  
  /></p></div></div><div class="minipage"><div class="center" 
 >
-<!--l. 2965--><p class="noindent" >
+<!--l. 2979--><p class="noindent" >
 
-</p><!--l. 2966--><p class="noindent" ><img 
+</p><!--l. 2980--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-4.png" alt="PIC"  
  /></p></div></div>
 <div class="minipage"><div class="center" 
 >
-<!--l. 2971--><p class="noindent" >
+<!--l. 2985--><p class="noindent" >
 
-</p><!--l. 2972--><p class="noindent" ><img 
+</p><!--l. 2986--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-5.png" alt="PIC"  
  /></p></div></div>                            <div class="minipage"><div class="center" 
 >
-<!--l. 2977--><p class="noindent" >
+<!--l. 2991--><p class="noindent" >
 
-</p><!--l. 2978--><p class="noindent" ><img 
+</p><!--l. 2992--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-6.png" alt="PIC"  
  /></p></div></div><div class="minipage"><div class="center" 
 >
-<!--l. 2983--><p class="noindent" >
+<!--l. 2997--><p class="noindent" >
 
-</p><!--l. 2984--><p class="noindent" ><img 
+</p><!--l. 2998--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-7.png" alt="PIC"  
  /></p></div></div>
 <br /> <div class="caption" 
@@ -386,17 +386,17 @@ class="cmr-7">example suite showing various states of expansion of the nested na
 <span 
 class="cmr-7">from all families collapsed (top left) through to all expanded (bottom right). This can also be done by right-clicking on tasks in the</span>
 <span 
-class="cmr-7">graph-based suite control GUI.</span></span></div><!--tex4ht:label?: x57-9102036 -->
+class="cmr-7">graph-based suite control GUI.</span></span></div><!--tex4ht:label?: x57-9202036 -->
                                                                                          
 
                                                                                          
    </div><hr class="endfigure" />
-   <!--l. 3029--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3043--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
 href="cug-htmlsu34.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
-<!--l. 3029--><p class="indent" >   <a 
+<!--l. 3043--><p class="indent" >   <a 
  id="tailcug-htmlsu34.html"></a>  </p> 
 </body></html> 

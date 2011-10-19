@@ -4,43 +4,52 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Clock Rate and Offset</title> 
+<head><title>Switching A Suite Between Simulation And Live Modes?</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4092--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu66.html" >next</a>] [<a 
-href="cug-htmlse17.html" >prev</a>] [<a 
-href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
+   <!--l. 4115--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
+href="cug-htmlsu64.html" >prev</a>] [<a 
+href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu65.html">tail</a>] [<a 
 href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">E.1   </span> <a 
- id="x102-293000E.1"></a>Clock Rate and Offset</h4>
-<!--l. 4094--><p class="noindent" >Simulation mode suites run on an accelerated clock so that you can test things very quickly. You can set the clock
-rate and offset with respect to the initial cycle time with options to the <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">run</span></span> command. An offset of 10 hours,
-say, means that the simulation mode clock starts at 10 hours prior to the suite&#8217;s initial cycle time. You can thus
-simulate the behaviour of the suite as it catches up from a delay and transitions to real time operation. By default,
-the clock runs at a rate of 10 seconds real time to 1 hour suite time, and with an initial offset of 10
-hours.
-                                                                                         
-
-                                                                                         
+   <h4 class="subsectionHead"><span class="titlemark">E.2   </span> <a 
+ id="x102-298000E.2"></a>Switching A Suite Between Simulation And Live Modes?</h4>
+<!--l. 4117--><p class="noindent" >The scheduler mode (simulation or live) is recorded in the suite state dump file. <span 
+class="cmti-10">Cylc will not let you restart a</span>
+<span 
+class="cmti-10">simulation mode suite in live, or a live mode suite in simulation mode </span>- any attempt to do the former must certainly
+be a mistake, and doing the latter, while feasible, would corrupt your live suite state dump and turn it over to
+simulation mode. Note, however, that if you really want to run the current state of a live suite forward in simulation
+mode, all you need to do is this:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x102-298002x1">back up the live state dump (or take note of the filename of the relevant automatic dump when you
+     do the final suite shutdown intervention).
+     </li>
+     <li 
+  class="enumerate" id="x102-298004x2">edit the mode line in the state dump file, and restart the suite in simulation mode.
+     </li>
+     <li 
+  class="enumerate" id="x102-298006x3">later, restart the live suite from the pre simulation mode state dump backup</li></ol>
+<!--l. 4135--><p class="indent" >   <span 
+class="cmti-10">Cylc can also create an instant dummy mode clone of the current state of any running or stopped suite, but this</span>
+<span 
+class="cmti-10">&#8220;practice mode&#8221; has been disabled in the current release pending testing.</span>
 </p>
-   <!--l. 4104--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu66.html" >next</a>] [<a 
-href="cug-htmlse17.html" >prev</a>] [<a 
-href="cug-htmlse17.html#tailcug-htmlse17.html" >prev-tail</a>] [<a 
+   <!--l. 4237--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
+href="cug-htmlsu64.html" >prev</a>] [<a 
+href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="cug-htmlsu65.html" >front</a>] [<a 
 href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
-<!--l. 4104--><p class="indent" >   <a 
+<!--l. 4237--><p class="indent" >   <a 
  id="tailcug-htmlsu65.html"></a> </p> 
 </body></html> 

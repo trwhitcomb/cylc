@@ -4,42 +4,76 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Do Not Treat Real Time Operation As Special</title> 
+<head><title>Top Level Items</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3942--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse13.html" >next</a>] [<a 
-href="cug-htmlsu55.html" >prev</a>] [<a 
-href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
+   <!--l. 18--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu57.html" >next</a>] [<a 
+href="cug-htmlse13.html" >prev</a>] [<a 
+href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu56.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu56.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.14   </span> <a 
- id="x86-12200012.14"></a>Do Not Treat Real Time Operation As Special</h4>
-<!--l. 3944--><p class="noindent" >Cylc suites, without modification, can handle real time and delayed operation equally well.
-</p><!--l. 3947--><p class="indent" >   In real time operation clock-triggered tasks constrain the behaviour of the whole suite, or at least of all tasks
-downstream of them in the dependency graph.
-</p><!--l. 3951--><p class="indent" >   In delayed operation (due to an actual delay in an operational suite or because you&#8217;re running an historical case
-study) clock-triggered tasks will not constrain the suite at all, and cylc&#8217;s multi-cycling abilities come to the fore,
-because their trigger times have already passed. But if a clock-triggered task happens to catch up to the wall clock,
-it will automatically wait again. In this way a cylc suite naturally and seamlessly transitions between delayed and
-real time operation as required.
+href="cug-htmlse13.html#cug-htmlsu56.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
+ id="x87-124000A.1"></a>Top Level Items</h4>
+<!--l. 20--><p class="noindent" >The only top level configuration items at present are the suite title and description.
+</p><!--l. 23--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.1.1   </span> <a 
+ id="x87-125000A.1.1"></a>title</h5>
+<!--l. 25--><p class="noindent" >The suite title is displayed in the gcylc suite database window. It can also be retrieved from a suite at run time with
+<span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span></span>).
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">type: </span>string
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>&#8220;No title provided&#8221;</li></ul>
+<!--l. 34--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">A.1.2   </span> <a 
+ id="x87-126000A.1.2"></a>description</h5>
+<!--l. 36--><p class="noindent" >The suite description can be retrieved by gcylc right-click menu. It can also be retrieved from a suite at run time
+with <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span></span>).
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">type: </span>string
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">default: </span>&#8220;No description provided&#8221;</li></ul>
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse13.html" >next</a>] [<a 
-href="cug-htmlsu55.html" >prev</a>] [<a 
-href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
+   <!--l. 45--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu57.html" >next</a>] [<a 
+href="cug-htmlse13.html" >prev</a>] [<a 
+href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
 href="cug-htmlsu56.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu56.html" >up</a>] </p></div>
-<!--l. 1--><p class="indent" >   <a 
- id="tailcug-htmlsu56.html"></a> </p> 
+href="cug-htmlse13.html#cug-htmlsu56.html" >up</a>] </p></div>
+<!--l. 45--><p class="indent" >   <a 
+ id="tailcug-htmlsu56.html"></a>  </p> 
 </body></html> 

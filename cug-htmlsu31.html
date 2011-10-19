@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1686--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1684--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu32.html" >next</a>] [<a 
 href="cug-htmlsu30.html" >prev</a>] [<a 
 href="cug-htmlsu30.html#tailcug-htmlsu30.html" >prev-tail</a>] [<a 
@@ -22,10 +22,10 @@ href="#tailcug-htmlsu31.html">tail</a>] [<a
 href="cug-htmlse8.html#cug-htmlsu31.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.2   </span> <a 
  id="x47-530008.2"></a>Suite.rc Overview</h4>
-<!--l. 1689--><p class="noindent" >Cylc suite.rc files are parsed directly into a nested data structure that mirrors the file section nesting. This makes it
+<!--l. 1687--><p class="noindent" >Cylc suite.rc files are parsed directly into a nested data structure that mirrors the file section nesting. This makes it
 very easy to add new configuration items to cylc. The underlying file structure is based on ConfigObj
 (http://www.voidspace.org.uk/python/configobj.html), slightly modified for cylc.
-</p><!--l. 1696--><p class="noindent" >
+</p><!--l. 1694--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.1   </span> <a 
  id="x47-540008.2.1"></a>Syntax</h5>
@@ -77,7 +77,7 @@ href="cug-html49.html#fn9x0"><sup class="textsuperscript">9</sup></a></span><a
      <li class="itemize"><span 
 class="cmbx-10">Include-files </span>can be used, and may be multiply-included and nested. Inclusion boundaries are arbitrary (they
      can span sections). Include-file paths should be specified portably relative to the suite definition directory, e.g.:
-     <!--l. 1726-->
+     <!--l. 1724-->
      <div class="lstlisting" id="listing-39"><span class="label"><a 
  id="x47-54003r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -113,7 +113,7 @@ class="pcrr7t-">rc</span>
 
                                                                                          
      </li></ul>
-<!--l. 1732--><p class="noindent" >The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1734-->
+<!--l. 1730--><p class="noindent" >The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1732-->
    <div class="lstlisting" id="listing-40"><span class="label"><a 
  id="x47-54005r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -486,9 +486,9 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">...</span>
    
    </div>
-<!--l. 1759--><p class="noindent" >
+<!--l. 1757--><p class="noindent" >
 </p>
-<!--l. 1759--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 1757--><p class="noindent" ><span class="paragraphHead"><a 
  id="x47-550008.2.1.1"></a><span 
 class="cmbx-10">Syntax Highlighting In Vim</span></span>
    Cylc comes with a syntax file to configure suite.rc syntax highlighting and section folding in the <span 
@@ -516,11 +516,11 @@ class="pcrr7t-">HOME</span><span
 class="pcrr7t-">/.</span><span 
 class="pcrr7t-">vimrc</span></span>
 file.
-</p><!--l. 1771--><p class="noindent" >
+</p><!--l. 1769--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.2   </span> <a 
  id="x47-560008.2.2"></a>Gross File Structure</h5>
-<!--l. 1773--><p class="noindent" >Cylc suite.rc files consist of a suite title and description followed by configuration items grouped under several top
+<!--l. 1771--><p class="noindent" >Cylc suite.rc files consist of a suite title and description followed by configuration items grouped under several top
 level section headings:
 </p>
      <ul class="itemize1">
@@ -554,11 +554,11 @@ class="cmbx-10">[visualization]  </span>- suite graphing and the graph-based con
                                                                                          
 
                                                                                          
-<!--l. 1799--><p class="noindent" >
+<!--l. 1797--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.3   </span> <a 
  id="x47-570008.2.3"></a>Validation</h5>
-<!--l. 1802--><p class="noindent" >Cylc suite.rc files are automatically validated against a specification file that defines all legal entries, values, options,
+<!--l. 1800--><p class="noindent" >Cylc suite.rc files are automatically validated against a specification file that defines all legal entries, values, options,
 and defaults (<span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
@@ -573,9 +573,9 @@ determine their correctness (this is also done during validation). All legal ent
 class="cmti-10">Suite.rc</span>
 <span 
 class="cmti-10">Reference </span>(Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x87-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
-</p><!--l. 1811--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
-a missing right bracket. </p><!--l. 1813-->
+href="cug-htmlse13.html#x86-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
+</p><!--l. 1809--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
+a missing right bracket. </p><!--l. 1811-->
    <div class="lstlisting" id="listing-41"><span class="label"><a 
  id="x47-57001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -640,7 +640,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">1</span>
    
    </div>
-<!--l. 1821--><p class="indent" >   If the suite.rc file contains include-files use <span class="lstinline"><span 
+<!--l. 1819--><p class="indent" >   If the suite.rc file contains include-files use <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">inline</span></span> (or the gcylc right-click &#8216;Edit&#8217; inline option) to view
@@ -652,12 +652,12 @@ class="pcrr7t-">edit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">inline</span></span>).
-</p><!--l. 1826--><p class="noindent" >
+</p><!--l. 1824--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.4   </span> <a 
  id="x47-580008.2.4"></a>String Interpolation</h5>
-<!--l. 1828--><p class="noindent" >Configuration items beginning with an underscore are ignored by cylc, but may be used with the string interpolation
-mechanism provided by the ConfigObj file format. An example:  </p><!--l. 1832-->
+<!--l. 1826--><p class="noindent" >Configuration items beginning with an underscore are ignored by cylc, but may be used with the string interpolation
+mechanism provided by the ConfigObj file format. An example:  </p><!--l. 1830-->
    <div class="lstlisting" id="listing-42"><span class="label"><a 
  id="x47-58001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -726,8 +726,8 @@ class="pcrr7t-">BYE</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 1840--><p class="indent" >   Then, assuming this suite is registered as <span class="lstinline"><span 
-class="pcrr7t-">foo</span></span>, </p><!--l. 1841-->
+<!--l. 1838--><p class="indent" >   Then, assuming this suite is registered as <span class="lstinline"><span 
+class="pcrr7t-">foo</span></span>, </p><!--l. 1839-->
    <div class="lstlisting" id="listing-43"><span class="label"><a 
  id="x47-58006r1"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -775,12 +775,12 @@ class="pcrr7t-">']</span>
                                                                                          
 
                                                                                          
-   <!--l. 1846--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1844--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu32.html" >next</a>] [<a 
 href="cug-htmlsu30.html" >prev</a>] [<a 
 href="cug-htmlsu30.html#tailcug-htmlsu30.html" >prev-tail</a>] [<a 
 href="cug-htmlsu31.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu31.html" >up</a>] </p></div>
-<!--l. 1846--><p class="indent" >   <a 
+<!--l. 1844--><p class="indent" >   <a 
  id="tailcug-htmlsu31.html"></a>  </p> 
 </body></html> 

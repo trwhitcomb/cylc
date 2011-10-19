@@ -4,41 +4,44 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Models Rerunnable</title> 
+<head><title>Limit Previous-Instance Dependence</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-18 14:03:00" /> 
+<meta name="date" content="2011-10-19 21:36:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3723--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3756--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu46.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu46.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">12.4   </span> <a 
- id="x74-11100012.4"></a>Make Models Rerunnable</h4>
-<!--l. 3725--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
-next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
-files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold-start). Instead,
-consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
-simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
-given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
-archive.
+ id="x74-11200012.4"></a>Limit Previous-Instance Dependence</h4>
+<!--l. 3759--><p class="noindent" >Cylc does not require that successive instances of the same task run sequentially. In order to task advantage of this
+and achieve maximum functional parallelism whenever the opportunity arises (usually when catching up from a
+delay) you should ensure that tasks that in principle do not depend on their own previous instances (the vast
+majority of tasks in most suites, in fact) do not do so in practice. In other words, they should be
+able to run as soon as their prerequisites are satisfied regardless of whether or not their predecessors
+have finished yet. This generally just means ensuring that all file I/O contains the generating task&#8217;s
+cycle time in the file or directory name so that there is no interference between successive instances.
+If this is difficult to achieve in particular cases, however, you can declare the offending tasks to be
+<span 
+class="cmti-10">sequential</span>.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3737--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3782--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="cug-htmlsu46.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu46.html" >up</a>] </p></div>
-<!--l. 3737--><p class="indent" >   <a 
+<!--l. 3782--><p class="indent" >   <a 
  id="tailcug-htmlsu46.html"></a> </p> 
 </body></html> 
