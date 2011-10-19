@@ -52,7 +52,7 @@ class DefinitionError( Error ):
 class taskdef(object):
     def __init__( self, name ):
         if re.search( '[^0-9a-zA-Z_\.]', name ):
-            # dot for namespace syntax.
+            # dot for namespace syntax (NOT USED).
             # regex [\w] allows spaces.
             raise DefinitionError, "ERROR: Illegal task name: " + name
 
@@ -62,6 +62,8 @@ class taskdef(object):
         self.job_submission_shell = None
         self.job_submit_command_template = None
         self.job_submit_log_directory = None
+        self.job_submit_share_directory = None
+        self.job_submit_work_directory = None
         self.manual_messaging = False
         self.modifiers = []
         self.asyncid_pattern = None
@@ -73,14 +75,11 @@ class taskdef(object):
         self.remote_suite_directory = None
         self.remote_log_directory = None
 
-        self.hook_scripts = {}
-        for event in [ 'submitted', 'submission failed', 'started', 
-                'warning', 'succeeded', 'failed', 'timeout' ]:
-            self.hook_scripts[ event ] = None
-
-        self.timeouts = {}
-        for item in [ 'submission', 'execution', 'reset on incoming' ]:
-            self.timeouts[ item ] = None
+        self.hook_script = None
+        self.hook_events = []
+        self.submission_timeout = None
+        self.execution_timeout = None
+        self.reset_timer = None
 
         self.intercycle = False
         self.hours = []
@@ -114,6 +113,8 @@ class taskdef(object):
 
         self.environment = OrderedDict()  # var = value
         self.directives  = OrderedDict()  # var = value
+
+        self.namespace_hierarchy = []
 
     def add_trigger( self, msg, validity, suicide=False ):
         if suicide:
@@ -243,8 +244,11 @@ class taskdef(object):
         tclass.elapsed_times = []
         tclass.mean_total_elapsed_time = None
 
-        tclass.timeouts = self.timeouts
-        tclass.hook_scripts = self.hook_scripts
+        tclass.hook_script = self.hook_script
+        tclass.hook_events = self.hook_events
+        tclass.submission_timeout = self.submission_timeout
+        tclass.execution_timeout  = self.execution_timeout
+        tclass.reset_timer =self.reset_timer
 
         tclass.remote_host = self.remote_host
         tclass.owner = self.owner
@@ -257,12 +261,16 @@ class taskdef(object):
         tclass.job_submission_shell = self.job_submission_shell
         tclass.job_submit_command_template = self.job_submit_command_template
         tclass.job_submit_log_directory = self.job_submit_log_directory
+        tclass.job_submit_share_directory = self.job_submit_share_directory
+        tclass.job_submit_work_directory = self.job_submit_work_directory
         tclass.manual_messaging = self.manual_messaging
 
         tclass.valid_hours = self.hours
 
         tclass.intercycle = self.intercycle
         tclass.follow_on = self.follow_on_task
+
+        tclass.namespace_hierarchy = self.namespace_hierarchy
 
         def tclass_format_prerequisites( sself, preq ):
             m = re.search( '\$\(TAG\s*\-\s*(\d+)\)', preq )

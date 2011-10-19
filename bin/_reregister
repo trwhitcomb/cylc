@@ -22,14 +22,20 @@ from cylc.registration import dbgetter, RegistrationError, DatabaseLockedError
 
 parser = OptionParser( usage = """cylc [db] reregister|rename [options] SOURCE TARGET
 
-Change the registration path of a suite or group.
+Change the hierarchical registration name of a suite or group.
+Example:
+  cylc db rereg foo.bar.baz test.baz
 
 Arguments:
-    SOURCE, TARGET  - suite or group registrations.""" )
+    SOURCE, TARGET  - suite or group names.""" )
 
 parser.add_option( "-c", "--central",
         help="Target the central suite database.",
         action="store_true", default=False, dest="central" )
+
+parser.add_option( "-v","--verbose",
+        help="Print extra information.",
+        action="store_true", default=False, dest="verbose" )
 
 ( options, args ) = parser.parse_args()
 
@@ -39,7 +45,7 @@ if len(args) != 2:
 arg_from = args[0]
 arg_to = args[1]
 
-db = dbgetter( options.central ).db
+db = dbgetter( central=options.central, verbose=options.verbose ).db
 
 try:
     db.lock()

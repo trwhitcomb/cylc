@@ -320,9 +320,13 @@ class MainApp(object):
         file_menu_root = gtk.MenuItem( '_File' )
         file_menu_root.set_submenu( file_menu )
 
-        self.reg_new_item = gtk.MenuItem( '_New Suite Registration' )
+        self.reg_new_item = gtk.MenuItem( '_Register Existing Suite' )
         self.reg_new_item.connect( 'activate', self.newreg_popup )
         file_menu.append( self.reg_new_item )
+
+        self.reg_new_item2 = gtk.MenuItem( '_Register A New Suite' )
+        self.reg_new_item2.connect( 'activate', self.newreg2_popup )
+        file_menu.append( self.reg_new_item2 )
 
         exit_item = gtk.MenuItem( 'E_xit gcylc' )
         exit_item.connect( 'activate', self.delete_all_event, None )
@@ -519,7 +523,7 @@ The cylc forecast suite metascheduler.
         self.updater.start()
 
     def newreg_popup( self, w ):
-        dialog = gtk.FileChooserDialog(title='Register A Suite',
+        dialog = gtk.FileChooserDialog(title='Register Existing Suite (choose a suite.rc file)',
                 action=gtk.FILE_CHOOSER_ACTION_OPEN,
                 buttons=(gtk.STOCK_CANCEL,gtk.RESPONSE_CANCEL,
                     gtk.STOCK_OPEN,gtk.RESPONSE_OK))
@@ -539,7 +543,67 @@ The cylc forecast suite metascheduler.
 
         window = gtk.Window()
         window.set_border_width(5)
-        window.set_title( "Register A Suite" )
+        window.set_title( "New Registration" )
+
+        vbox = gtk.VBox()
+
+        label = gtk.Label( 'PATH: ' + dir )
+        vbox.pack_start( label, True )
+
+        box = gtk.HBox()
+        label = gtk.Label( 'SUITE:' )
+        box.pack_start( label, True )
+        as_entry = gtk.Entry()
+        box.pack_start (as_entry, True)
+        vbox.pack_start( box )
+
+        cancel_button = gtk.Button( "_Cancel" )
+        cancel_button.connect("clicked", lambda x: window.destroy() )
+
+        apply_button = gtk.Button( "_Register" )
+        apply_button.connect("clicked", self.new_reg, window, dir, as_entry )
+
+        help_button = gtk.Button( "_Help" )
+        help_button.connect("clicked", self.command_help, 'db', 'register' )
+
+        hbox = gtk.HBox()
+        hbox.pack_start( apply_button, False )
+        hbox.pack_end( cancel_button, False )
+        hbox.pack_end( help_button, False )
+        vbox.pack_start( hbox )
+
+        window.add( vbox )
+        window.show_all()
+
+    def newreg2_popup( self, w ):
+        dialog = gtk.FileChooserDialog(title='Register New Suite (choose or create suite definition directory)',
+                action=gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                buttons=(gtk.STOCK_CANCEL,gtk.RESPONSE_CANCEL,
+                    gtk.STOCK_OPEN,gtk.RESPONSE_OK))
+
+        response = dialog.run()
+        if response != gtk.RESPONSE_OK:
+            dialog.destroy()
+            return False
+
+        res = dialog.get_filename()
+        dialog.destroy()
+
+        if os.path.isdir( res ):
+            suiterc = os.path.join( res, 'suite.rc' )
+        else:
+            warning_dialog( res + " is not a directory" ).warn()
+            return False
+            
+        if not os.path.isfile( suiterc ):
+            info_dialog( "creating empty suite.rc file: " + suiterc ).inform()
+            os.system( 'touch ' + suiterc )
+
+        dir = os.path.dirname( suiterc )
+
+        window = gtk.Window()
+        window.set_border_width(5)
+        window.set_title( "New Suite" )
 
         vbox = gtk.VBox()
 
@@ -606,7 +670,7 @@ The cylc forecast suite metascheduler.
     def filter_popup(self, w):
         self.filter_window = gtk.Window()
         self.filter_window.set_border_width(5)
-        self.filter_window.set_title( "PATTERN" )
+        self.filter_window.set_title( "FILTER" )
         vbox = gtk.VBox()
 
         box = gtk.HBox()
@@ -816,11 +880,11 @@ The cylc forecast suite metascheduler.
 
                 menu.append( gtk.SeparatorMenuItem() )
 
-                out_item = gtk.MenuItem( 'View Suite _Output')
+                out_item = gtk.MenuItem( 'Suite _Output')
                 menu.append( out_item )
                 out_item.connect( 'activate', self.view_output, reg, state )
 
-                out_item = gtk.MenuItem( 'View Suite _Log')
+                out_item = gtk.MenuItem( 'Suite _Log')
                 menu.append( out_item )
                 out_item.connect( 'activate', self.view_log, reg )
 
@@ -832,16 +896,22 @@ The cylc forecast suite metascheduler.
 
                 menu.append( gtk.SeparatorMenuItem() )
 
-            search_item = gtk.MenuItem( 'Get _Description' )
+            search_item = gtk.MenuItem( '_Description' )
             menu.append( search_item )
             search_item.connect( 'activate', self.describe_suite, reg )
 
-            search_item = gtk.MenuItem( 'Get Task _List' )
-            menu.append( search_item )
-            search_item.connect( 'activate', self.list_suite, reg )
+            list_item = gtk.MenuItem( 'Task _List' )
+            menu.append( list_item )
+            list_item.connect( 'activate', self.list_suite, reg )
+
+            tree_item = gtk.MenuItem( '_Namespaces' )
+            menu.append( tree_item )
+            # use "-tp" for unicode box-drawing characters (seems to be
+            # OK in pygtk textview).
+            tree_item.connect( 'activate', self.list_suite, reg, '-tp' )
 
             if not self.cdb:
-                jobs_item = gtk.MenuItem( '_Get A Job Script')
+                jobs_item = gtk.MenuItem( 'Get A _Job Script')
                 menu.append( jobs_item )
                 jobs_item.connect( 'activate', self.jobscript_popup, reg )
     
@@ -1368,36 +1438,39 @@ The cylc forecast suite metascheduler.
         hbox.pack_start (warm_rb, True)
         vbox.pack_start( hbox, True )
 
-        override_cb = gtk.CheckButton( "Override default initial and final cycles?" )
-        vbox.pack_start(override_cb)
+        suite, rcfile = dbgetter(self.cdb).get_suite(reg)
+        try:
+            suiterc = config( suite, rcfile )
+        except SuiteConfigError, x:
+            warning_dialog( str(x) + \
+                    '\n\n Suite.rc parsing failed (needed\nfor default start and stop cycles.' ).warn()
+            return
+        defstartc = suiterc['visualization']['initial cycle time']
+        defstopc  = suiterc['visualization']['final cycle time']
  
         label = gtk.Label("[START]: " )
         start_entry = gtk.Entry()
         start_entry.set_max_length(10)
+        start_entry.set_text( str(defstartc) )
         ic_hbox = gtk.HBox()
         ic_hbox.pack_start( label )
         ic_hbox.pack_start(start_entry, True) 
-        start_entry.set_sensitive(False)
-        label.set_sensitive(False)
         vbox.pack_start(ic_hbox)
 
         label = gtk.Label("[STOP]:" )
         stop_entry = gtk.Entry()
         stop_entry.set_max_length(10)
+        stop_entry.set_text( str(defstopc) )
         fc_hbox = gtk.HBox()
         fc_hbox.pack_start( label )
         fc_hbox.pack_start(stop_entry, True) 
-        label.set_sensitive(False)
-        stop_entry.set_sensitive(False)
         vbox.pack_start (fc_hbox, True)
-
-        override_cb.connect( "toggled", self.override_cb_toggled, ic_hbox, fc_hbox )
 
         cancel_button = gtk.Button( "_Close" )
         cancel_button.connect("clicked", lambda x: window.destroy() )
         ok_button = gtk.Button( "_Graph" )
         ok_button.connect("clicked", self.graph_suite, reg, suite_dir,
-                warm_rb, outputfile_entry, start_entry, stop_entry, override_cb )
+                warm_rb, outputfile_entry, start_entry, stop_entry )
 
         help_button = gtk.Button( "_Help" )
         help_button.connect("clicked", self.command_help, 'prep', 'graph' )
@@ -1411,13 +1484,6 @@ The cylc forecast suite metascheduler.
         window.add( vbox )
         window.show_all()
 
-    def override_cb_toggled( self, w, icbox, fcbox ):
-        for ch in icbox.get_children() + fcbox.get_children():
-            if w.get_active():
-                ch.set_sensitive(True)
-            else:
-                ch.set_sensitive(False)
-
     def search_suite( self, w, reg, nobin_cb, pattern_entry ):
         pattern = pattern_entry.get_text()
         options = ''
@@ -1429,17 +1495,14 @@ The cylc forecast suite metascheduler.
         foo.run()
 
     def graph_suite( self, w, reg, suite_dir, warm_rb, outputfile_entry,
-            start_entry, stop_entry, override_cb ):
+            start_entry, stop_entry ):
 
         options = ''
         ofile = outputfile_entry.get_text()
         if ofile != '':
             options += ' -o ' + ofile
 
-        if not override_cb.get_active():
-            start = ''
-            stop = ''
-        else:
+        if True:
             start = start_entry.get_text()
             stop = stop_entry.get_text()
             if start != '':
@@ -1550,7 +1613,7 @@ The cylc forecast suite metascheduler.
         return False
 
     def validate_suite( self, w, name ):
-        command = "cylc validate " + self.dbopt + " --notify-completion " + name 
+        command = "cylc validate -v " + self.dbopt + " --notify-completion " + name 
         foo = gcapture_tmpfile( command, self.tmpdir, 600 )
         self.gcapture_windows.append(foo)
         foo.run()
@@ -1642,15 +1705,15 @@ The cylc forecast suite metascheduler.
         foo.run()
 
     def describe_suite( self, w, name ):
-        command = """echo '> TITLE:'; cylc get-config """ + self.dbopt + name + """ title; echo
+        command = """echo '> TITLE:'; cylc get-config """ + self.dbopt + " " + name + """ title; echo
 echo '> DESCRIPTION:'; cylc get-config """ + self.dbopt + " --notify-completion " + name + " description"
         foo = gcapture_tmpfile( command, self.tmpdir, 800, 400 )
         self.gcapture_windows.append(foo)
         foo.run()
 
-    def list_suite( self, w, name ):
-        command = "cylc list " + self.dbopt + " --notify-completion " + name
-        foo = gcapture_tmpfile( command, self.tmpdir, 300, 400 )
+    def list_suite( self, w, name, opt='' ):
+        command = "cylc list " + self.dbopt + " " + opt + " --notify-completion " + name
+        foo = gcapture_tmpfile( command, self.tmpdir, 600, 600 )
         self.gcapture_windows.append(foo)
         foo.run()
 

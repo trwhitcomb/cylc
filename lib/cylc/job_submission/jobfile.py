@@ -16,6 +16,7 @@
 #C: You should have received a copy of the GNU General Public License
 #C: along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import re
 import tempfile
 import StringIO
 from cylc import cycle_time
@@ -23,11 +24,11 @@ from OrderedDict import OrderedDict
 
 class jobfile(object):
 
-    def __init__( self, task_id, cylc_env, task_env, directive_prefix,
-            directives, final_directive, manual_messaging,
-            precommand_scripting, command_scripting,
+    def __init__( self, task_id, cylc_env, task_env, ns_hier, 
+            directive_prefix, directives, final_directive,
+            manual_messaging, precommand_scripting, command_scripting,
             postcommand_scripting, remote_cylc_dir, remote_suite_dir,
-            shell, simulation_mode, job_submission_method):
+            shell, share_dir, work_dir, simulation_mode, job_submission_method ):
 
         self.task_id = task_id
         self.cylc_env = cylc_env
@@ -39,13 +40,16 @@ class jobfile(object):
         self.command_scripting = command_scripting
         self.postcommand_scripting = postcommand_scripting
         self.shell = shell
+        self.share_dir = share_dir
+        self.work_dir = work_dir
         self.simulation_mode = simulation_mode
         self.job_submission_method = job_submission_method
         self.remote_cylc_dir = remote_cylc_dir
         self.remote_suite_dir = remote_suite_dir
         self.manual_messaging = manual_messaging
+        self.namespace_hierarchy = ns_hier
 
-        # Get NAME%CYCLETIME (cycling tasks) or NAME%TAG (asynchronous tasks)
+        # Get NAME%CYCLE (cycling tasks) or NAME%TAG (asynchronous tasks)
         ( self.task_name, tag ) = task_id.split( '%' )
         # TO DO: asynchronous tasks
         self.cycle_time = tag
@@ -54,45 +58,22 @@ class jobfile(object):
         self.FILE = open( path, 'wb' )
         self.write_header()
         self.write_directives()
-        self.FILE.write( '\n\necho "TASK JOB SCRIPT STARTING"')
+        self.write_task_job_script_starting()
         self.write_environment_1()
         self.write_cylc_access()
         self.write_err_trap()
         self.write_task_started()
+        self.write_work_directory_create()
         self.write_environment_2()
-        if self.manual_messaging:
-            self.write_manual_environment()
+        self.write_manual_environment()
         self.write_pre_scripting()
         self.write_command_scripting()
         self.write_post_scripting()
+        self.write_work_directory_remove()
         self.write_task_succeeded()
-        self.FILE.write( '\n\n#EOF' )
-        self.FILE.close() 
+        self.write_eof()
+        self.FILE.close()
         return
-
-    def write_manual_environment( self ):
-        strio = StringIO.StringIO()
-        self.write_environment_1( strio )
-        self.write_cylc_access( strio )
-        self.FILE.write( '\n\n# SUITE AND TASK IDENTITY FOR CUSTOM TASK WRAPPERS:')
-        self.FILE.write( '\n# (contains embedded newlines so usage may require "QUOTES")' )
-        self.FILE.write( '\nexport CYLC_SUITE_ENVIRONMENT="' + strio.getvalue() + '"' )
-        strio.close()
-
-    def write_task_succeeded( self ):
-        if self.manual_messaging:
-            if self.simulation_mode:
-                self.FILE.write( '\n\n# SEND TASK SUCCEEDED MESSAGE:')
-                self.FILE.write( '\n# (this task handles its own completion messaging in real mode)"')
-                self.FILE.write( '\ncylc task succeeded' )
-                self.FILE.write( '\n\necho "JOB SCRIPT EXITING (TASK SUCCEEDED)"')
-            else:
-                self.FILE.write( '\n\necho "JOB SCRIPT EXITING: THIS TASK HANDLES ITS OWN COMPLETION MESSAGING"')
-        else:
-            self.FILE.write( '\n\n# SEND TASK SUCCEEDED MESSAGE:')
-            self.FILE.write( '\ncylc task succeeded' )
-            self.FILE.write( '\n\necho "JOB SCRIPT EXITING (TASK SUCCEEDED)"')
-        self.FILE.write( '\ntrap "" EXIT' )            
 
     def write_header( self ):
         self.FILE.write( '#!' + self.shell )
@@ -107,6 +88,9 @@ class jobfile(object):
         for d in self.directives:
             self.FILE.write( '\n' + self.directive_prefix + d + " = " + self.directives[ d ] )
         self.FILE.write( '\n' + self.final_directive )
+
+    def write_task_job_script_starting( self ):
+        self.FILE.write( '\n\necho "TASK JOB SCRIPT STARTING"')
 
     def write_environment_1( self, BUFFER=None ):
         if not BUFFER:
@@ -123,9 +107,22 @@ class jobfile(object):
             BUFFER.write( "\nexport " + var + "=" + str( self.cylc_env[var] ) )
 
         BUFFER.write( "\n\n# TASK IDENTITY:" )
-        BUFFER.write( "\nexport TASK_ID=" + self.task_id )
-        BUFFER.write( "\nexport TASK_NAME=" + self.task_name )
-        BUFFER.write( "\nexport CYCLE_TIME=" + self.cycle_time )
+        BUFFER.write( "\nexport CYLC_TASK_ID=" + self.task_id )
+        BUFFER.write( "\nexport CYLC_TASK_NAME=" + self.task_name )
+        BUFFER.write( "\nexport CYLC_TASK_CYCLE_TIME=" + self.cycle_time )
+        BUFFER.write( '\nexport CYLC_TASK_NAMESPACE_HIERARCHY="' + ' '.join( self.namespace_hierarchy) + '"')
+
+    def write_cylc_access( self, BUFFER=None ):
+        # configure access to cylc first so that cylc commands can be
+        # used in defining user environment variables, e.g.:
+        #    NEXT_CYCLE=$( cylc util cycletime --add=6 )
+        if not BUFFER:
+            BUFFER = self.FILE
+        BUFFER.write( "\n\n# ACCESS TO CYLC:" )
+        BUFFER.write( "\nPATH=$CYLC_DIR/bin:$PATH" )
+        BUFFER.write( "\n# Access to the suite bin dir:" )
+        BUFFER.write( "\nPATH=$CYLC_SUITE_DEF_PATH/bin:$PATH" )
+        BUFFER.write( "\nexport PATH" )
 
     def write_err_trap( self ):
         self.FILE.write( '\n\n# SET ERROR TRAPPING:' )
@@ -149,17 +146,21 @@ class jobfile(object):
 # SEND TASK STARTED MESSAGE:
 cylc task started || exit 1""" )
 
-    def write_cylc_access( self, BUFFER=None ):
-        # configure access to cylc first so that cylc commands can be
-        # used in defining user environment variables, e.g.:
-        #    NEXT_CYCLE=$( cylc util cycletime --add=6 )
-        if not BUFFER:
-            BUFFER = self.FILE
-        BUFFER.write( "\n\n# ACCESS TO CYLC:" )
-        BUFFER.write( "\nPATH=$CYLC_DIR/bin:$PATH" )
-        BUFFER.write( "\n# Access to the suite bin dir:" )
-        BUFFER.write( "\nPATH=$CYLC_SUITE_DEF_PATH/bin:$PATH" )
-        BUFFER.write( "\nexport PATH" )
+    def write_work_directory_create( self ):
+        data = { "share_dir": self.share_dir,  "work_dir": self.work_dir }
+        self.FILE.write( """
+
+# SHARE DIRECTORY CREATE
+CYLC_SUITE_SHARE_PATH=%(share_dir)s
+export CYLC_SUITE_SHARE_PATH
+mkdir -p $CYLC_SUITE_DEF_PATH/share || true
+
+# WORK DIRECTORY CREATE
+CYLC_TASK_WORK_PATH=%(work_dir)s
+export CYLC_TASK_WORK_PATH
+mkdir -p $(dirname $CYLC_TASK_WORK_PATH) || true
+mkdir -p $CYLC_TASK_WORK_PATH
+cd $CYLC_TASK_WORK_PATH""" % data )
 
     def write_environment_2( self ):
         if len( self.task_env.keys()) > 0:
@@ -177,6 +178,19 @@ cylc task started || exit 1""" )
             # 'echo' command name):
             # export FOO=$( ecko foo )  # error not trapped!
             # FOO=$( ecko foo )  # error trapped
+
+    def write_manual_environment( self ):
+        if self.manual_messaging:
+            strio = StringIO.StringIO()
+            self.write_environment_1( strio )
+            self.write_cylc_access( strio )
+            # now escape quotes in the environment string
+            str = strio.getvalue()
+            strio.close()
+            str = re.sub('"', '\\"', str )
+            self.FILE.write( '\n\n# SUITE AND TASK IDENTITY FOR CUSTOM TASK WRAPPERS:')
+            self.FILE.write( '\n# (contains embedded newlines so usage may require "QUOTES")' )
+            self.FILE.write( '\nexport CYLC_SUITE_ENVIRONMENT="' + str + '"' )
 
     def write_pre_scripting( self ):
         if self.simulation_mode or not self.precommand_scripting:
@@ -196,3 +210,30 @@ cylc task started || exit 1""" )
         self.FILE.write( "\n\n# POST COMMAND SCRIPTING:" )
         self.FILE.write( "\n" + self.postcommand_scripting )
 
+    def write_work_directory_remove( self ):
+        if self.manual_messaging:
+            # don't remove the running directory of detaching tasks
+            return
+        self.FILE.write( """
+
+# WORK DIRECTORY REMOVE
+cd
+rmdir $CYLC_TASK_WORK_PATH 2>/dev/null || true""" )
+
+    def write_task_succeeded( self ):
+        if self.manual_messaging:
+            if self.simulation_mode:
+                self.FILE.write( '\n\n# SEND TASK SUCCEEDED MESSAGE:')
+                self.FILE.write( '\n# (this task handles its own completion messaging in real mode)"')
+                self.FILE.write( '\ncylc task succeeded' )
+                self.FILE.write( '\n\necho "JOB SCRIPT EXITING (TASK SUCCEEDED)"')
+            else:
+                self.FILE.write( '\n\necho "JOB SCRIPT EXITING: THIS TASK HANDLES ITS OWN COMPLETION MESSAGING"')
+        else:
+            self.FILE.write( '\n\n# SEND TASK SUCCEEDED MESSAGE:')
+            self.FILE.write( '\ncylc task succeeded' )
+            self.FILE.write( '\n\necho "JOB SCRIPT EXITING (TASK SUCCEEDED)"')
+        self.FILE.write( '\ntrap "" EXIT' )
+
+    def write_eof( self ):
+        self.FILE.write( '\n\n#EOF' )

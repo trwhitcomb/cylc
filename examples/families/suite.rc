@@ -3,10 +3,15 @@ title = "A complex task family example"
 description = """
 A suite containing families with extra-family dependencies."""
 
-[scheduling]
-    [[special tasks]]
-        sequential = FAMx 
+# Also tests ConfigObj string interpolation
+# (with cylc ignoring items that begin with '_')
+_greeting = HELLO
 
+[scheduling]
+    initial cycle time = 2011010112
+    final cycle time = 2011010312
+    [[special tasks]]
+        sequential = A  # (just to slow the suite down a bit)
     [[dependencies]]
         [[[12]]]
             graph = """
@@ -14,14 +19,18 @@ A suite containing families with extra-family dependencies."""
 A => FAMx => B => FAMy => C
 # internal:
 x1 => x2 
-y1 => y2
-# extra-family:
-v => x1
-x1 => w
 # member of one family to member of another:
-x1 => y1 
+x2 => y2
+# extra-family:
+y1 => D => y2
+E => x1 => F
+x1 | x2 => G
+y1 | H => I
                     """
 [runtime]
+    [[root]]
+        # Use string interpolation here:
+        command scripting = "echo %(_greeting)s from $CYLC_TASK_ID; sleep 10; echo BYE"
     [[FAMx,FAMy]]
     [[x1,x2]]
         inherit = FAMx

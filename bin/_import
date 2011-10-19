@@ -16,23 +16,28 @@
 #C: You should have received a copy of the GNU General Public License
 #C: along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import re
 from cylc.execute import execute
 from optparse import OptionParser
 
 parser = OptionParser( usage = """cylc [db] import [OPTIONS] SOURCE [TARGET] TOPDIR
 
-Import suites from the central registration database.
+Import suites or groups of suites from the central registration database
+to your private database. Import semantics are the same as for the copy
+command. The directory path of imported suite definitions under TOPDIR 
+will reflect the corresponding suite names, with '.' replaced by '/'.
+See 'cylc db copy --help' for examples.
 
 Arguments:
-    SOURCE    - Central database registration
-    TARGET    - Private database registration
-                (omit TARGET to keep the central reg)
-    TOPDIR    - top level directory for the imported suite definition.""" )
+    SOURCE    - Central suite or group (e.g. alice.lam.test).
+   [TARGET]   - Private suite or group (omit to use SOURCE: lam.test).
+    TOPDIR    - Top directory for imported suite definitions.""" )
+
+parser.add_option( "-v","--verbose",
+        help="Print extra information.",
+        action="store_true", default=False, dest="verbose" )
 
 ( options, args ) = parser.parse_args()
-
-if len(args) != 2 and len(args) != 3:
-    parser.error('Illegal number of arguments')
 
 source = args[0]
 if len(args) == 3:
@@ -41,6 +46,13 @@ if len(args) == 3:
 elif len(args) == 2:
     target = source
     dir = args[1]
+else:
+    parser.error('Illegal number of arguments')
 
-command = 'cylc db copy --import ' + source + ' ' + target + ' ' + dir
-execute( command.split(' '))
+if options.verbose:
+    verbose = '-v '
+else:
+    verbose = ' '
+
+command = 'cylc db copy --import ' + verbose + source + ' ' + target + ' ' + dir
+execute( re.split('\s+', command ))

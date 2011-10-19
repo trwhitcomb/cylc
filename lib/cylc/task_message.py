@@ -26,7 +26,6 @@
 #  (b) called by a task that was run manually on the command line
 
 import os, sys
-import socket
 import datetime
 import cylc_pyro_client
 
@@ -48,12 +47,12 @@ class message(object):
         else:
             self.mode = 'raw'
 
-        if 'TASK_ID' in os.environ.keys():
-            self.task_id = os.environ[ 'TASK_ID' ]
+        if 'CYLC_TASK_ID' in os.environ.keys():
+            self.task_id = os.environ[ 'CYLC_TASK_ID' ]
         elif self.mode == 'raw':
-            self.task_id = 'TASK_ID'
+            self.task_id = 'CYLC_TASK_ID'
         else:
-            print >> sys.stderr, '$TASK_ID not defined'
+            print >> sys.stderr, '$CYLC_TASK_ID not defined'
             sys.exit(1)
 
         if 'CYLC_SUITE_REG_NAME' in os.environ.keys():
@@ -78,8 +77,7 @@ class message(object):
             pass
         else:
             # we always define the host explicitly, but could
-            # default to localhost's fully qualified domain name
-            # like this:   self.host = socket.getfqdn()
+            # default to localhost's fully qualified domain name.
             print >> sys.stderr, '$CYLC_SUITE_HOST not defined'
             sys.exit(1)
 

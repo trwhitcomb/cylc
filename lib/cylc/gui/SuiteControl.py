@@ -57,6 +57,10 @@ and associated methods for their control widgets.
 
         self.suiterc = config( self.suite, os.path.join( self.suite_dir, 'suite.rc' ) )
 
+        self.sim_only=False
+        if self.suiterc['cylc']['simulation mode only']:
+            self.sim_only=True
+ 
         self.connection_lost = False # (not used)
         self.quitters = []
 
@@ -199,7 +203,7 @@ and associated methods for their control widgets.
     def startsuite( self, bt, window, 
             coldstart_rb, warmstart_rb, rawstart_rb, restart_rb,
             entry_ctime, stoptime_entry, no_reset_cb, statedump_entry,
-            optgroups ):
+            optgroups, hold_cb, holdtime_entry ):
 
         command = 'cylc control run --gcylc'
         options = ''
@@ -238,6 +242,12 @@ and associated methods for their control widgets.
                 except CycleTimeError,x:
                     warning_dialog( str(x) ).warn()
                     return
+
+        hetxt = holdtime_entry.get_text()
+        if hold_cb.get_active():
+            command += ' --hold'
+        elif hetxt != '':
+            command += ' --hold-after=' + hetxt
 
         for group in optgroups:
             command += group.get_options()
@@ -916,6 +926,12 @@ The cylc forecast suite metascheduler.
             for ch in tt_box.get_children():
                 ch.set_sensitive( True )
 
+    def hold_cb_toggled( self, b, box ):
+        if b.get_active():
+            box.set_sensitive(False)
+        else:
+            box.set_sensitive(True)
+
     def startup_method( self, b, meth, ic_box, is_box, no_reset_cb ):
         if meth in ['cold', 'warm', 'raw']:
             for ch in ic_box.get_children():
@@ -953,22 +969,22 @@ The cylc forecast suite metascheduler.
         vbox.pack_start( box )
 
         ic_box = gtk.HBox()
-        label = gtk.Label( 'START (cycle, may be optional)' )
+        label = gtk.Label( 'START (cycle)' )
         ic_box.pack_start( label, True )
         ctime_entry = gtk.Entry()
         ctime_entry.set_max_length(10)
-        #if self.suiterc['initial cycle time']:
-        #    ctime_entry.set_text( str(self.suiterc['initial cycle time']) )
+        if self.suiterc['scheduling']['initial cycle time']:
+            ctime_entry.set_text( str(self.suiterc['scheduling']['initial cycle time']) )
         ic_box.pack_start (ctime_entry, True)
         vbox.pack_start( ic_box )
 
         fc_box = gtk.HBox()
-        label = gtk.Label( 'STOP (cycle, always optional)' )
+        label = gtk.Label( 'STOP (cycle, optional)' )
         fc_box.pack_start( label, True )
         stoptime_entry = gtk.Entry()
         stoptime_entry.set_max_length(10)
-        #if self.suiterc['final cycle time']:
-        #    stoptime_entry.set_text( str(self.suiterc['final cycle time']) )
+        if self.suiterc['scheduling']['final cycle time']:
+            stoptime_entry.set_text( str(self.suiterc['scheduling']['final cycle time']) )
         fc_box.pack_start (stoptime_entry, True)
         vbox.pack_start( fc_box )
 
@@ -992,29 +1008,37 @@ The cylc forecast suite metascheduler.
         rawstart_rb.connect ( "toggled", self.startup_method, "raw",  ic_box, is_box, no_reset_cb )
         restart_rb.connect(   "toggled", self.startup_method, "re",   ic_box, is_box, no_reset_cb )
 
-        dmode_group = controlled_option_group( "Simulation Mode", "--simulation-mode" )
-        dmode_group.add_entry( 
-                'Fail A Task (NAME%YYYYMMDDHH)',
-                '--fail='
-                )
+        dmode_group = controlled_option_group( "Simulation Mode", option="--simulation-mode", reverse=self.sim_only )
+        dmode_group.add_entry('Fail A Task (NAME%YYYYMMDDHH)', '--fail=')
         dmode_group.pack( vbox )
         
-        stpaused_group = controlled_option_group( "Hold (pause) on startup", "--paused" )
-        stpaused_group.pack( vbox )
+        hold_cb = gtk.CheckButton( "Hold on start-up" )
+  
+        hold_box = gtk.HBox()
+        label = gtk.Label( 'Hold after (cycle)' )
+        hold_box.pack_start( label, True )
+        holdtime_entry = gtk.Entry()
+        holdtime_entry.set_max_length(10)
+        hold_box.pack_start (holdtime_entry, True)
+
+        vbox.pack_start( hold_cb )
+        vbox.pack_start( hold_box )
+
+        hold_cb.connect( "toggled", self.hold_cb_toggled, hold_box )
 
         debug_group = controlled_option_group( "Debug", "--debug" )
         debug_group.pack( vbox )
 
-        optgroups = [ dmode_group, debug_group, stpaused_group ]
+        optgroups = [ dmode_group, debug_group ]
 
         cancel_button = gtk.Button( "_Cancel" )
         cancel_button.connect("clicked", lambda x: window.destroy() )
 
         start_button = gtk.Button( "_Start" )
-        start_button.connect("clicked", self.startsuite, 
-                window, coldstart_rb, warmstart_rb, rawstart_rb, restart_rb,
-                ctime_entry, stoptime_entry, no_reset_cb, 
-                statedump_entry, optgroups )
+        start_button.connect("clicked", self.startsuite, window,
+                coldstart_rb, warmstart_rb, rawstart_rb, restart_rb,
+                ctime_entry, stoptime_entry, no_reset_cb,
+                statedump_entry, optgroups, hold_cb, holdtime_entry )
 
         help_run_button = gtk.Button( "_Help Run" )
         help_run_button.connect("clicked", self.command_help, "control", "run" )

@@ -104,7 +104,7 @@ def match_command( abbrev ):
     else:
         return matches[0]
 
-def pretty_print( incom, choose_dict, indent=True, numbered=False ):
+def pretty_print( incom, choose_dict, indent=True, numbered=False, sort=False ):
     # pretty print commands or topics from a dict:
     # (com[item] = description)
     
@@ -128,6 +128,8 @@ def pretty_print( incom, choose_dict, indent=True, numbered=False ):
     if len(choose) > 9:
         pad = True
 
+    if sort:
+        choose.sort()
     for item in choose:
         if item not in incom:
             raise SystemExit( "ERROR: summary for '" + item + "' not found" )
@@ -203,6 +205,7 @@ admin_commands = OrderedDict()
 admin_commands['create-cdb'  ] = [ 'create-cdb']
 admin_commands['test-db'     ] = [ 'test-db']
 admin_commands['test-suite'  ] = [ 'test-suite']
+admin_commands['check-examples'  ] = [ 'check-examples']
 
 license_commands = OrderedDict()
 license_commands['warranty'  ] = [ 'warranty']
@@ -226,6 +229,7 @@ preparation_commands['gcylc'   ] = information_commands['gcylc']
 preparation_commands['edit'    ] = [ 'edit'    ]
 preparation_commands['inline'  ] = [ 'inline'    ]
 preparation_commands['validate'] = [ 'validate'    ]
+preparation_commands['list'    ] = ['list', 'ls' ]
 preparation_commands['search'  ] = [ 'search', 'grep' ]
 preparation_commands['graph'   ] = [ 'graph'    ]
 preparation_commands['diff'    ] = [ 'diff', 'compare' ]
@@ -301,7 +305,7 @@ TASK - is a unique identitifier of a task in a suite: NAME%TAG, where
 for cycling tasks TAG is a cycle time (YYYYMMDDHH) and for asynchronous
 tasks it is an integer (preceded by 'a:' on the command line: foo%a:1).
 
-Here's how to drill down to command usage help for a particular command:
+Here's how to drill down to usage help for a particular command:
   $ cylc help ............... list all available categories (this page)
   $ cylc help prep .......... list commands in category 'preparation'
   $ cylc help prep edit ..... command usage help for 'cylc [prep] edit'
@@ -317,6 +321,7 @@ comsum = OrderedDict()
 comsum[ 'create-cdb' ] = '(ADMIN) Create the central suite database'
 comsum[ 'test-db'    ] = '(ADMIN) Automated suite database test'
 comsum[ 'test-suite' ] = '(ADMIN) Automated cylc scheduler test'
+comsum[ 'check-examples' ] = '(ADMIN) Check all example suites validate'
 # license
 comsum[ 'warranty'   ] = 'Print the GPLv3 disclaimer of warranty'
 comsum[ 'conditions' ] = 'Print the GNU General Public License v3.0'
@@ -339,7 +344,7 @@ comsum[ 'search'     ] = 'An intelligent search tool for cylc suites'
 comsum[ 'graph'      ] = 'A dependency graph viewer that updates as you edit'
 comsum[ 'diff'       ] = 'Compare two suite definitions and print differences'
 # information
-comsum[ 'list'       ] = 'Print a suite\'s task list'
+comsum[ 'list'       ] = 'Print a suite\'s task list or full runtime hierarchy'
 comsum[ 'dump'       ] = 'Print the state of each task in a running suite'
 comsum[ 'show'       ] = 'Print task-specific information (prerequisites...)'
 comsum[ 'log'        ] = 'Print or view suite logs, with filtering'
@@ -400,7 +405,7 @@ def category_help(category):
     print '  The category ' + alts + ' may be omitted.'
     print
     print 'COMMANDS:'
-    pretty_print( comsum, coms )
+    pretty_print( comsum, coms, sort=True )
 
 # no arguments: print help and exit
 if len(sys.argv) == 1:

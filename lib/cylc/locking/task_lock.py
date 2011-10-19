@@ -17,7 +17,7 @@
 #C: along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import Pyro.core
-import os,sys,socket
+import os,sys
 import os
 
 from lockserver import lockserver
@@ -49,12 +49,12 @@ class task_lock(object):
         if task_id:
             self.task_id = task_id
         else:
-            if 'TASK_ID' in os.environ.keys():
-                self.task_id = os.environ[ 'TASK_ID' ]
+            if 'CYLC_TASK_ID' in os.environ.keys():
+                self.task_id = os.environ[ 'CYLC_TASK_ID' ]
             elif self.mode == 'raw':
-                self.task_id = 'TASK_ID'
+                self.task_id = 'CYLC_TASK_ID'
             else:
-                print >> sys.stderr, '$TASK_ID not defined'
+                print >> sys.stderr, '$CYLC_TASK_ID not defined'
                 sys.exit(1)
 
         if suite:
@@ -89,8 +89,7 @@ class task_lock(object):
                 pass
             else:
                 # we always define the host explicitly, but could
-                # default to localhost's fully qualified domain name
-                # like this:   self.host = socket.getfqdn()
+                # default to localhost's fully qualified domain name.
                 print >> sys.stderr, '$CYLC_SUITE_HOST not defined'
                 sys.exit(1)
 

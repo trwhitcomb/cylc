@@ -54,8 +54,8 @@ class job_submit(object):
     cylc_env = None
 
     def __init__( self, task_id, pre_command, task_command,
-            post_command, task_env, directives, 
-            manual_messaging, logfiles, log_dir, task_owner,
+            post_command, task_env, ns_hier, directives, 
+            manual_messaging, logfiles, log_dir, share_dir, work_dir, task_owner,
             remote_host, remote_cylc_dir, remote_suite_dir,
             remote_shell_template, remote_log_dir, 
             job_submit_command_template, job_submission_shell ): 
@@ -68,9 +68,12 @@ class job_submit(object):
             self.task_command = '/bin/false'
 
         self.task_env = task_env
+        self.namespace_hierarchy = ns_hier
         self.directives  = directives
         self.logfiles = logfiles
  
+        self.share_dir = share_dir
+        self.work_dir = work_dir
         self.job_submit_command_template = job_submit_command_template
         self.job_submission_shell = job_submission_shell
 
@@ -84,6 +87,15 @@ class job_submit(object):
         self.local_jobfile_path = os.path.join( log_dir, tag )
         # The directory is created in config.py
         self.logfiles.add_path( self.local_jobfile_path )
+
+        # Local stdout and stderr log file paths:
+        self.stdout_file = self.local_jobfile_path + ".out"
+        self.stderr_file = self.local_jobfile_path + ".err"
+        # Record paths of local log files for access by gcylc
+        # (only works for remote tasks if there is a shared file system or
+        # the output files are returned by, for instance, a hook script)
+        self.logfiles.add_path( self.stdout_file)
+        self.logfiles.add_path( self.stderr_file)
         
         self.suite_owner = os.environ['USER']
         self.remote_shell_template = remote_shell_template
@@ -111,21 +123,12 @@ class job_submit(object):
             self.remote_jobfile_path = os.path.join( remote_log_dir, tag )
             self.stdout_file = self.remote_jobfile_path + ".out"
             self.stderr_file = self.remote_jobfile_path + ".err"
-            # Record remote paths (currently not accessible by gcylc):
-            self.logfiles.add_path( self.task_owner + '@' + self.remote_host + ':' + self.stdout_file)
-            self.logfiles.add_path( self.task_owner + '@' + self.remote_host + ':' + self.stderr_file)
             # Used in command construction:
             self.jobfile_path = self.remote_jobfile_path
         else:
             # LOCAL
             self.local = True
             self.task_owner = self.suite_owner
-            # stdout and stderr log file paths:
-            self.stdout_file = self.local_jobfile_path + ".out"
-            self.stderr_file = self.local_jobfile_path + ".err"
-            # Record paths of local log files for access by gcylc
-            self.logfiles.add_path( self.stdout_file)
-            self.logfiles.add_path( self.stderr_file)
             # Used in command construction:
             self.jobfile_path = self.local_jobfile_path
 
@@ -168,19 +171,21 @@ class job_submit(object):
             return False
 
         jf = jobfile( self.task_id, 
-                self.__class__.cylc_env, self.task_env, 
+                self.__class__.cylc_env, self.task_env, self.namespace_hierarchy, 
                 self.directive_prefix, self.directives, self.final_directive, 
                 self.manual_messaging, self.pre_command,
                 self.task_command, self.post_command,
                 self.remote_cylc_dir, self.remote_suite_dir, 
                 self.job_submission_shell, 
+                self.share_dir,
+                self.work_dir,
                 self.__class__.simulation_mode,
                 self.__class__.__name__ )
         # write the job file
         jf.write( self.local_jobfile_path )
         # make it executable
         os.chmod( self.local_jobfile_path, stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO )
-        print "> GENERATED JOB SCRIPT: " + self.local_jobfile_path
+        print "GENERATED JOB SCRIPT: " + self.local_jobfile_path
 
         # Construct self.command, the command to submit the jobfile to run
         self.construct_jobfile_submission_command()
@@ -196,11 +201,11 @@ class job_submit(object):
 
         # execute the local command to submit the job
         if dry_run:
-            print "> THIS IS A DRY RUN. HERE'S HOW I WOULD SUBMIT THE TASK:"
+            print "THIS IS A DRY RUN. HERE'S HOW I WOULD SUBMIT THE TASK:"
             print command
             return True
 
-        print " > SUBMITTING TASK: " + command
+        print "SUBMITTING TASK: " + command
         try:
             popen = subprocess.Popen( command, shell=True, stdin=stdin )
             if not self.local:
