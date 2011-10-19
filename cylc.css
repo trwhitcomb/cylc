@@ -10,6 +10,15 @@ body{
 	text-align: center;
 }
 
+.warning {
+		background:#fff;
+		font-weight:bold;
+		color:#f0f;
+		margin:20px;
+		padding-left:10px;
+		border-left:20px solid #f0f;
+}
+
 a{
   /*color: #f64;*/
 	color: #048;
