@@ -1,0 +1,13 @@
+This is a partially completed attempt at restoring circa cylc-3.5(?)
+plotting of extra-family dependencies, for families used in the graph,
+with dashed lines. This was relatively easy to do before cylc-4.0
+because families were represented by actual pseudo-task proxy objects in
+the suite task pool so any dependence on an individual family member 
+was an extra-family dependency.  Now it is not so easy because family
+names in the graph are replace early in suite.rc parsing by the
+effective dependencies among family members (there is not family
+pseudo-task anymore).  TO DO: REVIEW THE CHANGES IN THIS BRANCH 
+(merge from master then do 'git diff master familydef') AND DECIDE
+WHETHER OR NOT IT IS WORTH EFFORT AND THE COST OF COMPLICATING
+config.py IN ORDER TO DISTINGUISH THIS KIND OF DEPENDENCY - IF NOT,
+DELETE THE BRANCH. Hilary Oliver, October 2011.
