@@ -5,7 +5,7 @@ body{
 	font-family: "MS Trebuchet", Verdana, Geneva, Arial, Helvetica, sans-serif;	
 	font-size: 75%;
 	line-height: 135%;
-	background-image: url("web-graphics/bkg.gif");
+	background-image: url("web-graphics/bkg2.gif");
 	color:  #424242;
 	text-align: center;
 }
@@ -54,6 +54,13 @@ p{
 }
 
 #container{
+	background-image: url("web-graphics/bkg.gif");
+	width: 738px;
+	margin: 0 auto;
+}
+
+
+#subcontainer{
 	position: relative;
 	background-image: url("web-graphics/footer.gif");
 	background-repeat: repeat-x;
@@ -67,6 +74,7 @@ p{
 	margin-bottom:800px;
 	text-align: left;
 }
+
 
 #pageHeader {
 }
