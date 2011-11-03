@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-10-19 21:36:00" /> 
+<meta name="date" content="2011-11-03 15:37:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -37,7 +37,7 @@ href="cug-html56.html#fn14x0"><sup class="textsuperscript">14</sup></a></span><a
 that define runtime properties for individual tasks and families of tasks.
 </p><!--l. 2660--><p class="indent" >   Every namespace contains the same set of configuration items (see the <span 
 class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x86-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>, for the
+href="cug-htmlse13.html#x86-124000A">A<!--tex4ht:ref: SuiteRCReference --></a>, for the
 complete list of items). Namespaces can inherit from other namespaces, overriding inherited items as required; <span 
 class="cmti-10">this</span>
 <span 
@@ -51,7 +51,7 @@ the leaves are the individual tasks of the suite.
 graph, can be expanded or collapsed in suite graphs, and in the graph-based suite control GUI (this will also be
 added to the text treeview control GUI in a future release). See <span 
 class="cmti-10">Visualization </span>(Section&#x00A0;<a 
-href="cug-htmlsu34.html#x57-910008.5">8.5<!--tex4ht:ref: viso --></a>) for more on
+href="cug-htmlsu34.html#x57-920008.5">8.5<!--tex4ht:ref: viso --></a>) for more on
 this.
 </p><!--l. 2678--><p class="indent" >   The following listing of the <span 
 class="cmti-10">namespace.one </span>example suite (which you can import from the central database if you
@@ -823,8 +823,8 @@ suite.
 by dependency graph alone - as can be seen from many of the examples that illustrate this User Guide (command
 scripting, for example, defaults to printing a simple message, sleeping for ten seconds, and then exiting). These
 default values are documented with each configuration item in Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x86-123000A">A<!--tex4ht:ref: SuiteRCReference --></a>, and Section&#x00A0;<a 
-href="cug-htmlsu61.html#x94-219000A.6">A.6<!--tex4ht:ref: SuiteDefaults --></a> shows them all in
+href="cug-htmlse13.html#x86-124000A">A<!--tex4ht:ref: SuiteRCReference --></a>, and Section&#x00A0;<a 
+href="cug-htmlsu61.html#x94-220000A.6">A.6<!--tex4ht:ref: SuiteDefaults --></a> shows them all in
 context. You can override them or provide your own defaults for other items by explicitly configuring the root
 namespace.
 </p><!--l. 2717--><p class="noindent" >
@@ -852,7 +852,7 @@ class="cmti-10">example suites use this feature.</span>
 environment variables. The environment is explicitly exported (by the task job script) prior to executing task
 command scripting (see <span 
 class="cmti-10">Task Job Submission</span>, Section&#x00A0;<a 
-href="cug-htmlse10.html#x64-10200010">10<!--tex4ht:ref: TaskJobSubmission --></a>).
+href="cug-htmlse10.html#x64-10300010">10<!--tex4ht:ref: TaskJobSubmission --></a>).
 </p><!--l. 2741--><p class="indent" >   Suite and task identity are exported first, so that user-defined variables can refer to them. Order of definition is
 preserved throughout so that variable assignment expressions can safely refer to previously defined
 variables.
@@ -930,7 +930,7 @@ class="pcrr7t-">)</span>
 </p>
 <!--l. 2758--><p class="noindent" ><span class="paragraphHead"><a 
  id="x55-850008.4.4.1"></a><span 
-class="cmbx-10">User-defined Environment Variables</span></span>
+class="cmbx-10">User Environment Variables</span></span>
    The user-defined environment is the sum of a task&#8217;s inherited <span class="lstinline"><span 
 class="pcrr7t-">[[[</span><span 
 class="pcrr7t-">environment</span><span 
@@ -1053,36 +1053,374 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">override</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-85010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TEXURE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rough</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">new</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">variable</span>
+   
+   </div>
+<!--l. 2774--><p class="indent" >   This results in a task <span 
+class="cmti-10">foo </span>with <span class="lstinline"><span 
+class="pcrr7t-">SHAPE</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">circle</span></span>, <span class="lstinline"><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">blue</span></span>, and <span class="lstinline"><span 
+class="pcrr7t-">TEXTURE</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">rough</span></span> in its environment.
+                                                                                         
+
+                                                                                         
+</p><!--l. 2779--><p class="noindent" >
+</p>
+<!--l. 2779--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x55-860008.4.4.2"></a><span 
+class="cmbx-10">Overriding Environment Variables</span></span>
+   When you override inherited namespace items the original parent item definition is <span 
+class="cmti-10">replaced </span>by the new
+definition. This applies to all items including those in the environment sub-sections which, strictly speaking, are not
+&#8220;environment variables&#8221; until they are written, post inheritance processing, to the task job script that executes the
+associated task. Consequently, if you override an environment variable you cannot also access the original parent
+value: </p><!--l. 2788-->
+   <div class="lstlisting" id="listing-80"><span class="label"><a 
+ id="x55-86001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">!!</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ERROR</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">COLOR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">is</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">undefined</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">here</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">!!</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">as</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">this</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">overrides</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
+class="pcrro7t-">COLOR</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">root</span><span 
+class="pcrro7t-">in</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">environment</span>
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">.</span>
    
    </div>
-<!--l. 2773--><p class="indent" >   This results in a task <span 
-class="cmti-10">foo </span>with <span class="lstinline"><span 
+<!--l. 2800--><p class="indent" >   The compressed variant of this, <span class="lstinline"><span 
 class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
-class="pcrr7t-">blue</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">SHAPE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">COLOR</span></span>, is also in error for the same reason. To achieve the
+desired result you must use a different name for the parent variable: </p><!--l. 2803-->
+   <div class="lstlisting" id="listing-81"><span class="label"><a 
+ id="x55-86011r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86012r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86013r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86014r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86015r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">FOO_COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
-class="pcrr7t-">circle</span></span> in its environment.
-                                                                                         
-
-                                                                                         
-</p><!--l. 2776--><p class="noindent" >
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86016r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86017r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86018r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x55-86019r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">FOO_COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">OK</span>
+   
+   </div>
+<!--l. 2815--><p class="noindent" >
 </p>
-<!--l. 2776--><p class="noindent" ><span class="paragraphHead"><a 
- id="x55-860008.4.4.2"></a><span 
+<!--l. 2815--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x55-870008.4.4.3"></a><span 
 class="cmbx-10">Suite And Task Identity Variables</span></span>
-   The task identify variables provided to tasks by cylc are:  </p><!--l. 2780-->
-   <div class="lstlisting" id="listing-80"><span class="label"><a 
- id="x55-86001r1"></a></span><span 
+   The task identify variables provided to tasks by cylc are:  </p><!--l. 2819-->
+   <div class="lstlisting" id="listing-82"><span class="label"><a 
+ id="x55-87001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_ID</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1116,7 +1454,7 @@ class="pcrro7t-">.</span><span
 class="pcrro7t-">g</span><span 
 class="pcrro7t-">.)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86002r2"></a></span><span 
+ id="x55-87002r2"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_NAME</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1141,7 +1479,7 @@ class="pcrro7t-">#</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">X</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86003r3"></a></span><span 
+ id="x55-87003r3"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1160,7 +1498,7 @@ class="pcrro7t-">#</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">2011051118</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86004r4"></a></span><span 
+ id="x55-87004r4"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_NAMESPACE_HIERARCHY</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1183,9 +1521,9 @@ class="pcrro7t-">g</span><span
 class="pcrro7t-">.)</span>
    
    </div>
-<!--l. 2786--><p class="indent" >   The suite identify variables provided to tasks by cylc are: </p><!--l. 2787-->
-   <div class="lstlisting" id="listing-81"><span class="label"><a 
- id="x55-86005r1"></a></span><span 
+<!--l. 2825--><p class="indent" >   The suite identify variables provided to tasks by cylc are: </p><!--l. 2826-->
+   <div class="lstlisting" id="listing-83"><span class="label"><a 
+ id="x55-87005r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_DEF_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1206,7 +1544,7 @@ class="pcrro7t-">.</span><span
 class="pcrro7t-">g</span><span 
 class="pcrro7t-">.)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86006r2"></a></span><span 
+ id="x55-87006r2"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_REG_NAME</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1226,7 +1564,7 @@ class="pcrro7t-">.</span><span
 class="pcrro7t-">g</span><span 
 class="pcrro7t-">.)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86007r3"></a></span><span 
+ id="x55-87007r3"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_REG_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1240,7 +1578,7 @@ class="pcrro7t-">bar</span><span
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86008r4"></a></span><span 
+ id="x55-87008r4"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_HOST</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1266,7 +1604,7 @@ class="pcrro7t-">.</span><span
 class="pcrro7t-">g</span><span 
 class="pcrro7t-">.)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86009r5"></a></span><span 
+ id="x55-87009r5"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_PORT</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1286,7 +1624,7 @@ class="pcrro7t-">.</span><span
 class="pcrro7t-">g</span><span 
 class="pcrro7t-">.)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-86010r6"></a></span><span 
+ id="x55-87010r6"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_OWNER</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1306,7 +1644,7 @@ class="pcrro7t-">g</span><span
 class="pcrro7t-">.)</span>
    
    </div>
-<!--l. 2795--><p class="indent" >   The variable <span class="lstinline"><span 
+<!--l. 2834--><p class="indent" >   The variable <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_REG_PATH</span></span> is just <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
@@ -1314,17 +1652,17 @@ class="pcrr7t-">CYLC_SUITE_REG_NAME</span></span> (the name under which the suit
 definition is registered in your suite database) translated into a directory path. This can be used when configuring
 suite logging directories and the like to put suite output in a directory tree that reflects the suite registration
 hierarchy (as opposed to the namespace hierarchy).
-</p><!--l. 2803--><p class="indent" >   Some of these variables are also used by cylc task messaging commands in order to automatically target the right
+</p><!--l. 2842--><p class="indent" >   Some of these variables are also used by cylc task messaging commands in order to automatically target the right
 task proxy object in the right suite.
-</p><!--l. 2807--><p class="noindent" >
+</p><!--l. 2846--><p class="noindent" >
 </p>
-<!--l. 2807--><p class="noindent" ><span class="paragraphHead"><a 
- id="x55-870008.4.4.3"></a><span 
+<!--l. 2846--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x55-880008.4.4.4"></a><span 
 class="cmbx-10">Suite Share And Task Work Directories</span></span>
    The following variables, and the directories they represent, are also available to running tasks:
-</p><!--l. 2811-->
-   <div class="lstlisting" id="listing-82"><span class="label"><a 
- id="x55-87001r1"></a></span><span 
+</p><!--l. 2850-->
+   <div class="lstlisting" id="listing-84"><span class="label"><a 
+ id="x55-88001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1340,7 +1678,7 @@ class="pcrro7t-">running</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">directory</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-87002r2"></a></span><span 
+ id="x55-88002r2"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_SHARE_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1355,47 +1693,47 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">directory</span>
    
    </div>
-<!--l. 2815--><p class="indent" >   These two directories are configured in the suite.rc file, and they are created on the fly, if necessary, by task job
+                                                                                         
+
+                                                                                         
+<!--l. 2854--><p class="indent" >   These two directories are configured in the suite.rc file, and they are created on the fly, if necessary, by task job
 scripts prior to executing the task command scripting. The job script changes directory to the work/running
 directory before executing the task command scripting. The shared directory is intended as a shared data directory
 for multiple tasks (however, the directory path can be different for different families of tasks or individual tasks if
 you like).
-</p><!--l. 2826--><p class="noindent" >
+</p><!--l. 2865--><p class="noindent" >
 </p>
-<!--l. 2826--><p class="noindent" ><span class="paragraphHead"><a 
- id="x55-880008.4.4.4"></a><span 
+<!--l. 2865--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x55-890008.4.4.5"></a><span 
 class="cmbx-10">Environment Variable Evaluation</span></span>
    Variables in the task execution environment are not evaluated in the shell in which the suite is running prior to
 submitting the task. They are written in unevaluated form to the job script that is submitted by cylc to run the task
 (Section&#x00A0;<a 
-href="cug-htmlsu39.html#x65-10300010.1">10.1<!--tex4ht:ref: JobScripts --></a>) and are therefore evaluated when the task begins executing under the task owner account on the task
+href="cug-htmlsu39.html#x65-10400010.1">10.1<!--tex4ht:ref: JobScripts --></a>) and are therefore evaluated when the task begins executing under the task owner account on the task
 host. Thus <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">HOME</span></span>, for instance, evaluates at run time to the home directory of task owner on the task
 host.
-</p><!--l. 2836--><p class="noindent" >
+</p><!--l. 2875--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.4.5   </span> <a 
- id="x55-890008.4.5"></a>Remote Task Hosting</h5>
-<!--l. 2839--><p class="noindent" >If a task declares an owner other than the suite owner and/or a host other than the suit host, e.g.:
-</p><!--l. 2842-->
-                                                                                         
-
-                                                                                         
-   <div class="lstlisting" id="listing-83"><span class="label"><a 
- id="x55-89001r1"></a></span><span 
+ id="x55-900008.4.5"></a>Remote Task Hosting</h5>
+<!--l. 2878--><p class="noindent" >If a task declares an owner other than the suite owner and/or a host other than the suit host, e.g.:
+</p><!--l. 2881-->
+   <div class="lstlisting" id="listing-85"><span class="label"><a 
+ id="x55-90001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89002r2"></a></span><span 
+ id="x55-90002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89003r3"></a></span><span 
+ id="x55-90003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1404,7 +1742,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89004r4"></a></span><span 
+ id="x55-90004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1417,7 +1755,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">remote</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89005r5"></a></span><span 
+ id="x55-90005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1442,7 +1780,7 @@ class="pcrr7t-">co</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">nz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89006r6"></a></span><span 
+ id="x55-90006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1461,7 +1799,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bob</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89007r7"></a></span><span 
+ id="x55-90007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1495,7 +1833,7 @@ class="pcrr7t-">on</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x55-89008r8"></a></span><span 
+ id="x55-90008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1532,7 +1870,7 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">foo</span>
    
    </div>
-<!--l. 2853--><p class="indent" >   cylc will attempt to execute the task on the declared host, by the configured job submission method, as the
+<!--l. 2892--><p class="indent" >   cylc will attempt to execute the task on the declared host, by the configured job submission method, as the
 declared owner, using passwordless ssh.
 </p>
      <ul class="itemize1">
@@ -1544,15 +1882,15 @@ declared owner, using passwordless ssh.
      </li>
      <li class="itemize">the suite definition directory must be installed on the remote host, if the task needs access to scripts
      in the suite bin directory or to any other files stored there.</li></ul>
-<!--l. 2868--><p class="indent" >   A local task to run under another user account is treated as a remote task.
-</p><!--l. 2870--><p class="indent" >   <span 
+<!--l. 2907--><p class="indent" >   A local task to run under another user account is treated as a remote task.
+</p><!--l. 2909--><p class="indent" >   <span 
 class="cmti-10">You may not need this functionality if you have a cross-platform resource manager, such as loadleveler, that</span>
 <span 
 class="cmti-10">allows you to submit a job locally to run on the remote host</span>.
-</p><!--l. 2874--><p class="indent" >   Remote host functionality, like other namespace properties, can be declared globally (in the root namespace) or
+</p><!--l. 2913--><p class="indent" >   Remote host functionality, like other namespace properties, can be declared globally (in the root namespace) or
 per family, or per individual task. Use the global settings if all or most of your tasks need to run on the same remote
 host.
-</p><!--l. 2879--><p class="indent" >   The remote cylc directory is required to give remote tasks access to cylc commands; the remote suite directory
+</p><!--l. 2918--><p class="indent" >   The remote cylc directory is required to give remote tasks access to cylc commands; the remote suite directory
 gives them access to suite files via <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_DEF_PATH</span></span> on the remote platform, and to the suite
@@ -1564,21 +1902,24 @@ the file path for the literal <span class="lstinline"><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">HOME</span></span> in case the user&#8217;s home directory path is different on the remote
 host.
-</p><!--l. 2888--><p class="indent" >   Note that you can easily run the cylc example suites on a remote host. For the example suites with task
+                                                                                         
+
+                                                                                         
+</p><!--l. 2927--><p class="indent" >   Note that you can easily run the cylc example suites on a remote host. For the example suites with task
 implementations that work with &#8220;real&#8221; files, you&#8217;ll have to run <span 
 class="cmti-10">all </span>tasks on the same remote host so that they
 can access their common input and output files. To distribute a suite across several hosts you must
 arrange (using additional tasks) to transfer files between the hosts as required to satisfy the real I/O
 dependencies.
-</p><!--l. 2896--><p class="noindent" >
+</p><!--l. 2935--><p class="noindent" >
 </p>
-<!--l. 2896--><p class="noindent" ><span class="paragraphHead"><a 
- id="x55-900008.4.5.1"></a><span 
+<!--l. 2935--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x55-910008.4.5.1"></a><span 
 class="cmbx-10">Remote Log Directories</span></span>
    The stdout and stderr from local tasks is directed into files in the <span 
 class="cmti-10">job submission log directory </span>(specified in the
 suite.rc file) as explained in Section&#x00A0;<a 
-href="cug-htmlsu41.html#x67-10500010.3">10.3<!--tex4ht:ref: WhitherStdoutAndStderr --></a>. The same goes for remotely hosted tasks, except that the task
+href="cug-htmlsu41.html#x67-10600010.3">10.3<!--tex4ht:ref: WhitherStdoutAndStderr --></a>. The same goes for remotely hosted tasks, except that the task
 owner&#8217;s home directory is substituted as described above for the remote suite definition directory.
 Remote log directories are created on the fly by cylc, during job submission, if they do not already
 exist.
@@ -1586,12 +1927,12 @@ exist.
 
                                                                                          
 </p>
-   <!--l. 2907--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2946--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu34.html" >next</a>] [<a 
 href="cug-htmlsu32.html" >prev</a>] [<a 
 href="cug-htmlsu32.html#tailcug-htmlsu32.html" >prev-tail</a>] [<a 
 href="cug-htmlsu33.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu33.html" >up</a>] </p></div>
-<!--l. 2907--><p class="indent" >   <a 
+<!--l. 2946--><p class="indent" >   <a 
  id="tailcug-htmlsu33.html"></a>   </p> 
 </body></html> 
