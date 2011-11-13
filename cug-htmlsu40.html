@@ -4,73 +4,469 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Available Methods</title> 
+<head><title>Built-in Job Submission Methods</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-03 15:37:00" /> 
+<meta name="date" content="2011-11-14 00:09:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3490--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3502--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu41.html" >next</a>] [<a 
 href="cug-htmlsu39.html" >prev</a>] [<a 
 href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu40.html">tail</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu40.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.2   </span> <a 
- id="x66-10500010.2"></a>Available Methods</h4>
-<!--l. 3493--><p class="noindent" >There are two basic job submission methods that should be available on any platform, sufficient for running cylc&#8217;s
-example suites if not real forecasting systems:
+ id="x66-10500010.2"></a>Built-in Job Submission Methods</h4>
+<!--l. 3505--><p class="noindent" >Cylc has a number of built in job submission methods. If these do not suite your needs you can extend cylc with
+your own user-defined methods (below, Section&#x00A0;<a 
+href="cug-htmlsu42.html#x68-10700010.4">10.4<!--tex4ht:ref: DefiningNewJobSubmissionMethods --></a>).
 </p>
      <ul class="itemize1">
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">background</span></span> - run tasks directly in a background shell.
+     <li class="itemize"><span 
+class="cmbx-10">background </span>- run tasks directly in a background shell.
      </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">at_now</span></span> - submit tasks to the rudimentary <span class="lstinline"><span 
+     <li class="itemize"><span 
+class="cmbx-10">at </span>- submit tasks to the rudimentary Unix <span class="lstinline"><span 
 class="pcrr7t-">at</span></span> scheduler (<span class="lstinline"><span 
 class="pcrr7t-">atd</span></span> must be running).
      </li></ul>
-<!--l. 3506--><p class="indent" >   Tasks in a real forecasting system should be submitted to a batch queue scheduler or cross-platform resource
-manager such as <span 
-class="cmti-10">loadleveler </span>(IBM). Methods currently available are:
+<!--l. 3517--><p class="indent" >   Tasks in a real forecasting system would normally be submitted to an industrial strength batch queue scheduler.
+Current built-in methods are:
 </p>
      <ul class="itemize1">
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">loadleveler</span></span> - This method submits general (non loadleveler-specific) task scripts to loadleveler. Any
-     <span 
-class="cmti-10">directives </span>you provide in the suite.rc file will be written to the job script, which will then be submitted
-     to run via <span class="lstinline"><span 
-class="pcrr7t-">llsubmit</span></span>.
+     <li class="itemize"><span 
+class="cmbx-10">loadleveler </span>- submits task job scripts to loadleveler using the <span class="lstinline"><span 
+class="pcrr7t-">llsubmit</span></span> command. Loadleveler
+     directives provided in the suite.rc file:
+     <!--l. 3527-->
+     <div class="lstlisting" id="listing-101"><span class="label"><a 
+ id="x66-105001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">__NAME__</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">directives</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">waz</span>
+     
+     </div>
+     <!--l. 3535--><p class="noindent" >are written to the top of the task job script like this:  </p><!--l. 3537-->
+     <div class="lstlisting" id="listing-102"><span class="label"><a 
+ id="x66-105007r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">bin</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105008r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">DIRECTIVES</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105009r3"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">@</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">=</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105010r4"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">@</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">baz</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">=</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">waz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105011r5"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">@</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">queue</span>
+     
+     </div>
      </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_raw</span></span> - This method submits loadleveler-ready scripts (i.e.&#x00A0;scripts containing hardwired directives)
-     to loadleveler. This may be necessary for complex (e.g.&#x00A0;multi-step) jobs. The original script is copied
-     to make the temporary job script, and cylc environment scripting is inserted into it immediately after
-     the loadleveler directives.
+     <li class="itemize"><span 
+class="cmbx-10">pbs </span>- submits task job scripts to PBS (or Torque) using the <span class="lstinline"><span 
+class="pcrr7t-">qsub</span></span> command. PBS directives provided in the
+     suite.rc file:  <!--l. 3549-->
+     <div class="lstlisting" id="listing-103"><span class="label"><a 
+ id="x66-105012r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105013r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105014r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">__NAME__</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105015r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">directives</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105016r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">q</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105017r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">l</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">nodes</span><span 
+class="pcrr7t-">=1,</span><span 
+class="pcrr7t-">walltime</span><span 
+class="pcrr7t-">=00:01:00'</span>
+     
+     </div>
+     <!--l. 3557--><p class="noindent" >are written to the top of the task job script like this:  </p><!--l. 3559-->
+     <div class="lstlisting" id="listing-104"><span class="label"><a 
+ id="x66-105018r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">bin</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105019r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">DIRECTIVES</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105020r3"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">PBS</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">q</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105021r4"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">PBS</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">l</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">nodes</span><span 
+class="pcrro7t-">=1,</span><span 
+class="pcrro7t-">walltime</span><span 
+class="pcrro7t-">=00:01:00</span>
+     
+     </div>
      </li>
-     <li class="itemize"><span class="lstinline"><span 
-class="pcrr7t-">ll_ecox</span></span> - This is derived from the basic <span class="lstinline"><span 
-class="pcrr7t-">loadleveler</span></span> method. It automatically adapts certain task
-     parameters (such as owner username) to NIWA&#8217;s EcoConnect operational environment so that the
-     same suite definition can be used in distinct <span 
-class="cmti-10">oper</span>, <span 
-class="cmti-10">test, </span>and <span 
-class="cmti-10">devel </span>environments in which the suite and
-     task owners, and their home directories, vary accordingly.
-     </li></ul>
+     <li class="itemize"><span 
+class="cmbx-10">sge </span>- submits task job scripts to Sun Grid Engine using the <span class="lstinline"><span 
+class="pcrr7t-">qsub</span></span> command. SGE directives provided in the
+     suite.rc file:  <!--l. 3570-->
                                                                                          
 
                                                                                          
-   <!--l. 3538--><div class="crosslinks"><p class="noindent">[<a 
+     <div class="lstlisting" id="listing-105"><span class="label"><a 
+ id="x66-105022r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105023r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105024r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">__NAME__</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105025r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">directives</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105026r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">cwd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105027r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">q</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105028r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">l</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">h_data</span><span 
+class="pcrr7t-">=1024</span><span 
+class="pcrr7t-">M</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">h_rt</span><span 
+class="pcrr7t-">=24:00:00'</span>
+     
+     </div>
+     <!--l. 3579--><p class="noindent" >are written to the top of the task job script like this:  </p><!--l. 3581-->
+     <div class="lstlisting" id="listing-106"><span class="label"><a 
+ id="x66-105029r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">bin</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105030r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">DIRECTIVES</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105031r3"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">cwd</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105032r4"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">q</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x66-105033r5"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">l</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">h_data</span><span 
+class="pcrro7t-">=1024</span><span 
+class="pcrro7t-">M</span><span 
+class="pcrro7t-">,</span><span 
+class="pcrro7t-">h_rt</span><span 
+class="pcrro7t-">=24:00:00</span>
+     
+     </div>
+     </li></ul>
+<!--l. 3590--><p class="indent" >   Note that <span 
+class="cmti-10">multiple entries for the same PBS or SGE option must be comma-separated on the same line</span>, in the
+suite.rc file. This is because repeating the option on another line will override the previous entry, not add to it. And,
+the right-hand side must be quoted to hide the comma from the suite.rc parser (commas are allowed only for list
+values; directives are treated as singular).
+</p><!--l. 3597--><p class="indent" >   Note also that <span 
+class="cmti-10">to get a naked option flag such as </span><span class="lstinline"><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">cwd</span></span> <span 
+class="cmti-10">in SGE you must give a quoted blank space as the</span>
+<span 
+class="cmti-10">directive value.</span>
+</p><!--l. 3600--><p class="indent" >   Finally, <span 
+class="cmti-10">default directives are provided to set the job name and stdout and stderr file paths</span>. These can be
+overridden if you wish (but stdout/stderr directory paths should be set via the appropriate suite.rc item rather than
+using the directives here).
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 3605--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu41.html" >next</a>] [<a 
 href="cug-htmlsu39.html" >prev</a>] [<a 
 href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
 href="cug-htmlsu40.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu40.html" >up</a>] </p></div>
-<!--l. 3538--><p class="indent" >   <a 
+<!--l. 3605--><p class="indent" >   <a 
  id="tailcug-htmlsu40.html"></a> </p> 
 </body></html> 

@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-03 15:37:00" /> 
+<meta name="date" content="2011-11-14 00:09:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -21,12 +21,12 @@ href="cug-htmlsu57.html#tailcug-htmlsu57.html" >prev-tail</a>] [<a
 href="#tailcug-htmlsu58.html">tail</a>] [<a 
 href="cug-htmlse13.html#cug-htmlsu58.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
- id="x89-151000A.3"></a>[scheduling]</h4>
+ id="x89-153000A.3"></a>[scheduling]</h4>
 <!--l. 286--><p class="noindent" >This section allows cylc to determine when tasks are ready to run.
 </p><!--l. 288--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
- id="x89-152000A.3.1"></a>[scheduling] <span 
+ id="x89-154000A.3.1"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>initial cycle time</h5>
 <!--l. 290--><p class="noindent" >At startup each cycling task (unless specifically excluded under [special tasks]) will be inserted into the suite with
 this cycle time, or with the closest subsequent valid cycle time for the task. Note that whether or not <span 
@@ -45,7 +45,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 303--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
- id="x89-153000A.3.2"></a>[scheduling] <span 
+ id="x89-155000A.3.2"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>final cycle time</h5>
 <!--l. 305--><p class="noindent" >Cycling tasks are held (i.e.&#x00A0;not allowed to spawn a successor) once they pass the final cycle time, if one is specified.
 Once all tasks have achieved this state the suite will shut down. If this item is provided you can override it on the
@@ -60,7 +60,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 315--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.3   </span> <a 
- id="x89-154000A.3.3"></a>[scheduling] <span 
+ id="x89-156000A.3.3"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>runahead limit</h5>
 <!--l. 317--><p class="noindent" >A cycling task spawns a successor either when it starts running or, for sequential tasks, when it finishes. If the
 successor&#8217;s cycle time is ahead of the oldest non-failed task by more than the runahead limit it will be put into
@@ -85,16 +85,16 @@ class="cmti-10">default: </span>24</li></ul>
 <!--l. 336--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.4   </span> <a 
- id="x89-155000A.3.4"></a>[scheduling] <span 
+ id="x89-157000A.3.4"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>[[special tasks]]</h5>
 <!--l. 338--><p class="noindent" >This section identifies any tasks with special behaviour. By default (i.e.&#x00A0;non &#8220;special&#8221; behaviour) tasks submit as soon as
 their prerequisites are satisfied, and they spawn a successor at the next valid cycle time for the task as soon as they enter the
 running state<span class="footnote-mark"><a 
 href="cug-html90.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
- id="x89-155001f18"></a> 
+ id="x89-157001f18"></a> 
 </p>
 <!--l. 346--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-156000A.3.4.1"></a><span 
+ id="x89-158000A.3.4.1"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -136,7 +136,7 @@ it.
 </p><!--l. 362--><p class="noindent" >
 </p>
 <!--l. 362--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-157000A.3.4.2"></a><span 
+ id="x89-159000A.3.4.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -158,7 +158,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 374--><p class="noindent" >
 </p>
 <!--l. 374--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-158000A.3.4.3"></a><span 
+ id="x89-160000A.3.4.3"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -182,7 +182,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 394--><p class="noindent" >
 </p>
 <!--l. 394--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-159000A.3.4.4"></a><span 
+ id="x89-161000A.3.4.4"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -200,7 +200,7 @@ class="cmti-10">Warm cycled forecast</span>
 class="cmti-10">models that write out restart files for multiple cycles ahead </span>(exception: see &#8220;explicit restart outputs&#8221;
 below).<span class="footnote-mark"><a 
 href="cug-html91.html#fn19x0"><sup class="textsuperscript">19</sup></a></span><a 
- id="x89-159001f19"></a> 
+ id="x89-161001f19"></a> 
 </p>
      <ul class="itemize1">
      <li class="itemize"><span 
@@ -209,7 +209,7 @@ class="cmti-10">type: </span>list of task names
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 418--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-160000A.3.4.5"></a><span 
+ id="x89-162000A.3.4.5"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -233,7 +233,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 430--><p class="noindent" >
 </p>
 <!--l. 430--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-161000A.3.4.6"></a><span 
+ id="x89-163000A.3.4.6"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -261,7 +261,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 450--><p class="noindent" >
 </p>
 <!--l. 450--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-162000A.3.4.7"></a><span 
+ id="x89-164000A.3.4.7"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -283,7 +283,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 465--><p class="noindent" >
 </p>
 <!--l. 465--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-163000A.3.4.8"></a><span 
+ id="x89-165000A.3.4.8"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[special tasks]] </span><span 
@@ -309,7 +309,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 481--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.5   </span> <a 
- id="x89-164000A.3.5"></a>[scheduling] <span 
+ id="x89-166000A.3.5"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>[[dependencies]]</h5>
 <!--l. 483--><p class="noindent" >The suite dependency graph is defined under this section. You can plot the dependency graph as you work on it,
 with <span class="lstinline"><span 
@@ -320,7 +320,7 @@ href="cug-htmlsu32.html#x50-590008.3">8.3<!--tex4ht:ref: DependencyGraphs --></a
 </p><!--l. 488--><p class="noindent" >
 </p>
 <!--l. 488--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-165000A.3.5.1"></a> <span 
+ id="x89-167000A.3.5.1"></a> <span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[dependencies]] </span><span 
@@ -332,7 +332,7 @@ exits, or an initial suite section that completes prior to the cycling tasks sta
 cycling tasks depend on the last one-off ones). But note that synchronous <span 
 class="cmti-10">start-up </span>tasks can also be
 used for the latter purpose. See Section&#x00A0;<a 
-href="#x89-167000A.3.5.2.1">A.3.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below for graph string syntax, and Section&#x00A0;<a 
+href="#x89-169000A.3.5.2.1">A.3.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below for graph string syntax, and Section&#x00A0;<a 
 href="cug-htmlsu32.html#x50-590008.3">8.3<!--tex4ht:ref: DependencyGraphs --></a>.
 </p>
      <ul class="itemize1">
@@ -341,11 +341,11 @@ class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span>(see Section&#x00A0;<a 
-href="#x89-167000A.3.5.2.1">A.3.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below)</li></ul>
+href="#x89-169000A.3.5.2.1">A.3.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below)</li></ul>
 <!--l. 503--><p class="noindent" >
 </p>
 <!--l. 503--><p class="noindent" ><span class="paragraphHead"><a 
- id="x89-166000A.3.5.2"></a><span 
+ id="x89-168000A.3.5.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[dependencies]] </span><span 
@@ -389,7 +389,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 522--><p class="noindent" >
 </p>
 <!--l. 522--><p class="indent" >   <span class="subparagraphHead"> <a 
- id="x89-167000A.3.5.2.1"></a><span 
+ id="x89-169000A.3.5.2.1"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[dependencies]] </span><span 
@@ -411,8 +411,8 @@ class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
 class="cmti-10">example: </span><!--l. 532-->
-     <div class="lstlisting" id="listing-110"><span class="label"><a 
- id="x89-167001r1"></a></span><span 
+     <div class="lstlisting" id="listing-118"><span class="label"><a 
+ id="x89-169001r1"></a></span><span 
 class="pcrr7t-">graph</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -421,7 +421,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167002r2"></a></span><span 
+ id="x89-169002r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -457,7 +457,7 @@ class="pcrr7t-">off</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167003r3"></a></span><span 
+ id="x89-169003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -497,7 +497,7 @@ class="pcrr7t-">of</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167004r4"></a></span><span 
+ id="x89-169004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -528,7 +528,7 @@ class="pcrr7t-">for</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167005r5"></a></span><span 
+ id="x89-169005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -566,7 +566,7 @@ class="pcrr7t-">X</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fails</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167006r6"></a></span><span 
+ id="x89-169006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -607,7 +607,7 @@ class="pcrr7t-">X</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">succeeds</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167007r7"></a></span><span 
+ id="x89-169007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -649,7 +649,7 @@ class="pcrr7t-">or</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fails</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167008r8"></a></span><span 
+ id="x89-169008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -684,7 +684,7 @@ class="pcrr7t-">conditional</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">triggers</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167009r9"></a></span><span 
+ id="x89-169009r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -692,7 +692,7 @@ class="pcrr7t-">#</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">comment</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167010r10"></a></span><span 
+ id="x89-169010r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -713,7 +713,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">automatically</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167011r11"></a></span><span 
+ id="x89-169011r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -759,7 +759,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">range</span><span 
 class="pcrr7t-">(1,7))</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x89-167012r12"></a></span><span 
+ id="x89-169012r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -774,7 +774,7 @@ class="cmti-10">default: </span>(none)</li></ul>
 <!--l. 549--><p class="noindent" >
 </p>
 <!--l. 549--><p class="indent" >   <span class="subparagraphHead"> <a 
- id="x89-168000A.3.5.2.2"></a><span 
+ id="x89-170000A.3.5.2.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
 class="cmbx-10">[[dependencies]] </span><span 

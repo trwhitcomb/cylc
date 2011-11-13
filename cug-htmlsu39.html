@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-03 15:37:00" /> 
+<meta name="date" content="2011-11-14 00:09:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3362--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3375--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlse10.html" >prev</a>] [<a 
 href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
@@ -22,7 +22,7 @@ href="#tailcug-htmlsu39.html">tail</a>] [<a
 href="cug-htmlse10.html#cug-htmlsu39.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.1   </span> <a 
  id="x65-10400010.1"></a>Task Job Scripts</h4>
-<!--l. 3365--><p class="noindent" >When a task is ready to run cylc generates a temporary <span 
+<!--l. 3378--><p class="noindent" >When a task is ready to run cylc generates a temporary <span 
 class="cmti-10">task job script </span>to configure the execution environment and
 call the task&#8217;s command scripting. The job script is the final result of suite.rc task configuration, in particular of the
 runtime namespace inheritance hierarchy for the task. The script is submitted to run by means of the <span 
@@ -30,7 +30,7 @@ class="cmti-10">job</span>
 <span 
 class="cmti-10">submission method </span>specified for the task. Different tasks can have different job submission methods. Like
 other namespace properties, you can set a default for the suite and override it on a per task basis:
-</p><!--l. 3374-->
+</p><!--l. 3387-->
    <div class="lstlisting" id="listing-98"><span class="label"><a 
  id="x65-104001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -140,12 +140,12 @@ class="pcrr7t-">method</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at_now</span>
+class="pcrr7t-">at</span>
    
    </div>
-<!--l. 3385--><p class="indent" >   The actual command line used to submit the job script is written to stdout by cylc. In the following shell
+<!--l. 3398--><p class="indent" >   The actual command line used to submit the job script is written to stdout by cylc. In the following shell
 transcript we generate a job script for a task in the QuickStart.c example suite and then examine it:
-</p><!--l. 3389-->
+</p><!--l. 3402-->
    <div class="lstlisting" id="listing-99"><span class="label"><a 
  id="x65-104009r1"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -298,7 +298,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">&amp;</span>
    
    </div>
-<!--l. 3397--><p class="indent" >   And here is the generated job script:  </p><!--l. 3399-->
+<!--l. 3410--><p class="indent" >   And here is the generated job script:  </p><!--l. 3412-->
    <div class="lstlisting" id="listing-100"><span class="label"><a 
  id="x65-104015r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -1059,7 +1059,7 @@ class="pcrro7t-">#</span><span
 class="pcrro7t-">EOF</span>
    
    </div>
-<!--l. 3486--><p class="indent" >   You can also generate a job script and print it directly to stdout, with <span class="lstinline"><span 
+<!--l. 3499--><p class="indent" >   You can also generate a job script and print it directly to stdout, with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">jobscript</span></span>.
@@ -1067,12 +1067,12 @@ class="pcrr7t-">jobscript</span></span>.
 
                                                                                          
 </p>
-   <!--l. 3490--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3502--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlse10.html" >prev</a>] [<a 
 href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
 href="cug-htmlsu39.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu39.html" >up</a>] </p></div>
-<!--l. 3490--><p class="indent" >   <a 
+<!--l. 3502--><p class="indent" >   <a 
  id="tailcug-htmlsu39.html"></a> </p> 
 </body></html> 

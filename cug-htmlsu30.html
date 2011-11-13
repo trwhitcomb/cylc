@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-03 15:37:00" /> 
+<meta name="date" content="2011-11-14 00:09:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -35,10 +35,10 @@ class="cmti-10">the </span>suite definition.
                                                                                          
      </li>
      <li class="itemize"><span 
-class="cmbx-10">A suite </span><span class="lstinline"><span 
+class="cmbx-10">A </span><span class="lstinline"><span 
 class="pcrb7t-">bin</span><span 
 class="pcrb7t-">/</span></span> <span 
-class="cmbx-10">directory</span>.
+class="cmbx-10">sub-directory</span>.
          <ul class="itemize2">
          <li class="itemize">For scripts and executables that implement, or are used by, suite tasks.
          </li>
@@ -46,8 +46,23 @@ class="cmbx-10">directory</span>.
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PATH</span></span> in task execution environments.
          </li>
-         <li class="itemize">Technically optional as tasks can call external commands, scripts, or programs; or they can be
-         scripted entirely within the suite.rc file.</li></ul>
+         <li class="itemize"><span 
+class="cmti-10">Optional </span>- tasks can call external commands, scripts, or programs; or they can be scripted entirely
+         within the suite.rc file.</li></ul>
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">A </span><span class="lstinline"><span 
+class="pcrb7t-">python</span><span 
+class="pcrb7t-">/</span></span> <span 
+class="cmbx-10">sub-directory</span>.
+         <ul class="itemize2">
+         <li class="itemize">For user-defined job-submission methods (see Section&#x00A0;<a 
+href="cug-htmlse10.html#x64-10300010">10<!--tex4ht:ref: TaskJobSubmission --></a>).
+         </li>
+         <li class="itemize"><span 
+class="cmti-10">Optional </span>- new job submission methods, if needed, can be installed into the cylc source tree, or
+         in any directory added to <span class="lstinline"><span 
+class="pcrr7t-">PYTHONPATH</span></span> in your environment.</li></ul>
      </li>
      <li class="itemize"><span 
 class="cmbx-10">Any other sub-directories and files </span>- documentation, control files, etc.
@@ -56,12 +71,12 @@ class="cmbx-10">Any other sub-directories and files </span>- documentation, cont
          </li>
          <li class="itemize">Run time task access via <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_DEF_PATH</span></span> (Section&#x00A0;<a 
+class="pcrr7t-">CYLC_SUITE_DEF_PATH</span></span> (see Section&#x00A0;<a 
 href="cug-htmlsu33.html#x55-840008.4.4">8.4.4<!--tex4ht:ref: TaskExecutionEnvironment --></a>).
          </li>
          <li class="itemize">Holding everything in one place makes proper suite revision control possible.</li></ul>
      </li></ul>
-<!--l. 1664--><p class="noindent" >An imaginary example:  </p><!--l. 1666-->
+<!--l. 1673--><p class="noindent" >An imaginary example:  </p><!--l. 1675-->
    <div class="lstlisting" id="listing-38"><span class="label"><a 
  id="x46-52001r1"></a></span><span 
 class="pcrr7t-">/</span><span 
@@ -370,12 +385,12 @@ class="pcrr7t-">...</span>
                                                                                          
 
                                                                                          
-   <!--l. 1684--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1693--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu31.html" >next</a>] [<a 
 href="cug-htmlse8.html" >prev</a>] [<a 
 href="cug-htmlse8.html#tailcug-htmlse8.html" >prev-tail</a>] [<a 
 href="cug-htmlsu30.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu30.html" >up</a>] </p></div>
-<!--l. 1684--><p class="indent" >   <a 
+<!--l. 1693--><p class="indent" >   <a 
  id="tailcug-htmlsu30.html"></a> </p> 
 </body></html> 

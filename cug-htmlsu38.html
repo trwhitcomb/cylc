@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-03 15:37:00" /> 
+<meta name="date" content="2011-11-14 00:09:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3156--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3169--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse10.html" >next</a>] [<a 
 href="cug-htmlsu37.html" >prev</a>] [<a 
 href="cug-htmlsu37.html#tailcug-htmlsu37.html" >prev-tail</a>] [<a 
@@ -22,13 +22,13 @@ href="#tailcug-htmlsu38.html">tail</a>] [<a
 href="cug-htmlse9.html#cug-htmlsu38.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">9.4   </span> <a 
  id="x62-980009.4"></a>Some Tasks Require Modification For Cylc</h4>
-<!--l. 3159--><p class="noindent" >
+<!--l. 3172--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">9.4.1   </span> <a 
  id="x62-990009.4.1"></a>Voluntary Messaging</h5>
-<!--l. 3161--><p class="noindent" >You can, if you like, modify task scripts to send any explanatory or progress messages to the suite
+<!--l. 3174--><p class="noindent" >You can, if you like, modify task scripts to send any explanatory or progress messages to the suite
 as the task runs. For example, a task can send a priority critical message before aborting on error:
-</p><!--l. 3165-->
+</p><!--l. 3178-->
    <div class="lstlisting" id="listing-90"><span class="label"><a 
  id="x62-99001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -170,7 +170,7 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrb7t-">fi</span>
    
    </div>
-<!--l. 3175--><p class="indent" >   You can also use this syntax:  </p><!--l. 3177-->
+<!--l. 3188--><p class="indent" >   You can also use this syntax:  </p><!--l. 3190-->
    <div class="lstlisting" id="listing-91"><span class="label"><a 
  id="x62-99008r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -256,7 +256,7 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrr7t-">}</span>
    
    </div>
-<!--l. 3186--><p class="indent" >   But not this:  </p><!--l. 3188-->
+<!--l. 3199--><p class="indent" >   But not this:  </p><!--l. 3201-->
    <div class="lstlisting" id="listing-92"><span class="label"><a 
  id="x62-99014r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -369,7 +369,7 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrb7t-">fi</span>
    
    </div>
-<!--l. 3198--><p class="indent" >   You can also send warning messages, or general information:  </p><!--l. 3200-->
+<!--l. 3211--><p class="indent" >   You can also send warning messages, or general information:  </p><!--l. 3213-->
    <div class="lstlisting" id="listing-93"><span class="label"><a 
  id="x62-99021r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -469,15 +469,15 @@ class="pcrr7t-">foo</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 3208--><p class="indent" >   This may be useful - any message received from a task is logged by cylc - but it is not a requirement. If error
+<!--l. 3221--><p class="indent" >   This may be useful - any message received from a task is logged by cylc - but it is not a requirement. If error
 messages are not reported, for instance, task failure will still be registered, and task stdout and stderr logs can still
 be examined for evidence of what went wrong.
-</p><!--l. 3213--><p class="noindent" >
+</p><!--l. 3226--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">9.4.2   </span> <a 
  id="x62-1000009.4.2"></a>Reporting Internal Outputs Completed</h5>
-<!--l. 3216--><p class="noindent" >Tasks with internal outputs that allow downstream processing to trigger before they are finished must report when
-those internal outputs have been completed:  </p><!--l. 3220-->
+<!--l. 3229--><p class="noindent" >Tasks with internal outputs that allow downstream processing to trigger before they are finished must report when
+those internal outputs have been completed:  </p><!--l. 3233-->
    <div class="lstlisting" id="listing-94"><span class="label"><a 
  id="x62-100001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -535,7 +535,7 @@ class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 3227--><p class="indent" >   This must match one of the task&#8217;s registered outputs:  </p><!--l. 3229-->
+<!--l. 3240--><p class="indent" >   This must match one of the task&#8217;s registered outputs:  </p><!--l. 3242-->
    <div class="lstlisting" id="listing-95"><span class="label"><a 
  id="x62-100006r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -659,21 +659,21 @@ class="pcrr7t-">"</span>
 
                                                                                          
    </div>
-<!--l. 3240--><p class="indent" >   otherwise it will just be logged as a progress report or similar. <span 
+<!--l. 3253--><p class="indent" >   otherwise it will just be logged as a progress report or similar. <span 
 class="cmti-10">Note the required round brackets in the suite.rc</span>
 <span 
 class="cmti-10">cycle time variable.</span>
-</p><!--l. 3243--><p class="noindent" >
+</p><!--l. 3256--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">9.4.3   </span> <a 
  id="x62-1010009.4.3"></a>Tasks With Initiating Processes That Detach And Exit Early</h5>
-<!--l. 3246--><p class="noindent" >Tasks with initiating scripts or processes that spawn jobs internally (e.g.&#x00A0;to a batch queue scheduler or to another
+<!--l. 3259--><p class="noindent" >Tasks with initiating scripts or processes that spawn jobs internally (e.g.&#x00A0;to a batch queue scheduler or to another
 host) and then detach and exit without seeing the resulting processing through must arrange for the spawned
 processing to send its own &#8220;cylc task succeeded&#8221; or &#8220;cylc task failed&#8221; messages on completion - because the
 cylc-generated job script (Section&#x00A0;<a 
 href="cug-htmlsu39.html#x65-10400010.1">10.1<!--tex4ht:ref: JobScripts --></a>) that otherwise does automatic completion cannot know when the task is
 really finished.
-</p><!--l. 3255--><p class="indent" >   For tasks in this category you must disable automatic completion messaging:  </p><!--l. 3258-->
+</p><!--l. 3268--><p class="indent" >   For tasks in this category you must disable automatic completion messaging:  </p><!--l. 3271-->
    <div class="lstlisting" id="listing-96"><span class="label"><a 
  id="x62-101001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -757,7 +757,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">setting</span>
    
    </div>
-<!--l. 3267--><p class="indent" >   Reporting success or failure is just a matter of calling the cylc messaging commands:  </p><!--l. 3270-->
+<!--l. 3280--><p class="indent" >   Reporting success or failure is just a matter of calling the cylc messaging commands:  </p><!--l. 3283-->
    <div class="lstlisting" id="listing-97"><span class="label"><a 
  id="x62-101007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -881,11 +881,11 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrb7t-">fi</span>
    
    </div>
-<!--l. 3284--><p class="indent" >   Bear in mind, however, that cylc messaging commands read environment variables that identify the calling
+<!--l. 3297--><p class="indent" >   Bear in mind, however, that cylc messaging commands read environment variables that identify the calling
 task and the target suite, so if your job submission method does not automatically copy its parent
 environment you must arrange for these variables, at the least, to be propagated through to your spawned
 sub-jobs.
-</p><!--l. 3290--><p class="indent" >   One way to handle this is to write a <span 
+</p><!--l. 3303--><p class="indent" >   One way to handle this is to write a <span 
 class="cmti-10">task wrapper </span>that modifies a copy of the detaching native job scripts, on the
 fly, to insert completion messaging in the appropriate places, and other variables if necessary, before
 invoking the (now modified) native process. A significant advantage of this method is that you don&#8217;t
@@ -893,7 +893,7 @@ need to permanently modify the model or its associated native scripting for cylc
 you can configure the native job setup for a single test case (running it without cylc) and then have
 your custom wrapper modify the test case on the fly with suite, task, and cycle-specific parameters as
 required.
-</p><!--l. 3301--><p class="indent" >   To make this easier, for tasks that declare manual completion messaging, cylc makes non user-defined
+</p><!--l. 3314--><p class="indent" >   To make this easier, for tasks that declare manual completion messaging, cylc makes non user-defined
 environment scripting available in a single variable called <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_ENVIRONMENT</span></span> that
@@ -904,12 +904,12 @@ href="cug-html63.html#fn15x0"><sup class="textsuperscript">15</sup></a></span><a
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">9.4.4   </span> <a 
  id="x62-1020009.4.4"></a>A Custom Task Wrapper Example</h5>
-<!--l. 3313--><p class="noindent" >The <span 
+<!--l. 3326--><p class="noindent" >The <span 
 class="cmti-10">detaching </span>example suite contains a script <span class="lstinline"><span 
 class="pcrr7t-">model</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">sh</span></span> that runs a pseudo-model executable as follows:
-</p><!--l. 3316--><div class="lstinputlisting">
+</p><!--l. 3329--><div class="lstinputlisting">
 <a 
  id="x62-102001"></a>
    <span 
@@ -1004,13 +1004,13 @@ class="pcrr7t-">"</span>
 
                                                                                          
    </div>
-<!--l. 3317--><p class="noindent" >this is in turn executed by a script <span class="lstinline"><span 
+<!--l. 3330--><p class="noindent" >this is in turn executed by a script <span class="lstinline"><span 
 class="pcrr7t-">run</span><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">model</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">sh</span></span> that detaches immediately after job submission (i.e.&#x00A0;it exits before
-the model executable actually runs): </p><!--l. 3320--><div class="lstinputlisting">
+the model executable actually runs): </p><!--l. 3333--><div class="lstinputlisting">
 <a 
  id="x62-102013"></a>
    <span 
@@ -1263,11 +1263,11 @@ class="pcrr7t-">done</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 3321--><p class="noindent" ><span 
+<!--l. 3334--><p class="noindent" ><span 
 class="cmti-10">Note that your </span><span 
 class="cmbx-10">at </span><span 
 class="cmti-10">scheduler daemon must be up if you want to test this suite.</span>
-</p><!--l. 3324--><p class="indent" >   Here&#8217;s a cylc suite to run this unruly model:  </p><!--l. 3326--><div class="lstinputlisting">
+</p><!--l. 3337--><p class="indent" >   Here&#8217;s a cylc suite to run this unruly model:  </p><!--l. 3339--><div class="lstinputlisting">
 <a 
  id="x62-102031"></a>
    <span 
@@ -1698,13 +1698,13 @@ class="pcrr7t-">PREFIX</span><span
 class="pcrr7t-">"</span>
    
    </div>
-<!--l. 3328--><p class="noindent" >The suite invokes the task by means of the custom wrapper <span class="lstinline"><span 
+<!--l. 3341--><p class="noindent" >The suite invokes the task by means of the custom wrapper <span class="lstinline"><span 
 class="pcrr7t-">model</span><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">wrapper</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">sh</span></span> which modifies, on the fly, a
-temporary copy of the model&#8217;s native job scripts as described above: </p><!--l. 3331--><div class="lstinputlisting">
+temporary copy of the model&#8217;s native job scripts as described above: </p><!--l. 3344--><div class="lstinputlisting">
 <a 
  id="x62-102057"></a>
    <span 
@@ -2338,7 +2338,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">EOF</span>
    
    </div>
-<!--l. 3333--><p class="noindent" >If you run this suite, or submit the model task alone with <span class="lstinline"><span 
+<!--l. 3346--><p class="noindent" >If you run this suite, or submit the model task alone with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">submit</span></span>, you&#8217;ll find that the usual job submission log
@@ -2349,19 +2349,19 @@ class="cmti-10">at </span>scheduler (their location is determined by the <span c
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PREFIX</span></span> variable in the suite.rc
 file).
-</p><!--l. 3342--><p class="indent" >   It should not be difficult to adapt this example to real tasks with detaching internal job submission. You will
+</p><!--l. 3355--><p class="indent" >   It should not be difficult to adapt this example to real tasks with detaching internal job submission. You will
 probably also need to replace other parameters, such as model input and output filenames, with suite- and
 cycle-appropriate values, but exactly the same technique can be used: identify which job script needs to be modified
 and use text processing tools (such as the single line <span 
 class="cmti-10">perl </span>search-and-replace expressions above) to do the
 job.
 </p>
-   <!--l. 3353--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3366--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse10.html" >next</a>] [<a 
 href="cug-htmlsu37.html" >prev</a>] [<a 
 href="cug-htmlsu37.html#tailcug-htmlsu37.html" >prev-tail</a>] [<a 
 href="cug-htmlsu38.html" >front</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu38.html" >up</a>] </p></div>
-<!--l. 3353--><p class="indent" >   <a 
+<!--l. 3366--><p class="indent" >   <a 
  id="tailcug-htmlsu38.html"></a>  </p> 
 </body></html> 
