@@ -4,299 +4,105 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Cylc Screenshots</title> 
+<head><title>Required Software</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 632--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse4.html" >next</a>] [<a 
-href="cug-htmlsu12.html" >prev</a>] [<a 
-href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
+   <!--l. 461--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu5.html" >next</a>] [<a 
+href="cug-htmlse2.html" >prev</a>] [<a 
+href="cug-htmlse2.html#tailcug-htmlse2.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse3.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse3.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
- id="x22-220003"></a>Cylc Screenshots</h3>
+ id="x10-90003"></a>Required Software</h3>
      <ul class="itemize1">
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200111">11<!--tex4ht:ref: fig-command-help --></a> - the cylc command line interface.
+     <li class="itemize"><span 
+class="cmbx-10">A Linux or Unix OS. </span>Cylc assumes Unix-style file paths in places, and a few command scripts are
+     written in the Bash shell. In principle it could be made more portable without much effort. Cylc has
+     run successfully on Mac OSX.
      </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200212">12<!--tex4ht:ref: fig-db --></a> - viewing a private suite database in gcylc.
+     <li class="itemize"><span 
+class="cmbx-10">The Python Language, version 2.4</span>+<span 
+class="cmbx-10">, latest tested 2.7.2</span>. Not Python 3.x yet; as of mid 2011
+     version 2.7 is the standard for new Linux distributions.
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://python.org" class="url" ><span 
+class="pcrr7t-">http://python.org</span></a></span>
      </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200313">13<!--tex4ht:ref: fig-cdb --></a> - viewing the central suite database in gcylc.
+     <li class="itemize"><span 
+class="cmbx-10">Pyro (Python Remote Objects), version 3.9.1</span>+<span 
+class="cmbx-10">, latest tested 3.15</span>. Not Pyro 4.x yet; as
+     of mid 2011 version 3.x is still recommended for production use. Pyro is used by cylc for network
+     communication between server processes (cylc suites) and client programs (running tasks, control GUIs
+     and commands).
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://irmen.home.xs4all.nl/pyro3" class="url" ><span 
+class="pcrr7t-">http://irmen.home.xs4all.nl/pyro3</span></a></span>
      </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200414">14<!--tex4ht:ref: fig-cylc-vim --></a> - a cylc suite definition file (suite.rc) in the vim editor.
+     <li class="itemize"><span 
+class="cmbx-10">Cylc</span>, current version 4.1.0.
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://hjoliver.github.com/cylc" class="url" ><span 
+class="pcrr7t-">http://hjoliver.github.com/cylc</span></a></span></li></ul>
+<!--l. 483--><p class="noindent" >The following packages are technically optional as you can construct and control cylc suites without dependency
+graphing, the cylc GUIs, and template processing:
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10">PyGTK</span>, a Python wrapper for the GTK+ GUI toolkit, required for the gcylc GUI (but you can
+     prepare and control cylc suites entirely from the command line if you like). PyGTK is included in most
+     Linux Distributions.
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://www.pygtk.org" class="url" ><span 
+class="pcrr7t-">http://www.pygtk.org</span></a></span>
      </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200515">15<!--tex4ht:ref: fig-simple-graph-2 --></a> - the suite definition of Figure&#x00A0;<a 
-href="#x22-2200414">14<!--tex4ht:ref: fig-cylc-vim --></a> graphed by cylc.
+     <li class="itemize"><span 
+class="cmbx-10">Graphviz </span>(latest tested 2.28.0) and <span 
+class="cmbx-10">Pygraphviz </span>(latest tested 1.1), a graph layout engine and a
+     Python interface to it. These are required for suite dependency graphing and the graph suite control
+     GUI (but you can also run cylc without them).
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://www.graphviz.org" class="url" ><span 
+class="pcrr7t-">http://www.graphviz.org</span></a></span>
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://networkx.lanl.gov/pygraphviz" class="url" ><span 
+class="pcrr7t-">http://networkx.lanl.gov/pygraphviz</span></a></span>
      </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200616">16<!--tex4ht:ref: fig-gcylc-treeview --></a> - suite control GUI, treeview interface.
-     </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200717">17<!--tex4ht:ref: fig-gcylc-graph --></a> - suite control GUI, graph-based interface.
-     </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200818">18<!--tex4ht:ref: fig-ecox-1 --></a> - a large operational suite graphed by cylc.
-     </li>
-     <li class="itemize">Figure&#x00A0;<a 
-href="#x22-2200919">19<!--tex4ht:ref: fig-ecox-2 --></a> - another view of the large operational suite of Figure&#x00A0;<a 
-href="#x22-2200818">18<!--tex4ht:ref: fig-ecox-1 --></a>.</li></ul>
-   <hr class="figure" /><div class="figure" 
->
+     <li class="itemize"><span 
+class="cmbx-10">Jinja2</span>, a template processor for Python (latest tested: 2.6). Jinja2 expressions allow use of variables,
+     mathematical expressions, loop control and conditional expressions in suite definitions, to generate the
+     final suite seen by cylc.
+     <br class="newline" /><span class="obeylines-h"><a 
+href="http://jinja.pocoo.org/docs" class="url" ><span 
+class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span></li></ul>
                                                                                          
 
                                                                                          
-<a 
- id="x22-2200111"></a>
+<!--l. 507--><p class="noindent" >
+</p>
+   <div class="subsectionTOCS">
+   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="cug-htmlsu5.html#x11-100003.1">Known Compatibility Issues</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.2 <a 
+href="cug-htmlsu6.html#x12-110003.2">Other Software Used Internally By Cylc</a></span>
+   </div>
+
                                                                                          
 
                                                                                          
-<div class="center" 
->
-<!--l. 650--><p class="noindent" >
-
-</p><!--l. 651--><p class="noindent" ><img 
-src="screenshots/commandhelp.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;11: </span><span  
-class="content"><span 
-class="cmr-7">The cylc command line interface</span></span></div><!--tex4ht:label?: x22-2200111 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200212"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 658--><p class="noindent" >
-
-</p><!--l. 659--><p class="noindent" ><img 
-src="screenshots/db.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;12: </span><span  
-class="content"><span 
-class="cmr-7">gcylc showing a private suite database, with one suite running on port 7766.</span></span></div><!--tex4ht:label?: x22-2200212 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200313"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 668--><p class="noindent" >
-
-</p><!--l. 669--><p class="noindent" ><img 
-src="screenshots/cdb.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;13: </span><span  
-class="content"><span 
-class="cmr-7">gcylc showing the central suite database.</span></span></div><!--tex4ht:label?: x22-2200313 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200414"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 677--><p class="noindent" >
-
-</p><!--l. 678--><p class="noindent" ><img 
-src="screenshots/simple-suiterc.png" alt="PIC"  
- />]</p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;14: </span><span  
-class="content"><span 
-class="cmr-7">A simple cylc suite definition edited in </span><span 
-class="cmti-7">vim</span></span></div><!--tex4ht:label?: x22-2200414 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200515"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 686--><p class="noindent" >
-
-</p><!--l. 687--><p class="noindent" ><img 
-src="screenshots/simple-18-cold.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;15: </span><span  
-class="content"><span 
-class="cmr-7">The suite definition of Figure</span><span 
-class="cmr-7">&#x00A0;</span><a 
-href="#x22-2200414"><span 
-class="cmr-7">14</span><!--tex4ht:ref: fig-cylc-vim --></a> <span 
-class="cmr-7">graphed by cylc.</span></span></div><!--tex4ht:label?: x22-2200515 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200616"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 696--><p class="noindent" >
-
-</p><!--l. 697--><p class="noindent" ><img 
-src="screenshots/control-trad.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;16: </span><span  
-class="content"><span 
-class="cmr-7">The suite control GUI, treeview interface.</span></span></div><!--tex4ht:label?: x22-2200616 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200717"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 705--><p class="noindent" >
-
-</p><!--l. 706--><p class="noindent" ><img 
-src="screenshots/control-graph.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;17: </span><span  
-class="content"><span 
-class="cmr-7">The suite control GUI, graph interface.</span></span></div><!--tex4ht:label?: x22-2200717 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200818"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 713--><p class="noindent" >
-
-</p><!--l. 714--><p class="noindent" ><img 
-src="screenshots/ecox-1.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;18: </span><span  
-class="content"><span 
-class="cmr-7">A large operational suite graphed by cylc.</span></span></div><!--tex4ht:label?: x22-2200818 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x22-2200919"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 722--><p class="noindent" >
-
-</p><!--l. 723--><p class="noindent" ><img 
-src="screenshots/ecox-2.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;19: </span><span  
-class="content"><span 
-class="cmr-7">The large suite of Figure</span><span 
-class="cmr-7">&#x00A0;</span><a 
-href="#x22-2200818"><span 
-class="cmr-7">18</span><!--tex4ht:ref: fig-ecox-1 --></a> <span 
-class="cmr-7">running.</span></span></div><!--tex4ht:label?: x22-2200919 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-                                                                                         
-
-                                                                                         
-                                                                                         
-
-                                                                                         
-   <!--l. 736--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse4.html" >next</a>] [<a 
-href="cug-htmlsu12.html" >prev</a>] [<a 
-href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
+   <!--l. 532--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu5.html" >next</a>] [<a 
+href="cug-htmlse2.html" >prev</a>] [<a 
+href="cug-htmlse2.html#tailcug-htmlse2.html" >prev-tail</a>] [<a 
 href="cug-htmlse3.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse3.html" >up</a>] </p></div>
-<!--l. 736--><p class="indent" >   <a 
+<!--l. 532--><p class="indent" >   <a 
  id="tailcug-htmlse3.html"></a> </p> 
 </body></html> 

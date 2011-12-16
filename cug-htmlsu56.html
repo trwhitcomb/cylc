@@ -4,76 +4,48 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Top Level Items</title> 
+<head><title>Make Suites As Self-Contained As Possible</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 18--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4500--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu57.html" >next</a>] [<a 
-href="cug-htmlse13.html" >prev</a>] [<a 
-href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
+href="cug-htmlsu55.html" >prev</a>] [<a 
+href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu56.html">tail</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu56.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
- id="x87-127000A.1"></a>Top Level Items</h4>
-<!--l. 20--><p class="noindent" >The only top level configuration items at present are the suite title and description.
-</p><!--l. 23--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.1.1   </span> <a 
- id="x87-128000A.1.1"></a>title</h5>
-<!--l. 25--><p class="noindent" >The suite title is displayed in the gcylc suite database window. It can also be retrieved from a suite at run time with
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span></span>).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8220;No title provided&#8221;</li></ul>
-<!--l. 34--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.1.2   </span> <a 
- id="x87-129000A.1.2"></a>description</h5>
-<!--l. 36--><p class="noindent" >The suite description can be retrieved by gcylc right-click menu. It can also be retrieved from a suite at run time
-with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span></span>).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8220;No description provided&#8221;</li></ul>
+href="cug-htmlse12.html#cug-htmlsu56.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.10   </span> <a 
+ id="x82-14000012.10"></a>Make Suites As Self-Contained As Possible</h4>
+<!--l. 4502--><p class="noindent" >The only compulsory content of a cylc suite definition directory is the suite.rc file (and you&#8217;ll almost certainly
+have a suite <span class="lstinline"><span 
+class="pcrr7t-">bin</span></span> sub-directory too). However, you can store whatever you like in a suite definition
+directory;<span class="footnote-mark"><a 
+href="cug-html83.html#fn14x0"><sup class="textsuperscript">14</sup></a></span><a 
+ id="x82-140001f14"></a> 
+other files there will be ignored by cylc but suite tasks can access them via the <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DEF_PATH</span></span> variable
+that cylc automatically exports into the task execution environment. Disk space is cheap - if all programs, ancillary
+files, control files (etc.) required by the suite are stored in the suite definition directory instead of having
+the suite reference external build directories (etc.), you can turn the directory into a revision control
+repository and be virtually assured of the ability to exactly reproduce earlier versions, regardless of suite
+complexity.
                                                                                          
 
                                                                                          
-   <!--l. 45--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 4518--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu57.html" >next</a>] [<a 
-href="cug-htmlse13.html" >prev</a>] [<a 
-href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
+href="cug-htmlsu55.html" >prev</a>] [<a 
+href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
 href="cug-htmlsu56.html" >front</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu56.html" >up</a>] </p></div>
-<!--l. 45--><p class="indent" >   <a 
- id="tailcug-htmlsu56.html"></a>  </p> 
+href="cug-htmlse12.html#cug-htmlsu56.html" >up</a>] </p></div>
+<!--l. 4518--><p class="indent" >   <a 
+ id="tailcug-htmlsu56.html"></a> </p> 
 </body></html> 

@@ -10,91 +10,93 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
    <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu56.html" >next</a>] [<a 
-href="cug-htmlsu55.html" >prev</a>] [<a 
-href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
+href="cug-htmlsu60.html" >next</a>] [<a 
+href="cug-htmlsu59.html" >prev</a>] [<a 
+href="cug-htmlsu59.html#tailcug-htmlsu59.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse13.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse13.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">A   </span> <a 
- id="x86-126000A"></a>Suite.rc Reference</h3>
+ id="x87-144000A"></a>Suite.rc Reference</h3>
 <!--l. 6--><p class="noindent" >This appendix documents all legal entries in a suite.rc file. Most suites will only need to explicitly configure a few of
 these items - many of them have sensible default values, some may only be needed for critical operational suites
 (e.g.&#x00A0;secure passphrases), and some are primarily used for cylc development. In general your suite.rc files shouldn&#8217;t
 be a lot more complicated than those of the cylc example suites.
 </p><!--l. 14--><p class="indent" >   See also <span 
 class="cmti-10">Suite Definition - Suite.rc Overview </span>(Section&#x00A0;<a 
-href="cug-htmlsu31.html#x47-530008.2">8.2<!--tex4ht:ref: SuiteRCFile --></a>) for a descriptive overview of suite.rc
+href="cug-htmlsu32.html#x45-570008.2">8.2<!--tex4ht:ref: SuiteRCFile --></a>) for a descriptive overview of suite.rc
 files.
 </p><!--l. 18--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >A.1 <a 
-href="cug-htmlsu56.html#x87-127000A.1">Top Level Items</a></span>
+href="cug-htmlsu60.html#x88-145000A.1">Top Level Items</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.1.1 <a 
-href="cug-htmlsu56.html#x87-128000A.1.1" id="QQ2-87-175">title</a></span>
+href="cug-htmlsu60.html#x88-146000A.1.1" id="QQ2-88-197">title</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.1.2 <a 
-href="cug-htmlsu56.html#x87-129000A.1.2" id="QQ2-87-176">description</a></span>
+href="cug-htmlsu60.html#x88-147000A.1.2" id="QQ2-88-198">description</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >A.2 <a 
-href="cug-htmlsu57.html#x88-130000A.2">[cylc]</a></span>
+href="cug-htmlsu61.html#x89-148000A.2">[cylc]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.1 <a 
-href="cug-htmlsu57.html#x88-131000A.2.1" id="QQ2-88-178">UTC mode</a></span>
+href="cug-htmlsu61.html#x89-149000A.2.1" id="QQ2-89-200">UTC mode</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.2 <a 
-href="cug-htmlsu57.html#x88-132000A.2.2" id="QQ2-88-179">simulation mode only</a></span>
+href="cug-htmlsu61.html#x89-150000A.2.2" id="QQ2-89-201">simulation mode only</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.3 <a 
-href="cug-htmlsu57.html#x88-133000A.2.3" id="QQ2-88-180">use secure passphrase</a></span>
+href="cug-htmlsu61.html#x89-151000A.2.3" id="QQ2-89-202">use secure passphrase</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.4 <a 
-href="cug-htmlsu57.html#x88-134000A.2.4" id="QQ2-88-181">[[logging]] </a></span>
+href="cug-htmlsu61.html#x89-152000A.2.4" id="QQ2-89-203">[[logging]] </a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.5 <a 
-href="cug-htmlsu57.html#x88-137000A.2.5" id="QQ2-88-184">[[state dumps]]</a></span>
+href="cug-htmlsu61.html#x89-155000A.2.5" id="QQ2-89-206">[[state dumps]]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.6 <a 
-href="cug-htmlsu57.html#x88-140000A.2.6" id="QQ2-88-187">[[lockserver]]</a></span>
+href="cug-htmlsu61.html#x89-158000A.2.6" id="QQ2-89-209">[[lockserver]]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.7 <a 
-href="cug-htmlsu57.html#x88-143000A.2.7" id="QQ2-88-190">[[environment]] </a></span>
+href="cug-htmlsu61.html#x89-161000A.2.7" id="QQ2-89-212">[[environment]] </a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.8 <a 
-href="cug-htmlsu57.html#x88-145000A.2.8" id="QQ2-88-192">[[simulation mode]]</a></span>
+href="cug-htmlsu61.html#x89-163000A.2.8" id="QQ2-89-214">[[simulation mode]]</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >A.3 <a 
-href="cug-htmlsu58.html#x89-153000A.3">[scheduling]</a></span>
+href="cug-htmlsu62.html#x90-171000A.3">[scheduling]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.1 <a 
-href="cug-htmlsu58.html#x89-154000A.3.1" id="QQ2-89-201">initial cycle time</a></span>
+href="cug-htmlsu62.html#x90-172000A.3.1" id="QQ2-90-223">initial cycle time</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.2 <a 
-href="cug-htmlsu58.html#x89-155000A.3.2" id="QQ2-89-202">final cycle time</a></span>
+href="cug-htmlsu62.html#x90-173000A.3.2" id="QQ2-90-224">final cycle time</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.3 <a 
-href="cug-htmlsu58.html#x89-156000A.3.3" id="QQ2-89-203">runahead limit</a></span>
+href="cug-htmlsu62.html#x90-174000A.3.3" id="QQ2-90-225">runahead limit</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.4 <a 
-href="cug-htmlsu58.html#x89-157000A.3.4" id="QQ2-89-204">[[special tasks]]</a></span>
+href="cug-htmlsu62.html#x90-175000A.3.4" id="QQ2-90-226">[[special tasks]]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.5 <a 
-href="cug-htmlsu58.html#x89-166000A.3.5" id="QQ2-89-213">[[dependencies]]</a></span>
+href="cug-htmlsu62.html#x90-184000A.3.5" id="QQ2-90-235">[[dependencies]]</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >A.4 <a 
-href="cug-htmlsu59.html#x92-171000A.4">[runtime]</a></span>
+href="cug-htmlsu63.html#x93-189000A.4">[runtime]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.1 <a 
-href="cug-htmlsu59.html#x92-172000A.4.1" id="QQ2-92-219">[[__NAME__]]</a></span>
+href="cug-htmlsu63.html#x93-190000A.4.1" id="QQ2-93-241">[[__NAME__]]</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >A.5 <a 
-href="cug-htmlsu60.html#x93-207000A.5">[visualization]</a></span>
+href="cug-htmlsu64.html#x94-226000A.5">[visualization]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.1 <a 
-href="cug-htmlsu60.html#x93-208000A.5.1" id="QQ2-93-255">initial cycle time</a></span>
+href="cug-htmlsu64.html#x94-227000A.5.1" id="QQ2-94-278">initial cycle time</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.2 <a 
-href="cug-htmlsu60.html#x93-209000A.5.2" id="QQ2-93-256">final cycle time</a></span>
+href="cug-htmlsu64.html#x94-228000A.5.2" id="QQ2-94-279">final cycle time</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.3 <a 
-href="cug-htmlsu60.html#x93-210000A.5.3" id="QQ2-93-257">collapsed families</a></span>
+href="cug-htmlsu64.html#x94-229000A.5.3" id="QQ2-94-280">collapsed families</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.4 <a 
-href="cug-htmlsu60.html#x93-211000A.5.4" id="QQ2-93-258">use node color for edges</a></span>
+href="cug-htmlsu64.html#x94-230000A.5.4" id="QQ2-94-281">use node color for edges</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.5 <a 
-href="cug-htmlsu60.html#x93-212000A.5.5" id="QQ2-93-259">default node attributes</a></span>
+href="cug-htmlsu64.html#x94-231000A.5.5" id="QQ2-94-282">default node attributes</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.6 <a 
-href="cug-htmlsu60.html#x93-213000A.5.6" id="QQ2-93-260">default edge attributes</a></span>
+href="cug-htmlsu64.html#x94-232000A.5.6" id="QQ2-94-283">default edge attributes</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.7 <a 
-href="cug-htmlsu60.html#x93-214000A.5.7" id="QQ2-93-261">[[node groups]]</a></span>
+href="cug-htmlsu64.html#x94-233000A.5.7" id="QQ2-94-284">[[node groups]]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.8 <a 
-href="cug-htmlsu60.html#x93-216000A.5.8" id="QQ2-93-263">[[node attributes]]</a></span>
+href="cug-htmlsu64.html#x94-235000A.5.8" id="QQ2-94-286">[[node attributes]]</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.9 <a 
-href="cug-htmlsu60.html#x93-218000A.5.9" id="QQ2-93-265">[[run time graph]]</a></span>
+href="cug-htmlsu64.html#x94-237000A.5.9" id="QQ2-94-288">[[run time graph]]</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >A.6 <a 
-href="cug-htmlsu61.html#x94-222000A.6">Default Suite Configuration</a></span>
+href="cug-htmlsu65.html#x95-241000A.6">Special Placeholder Variables</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.7 <a 
+href="cug-htmlsu66.html#x96-242000A.7">Default Suite Configuration</a></span>
                                                                                          
 
                                                                                          
@@ -104,15 +106,16 @@ href="cug-htmlsu61.html#x94-222000A.6">Default Suite Configuration</a></span>
 
 
 
+
                                                                                          
 
                                                                                          
-   <!--l. 4165--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu56.html" >next</a>] [<a 
-href="cug-htmlsu55.html" >prev</a>] [<a 
-href="cug-htmlsu55.html#tailcug-htmlsu55.html" >prev-tail</a>] [<a 
+   <!--l. 4579--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu60.html" >next</a>] [<a 
+href="cug-htmlsu59.html" >prev</a>] [<a 
+href="cug-htmlsu59.html#tailcug-htmlsu59.html" >prev-tail</a>] [<a 
 href="cug-htmlse13.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse13.html" >up</a>] </p></div>
-<!--l. 4165--><p class="indent" >   <a 
+<!--l. 4579--><p class="indent" >   <a 
  id="tailcug-htmlse13.html"></a> </p> 
 </body></html> 

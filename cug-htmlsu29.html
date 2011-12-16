@@ -4,328 +4,93 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Validating A Suite</title> 
+<head><title>Central Suite Database</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1583--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse8.html" >next</a>] [<a 
+   <!--l. 1663--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
 href="cug-htmlsu28.html" >prev</a>] [<a 
 href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu29.html">tail</a>] [<a 
 href="cug-htmlse7.html#cug-htmlsu29.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">7.12   </span> <a 
- id="x44-500007.12"></a>Validating A Suite</h4>
-<!--l. 1585--><p class="noindent" >Suite validation checks for errors by parsing the suite definition, comparing all items against the suite.rc
-specification file, and then parsing the suite graph and attempting to instantiate all task proxy objects. This can be
-done using gcylc or <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span></span>:  </p><!--l. 1590-->
-   <div class="lstlisting" id="listing-37"><span class="label"><a 
- id="x44-50001r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">v</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50002r2"></a></span><span 
-class="pcrr7t-">Parsing</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Definition</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50003r3"></a></span><span 
-class="pcrr7t-">LOADING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50004r4"></a></span><span 
-class="pcrr7t-">VALIDATING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">against</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">specification</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50005r5"></a></span><span 
-class="pcrr7t-">PARSING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">clock</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">triggered</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50006r6"></a></span><span 
-class="pcrr7t-">PARSING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">generator</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">expressions</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50007r7"></a></span><span 
-class="pcrr7t-">PARSING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">hierarchies</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50008r8"></a></span><span 
-class="pcrr7t-">PARSING</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GRAPH</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50009r9"></a></span><span 
-class="pcrr7t-">Instantiating</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Proxies</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50010r10"></a></span><span 
-class="pcrr7t-">root</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50011r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">GEN</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50012r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">OPS</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50013r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">aircraft</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50014r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">atovs</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50015r15"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">atovs_post</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50016r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">VAR</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50017r17"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">AnPF</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50018r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">ConLS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50019r19"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50020r20"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">bar1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50021r21"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">bar2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50022r22"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50023r23"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">prepobs</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x44-50024r24"></a></span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validates</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">OK</span><span 
-class="pcrr7t-">.</span>
-   
-   </div>
-<!--l. 1617--><p class="indent" >   For more information on suite validation see Section&#x00A0;<a 
-href="cug-htmlsu31.html#x47-570008.2.3">8.2.3<!--tex4ht:ref: Validation --></a>.
+   <h4 class="subsectionHead"><span class="titlemark">7.2   </span> <a 
+ id="x41-520007.2"></a>Central Suite Database</h4>
+<!--l. 1665--><p class="noindent" >The central suite database facilitates sharing of suites among cylc users. It works similarly to a private suite
+database except that central suite registration names always begin with the suite owner&#8217;s username. Users can
+export suites to the central database to make them available to others.
+</p><!--l. 1671--><p class="indent" >   Suites in the central database can be inspected by various means, but you can&#8217;t run them without <span 
+class="cmti-10">importing</span>
+them to your private database.
+</p><!--l. 1674--><p class="indent" >   By right-clicking on a suite in the central database, or using the cylc command line, you can:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x41-52002x1">retrieve the suite description,
+     </li>
+     <li 
+  class="enumerate" id="x41-52004x2">list tasks in the suite,
+     </li>
+     <li 
+  class="enumerate" id="x41-52006x3">view the suite namespace hierarchy,
+     </li>
+     <li 
+  class="enumerate" id="x41-52008x4">view the suite definition in your editor,
+     </li>
+     <li 
+  class="enumerate" id="x41-52010x5">plot the suite dependency graph,
+     </li>
+     <li 
+  class="enumerate" id="x41-52012x6">search the suite definition and bin scripts,
+     </li>
+     <li 
+  class="enumerate" id="x41-52014x7">validate the suite definition,
+     </li>
+     <li 
+  class="enumerate" id="x41-52016x8">compare (difference) the suite with another suite,
+     </li>
+     <li 
+  class="enumerate" id="x41-52018x9">import the suite or group to your private database,
+     </li>
+     <li 
+  class="enumerate" id="x41-52020x10">unreregister or delete the suite or group (if you own it),
+     </li>
+     <li 
+  class="enumerate" id="x41-52022x11">reregister the suite or group (if you own it).</li></ol>
+<!--l. 1690--><p class="noindent" >
 </p>
-   <!--l. 1620--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse8.html" >next</a>] [<a 
+   <h5 class="subsubsectionHead"><span class="titlemark">7.2.1   </span> <a 
+ id="x41-530007.2.1"></a>Central Database Location</h5>
+<!--l. 1692--><p class="noindent" >The central suite database is currently located here: <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">db</span></span>, and is accessed through the filesystem
+on the cylc host machine. Consequently it has to be world, or at least group, writeable, which is not very
+secure.
+</p><!--l. 1703--><p class="indent" >   <span 
+class="cmti-10">We intend to develop a client/server interface to the central suite database so that users can easily share suites</span>
+<span 
+class="cmti-10">across the network</span>. In the meantime, &#8220;importing&#8221; a suite manually from another user on another host is simply a
+matter of copying the suite definition directory over, registering the local copy in your private database, and then
+exporting it to the local central database.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1710--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
 href="cug-htmlsu28.html" >prev</a>] [<a 
 href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
 href="cug-htmlsu29.html" >front</a>] [<a 
 href="cug-htmlse7.html#cug-htmlsu29.html" >up</a>] </p></div>
-<!--l. 1620--><p class="indent" >   <a 
- id="tailcug-htmlsu29.html"></a> </p> 
+<!--l. 1710--><p class="indent" >   <a 
+ id="tailcug-htmlsu29.html"></a>  </p> 
 </body></html> 

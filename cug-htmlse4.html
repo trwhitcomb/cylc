@@ -4,45 +4,72 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>On The Meaning Of Cycle Time In Cylc</title> 
+<head><title>Installation</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 736--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse5.html" >next</a>] [<a 
-href="cug-htmlse3.html" >prev</a>] [<a 
-href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
+   <!--l. 532--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu7.html" >next</a>] [<a 
+href="cug-htmlsu6.html" >prev</a>] [<a 
+href="cug-htmlsu6.html#tailcug-htmlsu6.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse4.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse4.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
- id="x23-230004"></a>On The Meaning Of <span 
-class="cmti-10">Cycle Time </span>In Cylc</h3>
-<!--l. 745--><p class="noindent" >Cylc suites advance by means of individual tasks independently spawning successors at the next valid cycle time for
-the task, not by incrementing a suite-wide forecast cycle. In fact cylc has no concept of suite-wide cycle time;
-instead, each task has its own private cycle time and can run when its prerequisites are satisfied regardless of other
-tasks with different cycle times running at the same time - this underlies cylc&#8217;s uniquely efficient and
-flexible scheduling abilities. However, it may sometimes still be convenient to refer to the &#8220;current
-cycle&#8221;, the &#8220;previous cycle&#8221;, or the &#8220;next cycle&#8221; and so forth, with reference to a particular task,
-or in the sense of all tasks that &#8220;belong to&#8221; a particular forecast cycle. Just keep in mind that the
-members of such groups may not all exist simultaneously in the running suite - tasks may pass through
-the &#8220;current cycle&#8221; (etc.) at different times as the suite evolves, particularly in delayed (catch up)
-operation.
+ id="x13-120004"></a>Installation</h3>
+<!--l. 535--><p class="noindent" >
+</p>
+   <div class="subsectionTOCS">
+   &#x00A0;<span class="subsectionToc" >4.1 <a 
+href="cug-htmlsu7.html#x14-130004.1">Install The External Packages</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.2 <a 
+href="cug-htmlsu8.html#x15-140004.2">Install The Cylc Release</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.3 <a 
+href="cug-htmlsu9.html#x16-150004.3">Configure Your Environment</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.4 <a 
+href="cug-htmlsu10.html#x17-160004.4">Create The Central Suite Database</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.5 <a 
+href="cug-htmlsu11.html#x18-170004.5">Automated Database Test</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.6 <a 
+href="cug-htmlsu12.html#x19-180004.6">Automated Scheduler Test</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.7 <a 
+href="cug-htmlsu13.html#x20-190004.7">Complete Non-System-Level Installation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.1 <a 
+href="cug-htmlsu13.html#x20-200004.7.1" id="QQ2-20-41">Pyro</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.2 <a 
+href="cug-htmlsu13.html#x20-210004.7.2" id="QQ2-20-42">Create The Central Suite Database</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.3 <a 
+href="cug-htmlsu13.html#x20-220004.7.3" id="QQ2-20-43">Graphviz</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.4 <a 
+href="cug-htmlsu13.html#x20-230004.7.4" id="QQ2-20-44">Pygraphviz</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.5 <a 
+href="cug-htmlsu13.html#x20-240004.7.5" id="QQ2-20-45">Jinja2</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.7.6 <a 
+href="cug-htmlsu13.html#x20-250004.7.6" id="QQ2-20-46">What Next?</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.8 <a 
+href="cug-htmlsu14.html#x21-260004.8">Upgrading To A New Cylc Version</a></span>
+   </div>
+
+
+
+
+
+
+
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 762--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse5.html" >next</a>] [<a 
-href="cug-htmlse3.html" >prev</a>] [<a 
-href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
+   <!--l. 822--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu7.html" >next</a>] [<a 
+href="cug-htmlsu6.html" >prev</a>] [<a 
+href="cug-htmlsu6.html#tailcug-htmlsu6.html" >prev-tail</a>] [<a 
 href="cug-htmlse4.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse4.html" >up</a>] </p></div>
-<!--l. 762--><p class="indent" >   <a 
+<!--l. 822--><p class="indent" >   <a 
  id="tailcug-htmlse4.html"></a> </p> 
 </body></html> 

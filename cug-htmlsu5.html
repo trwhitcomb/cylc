@@ -4,73 +4,40 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Requirements</title> 
+<head><title>Known Compatibility Issues</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 348--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 507--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu6.html" >next</a>] [<a 
-href="cug-htmlse2.html" >prev</a>] [<a 
-href="cug-htmlse2.html#tailcug-htmlse2.html" >prev-tail</a>] [<a 
+href="cug-htmlse3.html" >prev</a>] [<a 
+href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu5.html">tail</a>] [<a 
-href="cug-htmlse2.html#cug-htmlsu5.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
- id="x10-90002.1"></a>Requirements</h4>
-     <ul class="itemize1">
-     <li class="itemize">Operating System: Linux or Unix <span class="footnote-mark"><a 
-href="cug-html11.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a 
- id="x10-9001f3"></a> 
-     </li>
-     <li class="itemize">Python Version: 2.4 or later, but not Python 3.x as yet.<span class="footnote-mark"><a 
-href="cug-html12.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
- id="x10-9002f4"></a> 
-     </li>
-     <li class="itemize">PyGTK, a Python wrapper for the GTK+ graphical user interface toolkit. PyGTK is included in most
-     Linux Distributions. <br 
-class="newline" /><span 
-class="cmti-10">http://www.pygtk.org</span>
-     </li>
-     <li class="itemize">Pyro 3 (latest version tested 3.14.)<span class="footnote-mark"><a 
-href="cug-html13.html#fn5x0"><sup class="textsuperscript">5</sup></a></span><a 
- id="x10-9003f5"></a> 
-     <br 
-class="newline" /><span 
-class="cmti-10">http://irmen.home.xs4all.nl/pyro3</span>
+href="cug-htmlse3.html#cug-htmlsu5.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x11-100003.1"></a>Known Compatibility Issues</h4>
+<!--l. 509--><p class="noindent" >Cylc should run out of the box on reasonably recent Linux distributions.
+</p><!--l. 511--><p class="indent" >   Beware of old Linux distributions that come packaged with Pyro 3.9 or earlier, which is not compatible with the
+new-style Python classes used in cylc. It has been reported that Ubuntu 10.04 (Lucid Lynx), released in September
+2009, suffers from this problem.
+</p><!--l. 516--><p class="indent" >   Note also that for distributed suites the Pyro versions installed on each machine must be mutually compatible.
+Using identical versions obviously guarantees compatibility, but this may not be necessary.
                                                                                          
 
                                                                                          
-     </li>
-     <li class="itemize">The graphviz graph layout engine (latest version tested: 2.28.0). <br 
-class="newline" /><span 
-class="cmti-10">http://www.graphviz.org</span>
-     </li>
-     <li class="itemize">Pygraphviz, a python interface to graphviz (latest version tested: 1.1). <br 
-class="newline" /><span 
-class="cmti-10">http://networkx.lanl.gov/pygraphviz</span></li></ul>
-<!--l. 377--><p class="noindent" >Python and Pyro are essential. PyGTK is required by the gcylc GUI (but you can control and monitor cylc suites
-from the command line). Graphviz and pygraphviz are required for dependency graphing and the graph-based suite
-control GUI (but you can also run cylc without them).
-</p><!--l. 382--><p class="indent" >   Cylc has absorbed the following software in modified form (no need to install them):  </p>
-     <ul class="itemize1">
-     <li class="itemize">xdot, a graph viewer (http://code.google.com/p/jrfonseca/wiki/XDot, LGPL license)
-     </li>
-     <li class="itemize">ConfigObj and Validate (http://www.voidspace.org.uk/python, BSD license)
-     </li></ul>
-                                                                                         
-
-                                                                                         
-   <!--l. 394--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 520--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu6.html" >next</a>] [<a 
-href="cug-htmlse2.html" >prev</a>] [<a 
-href="cug-htmlse2.html#tailcug-htmlse2.html" >prev-tail</a>] [<a 
+href="cug-htmlse3.html" >prev</a>] [<a 
+href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
 href="cug-htmlsu5.html" >front</a>] [<a 
-href="cug-htmlse2.html#cug-htmlsu5.html" >up</a>] </p></div>
-<!--l. 394--><p class="indent" >   <a 
+href="cug-htmlse3.html#cug-htmlsu5.html" >up</a>] </p></div>
+<!--l. 520--><p class="indent" >   <a 
  id="tailcug-htmlsu5.html"></a> </p> 
 </body></html> 

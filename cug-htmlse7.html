@@ -4,34 +4,32 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Quick Start Guide</title> 
+<head><title>Suite Registration</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 971--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu18.html" >next</a>] [<a 
-href="cug-htmlsu17.html" >prev</a>] [<a 
-href="cug-htmlsu17.html#tailcug-htmlsu17.html" >prev-tail</a>] [<a 
+   <!--l. 1569--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu28.html" >next</a>] [<a 
+href="cug-htmlsu27.html" >prev</a>] [<a 
+href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse7.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
- id="x31-320007"></a>Quick Start Guide</h3>
-<!--l. 974--><p class="noindent" >This section works through some basic cylc functionality using the &#8220;QuickStart&#8221; example suites, which should have
-been registered in the central suite database, under the cylc admin username (replace <span class="lstinline"><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;</span></span> below with the
-correct username for your system) during cylc installation,
-</p>
-   <!--l. 980-->
-   <div class="lstlisting" id="listing-17"><span class="label"><a 
- id="x31-32001r1"></a></span><span 
+ id="x39-490007"></a>Suite Registration</h3>
+<!--l. 1572--><p class="noindent" >Cylc commands target particular suites via names registered in a <span 
+class="cmti-10">suite database</span>, so that you don&#8217;t need to remember
+and continually refer to the actual location of the suite definition on disk. A suite registration name is a hierarchical
+name akin to a directory path but delimited by the &#8216;.&#8217; character; this allows suites to be organised in nested tree-like
+structures: </p><!--l. 1578--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -40,278 +38,413 @@ class="pcrr7t-">db</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">print</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">tp</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">tree</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49002r2"></a></span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">oper</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32002r2"></a></span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;</span><span 
+ id="x39-49004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite_defs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">LocalModel</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">nested</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32003r3"></a></span><span 
+ id="x39-49005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite_defs</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">LocalModel</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">nested</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x39-49006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">A</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">B</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">C</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x31-32008r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x39-49007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">z</span><span 
+class="pcrr7t-">region1</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TEST</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
+class="pcrr7t-">home</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">oliverh</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span>
-   
+class="pcrr7t-">nwp_suites</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Regional</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">TESTING</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Region1</span>
+
+
    </div>
-<!--l. 991--><p class="noindent" >
+<!--l. 1588--><p class="indent" >   Note that registration groups are entirely virtual, they do not need to be explicitly created before use, and they
+automatically disappear if all tasks are removed from them. From the listing above, for example, to move the suite
+<span class="lstinline"><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span></span> into the <span class="lstinline"><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span></span> group: </p><!--l. 1593--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49008r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rereg</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49009r2"></a></span><span 
+class="pcrr7t-">REREGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49010r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">tpx</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49011r4"></a></span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49012r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49013r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49014r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49015r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TEST</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49016r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region2</span>
+
+
+   </div>
+<!--l. 1604--><p class="indent" >   And to move <span class="lstinline"><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span></span> into a new group <span class="lstinline"><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">para</span></span>: </p><!--l. 1605--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49017r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rereg</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">para</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49018r2"></a></span><span 
+class="pcrr7t-">REREGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">para</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49019r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">tpx</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49020r4"></a></span><span 
+class="pcrr7t-">nwp</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49021r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">oper</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49022r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49023r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49024r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">region1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TEST</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49025r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">para</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x39-49026r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">region2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Local</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Region2</span>
+
+
+   </div>
+<!--l. 1618--><p class="indent" >   Currently you cannot explicitly indicate a group name on the command line by appending a dot character.
+Rather, in database operations such as copy, reregister, or unregister, the identity of the source item (group or suite)
+is inferred from the content of the database; and if the source item is a group, so must the target be a group (or it
+will be, in the case of an item that will be created by the operation). This means that you cannot copy
+a single suite into a group that does not exist yet unless you specify the entire target registration
+name.
+</p><!--l. 1627--><p class="indent" >   <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">register</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">help</span></span> shows a number of other examples.
+</p><!--l. 1629--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >7.1 <a 
-href="cug-htmlsu18.html#x32-330007.1">Configure Your Environment</a></span>
+href="cug-htmlsu28.html#x40-500007.1">Private Suite Database</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.1.1 <a 
+href="cug-htmlsu28.html#x40-510007.1.1" id="QQ2-40-85">Private Database Location</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
-href="cug-htmlsu19.html#x33-340007.2">Starting The gcylc GUI</a></span>
+href="cug-htmlsu29.html#x41-520007.2">Central Suite Database</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.1 <a 
+href="cug-htmlsu29.html#x41-530007.2.1" id="QQ2-41-87">Central Database Location</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
-href="cug-htmlsu20.html#x34-350007.3">Import The QuickStart Suites</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
-href="cug-htmlsu21.html#x35-360007.4">View The QuickStart.a Suite Definition</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
-href="cug-htmlsu22.html#x36-370007.5">Plotting The QuickStart.a Dependency Graph</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.6 <a 
-href="cug-htmlsu23.html#x37-380007.6">Run The QuickStart.a Suite</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.1 <a 
-href="cug-htmlsu23.html#x37-390007.6.1" id="QQ2-37-67">Viewing The State Of Tasks</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.2 <a 
-href="cug-htmlsu23.html#x37-400007.6.2" id="QQ2-37-69">Triggering Tasks Manually</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.6.3 <a 
-href="cug-htmlsu23.html#x37-410007.6.3" id="QQ2-37-70">Suite Shut-Down And Restart</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.7 <a 
-href="cug-htmlsu24.html#x39-420007.7">QuickStart.b - Handling Cold-Starts Properly</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.8 <a 
-href="cug-htmlsu25.html#x40-430007.8">QuickStart.c - Real Task Implementations</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.9 <a 
-href="cug-htmlsu26.html#x41-440007.9">Monitoring Running Suites</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.1 <a 
-href="cug-htmlsu26.html#x41-450007.9.1" id="QQ2-41-77">Suite stdout And stderr</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.2 <a 
-href="cug-htmlsu26.html#x41-460007.9.2" id="QQ2-41-79">Suite Logs</a></span>
-<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.3 <a 
-href="cug-htmlsu26.html#x41-470007.9.3" id="QQ2-41-81">Task stdout And stderr Logs</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.10 <a 
-href="cug-htmlsu27.html#x42-480007.10">Searching A Suite</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.11 <a 
-href="cug-htmlsu28.html#x43-490007.11">Comparing Suites</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >7.12 <a 
-href="cug-htmlsu29.html#x44-500007.12">Validating A Suite</a></span>
+href="cug-htmlsu30.html#x42-540007.3">Database Operations</a></span>
    </div>
 
 
-
-
-
-
-
-
-
-
-
                                                                                          
 
                                                                                          
-   <!--l. 1620--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu18.html" >next</a>] [<a 
-href="cug-htmlsu17.html" >prev</a>] [<a 
-href="cug-htmlsu17.html#tailcug-htmlsu17.html" >prev-tail</a>] [<a 
+   <!--l. 1744--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu28.html" >next</a>] [<a 
+href="cug-htmlsu27.html" >prev</a>] [<a 
+href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
 href="cug-htmlse7.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
-<!--l. 1620--><p class="indent" >   <a 
+<!--l. 1744--><p class="indent" >   <a 
  id="tailcug-htmlse7.html"></a> </p> 
 </body></html> 

@@ -4,299 +4,102 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Import The QuickStart Suites</title> 
+<head><title>Run The QuickStart.a Suite</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1006--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1025--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu20.html">tail</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu20.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">7.3   </span> <a 
- id="x34-350007.3"></a>Import The QuickStart Suites</h4>
-<!--l. 1008--><p class="noindent" >You can register new suites directly in your private database, via gcylc or <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">register</span></span>, or you can import
-suites from the central database that is visible to all users. Suites in the central database can be view, validated, and
-graphed, etc., but you have to import them in order to run them. Section&#x00A0;<a 
-href="cug-htmlse6.html#x27-270006">6<!--tex4ht:ref: SuiteRegistration --></a> explains exactly what actions can be
-performed on suites in central and private databases.
-</p><!--l. 1016--><p class="indent" >   In gcylc, find the Quick Start suites (use View <span 
-class="cmsy-10">&#x2192; </span>Filter to filter for &#8220;QuickStart&#8221; if you like), right click on the
+href="cug-htmlse6.html#cug-htmlsu20.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">6.6   </span> <a 
+ id="x30-340006.6"></a>Run The QuickStart.a Suite</h4>
+<!--l. 1027--><p class="noindent" >Each cylc task defines command scripting to invoke the right external processing when the task is ready to run. This
+has not been explicilty configured in the example suite, so it defaults, for all tasks, to the <span 
+class="cmti-10">dummy task </span>scripting
+inherited from the <span 
+class="cmti-10">root namespace </span>(see Section&#x00A0;<a 
+href="cug-htmlse8.html#x43-550008">8<!--tex4ht:ref: SuiteDefinition --></a>): </p><!--l. 1032--><div class="lstlisting">
 <span 
-class="cmti-10">QuickStart </span>group and choose &#8216;Import&#8217; to copy the whole group to your private database. In the dialog box that pops
-up, enter &#8216;QuickStart&#8217; as the TARGET suite name, and <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span></span> (or some other directory of your choice)
-as a destination for the suite definition directories in the group. Equivalently, on the command line:
-</p><!--l. 1023-->
-   <div class="lstlisting" id="listing-19"><span class="label"><a 
- id="x34-35001r1"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x30-34001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">import</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;.</span><span 
-class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">get</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">config</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quickstart</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x30-34002r2"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">DUMMY</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35002r2"></a></span><span 
-class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span><span 
+class="pcrr7t-">;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35003r3"></a></span><span 
+class="pcrr7t-">sleep</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">10;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TO</span><span 
+class="pcrr7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35004r4"></a></span><span 
-class="pcrr7t-">REGISTER</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35005r5"></a></span><span 
-class="pcrr7t-">COPY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TO</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35007r7"></a></span><span 
-class="pcrr7t-">REGISTER</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35008r8"></a></span><span 
-class="pcrr7t-">COPY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35009r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TO</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35010r10"></a></span><span 
-class="pcrr7t-">REGISTER</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span>
-   
+class="pcrr7t-">BYE</span><span 
+class="pcrr7t-">']</span>
+
+
    </div>
-<!--l. 1036--><p class="indent" >   Note that you can also import individual suites, and that registration groups do not need to be created explicitly
-- they are automatically created and deleted as required.
-</p><!--l. 1040--><p class="indent" >   Now switch gcylc back to your private database and confirm that you have a copy of the example suites; on the
-command line: </p><!--l. 1042-->
-   <div class="lstlisting" id="listing-20"><span class="label"><a 
- id="x34-35011r1"></a></span><span 
+<!--l. 1036--><p class="indent" >   where <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span></span> is the unique identifier by which cylc knows the task (<span class="lstinline"><span 
+class="pcrr7t-">NAME</span><span 
 class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">pr</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">t</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">CYCLE</span></span>)
+exported to each task&#8217;s execution environment by cylc. The command arguments reflect the suite
+definition section nesting. If it were explicitly configured in the example suite it would look like this:
+</p><!--l. 1042--><div class="lstlisting">
+<span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35012r2"></a></span><span 
-class="pcrr7t-">QuickStart</span><span 
+ id="x30-34003r1"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35013r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">a</span><span 
+ id="x30-34004r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">A</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35014r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">b</span><span 
+ id="x30-34005r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -304,95 +107,287 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
+class="pcrr7t-">command</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
+class="pcrr7t-">scripting</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">B</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35015r5"></a></span><span 
+class="pcrr7t-">DUMMY</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">c</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span><span 
+class="pcrr7t-">;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sleep</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">10;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">C</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-35016r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span>
-   
+class="pcrr7t-">BYE</span><span 
+class="pcrr7t-">"</span>
+
+
    </div>
+<!--l. 1049--><p class="indent" >   Now start a suite control GUI by right-clicking on the suite in gcylc and choosing &#8216;Control (graph)&#8217;. You can also
+open a text treeview control GUI for the same suite, if you like. Multiple GUIs running at the same time will
+automatically connect to the same running suite (they won&#8217;t try to run separate instances). Note also that if you
+shut down a suite control GUI, the suite will keep running. You can reconnect to it later by opening another control
+GUI.
+</p><!--l. 1059--><p class="indent" >   In the control GUI click on Control <span 
+class="cmsy-10">&#x2192; </span>Run, enter an initial cold-start cycle time (e.g.&#x00A0;2011052306), and select
+&#8220;Hold (pause) on start-up&#8221; so that the suite will start in the held state (tasks will not be submitted even if they are
+ready to run).
+</p><!--l. 1064--><p class="indent" >   <span 
+class="cmti-10">Do not choose an initial cycle time in the future unless you&#8217;re running in simulation mode, or nothing much will</span>
+<span 
+class="cmti-10">happen until that time.</span>
+</p><!--l. 1068--><p class="indent" >   If the initial cycle time ends in 06 or 18 the suite controller should look like Figure&#x00A0;<a 
+href="#x30-3400622">22<!--tex4ht:ref: fig-QuickStartA-ControlStart06 --></a>, or otherwise (00 or 12)
+like Figure&#x00A0;<a 
+href="#x30-3400723">23<!--tex4ht:ref: fig-QuickStartA-ControlStart00 --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
                                                                                          
 
                                                                                          
-   <!--l. 1051--><div class="crosslinks"><p class="noindent">[<a 
+<a 
+ id="x30-3400622"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1075--><p class="noindent" >
+
+</p><!--l. 1076--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStart06.png" alt="PIC"  
+ /></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;22: </td><td  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart:one </span><span 
+class="cmr-7">at start-up with an initial cycle time ending in 06 or 18 hours. Yellow nodes represent waiting</span>
+<span 
+class="cmr-7">tasks in the held state.</span></td></tr></table><!--tex4ht:label?: x30-3400622 -->
+                                                                                         
+
+                                                                                         
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x30-3400723"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1086--><p class="noindent" >
+
+</p><!--l. 1087--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStart00.png" alt="PIC"  
+ /></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;23: </td><td  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">at start-up with an initial cycle time ending in 00 or 12 hours. Yellow nodes represent waiting tasks</span>
+<span 
+class="cmr-7">in the held state and off-white nodes are tasks from the base graph, defined in the suite.rc file, that aren&#8217;t currently live in the suite.</span></td></tr></table><!--tex4ht:label?: x30-3400723 -->
+                                                                                         
+
+                                                                                         
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1098--><p class="indent" >   The reason for the difference in graph structure between the two figures is this: cylc starts up with every task
+present in the waiting state (blue) at the initial cycle time <span 
+class="cmti-10">or </span>at the first subsequent valid cycle time for the task -
+and PostB does not run at 00 or 12. The off-white tasks are from the base graph, defined in the suite.rc file, and
+aren&#8217;t actually present in the suite as yet (they are shown in the graph in order to put the live tasks in
+context).
+</p><!--l. 1106--><p class="indent" >   Now, click on Control <span 
+class="cmsy-10">&#x2192; </span>Release in the suite control GUI to <span 
+class="cmti-10">release the hold on the suite</span>, and observe what
+happens: the GetData tasks will rapidly go off in parallel out to a few cycles ahead (how far ahead depends
+on the suite runahead limit, explained below) and then the suite will stall, as shown in Figures&#x00A0;<a 
+href="#x30-3400824">24<!--tex4ht:ref: fig-QuickStartA-ControlRunning --></a>
+and&#x00A0;<a 
+href="#x30-3400925">25<!--tex4ht:ref: fig-QuickStartA-ControlStalled --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x30-3400824"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1115--><p class="noindent" >
+
+</p><!--l. 1116--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlRunning.png" alt="PIC"  
+ /></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;24: </td><td  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">running, showing several consecutive instances of the clock-triggered GetData task running at once,</span>
+<span 
+class="cmr-7">out to the suite runahead limit of 12 hours.</span></td></tr></table><!--tex4ht:label?: x30-3400824 -->
+                                                                                         
+
+                                                                                         
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x30-3400925"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1125--><p class="noindent" >
+
+</p><!--l. 1126--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ControlStalled.png" alt="PIC"  
+ /></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;25: </td><td  
+class="content"><span 
+class="cmr-7">Suite </span><span 
+class="cmti-7">QuickStart.a </span><span 
+class="cmr-7">stalled after the clock-triggered GetData tasks have finished, because of Model&#8217;s previous-cycle</span>
+<span 
+class="cmr-7">dependence and the suite runahead limit (see main text).</span></td></tr></table><!--tex4ht:label?: x30-3400925 -->
+                                                                                         
+
+                                                                                         
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1136--><p class="indent" >   The Prep task runs immediately because it has no prerequisites and is not clock-triggered. The clock-triggered
+GetData tasks then all go off at once because they have no prerequisites (i.e.&#x00A0;they do not have to wait on any
+upstream tasks), their trigger time has long passed (the initial cycle time was in the past), and they are not
+sequential tasks (so they are able to run in parallel - try declaring GetData sequential to see the difference). Beyond
+the suite <span 
+class="cmti-10">runahead limit </span>of 12 hours (set in the suite.rc file), however, GetData is put into a special &#8216;runahead&#8217; held
+state indicated by the darker blue graph node. The task will be released from this state once the slower tasks
+in the suite have caught up sufficiently. The runahead limit is designed to stop free tasks like this
+from running off too far into the future in delayed operation. It is of little conseqence in real time
+operation<span class="footnote-mark"><a 
+href="cug-html31.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x30-34010f4"></a> 
+because clock triggered tasks are then constrained by the wall clock, and other tasks have to wait on them, generally
+speaking.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">6.6.1   </span> <a 
+ id="x30-350006.6.1"></a>Viewing The State Of Tasks</h5>
+<!--l. 1158--><p class="noindent" >If you&#8217;re wondering why a particular task has not triggered yet in a running suite you can view the current state of
+its prerequisites by right-clicking on the task and choosing &#8216;View State&#8217;, or using <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">show</span></span>. Do this for the
+first Model task, which appears to be stuck in the waiting state; it will pop up a small window as in
+Figure&#x00A0;<a 
+href="#x30-3500126">26<!--tex4ht:ref: fig-QuickStartA-ModelState --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x30-3500126"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1166--><p class="noindent" >
+
+</p><!--l. 1167--><p class="noindent" ><img 
+src="screenshots/QuickStartA-ModelState.png" alt="PIC"  
+ /></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;26: </td><td  
+class="content"><span 
+class="cmr-7">Viewing current task state after right-clicking on a task in gcylc. The same information is available from the </span><span class="lstinline"><span 
+class="pcrr7t-x-x-70">cylc</span><span 
+class="pcrr7t-x-x-70">&#x00A0;</span><span 
+class="pcrr7t-x-x-70">show</span></span>
+<span 
+class="cmr-7">command.</span></td></tr></table><!--tex4ht:label?: x30-3500126 -->
+                                                                                         
+
+                                                                                         
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1175--><p class="indent" >   It is clear that the reason the task is not running, and consequently, by virtue of the runahead limit, why the
+suite has stalled, is that Model[T] is waiting on Model[T-6] which does not exist at suite start-up. Model represents
+a warm-cycled forecast model that depends on a model background state or restart file(s) generated by its own
+previous run.
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">6.6.2   </span> <a 
+ id="x30-360006.6.2"></a>Triggering Tasks Manually</h5>
+<!--l. 1184--><p class="noindent" >Right-click on the waiting Model task and choose Trigger, or use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">trigger</span></span>, to force the task to trigger, and
+thereby get the suite up and running. In a real suite this would not be sufficient: the real forecast model that Model
+represents would fail for lack of the real restart files that it requires as input. Well see how to handle this properly
+shortly.
+</p><!--l. 1191--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">6.6.3   </span> <a 
+ id="x30-370006.6.3"></a>Suite Shut-Down And Restart</h5>
+<!--l. 1193--><p class="noindent" >Having watched the <span 
+class="cmti-10">QuickStart.a </span>suite run for a while, choose Stop from the Control menu, or <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">stop</span></span>, to
+shut it down. The default stop method waits for any tasks that are currently running to finish before
+shutting the suite down, so that the final recorded suite state is perfectly consistent with what actually
+happened.
+</p><!--l. 1199--><p class="indent" >   You can restart the suite from where it left off by choosing Control <span 
+class="cmsy-10">&#x2192; </span>Run and selecting the &#8216;restart&#8217; option, or
+using <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">restart</span></span>. Note that cylc always writes a special state dump, and logs its name, prior to actioning any
+intervention, and you can also restart a suite from one of these states, rather than the default most recent
+state.
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1206--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu21.html" >next</a>] [<a 
 href="cug-htmlsu19.html" >prev</a>] [<a 
 href="cug-htmlsu19.html#tailcug-htmlsu19.html" >prev-tail</a>] [<a 
 href="cug-htmlsu20.html" >front</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu20.html" >up</a>] </p></div>
-<!--l. 1051--><p class="indent" >   <a 
- id="tailcug-htmlsu20.html"></a> </p> 
+href="cug-htmlse6.html#cug-htmlsu20.html" >up</a>] </p></div>
+<!--l. 1206--><p class="indent" >   <a 
+ id="tailcug-htmlsu20.html"></a>  </p> 
 </body></html> 

@@ -4,41 +4,172 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Models Rerunnable</title> 
+<head><title>Overriding the Job Submission Command</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3921--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4031--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu45.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu45.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.3   </span> <a 
- id="x73-11400012.3"></a>Make Models Rerunnable</h4>
-<!--l. 3923--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
-next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
-files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold-start). Instead,
-consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
-simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
-given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
-archive.
+href="cug-htmlse10.html#cug-htmlsu45.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">10.4   </span> <a 
+ id="x68-12400010.4"></a>Overriding the Job Submission Command</h4>
+<!--l. 4035--><p class="noindent" >To change the form of the actual command used to submit a job you do not need to define a new job submission
+method; just override the <span class="lstinline"><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">template</span></span> in the relevant job submission sections of your suite.rc file:
+</p><!--l. 4039--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submission</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">method</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">loadleveler</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124006r6"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">Use</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">'-</span><span 
+class="pcrro7t-">s</span><span 
+class="pcrro7t-">'</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">stop</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">llsubmit</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">returning</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">until</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">all</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">job</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">steps</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">have</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">completed</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x68-124007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">template</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">llsubmit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">s</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">s</span>
+
+
+   </div>
+<!--l. 4048--><p class="indent" >   As explained in the suite.rc reference (Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x87-144000A">A<!--tex4ht:ref: SuiteRCReference --></a>), the template&#8217;s first %s will be substituted by the job file
+path and, where applicable a second and third %s will be substituted by the paths to the job stdout and stderr
+files.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3935--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4053--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu46.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="cug-htmlsu45.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu45.html" >up</a>] </p></div>
-<!--l. 3935--><p class="indent" >   <a 
+href="cug-htmlse10.html#cug-htmlsu45.html" >up</a>] </p></div>
+<!--l. 4053--><p class="indent" >   <a 
  id="tailcug-htmlsu45.html"></a> </p> 
 </body></html> 

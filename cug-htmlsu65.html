@@ -4,52 +4,73 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Switching A Suite Between Simulation And Live Modes?</title> 
+<head><title>Special Placeholder Variables</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4293--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse18.html" >next</a>] [<a 
+   <!--l. 1265--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu66.html" >next</a>] [<a 
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu65.html">tail</a>] [<a 
-href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">E.2   </span> <a 
- id="x102-301000E.2"></a>Switching A Suite Between Simulation And Live Modes?</h4>
-<!--l. 4295--><p class="noindent" >The scheduler mode (simulation or live) is recorded in the suite state dump file. <span 
-class="cmti-10">Cylc will not let you restart a</span>
-<span 
-class="cmti-10">simulation mode suite in live, or a live mode suite in simulation mode </span>- any attempt to do the former must certainly
-be a mistake, and doing the latter, while feasible, would corrupt your live suite state dump and turn it over to
-simulation mode. Note, however, that if you really want to run the current state of a live suite forward in simulation
-mode, all you need to do is this:
-     </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x102-301002x1">back up the live state dump (or take note of the filename of the relevant automatic dump when you
-     do the final suite shutdown intervention).
-     </li>
-     <li 
-  class="enumerate" id="x102-301004x2">edit the mode line in the state dump file, and restart the suite in simulation mode.
-     </li>
-     <li 
-  class="enumerate" id="x102-301006x3">later, restart the live suite from the pre simulation mode state dump backup</li></ol>
-<!--l. 4313--><p class="indent" >   <span 
-class="cmti-10">Cylc can also create an instant dummy mode clone of the current state of any running or stopped suite, but this</span>
-<span 
-class="cmti-10">&#8220;practice mode&#8221; has been disabled in the current release pending testing.</span>
+href="cug-htmlse13.html#cug-htmlsu65.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">A.6   </span> <a 
+ id="x95-241000A.6"></a>Special Placeholder Variables</h4>
+<!--l. 1267--><p class="noindent" >A small number of special variables are used as placeholders in cylc suite definitions:
 </p>
-   <!--l. 4415--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse18.html" >next</a>] [<a 
+     <ul class="itemize1">
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">+/-</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />These are replaced with the actual cycle time of the task (with optional computed offset) in the
+     message strings registered for explicit internal (pre-completion) task outputs. They correspond to
+     <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span></span> in the task execution environment.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">NAMESPACE</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />These placeholder variables are replaced with actual task or namespace names in runtime settings. The
+     difference between the two is explained in Section&#x00A0;<a 
+href="cug-htmlsu34.html#x53-900008.4.3">8.4.3<!--tex4ht:ref: MultiTaskDef --></a>, <span 
+class="cmti-10">Defining Multiple Namespaces At Once</span>.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />This placeholder variable is replaced with the actual &#8220;asynchronous ID&#8221; (e.g. satellite pass ID) for
+     repeating asynchronous tasks.</li></ul>
+<!--l. 1288--><p class="indent" >   To use real (programming language) variables in suite definitions, use the Jinja2 template processor
+(Section&#x00A0;<a 
+href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>).
+                                                                                         
+
+                                                                                         
+</p>
+   <!--l. 1292--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu66.html" >next</a>] [<a 
 href="cug-htmlsu64.html" >prev</a>] [<a 
 href="cug-htmlsu64.html#tailcug-htmlsu64.html" >prev-tail</a>] [<a 
 href="cug-htmlsu65.html" >front</a>] [<a 
-href="cug-htmlse17.html#cug-htmlsu65.html" >up</a>] </p></div>
-<!--l. 4415--><p class="indent" >   <a 
+href="cug-htmlse13.html#cug-htmlsu65.html" >up</a>] </p></div>
+<!--l. 1292--><p class="indent" >   <a 
  id="tailcug-htmlsu65.html"></a> </p> 
 </body></html> 

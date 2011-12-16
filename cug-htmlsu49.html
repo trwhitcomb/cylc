@@ -4,38 +4,41 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Use Generic Task Scripts</title> 
+<head><title>Make Models Rerunnable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4017--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4336--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu50.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu49.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu49.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.7   </span> <a 
- id="x77-11900012.7"></a>Use Generic Task Scripts</h4>
-<!--l. 4019--><p class="noindent" >If your suite contains multiple logically distinct tasks that actually have similar functionality (e.g.&#x00A0;for moving files
-around, or for generating similar products from the output of several similar models) have the corresponding cylc
-tasks all call the same command, script, or executable - just provide different input parameters via the task
-command scripting and/or execution environment, in the suite.rc file.
+   <h4 class="subsectionHead"><span class="titlemark">12.3   </span> <a 
+ id="x74-13200012.3"></a>Make Models Rerunnable</h4>
+<!--l. 4338--><p class="noindent" >If a warm-cycled model simply overwrites its restart files in each run, the only cycle that can subsequently run is the
+next one. This is dangerous because if, accidentally or otherwise, the task runs for the wrong cycle time, its restart
+files will be corrupted such that the correct cycle can no longer run (probably necessitating a cold-start). Instead,
+consider organising restart files by cycle time, through a file or directory naming convention, and keep them in a
+simple rolling archive (cylc&#8217;s filename templating and housekeeping utilities can easily do this for you). Then,
+given availability of any external inputs, you can easily rerun the task for any cycle still in the restart
+archive.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 4028--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4350--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu50.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="cug-htmlsu49.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu49.html" >up</a>] </p></div>
-<!--l. 4028--><p class="indent" >   <a 
+<!--l. 4350--><p class="indent" >   <a 
  id="tailcug-htmlsu49.html"></a> </p> 
 </body></html> 

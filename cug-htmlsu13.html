@@ -4,717 +4,882 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Using The Example Suites</title> 
+<head><title>Complete Non-System-Level Installation</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 789--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 631--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
-href="cug-htmlse5.html" >prev</a>] [<a 
-href="cug-htmlse5.html#tailcug-htmlse5.html" >prev-tail</a>] [<a 
+href="cug-htmlsu12.html" >prev</a>] [<a 
+href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu13.html">tail</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu13.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
- id="x25-250005.1"></a>Using The Example Suites</h4>
-<!--l. 791--><p class="noindent" >Use <span class="lstinline"><span 
-class="pcrr7t-">gcylc</span></span> or <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;</span></span> to see the example suites that are currently
-available. Note that here, and throughout the User Guide, any reference to an example suite in the central
-database will use <span class="lstinline"><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;</span></span> as the username of the account under which cylc is installed (the suite
-owner&#8217;s username is always the first component of a suite name in the central database); replace this as
-appropriate for your local cylc installation. Now use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">import</span></span> to copy an example suite (or some
-subset of them, or all of them at once) to your private database so that you can modify it and run it:
-</p><!--l. 801-->
-   <div class="lstlisting" id="listing-13"><span class="label"><a 
- id="x25-25001r1"></a></span><span 
+href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">4.7   </span> <a 
+ id="x20-190004.7"></a>Complete Non-System-Level Installation</h4>
+<!--l. 634--><p class="noindent" >If you do not have root access to your host machine and cannot easily get Pyro, graphviz, Pygraphviz, and Jinja2
+installed at system level, here&#8217;s how to install everything under your home directory.
+</p><!--l. 638--><p class="indent" >   First, cylc is already designed to be installed into a normal user account - just unpack the release tarball
+into <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span></span>. If you invoke cylc commands at this stage you will get a warning that Pyro is not
+installed.
+</p><!--l. 643--><p class="indent" >   Next, create a new sub-directory in the cylc source tree, <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span></span>, and download the
+Pyro, Graphviz, and Pygraphviz source distributions to it (the URLs are given at the beginning of
+Section&#x00A0;<a 
+href="cug-htmlse3.html#x10-90003">3<!--tex4ht:ref: Requirements --></a>).
+</p><!--l. 648--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.1   </span> <a 
+ id="x20-200004.7.1"></a>Pyro</h5>
+<!--l. 650--><p class="noindent" >Install Pyro under <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 651--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">cd</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">tree</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;.&#x22C6;\.</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25002r2"></a></span><span 
+ id="x20-20002r2"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">xzf</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pyro</span><span 
+class="pcrr7t-">-3.14.</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">gz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20003r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pyro</span><span 
+class="pcrr7t-">-3.14</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20004r4"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">python</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">setup</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">install</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">prefix</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span>
+
+
+   </div>
+<!--l. 657--><p class="indent" >   Take note of the resulting Python <span class="lstinline"><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span></span> directory under <span class="lstinline"><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span></span>, e.g.:
+</p><!--l. 659--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20005r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib64</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">python2</span><span 
+class="pcrr7t-">.6/</span><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span><span 
+class="pcrr7t-">/</span>
+
+
+   </div>
+<!--l. 662--><p class="indent" >   The exact path will depend on your local Python environment. Configure your login script for the cylc
+environment as described in Section&#x00A0;<a 
+href="cug-htmlsu9.html#x16-150004.3">4.3<!--tex4ht:ref: ConfiguringYourEnvironmentForCylc --></a> above and add in this new installation path; for example:
+</p><!--l. 666--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20006r1"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">profile</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20007r2"></a></span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib64</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">python2</span><span 
+class="pcrr7t-">.6/</span><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20008r3"></a></span><span 
+class="pcrr7t-">PATH</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span>
+
+
+   </div>
+<!--l. 672--><p class="indent" >   Now you should be able to get cylc to print its release version: </p><!--l. 673--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20009r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/.</span><span 
+class="pcrr7t-">profile</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">#</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
 class="pcrr7t-">or</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">just</span><span 
+class="pcrr7t-">log</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">this</span><span 
-class="pcrr7t-">:</span><span 
+class="pcrr7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">again</span><span 
+class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25003r3"></a></span><span 
+ id="x20-20010r2"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">v</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-20011r3"></a></span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">z</span>
+
+
+   </div>
+<!--l. 678--><p class="indent" >   If this command aborts and says that Pyro is not installed or is not available, then you have either not installed
+Pyro (check the output of the installation command carefully) <span 
+class="cmti-10">or </span>you have not pointed to the installed
+Pyro modules in your PYTHONPATH, <span 
+class="cmti-10">or </span>you have not sourced the cylc environment since updating
+PYTHONPATH.
+</p><!--l. 684--><p class="indent" >   <span 
+class="cmti-10">Note that Pyro can also be installed with </span><span class="lstinline"><span 
+class="pcrro7t-">easy_install</span></span><span 
+class="cmti-10">, which downloads and installs python packages in one</span>
+<span 
+class="cmti-10">shot.</span>
+                                                                                         
+
+                                                                                         
+</p><!--l. 687--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.2   </span> <a 
+ id="x20-210004.7.2"></a>Create The Central Suite Database</h5>
+<!--l. 689--><p class="noindent" >Now create the suite database and upload the example suites as described in Section&#x00A0;<a 
+href="cug-htmlsu10.html#x17-160004.4">4.4<!--tex4ht:ref: CreatingTheCentralSuiteDatabase --></a>. At this point you should
+have access to all cylc functionality except for suite graphing and the graph based suite control GUI. For example
+(change your admin username and cylc version number appropriately, after inspecting the content of the new central
+database): </p><!--l. 695--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">info</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">list</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">tp</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">central</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">tree</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25004r4"></a></span><span 
 class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">A</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25008r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">B</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25009r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|-</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">C</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25010r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#8216;-</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">~/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25011r11"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">import</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
+class="pcrr7t-">AdminUserName</span><span 
 class="pcrr7t-">&#x003E;.</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25012r12"></a></span><span 
-class="pcrr7t-">COPY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">CDB</span><span 
-class="pcrr7t-">/&#x003C;</span><span 
-class="pcrr7t-">admin</span><span 
-class="pcrr7t-">&#x003E;/</span><span 
-class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">x</span><span 
-class="pcrr7t-">:</span><span 
 class="pcrr7t-">y</span><span 
-class="pcrr7t-">:</span><span 
+class="pcrr7t-">-</span><span 
 class="pcrr7t-">z</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25013r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">TO</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25014r14"></a></span><span 
-class="pcrr7t-">REGISTER</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">eg</span><span 
+class="pcrr7t-">-1322609804.</span><span 
+class="pcrr7t-">admin</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span><span 
+class="pcrr7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25015r15"></a></span><span 
+ id="x20-21002r2"></a></span><span 
+class="pcrr7t-">root</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25016r16"></a></span><span 
-class="pcrr7t-">%</span><span 
+ id="x20-21003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">A</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25017r17"></a></span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">z</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">tmp</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliver</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">z</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25018r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25019r19"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">eg</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">z</span>
-   
-   </div>
-   <!--l. 824--><div class="lstinputlisting">
-<a 
- id="x25-25020"></a>
-   <span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25021r1"></a></span><span 
-class="pcrr7t-">title</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Start</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Example</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Z</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25022r2"></a></span><span 
-class="pcrr7t-">description</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">Example</span><span 
+class="pcrr7t-">model</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">A</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">without</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">weather</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">forecast</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sea</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">state</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">forecast</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">river</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">flow</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">forecast</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">ColdA</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cold</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">ColdB</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">ColdC</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">D</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">combined</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">post</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">models</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">E</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">post</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">B</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21011r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">F</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">post</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">F</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21012r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">X</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">retrieve</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">real</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">data</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-21013r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">prep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">clean</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">out</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">visualization</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">config</span><span 
-class="pcrr7t-">)</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25023r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25024r4"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">scheduling</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25025r5"></a></span><span 
+class="pcrr7t-">workspace</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">new</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">runahead</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">limit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">12</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25026r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">initial</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycle</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">2011010106</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25027r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">final</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycle</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">2011010200</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25028r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25029r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">start</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">up</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25030r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">clock</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">triggered</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">(1)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25031r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25032r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">0,6,12,18</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25033r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostA</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25034r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">T</span><span 
-class="pcrr7t-">-6]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25035r15"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">6,18</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x25-25036r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">Model</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">"</span>
-                                                                                         
+class="pcrr7t-">run</span>
 
-                                                                                         
-   
+
    </div>
-<!--l. 826--><p class="noindent" >(This suite is explained in the <span 
-class="cmti-10">Quick Start Guide</span>, Section&#x00A0;<a 
-href="cug-htmlse7.html#x31-320007">7<!--tex4ht:ref: QuickStartGuide --></a>).
+<!--l. 711--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.3   </span> <a 
+ id="x20-220004.7.3"></a>Graphviz</h5>
+<!--l. 713--><p class="noindent" >Install Graphviz under <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 715--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22002r2"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">xzf</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graphviz</span><span 
+class="pcrr7t-">-2.28.0.</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">gz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22003r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graphviz</span><span 
+class="pcrr7t-">-2.28.0</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22004r4"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">./</span><span 
+class="pcrr7t-">configure</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">prefix</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22005r5"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">make</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-22006r6"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">make</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">install</span>
+
+
+   </div>
+<!--l. 723--><p class="indent" >   This installs graphviz files into the bin, include, and lib sub-directories of your local installation directory. The
+local installation section of <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">profile</span></span> (above) provides access to the graphviz executables in this bin
+directory, although you will probably not need to use them. The graphviz lib and include locations are required
+when installing Pygraphviz (next).
+</p><!--l. 730--><p class="indent" >   <span 
+class="cmti-10">Note that graphviz may fail to build on a system that does not have QT installed</span>. Lack of QT is not important for
+our purposes and you can disable it with <span class="lstinline"><span 
+class="pcrr7t-">./</span><span 
+class="pcrr7t-">configure</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">with</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">qt</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">no</span></span>.
+</p><!--l. 734--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.4   </span> <a 
+ id="x20-230004.7.4"></a>Pygraphviz</h5>
+<!--l. 735--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 737--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23002r2"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">xzf</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pygraphviz</span><span 
+class="pcrr7t-">-1.1.</span><span 
+class="pcrr7t-">tar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">gz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23003r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cd</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pygraphviz</span><span 
+class="pcrr7t-">-1.1</span>
+
+
+   </div>
+<!--l. 742--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 744--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23004r1"></a></span><span 
+class="pcrr7t-">library_path</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">os</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">environ</span><span 
+class="pcrr7t-">['</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">']</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">+</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23005r2"></a></span><span 
+class="pcrr7t-">include_path</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">os</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">environ</span><span 
+class="pcrr7t-">['</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">']</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">+</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">include</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">graphviz</span><span 
+class="pcrr7t-">'</span>
+
+
+   </div>
+<!--l. 748--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span></span> environment variable.
+Check that these are the correct library and include paths by inspecting the contents of the specified directories, and
+adjust them if necessary. Finally, install pygraphviz: </p><!--l. 753--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23006r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">=/</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23007r2"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">python</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">setup</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">install</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">prefix</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span>
+
+
+   </div>
+<!--l. 757--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
+as the Pyro modules, e.g.: </p><!--l. 759--><div class="lstlisting">
+
+
+
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23008r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ls</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib64</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">python2</span><span 
+class="pcrr7t-">.6/</span><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-23009r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pygraphviz</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pygraphviz</span><span 
+class="pcrr7t-">-1.1-</span><span 
+class="pcrr7t-">py2</span><span 
+class="pcrr7t-">.6.</span><span 
+class="pcrr7t-">egg</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">info</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pyro</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Pyro</span><span 
+class="pcrr7t-">-3.14-</span><span 
+class="pcrr7t-">py2</span><span 
+class="pcrr7t-">.6.</span><span 
+class="pcrr7t-">egg</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">info</span>
+
+
+   </div>
+<!--l. 763--><p class="indent" >   If not, add the correct Pyraphviz installation path to your PYTHONPATH.
+</p><!--l. 765--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python
+session (type <span class="lstinline"><span 
+class="pcrr7t-">python</span></span> after sourcing the cylc environment to configure your PYTHONPATH) then type
+<span class="lstinline"><span 
+class="pcrr7t-">import</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pygraphviz</span></span> at the interpreter prompt. If this results in an error message <span 
+class="cmti-10">ImportError: No module named</span>
+<span 
+class="cmti-10">pygraphviz </span>then either you have not installed pygraphviz properly, <span 
+class="cmti-10">or </span>you have not configured your PYTHONPATH
+to point to the installed pygraphviz modules, <span 
+class="cmti-10">or </span>you have not sourced the cylc environment since updating
+PYTHONPATH. Finally, if you have installed pygraphviz and configured your PYTHONPATH but
+graphviz itself has not been installed properly (or if the graphviz libraries have been deleted since you
+installed pygraphviz) then the initial pygraphiz import will be successful but a lower level import will fail
+when the pygraphviz modules cannot load the underlying graphviz libraries - in that case, reinstall
+graphviz.
+</p><!--l. 781--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.5   </span> <a 
+ id="x20-240004.7.5"></a>Jinja2</h5>
+<!--l. 783--><p class="noindent" >You can download and install Jinja2 manually from the project web site (above), or just use the <span class="lstinline"><span 
+class="pcrr7t-">easy_install</span></span>
+command which will do it all in one step. Here&#8217;s how to easy_install Jinja2 into your new private python site
+packages directory:
+</p>
+   <!--l. 788--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-24001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">LOCALPACKAGES</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib64</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">python2</span><span 
+class="pcrr7t-">.6/</span><span 
+class="pcrr7t-">site</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">packages</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-24002r2"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">LOCALPACKAGES</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PYTHONPATH</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-24003r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">easy_install</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">prefix</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">LOCALPACKAGES</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Jinja2</span>
+
+
+   </div>
+<!--l. 793--><p class="indent" >   Adapt the site-packages path according to your actual path, as above. The Python search path must be set first
+or <span class="lstinline"><span 
+class="pcrr7t-">easy_install</span></span> will abort.
+</p><!--l. 797--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.7.6   </span> <a 
+ id="x20-250004.7.6"></a>What Next?</h5>
+<!--l. 799--><p class="noindent" >You should now have access to all cylc functionality. Create the central suite database and upload the example
+suites, if you have not done so already (Section&#x00A0;<a 
+href="cug-htmlsu10.html#x17-160004.4">4.4<!--tex4ht:ref: CreatingTheCentralSuiteDatabase --></a>), then test your cylc installation by running the automated suite
+database test (Section&#x00A0;<a 
+href="cug-htmlsu11.html#x18-170004.5">4.5<!--tex4ht:ref: RTADT --></a>) and the automated scheduler test (Section&#x00A0;<a 
+href="cug-htmlsu12.html#x19-180004.6">4.6<!--tex4ht:ref: RTAST --></a>), then go on to the <span 
+class="cmti-10">Quick Start Guide</span>
+(Section&#x00A0;<a 
+href="cug-htmlse6.html#x24-280006">6<!--tex4ht:ref: QuickStartGuide --></a>).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 830--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 808--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
-href="cug-htmlse5.html" >prev</a>] [<a 
-href="cug-htmlse5.html#tailcug-htmlse5.html" >prev-tail</a>] [<a 
+href="cug-htmlsu12.html" >prev</a>] [<a 
+href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
 href="cug-htmlsu13.html" >front</a>] [<a 
-href="cug-htmlse5.html#cug-htmlsu13.html" >up</a>] </p></div>
-<!--l. 830--><p class="indent" >   <a 
- id="tailcug-htmlsu13.html"></a> </p> 
+href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
+<!--l. 808--><p class="indent" >   <a 
+ id="tailcug-htmlsu13.html"></a>  </p> 
 </body></html> 

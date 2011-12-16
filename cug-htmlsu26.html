@@ -4,306 +4,333 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Monitoring Running Suites</title> 
+<head><title>Validating A Suite</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1425--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1461--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu27.html" >next</a>] [<a 
 href="cug-htmlsu25.html" >prev</a>] [<a 
 href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu26.html">tail</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu26.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">7.9   </span> <a 
- id="x41-440007.9"></a>Monitoring Running Suites</h4>
-<!--l. 1427--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">7.9.1   </span> <a 
- id="x41-450007.9.1"></a>Suite stdout And stderr</h5>
-<!--l. 1429--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each
-task is submitted, to the stdout stream. If you start a suite at the command line you can direct this
-output wherever you like. If you start a suite via gcylc, however, the output is directed to a special file,
-<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/[</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">].</span><span 
-class="pcrr7t-">out</span></span> that can be accessed again later if you reconnect to the suite with a new control
-GUI.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x41-4500127"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1438--><p class="noindent" >
-
-</p><!--l. 1439--><p class="noindent" ><img 
-src="screenshots/suite-output.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;27: </span><span  
-class="content"><span 
-class="cmr-7">Cylc suite stdout/stderr example.</span></span></div><!--tex4ht:label?: x41-4500127 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <h5 class="subsubsectionHead"><span class="titlemark">7.9.2   </span> <a 
- id="x41-460007.9.2"></a>Suite Logs</h5>
-<!--l. 1447--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
-the event. The top level logging directory, under which a suite-specific log is written, is configurable in the
-suite.rc file. Suite logs are (optionally) rolled over at start-up and the five most recent back ups are
-kept.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x41-4600128"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1454--><p class="noindent" >
-
-</p><!--l. 1455--><p class="noindent" ><img 
-src="screenshots/suite-log.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;28: </span><span  
-class="content"><span 
-class="cmr-7">A cylc suite log viewed via gcylc.</span></span></div><!--tex4ht:label?: x41-4600128 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-<!--l. 1461--><p class="indent" >   Figure&#x00A0;<a 
-href="#x41-4600128">28<!--tex4ht:ref: fig-suite-log --></a> shows a suite log viewed from within gcylc. The <span class="lstinline"><span 
+href="cug-htmlse6.html#cug-htmlsu26.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">6.12   </span> <a 
+ id="x37-460006.12"></a>Validating A Suite</h4>
+<!--l. 1463--><p class="noindent" >Suite validation checks for errors by parsing the suite definition, comparing all items against the suite.rc
+specification file, and then parsing the suite graph and attempting to instantiate all task proxy objects. This can be
+done using gcylc or <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span></span> command also enables viewing and
-filtering of suite logs without having to remember the actual log file location. But if you want to know the location:
-</p><!--l. 1465-->
-   <div class="lstlisting" id="listing-31"><span class="label"><a 
- id="x41-46002r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">directories</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46003r2"></a></span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LOG</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46004r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46005r4"></a></span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">STATE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DUMP</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46006r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">state</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46007r6"></a></span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUBMISSION</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LOG</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORIES</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-46008r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">+</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">root</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span>
-   
-   </div>
-<!--l. 1474--><p class="indent" >   (There would be other job submission log directories listed here if any of the tasks in the suite had overridden
-the default location set by the root namespace).
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">7.9.3   </span> <a 
- id="x41-470007.9.3"></a>Task stdout And stderr Logs</h5>
-<!--l. 1481--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
-class="cmti-10">job submission log</span>
+class="pcrr7t-">validate</span></span>:  </p><!--l. 1468--><div class="lstlisting">
 <span 
-class="cmti-10">directory</span>, default location <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_REG_NAME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">/</span></span> (where the
-variable <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_REG_NAME</span></span> evalutes to the registered suite name hierarchy, e.g.&#x00A0;foo.bar.baz):
-</p><!--l. 1486-->
-   <div class="lstlisting" id="listing-32"><span class="label"><a 
- id="x41-47001r1"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">validate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">v</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46002r2"></a></span><span 
+class="pcrr7t-">Parsing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Definition</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46003r3"></a></span><span 
+class="pcrr7t-">LOADING</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46004r4"></a></span><span 
+class="pcrr7t-">VALIDATING</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">against</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">rc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">specification</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46005r5"></a></span><span 
+class="pcrr7t-">PARSING</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">clock</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">triggered</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46006r6"></a></span><span 
+class="pcrr7t-">PARSING</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">generator</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">'</span><span 
+class="pcrr7t-">expressions</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-47002r2"></a></span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
+ id="x37-46007r7"></a></span><span 
+class="pcrr7t-">PARSING</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hierarchies</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46008r8"></a></span><span 
+class="pcrr7t-">PARSING</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SUITE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GRAPH</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46009r9"></a></span><span 
+class="pcrr7t-">Instantiating</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Proxies</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46010r10"></a></span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46011r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">GEN</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46012r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">OPS</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46013r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">aircraft</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46014r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">atovs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46015r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">atovs_post</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46016r16"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">VAR</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46017r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">AnPF</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46018r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">ConLS</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46019r19"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46020r20"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">bar1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46021r21"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">bar2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46022r22"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46023r23"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">prepobs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x37-46024r24"></a></span><span 
+class="pcrr7t-">Suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span>
-   
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">validates</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OK</span><span 
+class="pcrr7t-">.</span>
+
+
    </div>
-<!--l. 1490--><p class="indent" >   (or use the <span class="lstinline"><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">directories</span></span> argument as shown just above).
-</p><!--l. 1492--><p class="indent" >   These files will contain the complete stdout and stderr record for tasks whose initiating processes do not detach
-and exit before all task processing is finished. The location of output generated by secondary processes, if the
-original process detaches and exits early, is up to the task implementation (of said secondary processes,
-specifically).
+<!--l. 1495--><p class="indent" >   For more information on suite validation see Section&#x00A0;<a 
+href="cug-htmlsu32.html#x45-640008.2.5">8.2.5<!--tex4ht:ref: Validation --></a>.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1498--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1499--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu27.html" >next</a>] [<a 
 href="cug-htmlsu25.html" >prev</a>] [<a 
 href="cug-htmlsu25.html#tailcug-htmlsu25.html" >prev-tail</a>] [<a 
 href="cug-htmlsu26.html" >front</a>] [<a 
-href="cug-htmlse7.html#cug-htmlsu26.html" >up</a>] </p></div>
-<!--l. 1498--><p class="indent" >   <a 
- id="tailcug-htmlsu26.html"></a>  </p> 
+href="cug-htmlse6.html#cug-htmlsu26.html" >up</a>] </p></div>
+<!--l. 1499--><p class="indent" >   <a 
+ id="tailcug-htmlsu26.html"></a> </p> 
 </body></html> 

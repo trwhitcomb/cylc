@@ -4,104 +4,70 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Return Non-zero Exit Status On Error</title> 
+<head><title>Special Placeholder Variables</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3153--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu38.html" >next</a>] [<a 
+   <!--l. 3424--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu36.html" >prev</a>] [<a 
 href="cug-htmlsu36.html#tailcug-htmlsu36.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu37.html">tail</a>] [<a 
-href="cug-htmlse9.html#cug-htmlsu37.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">9.3   </span> <a 
- id="x61-970009.3"></a>Return Non-zero Exit Status On Error</h4>
-<!--l. 3155--><p class="noindent" >The requirement to abort with non-zero exit status on error (which should be normal scripting practice in any case)
-allows the task job script to trap errors and send a <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">task</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">failed</span></span> message to alert the suite. You can use
-<span class="lstinline"><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">e</span></span> to avoid writing explicit error checks for every operation:
+href="cug-htmlse8.html#cug-htmlsu37.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">8.7   </span> <a 
+ id="x57-1020008.7"></a>Special Placeholder Variables</h4>
+<!--l. 3426--><p class="noindent" >A small number of special variables are used as placeholders in cylc suite definitions:
 </p>
-   <!--l. 3163-->
-   <div class="lstlisting" id="listing-89"><span class="label"><a 
- id="x61-97001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">!/</span><span 
-class="pcrro7t-">bin</span><span 
-class="pcrro7t-">/</span><span 
-class="pcrro7t-">bash</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97002r2"></a></span><span 
-class="pcrb7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">e</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">abort</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">on</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">error</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x61-97003r3"></a></span><span 
-class="pcrr7t-">mkdir</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">illegal</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">dir</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">this</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">error</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">will</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">abort</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">script</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">with</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">non</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">zero</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">exit</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">status</span>
-   
-   </div>
-                                                                                         
-
-                                                                                         
-   <!--l. 3169--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu38.html" >next</a>] [<a 
+     <ul class="itemize1">
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">+</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />These are replaced with the actual cycle time of the task (with optional computed positive offset) in
+     the message strings registered for explicit internal (pre-completion) task outputs. They correspond to
+     <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span></span> in the task execution environment.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">NAMESPACE</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />These are replaced with actual task or namespace names in runtime settings. The difference between
+     the two is explained in Section&#x00A0;<a 
+href="cug-htmlsu34.html#x53-900008.4.3">8.4.3<!--tex4ht:ref: MultiTaskDef --></a>, <span 
+class="cmti-10">Defining Multiple Namespaces At Once</span>.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">&#x003E;</span></span>
+     <br class="newline" />This is replaced with the actual &#8220;asynchronous ID&#8221; (e.g. satellite pass ID) for repeating asynchronous
+     tasks.</li></ul>
+<!--l. 3448--><p class="indent" >   To use proper variables (c.f.&#x00A0;programming languages) in suite definitions, see the Jinja2 template processor
+(Section&#x00A0;<a 
+href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>).
+</p>
+   <!--l. 3451--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu36.html" >prev</a>] [<a 
 href="cug-htmlsu36.html#tailcug-htmlsu36.html" >prev-tail</a>] [<a 
 href="cug-htmlsu37.html" >front</a>] [<a 
-href="cug-htmlse9.html#cug-htmlsu37.html" >up</a>] </p></div>
-<!--l. 3169--><p class="indent" >   <a 
+href="cug-htmlse8.html#cug-htmlsu37.html" >up</a>] </p></div>
+<!--l. 3451--><p class="indent" >   <a 
  id="tailcug-htmlsu37.html"></a> </p> 
 </body></html> 

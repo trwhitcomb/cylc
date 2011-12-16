@@ -4,63 +4,49 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Cylc&#8217;s Example Suites</title> 
+<head><title>On The Meaning Of Cycle Time In Cylc</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 762--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu13.html" >next</a>] [<a 
-href="cug-htmlse4.html" >prev</a>] [<a 
-href="cug-htmlse4.html#tailcug-htmlse4.html" >prev-tail</a>] [<a 
+   <!--l. 822--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
+href="cug-htmlsu14.html" >prev</a>] [<a 
+href="cug-htmlsu14.html#tailcug-htmlsu14.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse5.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse5.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
- id="x24-240005"></a>Cylc&#8217;s Example Suites</h3>
-<!--l. 764--><p class="noindent" >Cylc has been designed from the ground up to make prototyping and testing new suites very easy. Simply drawing
-(in text) a dependency graph in a new suite definition creates a valid suite that you can run (the tasks will be
-<span 
-class="cmti-10">dummy tasks </span>that default to emitting an identifying message, sleeping for a few seconds, and then exiting; but you
-can then arrange for particular tasks to do more complex things by configuring task runtime properties
-appropriately).
-</p><!--l. 772--><p class="indent" >   Cylc has quite a number of example suites intended to illustrate most facets of suite construction. These are held
-centrally under <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">examples</span></span> and are exported to the central suite database, accessible to all users, when
-cylc is installed. They all run &#8220;out the box&#8221; and can be copied and modified by users to test almost
-anything. Some of them just configure a suite dependency graph, in which case cylc will run dummy
-tasks according to the graph; some also configure task runtime properties (e.g.&#x00A0;command scripting
-and environment variables) within the suite definition; and some have real task implementations that
-generate and consume real files and which will fail if they are not executed in the right order. All of the
-example suites use their registration names, portably via suite and task identity variable supplied by cylc
-(this is in fact the default situation) in all suite and task I/O paths, so you can run multiple copies
-of the same example suite at once, under different names, without changing anything in the suite
-definition.
-</p><!--l. 789--><p class="noindent" >
+ id="x23-270005"></a>On The Meaning Of <span 
+class="cmti-10">Cycle Time </span>In Cylc</h3>
+<!--l. 824--><p class="noindent" >From using other schedulers you may be accustomed to the idea that a forecasting suite has a &#8220;current cycle time&#8221;,
+which is typically the analysis time or nominal start time of the main forecast model(s) in the suite, and that the
+whole suite advances to the next forecast cycle when all tasks in the current cycle have finished (or even when a
+particular wall clock time is reached, in real time operation). As is explained in the Introduction, this is not how
+cylc works.
+</p><!--l. 832--><p class="indent" >   Cylc suites advance by means of individual tasks with private cycle times independently spawning successors at
+the next valid cycle time for the task, not by incrementing a suite-wide forecast cycle. Each task will be submitted
+when its own prerequisites are satisfied, regardless of other tasks with other cycle times running, or
+not, at the time. It may still be convenient at times, however, to refer to the &#8220;current cycle&#8221;, the
+&#8220;previous cycle&#8221;, or the &#8220;next cycle&#8221; and so forth, with reference to a particular task, or in the sense of
+all tasks that &#8220;belong to&#8221; a particular forecast cycle. But keep in mind that the members of these
+groups may not be present simultaneously in the running suite - i.e.&#x00A0;different tasks may pass through
+the &#8220;current cycle&#8221; (etc.) at different times as the suite evolves, particularly in delayed (catch up)
+operation.
+                                                                                         
+
+                                                                                         
 </p>
-   <div class="subsectionTOCS">
-   &#x00A0;<span class="subsectionToc" >5.1 <a 
-href="cug-htmlsu13.html#x25-250005.1">Using The Example Suites</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >5.2 <a 
-href="cug-htmlsu14.html#x26-260005.2">Choosing The Initial Cycle Time</a></span>
-   </div>
-
-                                                                                         
-
-                                                                                         
-   <!--l. 846--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu13.html" >next</a>] [<a 
-href="cug-htmlse4.html" >prev</a>] [<a 
-href="cug-htmlse4.html#tailcug-htmlse4.html" >prev-tail</a>] [<a 
+   <!--l. 847--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse6.html" >next</a>] [<a 
+href="cug-htmlsu14.html" >prev</a>] [<a 
+href="cug-htmlsu14.html#tailcug-htmlsu14.html" >prev-tail</a>] [<a 
 href="cug-htmlse5.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse5.html" >up</a>] </p></div>
-<!--l. 846--><p class="indent" >   <a 
+<!--l. 847--><p class="indent" >   <a 
  id="tailcug-htmlse5.html"></a> </p> 
 </body></html> 

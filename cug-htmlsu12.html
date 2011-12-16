@@ -4,50 +4,47 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Upgrading To A New Cylc Version</title> 
+<head><title>Automated Scheduler Test</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
    <!--l. 619--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse3.html" >next</a>] [<a 
+href="cug-htmlsu13.html" >next</a>] [<a 
 href="cug-htmlsu11.html" >prev</a>] [<a 
 href="cug-htmlsu11.html#tailcug-htmlsu11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu12.html">tail</a>] [<a 
-href="cug-htmlse2.html#cug-htmlsu12.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">2.8   </span> <a 
- id="x20-210002.8"></a>Upgrading To A New Cylc Version</h4>
-<!--l. 621--><p class="noindent" >Upgrading is just a matter of unpacking the new cylc release, copying the old central database into the new
-installation,<span class="footnote-mark"><a 
-href="cug-html21.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
- id="x20-21001f6"></a> 
-and running the new <span class="lstinline"><span 
+href="cug-htmlse4.html#cug-htmlsu12.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">4.6   </span> <a 
+ id="x19-180004.6"></a>Automated Scheduler Test</h4>
+<!--l. 622--><p class="noindent" >The command <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">admin</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">create</span><span 
+class="pcrr7t-">test</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">cdb</span></span> to load the new example suites. Finally, change the newly
-registered central suite group name to something sensible with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">reregister</span></span> - it will have an ungainly
-string of numbers attached to ensure uniqueness.
+class="pcrr7t-">suite</span></span> tests the cylc scheduler itself by running a suite temporarily registered
+under <span class="lstinline"><span 
+class="pcrr7t-">testsuite</span></span>, configuring it to fail out a specific task, and then doing some advanced failure recovery
+intervention on it (recursive purge plus insertion of cold-start tasks). This process should complete in 2-3 minutes
+and can be watched in real time by right-clicking on the temporary test suite when it appears in the gcylc GUI and
+opening up a suite control GUI.
+                                                                                         
+
+                                                                                         
 </p>
-   <!--l. 632--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse3.html" >next</a>] [<a 
+   <!--l. 631--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu13.html" >next</a>] [<a 
 href="cug-htmlsu11.html" >prev</a>] [<a 
 href="cug-htmlsu11.html#tailcug-htmlsu11.html" >prev-tail</a>] [<a 
 href="cug-htmlsu12.html" >front</a>] [<a 
-href="cug-htmlse2.html#cug-htmlsu12.html" >up</a>] </p></div>
-<!--l. 632--><p class="indent" >   <a 
+href="cug-htmlse4.html#cug-htmlsu12.html" >up</a>] </p></div>
+<!--l. 631--><p class="indent" >   <a 
  id="tailcug-htmlsu12.html"></a> </p> 
 </body></html> 

@@ -4,458 +4,399 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Database Operations</title> 
+<head><title>Import The QuickStart Suites</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 937--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
+   <!--l. 882--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu18.html" >next</a>] [<a 
 href="cug-htmlsu16.html" >prev</a>] [<a 
 href="cug-htmlsu16.html#tailcug-htmlsu16.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu17.html">tail</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu17.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">6.3   </span> <a 
- id="x30-310006.3"></a>Database Operations</h4>
-<!--l. 939--><p class="noindent" >On the command line, the &#8216;database&#8217; (or &#8216;db&#8217;) command category contains commands to implement the
-aforementioned operations.
-</p>
-   <!--l. 943--><div class="lstinputlisting">
-<a 
- id="x30-31001"></a>
-   <span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31002r1"></a></span><span 
-class="pcrr7t-">CATEGORY</span><span 
-class="pcrr7t-">:</span><span 
+ id="x27-310006.3"></a>Import The QuickStart Suites</h4>
+<!--l. 884--><p class="noindent" >You can register new suites directly in your private database, via gcylc or <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
-class="pcrr7t-">.</span><span 
+class="pcrr7t-">register</span></span>, or you can import
+suites from the central database that is visible to all users. Suites in the central database can be view, validated, and
+graphed, etc., but you have to import them in order to run them. Section&#x00A0;<a 
+href="cug-htmlse7.html#x39-490007">7<!--tex4ht:ref: SuiteRegistration --></a> explains exactly what actions can be
+performed on suites in central and private databases.
+</p><!--l. 892--><p class="indent" >   In gcylc, find the Quick Start suites (use View <span 
+class="cmsy-10">&#x2192; </span>Filter to filter for &#8220;QuickStart&#8221; if you like), right click on the
+<span 
+class="cmti-10">QuickStart </span>group and choose &#8216;Import&#8217; to copy the whole group to your private database. In the dialog box that pops
+up, enter &#8216;QuickStart&#8217; as the TARGET suite name, and <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span></span> (or some other directory of your choice)
+as a destination for the suite definition directories in the group. Equivalently, on the command line:
+</p><!--l. 899--><div class="lstlisting">
+<span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31003r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31004r3"></a></span><span 
-class="pcrr7t-">HELP</span><span 
-class="pcrr7t-">:</span><span 
+ id="x27-31001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[</span><span 
 class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span><span 
-class="pcrr7t-">,--</span><span 
-class="pcrr7t-">help</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31005r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">You</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">can</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">abbreviate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">COMMAND</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31006r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">category</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">db</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">may</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">be</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">omitted</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31007r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31008r7"></a></span><span 
-class="pcrr7t-">COMMANDS</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31009r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">alias</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Register</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">an</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">alias</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">another</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registered</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31010r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">cp</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">group</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31011r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Export</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31012r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">The</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Graphical</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">User</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Interface</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31013r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.......</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">definition</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">path</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31014r13"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">import</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..............</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;.</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">QuickStart</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Import</span><span 
+class="pcrr7t-">Quickstart</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31015r14"></a></span><span 
+ id="x27-31002r2"></a></span><span 
+class="pcrr7t-">COPY</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Print</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31016r15"></a></span><span 
+ id="x27-31003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">refresh</span><span 
+class="pcrr7t-">TO</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">.............</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Report</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">invalid</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registrations</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">update</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">titles</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31017r16"></a></span><span 
+ id="x27-31004r4"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31005r5"></a></span><span 
+class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">register</span><span 
+class="pcrr7t-">TO</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">............</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31007r7"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Add</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31008r8"></a></span><span 
+class="pcrr7t-">COPY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">CDB</span><span 
+class="pcrr7t-">/&#x003C;</span><span 
+class="pcrr7t-">AdminUserName</span><span 
+class="pcrr7t-">&#x003E;/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TO</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31010r10"></a></span><span 
+class="pcrr7t-">REGISTER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span>
+
+
+   </div>
+<!--l. 912--><p class="indent" >   Note that you can also import individual suites, and that registration groups do not need to be created explicitly
+- they are automatically created and deleted as required.
+</p><!--l. 916--><p class="indent" >   Now switch gcylc back to your private database and confirm that you have a copy of the example suites; on the
+command line: </p><!--l. 918--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31011r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">pr</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">t</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31012r2"></a></span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31013r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">to</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">your</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registration</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31018r17"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">reregister</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
-class="pcrr7t-">rename</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Change</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
 class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">s</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">registered</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">name</span><span 
-class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x30-31019r18"></a></span><span 
+ id="x27-31014r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">b</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">unregister</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">..........</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Remove</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suites</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">from</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
+class="pcrr7t-">Quick</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">private</span><span 
+class="pcrr7t-">Start</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">or</span><span 
+class="pcrr7t-">Example</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">central</span><span 
+class="pcrr7t-">B</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">database</span>
-   
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31015r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|-</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">C</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x27-31016r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#8216;-</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Quick</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Start</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Example</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Z</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliver</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">z</span>
+
+
    </div>
-<!--l. 945--><p class="noindent" >Groups of suites (at any level in the registration hierarchy) can be deleted, copied, imported, and exported; as well as
-individual suites. To do this, just use suite group names as source and/or target for operations, as appropriate. For
-instance, if a group <span class="lstinline"><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span></span> contains the suites <span class="lstinline"><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">waz</span></span>, you can copy a single suite
-like this: </p><!--l. 951-->
-   <div class="lstlisting" id="listing-14"><span class="label"><a 
- id="x30-31020r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span>
-   
-   </div>
-<!--l. 954--><p class="indent" >   (resulting in a new suite <span class="lstinline"><span 
-class="pcrr7t-">boo</span></span>); or the group like this: </p><!--l. 955-->
-   <div class="lstlisting" id="listing-15"><span class="label"><a 
- id="x30-31021r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span>
-   
-   </div>
-<!--l. 958--><p class="indent" >   (resulting in new suites <span class="lstinline"><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">waz</span></span>); or the group like this: </p><!--l. 959-->
-   <div class="lstlisting" id="listing-16"><span class="label"><a 
- id="x30-31022r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">TMPDIR</span>
-   
-   </div>
-<!--l. 962--><p class="indent" >   (resulting in new suites <span class="lstinline"><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">boo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">waz</span></span>). When suites are copied, the suite definition
-directories are copied into a directory tree, under the target directory, that reflects the registration name hierarchy.
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">copy</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">help</span></span> has some explicit examples.
-</p><!--l. 967--><p class="indent" >   The same functionality is also available by right-clicking on suites or groups in the gcylc GUI, as shown in
-Figure&#x00A0;<a 
-href="cug-htmlse3.html#x22-2200212">12<!--tex4ht:ref: fig-db --></a>.
-</p>
-   <!--l. 971--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlse7.html" >next</a>] [<a 
+                                                                                         
+
+                                                                                         
+   <!--l. 927--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu18.html" >next</a>] [<a 
 href="cug-htmlsu16.html" >prev</a>] [<a 
 href="cug-htmlsu16.html#tailcug-htmlsu16.html" >prev-tail</a>] [<a 
 href="cug-htmlsu17.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu17.html" >up</a>] </p></div>
-<!--l. 971--><p class="indent" >   <a 
+<!--l. 927--><p class="indent" >   <a 
  id="tailcug-htmlsu17.html"></a> </p> 
 </body></html> 

@@ -4,42 +4,133 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Make Tasks Rerunnable</title> 
+<head><title>Whither Task stdout And stderr?</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-11-14 00:09:00" /> 
+<meta name="date" content="2011-12-16 23:43:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3911--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3999--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu45.html" >next</a>] [<a 
 href="cug-htmlsu43.html" >prev</a>] [<a 
 href="cug-htmlsu43.html#tailcug-htmlsu43.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu44.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu44.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.2   </span> <a 
- id="x72-11300012.2"></a>Make Tasks Rerunnable</h4>
-<!--l. 3913--><p class="noindent" >It should be possible to rerun a task by simply resubmitting it for the same cycle time. In other words, failure at any
-point during execution of a task should not render a rerun impossible by corrupting the state of some internal-use
-file, or whatever. It&#8217;s difficult to overstate the usefulness of being able to rerun the same task multiple times, either
-outside of the suite with <span class="lstinline"><span 
+href="cug-htmlse10.html#cug-htmlsu44.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">10.3   </span> <a 
+ id="x67-12300010.3"></a>Whither Task stdout And stderr?</h4>
+<!--l. 4002--><p class="noindent" >When a task is ready to run cylc generates task-specific stdout and stderr filenames containing the task name, cycle
+time, and a string of digits (seconds since epoch) to ensure uniqueness - rerunning the task won&#8217;t overwrite any old
+output:  </p><!--l. 4007--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">job</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">script</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123002r2"></a></span><span 
+class="pcrr7t-">~/</span><span 
 class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>, or by retriggering it within the running suite, when debugging a
-problem.
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">%2011080506-1317298378.191123</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123003r3"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">stdout</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123004r4"></a></span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">%2011080506-1317298378.191123.</span><span 
+class="pcrr7t-">out</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123005r5"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">stderr</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x67-123006r6"></a></span><span 
+class="pcrr7t-">~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">%2011080506-1317298378.191123.</span><span 
+class="pcrr7t-">err</span>
+
+
+   </div>
+<!--l. 4015--><p class="indent" >   (the job submission log directory is configurable in the suite.rc file).
+</p><!--l. 4017--><p class="indent" >   How the stdout and stderr streams are directed into these files depends on the job submission method.
+The <span class="lstinline"><span 
+class="pcrr7t-">background</span></span> method just uses appropriate output redirection on the command line, as shown
+above. The <span class="lstinline"><span 
+class="pcrr7t-">loadleveler</span></span> method writes appropriate directives to the job script that is submitted to
+loadleveler.
+</p><!--l. 4023--><p class="indent" >   Cylc obviously has no control over the stdout and stderr output from tasks that do their own internal output
+management (e.g.&#x00A0;tasks that submit internal jobs and direct their output to other files). For less internally complex
+tasks, however, these will be complete task job logs. <span 
+class="cmti-10">They can be viewed updating in real time in the suite control</span>
+<span 
+class="cmti-10">GUIs</span>.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3921--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4031--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu45.html" >next</a>] [<a 
 href="cug-htmlsu43.html" >prev</a>] [<a 
 href="cug-htmlsu43.html#tailcug-htmlsu43.html" >prev-tail</a>] [<a 
 href="cug-htmlsu44.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu44.html" >up</a>] </p></div>
-<!--l. 3921--><p class="indent" >   <a 
+href="cug-htmlse10.html#cug-htmlsu44.html" >up</a>] </p></div>
+<!--l. 4031--><p class="indent" >   <a 
  id="tailcug-htmlsu44.html"></a> </p> 
 </body></html> 
