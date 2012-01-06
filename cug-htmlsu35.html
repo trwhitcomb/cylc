@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3191--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3193--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu36.html" >next</a>] [<a 
 href="cug-htmlsu34.html" >prev</a>] [<a 
 href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
@@ -22,17 +22,16 @@ href="#tailcug-htmlsu35.html">tail</a>] [<a
 href="cug-htmlse8.html#cug-htmlsu35.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.5   </span> <a 
  id="x55-990008.5"></a>Visualization</h4>
-<!--l. 3194--><p class="noindent" >This is the final major section in the suite.rc file. It is used to configure suite graph plotting - principally graph node
+<!--l. 3196--><p class="noindent" >This is the final major section in the suite.rc file. It is used to configure suite graph plotting - principally graph node
 (task) and edge (dependency arrow) style attributes. Tasks can be grouped for the purpose of applying common
 style attributes. See the suite.rc reference (Appendix&#x00A0;<a 
 href="cug-htmlse13.html#x87-144000A">A<!--tex4ht:ref: SuiteRCReference --></a>) for details.
-</p><!--l. 3200--><p class="noindent" >
+</p><!--l. 3202--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.5.1   </span> <a 
  id="x55-1000008.5.1"></a>Collapsible Task Families In Suite Graphing And GUIs</h5>
-   <!--l. 3203--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+   <!--l. 3205-->
+   <div class="lstlisting" id="listing-96"><span class="label"><a 
  id="x55-100001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -85,24 +84,22 @@ class="pcrr7t-">family1</span><span
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">family2</span>
-
-
+   
    </div>
-<!--l. 3211--><p class="indent" >   Nested families from the namespace inheritance hierarchy, even if they are not used as family triggers in the
+<!--l. 3213--><p class="indent" >   Nested families from the namespace inheritance hierarchy, even if they are not used as family triggers in the
 graph, can be expanded or collapsed in suite graphs and by menu options in the graph-based suite control GUI (this
 will also be added to the text treeview control GUI in a future release).
-</p><!--l. 3217--><p class="indent" >   Family nodes in the graph-based suite control GUI are not currently color-coded in real time according to what
+</p><!--l. 3219--><p class="indent" >   Family nodes in the graph-based suite control GUI are not currently color-coded in real time according to what
 state their members are in. However, any ungraphed tasks, which includes the members of collapsed families, are
 automatically plotted as rectangular nodes to the right of the main graph if they are doing anything interesting
 (submitted, running, or failed).
-</p><!--l. 3224--><p class="indent" >   Note that family relationships can be defined purely for visualization purposes - you can group tasks at root level
+</p><!--l. 3226--><p class="indent" >   Note that family relationships can be defined purely for visualization purposes - you can group tasks at root level
 in the inheritance hierarchy prior to defining real properties at higher levels.
-</p><!--l. 3228--><p class="indent" >   Figure&#x00A0;<a 
+</p><!--l. 3230--><p class="indent" >   Figure&#x00A0;<a 
 href="#x55-10002037">37<!--tex4ht:ref: fig-namespaces --></a> illustrates successive expansion of nested task families in the <span 
 class="cmti-10">namespaces </span>example suite, which has the
-following namespace hierarchy: </p><!--l. 3231--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+following namespace hierarchy: </p><!--l. 3233-->
+   <div class="lstlisting" id="listing-97"><span class="label"><a 
  id="x55-100005r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -330,11 +327,9 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">obs</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">preprocessing</span>
-
-
+   
    </div>
    <hr class="figure" /><div class="figure" 
-><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -344,46 +339,46 @@ class="pcrr7t-">preprocessing</span>
                                                                                          
 
                                                                                          
-<table class="minipage"><tr><td><div class="center" 
+<div class="minipage"><div class="center" 
 >
-<!--l. 3251--><p class="noindent" >
+<!--l. 3253--><p class="noindent" >
 
-</p><!--l. 3252--><p class="noindent" ><img 
+</p><!--l. 3254--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-2.png" alt="PIC"  
- /></p></div></td></tr></table>                            <table class="minipage"><tr><td><div class="center" 
+ /></p></div></div>                            <div class="minipage"><div class="center" 
 >
-<!--l. 3257--><p class="noindent" >
+<!--l. 3259--><p class="noindent" >
 
-</p><!--l. 3258--><p class="noindent" ><img 
+</p><!--l. 3260--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-3.png" alt="PIC"  
- /></p></div></td></tr></table><table class="minipage"><tr><td><div class="center" 
+ /></p></div></div><div class="minipage"><div class="center" 
 >
-<!--l. 3263--><p class="noindent" >
+<!--l. 3265--><p class="noindent" >
 
-</p><!--l. 3264--><p class="noindent" ><img 
+</p><!--l. 3266--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-4.png" alt="PIC"  
- /></p></div></td></tr></table>
-<table class="minipage"><tr><td><div class="center" 
+ /></p></div></div>
+<div class="minipage"><div class="center" 
 >
-<!--l. 3269--><p class="noindent" >
+<!--l. 3271--><p class="noindent" >
 
-</p><!--l. 3270--><p class="noindent" ><img 
+</p><!--l. 3272--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-5.png" alt="PIC"  
- /></p></div></td></tr></table>                            <table class="minipage"><tr><td><div class="center" 
+ /></p></div></div>                            <div class="minipage"><div class="center" 
 >
-<!--l. 3275--><p class="noindent" >
+<!--l. 3277--><p class="noindent" >
 
-</p><!--l. 3276--><p class="noindent" ><img 
+</p><!--l. 3278--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-6.png" alt="PIC"  
- /></p></div></td></tr></table><table class="minipage"><tr><td><div class="center" 
+ /></p></div></div><div class="minipage"><div class="center" 
 >
-<!--l. 3281--><p class="noindent" >
+<!--l. 3283--><p class="noindent" >
 
-</p><!--l. 3282--><p class="noindent" ><img 
+</p><!--l. 3284--><p class="noindent" ><img 
 src="screenshots/inherit/inherit-7.png" alt="PIC"  
- /></p></div></td></tr></table>
-<br /> <table class="caption" 
-><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;37: </td><td  
+ /></p></div></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;37: </span><span  
 class="content"><span 
 class="cmr-7">Graphs of the </span><span 
 class="cmti-7">namespaces </span><span 
@@ -391,20 +386,20 @@ class="cmr-7">example suite showing various states of expansion of the nested na
 <span 
 class="cmr-7">from all families collapsed (top left) through to all expanded (bottom right). This can also be done by right-clicking on tasks in the</span>
 <span 
-class="cmr-7">graph-based suite control GUI.</span></td></tr></table><!--tex4ht:label?: x55-10002037 -->
+class="cmr-7">graph-based suite control GUI.</span></span></div><!--tex4ht:label?: x55-10002037 -->
                                                                                          
 
                                                                                          
-   </td></tr></table></div><hr class="endfigure" />
+   </div><hr class="endfigure" />
                                                                                          
 
                                                                                          
-   <!--l. 3326--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3328--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu36.html" >next</a>] [<a 
 href="cug-htmlsu34.html" >prev</a>] [<a 
 href="cug-htmlsu34.html#tailcug-htmlsu34.html" >prev-tail</a>] [<a 
 href="cug-htmlsu35.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu35.html" >up</a>] </p></div>
-<!--l. 3326--><p class="indent" >   <a 
+<!--l. 3328--><p class="indent" >   <a 
  id="tailcug-htmlsu35.html"></a>  </p> 
 </body></html> 

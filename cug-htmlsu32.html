@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -22,16 +22,17 @@ href="#tailcug-htmlsu32.html">tail</a>] [<a
 href="cug-htmlse8.html#cug-htmlsu32.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.2   </span> <a 
  id="x45-570008.2"></a>Suite.rc File Overview</h4>
-<!--l. 1825--><p class="noindent" >Suite.rc files conform to the ConfigObj extended INI format (<span class="obeylines-h"><a 
+<!--l. 1825--><p class="noindent" >Suite.rc files conform to the ConfigObj extended INI format (<a 
 href="http://www.voidspace.org.uk/python/configobj.html" class="url" ><span 
-class="pcrr7t-">http://www.voidspace.org.uk/python/configobj.html</span></a></span>)
+class="pcrr7t-">http://www.voidspace.org.uk/python/configobj.html</span></a>)
 with several modifications to allow continuation lines and include-files, and to make it legal to redefine
 environment variables and scheduler directives (duplicate config item definitions are normally flagged as an
 error).
 </p><!--l. 1832--><p class="indent" >   Additionally, embedded template processor expressions may be used in the file, to programatically
-generate the final suite definition seen by cylc. Currently the Jinja2 template engine is supported (<span class="obeylines-h"><a 
+generate the final suite definition seen by cylc. Currently the Jinja2 template engine is supported
+(<a 
 href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span>). In the future cylc may provide a plug-in interface to allow use of other
+class="pcrr7t-">http://jinja.pocoo.org/docs</span></a>). In the future cylc may provide a plug-in interface to allow use of other
 template engines too. See <span 
 class="cmti-10">Jinja2 Suite Templates </span>(Section&#x00A0;<a 
 href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) for some examples.
@@ -102,9 +103,8 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">rc</span></span>.</li></ul>
-<!--l. 1872--><p class="indent" >   The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1874--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+<!--l. 1872--><p class="indent" >   The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1874-->
+   <div class="lstlisting" id="listing-44"><span class="label"><a 
  id="x45-58003r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -229,7 +229,7 @@ class="pcrr7t-">brown</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fox</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58009r7"></a></span></span><span 
+ id="x45-58009r7"></a></span><span 
 class="pcrr7t-">jumped</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">over</span><span 
@@ -474,8 +474,7 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">...</span>
-
-
+   
    </div>
 <!--l. 1899--><p class="noindent" >
 </p>
@@ -485,9 +484,8 @@ class="pcrro7t-">...</span>
 boundaries are completely arbitrary - you can think of include-files as chunks of the suite.rc file simply
 cut-and-pasted into another file. Include-files may be included multiple times in the same file, and
 even nested. Include-file paths can be specified portably relative to the suite definition directory, e.g.:
-</p><!--l. 1909--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+</p><!--l. 1909-->
+   <div class="lstlisting" id="listing-45"><span class="label"><a 
  id="x45-59001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -523,17 +521,15 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">rc</span>
-
-
+   
    </div>
 <!--l. 1915--><p class="noindent" >
 </p>
 <!--l. 1915--><p class="noindent" ><span class="paragraphHead"><a 
  id="x45-600008.2.2.1"></a><span 
 class="cmbx-10">Editing Temporarily Inlined Suites</span></span>
-   Cylc&#8217;s native file inclusion mechanism supports optional inlined editing: </p><!--l. 1919--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+   Cylc&#8217;s native file inclusion mechanism supports optional inlined editing: </p><!--l. 1919-->
+   <div class="lstlisting" id="listing-46"><span class="label"><a 
  id="x45-60001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -545,8 +541,7 @@ class="pcrr7t-">--</span><span
 class="pcrr7t-">inline</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">SUITE</span>
-
-
+   
    </div>
 <!--l. 1922--><p class="indent" >   The suite will be split back into its constituent include-files when you exit the edit session. While editing, the
 inlined file becomes the official suite definition so that changes take effect whenever you save the file. See
@@ -656,9 +651,8 @@ class="cmti-10">Suite.rc</span>
 class="cmti-10">Reference </span>(Appendix&#x00A0;<a 
 href="cug-htmlse13.html#x87-144000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
 </p><!--l. 1988--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
-a missing right bracket. </p><!--l. 1990--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+a missing right bracket. </p><!--l. 1990-->
+   <div class="lstlisting" id="listing-47"><span class="label"><a 
  id="x45-64001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -720,8 +714,7 @@ class="pcrr7t-">:</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">1</span>
-
-
+   
    </div>
 <!--l. 1998--><p class="indent" >   If the suite.rc file contains include-files you can use <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 

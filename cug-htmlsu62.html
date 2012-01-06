@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 285--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 287--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu63.html" >next</a>] [<a 
 href="cug-htmlsu61.html" >prev</a>] [<a 
 href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
@@ -22,13 +22,13 @@ href="#tailcug-htmlsu62.html">tail</a>] [<a
 href="cug-htmlse13.html#cug-htmlsu62.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
  id="x90-171000A.3"></a>[scheduling]</h4>
-<!--l. 287--><p class="noindent" >This section allows cylc to determine when tasks are ready to run.
-</p><!--l. 289--><p class="noindent" >
+<!--l. 289--><p class="noindent" >This section allows cylc to determine when tasks are ready to run.
+</p><!--l. 291--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
  id="x90-172000A.3.1"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>initial cycle time</h5>
-<!--l. 291--><p class="noindent" >At startup each cycling task (unless specifically excluded under [special tasks]) will be inserted into the suite with
+<!--l. 293--><p class="noindent" >At startup each cycling task (unless specifically excluded under [special tasks]) will be inserted into the suite with
 this cycle time, or with the closest subsequent valid cycle time for the task. Note that whether or not <span 
 class="cmti-10">cold-start</span>
 <span 
@@ -42,12 +42,12 @@ class="cmti-10">type: </span>integer (YYYYMMDDHH)
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 304--><p class="noindent" >
+<!--l. 306--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
  id="x90-173000A.3.2"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>final cycle time</h5>
-<!--l. 306--><p class="noindent" >Cycling tasks are held (i.e.&#x00A0;not allowed to spawn a successor) once they pass the final cycle time, if one is specified.
+<!--l. 308--><p class="noindent" >Cycling tasks are held (i.e.&#x00A0;not allowed to spawn a successor) once they pass the final cycle time, if one is specified.
 Once all tasks have achieved this state the suite will shut down. If this item is provided you can override it on the
 command line or in the gcylc suite start panel.
 </p>
@@ -57,12 +57,12 @@ class="cmti-10">type: </span>integer (YYYYMMDDHH)
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 316--><p class="noindent" >
+<!--l. 318--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.3   </span> <a 
  id="x90-174000A.3.3"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>runahead limit</h5>
-<!--l. 318--><p class="noindent" >A cycling task spawns a successor either when it starts running or, for sequential tasks, when it finishes. If the
+<!--l. 320--><p class="noindent" >A cycling task spawns a successor either when it starts running or, for sequential tasks, when it finishes. If the
 successor&#8217;s cycle time is ahead of the oldest non-failed task by more than the runahead limit it will be put into
 special &#8220;runahead held&#8221; state until other tasks catch up sufficiently. This prevents quick-running unconstrained
 tasks in historical trials (i.e.&#x00A0;sustained catch up operation) from running off into the future and potentially
@@ -82,18 +82,18 @@ class="cmsy-10">&#x2265; </span>0, hours)
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>24</li></ul>
-<!--l. 337--><p class="noindent" >
+<!--l. 339--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.4   </span> <a 
  id="x90-175000A.3.4"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>[[special tasks]]</h5>
-<!--l. 339--><p class="noindent" >This section identifies any tasks with special behaviour. By default (i.e.&#x00A0;non &#8220;special&#8221; behaviour) tasks submit as soon as
+<!--l. 341--><p class="noindent" >This section identifies any tasks with special behaviour. By default (i.e.&#x00A0;non &#8220;special&#8221; behaviour) tasks submit as soon as
 their prerequisites are satisfied, and they spawn a successor at the next valid cycle time for the task as soon as they enter the
 running state<span class="footnote-mark"><a 
 href="cug-html91.html#fn15x0"><sup class="textsuperscript">15</sup></a></span><a 
  id="x90-175001f15"></a> 
 </p>
-<!--l. 347--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 349--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-176000A.3.4.1"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -126,16 +126,16 @@ class="pcrr7t-">(1.5),</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">(2.25)</span></span></li></ul>
-<!--l. 358--><p class="noindent" ><span 
+<!--l. 360--><p class="noindent" ><span 
 class="cmti-10">Clock-triggered tasks cannot be triggered manually prior to their trigger time</span>. Workaround: just run the task alone with
 <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">submit</span></span> then set the in-suite task&#8217;s state to &#8216;succeeded&#8217; so that downstream tasks can trigger off
 it.
-</p><!--l. 363--><p class="noindent" >
+</p><!--l. 365--><p class="noindent" >
 </p>
-<!--l. 363--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 365--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-177000A.3.4.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -155,9 +155,9 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 375--><p class="noindent" >
+<!--l. 377--><p class="noindent" >
 </p>
-<!--l. 375--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 377--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-178000A.3.4.3"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -179,9 +179,9 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 395--><p class="noindent" >
+<!--l. 397--><p class="noindent" >
 </p>
-<!--l. 395--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 397--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-179000A.3.4.4"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -208,7 +208,7 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 419--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 421--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-180000A.3.4.5"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -230,9 +230,9 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 431--><p class="noindent" >
+<!--l. 433--><p class="noindent" >
 </p>
-<!--l. 431--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 433--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-181000A.3.4.6"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -258,9 +258,9 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 451--><p class="noindent" >
+<!--l. 453--><p class="noindent" >
 </p>
-<!--l. 451--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 453--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-182000A.3.4.7"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -280,9 +280,9 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 466--><p class="noindent" >
+<!--l. 468--><p class="noindent" >
 </p>
-<!--l. 466--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 468--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-183000A.3.4.8"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -306,20 +306,20 @@ class="cmti-10">type: </span>list of task names
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 482--><p class="noindent" >
+<!--l. 484--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.5   </span> <a 
  id="x90-184000A.3.5"></a>[scheduling] <span 
 class="cmsy-10">&#x2192; </span>[[dependencies]]</h5>
-<!--l. 484--><p class="noindent" >The suite dependency graph is defined under this section. You can plot the dependency graph as you work on it,
+<!--l. 486--><p class="noindent" >The suite dependency graph is defined under this section. You can plot the dependency graph as you work on it,
 with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">graph</span></span> or by right clicking on the suite in gcylc. See also Section&#x00A0;<a 
 href="cug-htmlsu33.html#x48-650008.3">8.3<!--tex4ht:ref: DependencyGraphs --></a>.
-</p><!--l. 489--><p class="noindent" >
+</p><!--l. 491--><p class="noindent" >
 </p>
-<!--l. 489--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 491--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-185000A.3.5.1"></a> <span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -342,9 +342,9 @@ class="cmti-10">type: </span>string
      <li class="itemize"><span 
 class="cmti-10">example: </span>(see Section&#x00A0;<a 
 href="#x90-187000A.3.5.2.1">A.3.5.2.1<!--tex4ht:ref: GraphDescrip --></a> below)</li></ul>
-<!--l. 504--><p class="noindent" >
+<!--l. 506--><p class="noindent" >
 </p>
-<!--l. 504--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 506--><p class="noindent" ><span class="paragraphHead"><a 
  id="x90-186000A.3.5.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -386,9 +386,9 @@ class="cmti-10">default: </span>(none)</li></ul>
                                                                                          
 
                                                                                          
-<!--l. 523--><p class="noindent" >
+<!--l. 525--><p class="noindent" >
 </p>
-<!--l. 523--><p class="indent" >   <span class="subparagraphHead"> <a 
+<!--l. 525--><p class="indent" >   <span class="subparagraphHead"> <a 
  id="x90-187000A.3.5.2.1"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -410,9 +410,8 @@ href="cug-htmlsu33.html#x48-650008.3">8.3<!--tex4ht:ref: DependencyGraphs --></a
 class="cmti-10">type: </span>string
      </li>
      <li class="itemize"><span 
-class="cmti-10">example: </span><!--l. 533--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+class="cmti-10">example: </span><!--l. 535-->
+     <div class="lstlisting" id="listing-132"><span class="label"><a 
  id="x90-187001r1"></a></span><span 
 class="pcrr7t-">graph</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -422,7 +421,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187002r2"></a></span></span><span 
+ id="x90-187002r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -458,7 +457,7 @@ class="pcrr7t-">off</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187003r3"></a></span></span><span 
+ id="x90-187003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -498,7 +497,7 @@ class="pcrr7t-">of</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187004r4"></a></span></span><span 
+ id="x90-187004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -529,7 +528,7 @@ class="pcrr7t-">for</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187005r5"></a></span></span><span 
+ id="x90-187005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -567,7 +566,7 @@ class="pcrr7t-">X</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fails</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187006r6"></a></span></span><span 
+ id="x90-187006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -608,7 +607,7 @@ class="pcrr7t-">X</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">succeeds</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187007r7"></a></span></span><span 
+ id="x90-187007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -650,7 +649,7 @@ class="pcrr7t-">or</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fails</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187008r8"></a></span></span><span 
+ id="x90-187008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -685,7 +684,7 @@ class="pcrr7t-">conditional</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">triggers</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187009r9"></a></span></span><span 
+ id="x90-187009r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -693,22 +692,21 @@ class="pcrr7t-">#</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">comment</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x90-187010r10"></a></span></span><span 
+ id="x90-187010r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span>
-
-
+     
      </div>
      </li>
      <li class="itemize"><span 
 class="cmti-10">default: </span>(none)</li></ul>
-<!--l. 548--><p class="noindent" >
+<!--l. 550--><p class="noindent" >
 </p>
-<!--l. 548--><p class="indent" >   <span class="subparagraphHead"> <a 
+<!--l. 550--><p class="indent" >   <span class="subparagraphHead"> <a 
  id="x90-188000A.3.5.2.2"></a><span 
 class="cmbx-10">[scheduling] </span><span 
 class="cmsy-10">&#x2192; </span><span 
@@ -736,12 +734,12 @@ class="cmti-10">default: </span>(none)</li></ul>
                                                                                          
 
                                                                                          
-   <!--l. 560--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 562--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu63.html" >next</a>] [<a 
 href="cug-htmlsu61.html" >prev</a>] [<a 
 href="cug-htmlsu61.html#tailcug-htmlsu61.html" >prev-tail</a>] [<a 
 href="cug-htmlsu62.html" >front</a>] [<a 
 href="cug-htmlse13.html#cug-htmlsu62.html" >up</a>] </p></div>
-<!--l. 560--><p class="indent" >   <a 
+<!--l. 562--><p class="indent" >   <a 
  id="tailcug-htmlsu62.html"></a>    </p> 
 </body></html> 

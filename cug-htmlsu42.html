@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3765--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3767--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu43.html" >next</a>] [<a 
 href="cug-htmlse10.html" >prev</a>] [<a 
 href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
@@ -22,15 +22,14 @@ href="#tailcug-htmlsu42.html">tail</a>] [<a
 href="cug-htmlse10.html#cug-htmlsu42.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.1   </span> <a 
  id="x65-11400010.1"></a>Task Job Scripts</h4>
-<!--l. 3768--><p class="noindent" >When a task is ready to run cylc generates a temporary <span 
+<!--l. 3770--><p class="noindent" >When a task is ready to run cylc generates a temporary <span 
 class="cmti-10">task job script </span>to configure the task&#8217;s execution environment
 and call its command scripting. The job script is the embodiment of all suite.rc runtime settings for the task. It is
 submitted to run by the <span 
 class="cmti-10">job submission method </span>configured for the task. Different tasks can have different job
 submission methods. Like other runtime properties, you can set a suite default job submission method and override
-it for specific tasks or families:  </p><!--l. 3777--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+it for specific tasks or families:  </p><!--l. 3779-->
+   <div class="lstlisting" id="listing-111"><span class="label"><a 
  id="x65-114001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -140,14 +139,12 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">at</span>
-
-
+   
    </div>
-<!--l. 3788--><p class="indent" >   The actual command line used to submit the job script is written to stdout by cylc. In the following shell
+<!--l. 3790--><p class="indent" >   The actual command line used to submit the job script is written to stdout by cylc. In the following shell
 transcript we generate a job script for a task in the QuickStart.c example suite and then examine it:
-</p><!--l. 3792--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+</p><!--l. 3794-->
+   <div class="lstlisting" id="listing-112"><span class="label"><a 
  id="x65-114009r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -297,15 +294,13 @@ class="pcrr7t-">2011080506-1317298378.191123.</span><span
 class="pcrr7t-">err</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&amp;</span>
-
-
+   
    </div>
-<!--l. 3800--><p class="indent" >   And here is the generated job script:  </p><!--l. 3802--><div class="lstlisting">
+<!--l. 3802--><p class="indent" >   And here is the generated job script:  </p><!--l. 3804-->
+                                                                                         
 
-
-
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+                                                                                         
+   <div class="lstlisting" id="listing-113"><span class="label"><a 
  id="x65-114015r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -526,6 +521,26 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
  id="x65-114039r25"></a></span><span 
 class="pcrb7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">CYLC_TASK_LOG_ROOT</span><span 
+class="pcrr7t-">=~/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">QuickStart</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">log</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">%2011080506-1317298378.191123</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114040r26"></a></span><span 
+class="pcrb7t-">export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">CYLC_TASK_NAMESPACE_HIERARCHY</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
@@ -536,9 +551,9 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">Model</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114040r26"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114041r27"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114042r28"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">ACCESS</span><span 
@@ -548,7 +563,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">CYLC</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114042r28"></a></span><span 
+ id="x65-114043r29"></a></span><span 
 class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr8c-">$</span><span 
@@ -559,7 +574,7 @@ class="pcrr7t-">:</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114043r29"></a></span><span 
+ id="x65-114044r30"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">Access</span><span 
@@ -575,7 +590,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">dir</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114044r30"></a></span><span 
+ id="x65-114045r31"></a></span><span 
 class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr8c-">$</span><span 
@@ -586,14 +601,14 @@ class="pcrr7t-">:</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114045r31"></a></span><span 
+ id="x65-114046r32"></a></span><span 
 class="pcrb7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114046r32"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114047r33"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114048r34"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SET</span><span 
@@ -603,7 +618,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">TRAPPING</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114048r34"></a></span><span 
+ id="x65-114049r35"></a></span><span 
 class="pcrb7t-">set</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
@@ -623,7 +638,7 @@ class="pcrro7t-">undefined</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">variable</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114049r35"></a></span><span 
+ id="x65-114050r36"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">Define</span><span 
@@ -634,13 +649,13 @@ class="pcrro7t-">trap</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">handler</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114050r36"></a></span><span 
+ id="x65-114051r37"></a></span><span 
 class="pcrr7t-">HANDLE_TRAP</span><span 
 class="pcrr7t-">()</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">{</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114051r37"></a></span><span 
+ id="x65-114052r38"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">echo</span><span 
@@ -654,7 +669,7 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">@</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114052r38"></a></span><span 
+ id="x65-114053r39"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -678,7 +693,7 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">@</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114053r39"></a></span><span 
+ id="x65-114054r40"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">trap</span><span 
@@ -688,17 +703,17 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">EXIT</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114054r40"></a></span><span 
+ id="x65-114055r41"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">exit</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">0</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114055r41"></a></span><span 
+ id="x65-114056r42"></a></span><span 
 class="pcrr7t-">}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114056r42"></a></span><span 
+ id="x65-114057r43"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">Trap</span><span 
@@ -720,28 +735,16 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">exit</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114057r43"></a></span><span 
-class="pcrb7t-">trap</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">HANDLE_TRAP</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EXIT</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">EXIT</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114058r44"></a></span><span 
 class="pcrb7t-">trap</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">HANDLE_TRAP</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ERR</span><span 
+class="pcrr7t-">EXIT</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ERR</span><span 
+class="pcrr7t-">EXIT</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114059r45"></a></span><span 
 class="pcrb7t-">trap</span><span 
@@ -749,12 +752,24 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">HANDLE_TRAP</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ERR</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ERR</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114060r46"></a></span><span 
+class="pcrb7t-">trap</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">HANDLE_TRAP</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TERM</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TERM</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114060r46"></a></span><span 
+ id="x65-114061r47"></a></span><span 
 class="pcrb7t-">trap</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
@@ -765,9 +780,9 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">XCPU</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114061r47"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114062r48"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114063r49"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SEND</span><span 
@@ -779,7 +794,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">MESSAGE</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114063r49"></a></span><span 
+ id="x65-114064r50"></a></span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">task</span><span 
@@ -792,9 +807,9 @@ class="pcrb7t-">exit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114064r50"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114065r51"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114066r52"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SHARE</span><span 
@@ -804,7 +819,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">CREATE</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114066r52"></a></span><span 
+ id="x65-114067r53"></a></span><span 
 class="pcrr7t-">CYLC_SUITE_SHARE_PATH</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr8c-">$</span><span 
@@ -812,12 +827,12 @@ class="pcrr7t-">CYLC_SUITE_DEF_PATH</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">share</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114067r53"></a></span><span 
+ id="x65-114068r54"></a></span><span 
 class="pcrb7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">CYLC_SUITE_SHARE_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114068r54"></a></span><span 
+ id="x65-114069r55"></a></span><span 
 class="pcrr7t-">mkdir</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
@@ -832,9 +847,9 @@ class="pcrr7t-">||</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">true</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114069r55"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114070r56"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114071r57"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">WORK</span><span 
@@ -844,7 +859,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">CREATE</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114071r57"></a></span><span 
+ id="x65-114072r58"></a></span><span 
 class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr8c-">$</span><span 
@@ -855,12 +870,12 @@ class="pcrr7t-">/</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_ID</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114072r58"></a></span><span 
+ id="x65-114073r59"></a></span><span 
 class="pcrb7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114073r59"></a></span><span 
+ id="x65-114074r60"></a></span><span 
 class="pcrr7t-">mkdir</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
@@ -878,7 +893,7 @@ class="pcrr7t-">||</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">true</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114074r60"></a></span><span 
+ id="x65-114075r61"></a></span><span 
 class="pcrr7t-">mkdir</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
@@ -887,28 +902,28 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114075r61"></a></span><span 
+ id="x65-114076r62"></a></span><span 
 class="pcrb7t-">cd</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114076r62"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114077r63"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114078r64"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">ENVIRONMENT</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114078r64"></a></span><span 
+ id="x65-114079r65"></a></span><span 
 class="pcrr7t-">TASK_EXE_SECONDS</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">5</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114079r65"></a></span><span 
+ id="x65-114080r66"></a></span><span 
 class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
@@ -924,7 +939,7 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">common</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114080r66"></a></span><span 
+ id="x65-114081r67"></a></span><span 
 class="pcrr7t-">MODEL_INPUT_DIR</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
@@ -932,7 +947,7 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114081r67"></a></span><span 
+ id="x65-114082r68"></a></span><span 
 class="pcrr7t-">MODEL_OUTPUT_DIR</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
@@ -940,7 +955,7 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">WORKSPACE</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114082r68"></a></span><span 
+ id="x65-114083r69"></a></span><span 
 class="pcrr7t-">MODEL_RUNNING_DIR</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">"</span><span 
@@ -950,7 +965,7 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">Model</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114083r69"></a></span><span 
+ id="x65-114084r70"></a></span><span 
 class="pcrb7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">TASK_EXE_SECONDS</span><span 
@@ -963,9 +978,9 @@ class="pcrr7t-">MODEL_OUTPUT_DIR</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">MODEL_RUNNING_DIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114084r70"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114085r71"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114086r72"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">TASK</span><span 
@@ -975,14 +990,14 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">SCRIPTING</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114086r72"></a></span><span 
+ id="x65-114087r73"></a></span><span 
 class="pcrr7t-">Model</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114087r73"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114088r74"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114089r75"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">WORK</span><span 
@@ -992,10 +1007,10 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">REMOVE</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114089r75"></a></span><span 
+ id="x65-114090r76"></a></span><span 
 class="pcrb7t-">cd</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114090r76"></a></span><span 
+ id="x65-114091r77"></a></span><span 
 class="pcrr7t-">rmdir</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr8c-">$</span><span 
@@ -1010,9 +1025,9 @@ class="pcrr7t-">||</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrb7t-">true</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114091r77"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114092r78"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114093r79"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SEND</span><span 
@@ -1024,16 +1039,16 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">MESSAGE</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114093r79"></a></span><span 
+ id="x65-114094r80"></a></span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">task</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">succeeded</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114094r80"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114095r81"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114096r82"></a></span><span 
 class="pcrb7t-">echo</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
@@ -1050,7 +1065,7 @@ class="pcrr7t-">SUCCEEDED</span><span
 class="pcrr7t-">)</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114096r82"></a></span><span 
+ id="x65-114097r83"></a></span><span 
 class="pcrb7t-">trap</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
@@ -1058,15 +1073,14 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">EXIT</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x65-114097r83"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x65-114098r84"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-114099r85"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">EOF</span>
-
-
+   
    </div>
-<!--l. 3889--><p class="indent" >   You can also generate a job script and print it directly to stdout, with <span class="lstinline"><span 
+<!--l. 3892--><p class="indent" >   You can also generate a job script and print it directly to stdout, with <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">jobscript</span></span>.
@@ -1074,12 +1088,12 @@ class="pcrr7t-">jobscript</span></span>.
 
                                                                                          
 </p>
-   <!--l. 3892--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3895--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu43.html" >next</a>] [<a 
 href="cug-htmlse10.html" >prev</a>] [<a 
 href="cug-htmlse10.html#tailcug-htmlse10.html" >prev-tail</a>] [<a 
 href="cug-htmlsu42.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu42.html" >up</a>] </p></div>
-<!--l. 3892--><p class="indent" >   <a 
+<!--l. 3895--><p class="indent" >   <a 
  id="tailcug-htmlsu42.html"></a> </p> 
 </body></html> 

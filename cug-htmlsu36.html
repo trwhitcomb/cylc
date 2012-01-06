@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3326--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3328--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
@@ -22,13 +22,12 @@ href="#tailcug-htmlsu36.html">tail</a>] [<a
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.6   </span> <a 
  id="x56-1010008.6"></a>Jinja2 Suite Templates</h4>
-<!--l. 3329--><p class="noindent" >Support for the Jinja2 template processor adds general variables, mathematical expressions, loop control structures,
+<!--l. 3331--><p class="noindent" >Support for the Jinja2 template processor adds general variables, mathematical expressions, loop control structures,
 and conditional expressions to suite.rc files - which are automatically preprocessed to generate the final suite
 definition seen by cylc.
-</p><!--l. 3334--><p class="indent" >   The need for Jinja2 processing must be declared with a bang-hash comment as the first line of the suite.rc file:
-</p><!--l. 3336--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+</p><!--l. 3336--><p class="indent" >   The need for Jinja2 processing must be declared with a bang-hash comment as the first line of the suite.rc file:
+</p><!--l. 3338-->
+   <div class="lstlisting" id="listing-98"><span class="label"><a 
  id="x56-101001r1"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">!</span><span 
@@ -38,26 +37,24 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">...</span>
-
-
+   
    </div>
-<!--l. 3341--><p class="indent" >   Potential uses for this include automatic generation of repeated groups of similar tasks and dependencies, and
+<!--l. 3343--><p class="indent" >   Potential uses for this include automatic generation of repeated groups of similar tasks and dependencies, and
 inclusion or exclusion of entire suite sections according to the value of a single flag. Consider a large
 complicated operational suite and several related parallel test suites with slightly different task content and
 structure (the parallel suites, for instance, might take certain large input files from the operation or
 the archive rather than downloading them again) - these can now be maintained as a single master
 suite definition that reconfigures itself according to the value of a flag variable indicating the intended
 use.
-</p><!--l. 3351--><p class="indent" >   Template processing is the first thing done on parsing a suite definition so Jinja2 expressions can appear
+</p><!--l. 3353--><p class="indent" >   Template processing is the first thing done on parsing a suite definition so Jinja2 expressions can appear
 anywhere in the file (inside strings and namespace headings, for example).
-</p><!--l. 3355--><p class="indent" >   Jinja2 is well documented at <span class="obeylines-h"><a 
+</p><!--l. 3357--><p class="indent" >   Jinja2 is well documented at <a 
 href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span>, so here we just provide an example suite
-that uses it. The meaning of the embedded Jinja2 code should be reasonably self-evident to anyone familiar with
+class="pcrr7t-">http://jinja.pocoo.org/docs</span></a>, so here we just provide an example suite that
+uses it. The meaning of the embedded Jinja2 code should be reasonably self-evident to anyone familiar with
 standard programming techniques.
 </p>
    <hr class="figure" /><div class="figure" 
-><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -69,27 +66,26 @@ standard programming techniques.
                                                                                          
 <div class="center" 
 >
-<!--l. 3361--><p class="noindent" >
+<!--l. 3363--><p class="noindent" >
 
-</p><!--l. 3362--><p class="noindent" ><img 
+</p><!--l. 3364--><p class="noindent" ><img 
 src="images/jinja2-ensemble-graph.png" alt="PIC"  
  /></p></div>
-<br /> <table class="caption" 
-><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;38: </td><td  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;38: </span><span  
 class="content"><span 
-class="cmr-7">The Jinja2 ensemble example suite graph.</span></td></tr></table><!--tex4ht:label?: x56-10100338 -->
+class="cmr-7">The Jinja2 ensemble example suite graph.</span></span></div><!--tex4ht:label?: x56-10100338 -->
                                                                                          
 
                                                                                          
-   </td></tr></table></div><hr class="endfigure" />
-<!--l. 3369--><p class="indent" >   The <span class="lstinline"><span 
+   </div><hr class="endfigure" />
+<!--l. 3371--><p class="indent" >   The <span class="lstinline"><span 
 class="pcrr7t-">jinja2</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">ensemble</span></span> example, graphed in Figure&#x00A0;<a 
-href="#x56-10100338">38<!--tex4ht:ref: fig-jinja2-ensemble --></a>, shows how an ensemble of similar tasks generated
-using Jinja2:  </p><!--l. 3373--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+href="#x56-10100338">38<!--tex4ht:ref: fig-jinja2-ensemble --></a>, shows an ensemble of similar tasks generated using
+Jinja2:  </p><!--l. 3375-->
+   <div class="lstlisting" id="listing-99"><span class="label"><a 
  id="x56-101004r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -170,7 +166,7 @@ class="pcrr7t-">dependencies</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101010r7"></a></span></span><span 
+ id="x56-101010r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -202,7 +198,7 @@ class="pcrr7t-">)</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101011r8"></a></span></span><span 
+ id="x56-101011r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -223,10 +219,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">mem_</span><span 
-class="pcrr7t-">\</span><span 
-class="pcrr7t-">left</span><span 
-class="pcrr7t-">\{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">{{</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">I</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -235,10 +228,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">post_</span><span 
-class="pcrr7t-">\</span><span 
-class="pcrr7t-">left</span><span 
-class="pcrr7t-">\{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">{{</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">I</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -248,7 +238,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101012r9"></a></span></span><span 
+ id="x56-101012r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -269,12 +259,10 @@ class="pcrr7t-">%}</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span>
-
-
+   
    </div>
-<!--l. 3384--><p class="indent" >   Here is the generated suite definition, after Jinja2 processing:  </p><!--l. 3386--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+<!--l. 3386--><p class="indent" >   Here is the generated suite definition, after Jinja2 processing:  </p><!--l. 3388-->
+   <div class="lstlisting" id="listing-100"><span class="label"><a 
  id="x56-101013r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -336,7 +324,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101018r6"></a></span></span><span 
+ id="x56-101018r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -361,7 +349,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101019r7"></a></span></span><span 
+ id="x56-101019r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -386,7 +374,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101020r8"></a></span></span><span 
+ id="x56-101020r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -411,7 +399,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101021r9"></a></span></span><span 
+ id="x56-101021r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -436,7 +424,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101022r10"></a></span></span><span 
+ id="x56-101022r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -461,7 +449,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101023r11"></a></span></span><span 
+ id="x56-101023r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -481,10 +469,9 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span>
-
-
+   
    </div>
-<!--l. 3400--><p class="indent" >   And finally, the <span class="lstinline"><span 
+<!--l. 3402--><p class="indent" >   And finally, the <span class="lstinline"><span 
 class="pcrr7t-">jinja2</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">cities</span></span> example uses variables, includes or excludes special cleanup tasks according to
@@ -493,10 +480,11 @@ tasks that is repeated for each city in the suite. To add a new city and associa
 the city name to list at the top of the file. The suite is graphed, with the New York City task family expanded, in
 Figure&#x00A0;<a 
 href="#x56-10108539">39<!--tex4ht:ref: fig-jinja2-cities --></a>.
+</p>
+   <!--l. 3412--><div class="lstinputlisting">
 <a 
  id="x56-101024"></a>
-</p>
-   <!--l. 3410--><pre class="listings"><!--l. 3410--><div class="lstinputlisting"><span 
+   <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x56-101025r1"></a></span><span 
 class="pcrro7t-">#</span><span 
@@ -530,7 +518,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101029r5"></a></span></span><span 
+ id="x56-101029r5"></a></span><span 
 class="pcrr7t-">Illustrates</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">use</span><span 
@@ -550,7 +538,7 @@ class="pcrr7t-">and</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">programmatic</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101030r6"></a></span></span><span 
+ id="x56-101030r6"></a></span><span 
 class="pcrr7t-">generation</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">of</span><span 
@@ -782,7 +770,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101047r23"></a></span></span><span 
+ id="x56-101047r23"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -817,7 +805,7 @@ class="pcrr7t-">#</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101048r24"></a></span></span><span 
+ id="x56-101048r24"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
@@ -836,7 +824,7 @@ class="pcrr7t-">comment</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101049r25"></a></span></span><span 
+ id="x56-101049r25"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -868,7 +856,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_one</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101050r26"></a></span></span><span 
+ id="x56-101050r26"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -900,7 +888,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_two</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101051r27"></a></span></span><span 
+ id="x56-101051r27"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -955,7 +943,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_four</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101052r28"></a></span></span><span 
+ id="x56-101052r28"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">if</span><span 
@@ -964,7 +952,7 @@ class="pcrr7t-">CLEANUP</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101053r29"></a></span></span><span 
+ id="x56-101053r29"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1005,21 +993,21 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cleanup</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101054r30"></a></span></span><span 
+ id="x56-101054r30"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endif</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101055r31"></a></span></span><span 
+ id="x56-101055r31"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101056r32"></a></span></span><span 
+ id="x56-101056r32"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1467,10 +1455,10 @@ class="pcrr7t-">{%</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span></div>
-   </pre>
+class="pcrr7t-">%}</span>
+   
+   </div>
    <hr class="figure" /><div class="figure" 
-><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -1482,28 +1470,28 @@ class="pcrr7t-">%}</span></div>
                                                                                          
 <div class="center" 
 >
-<!--l. 3414--><p class="noindent" >
+<!--l. 3416--><p class="noindent" >
 
-</p><!--l. 3415--><p class="noindent" ><img 
+</p><!--l. 3417--><p class="noindent" ><img 
 src="images/jinja2-suite-graph.png" alt="PIC"  
  /></p></div>
-<br /> <table class="caption" 
-><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;39: </td><td  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;39: </span><span  
 class="content"><span 
-class="cmr-7">The Jinja2 cities example suite graph, with the New York City task family expanded.</span></td></tr></table><!--tex4ht:label?: x56-10108539 -->
+class="cmr-7">The Jinja2 cities example suite graph, with the New York City task family expanded.</span></span></div><!--tex4ht:label?: x56-10108539 -->
                                                                                          
 
                                                                                          
-   </td></tr></table></div><hr class="endfigure" />
+   </div><hr class="endfigure" />
                                                                                          
 
                                                                                          
-   <!--l. 3424--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3426--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
 href="cug-htmlsu36.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
-<!--l. 3424--><p class="indent" >   <a 
+<!--l. 3426--><p class="indent" >   <a 
  id="tailcug-htmlsu36.html"></a> </p> 
 </body></html> 

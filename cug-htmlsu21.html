@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -26,9 +26,8 @@ href="cug-htmlse6.html#cug-htmlsu21.html" >up</a>] </p></div>
 class="cmti-10">QuickStart.b</span>, which is a minor modification of <span 
 class="cmti-10">QuickStart.a</span>. Its suite.rc file has a new <span 
 class="cmti-10">cold-start</span>
-task called ColdModel,  </p><!--l. 1212--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+task called ColdModel,  </p><!--l. 1212-->
+   <div class="lstlisting" id="listing-26"><span class="label"><a 
  id="x32-38001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -68,13 +67,11 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">ColdModel</span>
-
-
+   
    </div>
 <!--l. 1219--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
-href="#x32-3801427">27<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1222--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+href="#x32-3801427">27<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1222-->
+   <div class="lstlisting" id="listing-27"><span class="label"><a 
  id="x32-38005r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -142,7 +139,7 @@ class="pcrr7t-">&amp;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">ColdModel</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x32-38010r6"></a></span></span><span 
+ id="x32-38010r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -177,7 +174,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostA</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x32-38011r7"></a></span></span><span 
+ id="x32-38011r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -257,15 +254,13 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostB</span><span 
 class="pcrr7t-">"</span>
-
-
+   
    </div>
 <!--l. 1234--><p class="indent" >   In other words, Model[T] can trigger off <span 
 class="cmti-10">either </span>Model[T-6] <span 
 class="cmti-10">or </span>ColdModel[T].
 </p>
    <hr class="figure" /><div class="figure" 
-><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -282,16 +277,16 @@ class="cmti-10">or </span>ColdModel[T].
 </p><!--l. 1239--><p class="noindent" ><img 
 src="screenshots/QuickStartB-graph18.png" alt="PIC"  
  /></p></div>
-<br /> <table class="caption" 
-><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;27: </td><td  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;27: </span><span  
 class="content"><span 
 class="cmr-7">The </span><span 
 class="cmti-7">QuickStart.b </span><span 
-class="cmr-7">dependency graph showing a model cold start task.</span></td></tr></table><!--tex4ht:label?: x32-3801427 -->
+class="cmr-7">dependency graph showing a model cold start task.</span></span></div><!--tex4ht:label?: x32-3801427 -->
                                                                                          
 
                                                                                          
-   </td></tr></table></div><hr class="endfigure" />
+   </div><hr class="endfigure" />
 <!--l. 1247--><p class="indent" >   A cold-start task is a one-off task used to satisfy the previous-cycle dependence of a cotemporal task whose
 previous-cycle trigger is not available. The obvious use for this is to cold-start warm-cycled forecast models at suite
 start-up, when there is no previous cycle. Unlike start-up tasks though, cold-start dependencies are not restricted to

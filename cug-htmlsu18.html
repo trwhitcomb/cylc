@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2011-12-16 23:43:00" /> 
+<meta name="date" content="2012-01-06 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -29,9 +29,8 @@ href="cug-htmlse8.html#x43-550008">8<!--tex4ht:ref: SuiteDefinition --></a>) and
 class="cmti-10">Suite.rc Reference</span>
 (Appendix&#x00A0;<a 
 href="cug-htmlse13.html#x87-144000A">A<!--tex4ht:ref: SuiteRCReference --></a>). To view the Quickstart.a suite definition right-click on the suite name and choose &#8216;Edit&#8217;; or use the
-edit command: </p><!--l. 934--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+edit command: </p><!--l. 934-->
+   <div class="lstlisting" id="listing-19"><span class="label"><a 
  id="x28-32001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -42,8 +41,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">QuickStart</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">a</span>
-
-
+   
    </div>
 <!--l. 938--><p class="indent" >   This opens the suite definition in your editor (<span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
@@ -55,9 +53,8 @@ class="cmti-10">from the suite</span>
 class="cmti-10">definition directory so that you can easily open other suite files in the editor</span>. You can of course do
 this manually, but by using the cylc interface you don&#8217;t have to remember suite definition directory
 locations. For the rare occasions that you do need to move to a suite definition directory, you can do this:
-</p><!--l. 945--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+</p><!--l. 945-->
+   <div class="lstlisting" id="listing-20"><span class="label"><a 
  id="x28-32002r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -79,18 +76,16 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span>
-
-
+   
    </div>
 <!--l. 948--><p class="indent" >   Suites that use include-files can optionally be edited in a temporarily inlined state - the inlined file
 gets split back into its constituent include-files when you save it and exit the editor. While editing,
 the inlined file becomes the official suite definition so that changes take effect whenever you save the
 file.
-</p><!--l. 954--><p class="indent" >   Anyhow, you should now see the following suite.rc file in your editor:
+</p><!--l. 954--><p class="indent" >   Anyhow, you should now see the following suite.rc file in your editor:  </p><!--l. 956--><div class="lstinputlisting">
 <a 
  id="x28-32003"></a>
-</p>
-   <!--l. 956--><pre class="listings"><!--l. 956--><div class="lstinputlisting"><span 
+   <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x28-32004r1"></a></span><span 
 class="pcrr7t-">title</span><span 
@@ -286,7 +281,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostA</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x28-32017r14"></a></span></span><span 
+ id="x28-32017r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -563,12 +558,13 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">color</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">red3</span><span 
-class="pcrr7t-">"</span></div>
-   </pre>
-(Cylc comes with syntax highlighting and section folding for the <span 
+class="pcrr7t-">"</span>
+   
+   </div>
+<!--l. 958--><p class="noindent" >(Cylc comes with syntax highlighting and section folding for the <span 
 class="cmti-10">vim </span>editor - see Section&#x00A0;<a 
 href="cug-htmlsu32.html#x45-620008.2.3">8.2.3<!--tex4ht:ref: SyntaxHighlighting --></a>).
-<!--l. 961--><p class="indent" >   This defines a complete, valid, runnable suite. Here&#8217;s how to interpret it: At 0, 6, 12, and 18 hours each day a
+</p><!--l. 961--><p class="indent" >   This defines a complete, valid, runnable suite. Here&#8217;s how to interpret it: At 0, 6, 12, and 18 hours each day a
 clock-triggered task called GetData triggers 1 hour after the wall clock reaches its (GetData&#8217;s) nominal cycle time;
 then a task called Model triggers when GetData finishes; and a task called PostA triggers when Model is finished.
 Additionally, Model depends on its own previous instance from 6 hours earlier; and twice per day at 6 and 18 hours
@@ -577,9 +573,8 @@ another task called PostB also triggers off Model.
 their prerequisites are satisfied before the previous instance is finished). Most tasks should be capable of
 this (see Section&#x00A0;<a 
 href="cug-htmlsu50.html#x75-13300012.4">12.4<!--tex4ht:ref: LimitPID --></a>) but if necessary you can force particular tasks to run sequentially like this:
-</p><!--l. 976--><div class="lstlisting">
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+</p><!--l. 976-->
+   <div class="lstlisting" id="listing-21"><span class="label"><a 
  id="x28-32030r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -620,8 +615,7 @@ class="pcrr7t-">GetData</span><span
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostB</span>
-
-
+   
    </div>
 <!--l. 984--><p class="indent" >   Finally, when the suite is <span 
 class="cmti-10">cold-started </span>(started from scratch) it is made to wait on a special <span 
@@ -632,12 +626,11 @@ dependence on them only applies at suite start-up. Start-up tasks are <span
 class="cmti-10">synchronous </span>because they have a defined cycle
 time even though they are not cycling tasks. Cylc also has <span 
 class="cmti-10">asynchronous one-off tasks</span>, which have no cycle time:
-</p><!--l. 992--><div class="lstlisting">
+</p><!--l. 992-->
+                                                                                         
 
-
-
-<span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+                                                                                         
+   <div class="lstlisting" id="listing-22"><span class="label"><a 
  id="x28-32034r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -755,8 +748,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">cycling</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">tasks</span>
-
-
+   
    </div>
 <!--l. 1002--><p class="indent" >   The optional visualization section configures graph plotting.
                                                                                          
