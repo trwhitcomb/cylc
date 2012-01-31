@@ -4,742 +4,472 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite.rc File Overview</title> 
+<head><title>Database Operations</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1822--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu33.html" >next</a>] [<a 
+   <!--l. 1786--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse8.html" >next</a>] [<a 
 href="cug-htmlsu31.html" >prev</a>] [<a 
 href="cug-htmlsu31.html#tailcug-htmlsu31.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu32.html">tail</a>] [<a 
-href="cug-htmlse8.html#cug-htmlsu32.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">8.2   </span> <a 
- id="x45-570008.2"></a>Suite.rc File Overview</h4>
-<!--l. 1825--><p class="noindent" >Suite.rc files conform to the ConfigObj extended INI format (<a 
-href="http://www.voidspace.org.uk/python/configobj.html" class="url" ><span 
-class="pcrr7t-">http://www.voidspace.org.uk/python/configobj.html</span></a>)
-with several modifications to allow continuation lines and include-files, and to make it legal to redefine
-environment variables and scheduler directives (duplicate config item definitions are normally flagged as an
-error).
-</p><!--l. 1832--><p class="indent" >   Additionally, embedded template processor expressions may be used in the file, to programatically
-generate the final suite definition seen by cylc. Currently the Jinja2 template engine is supported
-(<a 
-href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a>). In the future cylc may provide a plug-in interface to allow use of other
-template engines too. See <span 
-class="cmti-10">Jinja2 Suite Templates </span>(Section&#x00A0;<a 
-href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) for some examples.
-</p><!--l. 1840--><p class="noindent" >
+href="cug-htmlse7.html#cug-htmlsu32.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">7.3   </span> <a 
+ id="x45-560007.3"></a>Database Operations</h4>
+<!--l. 1788--><p class="noindent" >On the command line, the &#8216;database&#8217; (or &#8216;db&#8217;) command category contains commands to implement the
+aforementioned operations.
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.2.1   </span> <a 
- id="x45-580008.2.1"></a>Syntax</h5>
-<!--l. 1842--><p class="noindent" >The following list shows legal raw suite.rc syntax. Suites using the Jinja2 template processor (Section&#x00A0;<a 
-href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) can of
-course use Jinja2 syntax as well (it must generate raw syntax on processing).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmbx-10">Entries </span>are of the form <span class="lstinline"><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">value</span></span>, and item names may contain spaces.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Comments </span># follow a hash character.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">List Values </span>are comma, separated.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Strings </span>must be quoted &#8220;if, they, contain, commas&#8221;
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Multiline Strings </span>must be &#8220;&#8220;&#8220;triple-quoted&#8221;&#8221;&#8221;.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Boolean Values </span>are written as True or False (capitalized).
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">White Space </span>is ignored; indentation can be used for clarity.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Continuation Lines </span>follow a trailing backslash.<span 
-class="cmsy-10">\</span>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">[Section Headings] </span>are enclosed in square brackets.
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">[[Subsection Nesting]] </span>is indicated by the number of square brackets.<span class="footnote-mark"><a 
-href="cug-html46.html#fn5x0"><sup class="textsuperscript">5</sup></a></span><a 
- id="x45-58001f5"></a> 
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Duplicate Items </span>are illegal, except in <span class="lstinline"><span 
-class="pcrr7t-">environment</span></span> and <span class="lstinline"><span 
-class="pcrr7t-">directives</span></span> sections.<span class="footnote-mark"><a 
-href="cug-html47.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
- id="x45-58002f6"></a> 
-                                                                                         
-
-                                                                                         
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">Include-files </span>can be used: <span class="lstinline"><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">include</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span></span>.</li></ul>
-<!--l. 1872--><p class="indent" >   The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1874-->
-   <div class="lstlisting" id="listing-44"><span class="label"><a 
- id="x45-58003r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">a</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">full</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">line</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">comment</span><span 
+   <!--l. 1792--><div class="lstinputlisting">
+<a 
+ id="x45-56001"></a>
+   <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58004r2"></a></span><span 
+ id="x45-56002r1"></a></span><span 
+class="pcrr7t-">CATEGORY</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">central</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registration</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56003r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56004r3"></a></span><span 
+class="pcrr7t-">HELP</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COMMAND</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span><span 
+class="pcrr7t-">,--</span><span 
+class="pcrr7t-">help</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56005r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">You</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">can</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">abbreviate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COMMAND</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56006r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">The</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">category</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">db</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">may</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">be</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">omitted</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56007r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56008r7"></a></span><span 
+class="pcrr7t-">COMMANDS</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56009r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">alias</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Register</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">an</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">alias</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">for</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">value</span><span 
+class="pcrr7t-">another</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">a</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">trailing</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">comment</span><span 
+class="pcrr7t-">registered</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58005r3"></a></span><span 
+ id="x45-56010r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">browse</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">..............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Browse</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">documentation</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56011r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">copy</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">cp</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Copy</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">boolean</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">or</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">group</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">True</span><span 
+class="pcrr7t-">of</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">or</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">False</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58006r4"></a></span><span 
-class="pcrr7t-">one</span><span 
+ id="x45-56012r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">string</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">export</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">..............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Export</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registrations</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">quick</span><span 
+class="pcrr7t-">central</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">brown</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">fox</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">string</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">quotes</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">optional</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span><span 
+class="pcrr7t-">database</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58007r5"></a></span><span 
-class="pcrr7t-">two</span><span 
+ id="x45-56013r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">string</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">gcylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">...............</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">the</span><span 
+class="pcrr7t-">The</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">quick</span><span 
-class="pcrr7t-">,</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">brown</span><span 
+class="pcrr7t-">Graphical</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">fox</span><span 
-class="pcrr7t-">"</span><span 
+class="pcrr7t-">User</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">unless</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">internal</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">commas</span><span 
+class="pcrr7t-">Interface</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58008r6"></a></span><span 
+ id="x45-56014r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.......</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">multiline</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">string</span><span 
+class="pcrr7t-">definition</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">directory</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">quick</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">brown</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">fox</span><span 
+class="pcrr7t-">path</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58009r7"></a></span><span 
-class="pcrr7t-">jumped</span><span 
+ id="x45-56015r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">over</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
+class="pcrr7t-">import</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">lazy</span><span 
+class="pcrr7t-">..............</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dog</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
+class="pcrr7t-">Import</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">triple</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">quoted</span><span 
+class="pcrr7t-">central</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registrations</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">your</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">database</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58010r8"></a></span><span 
+ id="x45-56016r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">or</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">central</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registrations</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56017r16"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">refresh</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Report</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">invalid</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registrations</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">and</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">update</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">titles</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56018r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">register</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">............</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Add</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">list</span><span 
+class="pcrr7t-">suite</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
+class="pcrr7t-">to</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">your</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registration</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">database</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56019r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">reregister</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">rename</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">...</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Change</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">s</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">registered</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">name</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x45-56020r19"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">unregister</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">..........</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Remove</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suites</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">private</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">or</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">central</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">database</span>
+   
+   </div>
+<!--l. 1794--><p class="noindent" >Groups of suites (at any level in the registration hierarchy) can be deleted, copied, imported, and exported; as well as
+individual suites. To do this, just use suite group names as source and/or target for operations, as appropriate. For
+instance, if a group <span class="lstinline"><span 
 class="pcrr7t-">foo</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">bar</span></span> contains the suites <span class="lstinline"><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
 class="pcrr7t-">bar</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">comma</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">separated</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58011r9"></a></span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">list</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">with</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">continuation</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">b</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">c</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">\</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58012r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">d</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">e</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">f</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58013r11"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">section</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58014r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">value</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58015r13"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">include</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">vars</span><span 
-class="pcrr7t-">/</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">inc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">include</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">file</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58016r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">subsection</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58017r15"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">value</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58018r16"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">subsubsection</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58019r17"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">item</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">value</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58020r18"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">another</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">section</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58021r19"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">another</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">subsection</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58022r20"></a></span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58023r21"></a></span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-58024r22"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">...</span>
-   
-   </div>
-<!--l. 1899--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.2.2   </span> <a 
- id="x45-590008.2.2"></a>Include-Files</h5>
-<!--l. 1901--><p class="noindent" >Cylc has native support for suite.rc include-files, which may help to organize large suites. Inclusion
-boundaries are completely arbitrary - you can think of include-files as chunks of the suite.rc file simply
-cut-and-pasted into another file. Include-files may be included multiple times in the same file, and
-even nested. Include-file paths can be specified portably relative to the suite definition directory, e.g.:
-</p><!--l. 1909-->
-   <div class="lstlisting" id="listing-45"><span class="label"><a 
- id="x45-59001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-59002r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">include</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">the</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">file</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro8c-">$</span><span 
-class="pcrro7t-">CYLC_SUITE_DEF_PATH</span><span 
-class="pcrro7t-">/</span><span 
-class="pcrro7t-">inc</span><span 
-class="pcrro7t-">/</span><span 
-class="pcrro7t-">foo</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">rc</span><span 
-class="pcrro7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-59003r3"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">include</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inc</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">foo</span><span 
+class="pcrr7t-">bar</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">rc</span>
-   
-   </div>
-<!--l. 1915--><p class="noindent" >
-</p>
-<!--l. 1915--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-600008.2.2.1"></a><span 
-class="cmbx-10">Editing Temporarily Inlined Suites</span></span>
-   Cylc&#8217;s native file inclusion mechanism supports optional inlined editing: </p><!--l. 1919-->
-   <div class="lstlisting" id="listing-46"><span class="label"><a 
- id="x45-60001r1"></a></span><span 
+class="pcrr7t-">waz</span></span>, you can copy a single suite
+like this: </p><!--l. 1800-->
+   <div class="lstlisting" id="listing-44"><span class="label"><a 
+ id="x45-56021r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
+class="pcrr7t-">copy</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">inline</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUITE</span>
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span>
    
    </div>
-<!--l. 1922--><p class="indent" >   The suite will be split back into its constituent include-files when you exit the edit session. While editing, the
-inlined file becomes the official suite definition so that changes take effect whenever you save the file. See
+<!--l. 1803--><p class="indent" >   (resulting in a new suite <span class="lstinline"><span 
+class="pcrr7t-">boo</span></span>); or the group like this: </p><!--l. 1804-->
+   <div class="lstlisting" id="listing-45"><span class="label"><a 
+ id="x45-56022r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">copy</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span>
+   
+   </div>
+<!--l. 1807--><p class="indent" >   (resulting in new suites <span class="lstinline"><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">waz</span></span>); or the group like this: </p><!--l. 1808-->
+   <div class="lstlisting" id="listing-46"><span class="label"><a 
+ id="x45-56023r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">copy</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">TMPDIR</span>
+   
+   </div>
+<!--l. 1811--><p class="indent" >   (resulting in new suites <span class="lstinline"><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">baz</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">boo</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">waz</span></span>). When suites are copied, the suite definition
+directories are copied into a directory tree, under the target directory, that reflects the registration name hierarchy.
 <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">prep</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
+class="pcrr7t-">copy</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
-class="pcrr7t-">help</span></span> for more information.
-</p><!--l. 1927--><p class="noindent" >
+class="pcrr7t-">help</span></span> has some explicit examples.
+</p><!--l. 1816--><p class="indent" >   The same functionality is also available by right-clicking on suites or groups in the gcylc GUI, as shown in
+Figure&#x00A0;<a 
+href="cug-htmlse2.html#x9-800212">12<!--tex4ht:ref: fig-db --></a>.
 </p>
-<!--l. 1927--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-610008.2.2.2"></a><span 
-class="cmbx-10">Include-Files via Jinja2</span></span>
-   Jinja2 (Section&#x00A0;<a 
-href="cug-htmlsu36.html#x56-1010008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) provides template inclusion functionality although this is more akin to Python
-module import than simple text inclusion, and the implications of this for suite design have not yet been
-explored.
-</p><!--l. 1934--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.2.3   </span> <a 
- id="x45-620008.2.3"></a>Syntax Highlighting In Vim</h5>
-<!--l. 1938--><p class="noindent" >Cylc comes with a syntax file to configure suite.rc syntax highlighting and section folding in the <span 
-class="cmti-10">vim </span>editor, as
-shown in Figure&#x00A0;<a 
-href="cug-htmlse2.html#x9-800414">14<!--tex4ht:ref: fig-cylc-vim --></a>. To use this, copy <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">conf</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">vim</span></span> to your <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">vim</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">syntax</span><span 
-class="pcrr7t-">/</span></span>
-directory and make some minor modifications, as described in the syntax file, to your <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">vimrc</span></span>
-file.
-                                                                                         
-
-                                                                                         
-</p><!--l. 1946--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.2.4   </span> <a 
- id="x45-630008.2.4"></a>Gross File Structure</h5>
-<!--l. 1948--><p class="noindent" >Cylc suite.rc files consist of a suite title and description followed by configuration items grouped under several top
-level section headings:
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmbx-10">[cylc]  </span>- <span 
-class="cmti-10">non task-related suite configuration</span>
-         <ul class="itemize2">
-         <li class="itemize">suite logging directories, simulation mode, UTC mode, etc.</li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">[scheduling]  </span>- <span 
-class="cmti-10">determines when tasks are ready to run</span>
-         <ul class="itemize2">
-         <li class="itemize">tasks with special behaviour, e.g. clock-triggered tasks
-         </li>
-         <li class="itemize">the dependency graph, which defines the relationships between tasks</li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">[runtime]  </span>- <span 
-class="cmti-10">determines how, where, and what to execute when tasks are ready</span>
-         <ul class="itemize2">
-         <li class="itemize">command scripting, environment, job submission, remote hosting, etc.
-         </li>
-         <li class="itemize">suite-wide defaults in the <span 
-class="cmti-10">root </span>namespace
-         </li>
-         <li class="itemize">a nested family hierarchy with common properties inherited by related tasks</li></ul>
-     </li>
-     <li class="itemize"><span 
-class="cmbx-10">[visualization]  </span>- configures suite graphing and the graph suite control GUI.</li></ul>
-<!--l. 1976--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">8.2.5   </span> <a 
- id="x45-640008.2.5"></a>Validation</h5>
-<!--l. 1979--><p class="noindent" >Cylc suite.rc files are automatically validated against a specification file that defines all legal entries, values, options,
-and defaults (<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_DIR</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">conf</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suiterc</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">spec</span></span>). This detects any formatting errors, typographic errors, illegal
-items and illegal values prior to run time. Some values are complex strings that require further parsing by cylc to
-determine their correctness (this is also done during validation). All legal entries are documented in the <span 
-class="cmti-10">Suite.rc</span>
-<span 
-class="cmti-10">Reference </span>(Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x87-144000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
-</p><!--l. 1988--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
-a missing right bracket. </p><!--l. 1990-->
-   <div class="lstlisting" id="listing-47"><span class="label"><a 
- id="x45-64001r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-64002r2"></a></span><span 
-class="pcrr7t-">Parsing</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Suite</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">Config</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">File</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-64003r3"></a></span><span 
-class="pcrr7t-">ERROR</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">special</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">tasks</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-64004r4"></a></span><span 
-class="pcrr7t-">NestingError</span><span 
-class="pcrr7t-">('</span><span 
-class="pcrr7t-">Cannot</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">compute</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">the</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">section</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">depth</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">at</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">line</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">19.',)</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x45-64005r5"></a></span><span 
-class="pcrr7t-">_validate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">failed</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">1</span>
-   
-   </div>
-<!--l. 1998--><p class="indent" >   If the suite.rc file contains include-files you can use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">view</span></span> to view an inlined copy with correct line
-numbers (you can also edit suites in a temporarily inlined state with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">edit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">inline</span></span>).
-</p><!--l. 2003--><p class="indent" >   Validation does not check the validity of chosen job submission methods; this is to allow users to
-extend cylc with their own job submission methods, which are by definition unknown to the suiterc.spec
-file.
-                                                                                         
-
-                                                                                         
-</p>
-   <!--l. 2008--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu33.html" >next</a>] [<a 
+   <!--l. 1820--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse8.html" >next</a>] [<a 
 href="cug-htmlsu31.html" >prev</a>] [<a 
 href="cug-htmlsu31.html#tailcug-htmlsu31.html" >prev-tail</a>] [<a 
 href="cug-htmlsu32.html" >front</a>] [<a 
-href="cug-htmlse8.html#cug-htmlsu32.html" >up</a>] </p></div>
-<!--l. 2008--><p class="indent" >   <a 
- id="tailcug-htmlsu32.html"></a>  </p> 
+href="cug-htmlse7.html#cug-htmlsu32.html" >up</a>] </p></div>
+<!--l. 1820--><p class="indent" >   <a 
+ id="tailcug-htmlsu32.html"></a> </p> 
 </body></html> 

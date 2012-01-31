@@ -4,59 +4,792 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Put Task Cycle Time In All Output File Paths</title> 
+<head><title>Limiting Suite Activity</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4379--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4479--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu52.html" >next</a>] [<a 
 href="cug-htmlsu50.html" >prev</a>] [<a 
 href="cug-htmlsu50.html#tailcug-htmlsu50.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu51.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu51.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.5   </span> <a 
- id="x76-13400012.5"></a>Put Task Cycle Time In All Output File Paths</h4>
-<!--l. 4382--><p class="noindent" >Having all filenames, or perhaps the names of their containing directories, stamped with the cycle time of the
-generating task greatly aids in managing suite disk usage, both for archiving and cleanup. It also enables
-the aforementioned task rerunnability recommendation by avoiding overwrite of important files from
-one cycle to the next. Cylc has powerful utilities for cycle time offset based filename templating and
-housekeeping.
-</p><!--l. 4390--><p class="noindent" >
+href="cug-htmlse11.html#cug-htmlsu51.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">11.2   </span> <a 
+ id="x76-13400011.2"></a>Limiting Suite Activity</h4>
+<!--l. 4481--><p class="noindent" >Cylc suites are self-limiting to the extent that tasks are only submitted to run if they are actually ready to run. But
+even so some suites may generate too much activity at once, particularly in delayed/catch-up/historical operation
+when suites are not constrained by the clock-triggered tasks that normally have to wait on real time data. There are
+two issues to be aware of here: overburdening an external batch queueing system, or the task host
+hardware, by submitting too many tasks at once - this can be prevented by cylc&#8217;s <span 
+class="cmti-10">internal queues</span>;
+and overburdening cylc itself by letting unconstrained or loosely constrained tasks run off far into
+the future (which would require cylc to keep vast numbers of &#8220;succeeded&#8221; tasks around until other
+tasks, which may depend on them, have caught up) - this can be prevented by the suite runahead
+limit.
+</p><!--l. 4496--><p class="noindent" >
 </p>
-   <h5 class="subsubsectionHead"><span class="titlemark">12.5.1   </span> <a 
- id="x76-13500012.5.1"></a>Use Cylc&#8217;s Cycle Time Filename Template Utility</h5>
-<!--l. 4392--><p class="noindent" >The command line utility program <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
+   <h5 class="subsubsectionHead"><span class="titlemark">11.2.1   </span> <a 
+ id="x76-13500011.2.1"></a>The Suite Runahead Limit</h5>
+<!--l. 4499--><p class="noindent" >In a cylc suite each task cycles independently constrained only by dependence on other tasks or by clock triggers.
+A cycling task with no prerequisites and no clock-trigger will tend to run off into the future (it is
+unlikely that you will need such a task but it is possible to define one). Similarly, in delayed or historical
+operation a clock-triggered task with no dependence on other tasks will run off ahead because the clock
+trigger provides no constraint until the task catches up to the wall clock. There is no advantage in
+letting a few fast data retrieval tasks, say, get way ahead of the slower tasks that actually use the
+data, and in large suites this could eventually swamp cylc because a large number of &#8220;succeeded&#8221;
+tasks would have to be maintained until the slower tasks, which might depend on them, have caught
+up.
+</p><!--l. 4513--><p class="indent" >   To control this sort of behaviour cylc has a configurable <span 
+class="cmti-10">suite runahead limit </span>that prevents the fastest tasks
+getting too far ahead of the slowest tasks:  </p><!--l. 4517-->
+   <div class="lstlisting" id="listing-136"><span class="label"><a 
+ id="x76-135001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-135002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-135003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span></span> determines filenames based on a template string
-containing YYYYMMDDHH (or variations thereof) by substituting the current cycle time, or some
-offset from it, into the template. This can be used in the suite.rc environment sections, or in task
-implementation scripts if necessary, to instantly generate cycle time appropriate filenames for any purpose in the
-suite.
-</p><!--l. 4400--><p class="indent" >   See <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">util</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">template</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">help</span></span> for more information.
+class="pcrr7t-">runahead</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">48</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">hours</span><span 
+class="pcrro7t-">;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">default</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">24)</span>
+   
+   </div>
+<!--l. 4523--><p class="indent" >   A cycling task spawns its successor when it enters the submitted state or, for sequential tasks, when it
+finishes. If the successor&#8217;s cycle time is ahead of the oldest non-failed task by more than the runahead
+limit it is put into the special &#8220;runahead&#8221; held state until other tasks catch up sufficiently. In real
+time operation the runahead limit is of little consequence, because the suite will be constrained by
+its clock-triggered tasks, but the limit must be long enough to cover the minimum cycle time range
+present in the suite. A task that only runs once per day, for example, must be able to spawn 24 hours
+ahead.
+</p><!--l. 4534--><p class="indent" >   Failed tasks, which are not automatically removed from a suite, are ignored when computing the
+runahead limit (but tasks that can&#8217;t run because they depend on a failed task are not ignored, of
+course).
+</p><!--l. 4538--><p class="indent" >   Note that it may occasionally be useful to define tasks that are entirely unconstrained even in real time
+operation. For instance, consider a tide prediction model that contributes, along with weather and sea state models,
+to a &#8220;seagram&#8221; product, but which does not wait on any real time data (tide is astronomically determined) and does
+not take inputs from other tasks in the suite. Such a task could be prevented from running off into the
+future by giving it artificial dependence on some other task, but the runahead limit will have the same
+                                                                                         
+
+                                                                                         
+effect.
+</p><!--l. 4548--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">11.2.2   </span> <a 
+ id="x76-13600011.2.2"></a>Internal Queues</h5>
+<!--l. 4551--><p class="noindent" >Large suites could potentially swamp the task host hardware or external batch queueing system, depending on the
+chosen job submission method, by submitting too many tasks at once. Cylc&#8217;s internal queues prevent this
+by limiting the number of tasks, within defined groups, that are active (submitted or running) at
+once.
+</p><!--l. 4557--><p class="indent" >   A queue is defined by a name; a <span 
+class="cmti-10">limit</span>, which is the maximum number of active tasks allowed for the queue; and a
+list of member tasks, which are assigned by name to the queue.
+</p><!--l. 4561--><p class="indent" >   Queue configuration is done under the [scheduling] section of the suite.rc file, not as part of the runtime
+namespace hierarchy, because like dependencies queues constrain <span 
+class="cmti-10">when </span>a task runs rather than <span 
+class="cmti-10">what </span>runs
+after it is submitted. When runtime family relationships and queues do coincide you can assign task
+family members en masse to queues by using the family name, as shown in the example suite listing
+below.
+</p><!--l. 4569--><p class="indent" >   By default every task is assigned to a <span 
+class="cmti-10">default </span>queue, which by default has a zero limit (interpreted by cylc as no
+limit). To use a single queue for the whole suite just set the default queue limit:  </p><!--l. 4574-->
+   <div class="lstlisting" id="listing-137"><span class="label"><a 
+ id="x76-136001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queues</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136004r4"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">limit</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">entire</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">5</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">active</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">tasks</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">at</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">once</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">default</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">5</span>
+   
+   </div>
+<!--l. 4582--><p class="indent" >   To use other queues just name each one, set the limit, and assign member tasks: </p><!--l. 4584-->
+   <div class="lstlisting" id="listing-138"><span class="label"><a 
+ id="x76-136007r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136008r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136009r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queues</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136010r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">q_foo</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136011r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">5</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136012r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">members</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">baz</span>
+   
+   </div>
+<!--l. 4592--><p class="indent" >   Any tasks not assigned to a particular queue will remain in the default queue. The <span 
+class="cmti-10">queues </span>example suite
+illustrates how queues work by running two task trees side by side (as seen in the graph GUI) each limited to 2 and
+3 tasks respectively:  </p><!--l. 4597--><div class="lstinputlisting">
+<a 
+ id="x76-136013"></a>
+   <span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136014r1"></a></span><span 
+class="pcrr7t-">title</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">demonstrates</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">internal</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queueing</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136015r2"></a></span><span 
+class="pcrr7t-">description</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136016r3"></a></span><span 
+class="pcrr7t-">Two</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">trees</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">of</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">first</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">uses</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">default</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queue</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">set</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">of</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136017r4"></a></span><span 
+class="pcrr7t-">two</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">active</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">at</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">once</span><span 
+class="pcrr7t-">;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">second</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">uses</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">another</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">queue</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limited</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">three</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136018r5"></a></span><span 
+class="pcrr7t-">active</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">at</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">once</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">control</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GUI</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">clear</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">view</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136019r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136020r7"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136021r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">queues</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136022r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">default</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136023r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136024r11"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136025r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">limit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">3</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136026r13"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">members</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">n</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">o</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fam2</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">u</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">v</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">w</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136027r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136028r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136029r16"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">a</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">b</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">c</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fam1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">h</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">i</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">j</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">k</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">l</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136030r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">n</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">o</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fam2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">u</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">v</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">w</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">x</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">y</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&amp;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">z</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136031r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136032r19"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136033r20"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">fam1</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">fam2</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136034r21"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">d</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">e</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">f</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">g</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136035r22"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fam1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136036r23"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">q</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">r</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">s</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">t</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x76-136037r24"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fam2</span>
+   
+   </div>
+<!--l. 4598--><p class="noindent" >Note assignment of runtime task family members to queues using the family name.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 4402--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4601--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu52.html" >next</a>] [<a 
 href="cug-htmlsu50.html" >prev</a>] [<a 
 href="cug-htmlsu50.html#tailcug-htmlsu50.html" >prev-tail</a>] [<a 
 href="cug-htmlsu51.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu51.html" >up</a>] </p></div>
-<!--l. 4402--><p class="indent" >   <a 
+href="cug-htmlse11.html#cug-htmlsu51.html" >up</a>] </p></div>
+<!--l. 4601--><p class="indent" >   <a 
  id="tailcug-htmlsu51.html"></a>  </p> 
 </body></html> 

@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -539,6 +539,13 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">installed</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">with</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">qt</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">no</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-22005r5"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -560,9 +567,8 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">profile</span></span> (above) provides access to the graphviz executables in this bin
 directory, although you will probably not need to use them. The graphviz lib and include locations are required
 when installing Pygraphviz (next).
-</p><!--l. 730--><p class="indent" >   <span 
-class="cmti-10">Note that graphviz may fail to build on a system that does not have QT installed</span>. Lack of QT is not important for
-our purposes and you can disable it with <span class="lstinline"><span 
+</p><!--l. 730--><p class="indent" >   Note that the graphviz build may fail on systems that do not have QT installed, hence the
+<span class="lstinline"><span 
 class="pcrr7t-">./</span><span 
 class="pcrr7t-">configure</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -571,18 +577,18 @@ class="pcrr7t-">with</span><span
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">qt</span><span 
 class="pcrr7t-">=</span><span 
-class="pcrr7t-">no</span></span>.
-</p><!--l. 734--><p class="noindent" >
+class="pcrr7t-">no</span></span> option above.
+</p><!--l. 733--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.4   </span> <a 
  id="x20-230004.7.4"></a>Pygraphviz</h5>
-<!--l. 735--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
+<!--l. 734--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installed</span></span> as follows: </p><!--l. 737-->
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 736-->
    <div class="lstlisting" id="listing-10"><span class="label"><a 
  id="x20-23001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -616,7 +622,7 @@ class="pcrr7t-">pygraphviz</span><span
 class="pcrr7t-">-1.1</span>
    
    </div>
-<!--l. 742--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 744-->
+<!--l. 741--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 743-->
    <div class="lstlisting" id="listing-11"><span class="label"><a 
  id="x20-23004r1"></a></span><span 
 class="pcrr7t-">library_path</span><span 
@@ -661,11 +667,11 @@ class="pcrr7t-">graphviz</span><span
 class="pcrr7t-">'</span>
    
    </div>
-<!--l. 748--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
+<!--l. 747--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span></span> environment variable.
 Check that these are the correct library and include paths by inspecting the contents of the specified directories, and
-adjust them if necessary. Finally, install pygraphviz: </p><!--l. 753-->
+adjust them if necessary. Finally, install pygraphviz: </p><!--l. 752-->
    <div class="lstlisting" id="listing-12"><span class="label"><a 
  id="x20-23006r1"></a></span><span 
 class="pcrr7t-">%</span><span 
@@ -702,8 +708,8 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">installed</span>
    
    </div>
-<!--l. 757--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
-as the Pyro modules, e.g.: </p><!--l. 759-->
+<!--l. 756--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
+as the Pyro modules, e.g.: </p><!--l. 758-->
                                                                                          
 
                                                                                          
@@ -755,8 +761,8 @@ class="pcrr7t-">-</span><span
 class="pcrr7t-">info</span>
    
    </div>
-<!--l. 763--><p class="indent" >   If not, add the correct Pyraphviz installation path to your PYTHONPATH.
-</p><!--l. 765--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python
+<!--l. 762--><p class="indent" >   If not, add the correct Pyraphviz installation path to your PYTHONPATH.
+</p><!--l. 764--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python
 session (type <span class="lstinline"><span 
 class="pcrr7t-">python</span></span> after sourcing the cylc environment to configure your PYTHONPATH) then type
 <span class="lstinline"><span 
@@ -774,18 +780,44 @@ graphviz itself has not been installed properly (or if the graphviz libraries ha
 installed pygraphviz) then the initial pygraphiz import will be successful but a lower level import will fail
 when the pygraphviz modules cannot load the underlying graphviz libraries - in that case, reinstall
 graphviz.
-</p><!--l. 781--><p class="noindent" >
+</p><!--l. 780--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.5   </span> <a 
  id="x20-240004.7.5"></a>Jinja2</h5>
-<!--l. 783--><p class="noindent" >You can download and install Jinja2 manually from the project web site (above), or just use the <span class="lstinline"><span 
-class="pcrr7t-">easy_install</span></span>
-command which will do it all in one step. Here&#8217;s how to easy_install Jinja2 into your new private python site
+<!--l. 782--><p class="noindent" >You can download Jinja2 from the project web site and install it with <span class="lstinline"><span 
+class="pcrr7t-">python</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">setup</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">install</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">prefix</span></span>/path/to/install/location=,
+or use the <span class="lstinline"><span 
+class="pcrr7t-">easy_install</span></span> command to do it all in one step. Either way Jinja2 installation requires the final
+installed package location to be present in the <span class="lstinline"><span 
+class="pcrr7t-">PYTHONPATH</span></span> variable, so you have to arrange for this first. You made
+also need to create the installed package directory yourself first (if so, the install will abort and print the name of
+the missing directory in the error message). Here&#8217;s how to easy_install Jinja2 into your new private python site
 packages directory:
 </p>
-   <!--l. 788-->
+   <!--l. 793-->
    <div class="lstlisting" id="listing-14"><span class="label"><a 
  id="x20-24001r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">LOCALPREFIX</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">external</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installed</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-24002r2"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">LOCALPACKAGES</span><span 
@@ -805,7 +837,7 @@ class="pcrr7t-">site</span><span
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">packages</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24002r2"></a></span><span 
+ id="x20-24003r3"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">export</span><span 
@@ -818,7 +850,7 @@ class="pcrr7t-">:</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PYTHONPATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24003r3"></a></span><span 
+ id="x20-24004r4"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">easy_install</span><span 
@@ -827,37 +859,22 @@ class="pcrr7t-">--</span><span
 class="pcrr7t-">prefix</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr8c-">$</span><span 
-class="pcrr7t-">LOCALPACKAGES</span><span 
+class="pcrr7t-">LOCALPREFIX</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Jinja2</span>
    
    </div>
-<!--l. 793--><p class="indent" >   Adapt the site-packages path according to your actual path, as above. The Python search path must be set first
-or <span class="lstinline"><span 
-class="pcrr7t-">easy_install</span></span> will abort.
-</p><!--l. 797--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">4.7.6   </span> <a 
- id="x20-250004.7.6"></a>What Next?</h5>
-<!--l. 799--><p class="noindent" >You should now have access to all cylc functionality. Create the central suite database and upload the example
-suites, if you have not done so already (Section&#x00A0;<a 
-href="cug-htmlsu10.html#x17-160004.4">4.4<!--tex4ht:ref: CreatingTheCentralSuiteDatabase --></a>), then test your cylc installation by running the automated suite
-database test (Section&#x00A0;<a 
-href="cug-htmlsu11.html#x18-170004.5">4.5<!--tex4ht:ref: RTADT --></a>) and the automated scheduler test (Section&#x00A0;<a 
-href="cug-htmlsu12.html#x19-180004.6">4.6<!--tex4ht:ref: RTAST --></a>), then go on to the <span 
-class="cmti-10">Quick Start Guide</span>
-(Section&#x00A0;<a 
-href="cug-htmlse6.html#x24-280006">6<!--tex4ht:ref: QuickStartGuide --></a>).
+<!--l. 799--><p class="indent" >   Adapt the site-packages path according to your actual path, as above.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 808--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 801--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
 href="cug-htmlsu12.html" >prev</a>] [<a 
 href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
 href="cug-htmlsu13.html" >front</a>] [<a 
 href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
-<!--l. 808--><p class="indent" >   <a 
+<!--l. 801--><p class="indent" >   <a 
  id="tailcug-htmlsu13.html"></a>  </p> 
 </body></html> 

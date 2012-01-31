@@ -4,47 +4,251 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Starting The gcylc GUI</title> 
+<head><title>Cross-Version Suite Compatibility</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 873--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu17.html" >next</a>] [<a 
+   <!--l. 825--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse5.html" >next</a>] [<a 
 href="cug-htmlsu15.html" >prev</a>] [<a 
 href="cug-htmlsu15.html#tailcug-htmlsu15.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu16.html">tail</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu16.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.2   </span> <a 
- id="x26-300006.2"></a>Starting The gcylc GUI</h4>
-<!--l. 875--><p class="noindent" >At the command prompt: </p><!--l. 876-->
-   <div class="lstlisting" id="listing-16"><span class="label"><a 
- id="x26-30001r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">gcylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span>
+href="cug-htmlse4.html#cug-htmlsu16.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">4.10   </span> <a 
+ id="x24-270004.10"></a>Cross-Version Suite Compatibility</h4>
+<!--l. 828--><p class="noindent" >It may not be convenient for users to upgrade all of their suites at once when a new cylc release is
+installed. As of cylc-4.2.0 any installed version of cylc can act as a tranparent front end to any other
+installed version. This allows construction of new-version suites while older existing ones are still in use,
+without having to reconfigure your environment or explicitly invoke different cylc versions for different
+suites.
+</p><!--l. 836--><p class="indent" >   The required cylc version must be specified on the <span 
+class="cmti-10">first line </span>of a non-Jinja2 suite definition:  </p><!--l. 839-->
+   <div class="lstlisting" id="listing-15"><span class="label"><a 
+ id="x24-27001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!</span><span 
+class="pcrro7t-">cylc</span><span 
+class="pcrro7t-">-4.2.0</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27002r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">definition</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">follows</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span>
    
    </div>
-<!--l. 879--><p class="indent" >   and use the Database menu to switch to the central database, which displays suites accessible to all users (see
-Figure&#x00A0;<a 
-href="cug-htmlse2.html#x9-800313">13<!--tex4ht:ref: fig-cdb --></a>).
+<!--l. 843--><p class="indent" >   And on the <span 
+class="cmti-10">second line </span>for Jinja2 suites: </p><!--l. 844-->
+   <div class="lstlisting" id="listing-16"><span class="label"><a 
+ id="x24-27003r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!</span><span 
+class="pcrro7t-">Jinja2</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27004r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!</span><span 
+class="pcrro7t-">cylc</span><span 
+class="pcrro7t-">-4.2.0</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27005r3"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">definition</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">follows</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span>
+   
+   </div>
+<!--l. 849--><p class="indent" >   If cylc releases are installed in parallel under the same top level directory then the location of the required cylc
+installation is automatically computed from that of the invoked one. Otherwise, for unrelated install locations, the
+full path can be specified: </p><!--l. 853-->
+   <div class="lstlisting" id="listing-17"><span class="label"><a 
+ id="x24-27006r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">path</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">cylc</span><span 
+class="pcrro7t-">-4.2.0</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27007r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">definition</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">follows</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">...</span>
+   
+   </div>
+<!--l. 857--><p class="indent" >   This results in the right cylc version being used for any suite-referencing command, e.g.:  </p><!--l. 860-->
+   <div class="lstlisting" id="listing-18"><span class="label"><a 
+ id="x24-27008r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">validate</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27009r2"></a></span><span 
+class="pcrr7t-">--------------------------------------------------------</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27010r3"></a></span><span 
+class="pcrr7t-">Cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cross</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">version</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">compatibility</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27011r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Invoked</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">version</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-4.2.0</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-4.2.0)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27012r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">requires</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-4.2.1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27013r6"></a></span><span 
+class="pcrr7t-">Path</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">not</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">given</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">assuming</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">parallel</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">installations</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27014r7"></a></span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Re</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">issuing</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">using</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-4.2.1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27015r8"></a></span><span 
+class="pcrr7t-">--------------------------------------------------------</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x24-27016r9"></a></span><span 
+class="pcrr7t-">Suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">is</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">valid</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">for</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">-4.2.1</span>
+   
+   </div>
+<!--l. 871--><p class="indent" >   Note that non suite-referencing commands necessarily execute exactly as invoked. This includes all command line
+help so it is advisable, although not strictly necessary, to keep your login environment configured for the latest cylc
+version.
+</p><!--l. 876--><p class="indent" >   If the required cylc version is not installed the command will abort and you will have to upgrade the suite
+definition for compatibility with an installed version: use <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">validate</span></span> and the <span 
+class="cmti-10">Suite.rc Reference</span>
+(Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x94-153000A">A<!--tex4ht:ref: SuiteRCReference --></a>) to identify problems, and consult the cylc change log to see what changed between
+versions.
+</p><!--l. 883--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">4.10.1   </span> <a 
+ id="x24-280004.10.1"></a>Version Compatibility Limitations</h5>
+<!--l. 885--><p class="noindent" >The top level command interface, <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_DIR</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span></span>, determines the legality of
+requested sub-commands prior to version compatibility checking (which is in fact done by the
                                                                                          
 
                                                                                          
+sub-command<span class="footnote-mark"><a 
+href="cug-html25.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x24-28001f4"></a> )
+so the correct cylc version must be explicitly invoked if the sub-command has undergone a name change between the
+versions concerned.
 </p>
-   <!--l. 882--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu17.html" >next</a>] [<a 
+   <!--l. 896--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse5.html" >next</a>] [<a 
 href="cug-htmlsu15.html" >prev</a>] [<a 
 href="cug-htmlsu15.html#tailcug-htmlsu15.html" >prev-tail</a>] [<a 
 href="cug-htmlsu16.html" >front</a>] [<a 
-href="cug-htmlse6.html#cug-htmlsu16.html" >up</a>] </p></div>
-<!--l. 882--><p class="indent" >   <a 
- id="tailcug-htmlsu16.html"></a> </p> 
+href="cug-htmlse4.html#cug-htmlsu16.html" >up</a>] </p></div>
+<!--l. 896--><p class="indent" >   <a 
+ id="tailcug-htmlsu16.html"></a>  </p> 
 </body></html> 

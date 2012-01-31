@@ -4,45 +4,59 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Orderly Product Generation?</title> 
+<head><title>Put Task Cycle Time In All Output File Paths</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4521--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4740--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu58.html" >next</a>] [<a 
 href="cug-htmlsu56.html" >prev</a>] [<a 
 href="cug-htmlsu56.html#tailcug-htmlsu56.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu57.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu57.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.11   </span> <a 
- id="x84-14100012.11"></a>Orderly Product Generation?</h4>
-<!--l. 4524--><p class="noindent" >Correct scheduling is not equivalent to &#8220;orderly generation of products by cycle time&#8221;. Under cylc, a product
-generation task will trigger as soon as its prerequisites are satisfied (i.e.&#x00A0;when its input files are ready,
-generally) regardless of whether other tasks with the same cycle time have finished or have yet to
-run. If your product delivery or presentation system demands that all products for one cycle time
-are uploaded (or whatever) before any from the next cycle, then be aware that this may be quite
-inefficient if your suite is ever faced with catching up from a significant delay or running over historical
-data.
-</p><!--l. 4534--><p class="indent" >   If you must, however, you can introduce artificial dependencies into your suite to ensure that the final products
-never arrive out of sequence. One way of doing this would be to have a final &#8220;product upload&#8221; task that depends on
-completion of all the real product generation tasks at the same cycle time, and then declare it to be
-sequential.
+   <h4 class="subsectionHead"><span class="titlemark">12.5   </span> <a 
+ id="x83-14300012.5"></a>Put Task Cycle Time In All Output File Paths</h4>
+<!--l. 4743--><p class="noindent" >Having all filenames, or perhaps the names of their containing directories, stamped with the cycle time of the
+generating task greatly aids in managing suite disk usage, both for archiving and cleanup. It also enables
+the aforementioned task rerunnability recommendation by avoiding overwrite of important files from
+one cycle to the next. Cylc has powerful utilities for cycle time offset based filename templating and
+housekeeping.
+</p><!--l. 4751--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">12.5.1   </span> <a 
+ id="x83-14400012.5.1"></a>Use Cylc&#8217;s Cycle Time Filename Template Utility</h5>
+<!--l. 4753--><p class="noindent" >The command line utility program <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">template</span></span> determines filenames based on a template string
+containing YYYYMMDDHH (or variations thereof) by substituting the current cycle time, or some
+offset from it, into the template. This can be used in the suite.rc environment sections, or in task
+implementation scripts if necessary, to instantly generate cycle time appropriate filenames for any purpose in the
+suite.
+</p><!--l. 4761--><p class="indent" >   See <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">util</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">template</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">help</span></span> for more information.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 4541--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4763--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu58.html" >next</a>] [<a 
 href="cug-htmlsu56.html" >prev</a>] [<a 
 href="cug-htmlsu56.html#tailcug-htmlsu56.html" >prev-tail</a>] [<a 
 href="cug-htmlsu57.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu57.html" >up</a>] </p></div>
-<!--l. 4541--><p class="indent" >   <a 
- id="tailcug-htmlsu57.html"></a> </p> 
+<!--l. 4763--><p class="indent" >   <a 
+ id="tailcug-htmlsu57.html"></a>  </p> 
 </body></html> 

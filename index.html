@@ -68,7 +68,9 @@
         operational forecasting systems since 2010, and was
         released under the GNU General Public License in 2011.</span></p>
 
-                <div class="warning">NEW 6 Jan 2012: cylc-4.1.1 released.</div>
+    <div class="warning">NEW 31 Jan 2012: cylc-4.2.0 released 
+        (<a href="https://github.com/hjoliver/cylc/blob/master/changelog.txt#L428">change log</a>)
+    </div>
 
     <a id="overview"></a>
     <h3><span>Overview</span></h3>
@@ -159,7 +161,7 @@
 
                         <li> <b>Suite tasks can be distributed</b> across multiple
                         hosts on a heterogeneous network, with multiple job
-                        submission methods.</li>
+                        submission methods (loadleveler, pbs, sge, background, at).</li>
 
                         <li> <b>Most existing tasks require no modification for cylc.</b> </li>
 
@@ -229,13 +231,21 @@
                         <li> <b>Jinja2 Template Processor</b> now
                         supported - programmatic generation of suite
                         definitions.</li>
+
+                        <li> <b>Internal Queues</b> - limit the number
+                        of active (submitted or running) tasks.</li>
+
+                        <li> <b>Pseudo Backwark Compatibility</b> - new
+                        versions of cylc can invoke old ones as
+                        required, for old suites that have not been
+                        upgraded yet (eventually we aim to provide
+                        proper backward compatibility).</li>
 				</ul>
 
 			<h4><span>Coming Soon</span></h4>
 				<ul>
 						<li> Central suite database access via a network server. </li>
                         <li> Tasks with cycling intervals of less than 1 hour</li>
-                        <li> Internal queues to limit submitted tasks</li>
                         <!--<li> Loose prerequisites: trigger off the "most
                         recent available" (variable offset) instance of
                         a slower-cycling upstream task (back-port from
@@ -348,8 +358,8 @@ for all major changes since 4.0.</li>
 </div>
 
 <p class="p1"><span>
-    The latest release is <b>cylc-4.1.1</b>. You can download the tarball from GitHub:
-    <a href="https://github.com/downloads/hjoliver/cylc/cylc-4.1.1.tgz">cylc-4.1.1.tgz</a>.
+    The latest release is <b>cylc-4.2.0</b>. You can download the tarball from GitHub:
+    <a href="https://github.com/downloads/hjoliver/cylc/cylc-4.2.0.tgz">cylc-4.2.0.tgz</a>.
 </span></p>
 
 <p class="p1"><span>
@@ -382,8 +392,8 @@ for all major changes since 4.0.</li>
     </span></p>
 
     <ul>
-        <li> <a href="CylcUserGuide.pdf">Cylc User Guide 4.1.1 (PDF, ~6MB)</a></li>
-        <li> <a href="cug-html.html">Cylc User Guide 4.1.1 (HTML)</a> </li>
+        <li> <a href="CylcUserGuide.pdf">Cylc User Guide 4.2.0 (PDF, ~6MB)</a></li>
+        <li> <a href="cug-html.html">Cylc User Guide 4.2.0 (HTML)</a> </li>
     </ul>
 
     <p class="nav"><span><a href="#">(back to top)</a></span></p>

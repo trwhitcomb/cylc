@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Switching A Suite Between Simulation And Live Modes?</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,next,html --> 
+<meta name="src" content="cug-html.tex" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
+<link rel="stylesheet" type="text/css" href="cug-html.css" /> 
+</head><body 
+>
+   <!--l. 5084--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
+href="cug-htmlsu75.html" >prev</a>] [<a 
+href="cug-htmlsu75.html#tailcug-htmlsu75.html" >prev-tail</a>] [<a 
+href="#tailcug-htmlsu76.html">tail</a>] [<a 
+href="cug-htmlse17.html#cug-htmlsu76.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">E.2   </span> <a 
+ id="x111-341000E.2"></a>Switching A Suite Between Simulation And Live Modes?</h4>
+<!--l. 5086--><p class="noindent" >The scheduler mode (simulation or live) is recorded in the suite state dump file. Cylc will not let you <span 
+class="cmti-10">restart </span>a
+simulation mode suite in live mode, or vice versa - any attempt to do the former would certainly be a
+mistake (because the simulation mode dummy tasks do not generate any of the real outputs depended
+on by downstream live tasks), and the latter, while feasible, would corrupt the live state dump and
+turn it over to simulation mode. The easiest way to test a live suite in simulation mode, if you don&#8217;t
+want to obliterate the current state dump by doing a cold or warm start (as opposed to a restart
+from the previous state) is to take a quick copy of the suite and run the copy in simulation mode.
+However, if you really want to run a live suite forward in simulation mode without copying it, do
+this:
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x111-341002x1">Backup the live state dump file.
+     </li>
+     <li 
+  class="enumerate" id="x111-341004x2">Edit the mode line in the state dump file and restart in simulation mode.
+     </li>
+     <li 
+  class="enumerate" id="x111-341006x3">Later, restart the live suite from the restored live state dump backup.</li></ol>
+<!--l. 5104--><p class="indent" >   <span 
+class="cmti-10">Finally, it should be noted that cylc previously had the ability to create an instant safe simulation mode clone of</span>
+<span 
+class="cmti-10">the current state of any suite, running or stopped, but this &#8220;practice mode&#8221; has been disabled since the upgrade to</span>
+<span 
+class="cmti-10">cylc-3, pending testing; it could easily be restored if needed.</span>
+</p>
+   <!--l. 5208--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlse18.html" >next</a>] [<a 
+href="cug-htmlsu75.html" >prev</a>] [<a 
+href="cug-htmlsu75.html#tailcug-htmlsu75.html" >prev-tail</a>] [<a 
+href="cug-htmlsu76.html" >front</a>] [<a 
+href="cug-htmlse17.html#cug-htmlsu76.html" >up</a>] </p></div>
+<!--l. 5208--><p class="indent" >   <a 
+ id="tailcug-htmlsu76.html"></a> </p> 
+</body></html> 

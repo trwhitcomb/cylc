@@ -4,44 +4,112 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Limit Previous-Instance Dependence</title> 
+<head><title>Task States</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4353--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4401--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu51.html" >next</a>] [<a 
-href="cug-htmlsu49.html" >prev</a>] [<a 
-href="cug-htmlsu49.html#tailcug-htmlsu49.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu50.html">tail</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu50.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">12.4   </span> <a 
- id="x75-13300012.4"></a>Limit Previous-Instance Dependence</h4>
-<!--l. 4356--><p class="noindent" >Cylc does not require that successive instances of the same task run sequentially. In order to task advantage of this
-and achieve maximum functional parallelism whenever the opportunity arises (usually when catching up from a
-delay) you should ensure that tasks that in principle do not depend on their own previous instances (the vast
-majority of tasks in most suites, in fact) do not do so in practice. In other words, they should be
-able to run as soon as their prerequisites are satisfied regardless of whether or not their predecessors
-have finished yet. This generally just means ensuring that all file I/O contains the generating task&#8217;s
-cycle time in the file or directory name so that there is no interference between successive instances.
-If this is difficult to achieve in particular cases, however, you can declare the offending tasks to be
-<span 
-class="cmti-10">sequential</span>.
+href="cug-htmlse11.html#cug-htmlsu50.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">11.1   </span> <a 
+ id="x75-13300011.1"></a>Task States</h4>
+<!--l. 4403--><p class="noindent" >As a suite runs its tasks (or rather the task proxies that represent the real tasks) move through a series of defined
+states:
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10">waiting </span>- a <span 
+class="cmti-10">waiting </span>task&#8217;s prerequisites have not yet been satisfied (clock-triggered tasks may also be
+     waiting on their trigger time).
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">queued </span>- a <span 
+class="cmti-10">queued </span>task is ready to run but has been temporarily prevented from doing so by the
+     internal cylc queue to which it is assigned (see <span 
+class="cmti-10">Internal Queues</span>, Section&#x00A0;<a 
+href="cug-htmlsu51.html#x76-13600011.2.2">11.2.2<!--tex4ht:ref: InternalQueues --></a>). Note this does mean
+     the task is sitting in an external batch scheduler queue (that, depending on the chosen job submission
+     method, would be the <span 
+class="cmti-10">submitted </span>state).
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">submitted </span>- a <span 
+class="cmti-10">submitted </span>task has been submitted by its defined job submission method but has not yet
+     started executing (it may be waiting in an external batch scheduler queue, depending on job submission
+     method).
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">running </span>- a <span 
+class="cmti-10">running </span>task has started executing (reported via a messaging call near the top of the task
+     job script) but has not yet finished.
+     </li>
+     <li class="itemize">two finished states:
+         <ul class="itemize2">
+         <li class="itemize"><span 
+class="cmbx-10">succeeded </span>- a <span 
+class="cmti-10">succeeded  </span>task has finished successfully. It will remain in the suite so long as its
+         outputs could be needed to satisfy the prerequisites of waiting tasks, and then it will be removed
+         from the suite.
                                                                                          
 
                                                                                          
+         </li>
+         <li class="itemize"><span 
+class="cmbx-10">failed</span>- a <span 
+class="cmti-10">failed </span>task has finished but reported failure. Failed tasks are not automatically removed
+         from the suite, they must be handled by the suite operator (e.g.&#x00A0;by retriggering after fixing the
+         problem).</li></ul>
+     </li></ul>
+<!--l. 4443--><p class="indent" >   In addition, there are two held (paused) task states:
 </p>
-   <!--l. 4379--><div class="crosslinks"><p class="noindent">[<a 
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10">held </span>- a <span 
+class="cmti-10">held </span>task will not be submitted, even if it is ready to run, until it is released. Tasks that are
+     already running cannot be held. The suite operator can deliberately hold tasks, and cylc itself puts
+     tasks on hold under certain circumstances. For example, if the suite has been told to &#8220;shut down after
+     currently running tasks have finished&#8221; waiting tasks will be put on hold while currently running tasks
+     are finishing.
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">runahead </span>- a task in the <span 
+class="cmti-10">runahead </span>state has exceeded the suite runahead limit, i.e.&#x00A0;it has got &#8220;too
+     far ahead&#8221; of the slowest tasks and will be held back until they have caught up sufficiently. This state
+     is automatically managed by cylc. See <span 
+class="cmti-10">The Suite Runahead Limit</span>, Section&#x00A0;<a 
+href="cug-htmlsu51.html#x76-13500011.2.1">11.2.1<!--tex4ht:ref: RunaheadLimit --></a>.
+     </li></ul>
+<!--l. 4464--><p class="indent" >   Finally, you may see references to the following pseudo states:
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10">ready </span>- to set a task to <span 
+class="cmti-10">ready </span>means to set all of its prerequisites satisfied - i.e.&#x00A0;ready to run (except
+     clock-triggered tasks, which also wait on a trigger time).
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10">base </span>(Graph Control GUI only) - graph nodes displayed in the off-white base color are displayed in
+     order to show the proper graph structure but the corresponding task proxies are not actually present
+     in the suite at the moment, because they have not been spawned yet, or they have been removed by
+     cylc as spent tasks, or removed by the suite operator.</li></ul>
+                                                                                         
+
+                                                                                         
+   <!--l. 4479--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu51.html" >next</a>] [<a 
-href="cug-htmlsu49.html" >prev</a>] [<a 
-href="cug-htmlsu49.html#tailcug-htmlsu49.html" >prev-tail</a>] [<a 
+href="cug-htmlse11.html" >prev</a>] [<a 
+href="cug-htmlse11.html#tailcug-htmlse11.html" >prev-tail</a>] [<a 
 href="cug-htmlsu50.html" >front</a>] [<a 
-href="cug-htmlse12.html#cug-htmlsu50.html" >up</a>] </p></div>
-<!--l. 4379--><p class="indent" >   <a 
+href="cug-htmlse11.html#cug-htmlsu50.html" >up</a>] </p></div>
+<!--l. 4479--><p class="indent" >   <a 
  id="tailcug-htmlsu50.html"></a> </p> 
 </body></html> 

@@ -4,37 +4,73 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Suite.rc Inlined Tasks</title> 
+<head><title>Special Placeholder Variables</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3503--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3558--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlsu38.html" >prev</a>] [<a 
 href="cug-htmlsu38.html#tailcug-htmlsu38.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu39.html">tail</a>] [<a 
-href="cug-htmlse9.html#cug-htmlsu39.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">9.2   </span> <a 
- id="x60-1050009.2"></a>Suite.rc Inlined Tasks</h4>
-<!--l. 3505--><p class="noindent" >Simple tasks can be entirely implemented within the suite.rc file because the task <span 
-class="cmti-10">command scripting </span>string can
-contain as many lines of code as you like (or even a list of such strings, for retry on failure).
+href="cug-htmlse8.html#cug-htmlsu39.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">8.7   </span> <a 
+ id="x60-1050008.7"></a>Special Placeholder Variables</h4>
+<!--l. 3560--><p class="noindent" >A small number of special variables are used as placeholders in cylc suite definitions:
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">+</span><span 
+class="pcrr7t-">offset</span><span 
+class="pcrr7t-">&#x003E;</span></span> <br 
+class="newline" />These are replaced with the actual cycle time of the task (with optional computed positive offset) in
+     the message strings registered for explicit internal (pre-completion) task outputs. They correspond to
+     <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span></span> in the task execution environment.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> and <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">NAMESPACE</span><span 
+class="pcrr7t-">&#x003E;</span></span> <br 
+class="newline" />These are replaced with actual task or namespace names in runtime settings. The difference between
+     the two is explained in Section&#x00A0;<a 
+href="cug-htmlsu36.html#x56-930008.4.3">8.4.3<!--tex4ht:ref: MultiTaskDef --></a>, <span 
+class="cmti-10">Defining Multiple Namespaces At Once</span>.
+     </li>
+     <li class="itemize"><span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">ASYNCID</span><span 
+class="pcrr7t-">&#x003E;</span></span><br 
+class="newline" />This is replaced with the actual &#8220;asynchronous ID&#8221; (e.g. satellite pass ID) for repeating asynchronous
+     tasks.</li></ul>
+<!--l. 3582--><p class="indent" >   To use proper variables (c.f.&#x00A0;programming languages) in suite definitions, see the Jinja2 template processor
+(Section&#x00A0;<a 
+href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>).
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 3511--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3585--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu40.html" >next</a>] [<a 
 href="cug-htmlsu38.html" >prev</a>] [<a 
 href="cug-htmlsu38.html#tailcug-htmlsu38.html" >prev-tail</a>] [<a 
 href="cug-htmlsu39.html" >front</a>] [<a 
-href="cug-htmlse9.html#cug-htmlsu39.html" >up</a>] </p></div>
-<!--l. 3511--><p class="indent" >   <a 
+href="cug-htmlse8.html#cug-htmlsu39.html" >up</a>] </p></div>
+<!--l. 3585--><p class="indent" >   <a 
  id="tailcug-htmlsu39.html"></a> </p> 
 </body></html> 

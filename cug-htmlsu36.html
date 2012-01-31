@@ -4,715 +4,165 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Jinja2 Suite Templates</title> 
+<head><title>Runtime Properties - Task Execution</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3328--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2968--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu36.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">8.6   </span> <a 
- id="x56-1010008.6"></a>Jinja2 Suite Templates</h4>
-<!--l. 3331--><p class="noindent" >Support for the Jinja2 template processor adds general variables, mathematical expressions, loop control structures,
-and conditional expressions to suite.rc files - which are automatically preprocessed to generate the final suite
-definition seen by cylc.
-</p><!--l. 3336--><p class="indent" >   The need for Jinja2 processing must be declared with a bang-hash comment as the first line of the suite.rc file:
-</p><!--l. 3338-->
-   <div class="lstlisting" id="listing-98"><span class="label"><a 
- id="x56-101001r1"></a></span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">!</span><span 
-class="pcrr7t-">Jinja2</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101002r2"></a></span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">...</span>
-   
-   </div>
-<!--l. 3343--><p class="indent" >   Potential uses for this include automatic generation of repeated groups of similar tasks and dependencies, and
-inclusion or exclusion of entire suite sections according to the value of a single flag. Consider a large
-complicated operational suite and several related parallel test suites with slightly different task content and
-structure (the parallel suites, for instance, might take certain large input files from the operation or
-the archive rather than downloading them again) - these can now be maintained as a single master
-suite definition that reconfigures itself according to the value of a flag variable indicating the intended
-use.
-</p><!--l. 3353--><p class="indent" >   Template processing is the first thing done on parsing a suite definition so Jinja2 expressions can appear
-anywhere in the file (inside strings and namespace headings, for example).
-</p><!--l. 3357--><p class="indent" >   Jinja2 is well documented at <a 
-href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a>, so here we just provide an example suite that
-uses it. The meaning of the embedded Jinja2 code should be reasonably self-evident to anyone familiar with
-standard programming techniques.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x56-10100338"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 3363--><p class="noindent" >
-
-</p><!--l. 3364--><p class="noindent" ><img 
-src="images/jinja2-ensemble-graph.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;38: </span><span  
-class="content"><span 
-class="cmr-7">The Jinja2 ensemble example suite graph.</span></span></div><!--tex4ht:label?: x56-10100338 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-<!--l. 3371--><p class="indent" >   The <span class="lstinline"><span 
-class="pcrr7t-">jinja2</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">ensemble</span></span> example, graphed in Figure&#x00A0;<a 
-href="#x56-10100338">38<!--tex4ht:ref: fig-jinja2-ensemble --></a>, shows an ensemble of similar tasks generated using
-Jinja2:  </p><!--l. 3375-->
-   <div class="lstlisting" id="listing-99"><span class="label"><a 
- id="x56-101004r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">view</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">stdout</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">AdminUserName</span><span 
-class="pcrr7t-">&#x003E;.</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-4-0-0.</span><span 
-class="pcrr7t-">jinja2</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">ensemble</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101005r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">!</span><span 
-class="pcrro7t-">jinja2</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101006r3"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">N_MEMBERS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">5</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101007r4"></a></span><span 
+   <h4 class="subsectionHead"><span class="titlemark">8.4   </span> <a 
+ id="x56-900008.4"></a>Runtime Properties - Task Execution</h4>
+<!--l. 2971--><p class="noindent" >The <span class="lstinline"><span 
 class="pcrr7t-">[</span><span 
-class="pcrr7t-">scheduling</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101008r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101009r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">{#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">generate</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">ensemble</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101010r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">I</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">range</span><span 
-class="pcrr7t-">(</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">0,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">N_MEMBERS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">)</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101011r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">I</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">I</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101012r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endfor</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span>
-   
-   </div>
-<!--l. 3386--><p class="indent" >   Here is the generated suite definition, after Jinja2 processing:  </p><!--l. 3388-->
-   <div class="lstlisting" id="listing-100"><span class="label"><a 
- id="x56-101013r1"></a></span><span 
-class="pcrr7t-">%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">view</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">stdout</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">processed</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">central</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x003C;</span><span 
-class="pcrr7t-">AdminUserName</span><span 
-class="pcrr7t-">&#x003E;.</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-4-0-0.</span><span 
-class="pcrr7t-">jinja2</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">ensemble</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101014r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">!</span><span 
-class="pcrro7t-">jinja2</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101015r3"></a></span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span></span> section of a suite.rc file configures what to execute, and where and how, when tasks
+are ready to run. The sections immediately below <span class="lstinline"><span 
 class="pcrr7t-">[</span><span 
-class="pcrr7t-">scheduling</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101016r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101017r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101018r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_0</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_0</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101019r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_1</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101020r8"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101021r9"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_3</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_3</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101022r10"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">mem_4</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">post_4</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101023r11"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span>
-   
-   </div>
-<!--l. 3402--><p class="indent" >   And finally, the <span class="lstinline"><span 
-class="pcrr7t-">jinja2</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">cities</span></span> example uses variables, includes or excludes special cleanup tasks according to
-the value of a logical flag, and it automatically generates all dependencies and family relationships for a group of
-tasks that is repeated for each city in the suite. To add a new city and associated tasks and dependencies simply add
-the city name to list at the top of the file. The suite is graphed, with the New York City task family expanded, in
-Figure&#x00A0;<a 
-href="#x56-10108539">39<!--tex4ht:ref: fig-jinja2-cities --></a>.
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span></span> are, for want of a better term,
+<span 
+class="cmti-10">namespaces</span><span class="footnote-mark"><a 
+href="cug-html57.html#fn12x0"><sup class="textsuperscript">12</sup></a></span><a 
+ id="x56-90001f12"></a> 
+that define runtime properties for individual tasks and families of tasks.
+</p><!--l. 2980--><p class="indent" >   Every namespace contains the same set of configuration items (see the <span 
+class="cmti-10">Suite.rc Reference</span>, Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x94-153000A">A<!--tex4ht:ref: SuiteRCReference --></a>, for the
+complete list of items). Namespaces can inherit from other namespaces, overriding inherited items as required; <span 
+class="cmti-10">this</span>
+<span 
+class="cmti-10">allows configuration of related tasks without repetition</span>. A namespace represents a family if other namespaces inherit
+from it.
+</p><!--l. 2987--><p class="indent" >   A namespace that does not explicitly inherit from another automatically inherits from the <span 
+class="cmti-10">root </span>namespace
+(below). Namespaces thus form a tree-like hierarchy of nested task families, rooted on the root namespace, in which
+the leaves are the individual tasks of the suite.
+</p><!--l. 2992--><p class="indent" >   Nested families from the namespace inheritance hierarchy, even if they are not used as family triggers in the
+graph, can be expanded or collapsed in suite graphs, and in the graph-based suite control GUI (this will also be
+added to the text treeview control GUI in a future release). See <span 
+class="cmti-10">Visualization </span>(Section&#x00A0;<a 
+href="cug-htmlsu37.html#x58-1020008.5">8.5<!--tex4ht:ref: viso --></a>) for more on
+this.
+</p><!--l. 2998--><p class="indent" >   The following listing of the <span 
+class="cmti-10">namespace.one </span>example suite (which you can import from the central database if you
+like) illustrates basic runtime property inheritance. How it works should be reasonable clear by inspection; if not
+read on.
 </p>
-   <!--l. 3412--><div class="lstinputlisting">
+   <!--l. 3004--><div class="lstinputlisting">
 <a 
- id="x56-101024"></a>
+ id="x56-90002"></a>
    <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101025r1"></a></span><span 
+ id="x56-90003r1"></a></span><span 
 class="pcrro7t-">#</span><span 
-class="pcrro7t-">!</span><span 
-class="pcrro7t-">Jinja2</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101026r2"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101027r3"></a></span><span 
+ id="x56-90004r2"></a></span><span 
 class="pcrr7t-">title</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
-class="pcrr7t-">Jinja2</span><span 
+class="pcrr7t-">User</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">city</span><span 
+class="pcrr7t-">Guide</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">suite</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">example</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101028r4"></a></span><span 
-class="pcrr7t-">description</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
+ id="x56-90005r3"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101029r5"></a></span><span 
-class="pcrr7t-">Illustrates</span><span 
+ id="x56-90006r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">use</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">variables</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
+class="pcrr7t-">simulation</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">math</span><span 
+class="pcrr7t-">mode</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">expressions</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">programmatic</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101030r6"></a></span><span 
-class="pcrr7t-">generation</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">groups</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">of</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">related</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">and</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">properties</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101031r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101032r8"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">HOST</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">SuperComputer</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101033r9"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITIES</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">NewYork</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Philadelphia</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Newark</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Houston</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">SantaFe</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">Chicago</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101034r10"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITYJOBS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">one</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">two</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">three</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">four</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101035r11"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LIMIT_MINS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">20</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101036r12"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101037r13"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">set</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CLEANUP</span><span 
+class="pcrr7t-">only</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">True</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">no</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">implementations</span><span 
+class="pcrro7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101038r14"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101039r15"></a></span><span 
+ id="x56-90007r5"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101040r16"></a></span><span 
+ id="x56-90008r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">initial</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2011010106</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90009r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">final</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycle</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">time</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2011010200</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90010r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">dependencies</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101041r17"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">if</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CLEANUP</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101042r18"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">23</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101043r19"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x56-90011r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -726,333 +176,1963 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
-class="pcrr7t-">clean</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101044r20"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endif</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101045r21"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">0,12</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101046r22"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">graph</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101047r23"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">setup</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get_lbc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get_ic</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101048r24"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITIES</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{#</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">comment</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">#}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101049r25"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get_lbc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_one</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101050r26"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get_ic</span><span 
+class="pcrr7t-">obs</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_two</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101051r27"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_one</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_two</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_three</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_four</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101052r28"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">if</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CLEANUP</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101053r29"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_three</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&amp;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_four</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=&#x003E;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cleanup</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101054r30"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endif</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101055r31"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endfor</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101056r32"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">"</span><span 
+class="pcrr7t-">bar</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101057r33"></a></span><span 
+ id="x56-90012r10"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">this</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">is</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">shorthand</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">for</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">"</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">=&#x003E;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">land</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&amp;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ship</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">=&#x003E;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrro7t-">")</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90013r11"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101058r34"></a></span><span 
+ id="x56-90014r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">[[</span><span 
-class="pcrr7t-">on_</span><span 
-class="pcrr7t-">{{</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">HOST</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">base</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">namespace</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">for</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">all</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">tasks</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">defines</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">wide</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">defaults</span><span 
+class="pcrro7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90015r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submission</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90016r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">method</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">at_now</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90017r15"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90018r16"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90019r17"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">family</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">inherited</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">by</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">land</span><span 
+class="pcrro7t-">,</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ship</span><span 
+class="pcrro7t-">);</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">implicitly</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inherits</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90020r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90021r19"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">RUNNING_DIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">running</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_NAME</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90022r20"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">land</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">leaf</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">on</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inheritance</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">tree</span><span 
+class="pcrro7t-">)</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">in</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">obs</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">family</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90023r21"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90024r22"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">description</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">land</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90025r23"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">land</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90026r24"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">ship</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">leaf</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">on</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inheritance</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">tree</span><span 
+class="pcrro7t-">)</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">in</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">obs</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">family</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90027r25"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90028r26"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">description</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ship</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">obs</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">processing</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90029r27"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">ship</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90030r28"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">job</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">submission</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90031r29"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">method</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">loadleveler</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90032r30"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90033r31"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">RUNNING_DIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">running</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">ship</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">override</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">obs</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">environment</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90034r32"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">OUTPUT_DIR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">output</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">ship</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">add</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">obs</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">environment</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90035r33"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101059r35"></a></span><span 
+ id="x56-90036r34"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">just</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inherits</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">from</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrro7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90037r35"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90038r36"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">The</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">[[</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrro7t-">]]</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">is</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">implicitly</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">defined</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">by</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">its</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">presence</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">in</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-90039r37"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">graph</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">It</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">is</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">also</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">dummy</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">that</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">just</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inherits</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">from</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrro7t-">.</span>
+   
+   </div>
+   <h5 class="subsubsectionHead"><span class="titlemark">8.4.1   </span> <a 
+ id="x56-910008.4.1"></a>Namespace Names</h5>
+<!--l. 3009--><p class="noindent" >Namespace names may contain letters, digits, underscores, and hyphens. They may not contain colons as that would
+preclude use of suite registration names in shell <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span></span> variables. The &#8216;.&#8217; character is the suite registration hierarchy
+delimiter (which separates suite registration groups and names, e.g.&#x00A0;my_suites.test.foo). <span 
+class="cmti-10">Task names should not be</span>
+<span 
+class="cmti-10">hardwired into task implementations </span>because task and suite identity can be extracted portably from the task
+execution environment supplied by cylc (Section&#x00A0;<a 
+href="#x56-940008.4.4">8.4.4<!--tex4ht:ref: TaskExecutionEnvironment --></a>) - then to rename a task, can just change its name in the
+suite.rc file.
+</p><!--l. 3021--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">8.4.2   </span> <a 
+ id="x56-920008.4.2"></a>Root - Runtime Defaults</h5>
+                                                                                         
+
+                                                                                         
+<!--l. 3023--><p class="noindent" >The root namespace, at the base of the inheritance hierarchy, provides default configuration for all tasks in the
+suite.
+</p><!--l. 3026--><p class="indent" >   Most root items are unset by default, but some values are set, sufficient to allow simple test suites to be defined
+by dependency graph alone - as can be seen from many of the examples that illustrate this User Guide (command
+scripting, for example, defaults to printing a simple message, sleeping for ten seconds, and then exiting). These
+default values are documented with each configuration item in Appendix&#x00A0;<a 
+href="cug-htmlse13.html#x94-153000A">A<!--tex4ht:ref: SuiteRCReference --></a>, and Section&#x00A0;<a 
+href="cug-htmlsu72.html#x103-259000A.7">A.7<!--tex4ht:ref: SuiteDefaults --></a> shows them all in
+context. You can override them or provide your own defaults for other items by explicitly configuring the root
+namespace.
+</p><!--l. 3037--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">8.4.3   </span> <a 
+ id="x56-930008.4.3"></a>Defining Multiple Namespaces At Once</h5>
+<!--l. 3040--><p class="noindent" >Groups of similar tasks or families that differ only in a few configuration details can be defined in single namespace
+sections by putting a list of names in the section heading. Potential applications include groups of similar obs
+processing tasks, and forecasting ensembles.
+</p><!--l. 3046--><p class="indent" >   As the suite.rc file is parsed, any occurrence of <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">NAMESPACE</span><span 
+class="pcrr7t-">&#x003E;</span></span> in any runtime configuration item is immediately
+replaced with the actual name of the namespace; and after inheritance processing any occurrence of <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> is
+replaced with the actual name of the task.
+</p><!--l. 3052--><p class="indent" >   The following example illustrates this:  </p><!--l. 3054-->
+   <div class="lstlisting" id="listing-91"><span class="label"><a 
+ id="x56-93001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">NAMESPACE</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span>
+   
+   </div>
+   <!--l. 3064-->
+   <div class="lstlisting" id="listing-92"><span class="label"><a 
+ id="x56-93007r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93008r2"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrb7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">']</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93009r3"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93010r4"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrb7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">']</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93011r5"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93012r6"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrb7t-">echo</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">baz</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">via</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">']</span>
+   
+   </div>
+<!--l. 3073--><p class="indent" >   As another example, consider a suite containing an ensemble of closely related forecast tasks in which each task
+invokes the same external script but with a unique argument that reflects the task name (which presumably results
+in the right initial conditions being used, or similar):
+</p>
+   <!--l. 3080-->
+   <div class="lstlisting" id="listing-93"><span class="label"><a 
+ id="x56-93013r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93014r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93015r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">ensemble</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93016r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ic</span><span 
+class="pcrr7t-">-&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93017r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">m1</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m2</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m3</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93018r6"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ensemble</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">member</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">tasks</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93019r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ensemble</span>
+   
+   </div>
+<!--l. 3089--><p class="indent" >   This defines a unique command line for each ensemble member task:  </p><!--l. 3091-->
+   <div class="lstlisting" id="listing-94"><span class="label"><a 
+ id="x56-93020r1"></a></span><span 
+class="pcrr7t-">%</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">get</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">test</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">m2</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrb7t-">command</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scripting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-93021r2"></a></span><span 
+class="pcrr7t-">['</span><span 
+class="pcrr7t-">run</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">model</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">sh</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ic</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">m2</span><span 
+class="pcrr7t-">']</span>
+   
+   </div>
+<!--l. 3095--><p class="indent" >   For large ensembles Jinja2 template processing can be used to automatically generate the member names and
+associated dependencies (see Section&#x00A0;<a 
+href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>).
+</p><!--l. 3099--><p class="indent" >   Note that in the namespace scripting and environment sections, which are evaluated in task job
+scripts at run time, <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> is functionally equivalent to <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_NAME</span></span>. But in other runtime
+config items that are never actually interpretred by the shell (e.g.&#x00A0;<span class="lstinline"><span 
+class="pcrr7t-">description</span></span>) <span class="lstinline"><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">TASK</span><span 
+class="pcrr7t-">&#x003E;</span></span> must
+be used to specialize from the list of names in the namespace section heading to a particular task
+name.
+</p><!--l. 3107--><p class="indent" >   <span 
+class="cmti-10">The </span>multidef <span 
+class="cmti-10">example suite illustrates use of these internal variables.</span>
+                                                                                         
+
+                                                                                         
+</p><!--l. 3110--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">8.4.4   </span> <a 
+ id="x56-940008.4.4"></a>Task Execution Environment</h5>
+<!--l. 3113--><p class="noindent" >The task execution environment contains suite and task identity variables provided by cylc, and user-defined
+environment variables. The environment is explicitly exported (by the task job script) prior to executing task
+command scripting (see <span 
+class="cmti-10">Task Job Submission</span>, Section&#x00A0;<a 
+href="cug-htmlse10.html#x68-11700010">10<!--tex4ht:ref: TaskJobSubmission --></a>).
+</p><!--l. 3119--><p class="indent" >   Suite and task identity are exported first, so that user-defined variables can refer to them. Order of definition is
+preserved throughout so that variable assignment expressions can safely refer to previously defined
+variables.
+</p><!--l. 3124--><p class="indent" >   Additionally, access to cylc itself is configured prior to the user-defined environment, so that variable assignment
+expressions can make use of cylc utility commands:  </p><!--l. 3128-->
+   <div class="lstlisting" id="listing-95"><span class="label"><a 
+ id="x56-94001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-94002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-94003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-94004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-94005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">REFERENCE_TIME</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">util</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cycletime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">add</span><span 
+class="pcrr7t-">=6</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">)</span>
+   
+   </div>
+<!--l. 3136--><p class="noindent" >
+</p>
+<!--l. 3136--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-950008.4.4.1"></a><span 
+class="cmbx-10">User Environment Variables</span></span>
+   The user-defined environment is the sum of a task&#8217;s inherited <span class="lstinline"><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span></span> sections.
+</p><!--l. 3140-->
+   <div class="lstlisting" id="listing-96"><span class="label"><a 
+ id="x56-95001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">root</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">SHAPE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">circle</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">blue</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">override</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-95010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">TEXURE</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">rough</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">new</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">variable</span>
+   
+   </div>
+<!--l. 3152--><p class="indent" >   This results in a task <span 
+class="cmti-10">foo </span>with <span class="lstinline"><span 
+class="pcrr7t-">SHAPE</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">circle</span></span>, <span class="lstinline"><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">blue</span></span>, and <span class="lstinline"><span 
+class="pcrr7t-">TEXTURE</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">rough</span></span> in its environment.
+</p><!--l. 3157--><p class="noindent" >
+</p>
+<!--l. 3157--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-960008.4.4.2"></a><span 
+class="cmbx-10">Overriding Environment Variables</span></span>
+   When you override inherited namespace items the original parent item definition is <span 
+class="cmti-10">replaced </span>by the new
+definition. This applies to all items including those in the environment sub-sections which, strictly speaking, are not
+&#8220;environment variables&#8221; until they are written, post inheritance processing, to the task job script that executes the
+associated task. Consequently, if you override an environment variable you cannot also access the original parent
+value: </p><!--l. 3166-->
+   <div class="lstlisting" id="listing-97"><span class="label"><a 
+ id="x56-96001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96007r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">!!</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">ERROR</span><span 
+class="pcrro7t-">:</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">COLOR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">is</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">undefined</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">here</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">tmp</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">!!</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">as</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">this</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">overrides</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">COLOR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">in</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">.</span>
+   
+   </div>
+<!--l. 3178--><p class="indent" >   The compressed variant of this, <span class="lstinline"><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">COLOR</span></span>, is also in error for the same reason. To achieve the
+desired result you must use a different name for the parent variable: </p><!--l. 3181-->
+   <div class="lstlisting" id="listing-98"><span class="label"><a 
+ id="x56-96011r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96012r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96013r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96014r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96015r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">FOO_COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">red</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96016r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">bar</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96017r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">inherit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96018r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">environment</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-96019r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">dark</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">FOO_COLOR</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">OK</span>
+   
+   </div>
+                                                                                         
+
+                                                                                         
+<!--l. 3193--><p class="noindent" >
+</p>
+<!--l. 3193--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-970008.4.4.3"></a><span 
+class="cmbx-10">Suite And Task Identity Variables</span></span>
+   The task identity variables provided to tasks by cylc are:  </p><!--l. 3197-->
+   <div class="lstlisting" id="listing-99"><span class="label"><a 
+ id="x56-97001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_ID</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">X</span><span 
+class="pcrro7t-">%2011051118</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97002r2"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_NAME</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">X</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97003r3"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_CYCLE_TIME</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">2011051118</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97004r4"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_LOG_ROOT</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">~/</span><span 
+class="pcrro7t-">cylc</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">run</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">baz</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">log</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">job</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">X</span><span 
+class="pcrro7t-">%2011051118-1317298378.191123</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97005r5"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_NAMESPACE_HIERARCHY</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">"</span><span 
+class="pcrro7t-">root</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">postproc</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">X</span><span 
+class="pcrro7t-">"</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span>
+   
+   </div>
+<!--l. 3204--><p class="indent" >   And the suite identity variables are: </p><!--l. 3205-->
+   <div class="lstlisting" id="listing-100"><span class="label"><a 
+ id="x56-97006r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DEF_PATH</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro8c-">$</span><span 
+class="pcrro7t-">HOME</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">mysuites</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">baz</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97007r2"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_REG_NAME</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">baz</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97008r3"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_REG_PATH</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">foo</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bar</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">baz</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97009r4"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_HOST</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">orca</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">niwa</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">co</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">nz</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97010r5"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_PORT</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">7766</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-97011r6"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_OWNER</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">oliverh</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">g</span><span 
+class="pcrro7t-">.)</span>
+   
+   </div>
+<!--l. 3213--><p class="indent" >   The variable <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_REG_PATH</span></span> is just <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_REG_NAME</span></span> (the hierarchical name under which
+the suite definition is registered in your suite database) translated into a directory path. This can be used when
+configuring suite logging directories and the like to put suite output in a directory tree that reflects the suite
+registration hierarchy (as opposed to the namespace hierarchy).
+</p><!--l. 3221--><p class="indent" >   Some of these variables are also used by cylc task messaging commands in order to automatically target the right
+task proxy object in the right suite.
+</p><!--l. 3225--><p class="noindent" >
+</p>
+<!--l. 3225--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-980008.4.4.4"></a><span 
+class="cmbx-10">Suite Share And Task Work Directories</span></span>
+   The following variables, and the directories they represent, are also available to running tasks:
+</p><!--l. 3229-->
+   <div class="lstlisting" id="listing-101"><span class="label"><a 
+ id="x56-98001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_TASK_WORK_PATH</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">running</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-98002r2"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_SHARE_PATH</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">shared</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">directory</span>
+   
+   </div>
+<!--l. 3233--><p class="indent" >   These two directories are configured in the suite.rc file, and they are created on the fly, if necessary, by task job
+scripts prior to executing the task command scripting. The job script changes directory to the work/running
+directory before executing the task command scripting. The shared directory is intended as a shared data directory
+for multiple tasks (however, the directory path can be different for different families of tasks or individual tasks if
+you like).
+</p><!--l. 3244--><p class="noindent" >
+</p>
+<!--l. 3244--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-990008.4.4.5"></a><span 
+class="cmbx-10">Environment Variable Evaluation</span></span>
+   Variables in the task execution environment are not evaluated in the shell in which the suite is running prior to
+submitting the task. They are written in unevaluated form to the job script that is submitted by cylc to run the task
+(Section&#x00A0;<a 
+href="cug-htmlsu45.html#x69-11800010.1">10.1<!--tex4ht:ref: JobScripts --></a>) and are therefore evaluated when the task begins executing under the task owner account on the task
+host. Thus <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span></span>, for instance, evaluates at run time to the home directory of task owner on the task
+host.
+</p><!--l. 3254--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">8.4.5   </span> <a 
+ id="x56-1000008.4.5"></a>Remote Task Hosting</h5>
+<!--l. 3257--><p class="noindent" >If a task declares an owner other than the suite owner and/or a host other than the suit host, e.g.:
+</p><!--l. 3260-->
+                                                                                         
+
+                                                                                         
+   <div class="lstlisting" id="listing-102"><span class="label"><a 
+ id="x56-100001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-100002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-100003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-100004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1065,7 +2145,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">remote</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101060r36"></a></span><span 
+ id="x56-100005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1082,13 +2162,34 @@ class="pcrr7t-">host</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">HOST</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
+class="pcrr7t-">orca</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">niwa</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">co</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">nz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101061r37"></a></span><span 
+ id="x56-100006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">owner</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">bob</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x56-100007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1112,22 +2213,17 @@ class="pcrr7t-">path</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">to</span><span 
 class="pcrr7t-">/</span><span 
+class="pcrr7t-">remote</span><span 
+class="pcrr7t-">/</span><span 
 class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">installation</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">on</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101062r38"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">directives</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101063r39"></a></span><span 
+ id="x56-100008r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1140,358 +2236,91 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">wall_clock_limit</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">00:{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LIMIT_MINS</span><span 
-class="pcrr7t-">|</span><span 
-class="pcrr7t-">int</span><span 
-class="pcrr7t-">()</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">+</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">2</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}:00,00:{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LIMIT_MINS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}:00</span><span 
-class="pcrr7t-">"</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101064r40"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101065r41"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITIES</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101066r42"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101067r43"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inherit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">on_</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">HOST</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101068r44"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITYJOBS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101069r45"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">_</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101070r46"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">inherit</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITY</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101071r47"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endfor</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101072r48"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endfor</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101073r49"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101074r50"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">visualization</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101075r51"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">initial</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycle</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">2011080812</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101076r52"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">final</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cycle</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">time</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">2011080823</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101077r53"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">groups</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101078r54"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cleaning</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">clean</span><span 
-class="pcrr7t-">,</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cleanup</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101079r55"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">node</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">attributes</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101080r56"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cleaning</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">yellow</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101081r57"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">NewYork</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">lightblue</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101082r58"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">for</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">in</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">CITYJOBS</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101083r59"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">NewYork_</span><span 
-class="pcrr7t-">{{</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">}}</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">style</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">filled</span><span 
-class="pcrr7t-">',</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">fillcolor</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">lightblue</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x56-101084r60"></a></span><span 
-class="pcrr7t-">{%</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">endfor</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">%}</span>
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">remote</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">suite</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">definition</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">on</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">foo</span>
    
    </div>
-   <hr class="figure" /><div class="figure" 
->
+<!--l. 3271--><p class="indent" >   cylc will attempt to execute the task on the declared host, by the configured job submission method, as the
+declared owner, using passwordless ssh.
+</p>
+     <ul class="itemize1">
+     <li class="itemize">passwordless ssh must be configured between the suite owner on the suite host and the task owner on
+     the remote host.
+     </li>
+     <li class="itemize">cylc and Pyro must be installed on the remote host so that the remote task can communicate with the
+     suite (but graphviz is not needed).
+     </li>
+     <li class="itemize">the suite definition directory must be installed on the remote host, if the task needs access to scripts
+     in the suite bin directory or to any other files stored there.</li></ul>
+<!--l. 3286--><p class="indent" >   A local task to run under another user account is treated as a remote task.
+</p><!--l. 3288--><p class="indent" >   <span 
+class="cmti-10">You may not need this functionality if you have a cross-platform resource manager, such as loadleveler, that</span>
+<span 
+class="cmti-10">allows you to submit a job locally to run on the remote host</span>.
+</p><!--l. 3292--><p class="indent" >   Remote host functionality, like other namespace properties, can be declared globally (in the root namespace) or
+per family, or per individual task. Use the global settings if all or most of your tasks need to run on the same remote
+host.
+</p><!--l. 3297--><p class="indent" >   The remote cylc directory must be used to give remote tasks access to cylc commands if cylc is not in the default
+<span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span></span>) on the remote host. Similarly the remote suite directory gives task access to suite files via
+<span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_DEF_PATH</span></span> on the remote host and to the suite bin directory via <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">PATH</span></span>. If a remote suite definition
+directory is not given the local path will be used with the local user&#8217;s home directory, if present, substituted for the
+literal <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span></span> for evaluation on the remote host.
+</p><!--l. 3306--><p class="indent" >   Note that you can easily run the cylc example suites on a remote host. For the example suites with task
+implementations that work with &#8220;real&#8221; files, you&#8217;ll have to run <span 
+class="cmti-10">all </span>tasks on the same remote host so that they
+can access their common input and output files. To distribute a suite across several hosts you must
+arrange (using additional tasks) to transfer files between the hosts as required to satisfy the real I/O
+dependencies.
+</p><!--l. 3314--><p class="noindent" >
+</p>
+<!--l. 3314--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x56-1010008.4.5.1"></a><span 
+class="cmbx-10">Remote Log Directories</span></span>
+   The stdout and stderr from local tasks is directed into files in the <span 
+class="cmti-10">job submission log directory </span>(specified in the
+suite.rc file) as explained in Section&#x00A0;<a 
+href="cug-htmlsu47.html#x71-12700010.3">10.3<!--tex4ht:ref: WhitherStdoutAndStderr --></a>. The same goes for remotely hosted tasks, except that the task
+owner&#8217;s home directory is substituted as described above for the remote suite definition directory.
+Remote log directories are created on the fly by cylc, during job submission, if they do not already
+exist.
                                                                                          
 
                                                                                          
-<a 
- id="x56-10108539"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 3416--><p class="noindent" >
-
-</p><!--l. 3417--><p class="noindent" ><img 
-src="images/jinja2-suite-graph.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;39: </span><span  
-class="content"><span 
-class="cmr-7">The Jinja2 cities example suite graph, with the New York City task family expanded.</span></span></div><!--tex4ht:label?: x56-10108539 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-                                                                                         
-
-                                                                                         
-   <!--l. 3426--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 3325--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu37.html" >next</a>] [<a 
 href="cug-htmlsu35.html" >prev</a>] [<a 
 href="cug-htmlsu35.html#tailcug-htmlsu35.html" >prev-tail</a>] [<a 
 href="cug-htmlsu36.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu36.html" >up</a>] </p></div>
-<!--l. 3426--><p class="indent" >   <a 
- id="tailcug-htmlsu36.html"></a> </p> 
+<!--l. 3325--><p class="indent" >   <a 
+ id="tailcug-htmlsu36.html"></a>   </p> 
 </body></html> 

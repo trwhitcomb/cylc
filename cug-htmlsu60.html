@@ -4,76 +4,65 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Top Level Items</title> 
+<head><title>Make Suites Portable</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 20--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4807--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu61.html" >next</a>] [<a 
-href="cug-htmlse13.html" >prev</a>] [<a 
-href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
+href="cug-htmlsu59.html" >prev</a>] [<a 
+href="cug-htmlsu59.html#tailcug-htmlsu59.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu60.html">tail</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu60.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
- id="x88-145000A.1"></a>Top Level Items</h4>
-<!--l. 22--><p class="noindent" >The only top level configuration items at present are the suite title and description.
-</p><!--l. 25--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.1.1   </span> <a 
- id="x88-146000A.1.1"></a>title</h5>
-<!--l. 27--><p class="noindent" >The suite title is displayed in the gcylc suite database window. It can also be retrieved from a suite at run time with
-<span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span></span>).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8220;No title provided&#8221;</li></ul>
-<!--l. 36--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">A.1.2   </span> <a 
- id="x88-147000A.1.2"></a>description</h5>
-<!--l. 38--><p class="noindent" >The suite description can be retrieved by gcylc right-click menu. It can also be retrieved from a suite at run time
-with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">show</span></span> (or use <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span></span>).
-</p>
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">type: </span>string
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">default: </span>&#8220;No description provided&#8221;</li></ul>
+href="cug-htmlse12.html#cug-htmlsu60.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">12.8   </span> <a 
+ id="x86-14700012.8"></a>Make Suites Portable</h4>
+<!--l. 4809--><p class="noindent" >If every task in a suite is configured to put its output under <span class="lstinline"><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span></span> (i.e.&#x00A0;the environment variable, literally, not the
+explicit path to your home directory; and similarly for temporary directories, etc.) then other users will be able to
+copy the suite and run it immediately, after merely ensuring that any external input files are in the right
+place.
+</p><!--l. 4816--><p class="indent" >   For the ultimate in portability, construct suites in which all task I/O paths are dynamically configured to be user
+and suite (registration) specific, e.g. </p><!--l. 4819-->
+   <div class="lstlisting" id="listing-140"><span class="label"><a 
+ id="x86-147001r1"></a></span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">HOME</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">output</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">CYLC_SUITE_REG_PATH</span>
+   
+   </div>
+<!--l. 4822--><p class="indent" >   (these variables are automatically exported to the task execution environment by cylc - see <span 
+class="cmti-10">Task Execution</span>
+<span 
+class="cmti-10">Environment</span>, Section&#x00A0;<a 
+href="cug-htmlsu36.html#x56-940008.4.4">8.4.4<!--tex4ht:ref: TaskExecutionEnvironment --></a>). Then you can run multiple instances of the suite at once (even under the same user
+account) without changing anything, and they will not interfere with each other.
+</p><!--l. 4829--><p class="indent" >   <span 
+class="cmti-10">You can test changes to a portable suite safely by making a quick copy of it in a temporary directory, then</span>
+<span 
+class="cmti-10">modifying and running the test copy without fear of corrupting the output directories, suite logs, and suite state, of</span>
+<span 
+class="cmti-10">the original.</span>
                                                                                          
 
                                                                                          
-   <!--l. 47--><div class="crosslinks"><p class="noindent">[<a 
+</p>
+   <!--l. 4835--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu61.html" >next</a>] [<a 
-href="cug-htmlse13.html" >prev</a>] [<a 
-href="cug-htmlse13.html#tailcug-htmlse13.html" >prev-tail</a>] [<a 
+href="cug-htmlsu59.html" >prev</a>] [<a 
+href="cug-htmlsu59.html#tailcug-htmlsu59.html" >prev-tail</a>] [<a 
 href="cug-htmlsu60.html" >front</a>] [<a 
-href="cug-htmlse13.html#cug-htmlsu60.html" >up</a>] </p></div>
-<!--l. 47--><p class="indent" >   <a 
- id="tailcug-htmlsu60.html"></a>  </p> 
+href="cug-htmlse12.html#cug-htmlsu60.html" >up</a>] </p></div>
+<!--l. 4835--><p class="indent" >   <a 
+ id="tailcug-htmlsu60.html"></a> </p> 
 </body></html> 

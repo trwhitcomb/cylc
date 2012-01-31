@@ -10,56 +10,56 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4678--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu69.html" >next</a>] [<a 
+   <!--l. 5039--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu75.html" >next</a>] [<a 
 href="cug-htmlse16.html" >prev</a>] [<a 
 href="cug-htmlse16.html#tailcug-htmlse16.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse17.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse17.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">E   </span> <a 
- id="x102-320000E"></a>Simulation Mode</h3>
-<!--l. 4681--><p class="noindent" >If you run a suite in simulation mode its tasks will be replaced by dummy tasks that just print a message and then
+ id="x109-339000E"></a>Simulation Mode</h3>
+<!--l. 5042--><p class="noindent" >If you run a suite in simulation mode its tasks will be replaced by dummy tasks that just print a message and then
 exit after a few seconds, and the suite will run quickly on an accelerated clock. As far as cylc is concerned this is
 essentially identical to real operation. Simulation mode can be used to get the scheduling of a complex
 suite right without having to run real tasks, and to test recovery strategies for simulated task failure
 scenarios.
-</p><!--l. 4689--><p class="indent" >   By configuring how the accelerated clock is initialized you can watch suites catch up and transition from delayed
+</p><!--l. 5050--><p class="indent" >   By configuring how the accelerated clock is initialized you can watch suites catch up and transition from delayed
 to real time operation.
-</p><!--l. 4692--><p class="indent" >   Remote task hosting and job submission configuration is ignored in simulation mode so you can simulate any
+</p><!--l. 5053--><p class="indent" >   Remote task hosting and job submission configuration is ignored in simulation mode so you can simulate any
 suite, even outside of its normal operating environment.
-</p><!--l. 4696--><p class="indent" >   A more realistic but less portable simulation mode, with full remote job submission etc., can be
+</p><!--l. 5057--><p class="indent" >   A more realistic but less portable simulation mode, with full remote job submission etc., can be
 achieved by simply commenting out task command scripting so that it defaults to dummy command
 scripting, and running the suite in live mode (note however that this won&#8217;t work for tasks with internal
 outputs unless you provide your own dummy command scripting that reports the internal outputs
 finished).
-</p><!--l. 4703--><p class="indent" >   Simulation mode was, an remains, an important aid to cylc development because it allows testing of all aspects
+</p><!--l. 5064--><p class="indent" >   Simulation mode was, and remains, an important aid to cylc development because it allows testing of all aspects
 of scheduling without having to run real tasks in real time. Prior to cylc-3 it was also a critical aid to suite
 construction, quickly identifying any mismatch between the user-defined task prerequisites and outputs across a
 suite. Post cylc-3.0 this is less important because task prerequisites and outputs are now implicitly
 defined by the suite dependency graph and, short of a bug in cylc, the suite will run according to the
 graph.
-</p><!--l. 4712--><p class="noindent" >
+</p><!--l. 5073--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >E.1 <a 
-href="cug-htmlsu69.html#x103-321000E.1">Clock Rate and Offset</a></span>
+href="cug-htmlsu75.html#x110-340000E.1">Clock Rate and Offset</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >E.2 <a 
-href="cug-htmlsu70.html#x104-322000E.2">Switching A Suite Between Simulation And Live Modes?</a></span>
+href="cug-htmlsu76.html#x111-341000E.2">Switching A Suite Between Simulation And Live Modes?</a></span>
    </div>
 
                                                                                          
 
                                                                                          
-   <!--l. 4847--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu69.html" >next</a>] [<a 
+   <!--l. 5208--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu75.html" >next</a>] [<a 
 href="cug-htmlse16.html" >prev</a>] [<a 
 href="cug-htmlse16.html#tailcug-htmlse16.html" >prev-tail</a>] [<a 
 href="cug-htmlse17.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse17.html" >up</a>] </p></div>
-<!--l. 4847--><p class="indent" >   <a 
+<!--l. 5208--><p class="indent" >   <a 
  id="tailcug-htmlse17.html"></a> </p> 
 </body></html> 

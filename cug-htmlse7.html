@@ -10,25 +10,25 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1569--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu28.html" >next</a>] [<a 
-href="cug-htmlsu27.html" >prev</a>] [<a 
-href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
+   <!--l. 1645--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlsu29.html" >prev</a>] [<a 
+href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse7.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
- id="x39-490007"></a>Suite Registration</h3>
-<!--l. 1572--><p class="noindent" >Cylc commands target particular suites via names registered in a <span 
+ id="x42-510007"></a>Suite Registration</h3>
+<!--l. 1648--><p class="noindent" >Cylc commands target particular suites via names registered in a <span 
 class="cmti-10">suite database</span>, so that you don&#8217;t need to remember
 and continually refer to the actual location of the suite definition on disk. A suite registration name is a hierarchical
 name akin to a directory path but delimited by the &#8216;.&#8217; character; this allows suites to be organised in nested tree-like
-structures: </p><!--l. 1578-->
-   <div class="lstlisting" id="listing-37"><span class="label"><a 
- id="x39-49001r1"></a></span><span 
+structures: </p><!--l. 1654-->
+   <div class="lstlisting" id="listing-41"><span class="label"><a 
+ id="x42-51001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -42,15 +42,15 @@ class="pcrr7t-">tp</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49002r2"></a></span><span 
+ id="x42-51002r2"></a></span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49003r3"></a></span><span 
+ id="x42-51003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">oper</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49004r4"></a></span><span 
+ id="x42-51004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -83,7 +83,7 @@ class="pcrr7t-">nested</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49005r5"></a></span><span 
+ id="x42-51005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -116,12 +116,12 @@ class="pcrr7t-">nested</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">Region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49006r6"></a></span><span 
+ id="x42-51006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
 class="pcrr7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49007r7"></a></span><span 
+ id="x42-51007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -152,7 +152,7 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">Region1</span>
    
    </div>
-<!--l. 1588--><p class="indent" >   Note that registration groups are entirely virtual, they do not need to be explicitly created before use, and they
+<!--l. 1664--><p class="indent" >   Note that registration groups are entirely virtual, they do not need to be explicitly created before use, and they
 automatically disappear if all tasks are removed from them. From the listing above, for example, to move the suite
 <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
@@ -162,9 +162,9 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">region2</span></span> into the <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">test</span></span> group: </p><!--l. 1593-->
-   <div class="lstlisting" id="listing-38"><span class="label"><a 
- id="x39-49008r1"></a></span><span 
+class="pcrr7t-">test</span></span> group: </p><!--l. 1669-->
+   <div class="lstlisting" id="listing-42"><span class="label"><a 
+ id="x42-51008r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -185,7 +185,7 @@ class="pcrr7t-">test</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49009r2"></a></span><span 
+ id="x42-51009r2"></a></span><span 
 class="pcrr7t-">REREGISTER</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">nwp</span><span 
@@ -202,7 +202,7 @@ class="pcrr7t-">test</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49010r3"></a></span><span 
+ id="x42-51010r3"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -216,15 +216,15 @@ class="pcrr7t-">tpx</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49011r4"></a></span><span 
+ id="x42-51011r4"></a></span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49012r5"></a></span><span 
+ id="x42-51012r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">oper</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49013r6"></a></span><span 
+ id="x42-51013r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -238,12 +238,12 @@ class="pcrr7t-">Model</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49014r7"></a></span><span 
+ id="x42-51014r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
 class="pcrr7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49015r8"></a></span><span 
+ id="x42-51015r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -259,7 +259,7 @@ class="pcrr7t-">TEST</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49016r9"></a></span><span 
+ id="x42-51016r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -274,7 +274,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">Region2</span>
    
    </div>
-<!--l. 1604--><p class="indent" >   And to move <span class="lstinline"><span 
+<!--l. 1680--><p class="indent" >   And to move <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">test</span><span 
@@ -282,9 +282,9 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">region2</span></span> into a new group <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">para</span></span>: </p><!--l. 1605-->
-   <div class="lstlisting" id="listing-39"><span class="label"><a 
- id="x39-49017r1"></a></span><span 
+class="pcrr7t-">para</span></span>: </p><!--l. 1681-->
+   <div class="lstlisting" id="listing-43"><span class="label"><a 
+ id="x42-51017r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -305,7 +305,7 @@ class="pcrr7t-">para</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49018r2"></a></span><span 
+ id="x42-51018r2"></a></span><span 
 class="pcrr7t-">REREGISTER</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">nwp</span><span 
@@ -322,7 +322,7 @@ class="pcrr7t-">para</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">region2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49019r3"></a></span><span 
+ id="x42-51019r3"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -336,15 +336,15 @@ class="pcrr7t-">tpx</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49020r4"></a></span><span 
+ id="x42-51020r4"></a></span><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49021r5"></a></span><span 
+ id="x42-51021r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">oper</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49022r6"></a></span><span 
+ id="x42-51022r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -358,12 +358,12 @@ class="pcrr7t-">Model</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49023r7"></a></span><span 
+ id="x42-51023r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|-</span><span 
 class="pcrr7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49024r8"></a></span><span 
+ id="x42-51024r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">|</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -379,12 +379,12 @@ class="pcrr7t-">TEST</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Region1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49025r9"></a></span><span 
+ id="x42-51025r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#8216;-</span><span 
 class="pcrr7t-">para</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x39-49026r10"></a></span><span 
+ id="x42-51026r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -399,13 +399,13 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">Region2</span>
    
    </div>
-<!--l. 1618--><p class="indent" >   Currently you cannot explicitly indicate a group name on the command line by appending a dot character.
+<!--l. 1694--><p class="indent" >   Currently you cannot explicitly indicate a group name on the command line by appending a dot character.
 Rather, in database operations such as copy, reregister, or unregister, the identity of the source item (group or suite)
 is inferred from the content of the database; and if the source item is a group, so must the target be a group (or it
 will be, in the case of an item that will be created by the operation). This means that you cannot copy
 a single suite into a group that does not exist yet unless you specify the entire target registration
 name.
-</p><!--l. 1627--><p class="indent" >   <span class="lstinline"><span 
+</p><!--l. 1703--><p class="indent" >   <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">db</span><span 
@@ -414,31 +414,31 @@ class="pcrr7t-">register</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">help</span></span> shows a number of other examples.
-</p><!--l. 1629--><p class="noindent" >
+</p><!--l. 1705--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >7.1 <a 
-href="cug-htmlsu28.html#x40-500007.1">Private Suite Database</a></span>
+href="cug-htmlsu30.html#x43-520007.1">Private Suite Database</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.1.1 <a 
-href="cug-htmlsu28.html#x40-510007.1.1" id="QQ2-40-85">Private Database Location</a></span>
+href="cug-htmlsu30.html#x43-530007.1.1" id="QQ2-43-87">Private Database Location</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
-href="cug-htmlsu29.html#x41-520007.2">Central Suite Database</a></span>
+href="cug-htmlsu31.html#x44-540007.2">Central Suite Database</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.1 <a 
-href="cug-htmlsu29.html#x41-530007.2.1" id="QQ2-41-87">Central Database Location</a></span>
+href="cug-htmlsu31.html#x44-550007.2.1" id="QQ2-44-89">Central Database Location</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
-href="cug-htmlsu30.html#x42-540007.3">Database Operations</a></span>
+href="cug-htmlsu32.html#x45-560007.3">Database Operations</a></span>
    </div>
 
 
                                                                                          
 
                                                                                          
-   <!--l. 1744--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu28.html" >next</a>] [<a 
-href="cug-htmlsu27.html" >prev</a>] [<a 
-href="cug-htmlsu27.html#tailcug-htmlsu27.html" >prev-tail</a>] [<a 
+   <!--l. 1820--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu30.html" >next</a>] [<a 
+href="cug-htmlsu29.html" >prev</a>] [<a 
+href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
 href="cug-htmlse7.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
-<!--l. 1744--><p class="indent" >   <a 
+<!--l. 1820--><p class="indent" >   <a 
  id="tailcug-htmlse7.html"></a> </p> 
 </body></html> 

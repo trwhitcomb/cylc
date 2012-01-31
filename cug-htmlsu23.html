@@ -4,306 +4,313 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Monitoring Running Suites</title> 
+<head><title>QuickStart.b - Handling Cold-Starts Properly</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1303--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1282--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu23.html">tail</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu23.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">6.9   </span> <a 
- id="x34-400006.9"></a>Monitoring Running Suites</h4>
-<!--l. 1305--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">6.9.1   </span> <a 
- id="x34-410006.9.1"></a>Suite stdout And stderr</h5>
-<!--l. 1307--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each
-task is submitted, to the stdout stream. If you start a suite at the command line you can direct this
-output wherever you like. If you start a suite via gcylc, however, the output is directed to a special file,
-<span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/.</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">/[</span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">].</span><span 
-class="pcrr7t-">out</span></span> that can be accessed again later if you reconnect to the suite with a new control
-GUI.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x34-4100128"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1316--><p class="noindent" >
-
-</p><!--l. 1317--><p class="noindent" ><img 
-src="screenshots/suite-output.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;28: </span><span  
-class="content"><span 
-class="cmr-7">Cylc suite stdout/stderr example.</span></span></div><!--tex4ht:label?: x34-4100128 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-   <h5 class="subsubsectionHead"><span class="titlemark">6.9.2   </span> <a 
- id="x34-420006.9.2"></a>Suite Logs</h5>
-<!--l. 1325--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
-the event. The top level logging directory, under which a suite-specific log is written, is configurable in the
-suite.rc file. Suite logs are (optionally) rolled over at start-up and the five most recent back ups are
-kept.
-</p>
-   <hr class="figure" /><div class="figure" 
->
-                                                                                         
-
-                                                                                         
-<a 
- id="x34-4200129"></a>
-                                                                                         
-
-                                                                                         
-<div class="center" 
->
-<!--l. 1332--><p class="noindent" >
-
-</p><!--l. 1333--><p class="noindent" ><img 
-src="screenshots/suite-log.png" alt="PIC"  
- /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;29: </span><span  
-class="content"><span 
-class="cmr-7">A cylc suite log viewed via gcylc.</span></span></div><!--tex4ht:label?: x34-4200129 -->
-                                                                                         
-
-                                                                                         
-   </div><hr class="endfigure" />
-<!--l. 1339--><p class="indent" >   Figure&#x00A0;<a 
-href="#x34-4200129">29<!--tex4ht:ref: fig-suite-log --></a> shows a suite log viewed from within gcylc. The <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
+   <h4 class="subsectionHead"><span class="titlemark">6.7   </span> <a 
+ id="x35-400006.7"></a>QuickStart.b - Handling Cold-Starts Properly</h4>
+<!--l. 1284--><p class="noindent" >Now take a look at <span 
+class="cmti-10">QuickStart.b</span>, which is a minor modification of <span 
+class="cmti-10">QuickStart.a</span>. Its suite.rc file has a new <span 
+class="cmti-10">cold-start</span>
+task called ColdModel,  </p><!--l. 1288-->
+   <div class="lstlisting" id="listing-30"><span class="label"><a 
+ id="x35-40001r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40002r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">log</span></span> command also enables viewing and
-filtering of suite logs without having to remember the actual log file location. But if you want to know the location:
-</p><!--l. 1343-->
-   <div class="lstlisting" id="listing-29"><span class="label"><a 
- id="x34-42002r1"></a></span><span 
-class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">special</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tasks</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cold</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span><span 
+class="pcrr7t-">start</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">directories</span><span 
+class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42003r2"></a></span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LOG</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42004r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">suite</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42005r4"></a></span><span 
-class="pcrr7t-">SUITE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">STATE</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DUMP</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORY</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42006r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">state</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42007r6"></a></span><span 
-class="pcrr7t-">JOB</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">SUBMISSION</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">LOG</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">DIRECTORIES</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-42008r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">+</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">root</span><span 
-class="pcrr7t-">:</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span>
+class="pcrr7t-">ColdModel</span>
    
    </div>
-<!--l. 1352--><p class="indent" >   (There would be other job submission log directories listed here if any of the tasks in the suite had overridden
-the default location set by the root namespace).
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">6.9.3   </span> <a 
- id="x34-430006.9.3"></a>Task stdout And stderr Logs</h5>
-<!--l. 1359--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
-class="cmti-10">job submission log</span>
-<span 
-class="cmti-10">directory</span>, default location <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">HOME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_REG_NAME</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span><span 
-class="pcrr7t-">/</span></span> (where the
-variable <span class="lstinline"><span 
-class="pcrr8c-">$</span><span 
-class="pcrr7t-">CYLC_SUITE_REG_NAME</span></span> evalutes to the registered suite name hierarchy, e.g.&#x00A0;foo.bar.baz):
-</p><!--l. 1364-->
-   <div class="lstlisting" id="listing-30"><span class="label"><a 
- id="x34-43001r1"></a></span><span 
-class="pcrr7t-">%</span><span 
+<!--l. 1295--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
+href="#x35-4001427">27<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1298-->
+   <div class="lstlisting" id="listing-31"><span class="label"><a 
+ id="x35-40005r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">SUITE</span><span 
+class="pcrro7t-">.</span><span 
+class="pcrro7t-">RC</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40006r2"></a></span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">scheduling</span><span 
+class="pcrr7t-">]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40007r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">get</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">config</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">runtime</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[</span><span 
+class="pcrr7t-">dependencies</span><span 
+class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40008r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">0,6,12,18</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40009r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Prep</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">GetData</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">job</span><span 
+class="pcrr7t-">&amp;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submission</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">directory</span><span 
-class="pcrr7t-">'</span><span 
+class="pcrr7t-">ColdModel</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x34-43002r2"></a></span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">home</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">oliverh</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">run</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">QuickStart</span><span 
-class="pcrr7t-">.</span><span 
-class="pcrr7t-">a</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">log</span><span 
-class="pcrr7t-">/</span><span 
-class="pcrr7t-">job</span>
+ id="x35-40010r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">GetData</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostA</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40011r7"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ColdModel</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">|</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">T</span><span 
+class="pcrr7t-">-6]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40012r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">[[[</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">6,18</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">]]]</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x35-40013r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">graph</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Model</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">PostB</span><span 
+class="pcrr7t-">"</span>
    
    </div>
-<!--l. 1368--><p class="indent" >   (or use the <span class="lstinline"><span 
-class="pcrr7t-">--</span><span 
-class="pcrr7t-">directories</span></span> argument as shown just above).
-</p><!--l. 1370--><p class="indent" >   These files will contain the complete stdout and stderr record for tasks whose initiating processes do not detach
-and exit before all task processing is finished. The location of output generated by secondary processes, if the
-original process detaches and exits early, is up to the task implementation (of said secondary processes,
-specifically).
+<!--l. 1310--><p class="indent" >   In other words, Model[T] can trigger off <span 
+class="cmti-10">either </span>Model[T-6] <span 
+class="cmti-10">or </span>ColdModel[T].
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                         
+
+                                                                                         
+<a 
+ id="x35-4001427"></a>
+                                                                                         
+
+                                                                                         
+<div class="center" 
+>
+<!--l. 1314--><p class="noindent" >
+
+</p><!--l. 1315--><p class="noindent" ><img 
+src="screenshots/QuickStartB-graph18.png" alt="PIC"  
+ /></p></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;27: </span><span  
+class="content"><span 
+class="cmr-7">The </span><span 
+class="cmti-7">QuickStart.b </span><span 
+class="cmr-7">dependency graph showing a model cold start task.</span></span></div><!--tex4ht:label?: x35-4001427 -->
+                                                                                         
+
+                                                                                         
+   </div><hr class="endfigure" />
+<!--l. 1323--><p class="indent" >   A cold-start task is a one-off task used to satisfy the previous-cycle dependence of a cotemporal task whose
+previous-cycle trigger is not available. The obvious use for this is to cold-start warm-cycled forecast models at suite
+start-up, when there is no previous cycle. Unlike start-up tasks though, cold-start dependencies are not restricted to
+suite start-up because it is sometimes useful to be able to insert a cold-start task into a running suite, to get a
+model restarted after it had to skip one or more cycles due to problems, without having to restart the whole
+suite.
+</p><!--l. 1333--><p class="indent" >   A model cold-start task in a real suite may submit a real &#8220;cold start forecast&#8221; to generate the previous-cycle
+input files required by its associated model, or it may just stand in for some external spinup process, or similar, that
+has to be completed before the suite is started (in the latter case the cold-start task would be a dummy task
+that just reports successful completion in order to satisfy the initial previous-cycle dependence of the
+model).
+</p><!--l. 1341--><p class="indent" >   Run <span 
+class="cmti-10">QuickStart.b </span>to confirm that that no manual triggering is required to get the suite started
+now.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1376--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1344--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="cug-htmlsu23.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu23.html" >up</a>] </p></div>
-<!--l. 1376--><p class="indent" >   <a 
- id="tailcug-htmlsu23.html"></a>  </p> 
+<!--l. 1344--><p class="indent" >   <a 
+ id="tailcug-htmlsu23.html"></a> </p> 
 </body></html> 

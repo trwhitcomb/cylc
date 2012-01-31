@@ -4,478 +4,479 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Built-in Job Submission Methods</title> 
+<head><title>Voluntary Messaging Modifications</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3895--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3670--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu44.html" >next</a>] [<a 
 href="cug-htmlsu42.html" >prev</a>] [<a 
 href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu43.html">tail</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu43.html" >up</a>] </p></div>
-   <h4 class="subsectionHead"><span class="titlemark">10.2   </span> <a 
- id="x66-11500010.2"></a>Built-in Job Submission Methods</h4>
-<!--l. 3898--><p class="noindent" >Cylc has a number of built-in job submission methods. If these do not suite your needs Section&#x00A0;<a 
-href="cug-htmlsu46.html#x69-12500010.5">10.5<!--tex4ht:ref: DefiningNewJobSubmissionMethods --></a> shows how to
-extend cylc with new user-defined job submission methods.
-</p><!--l. 3902--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.1   </span> <a 
- id="x66-11600010.2.1"></a>background</h5>
-<!--l. 3904--><p class="noindent" >This job submission method runs tasks directly in a background shell.
-</p><!--l. 3906--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.2   </span> <a 
- id="x66-11700010.2.2"></a>at</h5>
-<!--l. 3908--><p class="noindent" >This job submission method submits tasks to the rudimentary Unix <span class="lstinline"><span 
-class="pcrr7t-">at</span></span> scheduler. The <span class="lstinline"><span 
-class="pcrr7t-">atd</span></span> daemon must be
-running.
-</p><!--l. 3911--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.3   </span> <a 
- id="x66-11800010.2.3"></a>loadleveler</h5>
-<!--l. 3913--><p class="noindent" >This job submission method submits tasks to loadleveler using the <span class="lstinline"><span 
-class="pcrr7t-">llsubmit</span></span> command. Loadleveler directives can
-be provided in the suite.rc file:
-</p>
-   <!--l. 3918-->
-   <div class="lstlisting" id="listing-114"><span class="label"><a 
- id="x66-118001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118002r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">__NAME__</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">directives</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118006r6"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">baz</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">waz</span>
-   
-   </div>
-<!--l. 3926--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 3928-->
-   <div class="lstlisting" id="listing-115"><span class="label"><a 
- id="x66-118007r1"></a></span><span 
+href="cug-htmlse9.html#cug-htmlsu43.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">9.3   </span> <a 
+ id="x65-1100009.3"></a>Voluntary Messaging Modifications</h4>
+<!--l. 3673--><p class="noindent" >You can, if you like, modify task scripts to send explanatory or progress messages to the suite as the task runs. For
+example, a task can send a priority critical message before aborting on error:  </p><!--l. 3677-->
+   <div class="lstlisting" id="listing-109"><span class="label"><a 
+ id="x65-110001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">bin</span><span 
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">bash</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118008r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">DIRECTIVES</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118009r3"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">@</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">foo</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">=</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">bar</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118010r4"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">@</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">baz</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">=</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">waz</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-118011r5"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">@</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">queue</span>
-   
-   </div>
-<!--l. 3936--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.4   </span> <a 
- id="x66-11900010.2.4"></a>pbs</h5>
-<!--l. 3938--><p class="noindent" >This job submission method submits tasks to PBS (or Torque) using the <span class="lstinline"><span 
-class="pcrr7t-">qsub</span></span> command. PBS directives can be
-provided in the suite.rc file:  </p><!--l. 3942-->
-   <div class="lstlisting" id="listing-116"><span class="label"><a 
- id="x66-119001r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119002r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[</span><span 
-class="pcrr7t-">__NAME__</span><span 
-class="pcrr7t-">]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119004r4"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">directives</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x65-110002r2"></a></span><span 
+class="pcrb7t-">set</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">q</span><span 
+class="pcrr7t-">e</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">abort</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">on</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">error</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119006r6"></a></span><span 
+ id="x65-110003r3"></a></span><span 
+class="pcrb7t-">if</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">!</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">mkdir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">then</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110004r4"></a></span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">use</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">inline</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">error</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">checking</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">avoid</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">triggering</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">above</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">'</span><span 
+class="pcrro7t-">set</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">')</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">message</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">l</span><span 
+class="pcrr7t-">p</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">CRITICAL</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">nodes</span><span 
-class="pcrr7t-">=1,</span><span 
-class="pcrr7t-">walltime</span><span 
-class="pcrr7t-">=00:01:00'</span>
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Failed</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">create</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">exit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">1</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">now</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">abort</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">non</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">zero</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">exit</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">status</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">to</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">trigger</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">task</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">failed</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">message</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110007r7"></a></span><span 
+class="pcrb7t-">fi</span>
    
-                                                                                         
-
-                                                                                         
    </div>
-<!--l. 3950--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 3952-->
-   <div class="lstlisting" id="listing-117"><span class="label"><a 
- id="x66-119007r1"></a></span><span 
+<!--l. 3687--><p class="indent" >   You can also use this syntax:  </p><!--l. 3689-->
+   <div class="lstlisting" id="listing-110"><span class="label"><a 
+ id="x65-110008r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">bin</span><span 
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">bash</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119008r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">DIRECTIVES</span><span 
+ id="x65-110009r2"></a></span><span 
+class="pcrb7t-">set</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">e</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119009r3"></a></span><span 
+ id="x65-110010r3"></a></span><span 
+class="pcrr7t-">mkdir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">||</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">{</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">#</span><span 
-class="pcrro7t-">PBS</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">q</span><span 
+class="pcrro7t-">inline</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">foo</span><span 
+class="pcrro7t-">error</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">checking</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">using</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">OR</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">operator</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-119010r4"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">PBS</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">l</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">nodes</span><span 
-class="pcrro7t-">=1,</span><span 
-class="pcrro7t-">walltime</span><span 
-class="pcrro7t-">=00:01:00</span>
+ id="x65-110011r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">message</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">p</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">CRITICAL</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Failed</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">create</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110012r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">exit</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110013r6"></a></span><span 
+class="pcrr7t-">}</span>
    
    </div>
-<!--l. 3959--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.5   </span> <a 
- id="x66-12000010.2.5"></a>sge</h5>
-<!--l. 3961--><p class="noindent" >This job submission method submits tasks to Sun Grid Engine using the <span class="lstinline"><span 
-class="pcrr7t-">qsub</span></span> command. SGE directives can be
-provided in the suite.rc file:  </p><!--l. 3965-->
-   <div class="lstlisting" id="listing-118"><span class="label"><a 
- id="x66-120001r1"></a></span><span 
+<!--l. 3698--><p class="indent" >   But not this:  </p><!--l. 3700-->
+   <div class="lstlisting" id="listing-111"><span class="label"><a 
+ id="x65-110014r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">bin</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110015r2"></a></span><span 
+class="pcrb7t-">set</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">e</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110016r3"></a></span><span 
+class="pcrr7t-">mkdir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">SUITE</span><span 
-class="pcrro7t-">.</span><span 
-class="pcrro7t-">RC</span><span 
+class="pcrro7t-">aborted</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">via</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">'</span><span 
+class="pcrro7t-">set</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">-</span><span 
+class="pcrro7t-">e</span><span 
+class="pcrro7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120002r2"></a></span><span 
-class="pcrr7t-">[</span><span 
-class="pcrr7t-">runtime</span><span 
-class="pcrr7t-">]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120003r3"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+ id="x65-110017r4"></a></span><span 
+class="pcrb7t-">if</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">[[</span><span 
-class="pcrr7t-">__NAME__</span><span 
-class="pcrr7t-">]]</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr8c-">$</span><span 
+class="pcrr7t-">?</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">!=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">0</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">]];</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">then</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">so</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">this</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">will</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">never</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">be</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">reached</span><span 
+class="pcrro7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120004r4"></a></span><span 
+ id="x65-110018r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">[[[</span><span 
-class="pcrr7t-">directives</span><span 
-class="pcrr7t-">]]]</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120005r5"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">message</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">cwd</span><span 
+class="pcrr7t-">p</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">CRITICAL</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Failed</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">create</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">directory</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">illegal</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">dir</span><span 
+class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120006r6"></a></span><span 
+ id="x65-110019r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">exit</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">1</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110020r7"></a></span><span 
+class="pcrb7t-">fi</span>
+   
+   </div>
+<!--l. 3710--><p class="indent" >   You can also send warning messages, or general information:  </p><!--l. 3712-->
+   <div class="lstlisting" id="listing-112"><span class="label"><a 
+ id="x65-110021r1"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">!/</span><span 
+class="pcrro7t-">bin</span><span 
+class="pcrro7t-">/</span><span 
+class="pcrro7t-">bash</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110022r2"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">a</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">warning</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">message</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">this</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">will</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">be</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">logged</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">by</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">):</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110023r3"></a></span><span 
+class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">message</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">-</span><span 
-class="pcrr7t-">q</span><span 
+class="pcrr7t-">p</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
+class="pcrr7t-">WARNING</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120007r7"></a></span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">l</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">=</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">'</span><span 
-class="pcrr7t-">h_data</span><span 
-class="pcrr7t-">=1024</span><span 
-class="pcrr7t-">M</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">oops</span><span 
 class="pcrr7t-">,</span><span 
-class="pcrr7t-">h_rt</span><span 
-class="pcrr7t-">=24:00:00'</span>
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">something</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">s</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">fishy</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">here</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110024r4"></a></span><span 
+class="pcrro7t-">#</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">information</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">(</span><span 
+class="pcrro7t-">this</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">will</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">also</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">be</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">logged</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">by</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">the</span><span 
+class="pcrro7t-">&#x00A0;</span><span 
+class="pcrro7t-">suite</span><span 
+class="pcrro7t-">):</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x65-110025r5"></a></span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">message</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">Hello</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">from</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">task</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">foo</span><span 
+class="pcrr7t-">"</span>
    
    </div>
-<!--l. 3974--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 3976-->
-   <div class="lstlisting" id="listing-119"><span class="label"><a 
- id="x66-120008r1"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">!/</span><span 
-class="pcrro7t-">bin</span><span 
-class="pcrro7t-">/</span><span 
-class="pcrro7t-">bash</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120009r2"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">DIRECTIVES</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120010r3"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro8c-">$</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">cwd</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120011r4"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro8c-">$</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">q</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">foo</span><span 
-class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x66-120012r5"></a></span><span 
-class="pcrro7t-">#</span><span 
-class="pcrro8c-">$</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">-</span><span 
-class="pcrro7t-">l</span><span 
-class="pcrro7t-">&#x00A0;</span><span 
-class="pcrro7t-">h_data</span><span 
-class="pcrro7t-">=1024</span><span 
-class="pcrro7t-">M</span><span 
-class="pcrro7t-">,</span><span 
-class="pcrro7t-">h_rt</span><span 
-class="pcrro7t-">=24:00:00</span>
-   
-   </div>
-<!--l. 3984--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.6   </span> <a 
- id="x66-12100010.2.6"></a>Default Directives Provided</h5>
-<!--l. 3986--><p class="noindent" >For loadleveler, pbs, and sge job submission, default directives are provided to set the job name and stdout and
-stderr file paths.
-</p><!--l. 3989--><p class="noindent" >
-</p>
-   <h5 class="subsubsectionHead"><span class="titlemark">10.2.7   </span> <a 
- id="x66-12200010.2.7"></a>PBS and SGE Cylc Quirks</h5>
-<!--l. 3991--><p class="noindent" >As shown in the example above, multiple entries for the same PBS or SGE directive option must be
-comma-separated on the same line, in the suite.rc file. Otherwise, repeating the option on another
-line will override the previous entry, not add to it. Also, the right-hand side must be quoted to hide
-the comma from the suite.rc parser (commas indicate list values, whereas directives are treated as
-singular).
-</p><!--l. 3998--><p class="indent" >   As also shown in the example above, to get a naked option flag such as <span class="lstinline"><span 
-class="pcrr7t-">-</span><span 
-class="pcrr7t-">cwd</span></span> in SGE you must give a quoted
-blank space as the directive value in the suite.rc file.
+<!--l. 3720--><p class="indent" >   This may be useful - any message received from a task is logged by cylc - but it is not a requirement. If error
+messages are not reported, for instance, detected task failures will still be registered, and task stdout and stderr logs
+can still be examined for evidence of what went wrong.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 4002--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3727--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu44.html" >next</a>] [<a 
 href="cug-htmlsu42.html" >prev</a>] [<a 
 href="cug-htmlsu42.html#tailcug-htmlsu42.html" >prev-tail</a>] [<a 
 href="cug-htmlsu43.html" >front</a>] [<a 
-href="cug-htmlse10.html#cug-htmlsu43.html" >up</a>] </p></div>
-<!--l. 4002--><p class="indent" >   <a 
- id="tailcug-htmlsu43.html"></a>  </p> 
+href="cug-htmlse9.html#cug-htmlsu43.html" >up</a>] </p></div>
+<!--l. 3727--><p class="indent" >   <a 
+ id="tailcug-htmlsu43.html"></a> </p> 
 </body></html> 

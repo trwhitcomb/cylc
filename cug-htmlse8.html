@@ -10,78 +10,80 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-06 16:11:00" /> 
+<meta name="date" content="2012-01-31 16:11:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1744--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu31.html" >next</a>] [<a 
-href="cug-htmlsu30.html" >prev</a>] [<a 
-href="cug-htmlsu30.html#tailcug-htmlsu30.html" >prev-tail</a>] [<a 
+   <!--l. 1820--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu33.html" >next</a>] [<a 
+href="cug-htmlsu32.html" >prev</a>] [<a 
+href="cug-htmlsu32.html#tailcug-htmlsu32.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse8.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
- id="x43-550008"></a>Suite Definition</h3>
-<!--l. 1747--><p class="noindent" >Cylc suites are defined in structured, validated, <span 
+ id="x46-570008"></a>Suite Definition</h3>
+<!--l. 1823--><p class="noindent" >Cylc suites are defined in structured, validated, <span 
 class="cmti-10">suite.rc </span>files that concisely specify the properties of, and
 the relationships between, the various tasks managed by the suite. This section of the User Guide
 deals with the format and content of the suite.rc file, including task definition. Task implementation
 - what&#8217;s required of the real commands, scripts, or programs that do the processing that the tasks
 represent - is covered in Section&#x00A0;<a 
-href="cug-htmlse9.html#x58-1030009">9<!--tex4ht:ref: TaskImplementation --></a>; and task job submission - how tasks are submitted to run - is in
+href="cug-htmlse9.html#x62-1070009">9<!--tex4ht:ref: TaskImplementation --></a>; and task job submission - how tasks are submitted to run - is in
 Section&#x00A0;<a 
-href="cug-htmlse10.html#x64-11300010">10<!--tex4ht:ref: TaskJobSubmission --></a>.
-</p><!--l. 1757--><p class="noindent" >
+href="cug-htmlse10.html#x68-11700010">10<!--tex4ht:ref: TaskJobSubmission --></a>.
+</p><!--l. 1833--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >8.1 <a 
-href="cug-htmlsu31.html#x44-560008.1">Suite Definition Directories</a></span>
+href="cug-htmlsu33.html#x47-580008.1">Suite Definition Directories</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.2 <a 
-href="cug-htmlsu32.html#x45-570008.2">Suite.rc File Overview</a></span>
+href="cug-htmlsu34.html#x48-590008.2">Suite.rc File Overview</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.1 <a 
-href="cug-htmlsu32.html#x45-580008.2.1" id="QQ2-45-93">Syntax</a></span>
+href="cug-htmlsu34.html#x48-600008.2.1" id="QQ2-48-95">Syntax</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.2 <a 
-href="cug-htmlsu32.html#x45-590008.2.2" id="QQ2-45-94">Include-Files</a></span>
+href="cug-htmlsu34.html#x48-610008.2.2" id="QQ2-48-96">Include-Files</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.3 <a 
-href="cug-htmlsu32.html#x45-620008.2.3" id="QQ2-45-97">Syntax Highlighting In Vim</a></span>
+href="cug-htmlsu34.html#x48-640008.2.3" id="QQ2-48-99">Syntax Highlighting In Vim</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.4 <a 
-href="cug-htmlsu32.html#x45-630008.2.4" id="QQ2-45-98">Gross File Structure</a></span>
+href="cug-htmlsu34.html#x48-650008.2.4" id="QQ2-48-100">Gross File Structure</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.5 <a 
-href="cug-htmlsu32.html#x45-640008.2.5" id="QQ2-45-99">Validation</a></span>
+href="cug-htmlsu34.html#x48-660008.2.5" id="QQ2-48-101">Validation</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.3 <a 
-href="cug-htmlsu33.html#x48-650008.3">Scheduling - Dependency Graphs</a></span>
+href="cug-htmlsu35.html#x51-670008.3">Scheduling - Dependency Graphs</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.1 <a 
-href="cug-htmlsu33.html#x48-660008.3.1" id="QQ2-48-102">Graph String Syntax</a></span>
+href="cug-htmlsu35.html#x51-680008.3.1" id="QQ2-51-104">Graph String Syntax</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.2 <a 
-href="cug-htmlsu33.html#x48-670008.3.2" id="QQ2-48-103">Interpreting Graph Strings</a></span>
+href="cug-htmlsu35.html#x51-690008.3.2" id="QQ2-51-105">Interpreting Graph Strings</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.3 <a 
-href="cug-htmlsu33.html#x48-690008.3.3" id="QQ2-48-105">Graph Types (VALIDITY)</a></span>
+href="cug-htmlsu35.html#x51-710008.3.3" id="QQ2-51-107">Graph Types (VALIDITY)</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.4 <a 
-href="cug-htmlsu33.html#x48-750008.3.4" id="QQ2-48-116">Trigger Types</a></span>
+href="cug-htmlsu35.html#x51-780008.3.4" id="QQ2-51-119">Trigger Types</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.5 <a 
-href="cug-htmlsu33.html#x48-830008.3.5" id="QQ2-48-125">Handling Intercycle Dependence At Start-Up</a></span>
+href="cug-htmlsu35.html#x51-860008.3.5" id="QQ2-51-129">Handling Intercycle Dependence At Start-Up</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.3.6 <a 
-href="cug-htmlsu33.html#x48-860008.3.6" id="QQ2-48-128">Model Restart Dependencies</a></span>
+href="cug-htmlsu35.html#x51-890008.3.6" id="QQ2-51-132">Model Restart Dependencies</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.4 <a 
-href="cug-htmlsu34.html#x53-870008.4">Runtime - Task Execution</a></span>
+href="cug-htmlsu36.html#x56-900008.4">Runtime Properties - Task Execution</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.1 <a 
-href="cug-htmlsu34.html#x53-880008.4.1" id="QQ2-53-131">Namespace Names</a></span>
+href="cug-htmlsu36.html#x56-910008.4.1" id="QQ2-56-135">Namespace Names</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.2 <a 
-href="cug-htmlsu34.html#x53-890008.4.2" id="QQ2-53-132">Root - Runtime Defaults</a></span>
+href="cug-htmlsu36.html#x56-920008.4.2" id="QQ2-56-136">Root - Runtime Defaults</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.3 <a 
-href="cug-htmlsu34.html#x53-900008.4.3" id="QQ2-53-133">Defining Multiple Namespaces At Once</a></span>
+href="cug-htmlsu36.html#x56-930008.4.3" id="QQ2-56-137">Defining Multiple Namespaces At Once</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.4 <a 
-href="cug-htmlsu34.html#x53-910008.4.4" id="QQ2-53-134">Task Execution Environment</a></span>
+href="cug-htmlsu36.html#x56-940008.4.4" id="QQ2-56-138">Task Execution Environment</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.4.5 <a 
-href="cug-htmlsu34.html#x53-970008.4.5" id="QQ2-53-140">Remote Task Hosting</a></span>
+href="cug-htmlsu36.html#x56-1000008.4.5" id="QQ2-56-144">Remote Task Hosting</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.5 <a 
-href="cug-htmlsu35.html#x55-990008.5">Visualization</a></span>
+href="cug-htmlsu37.html#x58-1020008.5">Visualization</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.5.1 <a 
-href="cug-htmlsu35.html#x55-1000008.5.1" id="QQ2-55-143">Collapsible Task Families In Suite Graphing And GUIs</a></span>
+href="cug-htmlsu37.html#x58-1030008.5.1" id="QQ2-58-147">Collapsible Task Families In Suite Graphing And GUIs</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.6 <a 
-href="cug-htmlsu36.html#x56-1010008.6">Jinja2 Suite Templates</a></span>
+href="cug-htmlsu38.html#x59-1040008.6">Jinja2 Suite Templates</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >8.7 <a 
-href="cug-htmlsu37.html#x57-1020008.7">Special Placeholder Variables</a></span>
+href="cug-htmlsu39.html#x60-1050008.7">Special Placeholder Variables</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >8.8 <a 
+href="cug-htmlsu40.html#x61-1060008.8">Omitting Defined Tasks At Runtime</a></span>
    </div>
 
 
@@ -89,15 +91,16 @@ href="cug-htmlsu37.html#x57-1020008.7">Special Placeholder Variables</a></span>
 
 
 
+
                                                                                          
 
                                                                                          
-   <!--l. 3453--><div class="crosslinks"><p class="noindent">[<a 
-href="cug-htmlsu31.html" >next</a>] [<a 
-href="cug-htmlsu30.html" >prev</a>] [<a 
-href="cug-htmlsu30.html#tailcug-htmlsu30.html" >prev-tail</a>] [<a 
+   <!--l. 3612--><div class="crosslinks"><p class="noindent">[<a 
+href="cug-htmlsu33.html" >next</a>] [<a 
+href="cug-htmlsu32.html" >prev</a>] [<a 
+href="cug-htmlsu32.html#tailcug-htmlsu32.html" >prev-tail</a>] [<a 
 href="cug-htmlse8.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse8.html" >up</a>] </p></div>
-<!--l. 3453--><p class="indent" >   <a 
+<!--l. 3612--><p class="indent" >   <a 
  id="tailcug-htmlse8.html"></a> </p> 
 </body></html> 
