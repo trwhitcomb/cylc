@@ -13,10 +13,7 @@ body{
 .warning {
 		background:#fff;
 		font-weight:bold;
-		color:#f0f;
-		margin:20px;
-		padding-left:10px;
-		border-left:20px solid #f0f;
+		color:#ff4202;
 }
 
 a{

@@ -39,16 +39,17 @@
 
     <div id="banner">
             <p class="p1"><span>Cylc (<em>"silk"</em>) is an advanced
-                metascheduler that makes it easy to construct and
-                control flexible, portable suites for cycling 
-                weather forecasting systems and related data processing.
-                Cylc suites optimally interleave tasks from multiple
+                <b>suite engine</b> that makes it easy
+                to construct and control complex suites of
+                interdependent cycling tasks for weather forecasting
+                and related data processing. Cylc suites
+                optimally interleave tasks from multiple
                 forecast cycles for fast catch up from delays, fast
-                historical trials, and fast offset parallel test suites; 
-                they seamlessly transition between optimal catch up and
-                real time operation as required; they flow around
-                delayed and failed tasks; and they dynamically adapt to
-                insertion or removal of tasks.
+                historical case studies, and fast offset parallel trials; 
+                they seamlessly transition between delayed and
+                real time operation; they flow around delayed and failed
+                tasks; and they dynamically adapt to insertion or
+                removal of tasks.
         </span></p> 
 
         <p class="p2"><span>.</span></p> <!-- p2 is required to get
@@ -61,27 +62,32 @@
 
 		<div id="preamble">
 
-   <p class="p1"><span> Cylc has been developed to date mainly by Dr
-   Hilary James Oliver at <a href="http://www.niwa.co.nz">NIWA</a> 
+    <div class="warning">NEW 31 Jan 2012: cylc-4.2.0 released 
+        (<a href="https://github.com/hjoliver/cylc/blob/master/changelog.txt#L428">change log</a>)
+    </div>
+
+            <p class="p1"><span> Cylc was initially developed at 
+                <a href="http://www.niwa.co.nz">NIWA</a> 
         (National Institute of Water &amp; Atmospheric Research,
-        New Zealand). It was prototyped in 2008, has controlled NIWA's
+        New Zealand) by Dr Hilary James Oliver. 
+        It was prototyped in 2008, has controlled NIWA's
         operational forecasting systems since 2010, and was
         released under the GNU General Public License in 2011.</span></p>
 
-    <div class="warning">NEW 31 Jan 2012: cylc-4.2.0 released 
-        (<a href="https://github.com/hjoliver/cylc/blob/master/changelog.txt#L428">change log</a>)
+    <div class="warning">Cylc was recently chosen as the 
+        new suite engine for the Met Office (UK).
     </div>
 
     <a id="overview"></a>
     <h3><span>Overview</span></h3>
 
     <p class="p1"><span>A metascheduler, in this context, is a
-    <em>control system</em> that determines when interdependent tasks
-    are ready to execute (usually by submission to a batch queue
-        scheduler). Cylc does this for suites of <em>cycling</em> tasks,
-        although it can also handle non-cycling (one-off) tasks, and
-        repeating asynchronous tasks for processing data from successive
-        satellite passes in real time.</span></p>
+        <em>control system</em> that determines when interdependent
+        tasks are ready to execute (usually by submission to a batch
+        queue scheduler). Cylc does this for suites of <em>cycling</em>
+        tasks, although it can also handle non-cycling (one-off) tasks,
+        and repeating asynchronous tasks for processing data from
+        successive satellite passes in real time.</span></p>
         
     <p class="p2"><span>
         Dependence between tasks in different forecast cycles can
@@ -344,23 +350,11 @@ install them):
 <div id="download">
 <h3><span>Download</span></h3>
 
-<div class="warning">WARNING: cylc-4.x is not backward compatible with cylc-3.x. To upgrade:
-<ol>
-    <li> Delete your cylc-3.x private suite database
-    (<code>$HOME/.cylc/LDB/db</code>) before starting gcylc or running
-    <code>cylc admin create-cdb</code>.</li>
-<li> See the 
-<a href="https://github.com/hjoliver/cylc/blob/master/changelog.txt">cylc change log</a>
-for all major changes since 4.0.</li>
-<li> Examine some of the User Guide example suites, to see the new suite.rc file structure.</li>
-<li> After attempting the upgrade, use suite validation to see if you've missed any items.</li>
-</ol>
-</div>
-
 <p class="p1"><span>
     The latest release is <b>cylc-4.2.0</b>. You can download the tarball from GitHub:
     <a href="https://github.com/downloads/hjoliver/cylc/cylc-4.2.0.tgz">cylc-4.2.0.tgz</a>.
 </span></p>
+
 
 <p class="p1"><span>
     If you're interested in cylc development you'll need to clone the cylc 
