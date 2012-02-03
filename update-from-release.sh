@@ -23,8 +23,9 @@ fi
 rm -f cug-html*.html cug-html.css
 rm -f CylcUserGuide.pdf
 
-# There may be extra screenshots in the web site graphics, so we don't 
-# remove and update these automatically.
+# There may be extra screenshots in the web site graphics, so don't 
+# remove and update these automatically. But do update any new images.
 
 cp $RELDIR/doc/cug-html* .
 cp $RELDIR/doc/CylcUserGuide.pdf .
+cp $RELDIR/doc/screenshots/* screenshots/
