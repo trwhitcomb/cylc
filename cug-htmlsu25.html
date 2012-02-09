@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1379--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1409--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu26.html" >next</a>] [<a 
 href="cug-htmlsu24.html" >prev</a>] [<a 
 href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
@@ -22,11 +22,11 @@ href="#tailcug-htmlsu25.html">tail</a>] [<a
 href="cug-htmlse6.html#cug-htmlsu25.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">6.9   </span> <a 
  id="x37-420006.9"></a>Monitoring Running Suites</h4>
-<!--l. 1381--><p class="noindent" >
+<!--l. 1411--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">6.9.1   </span> <a 
  id="x37-430006.9.1"></a>Suite stdout And stderr</h5>
-<!--l. 1383--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each
+<!--l. 1413--><p class="noindent" >When cylc runs a suite it writes warnings and other informative messages, such as when and how each
 task is submitted, to the stdout stream. If you start a suite at the command line you can direct this
 output wherever you like. If you start a suite via gcylc, however, the output is directed to a special file,
 <span class="lstinline"><span 
@@ -41,6 +41,7 @@ class="pcrr7t-">out</span></span> that can be accessed again later if you reconn
 GUI.
 </p>
    <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -52,27 +53,28 @@ GUI.
                                                                                          
 <div class="center" 
 >
-<!--l. 1392--><p class="noindent" >
+<!--l. 1422--><p class="noindent" >
 
-</p><!--l. 1393--><p class="noindent" ><img 
+</p><!--l. 1423--><p class="noindent" ><img 
 src="screenshots/suite-output.png" alt="PIC"  
  /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;28: </span><span  
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;28: </td><td  
 class="content"><span 
-class="cmr-7">Cylc suite stdout/stderr example.</span></span></div><!--tex4ht:label?: x37-4300128 -->
+class="cmr-7">Cylc suite stdout/stderr example.</span></td></tr></table><!--tex4ht:label?: x37-4300128 -->
                                                                                          
 
                                                                                          
-   </div><hr class="endfigure" />
+   </td></tr></table></div><hr class="endfigure" />
    <h5 class="subsubsectionHead"><span class="titlemark">6.9.2   </span> <a 
  id="x37-440006.9.2"></a>Suite Logs</h5>
-<!--l. 1401--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
+<!--l. 1431--><p class="noindent" >The cylc suite log records every event that occurs (incoming messages from tasks and so on) along with the time of
 the event. The top level logging directory, under which a suite-specific log is written, is configurable in the
 suite.rc file. Suite logs are (optionally) rolled over at start-up and the five most recent back ups are
 kept.
 </p>
    <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -84,27 +86,28 @@ kept.
                                                                                          
 <div class="center" 
 >
-<!--l. 1408--><p class="noindent" >
+<!--l. 1438--><p class="noindent" >
 
-</p><!--l. 1409--><p class="noindent" ><img 
+</p><!--l. 1439--><p class="noindent" ><img 
 src="screenshots/suite-log.png" alt="PIC"  
  /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;29: </span><span  
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;29: </td><td  
 class="content"><span 
-class="cmr-7">A cylc suite log viewed via gcylc.</span></span></div><!--tex4ht:label?: x37-4400129 -->
+class="cmr-7">A cylc suite log viewed via gcylc.</span></td></tr></table><!--tex4ht:label?: x37-4400129 -->
                                                                                          
 
                                                                                          
-   </div><hr class="endfigure" />
-<!--l. 1415--><p class="indent" >   Figure&#x00A0;<a 
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1445--><p class="indent" >   Figure&#x00A0;<a 
 href="#x37-4400129">29<!--tex4ht:ref: fig-suite-log --></a> shows a suite log viewed from within gcylc. The <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">log</span></span> command also enables viewing and
 filtering of suite logs without having to remember the actual log file location. But if you want to know the location:
-</p><!--l. 1419-->
-   <div class="lstlisting" id="listing-33"><span class="label"><a 
+</p><!--l. 1449--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-44002r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -211,14 +214,15 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">log</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">job</span>
-   
+
+
    </div>
-<!--l. 1428--><p class="indent" >   (There would be other job submission log directories listed here if any of the tasks in the suite had overridden
+<!--l. 1458--><p class="indent" >   (There would be other job submission log directories listed here if any of the tasks in the suite had overridden
 the default location set by the root namespace).
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">6.9.3   </span> <a 
  id="x37-450006.9.3"></a>Task stdout And stderr Logs</h5>
-<!--l. 1435--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
+<!--l. 1465--><p class="noindent" >The stdout and stderr logs generated when a task is submitted end up in the suite.rc <span 
 class="cmti-10">job submission log</span>
 <span 
 class="cmti-10">directory</span>, default location <span class="lstinline"><span 
@@ -239,8 +243,9 @@ class="pcrr7t-">/</span></span> (where the
 variable <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_SUITE_REG_NAME</span></span> evalutes to the registered suite name hierarchy, e.g.&#x00A0;foo.bar.baz):
-</p><!--l. 1440-->
-   <div class="lstlisting" id="listing-34"><span class="label"><a 
+</p><!--l. 1470--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x37-45001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -285,12 +290,13 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">log</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">job</span>
-   
+
+
    </div>
-<!--l. 1444--><p class="indent" >   (or use the <span class="lstinline"><span 
+<!--l. 1474--><p class="indent" >   (or use the <span class="lstinline"><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">directories</span></span> argument as shown just above).
-</p><!--l. 1446--><p class="indent" >   These files will contain the complete stdout and stderr record for tasks whose initiating processes do not detach
+</p><!--l. 1476--><p class="indent" >   These files will contain the complete stdout and stderr record for tasks whose initiating processes do not detach
 and exit before all task processing is finished. The location of output generated by secondary processes, if the
 original process detaches and exits early, is up to the task implementation (of said secondary processes,
 specifically).
@@ -298,12 +304,12 @@ specifically).
 
                                                                                          
 </p>
-   <!--l. 1452--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1482--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu26.html" >next</a>] [<a 
 href="cug-htmlsu24.html" >prev</a>] [<a 
 href="cug-htmlsu24.html#tailcug-htmlsu24.html" >prev-tail</a>] [<a 
 href="cug-htmlsu25.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu25.html" >up</a>] </p></div>
-<!--l. 1452--><p class="indent" >   <a 
+<!--l. 1482--><p class="indent" >   <a 
  id="tailcug-htmlsu25.html"></a>  </p> 
 </body></html> 

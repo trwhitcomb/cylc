@@ -4,54 +4,53 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Omitting Defined Tasks At Runtime</title> 
+<head><title>Omitting Tasks At Runtime</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3585--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3635--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu39.html" >prev</a>] [<a 
 href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu40.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu40.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.8   </span> <a 
- id="x61-1060008.8"></a>Omitting Defined Tasks At Runtime</h4>
-<!--l. 3587--><p class="noindent" >It is sometimes convenient to omit certain tasks from the suite at runtime without actually deleting their definitions
-entirely from the suite definition.
-</p><!--l. 3591--><p class="indent" >   Defining [runtime] properties for tasks that do not appear in the suite graph results in (verbose-mode) validation
-warnings that the tasks are disabled - they cannot be used, either for insertion into the running suite with
+ id="x61-1060008.8"></a>Omitting Tasks At Runtime</h4>
+<!--l. 3637--><p class="noindent" >It is sometimes convenient to omit certain tasks from the suite at runtime without actually deleting their definitions
+from the suite.
+</p><!--l. 3640--><p class="indent" >   Defining [runtime] properties for tasks that do not appear in the suite graph results in verbose-mode validation
+warnings that the tasks are disabled. They cannot be used because the suite graph is what defines their
+dependencies and valid cycle times. Nevertheless, it is legal to leave these orphaned runtime sections in the suite
+definition because it allows you to temporarily remove tasks from the suite by simply commenting them out of the
+graph.
+</p><!--l. 3648--><p class="indent" >   To omit a task from the suite at runtime but still leave it fully defined and available for use (by insertion or
 <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">insert</span></span> or outside of the suite with <span class="lstinline"><span 
-class="pcrr7t-">cylc</span><span 
-class="pcrr7t-">&#x00A0;</span><span 
-class="pcrr7t-">submit</span></span>, because if ommitted from the graph cylc
-does not know their valid cycle times (or even if they are cycling tasks) or their dependencies (for
-insertion). Nevertheless, it is legal to leave these orphaned runtime sections in the suite definition
-because it allows you to temporarily remove tasks from the suite by simply commenting them out of the
-graph.
-</p><!--l. 3602--><p class="indent" >   To omit a task from the suite at runtime but still leave it fully defined and available for insertion or lone
-submission, use one or both of the [scheduling][[special task]] lists, &#8220;tasks to include at start-up&#8221; and &#8220;tasks to
+class="pcrr7t-">submit</span></span>) use one or both of [scheduling][[special task]] lists, &#8220;tasks to include at start-up&#8221; or &#8220;tasks to
 exclude at start-up&#8221; (documented in Sections&#x00A0;<a 
 href="cug-htmlsu68.html#x97-200000A.3.5.8">A.3.5.8<!--tex4ht:ref: IASU --></a> and&#x00A0;<a 
-href="cug-htmlsu68.html#x97-199000A.3.5.7">A.3.5.7<!--tex4ht:ref: EASU --></a>). In this case the graph still defines the validity of
-and dependencies involving the omitted tasks, but they are not actually instantiated in the suite at start-up. Other
-tasks that depend on the omitted ones will have to wait on their insertion at a later time or otherwise be triggered
+href="cug-htmlsu68.html#x97-199000A.3.5.7">A.3.5.7<!--tex4ht:ref: EASU --></a>). Then the graph still defines the validity of the
+tasks and their dependencies, but they are not actually inserted into the suite at start-up. Other tasks that depend
+on the omitted ones, if any, will have to wait on their insertion at a later time or otherwise be triggered
 manually.
+</p><!--l. 3658--><p class="indent" >   Finally, with Jinja2 (Section&#x00A0;<a 
+href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) you can radically alter suite structure by including or excluding tasks from the
+[scheduling] and [runtime] sections according to the value of a single logical flag defined at the top of the
+suite.
 </p>
-   <!--l. 3612--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3663--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse9.html" >next</a>] [<a 
 href="cug-htmlsu39.html" >prev</a>] [<a 
 href="cug-htmlsu39.html#tailcug-htmlsu39.html" >prev-tail</a>] [<a 
 href="cug-htmlsu40.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu40.html" >up</a>] </p></div>
-<!--l. 3612--><p class="indent" >   <a 
+<!--l. 3663--><p class="indent" >   <a 
  id="tailcug-htmlsu40.html"></a> </p> 
 </body></html> 

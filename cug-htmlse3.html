@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -29,67 +29,67 @@ class="cmbx-10">A Linux or Unix OS. </span>Cylc assumes Unix-style file paths in
      run successfully on Mac OSX.
      </li>
      <li class="itemize"><span 
-class="cmbx-10">The Python Language, version 2.4</span>+<span 
-class="cmbx-10">, latest tested 2.7.2</span>. Not Python 3.x yet; as of mid 2011
-     version 2.7 is the standard for new Linux distributions. <br 
-class="newline" /><a 
+class="cmbx-10">The Python Language, v 2.4</span>+<span 
+class="cmbx-10">, preferably 2.5</span>+<span 
+class="cmbx-10">, latest tested 2.7.2</span>. Not Python 3.x yet; as of
+     mid 2011 version 2.7 is the standard for new Linux distributions.
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://python.org" class="url" ><span 
-class="pcrr7t-">http://python.org</span></a>
+class="pcrr7t-">http://python.org</span></a></span>
      </li>
      <li class="itemize"><span 
 class="cmbx-10">Pyro (Python Remote Objects), version 3.9.1</span>+<span 
 class="cmbx-10">, latest tested 3.15</span>. Not Pyro 4.x yet; as
      of mid 2011 version 3.x is still recommended for production use. Pyro is used by cylc for network
      communication between server processes (cylc suites) and client programs (running tasks, control GUIs
-     and commands). <br 
-class="newline" /><a 
+     and commands).
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://irmen.home.xs4all.nl/pyro3" class="url" ><span 
-class="pcrr7t-">http://irmen.home.xs4all.nl/pyro3</span></a>
+class="pcrr7t-">http://irmen.home.xs4all.nl/pyro3</span></a></span>
      </li>
      <li class="itemize"><span 
-class="cmbx-10">Cylc</span>, this version: 4.2.0 . <br 
-class="newline" /><a 
+class="cmbx-10">Cylc</span>, this version: 4.2.1 .
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://hjoliver.github.com/cylc" class="url" ><span 
-class="pcrr7t-">http://hjoliver.github.com/cylc</span></a></li></ul>
-<!--l. 483--><p class="noindent" >The following packages are technically optional as you can construct and control cylc suites without dependency
+class="pcrr7t-">http://hjoliver.github.com/cylc</span></a></span></li></ul>
+<!--l. 484--><p class="noindent" >The following packages are technically optional as you can construct and control cylc suites without dependency
 graphing, the cylc GUIs, and template processing:
 </p>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="cmbx-10">PyGTK</span>, a Python wrapper for the GTK+ GUI toolkit, required for the gcylc GUI (but you can
      prepare and control cylc suites entirely from the command line if you like). PyGTK is included in most
-     Linux Distributions. <br 
-class="newline" /><a 
+     Linux Distributions.
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://www.pygtk.org" class="url" ><span 
-class="pcrr7t-">http://www.pygtk.org</span></a>
+class="pcrr7t-">http://www.pygtk.org</span></a></span>
      </li>
      <li class="itemize"><span 
 class="cmbx-10">Graphviz </span>(latest tested 2.28.0) and <span 
 class="cmbx-10">Pygraphviz </span>(latest tested 1.1), a graph layout engine and a
      Python interface to it. These are required for suite dependency graphing and the graph suite control
-     GUI (but you can also run cylc without them). <br 
-class="newline" /><a 
+     GUI (but you can also run cylc without them).
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://www.graphviz.org" class="url" ><span 
-class="pcrr7t-">http://www.graphviz.org</span></a> <br 
-class="newline" /><a 
+class="pcrr7t-">http://www.graphviz.org</span></a></span>
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://networkx.lanl.gov/pygraphviz" class="url" ><span 
-class="pcrr7t-">http://networkx.lanl.gov/pygraphviz</span></a>
+class="pcrr7t-">http://networkx.lanl.gov/pygraphviz</span></a></span>
      </li>
      <li class="itemize"><span 
-class="cmbx-10">Jinja2</span>, a template processor for Python (latest tested: 2.6). Jinja2 expressions allow use of variables,
-     mathematical expressions, loop control and conditional expressions in suite definitions, to generate the
-     final suite seen by cylc. <br 
-class="newline" /><a 
+class="cmbx-10">Jinja2</span>, a template processor for Python (latest tested: 2.6). Jinja2 adds variables, conditional and
+     mathematical expressions, loop control structures, etc., to cylc suite definition files.
+     <br class="newline" /><span class="obeylines-h"><a 
 href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></li></ul>
+class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span></li></ul>
+<!--l. 508--><p class="noindent" >
+</p>
                                                                                          
 
                                                                                          
-<!--l. 507--><p class="noindent" >
-</p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >3.1 <a 
-href="cug-htmlsu5.html#x11-100003.1">Known Compatibility Issues</a></span>
+href="cug-htmlsu5.html#x11-100003.1">Known Version Compatibility Issues</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >3.2 <a 
 href="cug-htmlsu6.html#x12-110003.2">Other Software Used Internally By Cylc</a></span>
    </div>
@@ -97,12 +97,12 @@ href="cug-htmlsu6.html#x12-110003.2">Other Software Used Internally By Cylc</a><
                                                                                          
 
                                                                                          
-   <!--l. 532--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 562--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu5.html" >next</a>] [<a 
 href="cug-htmlse2.html" >prev</a>] [<a 
 href="cug-htmlse2.html#tailcug-htmlse2.html" >prev-tail</a>] [<a 
 href="cug-htmlse3.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse3.html" >up</a>] </p></div>
-<!--l. 532--><p class="indent" >   <a 
+<!--l. 562--><p class="indent" >   <a 
  id="tailcug-htmlse3.html"></a> </p> 
 </body></html> 

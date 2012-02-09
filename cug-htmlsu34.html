@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1898--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1928--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu35.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
@@ -22,25 +22,24 @@ href="#tailcug-htmlsu34.html">tail</a>] [<a
 href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.2   </span> <a 
  id="x48-590008.2"></a>Suite.rc File Overview</h4>
-<!--l. 1901--><p class="noindent" >Suite.rc files conform to the ConfigObj extended INI format (<a 
+<!--l. 1931--><p class="noindent" >Suite.rc files conform to the ConfigObj extended INI format (<span class="obeylines-h"><a 
 href="http://www.voidspace.org.uk/python/configobj.html" class="url" ><span 
-class="pcrr7t-">http://www.voidspace.org.uk/python/configobj.html</span></a>)
+class="pcrr7t-">http://www.voidspace.org.uk/python/configobj.html</span></a></span>)
 with several modifications to allow continuation lines and include-files, and to make it legal to redefine
 environment variables and scheduler directives (duplicate config item definitions are normally flagged as an
 error).
-</p><!--l. 1908--><p class="indent" >   Additionally, embedded template processor expressions may be used in the file, to programatically
-generate the final suite definition seen by cylc. Currently the Jinja2 template engine is supported
-(<a 
+</p><!--l. 1938--><p class="indent" >   Additionally, embedded template processor expressions may be used in the file, to programatically
+generate the final suite definition seen by cylc. Currently the Jinja2 template engine is supported (<span class="obeylines-h"><a 
 href="http://jinja.pocoo.org/docs" class="url" ><span 
-class="pcrr7t-">http://jinja.pocoo.org/docs</span></a>). In the future cylc may provide a plug-in interface to allow use of other
+class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span>). In the future cylc may provide a plug-in interface to allow use of other
 template engines too. See <span 
 class="cmti-10">Jinja2 Suite Templates </span>(Section&#x00A0;<a 
 href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) for some examples.
-</p><!--l. 1916--><p class="noindent" >
+</p><!--l. 1946--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.1   </span> <a 
  id="x48-600008.2.1"></a>Syntax</h5>
-<!--l. 1918--><p class="noindent" >The following list shows legal raw suite.rc syntax. Suites using the Jinja2 template processor (Section&#x00A0;<a 
+<!--l. 1948--><p class="noindent" >The following list shows legal raw suite.rc syntax. Suites using the Jinja2 template processor (Section&#x00A0;<a 
 href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) can of
 course use Jinja2 syntax as well (it must generate raw syntax on processing).
 </p>
@@ -103,8 +102,9 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">rc</span></span>.</li></ul>
-<!--l. 1948--><p class="indent" >   The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1950-->
-   <div class="lstlisting" id="listing-48"><span class="label"><a 
+<!--l. 1978--><p class="indent" >   The following pseudo-listing illustrates suite.rc syntax:  </p><!--l. 1980--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x48-60003r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -229,7 +229,7 @@ class="pcrr7t-">brown</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fox</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x48-60009r7"></a></span><span 
+ id="x48-60009r7"></a></span></span><span 
 class="pcrr7t-">jumped</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">over</span><span 
@@ -474,18 +474,20 @@ class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">...</span>
-   
+
+
    </div>
-<!--l. 1975--><p class="noindent" >
+<!--l. 2005--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.2   </span> <a 
  id="x48-610008.2.2"></a>Include-Files</h5>
-<!--l. 1977--><p class="noindent" >Cylc has native support for suite.rc include-files, which may help to organize large suites. Inclusion
+<!--l. 2007--><p class="noindent" >Cylc has native support for suite.rc include-files, which may help to organize large suites. Inclusion
 boundaries are completely arbitrary - you can think of include-files as chunks of the suite.rc file simply
 cut-and-pasted into another file. Include-files may be included multiple times in the same file, and
 even nested. Include-file paths can be specified portably relative to the suite definition directory, e.g.:
-</p><!--l. 1985-->
-   <div class="lstlisting" id="listing-49"><span class="label"><a 
+</p><!--l. 2015--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x48-61001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -521,15 +523,17 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">rc</span>
-   
+
+
    </div>
-<!--l. 1991--><p class="noindent" >
+<!--l. 2021--><p class="noindent" >
 </p>
-<!--l. 1991--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2021--><p class="noindent" ><span class="paragraphHead"><a 
  id="x48-620008.2.2.1"></a><span 
 class="cmbx-10">Editing Temporarily Inlined Suites</span></span>
-   Cylc&#8217;s native file inclusion mechanism supports optional inlined editing: </p><!--l. 1995-->
-   <div class="lstlisting" id="listing-50"><span class="label"><a 
+   Cylc&#8217;s native file inclusion mechanism supports optional inlined editing: </p><!--l. 2025--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x48-62001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -541,9 +545,10 @@ class="pcrr7t-">--</span><span
 class="pcrr7t-">inline</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">SUITE</span>
-   
+
+
    </div>
-<!--l. 1998--><p class="indent" >   The suite will be split back into its constituent include-files when you exit the edit session. While editing, the
+<!--l. 2028--><p class="indent" >   The suite will be split back into its constituent include-files when you exit the edit session. While editing, the
 inlined file becomes the official suite definition so that changes take effect whenever you save the file. See
 <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
@@ -554,20 +559,20 @@ class="pcrr7t-">edit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">help</span></span> for more information.
-</p><!--l. 2003--><p class="noindent" >
+</p><!--l. 2033--><p class="noindent" >
 </p>
-<!--l. 2003--><p class="noindent" ><span class="paragraphHead"><a 
+<!--l. 2033--><p class="noindent" ><span class="paragraphHead"><a 
  id="x48-630008.2.2.2"></a><span 
 class="cmbx-10">Include-Files via Jinja2</span></span>
    Jinja2 (Section&#x00A0;<a 
 href="cug-htmlsu38.html#x59-1040008.6">8.6<!--tex4ht:ref: Jinja2 --></a>) provides template inclusion functionality although this is more akin to Python
 module import than simple text inclusion, and the implications of this for suite design have not yet been
 explored.
-</p><!--l. 2010--><p class="noindent" >
+</p><!--l. 2040--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.3   </span> <a 
  id="x48-640008.2.3"></a>Syntax Highlighting In Vim</h5>
-<!--l. 2014--><p class="noindent" >Cylc comes with a syntax file to configure suite.rc syntax highlighting and section folding in the <span 
+<!--l. 2044--><p class="noindent" >Cylc comes with a syntax file to configure suite.rc syntax highlighting and section folding in the <span 
 class="cmti-10">vim </span>editor, as
 shown in Figure&#x00A0;<a 
 href="cug-htmlse2.html#x9-800414">14<!--tex4ht:ref: fig-cylc-vim --></a>. To use this, copy <span class="lstinline"><span 
@@ -595,11 +600,11 @@ file.
                                                                                          
 
                                                                                          
-</p><!--l. 2022--><p class="noindent" >
+</p><!--l. 2052--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.4   </span> <a 
  id="x48-650008.2.4"></a>Gross File Structure</h5>
-<!--l. 2024--><p class="noindent" >Cylc suite.rc files consist of a suite title and description followed by configuration items grouped under several top
+<!--l. 2054--><p class="noindent" >Cylc suite.rc files consist of a suite title and description followed by configuration items grouped under several top
 level section headings:
 </p>
      <ul class="itemize1">
@@ -630,11 +635,11 @@ class="cmti-10">root </span>namespace
      </li>
      <li class="itemize"><span 
 class="cmbx-10">[visualization]  </span>- configures suite graphing and the graph suite control GUI.</li></ul>
-<!--l. 2052--><p class="noindent" >
+<!--l. 2082--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">8.2.5   </span> <a 
  id="x48-660008.2.5"></a>Validation</h5>
-<!--l. 2055--><p class="noindent" >Cylc suite.rc files are automatically validated against a specification file that defines all legal entries, values, options,
+<!--l. 2085--><p class="noindent" >Cylc suite.rc files are automatically validated against a specification file that defines all legal entries, values, options,
 and defaults (<span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
@@ -650,9 +655,10 @@ class="cmti-10">Suite.rc</span>
 <span 
 class="cmti-10">Reference </span>(Appendix&#x00A0;<a 
 href="cug-htmlse13.html#x94-153000A">A<!--tex4ht:ref: SuiteRCReference --></a>).
-</p><!--l. 2064--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
-a missing right bracket. </p><!--l. 2066-->
-   <div class="lstlisting" id="listing-51"><span class="label"><a 
+</p><!--l. 2094--><p class="indent" >   The validator reports the line numbers of detected errors. Here&#8217;s an example showing a subsection heading with
+a missing right bracket. </p><!--l. 2096--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x48-66001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -714,9 +720,10 @@ class="pcrr7t-">:</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">1</span>
-   
+
+
    </div>
-<!--l. 2074--><p class="indent" >   If the suite.rc file contains include-files you can use <span class="lstinline"><span 
+<!--l. 2104--><p class="indent" >   If the suite.rc file contains include-files you can use <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">view</span></span> to view an inlined copy with correct line
@@ -727,19 +734,19 @@ class="pcrr7t-">edit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">inline</span></span>).
-</p><!--l. 2079--><p class="indent" >   Validation does not check the validity of chosen job submission methods; this is to allow users to
+</p><!--l. 2109--><p class="indent" >   Validation does not check the validity of chosen job submission methods; this is to allow users to
 extend cylc with their own job submission methods, which are by definition unknown to the suiterc.spec
 file.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 2084--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 2114--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu35.html" >next</a>] [<a 
 href="cug-htmlsu33.html" >prev</a>] [<a 
 href="cug-htmlsu33.html#tailcug-htmlsu33.html" >prev-tail</a>] [<a 
 href="cug-htmlsu34.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu34.html" >up</a>] </p></div>
-<!--l. 2084--><p class="indent" >   <a 
+<!--l. 2114--><p class="indent" >   <a 
  id="tailcug-htmlsu34.html"></a>  </p> 
 </body></html> 

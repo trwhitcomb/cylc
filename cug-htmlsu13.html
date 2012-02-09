@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 631--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 661--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
 href="cug-htmlsu12.html" >prev</a>] [<a 
 href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
@@ -22,14 +22,14 @@ href="#tailcug-htmlsu13.html">tail</a>] [<a
 href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">4.7   </span> <a 
  id="x20-190004.7"></a>Complete Non-System-Level Installation</h4>
-<!--l. 634--><p class="noindent" >If you do not have root access to your host machine and cannot easily get Pyro, graphviz, Pygraphviz, and Jinja2
+<!--l. 664--><p class="noindent" >If you do not have root access to your host machine and cannot easily get Pyro, graphviz, Pygraphviz, and Jinja2
 installed at system level, here&#8217;s how to install everything under your home directory.
-</p><!--l. 638--><p class="indent" >   First, cylc is already designed to be installed into a normal user account - just unpack the release tarball
+</p><!--l. 668--><p class="indent" >   First, cylc is already designed to be installed into a normal user account - just unpack the release tarball
 into <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span></span>. If you invoke cylc commands at this stage you will get a warning that Pyro is not
 installed.
-</p><!--l. 643--><p class="indent" >   Next, create a new sub-directory in the cylc source tree, <span class="lstinline"><span 
+</p><!--l. 673--><p class="indent" >   Next, create a new sub-directory in the cylc source tree, <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
@@ -37,18 +37,19 @@ class="pcrr7t-">external</span></span>, and download the
 Pyro, Graphviz, and Pygraphviz source distributions to it (the URLs are given at the beginning of
 Section&#x00A0;<a 
 href="cug-htmlse3.html#x10-90003">3<!--tex4ht:ref: Requirements --></a>).
-</p><!--l. 648--><p class="noindent" >
+</p><!--l. 678--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.1   </span> <a 
  id="x20-200004.7.1"></a>Pyro</h5>
-<!--l. 650--><p class="noindent" >Install Pyro under <span class="lstinline"><span 
+<!--l. 680--><p class="noindent" >Install Pyro under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">HOME</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installed</span></span> as follows: </p><!--l. 651-->
-   <div class="lstlisting" id="listing-4"><span class="label"><a 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 681--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-20001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -100,9 +101,10 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">installed</span>
-   
+
+
    </div>
-<!--l. 657--><p class="indent" >   Take note of the resulting Python <span class="lstinline"><span 
+<!--l. 687--><p class="indent" >   Take note of the resulting Python <span class="lstinline"><span 
 class="pcrr7t-">site</span><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">packages</span></span> directory under <span class="lstinline"><span 
@@ -110,8 +112,9 @@ class="pcrr7t-">external</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">installed</span><span 
 class="pcrr7t-">/</span></span>, e.g.:
-</p><!--l. 659-->
-   <div class="lstlisting" id="listing-5"><span class="label"><a 
+</p><!--l. 689--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-20005r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">HOME</span><span 
@@ -128,13 +131,15 @@ class="pcrr7t-">site</span><span
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">packages</span><span 
 class="pcrr7t-">/</span>
-   
+
+
    </div>
-<!--l. 662--><p class="indent" >   The exact path will depend on your local Python environment. Configure your login script for the cylc
+<!--l. 692--><p class="indent" >   The exact path will depend on your local Python environment. Configure your login script for the cylc
 environment as described in Section&#x00A0;<a 
 href="cug-htmlsu9.html#x16-150004.3">4.3<!--tex4ht:ref: ConfiguringYourEnvironmentForCylc --></a> above and add in this new installation path; for example:
-</p><!--l. 666-->
-   <div class="lstlisting" id="listing-6"><span class="label"><a 
+</p><!--l. 696--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-20006r1"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -176,10 +181,12 @@ class="pcrr7t-">bin</span><span
 class="pcrr7t-">:</span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PATH</span>
-   
+
+
    </div>
-<!--l. 672--><p class="indent" >   Now you should be able to get cylc to print its release version: </p><!--l. 673-->
-   <div class="lstlisting" id="listing-7"><span class="label"><a 
+<!--l. 702--><p class="indent" >   Now you should be able to get cylc to print its release version: </p><!--l. 703--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-20009r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -218,15 +225,16 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">y</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">z</span>
-   
+
+
    </div>
-<!--l. 678--><p class="indent" >   If this command aborts and says that Pyro is not installed or is not available, then you have either not installed
+<!--l. 708--><p class="indent" >   If this command aborts and says that Pyro is not installed or is not available, then you have either not installed
 Pyro (check the output of the installation command carefully) <span 
 class="cmti-10">or </span>you have not pointed to the installed
 Pyro modules in your PYTHONPATH, <span 
 class="cmti-10">or </span>you have not sourced the cylc environment since updating
 PYTHONPATH.
-</p><!--l. 684--><p class="indent" >   <span 
+</p><!--l. 714--><p class="indent" >   <span 
 class="cmti-10">Note that Pyro can also be installed with </span><span class="lstinline"><span 
 class="pcrro7t-">easy_install</span></span><span 
 class="cmti-10">, which downloads and installs python packages in one</span>
@@ -235,16 +243,17 @@ class="cmti-10">shot.</span>
                                                                                          
 
                                                                                          
-</p><!--l. 687--><p class="noindent" >
+</p><!--l. 717--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.2   </span> <a 
  id="x20-210004.7.2"></a>Create The Central Suite Database</h5>
-<!--l. 689--><p class="noindent" >Now create the suite database and upload the example suites as described in Section&#x00A0;<a 
+<!--l. 719--><p class="noindent" >Now create the suite database and upload the example suites as described in Section&#x00A0;<a 
 href="cug-htmlsu10.html#x17-160004.4">4.4<!--tex4ht:ref: CreatingTheCentralSuiteDatabase --></a>. At this point you should
 have access to all cylc functionality except for suite graphing and the graph based suite control GUI. For example
 (change your admin username and cylc version number appropriately, after inspecting the content of the new central
-database): </p><!--l. 695-->
-   <div class="lstlisting" id="listing-8"><span class="label"><a 
+database): </p><!--l. 725--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-21001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -479,20 +488,22 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">new</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">run</span>
-   
+
+
    </div>
-<!--l. 711--><p class="noindent" >
+<!--l. 741--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.3   </span> <a 
  id="x20-220004.7.3"></a>Graphviz</h5>
-<!--l. 713--><p class="noindent" >Install Graphviz under <span class="lstinline"><span 
+<!--l. 743--><p class="noindent" >Install Graphviz under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installed</span></span> as follows: </p><!--l. 715-->
-   <div class="lstlisting" id="listing-9"><span class="label"><a 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 745--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-22001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -558,16 +569,17 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">make</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">install</span>
-   
+
+
    </div>
-<!--l. 723--><p class="indent" >   This installs graphviz files into the bin, include, and lib sub-directories of your local installation directory. The
+<!--l. 753--><p class="indent" >   This installs graphviz files into the bin, include, and lib sub-directories of your local installation directory. The
 local installation section of <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">profile</span></span> (above) provides access to the graphviz executables in this bin
 directory, although you will probably not need to use them. The graphviz lib and include locations are required
 when installing Pygraphviz (next).
-</p><!--l. 730--><p class="indent" >   Note that the graphviz build may fail on systems that do not have QT installed, hence the
+</p><!--l. 760--><p class="indent" >   Note that the graphviz build may fail on systems that do not have QT installed, hence the
 <span class="lstinline"><span 
 class="pcrr7t-">./</span><span 
 class="pcrr7t-">configure</span><span 
@@ -578,18 +590,19 @@ class="pcrr7t-">-</span><span
 class="pcrr7t-">qt</span><span 
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">no</span></span> option above.
-</p><!--l. 733--><p class="noindent" >
+</p><!--l. 763--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.4   </span> <a 
  id="x20-230004.7.4"></a>Pygraphviz</h5>
-<!--l. 734--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
+<!--l. 764--><p class="noindent" >Install Pygraphviz under <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
-class="pcrr7t-">installed</span></span> as follows: </p><!--l. 736-->
-   <div class="lstlisting" id="listing-10"><span class="label"><a 
+class="pcrr7t-">installed</span></span> as follows: </p><!--l. 766--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-23001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -620,10 +633,12 @@ class="pcrr7t-">cd</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">pygraphviz</span><span 
 class="pcrr7t-">-1.1</span>
-   
+
+
    </div>
-<!--l. 741--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 743-->
-   <div class="lstlisting" id="listing-11"><span class="label"><a 
+<!--l. 771--><p class="indent" >   Now edit setup.py lines 31 and 32 to specify the graphviz lib and include directories: </p><!--l. 773--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-23004r1"></a></span><span 
 class="pcrr7t-">library_path</span><span 
 class="pcrr7t-">=</span><span 
@@ -665,14 +680,16 @@ class="pcrr7t-">include</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">graphviz</span><span 
 class="pcrr7t-">'</span>
-   
+
+
    </div>
-<!--l. 747--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
+<!--l. 777--><p class="indent" >   Or you can just specify the absolute paths if you like, instead of using the <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span></span> environment variable.
 Check that these are the correct library and include paths by inspecting the contents of the specified directories, and
-adjust them if necessary. Finally, install pygraphviz: </p><!--l. 752-->
-   <div class="lstlisting" id="listing-12"><span class="label"><a 
+adjust them if necessary. Finally, install pygraphviz: </p><!--l. 782--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-23006r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -706,14 +723,16 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">external</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">installed</span>
-   
-   </div>
-<!--l. 756--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
-as the Pyro modules, e.g.: </p><!--l. 758-->
-                                                                                         
 
-                                                                                         
-   <div class="lstlisting" id="listing-13"><span class="label"><a 
+
+   </div>
+<!--l. 786--><p class="indent" >   This may or may not, depending on your local Python setup, install the Pygraphviz modules into the same place
+as the Pyro modules, e.g.: </p><!--l. 788--><div class="lstlisting">
+
+
+
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-23008r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -759,10 +778,11 @@ class="pcrr7t-">.6.</span><span
 class="pcrr7t-">egg</span><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">info</span>
-   
+
+
    </div>
-<!--l. 762--><p class="indent" >   If not, add the correct Pyraphviz installation path to your PYTHONPATH.
-</p><!--l. 764--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python
+<!--l. 792--><p class="indent" >   If not, add the correct Pyraphviz installation path to your PYTHONPATH.
+</p><!--l. 794--><p class="indent" >   The easiest way to check that pygraphviz has been installed properly is to start an interactive Python
 session (type <span class="lstinline"><span 
 class="pcrr7t-">python</span></span> after sourcing the cylc environment to configure your PYTHONPATH) then type
 <span class="lstinline"><span 
@@ -780,11 +800,11 @@ graphviz itself has not been installed properly (or if the graphviz libraries ha
 installed pygraphviz) then the initial pygraphiz import will be successful but a lower level import will fail
 when the pygraphviz modules cannot load the underlying graphviz libraries - in that case, reinstall
 graphviz.
-</p><!--l. 780--><p class="noindent" >
+</p><!--l. 810--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.5   </span> <a 
  id="x20-240004.7.5"></a>Jinja2</h5>
-<!--l. 782--><p class="noindent" >You can download Jinja2 from the project web site and install it with <span class="lstinline"><span 
+<!--l. 812--><p class="noindent" >You can download Jinja2 from the project web site and install it with <span class="lstinline"><span 
 class="pcrr7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">setup</span><span 
@@ -803,8 +823,9 @@ also need to create the installed package directory yourself first (if so, the i
 the missing directory in the error message). Here&#8217;s how to easy_install Jinja2 into your new private python site
 packages directory:
 </p>
-   <!--l. 793-->
-   <div class="lstlisting" id="listing-14"><span class="label"><a 
+   <!--l. 823--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x20-24001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -862,19 +883,20 @@ class="pcrr8c-">$</span><span
 class="pcrr7t-">LOCALPREFIX</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">Jinja2</span>
-   
+
+
    </div>
-<!--l. 799--><p class="indent" >   Adapt the site-packages path according to your actual path, as above.
+<!--l. 829--><p class="indent" >   Adapt the site-packages path according to your actual path, as above.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 801--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 831--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
 href="cug-htmlsu12.html" >prev</a>] [<a 
 href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
 href="cug-htmlsu13.html" >front</a>] [<a 
 href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
-<!--l. 801--><p class="indent" >   <a 
+<!--l. 831--><p class="indent" >   <a 
  id="tailcug-htmlsu13.html"></a>  </p> 
 </body></html> 

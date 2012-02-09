@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1575--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1605--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse7.html" >next</a>] [<a 
 href="cug-htmlsu28.html" >prev</a>] [<a 
 href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
@@ -22,13 +22,13 @@ href="#tailcug-htmlsu29.html">tail</a>] [<a
 href="cug-htmlse6.html#cug-htmlsu29.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">6.13   </span> <a 
  id="x41-490006.13"></a>Other Example Suites</h4>
-<!--l. 1577--><p class="noindent" >Cylc has been designed from the ground up to make prototyping and testing new suites very easy. Simply drawing
+<!--l. 1607--><p class="noindent" >Cylc has been designed from the ground up to make prototyping and testing new suites very easy. Simply drawing
 (in text) a dependency graph in a new suite definition creates a valid suite that you can run: the tasks will be
 <span 
 class="cmti-10">dummy tasks </span>that default to emitting an identifying message, sleeping for a few seconds, and then exiting; but you
 can then arrange for particular tasks to do more complex things by configuring their runtime properties
 appropriately.
-</p><!--l. 1585--><p class="indent" >   Cylc has example suites intended to illustrate most facets of suite construction. These are held centrally under
+</p><!--l. 1615--><p class="indent" >   Cylc has example suites intended to illustrate most facets of suite construction. These are held centrally under
 <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
@@ -42,7 +42,7 @@ are not executed in the right order. All of the example suites are portable in t
 I/O directory paths incorporate the suite registration name (this is the default situation for any suite
 in fact), so you can run multiple copies of the same suite at once without any interference between
 them.
-</p><!--l. 1601--><p class="indent" >   Use <span class="lstinline"><span 
+</p><!--l. 1631--><p class="indent" >   Use <span class="lstinline"><span 
 class="pcrr7t-">gcylc</span></span> or <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -60,8 +60,9 @@ available. Now use <span class="lstinline"><span
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">import</span></span> to copy an example suite (or some subset of them, or all of them at once) to your
-private database so that you can modify it and run it: </p><!--l. 1606-->
-   <div class="lstlisting" id="listing-40"><span class="label"><a 
+private database so that you can modify it and run it: </p><!--l. 1636--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x41-49001r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -433,12 +434,12 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">eg</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">z</span>
-   
+
+
    </div>
-   <!--l. 1629--><div class="lstinputlisting">
 <a 
  id="x41-49020"></a>
-   <span 
+   <!--l. 1659--><pre class="listings"><!--l. 1659--><div class="lstinputlisting"><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x41-49021r1"></a></span><span 
 class="pcrr7t-">title</span><span 
@@ -636,7 +637,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostA</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x41-49034r14"></a></span><span 
+ id="x41-49034r14"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -709,28 +710,27 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=&#x003E;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">PostB</span><span 
-class="pcrr7t-">"</span>
-   
-   </div>
-<!--l. 1631--><p class="noindent" >(This suite is explained in the <span 
+class="pcrr7t-">"</span></div>
+   </pre>
+(This suite is explained in the <span 
 class="cmti-10">Quick Start Guide</span>, Section&#x00A0;<a 
 href="cug-htmlse6.html#x27-300006">6<!--tex4ht:ref: QuickStartGuide --></a>).
-</p><!--l. 1635--><p class="noindent" >
+<!--l. 1665--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">6.13.1   </span> <a 
  id="x41-500006.13.1"></a>Choosing The Initial Cycle Time</h5>
-<!--l. 1637--><p class="noindent" >When running any suite in live mode (or suites that depend on clock-triggered tasks at least) do not give an initial
+<!--l. 1667--><p class="noindent" >When running any suite in live mode (or suites that depend on clock-triggered tasks at least) do not give an initial
 cycle time in the future unless you want nothing to happen until that time. However, you can also run any suite in
 <span 
 class="cmti-10">simulation mode </span>in which case a future start time is fine (see Appendix&#x00A0;<a 
 href="cug-htmlse17.html#x109-339000E">E<!--tex4ht:ref: SimulationMode --></a>).
 </p>
-   <!--l. 1645--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1675--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse7.html" >next</a>] [<a 
 href="cug-htmlsu28.html" >prev</a>] [<a 
 href="cug-htmlsu28.html#tailcug-htmlsu28.html" >prev-tail</a>] [<a 
 href="cug-htmlsu29.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu29.html" >up</a>] </p></div>
-<!--l. 1645--><p class="indent" >   <a 
+<!--l. 1675--><p class="indent" >   <a 
  id="tailcug-htmlsu29.html"></a>  </p> 
 </body></html> 

@@ -4,40 +4,391 @@
 <!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
 <html xmlns="http://www.w3.org/1999/xhtml"  
 > 
-<head><title>Known Compatibility Issues</title> 
+<head><title>Known Version Compatibility Issues</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 507--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 508--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu6.html" >next</a>] [<a 
 href="cug-htmlse3.html" >prev</a>] [<a 
 href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu5.html">tail</a>] [<a 
 href="cug-htmlse3.html#cug-htmlsu5.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
- id="x11-100003.1"></a>Known Compatibility Issues</h4>
-<!--l. 509--><p class="noindent" >Cylc should run out of the box on reasonably recent Linux distributions.
-</p><!--l. 511--><p class="indent" >   Beware of old Linux distributions that come packaged with Pyro 3.9 or earlier, which is not compatible with the
+ id="x11-100003.1"></a>Known Version Compatibility Issues</h4>
+<!--l. 510--><p class="noindent" >Cylc should run out of the box on reasonably recent Linux distributions.
+</p><!--l. 512--><p class="indent" >   For distributed suites the Pyro versions installed on all suite or task hosts must be mutually compatible. Using
+identical Pyro versions guarantees compatibility but is generally not necessary.
+</p><!--l. 516--><p class="indent" >   Recent versions of Pyro require Python 2.5 or greater, due to use of the &#8216;with&#8217; statement introduced in
+2.5.
+</p><!--l. 519--><p class="indent" >   Beware of old Linux distributions that come packaged with Pyro 3.9 or earlier, which is not compatible with the
 new-style Python classes used in cylc. It has been reported that Ubuntu 10.04 (Lucid Lynx), released in September
-2009, suffers from this problem.
-</p><!--l. 516--><p class="indent" >   Note also that for distributed suites the Pyro versions installed on each machine must be mutually compatible.
-Using identical versions obviously guarantees compatibility, but this may not be necessary.
+2009, suffers from this problem. Attempting to run <span class="lstinline"><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">admin</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">test</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">suite</span></span> with Pyro 3.9 or earlier results in
+the following Python traceback:
+</p>
+   <!--l. 527--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10001r1"></a></span><span 
+class="pcrr7t-">Traceback</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">most</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">recent</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">call</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">last</span><span 
+class="pcrr7t-">):</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10002r2"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">_run</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">232,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">&#x003C;</span><span 
+class="pcrr7t-">module</span><span 
+class="pcrr7t-">&#x003E;</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10003r3"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">server</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">start</span><span 
+class="pcrr7t-">()</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10004r4"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">_run</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">92,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">__init__</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10005r5"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">scheduler</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">__init__</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">self</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10006r6"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">scheduler</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">141,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10007r7"></a></span><span 
+class="pcrr7t-">__init__</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10008r8"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">self</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">load_tasks</span><span 
+class="pcrr7t-">()</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10009r9"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">bin</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">_run</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">141,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">load_tasks_cold</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10010r10"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">itask</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">self</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">get_task_proxy</span><span 
+class="pcrr7t-">(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">name</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">tag</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">waiting</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10011r11"></a></span><span 
+class="pcrr7t-">stopctime</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">None</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">startup</span><span 
+class="pcrr7t-">=</span><span 
+class="pcrr7t-">True</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10012r12"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">config</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">1252,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10013r13"></a></span><span 
+class="pcrr7t-">get_task_proxy</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10014r14"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">return</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">self</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">taskdefs</span><span 
+class="pcrr7t-">[</span><span 
+class="pcrr7t-">name</span><span 
+class="pcrr7t-">].</span><span 
+class="pcrr7t-">get_task_class</span><span 
+class="pcrr7t-">()(</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">ctime</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">state</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10015r15"></a></span><span 
+class="pcrr7t-">stopctime</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">startup</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">)</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10016r16"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">File</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">home</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">oliverh</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">lib</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">cylc</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">taskdef</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">py</span><span 
+class="pcrr7t-">"</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">line</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">453,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">in</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10017r17"></a></span><span 
+class="pcrr7t-">tclass_init</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10018r18"></a></span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrb7t-">print</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">-</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sself</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">__class__</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">__name__</span><span 
+class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">sself</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">__class__</span><span 
+class="pcrr7t-">.</span><span 
+class="pcrr7t-">__bases_</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10019r19"></a></span><span 
+class="pcrr7t-">AttributeError</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">type</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">object</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">A</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">has</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">no</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">attribute</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">_taskdef__bases_</span><span 
+class="pcrr7t-">'</span><span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x11-10020r20"></a></span><span 
+class="pcrr7t-">_run</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">--</span><span 
+class="pcrr7t-">debug</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">testsuite</span><span 
+class="pcrr7t-">.1322742021</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">2010010106</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">failed</span><span 
+class="pcrr7t-">:</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">1</span>
+
+
+   </div>
                                                                                          
 
                                                                                          
-</p>
-   <!--l. 520--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 550--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu6.html" >next</a>] [<a 
 href="cug-htmlse3.html" >prev</a>] [<a 
 href="cug-htmlse3.html#tailcug-htmlse3.html" >prev-tail</a>] [<a 
 href="cug-htmlsu5.html" >front</a>] [<a 
 href="cug-htmlse3.html#cug-htmlsu5.html" >up</a>] </p></div>
-<!--l. 520--><p class="indent" >   <a 
+<!--l. 550--><p class="indent" >   <a 
  id="tailcug-htmlsu5.html"></a> </p> 
 </body></html> 

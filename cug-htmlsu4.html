@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -23,6 +23,7 @@ href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
  id="x7-70001.4"></a>The Cylc Scheduling Algorithm</h4>
    <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
 >
                                                                                          
 
@@ -39,8 +40,8 @@ href="cug-htmlse1.html#cug-htmlsu4.html" >up</a>] </p></div>
 </p><!--l. 306--><p class="noindent" ><img 
 src="images/task-pool.png" alt="PIC"  
  /></p></div>
-<br /> <div class="caption" 
-><span class="id">Figure&#x00A0;10: </span><span  
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;10: </td><td  
 class="content"><span 
 class="cmr-7">How cylc sees a suite, in contrast to the multicycle dependency graph of Figure</span><span 
 class="cmr-7">&#x00A0;</span><a 
@@ -50,11 +51,11 @@ class="cmr-7">. Task colors represent different cycle</span>
 <span 
 class="cmr-7">times, and the small squares and circles represent different prerequisites and outputs. A task can run when its prerequisites are satisfied</span>
 <span 
-class="cmr-7">by the outputs of other tasks in the pool.</span></span></div><!--tex4ht:label?: x7-700110 -->
+class="cmr-7">by the outputs of other tasks in the pool.</span></td></tr></table><!--tex4ht:label?: x7-700110 -->
                                                                                          
 
                                                                                          
-   </div><hr class="endfigure" />
+   </td></tr></table></div><hr class="endfigure" />
 <!--l. 317--><p class="indent" >   Cylc manages a pool of proxy objects that represent real tasks in the forecasting suite. A task proxy can run the
 real task that it represents when its prerequisites are satisfied, and can receive reports of completed outputs from
 the real task as it runs. There is no global cycling mechanism to advance the suite in time; instead each individual

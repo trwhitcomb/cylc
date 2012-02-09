@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4215--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4257--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse11.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
@@ -22,10 +22,11 @@ href="#tailcug-htmlsu49.html">tail</a>] [<a
 href="cug-htmlse10.html#cug-htmlsu49.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.5   </span> <a 
  id="x73-12900010.5"></a>Defining New Job Submission Methods</h4>
-<!--l. 4218--><p class="noindent" >Defining a new job submission method requires some minimal Python programming. You can derive (in the sense of
+<!--l. 4260--><p class="noindent" >Defining a new job submission method requires some minimal Python programming. You can derive (in the sense of
 object oriented programming inheritance) new methods from one of the existing ones, or directly from cylc&#8217;s job
-submission base class,  </p><!--l. 4223-->
-   <div class="lstlisting" id="listing-129"><span class="label"><a 
+submission base class,  </p><!--l. 4265--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-129001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
@@ -39,15 +40,17 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">job_submit</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">py</span>
-   
+
+
    </div>
-<!--l. 4226--><p class="indent" >   using the existing methods as examples. Most often this should merely be a matter of defining the command line
+<!--l. 4268--><p class="indent" >   using the existing methods as examples. Most often this should merely be a matter of defining the command line
 used to execute the aforementioned job scripts and using the provided stdout and stderr file paths appropriately. For
 example, here is the entire class code for the <span class="lstinline"><span 
 class="pcrr7t-">background</span></span> method:
 </p>
-   <!--l. 4234-->
-   <div class="lstlisting" id="listing-130"><span class="label"><a 
+   <!--l. 4276--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-129002r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -91,7 +94,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129008r7"></a></span><span 
+ id="x73-129008r7"></a></span></span><span 
 class="pcrr7t-">Run</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
@@ -113,7 +116,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">shell</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129009r8"></a></span><span 
+ id="x73-129009r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -402,13 +405,15 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">stderr_file</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span>
-   
+
+
    </div>
-<!--l. 4255--><p class="indent" >   Here is the <span class="lstinline"><span 
+<!--l. 4297--><p class="indent" >   Here is the <span class="lstinline"><span 
 class="pcrr7t-">at</span></span> method:
 </p>
-   <!--l. 4257-->
-   <div class="lstlisting" id="listing-131"><span class="label"><a 
+   <!--l. 4299--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-129020r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -452,7 +457,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129026r7"></a></span><span 
+ id="x73-129026r7"></a></span></span><span 
 class="pcrr7t-">Submit</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
@@ -484,7 +489,7 @@ class="pcrr7t-">'</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">daemon</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129027r8"></a></span><span 
+ id="x73-129027r8"></a></span></span><span 
 class="pcrr7t-">service</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">must</span><span 
@@ -494,7 +499,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">running</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129028r9"></a></span><span 
+ id="x73-129028r9"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -728,13 +733,15 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">stderr_file</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span>
-   
+
+
    </div>
-<!--l. 4278--><p class="indent" >   And here is the <span class="lstinline"><span 
+<!--l. 4320--><p class="indent" >   And here is the <span class="lstinline"><span 
 class="pcrr7t-">pbs</span></span> method:
 </p>
-   <!--l. 4280-->
-   <div class="lstlisting" id="listing-132"><span class="label"><a 
+   <!--l. 4322--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-129038r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-129039r2"></a></span><span 
@@ -778,7 +785,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129044r7"></a></span><span 
+ id="x73-129044r7"></a></span></span><span 
 class="pcrr7t-">PBS</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">qsub</span><span 
@@ -788,7 +795,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">submission</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129045r8"></a></span><span 
+ id="x73-129045r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1178,13 +1185,14 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">jobfile_path</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span>
-   
+
+
    </div>
-<!--l. 4314--><p class="noindent" >
+<!--l. 4356--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.5.1   </span> <a 
  id="x73-13000010.5.1"></a>An Example</h5>
-<!--l. 4316--><p class="noindent" >The following user-defined job submission class, called <span 
+<!--l. 4358--><p class="noindent" >The following user-defined job submission class, called <span 
 class="cmti-10">qsub</span>, overrides the built-in <span 
 class="cmti-10">pbs </span>class to change the directive
 prefix from <span class="lstinline"><span 
@@ -1193,8 +1201,9 @@ class="pcrro7t-">PBS</span></span> to <span class="lstinline"><span
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span></span>:
 </p>
-   <!--l. 4320-->
-   <div class="lstlisting" id="listing-133"><span class="label"><a 
+   <!--l. 4362--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-130001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -1292,7 +1301,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130010r10"></a></span><span 
+ id="x73-130010r10"></a></span></span><span 
 class="pcrr7t-">This</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">is</span><span 
@@ -1319,7 +1328,7 @@ class="pcrr7t-">'#</span><span
 class="pcrr7t-">PBS</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130011r11"></a></span><span 
+ id="x73-130011r11"></a></span></span><span 
 class="pcrr7t-">directive</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">prefix</span><span 
@@ -1337,7 +1346,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">method</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130012r12"></a></span><span 
+ id="x73-130012r12"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1420,17 +1429,19 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">QSUB</span><span 
 class="pcrr7t-">"</span>
-   
-                                                                                         
 
-                                                                                         
+
+
+
+
    </div>
-<!--l. 4339--><p class="indent" >   To check that this works correctly save the new source file to <span class="lstinline"><span 
+<!--l. 4381--><p class="indent" >   To check that this works correctly save the new source file to <span class="lstinline"><span 
 class="pcrr7t-">qsub</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">py</span></span> in one of the allowed locations (see just
-below), use it in a suite definition:  </p><!--l. 4343-->
-   <div class="lstlisting" id="listing-134"><span class="label"><a 
+below), use it in a suite definition:  </p><!--l. 4385--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-130017r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1609,10 +1620,12 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">'</span>
-   
+
+
    </div>
-<!--l. 4358--><p class="indent" >   and generate a job script to see the resulting directives:  </p><!--l. 4360-->
-   <div class="lstlisting" id="listing-135"><span class="label"><a 
+<!--l. 4400--><p class="indent" >   and generate a job script to see the resulting directives:  </p><!--l. 4402--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x73-130030r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1737,13 +1750,14 @@ class="pcrro7t-">QSUB</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">-</span><span 
 class="pcrro7t-">cwd</span>
-   
+
+
    </div>
-<!--l. 4371--><p class="noindent" >
+<!--l. 4413--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.5.2   </span> <a 
  id="x73-13100010.5.2"></a>Where To Put New Job Submission Modules</h5>
-<!--l. 4373--><p class="noindent" >You new job submission class code should be saved to a file with the same name as the class (plus &#8220;.py&#8221; extension).
+<!--l. 4415--><p class="noindent" >You new job submission class code should be saved to a file with the same name as the class (plus &#8220;.py&#8221; extension).
 It can reside in any of the following locations, depending on how generally useful the new method is and whether or
 not you have write-access to the cylc source tree:  </p>
      <ul class="itemize1">
@@ -1759,16 +1773,16 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">job_submission</span></span> directory of the cylc source tree.</li></ul>
-<!--l. 4386--><p class="noindent" >Note that the form of the import statement at the top of the new user-defined Python module differs depending on
+<!--l. 4428--><p class="noindent" >Note that the form of the import statement at the top of the new user-defined Python module differs depending on
 whether or not the file is installed in the cylc source tree (see the comment at the top of the example file
 above).
 </p>
-   <!--l. 4395--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4437--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse11.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="cug-htmlsu49.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu49.html" >up</a>] </p></div>
-<!--l. 4395--><p class="indent" >   <a 
+<!--l. 4437--><p class="indent" >   <a 
  id="tailcug-htmlsu49.html"></a>  </p> 
 </body></html> 

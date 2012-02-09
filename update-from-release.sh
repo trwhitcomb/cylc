@@ -28,4 +28,4 @@ rm -f CylcUserGuide.pdf
 
 cp $RELDIR/doc/cug-html* .
 cp $RELDIR/doc/CylcUserGuide.pdf .
-cp $RELDIR/doc/screenshots/* screenshots/
+cp -r $RELDIR/doc/screenshots/* screenshots/

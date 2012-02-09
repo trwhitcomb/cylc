@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4054--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4096--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
@@ -22,32 +22,33 @@ href="#tailcug-htmlsu46.html">tail</a>] [<a
 href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.2   </span> <a 
  id="x70-11900010.2"></a>Built-in Job Submission Methods</h4>
-<!--l. 4057--><p class="noindent" >Cylc has a number of built-in job submission methods. If these do not suite your needs Section&#x00A0;<a 
+<!--l. 4099--><p class="noindent" >Cylc has a number of built-in job submission methods. If these do not suite your needs Section&#x00A0;<a 
 href="cug-htmlsu49.html#x73-12900010.5">10.5<!--tex4ht:ref: DefiningNewJobSubmissionMethods --></a> shows how to
 extend cylc with new user-defined job submission methods.
-</p><!--l. 4061--><p class="noindent" >
+</p><!--l. 4103--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.1   </span> <a 
  id="x70-12000010.2.1"></a>background</h5>
-<!--l. 4063--><p class="noindent" >This job submission method runs tasks directly in a background shell.
-</p><!--l. 4065--><p class="noindent" >
+<!--l. 4105--><p class="noindent" >This job submission method runs tasks directly in a background shell.
+</p><!--l. 4107--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.2   </span> <a 
  id="x70-12100010.2.2"></a>at</h5>
-<!--l. 4067--><p class="noindent" >This job submission method submits tasks to the rudimentary Unix <span class="lstinline"><span 
+<!--l. 4109--><p class="noindent" >This job submission method submits tasks to the rudimentary Unix <span class="lstinline"><span 
 class="pcrr7t-">at</span></span> scheduler. The <span class="lstinline"><span 
 class="pcrr7t-">atd</span></span> daemon must be
 running.
-</p><!--l. 4070--><p class="noindent" >
+</p><!--l. 4112--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.3   </span> <a 
  id="x70-12200010.2.3"></a>loadleveler</h5>
-<!--l. 4072--><p class="noindent" >This job submission method submits tasks to loadleveler using the <span class="lstinline"><span 
+<!--l. 4114--><p class="noindent" >This job submission method submits tasks to loadleveler using the <span class="lstinline"><span 
 class="pcrr7t-">llsubmit</span></span> command. Loadleveler directives can
 be provided in the suite.rc file:
 </p>
-   <!--l. 4077-->
-   <div class="lstlisting" id="listing-121"><span class="label"><a 
+   <!--l. 4119--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-122001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -119,10 +120,12 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">waz</span>
-   
+
+
    </div>
-<!--l. 4085--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4087-->
-   <div class="lstlisting" id="listing-122"><span class="label"><a 
+<!--l. 4127--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4129--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-122007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -163,16 +166,18 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">@</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">queue</span>
-   
+
+
    </div>
-<!--l. 4095--><p class="noindent" >
+<!--l. 4137--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.4   </span> <a 
  id="x70-12300010.2.4"></a>pbs</h5>
-<!--l. 4097--><p class="noindent" >This job submission method submits tasks to PBS (or Torque) using the <span class="lstinline"><span 
+<!--l. 4139--><p class="noindent" >This job submission method submits tasks to PBS (or Torque) using the <span class="lstinline"><span 
 class="pcrr7t-">qsub</span></span> command. PBS directives can be
-provided in the suite.rc file:  </p><!--l. 4101-->
-   <div class="lstlisting" id="listing-123"><span class="label"><a 
+provided in the suite.rc file:  </p><!--l. 4143--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-123001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -250,13 +255,15 @@ class="pcrr7t-">nodes</span><span
 class="pcrr7t-">=1,</span><span 
 class="pcrr7t-">walltime</span><span 
 class="pcrr7t-">=00:01:00'</span>
-   
-                                                                                         
 
-                                                                                         
+
+
+
+
    </div>
-<!--l. 4109--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4111-->
-   <div class="lstlisting" id="listing-124"><span class="label"><a 
+<!--l. 4151--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4153--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-123007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -289,16 +296,18 @@ class="pcrro7t-">nodes</span><span
 class="pcrro7t-">=1,</span><span 
 class="pcrro7t-">walltime</span><span 
 class="pcrro7t-">=00:01:00</span>
-   
+
+
    </div>
-<!--l. 4118--><p class="noindent" >
+<!--l. 4160--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.5   </span> <a 
  id="x70-12400010.2.5"></a>sge</h5>
-<!--l. 4120--><p class="noindent" >This job submission method submits tasks to Sun Grid Engine using the <span class="lstinline"><span 
+<!--l. 4162--><p class="noindent" >This job submission method submits tasks to Sun Grid Engine using the <span class="lstinline"><span 
 class="pcrr7t-">qsub</span></span> command. SGE directives can be
-provided in the suite.rc file:  </p><!--l. 4124-->
-   <div class="lstlisting" id="listing-125"><span class="label"><a 
+provided in the suite.rc file:  </p><!--l. 4166--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-124001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -400,10 +409,12 @@ class="pcrr7t-">M</span><span
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">h_rt</span><span 
 class="pcrr7t-">=24:00:00'</span>
-   
+
+
    </div>
-<!--l. 4133--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4135-->
-   <div class="lstlisting" id="listing-126"><span class="label"><a 
+<!--l. 4175--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4177--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x70-124008r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
@@ -445,24 +456,25 @@ class="pcrro7t-">M</span><span
 class="pcrro7t-">,</span><span 
 class="pcrro7t-">h_rt</span><span 
 class="pcrro7t-">=24:00:00</span>
-   
+
+
    </div>
-<!--l. 4143--><p class="noindent" >
+<!--l. 4185--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.6   </span> <a 
  id="x70-12500010.2.6"></a>Default Directives Provided</h5>
-<!--l. 4145--><p class="noindent" >For loadleveler, pbs, and sge job submission, default directives are provided to set the job name and stdout and
+<!--l. 4187--><p class="noindent" >For loadleveler, pbs, and sge job submission, default directives are provided to set the job name and stdout and
 stderr file paths.
-</p><!--l. 4148--><p class="noindent" >
+</p><!--l. 4190--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.7   </span> <a 
  id="x70-12600010.2.7"></a>PBS and SGE Cylc Quirks</h5>
-<!--l. 4150--><p class="noindent" >As shown in the example above, multiple entries for the same PBS or SGE directive option must be
+<!--l. 4192--><p class="noindent" >As shown in the example above, multiple entries for the same PBS or SGE directive option must be
 comma-separated on the same line, in the suite.rc file. Otherwise, repeating the option on another
 line will override the previous entry, not add to it. Also, the right-hand side must be quoted to hide
 the comma from the suite.rc parser (commas indicate list values, whereas directives are treated as
 singular).
-</p><!--l. 4157--><p class="indent" >   As also shown in the example above, to get a naked option flag such as <span class="lstinline"><span 
+</p><!--l. 4199--><p class="indent" >   As also shown in the example above, to get a naked option flag such as <span class="lstinline"><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">cwd</span></span> in SGE you must give a quoted
 blank space as the directive value in the suite.rc file.
@@ -470,12 +482,12 @@ blank space as the directive value in the suite.rc file.
 
                                                                                          
 </p>
-   <!--l. 4161--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4203--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="cug-htmlsu46.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
-<!--l. 4161--><p class="indent" >   <a 
+<!--l. 4203--><p class="indent" >   <a 
  id="tailcug-htmlsu46.html"></a>  </p> 
 </body></html> 

@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-01-31 16:11:00" /> 
+<meta name="date" content="2012-02-10 08:20:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3618--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3669--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu42.html" >next</a>] [<a 
 href="cug-htmlse9.html" >prev</a>] [<a 
 href="cug-htmlse9.html#tailcug-htmlse9.html" >prev-tail</a>] [<a 
@@ -22,7 +22,7 @@ href="#tailcug-htmlsu41.html">tail</a>] [<a
 href="cug-htmlse9.html#cug-htmlsu41.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">9.1   </span> <a 
  id="x63-1080009.1"></a>Most Tasks Require No Modification For Cylc</h4>
-<!--l. 3620--><p class="noindent" >Any existing command, script, or executable can function as a cylc task (or rather, perform the external processing
+<!--l. 3671--><p class="noindent" >Any existing command, script, or executable can function as a cylc task (or rather, perform the external processing
 that the task represents), with the following conditions excepions:  </p>
      <ul class="itemize1">
      <li class="itemize">Tasks with internal (pre-completion) outputs that other tasks need to trigger off must be modified to
@@ -33,12 +33,13 @@ that the task represents), with the following conditions excepions:  </p>
      </li>
      <li class="itemize">Tasks that do not return non-zero exit status on error must be made to do so, to allow cylc&#8217;s automatic
      error trapping to work. This is normal best-practice scripting anyway.</li></ul>
-<!--l. 3635--><p class="indent" >   If these requirements are not met, see <span 
+<!--l. 3686--><p class="indent" >   If these requirements are not met, see <span 
 class="cmti-10">Tasks Requiring Modification For Cylc</span>, Section&#x00A0;<a 
 href="cug-htmlsu44.html#x66-1110009.4">9.4<!--tex4ht:ref: TaskModsForCylc --></a>.
-</p><!--l. 3638--><p class="indent" >   The following suite runs a couple of external scripts that are not cylc-aware, but which meet the requirements
-above so that no special treatment is required at all:  </p><!--l. 3642-->
-   <div class="lstlisting" id="listing-108"><span class="label"><a 
+</p><!--l. 3689--><p class="indent" >   The following suite runs a couple of external scripts that are not cylc-aware, but which meet the requirements
+above so that no special treatment is required at all:  </p><!--l. 3693--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x63-108001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -164,7 +165,7 @@ class="pcrr7t-">echo</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">HELLO</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x63-108009r9"></a></span><span 
+ id="x63-108009r9"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -200,7 +201,7 @@ class="pcrr7t-">bar</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">sh</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x63-108010r10"></a></span><span 
+ id="x63-108010r10"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -306,7 +307,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">No</span><span 
 class="pcrr7t-">.1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x63-108014r14"></a></span><span 
+ id="x63-108014r14"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -345,6 +346,8 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">,</span><span 
+class="pcrr7t-">&#x00A0;</span><span 
+class="pcrr7t-">\</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x63-108015r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -401,7 +404,7 @@ class="pcrr7t-">.1</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fails</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x63-108016r16"></a></span><span 
+ id="x63-108016r16"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -442,17 +445,18 @@ class="pcrr7t-">retry</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span>
-   
+
+
    </div>
                                                                                          
 
                                                                                          
-   <!--l. 3662--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3713--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu42.html" >next</a>] [<a 
 href="cug-htmlse9.html" >prev</a>] [<a 
 href="cug-htmlse9.html#tailcug-htmlse9.html" >prev-tail</a>] [<a 
 href="cug-htmlsu41.html" >front</a>] [<a 
 href="cug-htmlse9.html#cug-htmlsu41.html" >up</a>] </p></div>
-<!--l. 3662--><p class="indent" >   <a 
+<!--l. 3713--><p class="indent" >   <a 
  id="tailcug-htmlsu41.html"></a> </p> 
 </body></html> 
