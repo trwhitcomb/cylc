@@ -10,24 +10,24 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4257--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4321--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse11.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu49.html">tail</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu49.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.5   </span> <a 
- id="x73-12900010.5"></a>Defining New Job Submission Methods</h4>
-<!--l. 4260--><p class="noindent" >Defining a new job submission method requires some minimal Python programming. You can derive (in the sense of
+ id="x73-13300010.5"></a>Defining New Job Submission Methods</h4>
+<!--l. 4324--><p class="noindent" >Defining a new job submission method requires some minimal Python programming. You can derive (in the sense of
 object oriented programming inheritance) new methods from one of the existing ones, or directly from cylc&#8217;s job
-submission base class,  </p><!--l. 4265--><div class="lstlisting">
+submission base class,  </p><!--l. 4329--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129001r1"></a></span><span 
+ id="x73-133001r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
@@ -43,15 +43,15 @@ class="pcrr7t-">py</span>
 
 
    </div>
-<!--l. 4268--><p class="indent" >   using the existing methods as examples. Most often this should merely be a matter of defining the command line
+<!--l. 4332--><p class="indent" >   using the existing methods as examples. Most often this should merely be a matter of defining the command line
 used to execute the aforementioned job scripts and using the provided stdout and stderr file paths appropriately. For
 example, here is the entire class code for the <span class="lstinline"><span 
 class="pcrr7t-">background</span></span> method:
 </p>
-   <!--l. 4276--><div class="lstlisting">
+   <!--l. 4340--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129002r1"></a></span><span 
+ id="x73-133002r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">usr</span><span 
@@ -62,9 +62,9 @@ class="pcrro7t-">env</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129003r2"></a></span><span 
+ id="x73-133003r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129004r3"></a></span><span 
+ id="x73-133004r3"></a></span><span 
 class="pcrb7t-">from</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
@@ -73,9 +73,9 @@ class="pcrb7t-">import</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129005r4"></a></span><span 
+ id="x73-133005r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129006r5"></a></span><span 
+ id="x73-133006r5"></a></span><span 
 class="pcrb7t-">class</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">background</span><span 
@@ -85,7 +85,7 @@ class="pcrr7t-">job_submit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129007r6"></a></span><span 
+ id="x73-133007r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -94,7 +94,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129008r7"></a></span></span><span 
+ id="x73-133008r7"></a></span></span><span 
 class="pcrr7t-">Run</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
@@ -116,7 +116,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">shell</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129009r8"></a></span></span><span 
+ id="x73-133009r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -125,7 +125,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129010r9"></a></span><span 
+ id="x73-133010r9"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -152,7 +152,7 @@ class="pcrro7t-">execution</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">on</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129011r10"></a></span><span 
+ id="x73-133011r10"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -184,7 +184,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">finish</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129012r11"></a></span><span 
+ id="x73-133012r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -211,7 +211,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">&amp;</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129013r12"></a></span><span 
+ id="x73-133013r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -225,7 +225,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129014r13"></a></span><span 
+ id="x73-133014r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -242,7 +242,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">job_submit_command_template</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129015r14"></a></span><span 
+ id="x73-133015r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -258,7 +258,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">command_template</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129016r15"></a></span><span 
+ id="x73-133016r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -279,7 +279,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">COMMAND_TEMPLATE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129017r16"></a></span><span 
+ id="x73-133017r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -305,7 +305,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">jobfile_path</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129018r17"></a></span><span 
+ id="x73-133018r17"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -355,7 +355,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">stdout_file</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129019r18"></a></span><span 
+ id="x73-133019r18"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -408,13 +408,13 @@ class="pcrr7t-">)</span>
 
 
    </div>
-<!--l. 4297--><p class="indent" >   Here is the <span class="lstinline"><span 
+<!--l. 4361--><p class="indent" >   Here is the <span class="lstinline"><span 
 class="pcrr7t-">at</span></span> method:
 </p>
-   <!--l. 4299--><div class="lstlisting">
+   <!--l. 4363--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129020r1"></a></span><span 
+ id="x73-133020r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">usr</span><span 
@@ -425,9 +425,9 @@ class="pcrro7t-">env</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129021r2"></a></span><span 
+ id="x73-133021r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129022r3"></a></span><span 
+ id="x73-133022r3"></a></span><span 
 class="pcrb7t-">from</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
@@ -436,9 +436,9 @@ class="pcrb7t-">import</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129023r4"></a></span><span 
+ id="x73-133023r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129024r5"></a></span><span 
+ id="x73-133024r5"></a></span><span 
 class="pcrb7t-">class</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">at</span><span 
@@ -448,7 +448,7 @@ class="pcrr7t-">job_submit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129025r6"></a></span><span 
+ id="x73-133025r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -457,7 +457,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129026r7"></a></span></span><span 
+ id="x73-133026r7"></a></span></span><span 
 class="pcrr7t-">Submit</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">the</span><span 
@@ -489,7 +489,7 @@ class="pcrr7t-">'</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">daemon</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129027r8"></a></span></span><span 
+ id="x73-133027r8"></a></span></span><span 
 class="pcrr7t-">service</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">must</span><span 
@@ -499,7 +499,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">running</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129028r9"></a></span></span><span 
+ id="x73-133028r9"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -508,7 +508,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129029r10"></a></span><span 
+ id="x73-133029r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -537,9 +537,9 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">now</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129030r11"></a></span><span 
+ id="x73-133030r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129031r12"></a></span><span 
+ id="x73-133031r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -553,7 +553,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129032r13"></a></span><span 
+ id="x73-133032r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -570,7 +570,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">job_submit_command_template</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129033r14"></a></span><span 
+ id="x73-133033r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -586,7 +586,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">command_template</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129034r15"></a></span><span 
+ id="x73-133034r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -607,7 +607,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">COMMAND_TEMPLATE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129035r16"></a></span><span 
+ id="x73-133035r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -633,7 +633,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">jobfile_path</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129036r17"></a></span><span 
+ id="x73-133036r17"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -683,7 +683,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">stdout_file</span><span 
 class="pcrr7t-">,</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129037r18"></a></span><span 
+ id="x73-133037r18"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -736,15 +736,15 @@ class="pcrr7t-">)</span>
 
 
    </div>
-<!--l. 4320--><p class="indent" >   And here is the <span class="lstinline"><span 
+<!--l. 4384--><p class="indent" >   And here is the <span class="lstinline"><span 
 class="pcrr7t-">pbs</span></span> method:
 </p>
-   <!--l. 4322--><div class="lstlisting">
+   <!--l. 4386--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129038r1"></a></span><span 
+ id="x73-133038r1"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129039r2"></a></span><span 
+ id="x73-133039r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">usr</span><span 
@@ -755,7 +755,7 @@ class="pcrro7t-">env</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129040r3"></a></span><span 
+ id="x73-133040r3"></a></span><span 
 class="pcrb7t-">from</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
@@ -764,9 +764,9 @@ class="pcrb7t-">import</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">job_submit</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129041r4"></a></span><span 
+ id="x73-133041r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129042r5"></a></span><span 
+ id="x73-133042r5"></a></span><span 
 class="pcrb7t-">class</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">pbs</span><span 
@@ -776,7 +776,7 @@ class="pcrr7t-">job_submit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129043r6"></a></span><span 
+ id="x73-133043r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -785,7 +785,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129044r7"></a></span></span><span 
+ id="x73-133044r7"></a></span></span><span 
 class="pcrr7t-">PBS</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">qsub</span><span 
@@ -795,7 +795,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">submission</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129045r8"></a></span></span><span 
+ id="x73-133045r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -804,9 +804,9 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129046r9"></a></span><span 
+ id="x73-133046r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129047r10"></a></span><span 
+ id="x73-133047r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -822,9 +822,9 @@ class="pcrr7t-">%</span><span
 class="pcrr7t-">s</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129048r11"></a></span><span 
+ id="x73-133048r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129049r12"></a></span><span 
+ id="x73-133049r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -838,7 +838,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129050r13"></a></span><span 
+ id="x73-133050r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -858,7 +858,7 @@ class="pcrr7t-">#</span><span
 class="pcrr7t-">PBS</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129051r14"></a></span><span 
+ id="x73-133051r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -876,7 +876,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">None</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129052r15"></a></span><span 
+ id="x73-133052r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -895,9 +895,9 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129053r16"></a></span><span 
+ id="x73-133053r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129054r17"></a></span><span 
+ id="x73-133054r17"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -912,7 +912,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">{}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129055r18"></a></span><span 
+ id="x73-133055r18"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -937,7 +937,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">task_id</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129056r19"></a></span><span 
+ id="x73-133056r19"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -962,7 +962,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">stdout_file</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129057r20"></a></span><span 
+ id="x73-133057r20"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -987,9 +987,9 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">stderr_file</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129058r21"></a></span><span 
+ id="x73-133058r21"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129059r22"></a></span><span 
+ id="x73-133059r22"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1021,7 +1021,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">defaults</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129060r23"></a></span><span 
+ id="x73-133060r23"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1041,7 +1041,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129061r24"></a></span><span 
+ id="x73-133061r24"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1072,7 +1072,7 @@ class="pcrr7t-">d</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129062r25"></a></span><span 
+ id="x73-133062r25"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1089,9 +1089,9 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">defaults</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129063r26"></a></span><span 
+ id="x73-133063r26"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129064r27"></a></span><span 
+ id="x73-133064r27"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1105,7 +1105,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129065r28"></a></span><span 
+ id="x73-133065r28"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1122,7 +1122,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">job_submit_command_template</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129066r29"></a></span><span 
+ id="x73-133066r29"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1138,7 +1138,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">command_template</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129067r30"></a></span><span 
+ id="x73-133067r30"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1159,7 +1159,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">COMMAND_TEMPLATE</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-129068r31"></a></span><span 
+ id="x73-133068r31"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1188,11 +1188,11 @@ class="pcrr7t-">)</span>
 
 
    </div>
-<!--l. 4356--><p class="noindent" >
+<!--l. 4420--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.5.1   </span> <a 
- id="x73-13000010.5.1"></a>An Example</h5>
-<!--l. 4358--><p class="noindent" >The following user-defined job submission class, called <span 
+ id="x73-13400010.5.1"></a>An Example</h5>
+<!--l. 4422--><p class="noindent" >The following user-defined job submission class, called <span 
 class="cmti-10">qsub</span>, overrides the built-in <span 
 class="cmti-10">pbs </span>class to change the directive
 prefix from <span class="lstinline"><span 
@@ -1201,10 +1201,10 @@ class="pcrro7t-">PBS</span></span> to <span class="lstinline"><span
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span></span>:
 </p>
-   <!--l. 4362--><div class="lstlisting">
+   <!--l. 4426--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130001r1"></a></span><span 
+ id="x73-134001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">usr</span><span 
@@ -1215,9 +1215,9 @@ class="pcrro7t-">env</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130002r2"></a></span><span 
+ id="x73-134002r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130003r3"></a></span><span 
+ id="x73-134003r3"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">to</span><span 
@@ -1239,7 +1239,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">tree</span><span 
 class="pcrro7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130004r4"></a></span><span 
+ id="x73-134004r4"></a></span><span 
 class="pcrb7t-">from</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -1252,7 +1252,7 @@ class="pcrb7t-">import</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">pbs</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130005r5"></a></span><span 
+ id="x73-134005r5"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">OR</span><span 
@@ -1269,7 +1269,7 @@ class="pcrro7t-">cylc</span><span
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">job_submission</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130006r6"></a></span><span 
+ id="x73-134006r6"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">from</span><span 
@@ -1280,9 +1280,9 @@ class="pcrro7t-">import</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">pbs</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130007r7"></a></span><span 
+ id="x73-134007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130008r8"></a></span><span 
+ id="x73-134008r8"></a></span><span 
 class="pcrb7t-">class</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">qsub</span><span 
@@ -1292,7 +1292,7 @@ class="pcrr7t-">pbs</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130009r9"></a></span><span 
+ id="x73-134009r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1301,7 +1301,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130010r10"></a></span></span><span 
+ id="x73-134010r10"></a></span></span><span 
 class="pcrr7t-">This</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">is</span><span 
@@ -1328,7 +1328,7 @@ class="pcrr7t-">'#</span><span
 class="pcrr7t-">PBS</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130011r11"></a></span></span><span 
+ id="x73-134011r11"></a></span></span><span 
 class="pcrr7t-">directive</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">prefix</span><span 
@@ -1346,7 +1346,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">method</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130012r12"></a></span></span><span 
+ id="x73-134012r12"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1355,7 +1355,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130013r13"></a></span><span 
+ id="x73-134013r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1369,7 +1369,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">):</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130014r14"></a></span><span 
+ id="x73-134014r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1387,7 +1387,7 @@ class="pcrr7t-">self</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130015r15"></a></span><span 
+ id="x73-134015r15"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1410,7 +1410,7 @@ class="pcrro7t-">directive</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">prefix</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130016r16"></a></span><span 
+ id="x73-134016r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1435,21 +1435,21 @@ class="pcrr7t-">"</span>
 
 
    </div>
-<!--l. 4381--><p class="indent" >   To check that this works correctly save the new source file to <span class="lstinline"><span 
+<!--l. 4445--><p class="indent" >   To check that this works correctly save the new source file to <span class="lstinline"><span 
 class="pcrr7t-">qsub</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">py</span></span> in one of the allowed locations (see just
-below), use it in a suite definition:  </p><!--l. 4385--><div class="lstlisting">
+below), use it in a suite definition:  </p><!--l. 4449--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130017r1"></a></span><span 
+ id="x73-134017r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">rc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130018r2"></a></span><span 
+ id="x73-134018r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro8c-">$</span><span 
@@ -1461,12 +1461,12 @@ class="pcrro7t-">suite</span><span
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">rc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130019r3"></a></span><span 
+ id="x73-134019r3"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130020r4"></a></span><span 
+ id="x73-134020r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1475,7 +1475,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">dependencies</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130021r5"></a></span><span 
+ id="x73-134021r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1492,12 +1492,12 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">a</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130022r6"></a></span><span 
+ id="x73-134022r6"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130023r7"></a></span><span 
+ id="x73-134023r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1506,7 +1506,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">root</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130024r8"></a></span><span 
+ id="x73-134024r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1521,7 +1521,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">submission</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130025r9"></a></span><span 
+ id="x73-134025r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1540,7 +1540,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">qsub</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130026r10"></a></span><span 
+ id="x73-134026r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1553,7 +1553,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130027r11"></a></span><span 
+ id="x73-134027r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1575,7 +1575,7 @@ class="pcrr7t-">bar</span><span
 class="pcrr7t-">=</span><span 
 class="pcrr7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130028r12"></a></span><span 
+ id="x73-134028r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1599,7 +1599,7 @@ class="pcrr7t-">=1,</span><span
 class="pcrr7t-">walltime</span><span 
 class="pcrr7t-">=00:01:00'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130029r13"></a></span><span 
+ id="x73-134029r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1623,10 +1623,10 @@ class="pcrr7t-">'</span>
 
 
    </div>
-<!--l. 4400--><p class="indent" >   and generate a job script to see the resulting directives:  </p><!--l. 4402--><div class="lstlisting">
+<!--l. 4464--><p class="indent" >   and generate a job script to see the resulting directives:  </p><!--l. 4466--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130030r1"></a></span><span 
+ id="x73-134030r1"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -1642,7 +1642,7 @@ class="pcrr7t-">HOME</span><span
 class="pcrr7t-">/</span><span 
 class="pcrb7t-">test</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130031r2"></a></span><span 
+ id="x73-134031r2"></a></span><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -1659,7 +1659,7 @@ class="pcrr7t-">grep</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">QSUB</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130032r3"></a></span><span 
+ id="x73-134032r3"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1685,7 +1685,7 @@ class="pcrro7t-">a</span><span
 class="pcrro7t-">%1-1321046049.703576.</span><span 
 class="pcrro7t-">err</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130033r4"></a></span><span 
+ id="x73-134033r4"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1697,7 +1697,7 @@ class="pcrro7t-">=1,</span><span
 class="pcrro7t-">walltime</span><span 
 class="pcrro7t-">=00:01:00</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130034r5"></a></span><span 
+ id="x73-134034r5"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1723,7 +1723,7 @@ class="pcrro7t-">a</span><span
 class="pcrro7t-">%1-1321046049.703576.</span><span 
 class="pcrro7t-">out</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130035r6"></a></span><span 
+ id="x73-134035r6"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1733,7 +1733,7 @@ class="pcrro7t-">&#x00A0;</span><span
 class="pcrro7t-">a</span><span 
 class="pcrro7t-">%1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130036r7"></a></span><span 
+ id="x73-134036r7"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1744,7 +1744,7 @@ class="pcrro7t-">bar</span><span
 class="pcrro7t-">=</span><span 
 class="pcrro7t-">baz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x73-130037r8"></a></span><span 
+ id="x73-134037r8"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">QSUB</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -1753,11 +1753,11 @@ class="pcrro7t-">cwd</span>
 
 
    </div>
-<!--l. 4413--><p class="noindent" >
+<!--l. 4477--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.5.2   </span> <a 
- id="x73-13100010.5.2"></a>Where To Put New Job Submission Modules</h5>
-<!--l. 4415--><p class="noindent" >You new job submission class code should be saved to a file with the same name as the class (plus &#8220;.py&#8221; extension).
+ id="x73-13500010.5.2"></a>Where To Put New Job Submission Modules</h5>
+<!--l. 4479--><p class="noindent" >You new job submission class code should be saved to a file with the same name as the class (plus &#8220;.py&#8221; extension).
 It can reside in any of the following locations, depending on how generally useful the new method is and whether or
 not you have write-access to the cylc source tree:  </p>
      <ul class="itemize1">
@@ -1773,16 +1773,16 @@ class="pcrr7t-">/</span><span
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">job_submission</span></span> directory of the cylc source tree.</li></ul>
-<!--l. 4428--><p class="noindent" >Note that the form of the import statement at the top of the new user-defined Python module differs depending on
+<!--l. 4492--><p class="noindent" >Note that the form of the import statement at the top of the new user-defined Python module differs depending on
 whether or not the file is installed in the cylc source tree (see the comment at the top of the example file
 above).
 </p>
-   <!--l. 4437--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4501--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse11.html" >next</a>] [<a 
 href="cug-htmlsu48.html" >prev</a>] [<a 
 href="cug-htmlsu48.html#tailcug-htmlsu48.html" >prev-tail</a>] [<a 
 href="cug-htmlsu49.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu49.html" >up</a>] </p></div>
-<!--l. 4437--><p class="indent" >   <a 
+<!--l. 4501--><p class="indent" >   <a 
  id="tailcug-htmlsu49.html"></a>  </p> 
 </body></html> 

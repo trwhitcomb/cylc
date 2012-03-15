@@ -10,32 +10,32 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4878--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4942--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu62.html" >next</a>] [<a 
 href="cug-htmlsu60.html" >prev</a>] [<a 
 href="cug-htmlsu60.html#tailcug-htmlsu60.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu61.html">tail</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu61.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">12.9   </span> <a 
- id="x87-14800012.9"></a>Make Tasks As Self-Contained As Possible</h4>
-<!--l. 4880--><p class="noindent" >Where possible, no task should rely on the action of another task, except for the prerequisites embodied in the suite
+ id="x87-15200012.9"></a>Make Tasks As Self-Contained As Possible</h4>
+<!--l. 4944--><p class="noindent" >Where possible, no task should rely on the action of another task, except for the prerequisites embodied in the suite
 dependency graph that it has no choice but to depend on. If this rule is followed, your suite will be as flexible as
 possible in terms of being able to run single tasks, or subsets of the suite, whilst debugging or developing new
 features.<span class="footnote-mark"><a 
 href="cug-html88.html#fn14x0"><sup class="textsuperscript">14</sup></a></span><a 
- id="x87-148001f14"></a> 
+ id="x87-152001f14"></a> 
 For example, every task should create its own output directories if they do not already exist, instead of assuming
 their existence due to the action of some another task; then you will be able to run single tasks without having to
 manually create output directories first.
 </p>
-   <!--l. 4893--><div class="lstlisting">
+   <!--l. 4957--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148002r1"></a></span><span 
+ id="x87-152002r1"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">manual</span><span 
@@ -45,7 +45,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">scripting</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148003r2"></a></span><span 
+ id="x87-152003r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#</span><span 
@@ -70,7 +70,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">exist</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148004r3"></a></span><span 
+ id="x87-152004r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">mkdir</span><span 
@@ -81,7 +81,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">OUTDIR</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148005r4"></a></span><span 
+ id="x87-152005r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#</span><span 
@@ -112,7 +112,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">exist</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148006r5"></a></span><span 
+ id="x87-152006r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">mkdir</span><span 
@@ -130,9 +130,9 @@ class="pcrr7t-">OUTFILE</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">)</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148007r6"></a></span><span 
+ id="x87-152007r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148008r7"></a></span><span 
+ id="x87-152008r7"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">OR</span><span 
@@ -148,7 +148,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">utility</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148009r8"></a></span><span 
+ id="x87-152009r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#</span><span 
@@ -175,7 +175,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">necessary</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148010r9"></a></span><span 
+ id="x87-152010r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -194,7 +194,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">...</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148011r10"></a></span><span 
+ id="x87-152011r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#</span><span 
@@ -223,7 +223,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">necessary</span><span 
 class="pcrr7t-">:</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x87-148012r11"></a></span><span 
+ id="x87-152012r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -247,12 +247,12 @@ class="pcrr7t-">...</span>
                                                                                          
 
                                                                                          
-   <!--l. 4907--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4971--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu62.html" >next</a>] [<a 
 href="cug-htmlsu60.html" >prev</a>] [<a 
 href="cug-htmlsu60.html#tailcug-htmlsu60.html" >prev-tail</a>] [<a 
 href="cug-htmlsu61.html" >front</a>] [<a 
 href="cug-htmlse12.html#cug-htmlsu61.html" >up</a>] </p></div>
-<!--l. 4907--><p class="indent" >   <a 
+<!--l. 4971--><p class="indent" >   <a 
  id="tailcug-htmlsu61.html"></a> </p> 
 </body></html> 

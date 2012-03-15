@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1675--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1677--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu30.html" >next</a>] [<a 
 href="cug-htmlsu29.html" >prev</a>] [<a 
 href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
@@ -22,11 +22,11 @@ href="#tailcug-htmlse7.html">tail</a>] [<a
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x42-510007"></a>Suite Registration</h3>
-<!--l. 1678--><p class="noindent" >Cylc commands target particular suites via names registered in a <span 
+<!--l. 1680--><p class="noindent" >Cylc commands target particular suites via names registered in a <span 
 class="cmti-10">suite database</span>, so that you don&#8217;t need to remember
 and continually refer to the actual location of the suite definition on disk. A suite registration name is a hierarchical
 name akin to a directory path but delimited by the &#8216;.&#8217; character; this allows suites to be organised in nested tree-like
-structures: </p><!--l. 1684--><div class="lstlisting">
+structures: </p><!--l. 1686--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x42-51001r1"></a></span><span 
@@ -154,7 +154,7 @@ class="pcrr7t-">Region1</span>
 
 
    </div>
-<!--l. 1694--><p class="indent" >   Note that registration groups are entirely virtual, they do not need to be explicitly created before use, and they
+<!--l. 1696--><p class="indent" >   Note that registration groups are entirely virtual, they do not need to be explicitly created before use, and they
 automatically disappear if all tasks are removed from them. From the listing above, for example, to move the suite
 <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
@@ -164,7 +164,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">region2</span></span> into the <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">test</span></span> group: </p><!--l. 1699--><div class="lstlisting">
+class="pcrr7t-">test</span></span> group: </p><!--l. 1701--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x42-51008r1"></a></span><span 
@@ -278,7 +278,7 @@ class="pcrr7t-">Region2</span>
 
 
    </div>
-<!--l. 1710--><p class="indent" >   And to move <span class="lstinline"><span 
+<!--l. 1712--><p class="indent" >   And to move <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">test</span><span 
@@ -286,7 +286,7 @@ class="pcrr7t-">.</span><span
 class="pcrr7t-">region2</span></span> into a new group <span class="lstinline"><span 
 class="pcrr7t-">nwp</span><span 
 class="pcrr7t-">.</span><span 
-class="pcrr7t-">para</span></span>: </p><!--l. 1711--><div class="lstlisting">
+class="pcrr7t-">para</span></span>: </p><!--l. 1713--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x42-51017r1"></a></span><span 
@@ -405,13 +405,13 @@ class="pcrr7t-">Region2</span>
 
 
    </div>
-<!--l. 1724--><p class="indent" >   Currently you cannot explicitly indicate a group name on the command line by appending a dot character.
+<!--l. 1726--><p class="indent" >   Currently you cannot explicitly indicate a group name on the command line by appending a dot character.
 Rather, in database operations such as copy, reregister, or unregister, the identity of the source item (group or suite)
 is inferred from the content of the database; and if the source item is a group, so must the target be a group (or it
 will be, in the case of an item that will be created by the operation). This means that you cannot copy
 a single suite into a group that does not exist yet unless you specify the entire target registration
 name.
-</p><!--l. 1733--><p class="indent" >   <span class="lstinline"><span 
+</p><!--l. 1735--><p class="indent" >   <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">db</span><span 
@@ -420,7 +420,7 @@ class="pcrr7t-">register</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
 class="pcrr7t-">help</span></span> shows a number of other examples.
-</p><!--l. 1735--><p class="noindent" >
+</p><!--l. 1737--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >7.1 <a 
@@ -439,12 +439,12 @@ href="cug-htmlsu32.html#x45-560007.3">Database Operations</a></span>
                                                                                          
 
                                                                                          
-   <!--l. 1850--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1852--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu30.html" >next</a>] [<a 
 href="cug-htmlsu29.html" >prev</a>] [<a 
 href="cug-htmlsu29.html#tailcug-htmlsu29.html" >prev-tail</a>] [<a 
 href="cug-htmlse7.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse7.html" >up</a>] </p></div>
-<!--l. 1850--><p class="indent" >   <a 
+<!--l. 1852--><p class="indent" >   <a 
  id="tailcug-htmlse7.html"></a> </p> 
 </body></html> 

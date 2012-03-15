@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 1312--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1314--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
@@ -22,11 +22,11 @@ href="#tailcug-htmlsu23.html">tail</a>] [<a
 href="cug-htmlse6.html#cug-htmlsu23.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">6.7   </span> <a 
  id="x35-400006.7"></a>QuickStart.b - Handling Cold-Starts Properly</h4>
-<!--l. 1314--><p class="noindent" >Now take a look at <span 
+<!--l. 1316--><p class="noindent" >Now take a look at <span 
 class="cmti-10">QuickStart.b</span>, which is a minor modification of <span 
 class="cmti-10">QuickStart.a</span>. Its suite.rc file has a new <span 
 class="cmti-10">cold-start</span>
-task called ColdModel,  </p><!--l. 1318--><div class="lstlisting">
+task called ColdModel,  </p><!--l. 1320--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x35-40001r1"></a></span><span 
@@ -71,8 +71,8 @@ class="pcrr7t-">ColdModel</span>
 
 
    </div>
-<!--l. 1325--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
-href="#x35-4001427">27<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1328--><div class="lstlisting">
+<!--l. 1327--><p class="indent" >   and the dependency graph (see also Figure&#x00A0;<a 
+href="#x35-4001427">27<!--tex4ht:ref: fig-QuickStartB-graph18 --></a>) looks like this:  </p><!--l. 1330--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x35-40005r1"></a></span><span 
@@ -260,7 +260,7 @@ class="pcrr7t-">"</span>
 
 
    </div>
-<!--l. 1340--><p class="indent" >   In other words, Model[T] can trigger off <span 
+<!--l. 1342--><p class="indent" >   In other words, Model[T] can trigger off <span 
 class="cmti-10">either </span>Model[T-6] <span 
 class="cmti-10">or </span>ColdModel[T].
 </p>
@@ -277,9 +277,9 @@ class="cmti-10">or </span>ColdModel[T].
                                                                                          
 <div class="center" 
 >
-<!--l. 1344--><p class="noindent" >
+<!--l. 1346--><p class="noindent" >
 
-</p><!--l. 1345--><p class="noindent" ><img 
+</p><!--l. 1347--><p class="noindent" ><img 
 src="screenshots/QuickStartB-graph18.png" alt="PIC"  
  /></p></div>
 <br /> <table class="caption" 
@@ -292,30 +292,30 @@ class="cmr-7">dependency graph showing a model cold start task.</span></td></tr>
 
                                                                                          
    </td></tr></table></div><hr class="endfigure" />
-<!--l. 1353--><p class="indent" >   A cold-start task is a one-off task used to satisfy the previous-cycle dependence of a cotemporal task whose
+<!--l. 1355--><p class="indent" >   A cold-start task is a one-off task used to satisfy the previous-cycle dependence of a cotemporal task whose
 previous-cycle trigger is not available. The obvious use for this is to cold-start warm-cycled forecast models at suite
 start-up, when there is no previous cycle. Unlike start-up tasks though, cold-start dependencies are not restricted to
 suite start-up because it is sometimes useful to be able to insert a cold-start task into a running suite, to get a
 model restarted after it had to skip one or more cycles due to problems, without having to restart the whole
 suite.
-</p><!--l. 1363--><p class="indent" >   A model cold-start task in a real suite may submit a real &#8220;cold start forecast&#8221; to generate the previous-cycle
+</p><!--l. 1365--><p class="indent" >   A model cold-start task in a real suite may submit a real &#8220;cold start forecast&#8221; to generate the previous-cycle
 input files required by its associated model, or it may just stand in for some external spinup process, or similar, that
 has to be completed before the suite is started (in the latter case the cold-start task would be a dummy task
 that just reports successful completion in order to satisfy the initial previous-cycle dependence of the
 model).
-</p><!--l. 1371--><p class="indent" >   Run <span 
+</p><!--l. 1373--><p class="indent" >   Run <span 
 class="cmti-10">QuickStart.b </span>to confirm that that no manual triggering is required to get the suite started
 now.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 1374--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 1376--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu24.html" >next</a>] [<a 
 href="cug-htmlsu22.html" >prev</a>] [<a 
 href="cug-htmlsu22.html#tailcug-htmlsu22.html" >prev-tail</a>] [<a 
 href="cug-htmlsu23.html" >front</a>] [<a 
 href="cug-htmlse6.html#cug-htmlsu23.html" >up</a>] </p></div>
-<!--l. 1374--><p class="indent" >   <a 
+<!--l. 1376--><p class="indent" >   <a 
  id="tailcug-htmlsu23.html"></a> </p> 
 </body></html> 

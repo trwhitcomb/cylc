@@ -10,54 +10,54 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3959--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4023--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu45.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlse10.html">tail</a>] [<a 
 href="cug-html.html#cug-htmlse10.html" >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">10   </span> <a 
- id="x68-11700010"></a>Task Job Submission</h3>
-<!--l. 3962--><p class="noindent" ><span 
+ id="x68-12100010"></a>Task Job Submission</h3>
+<!--l. 4026--><p class="noindent" ><span 
 class="cmti-10">Task Implementation </span>(Section&#x00A0;<a 
-href="cug-htmlse9.html#x62-1070009">9<!--tex4ht:ref: TaskImplementation --></a>) describes what requirements a command, script, or program, must fulfill in order
+href="cug-htmlse9.html#x62-1110009">9<!--tex4ht:ref: TaskImplementation --></a>) describes what requirements a command, script, or program, must fulfill in order
 to function as a cylc task. This section explains how tasks are submitted by cylc when they are ready to run, and
 how to define new task job submission methods.
-</p><!--l. 3968--><p class="noindent" >
+</p><!--l. 4032--><p class="noindent" >
 </p>
    <div class="subsectionTOCS">
    &#x00A0;<span class="subsectionToc" >10.1 <a 
-href="cug-htmlsu45.html#x69-11800010.1">Task Job Scripts</a></span>
+href="cug-htmlsu45.html#x69-12200010.1">Task Job Scripts</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >10.2 <a 
-href="cug-htmlsu46.html#x70-11900010.2">Built-in Job Submission Methods</a></span>
+href="cug-htmlsu46.html#x70-12300010.2">Built-in Job Submission Methods</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.1 <a 
-href="cug-htmlsu46.html#x70-12000010.2.1" id="QQ2-70-173">background</a></span>
+href="cug-htmlsu46.html#x70-12400010.2.1" id="QQ2-70-177">background</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.2 <a 
-href="cug-htmlsu46.html#x70-12100010.2.2" id="QQ2-70-174">at</a></span>
+href="cug-htmlsu46.html#x70-12500010.2.2" id="QQ2-70-178">at</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.3 <a 
-href="cug-htmlsu46.html#x70-12200010.2.3" id="QQ2-70-175">loadleveler</a></span>
+href="cug-htmlsu46.html#x70-12600010.2.3" id="QQ2-70-179">loadleveler</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.4 <a 
-href="cug-htmlsu46.html#x70-12300010.2.4" id="QQ2-70-176">pbs</a></span>
+href="cug-htmlsu46.html#x70-12700010.2.4" id="QQ2-70-180">pbs</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.5 <a 
-href="cug-htmlsu46.html#x70-12400010.2.5" id="QQ2-70-177">sge</a></span>
+href="cug-htmlsu46.html#x70-12800010.2.5" id="QQ2-70-181">sge</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.6 <a 
-href="cug-htmlsu46.html#x70-12500010.2.6" id="QQ2-70-178">Default Directives Provided</a></span>
+href="cug-htmlsu46.html#x70-12900010.2.6" id="QQ2-70-182">Default Directives Provided</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.7 <a 
-href="cug-htmlsu46.html#x70-12600010.2.7" id="QQ2-70-179">PBS and SGE Cylc Quirks</a></span>
+href="cug-htmlsu46.html#x70-13000010.2.7" id="QQ2-70-183">PBS and SGE Cylc Quirks</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >10.3 <a 
-href="cug-htmlsu47.html#x71-12700010.3">Whither Task stdout And stderr?</a></span>
+href="cug-htmlsu47.html#x71-13100010.3">Whither Task stdout And stderr?</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >10.4 <a 
-href="cug-htmlsu48.html#x72-12800010.4">Overriding the Job Submission Command</a></span>
+href="cug-htmlsu48.html#x72-13200010.4">Overriding the Job Submission Command</a></span>
 <br />   &#x00A0;<span class="subsectionToc" >10.5 <a 
-href="cug-htmlsu49.html#x73-12900010.5">Defining New Job Submission Methods</a></span>
+href="cug-htmlsu49.html#x73-13300010.5">Defining New Job Submission Methods</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.5.1 <a 
-href="cug-htmlsu49.html#x73-13000010.5.1" id="QQ2-73-183">An Example</a></span>
+href="cug-htmlsu49.html#x73-13400010.5.1" id="QQ2-73-187">An Example</a></span>
 <br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.5.2 <a 
-href="cug-htmlsu49.html#x73-13100010.5.2" id="QQ2-73-184">Where To Put New Job Submission Modules</a></span>
+href="cug-htmlsu49.html#x73-13500010.5.2" id="QQ2-73-188">Where To Put New Job Submission Modules</a></span>
    </div>
 
 
@@ -66,12 +66,12 @@ href="cug-htmlsu49.html#x73-13100010.5.2" id="QQ2-73-184">Where To Put New Job S
                                                                                          
 
                                                                                          
-   <!--l. 4437--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4501--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu45.html" >next</a>] [<a 
 href="cug-htmlsu44.html" >prev</a>] [<a 
 href="cug-htmlsu44.html#tailcug-htmlsu44.html" >prev-tail</a>] [<a 
 href="cug-htmlse10.html" >front</a>] [<a 
 href="cug-html.html#cug-htmlse10.html" >up</a>] </p></div>
-<!--l. 4437--><p class="indent" >   <a 
+<!--l. 4501--><p class="indent" >   <a 
  id="tailcug-htmlse10.html"></a> </p> 
 </body></html> 

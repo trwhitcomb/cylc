@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 855--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 857--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse5.html" >next</a>] [<a 
 href="cug-htmlsu15.html" >prev</a>] [<a 
 href="cug-htmlsu15.html#tailcug-htmlsu15.html" >prev-tail</a>] [<a 
@@ -22,13 +22,13 @@ href="#tailcug-htmlsu16.html">tail</a>] [<a
 href="cug-htmlse4.html#cug-htmlsu16.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">4.10   </span> <a 
  id="x24-270004.10"></a>Cross-Version Suite Compatibility</h4>
-<!--l. 858--><p class="noindent" >It may not be convenient for users to upgrade all of their suites at once when a new cylc release is
+<!--l. 860--><p class="noindent" >It may not be convenient for users to upgrade all of their suites at once when a new cylc release is
 installed. As of cylc-4.2.0 any installed version of cylc can act as a tranparent front end to any other
 installed version. This allows construction of new-version suites while older existing ones are still in use,
 without having to reconfigure your environment or explicitly invoke different cylc versions for different
 suites.
-</p><!--l. 866--><p class="indent" >   The required cylc version must be specified on the <span 
-class="cmti-10">first line </span>of a non-Jinja2 suite definition:  </p><!--l. 869--><div class="lstlisting">
+</p><!--l. 868--><p class="indent" >   The required cylc version must be specified on the <span 
+class="cmti-10">first line </span>of a non-Jinja2 suite definition:  </p><!--l. 871--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x24-27001r1"></a></span><span 
@@ -50,8 +50,8 @@ class="pcrro7t-">...</span>
 
 
    </div>
-<!--l. 873--><p class="indent" >   And on the <span 
-class="cmti-10">second line </span>for Jinja2 suites: </p><!--l. 874--><div class="lstlisting">
+<!--l. 875--><p class="indent" >   And on the <span 
+class="cmti-10">second line </span>for Jinja2 suites: </p><!--l. 876--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x24-27003r1"></a></span><span 
@@ -78,9 +78,9 @@ class="pcrro7t-">...</span>
 
 
    </div>
-<!--l. 879--><p class="indent" >   If cylc releases are installed in parallel under the same top level directory then the location of the required cylc
+<!--l. 881--><p class="indent" >   If cylc releases are installed in parallel under the same top level directory then the location of the required cylc
 installation is automatically computed from that of the invoked one. Otherwise, for unrelated install locations, the
-full path can be specified: </p><!--l. 883--><div class="lstlisting">
+full path can be specified: </p><!--l. 885--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x24-27006r1"></a></span><span 
@@ -106,7 +106,7 @@ class="pcrro7t-">...</span>
 
 
    </div>
-<!--l. 887--><p class="indent" >   This results in the right cylc version being used for any suite-referencing command, e.g.:  </p><!--l. 890--><div class="lstlisting">
+<!--l. 889--><p class="indent" >   This results in the right cylc version being used for any suite-referencing command, e.g.:  </p><!--l. 892--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
  id="x24-27008r1"></a></span><span 
@@ -218,23 +218,23 @@ class="pcrr7t-">-4.2.1</span>
 
 
    </div>
-<!--l. 901--><p class="indent" >   Note that non suite-referencing commands necessarily execute exactly as invoked. This includes all command line
+<!--l. 903--><p class="indent" >   Note that non suite-referencing commands necessarily execute exactly as invoked. This includes all command line
 help so it is advisable, although not strictly necessary, to keep your login environment configured for the latest cylc
 version.
-</p><!--l. 906--><p class="indent" >   If the required cylc version is not installed the command will abort and you will have to upgrade the suite
+</p><!--l. 908--><p class="indent" >   If the required cylc version is not installed the command will abort and you will have to upgrade the suite
 definition for compatibility with an installed version: use <span class="lstinline"><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">validate</span></span> and the <span 
 class="cmti-10">Suite.rc Reference</span>
 (Appendix&#x00A0;<a 
-href="cug-htmlse13.html#x94-153000A">A<!--tex4ht:ref: SuiteRCReference --></a>) to identify problems, and consult the cylc change log to see what changed between
+href="cug-htmlse13.html#x94-157000A">A<!--tex4ht:ref: SuiteRCReference --></a>) to identify problems, and consult the cylc change log to see what changed between
 versions.
-</p><!--l. 913--><p class="noindent" >
+</p><!--l. 915--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.10.1   </span> <a 
  id="x24-280004.10.1"></a>Version Compatibility Limitations</h5>
-<!--l. 915--><p class="noindent" >The top level command interface, <span class="lstinline"><span 
+<!--l. 917--><p class="noindent" >The top level command interface, <span class="lstinline"><span 
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">CYLC_DIR</span><span 
 class="pcrr7t-">/</span><span 
@@ -251,12 +251,12 @@ href="cug-html25.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a
 so the correct cylc version must be explicitly invoked if the sub-command has undergone a name change between the
 versions concerned.
 </p>
-   <!--l. 926--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 928--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlse5.html" >next</a>] [<a 
 href="cug-htmlsu15.html" >prev</a>] [<a 
 href="cug-htmlsu15.html#tailcug-htmlsu15.html" >prev-tail</a>] [<a 
 href="cug-htmlsu16.html" >front</a>] [<a 
 href="cug-htmlse4.html#cug-htmlsu16.html" >up</a>] </p></div>
-<!--l. 926--><p class="indent" >   <a 
+<!--l. 928--><p class="indent" >   <a 
  id="tailcug-htmlsu16.html"></a>  </p> 
 </body></html> 

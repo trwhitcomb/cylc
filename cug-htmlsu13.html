@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
@@ -804,7 +804,10 @@ graphviz.
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">4.7.5   </span> <a 
  id="x20-240004.7.5"></a>Jinja2</h5>
-<!--l. 812--><p class="noindent" >You can download Jinja2 from the project web site and install it with <span class="lstinline"><span 
+<!--l. 812--><p class="noindent" >You can download Jinja2 from the project web site and install it with: </p><!--l. 813--><div class="lstlisting">
+<span 
+class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
+ id="x20-24001r1"></a></span><span 
 class="pcrr7t-">python</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">setup</span><span 
@@ -814,19 +817,30 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">install</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">--</span><span 
-class="pcrr7t-">prefix</span></span>/path/to/install/location=,
-or use the <span class="lstinline"><span 
-class="pcrr7t-">easy_install</span></span> command to do it all in one step. Either way Jinja2 installation requires the final
-installed package location to be present in the <span class="lstinline"><span 
-class="pcrr7t-">PYTHONPATH</span></span> variable, so you have to arrange for this first. You made
-also need to create the installed package directory yourself first (if so, the install will abort and print the name of
-the missing directory in the error message). Here&#8217;s how to easy_install Jinja2 into your new private python site
-packages directory:
+class="pcrr7t-">prefix</span><span 
+class="pcrr7t-">=/</span><span 
+class="pcrr7t-">path</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">to</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">install</span><span 
+class="pcrr7t-">/</span><span 
+class="pcrr7t-">location</span>
+
+
+   </div>
+<!--l. 816--><p class="indent" >   or use the <span class="lstinline"><span 
+class="pcrr7t-">easy_install</span></span> command to do it all in one step. Either way the final installed package location
+must be present in the <span class="lstinline"><span 
+class="pcrr7t-">PYTHONPATH</span></span> variable, and you may have to arrange for this first. You may also need to
+create the installed package directory if it doesn&#8217;t exist already (if so the install will abort and print the name of the
+missing directory in the error message). Here&#8217;s how to easy_install Jinja2 into your new private python site packages
+directory:
 </p>
-   <!--l. 823--><div class="lstlisting">
+   <!--l. 825--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24001r1"></a></span><span 
+ id="x20-24002r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">LOCALPREFIX</span><span 
@@ -838,7 +852,7 @@ class="pcrr7t-">external</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">installed</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24002r2"></a></span><span 
+ id="x20-24003r2"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">LOCALPACKAGES</span><span 
@@ -858,7 +872,7 @@ class="pcrr7t-">site</span><span
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">packages</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24003r3"></a></span><span 
+ id="x20-24004r3"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">export</span><span 
@@ -871,7 +885,7 @@ class="pcrr7t-">:</span><span
 class="pcrr8c-">$</span><span 
 class="pcrr7t-">PYTHONPATH</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x20-24004r4"></a></span><span 
+ id="x20-24005r4"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">easy_install</span><span 
@@ -886,17 +900,17 @@ class="pcrr7t-">Jinja2</span>
 
 
    </div>
-<!--l. 829--><p class="indent" >   Adapt the site-packages path according to your actual path, as above.
+<!--l. 831--><p class="indent" >   Adapt the site-packages path according to your actual path, as above.
                                                                                          
 
                                                                                          
 </p>
-   <!--l. 831--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 833--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu14.html" >next</a>] [<a 
 href="cug-htmlsu12.html" >prev</a>] [<a 
 href="cug-htmlsu12.html#tailcug-htmlsu12.html" >prev-tail</a>] [<a 
 href="cug-htmlsu13.html" >front</a>] [<a 
 href="cug-htmlse4.html#cug-htmlsu13.html" >up</a>] </p></div>
-<!--l. 831--><p class="indent" >   <a 
+<!--l. 833--><p class="indent" >   <a 
  id="tailcug-htmlsu13.html"></a>  </p> 
 </body></html> 

@@ -10,47 +10,47 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 3509--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3573--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu39.html" >next</a>] [<a 
 href="cug-htmlsu37.html" >prev</a>] [<a 
 href="cug-htmlsu37.html#tailcug-htmlsu37.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu38.html">tail</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu38.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">8.6   </span> <a 
- id="x59-1040008.6"></a>Jinja2 Suite Templates</h4>
-<!--l. 3512--><p class="noindent" >Support for the Jinja2 template processor adds general variables, mathematical expressions, loop control structures,
+ id="x59-1080008.6"></a>Jinja2 Suite Templates</h4>
+<!--l. 3576--><p class="noindent" >Support for the Jinja2 template processor adds general variables, mathematical expressions, loop control structures,
 and conditional expressions to suite.rc files - which are automatically preprocessed to generate the final suite
 definition seen by cylc.
-</p><!--l. 3517--><p class="indent" >   The need for Jinja2 processing must be declared with a hash-bang comment as the first line of the suite.rc file:
-</p><!--l. 3519--><div class="lstlisting">
+</p><!--l. 3581--><p class="indent" >   The need for Jinja2 processing must be declared with a hash-bang comment as the first line of the suite.rc file:
+</p><!--l. 3583--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104001r1"></a></span><span 
+ id="x59-108001r1"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">!</span><span 
 class="pcrr7t-">Jinja2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104002r2"></a></span><span 
+ id="x59-108002r2"></a></span><span 
 class="pcrr7t-">#</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">...</span>
 
 
    </div>
-<!--l. 3524--><p class="indent" >   Potential uses for this include automatic generation of repeated groups of similar tasks and dependencies, and
+<!--l. 3588--><p class="indent" >   Potential uses for this include automatic generation of repeated groups of similar tasks and dependencies, and
 inclusion or exclusion of entire suite sections according to the value of a single flag. Consider a large
 complicated operational suite and several related parallel test suites with slightly different task content and
 structure (the parallel suites, for instance, might take certain large input files from the operation or
 the archive rather than downloading them again) - these can now be maintained as a single master
 suite definition that reconfigures itself according to the value of a flag variable indicating the intended
 use.
-</p><!--l. 3534--><p class="indent" >   Template processing is the first thing done on parsing a suite definition so Jinja2 expressions can appear
+</p><!--l. 3598--><p class="indent" >   Template processing is the first thing done on parsing a suite definition so Jinja2 expressions can appear
 anywhere in the file (inside strings and namespace headings, for example).
-</p><!--l. 3538--><p class="indent" >   Jinja2 is well documented at <span class="obeylines-h"><a 
+</p><!--l. 3602--><p class="indent" >   Jinja2 is well documented at <span class="obeylines-h"><a 
 href="http://jinja.pocoo.org/docs" class="url" ><span 
 class="pcrr7t-">http://jinja.pocoo.org/docs</span></a></span>, so here we just provide an example suite
 that uses it. The meaning of the embedded Jinja2 code should be reasonably self-evident to anyone familiar with
@@ -63,34 +63,34 @@ standard programming techniques.
 
                                                                                          
 <a 
- id="x59-10400339"></a>
+ id="x59-10800339"></a>
                                                                                          
 
                                                                                          
 <div class="center" 
 >
-<!--l. 3544--><p class="noindent" >
+<!--l. 3608--><p class="noindent" >
 
-</p><!--l. 3545--><p class="noindent" ><img 
+</p><!--l. 3609--><p class="noindent" ><img 
 src="images/jinja2-ensemble-graph.png" alt="PIC"  
  /></p></div>
 <br /> <table class="caption" 
 ><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;39: </td><td  
 class="content"><span 
-class="cmr-7">The Jinja2 ensemble example suite graph.</span></td></tr></table><!--tex4ht:label?: x59-10400339 -->
+class="cmr-7">The Jinja2 ensemble example suite graph.</span></td></tr></table><!--tex4ht:label?: x59-10800339 -->
                                                                                          
 
                                                                                          
    </td></tr></table></div><hr class="endfigure" />
-<!--l. 3552--><p class="indent" >   The <span class="lstinline"><span 
+<!--l. 3616--><p class="indent" >   The <span class="lstinline"><span 
 class="pcrr7t-">jinja2</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">ensemble</span></span> example, graphed in Figure&#x00A0;<a 
-href="#x59-10400339">39<!--tex4ht:ref: fig-jinja2-ensemble --></a>, shows an ensemble of similar tasks generated using
-Jinja2:  </p><!--l. 3556--><div class="lstlisting">
+href="#x59-10800339">39<!--tex4ht:ref: fig-jinja2-ensemble --></a>, shows an ensemble of similar tasks generated using
+Jinja2:  </p><!--l. 3620--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104004r1"></a></span><span 
+ id="x59-108004r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -112,12 +112,12 @@ class="pcrr7t-">jinja2</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">ensemble</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104005r2"></a></span><span 
+ id="x59-108005r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!</span><span 
 class="pcrro7t-">jinja2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104006r3"></a></span><span 
+ id="x59-108006r3"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -130,12 +130,12 @@ class="pcrr7t-">5</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104007r4"></a></span><span 
+ id="x59-108007r4"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104008r5"></a></span><span 
+ id="x59-108008r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -144,7 +144,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">dependencies</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104009r6"></a></span><span 
+ id="x59-108009r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -170,7 +170,7 @@ class="pcrr7t-">dependencies</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104010r7"></a></span></span><span 
+ id="x59-108010r7"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -202,7 +202,7 @@ class="pcrr7t-">)</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104011r8"></a></span></span><span 
+ id="x59-108011r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -242,7 +242,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104012r9"></a></span></span><span 
+ id="x59-108012r9"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -266,10 +266,10 @@ class="pcrr7t-">"</span>
 
 
    </div>
-<!--l. 3567--><p class="indent" >   Here is the generated suite definition, after Jinja2 processing:  </p><!--l. 3569--><div class="lstlisting">
+<!--l. 3631--><p class="indent" >   Here is the generated suite definition, after Jinja2 processing:  </p><!--l. 3633--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104013r1"></a></span><span 
+ id="x59-108013r1"></a></span><span 
 class="pcrr7t-">%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cylc</span><span 
@@ -294,17 +294,17 @@ class="pcrr7t-">jinja2</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">ensemble</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104014r2"></a></span><span 
+ id="x59-108014r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!</span><span 
 class="pcrro7t-">jinja2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104015r3"></a></span><span 
+ id="x59-108015r3"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104016r4"></a></span><span 
+ id="x59-108016r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -313,7 +313,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">dependencies</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104017r5"></a></span><span 
+ id="x59-108017r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -330,7 +330,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104018r6"></a></span></span><span 
+ id="x59-108018r6"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -355,7 +355,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104019r7"></a></span></span><span 
+ id="x59-108019r7"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -380,7 +380,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104020r8"></a></span></span><span 
+ id="x59-108020r8"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -405,7 +405,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104021r9"></a></span></span><span 
+ id="x59-108021r9"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -430,7 +430,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104022r10"></a></span></span><span 
+ id="x59-108022r10"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -455,7 +455,7 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104023r11"></a></span></span><span 
+ id="x59-108023r11"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -478,7 +478,7 @@ class="pcrr7t-">"</span>
 
 
    </div>
-<!--l. 3583--><p class="indent" >   And finally, the <span class="lstinline"><span 
+<!--l. 3647--><p class="indent" >   And finally, the <span class="lstinline"><span 
 class="pcrr7t-">jinja2</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">cities</span></span> example uses variables, includes or excludes special cleanup tasks according to
@@ -486,20 +486,20 @@ the value of a logical flag, and it automatically generates all dependencies and
 tasks that is repeated for each city in the suite. To add a new city and associated tasks and dependencies simply add
 the city name to list at the top of the file. The suite is graphed, with the New York City task family expanded, in
 Figure&#x00A0;<a 
-href="#x59-10408540">40<!--tex4ht:ref: fig-jinja2-cities --></a>.
+href="#x59-10808540">40<!--tex4ht:ref: fig-jinja2-cities --></a>.
 <a 
- id="x59-104024"></a>
+ id="x59-108024"></a>
 </p>
-   <!--l. 3593--><pre class="listings"><!--l. 3593--><div class="lstinputlisting"><span 
+   <!--l. 3657--><pre class="listings"><!--l. 3657--><div class="lstinputlisting"><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104025r1"></a></span><span 
+ id="x59-108025r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!</span><span 
 class="pcrro7t-">Jinja2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104026r2"></a></span><span 
+ id="x59-108026r2"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104027r3"></a></span><span 
+ id="x59-108027r3"></a></span><span 
 class="pcrr7t-">title</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -515,7 +515,7 @@ class="pcrr7t-">example</span><span
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104028r4"></a></span><span 
+ id="x59-108028r4"></a></span><span 
 class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -524,7 +524,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104029r5"></a></span></span><span 
+ id="x59-108029r5"></a></span></span><span 
 class="pcrr7t-">Illustrates</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">use</span><span 
@@ -544,7 +544,7 @@ class="pcrr7t-">and</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">programmatic</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104030r6"></a></span></span><span 
+ id="x59-108030r6"></a></span></span><span 
 class="pcrr7t-">generation</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">of</span><span 
@@ -567,9 +567,9 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104031r7"></a></span><span 
+ id="x59-108031r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104032r8"></a></span><span 
+ id="x59-108032r8"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -584,7 +584,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104033r9"></a></span><span 
+ id="x59-108033r9"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -619,7 +619,7 @@ class="pcrr7t-">'</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104034r10"></a></span><span 
+ id="x59-108034r10"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -646,7 +646,7 @@ class="pcrr7t-">'</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104035r11"></a></span><span 
+ id="x59-108035r11"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -659,9 +659,9 @@ class="pcrr7t-">20</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104036r12"></a></span><span 
+ id="x59-108036r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104037r13"></a></span><span 
+ id="x59-108037r13"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">set</span><span 
@@ -674,14 +674,14 @@ class="pcrr7t-">True</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104038r14"></a></span><span 
+ id="x59-108038r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104039r15"></a></span><span 
+ id="x59-108039r15"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104040r16"></a></span><span 
+ id="x59-108040r16"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -692,7 +692,7 @@ class="pcrr7t-">dependencies</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104041r17"></a></span><span 
+ id="x59-108041r17"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">if</span><span 
@@ -701,7 +701,7 @@ class="pcrr7t-">CLEANUP</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104042r18"></a></span><span 
+ id="x59-108042r18"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -714,7 +714,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">23</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104043r19"></a></span><span 
+ id="x59-108043r19"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -735,14 +735,14 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">clean</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104044r20"></a></span><span 
+ id="x59-108044r20"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endif</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104045r21"></a></span><span 
+ id="x59-108045r21"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -755,7 +755,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">0,12</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104046r22"></a></span><span 
+ id="x59-108046r22"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -776,7 +776,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104047r23"></a></span></span><span 
+ id="x59-108047r23"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -811,7 +811,7 @@ class="pcrr7t-">#</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104048r24"></a></span></span><span 
+ id="x59-108048r24"></a></span></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
@@ -830,7 +830,7 @@ class="pcrr7t-">comment</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">#}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104049r25"></a></span></span><span 
+ id="x59-108049r25"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -862,7 +862,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_one</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104050r26"></a></span></span><span 
+ id="x59-108050r26"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -894,7 +894,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_two</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104051r27"></a></span></span><span 
+ id="x59-108051r27"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -949,7 +949,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">_four</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104052r28"></a></span></span><span 
+ id="x59-108052r28"></a></span></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">if</span><span 
@@ -958,7 +958,7 @@ class="pcrr7t-">CLEANUP</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104053r29"></a></span></span><span 
+ id="x59-108053r29"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -999,21 +999,21 @@ class="pcrr7t-">=&#x003E;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cleanup</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104054r30"></a></span></span><span 
+ id="x59-108054r30"></a></span></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endif</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104055r31"></a></span></span><span 
+ id="x59-108055r31"></a></span></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104056r32"></a></span></span><span 
+ id="x59-108056r32"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1038,12 +1038,12 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104057r33"></a></span><span 
+ id="x59-108057r33"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104058r34"></a></span><span 
+ id="x59-108058r34"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1058,7 +1058,7 @@ class="pcrr7t-">}}</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104059r35"></a></span><span 
+ id="x59-108059r35"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1071,7 +1071,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">remote</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104060r36"></a></span><span 
+ id="x59-108060r36"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1094,7 +1094,7 @@ class="pcrr7t-">HOST</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104061r37"></a></span><span 
+ id="x59-108061r37"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1120,7 +1120,7 @@ class="pcrr7t-">to</span><span
 class="pcrr7t-">/</span><span 
 class="pcrr7t-">cylc</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104062r38"></a></span><span 
+ id="x59-108062r38"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1133,7 +1133,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104063r39"></a></span><span 
+ id="x59-108063r39"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1169,9 +1169,9 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">}}:00</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104064r40"></a></span><span 
+ id="x59-108064r40"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104065r41"></a></span><span 
+ id="x59-108065r41"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
@@ -1184,7 +1184,7 @@ class="pcrr7t-">CITIES</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104066r42"></a></span><span 
+ id="x59-108066r42"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1199,7 +1199,7 @@ class="pcrr7t-">}}</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104067r43"></a></span><span 
+ id="x59-108067r43"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1219,7 +1219,7 @@ class="pcrr7t-">HOST</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104068r44"></a></span><span 
+ id="x59-108068r44"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
@@ -1232,7 +1232,7 @@ class="pcrr7t-">CITYJOBS</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104069r45"></a></span><span 
+ id="x59-108069r45"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1253,7 +1253,7 @@ class="pcrr7t-">}}</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104070r46"></a></span><span 
+ id="x59-108070r46"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1272,28 +1272,28 @@ class="pcrr7t-">CITY</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">}}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104071r47"></a></span><span 
+ id="x59-108071r47"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104072r48"></a></span><span 
+ id="x59-108072r48"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104073r49"></a></span><span 
+ id="x59-108073r49"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104074r50"></a></span><span 
+ id="x59-108074r50"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">visualization</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104075r51"></a></span><span 
+ id="x59-108075r51"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1308,7 +1308,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">2011080812</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104076r52"></a></span><span 
+ id="x59-108076r52"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1323,7 +1323,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">2011080823</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104077r53"></a></span><span 
+ id="x59-108077r53"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1334,7 +1334,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">groups</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104078r54"></a></span><span 
+ id="x59-108078r54"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1352,7 +1352,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">cleanup</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104079r55"></a></span><span 
+ id="x59-108079r55"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1363,7 +1363,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">attributes</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104080r56"></a></span><span 
+ id="x59-108080r56"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1388,7 +1388,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">yellow</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104081r57"></a></span><span 
+ id="x59-108081r57"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1413,7 +1413,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">lightblue</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104082r58"></a></span><span 
+ id="x59-108082r58"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">for</span><span 
@@ -1426,7 +1426,7 @@ class="pcrr7t-">CITYJOBS</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">%}</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104083r59"></a></span><span 
+ id="x59-108083r59"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -1456,7 +1456,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">lightblue</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x59-104084r60"></a></span><span 
+ id="x59-108084r60"></a></span><span 
 class="pcrr7t-">{%</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">endfor</span><span 
@@ -1470,21 +1470,21 @@ class="pcrr7t-">%}</span></div>
 
                                                                                          
 <a 
- id="x59-10408540"></a>
+ id="x59-10808540"></a>
                                                                                          
 
                                                                                          
 <div class="center" 
 >
-<!--l. 3597--><p class="noindent" >
+<!--l. 3661--><p class="noindent" >
 
-</p><!--l. 3598--><p class="noindent" ><img 
+</p><!--l. 3662--><p class="noindent" ><img 
 src="images/jinja2-suite-graph.png" alt="PIC"  
  /></p></div>
 <br /> <table class="caption" 
 ><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;40: </td><td  
 class="content"><span 
-class="cmr-7">The Jinja2 cities example suite graph, with the New York City task family expanded.</span></td></tr></table><!--tex4ht:label?: x59-10408540 -->
+class="cmr-7">The Jinja2 cities example suite graph, with the New York City task family expanded.</span></td></tr></table><!--tex4ht:label?: x59-10808540 -->
                                                                                          
 
                                                                                          
@@ -1492,12 +1492,12 @@ class="cmr-7">The Jinja2 cities example suite graph, with the New York City task
                                                                                          
 
                                                                                          
-   <!--l. 3607--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 3671--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu39.html" >next</a>] [<a 
 href="cug-htmlsu37.html" >prev</a>] [<a 
 href="cug-htmlsu37.html#tailcug-htmlsu37.html" >prev-tail</a>] [<a 
 href="cug-htmlsu38.html" >front</a>] [<a 
 href="cug-htmlse8.html#cug-htmlsu38.html" >up</a>] </p></div>
-<!--l. 3607--><p class="indent" >   <a 
+<!--l. 3671--><p class="indent" >   <a 
  id="tailcug-htmlsu38.html"></a> </p> 
 </body></html> 

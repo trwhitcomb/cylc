@@ -10,19 +10,19 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4521--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4585--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu52.html" >next</a>] [<a 
 href="cug-htmlsu50.html" >prev</a>] [<a 
 href="cug-htmlsu50.html#tailcug-htmlsu50.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu51.html">tail</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu51.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">11.2   </span> <a 
- id="x76-13400011.2"></a>Limiting Suite Activity</h4>
-<!--l. 4523--><p class="noindent" >Cylc suites are self-limiting to the extent that tasks are only submitted to run if they are actually ready to run. But
+ id="x76-13800011.2"></a>Limiting Suite Activity</h4>
+<!--l. 4587--><p class="noindent" >Cylc suites are self-limiting to the extent that tasks are only submitted to run if they are actually ready to run. But
 even so some suites may generate too much activity at once, particularly in delayed/catch-up/historical operation
 when they are not constrained by the clock-triggered tasks that normally have to wait on real time data. There are
 two issues to be aware of here: overburdening an external batch queueing system, or the task host
@@ -32,11 +32,11 @@ and overburdening cylc itself by letting unconstrained or loosely constrained ta
 the future (which would require cylc to keep vast numbers of &#8220;succeeded&#8221; tasks around until other
 tasks, which may depend on them, have caught up) - this can be prevented by the suite runahead
 limit.
-</p><!--l. 4538--><p class="noindent" >
+</p><!--l. 4602--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">11.2.1   </span> <a 
- id="x76-13500011.2.1"></a>The Suite Runahead Limit</h5>
-<!--l. 4541--><p class="noindent" >In a cylc suite each task cycles independently constrained only by dependence on other tasks or by clock triggers. A
+ id="x76-13900011.2.1"></a>The Suite Runahead Limit</h5>
+<!--l. 4605--><p class="noindent" >In a cylc suite each task cycles independently constrained only by dependence on other tasks or by clock triggers. A
 cycling task with no prerequisites and no clock-trigger will tend to run off into the future (it is unlikely that you will
 need such a task but it is possible to define one). Similarly, in delayed or historical operation a clock-triggered task
 with no dependence on other tasks will run off ahead because the clock trigger provides no constraint until the task
@@ -45,23 +45,23 @@ letting a few fast data retrieval tasks, say, get way ahead of the slower tasks 
 data, and in large suites this could eventually swamp cylc because a large number of &#8220;succeeded&#8221;
 tasks would have to be maintained until the slower tasks, which might depend on them, have caught
 up.
-</p><!--l. 4556--><p class="indent" >   To control this sort of behaviour cylc has a configurable <span 
+</p><!--l. 4620--><p class="indent" >   To control this sort of behaviour cylc has a configurable <span 
 class="cmti-10">suite runahead limit </span>that prevents the fastest tasks
-getting too far ahead of the slowest tasks:  </p><!--l. 4560--><div class="lstlisting">
+getting too far ahead of the slowest tasks:  </p><!--l. 4624--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-135001r1"></a></span><span 
+ id="x76-139001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-135002r2"></a></span><span 
+ id="x76-139002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-135003r3"></a></span><span 
+ id="x76-139003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -86,17 +86,17 @@ class="pcrro7t-">24)</span>
 
 
    </div>
-<!--l. 4566--><p class="indent" >   A cycling task spawns its successor when it enters the submitted state or, for sequential tasks, when it
+<!--l. 4630--><p class="indent" >   A cycling task spawns its successor when it enters the submitted state or, for sequential tasks, when it
 finishes. If the successor&#8217;s cycle time is ahead of the oldest non-failed task by more than the runahead
 limit it is put into the special &#8220;runahead&#8221; held state until other tasks catch up sufficiently. In real
 time operation the runahead limit is of little consequence, because the suite will be constrained by
 its clock-triggered tasks, but the limit must be long enough to cover the minimum cycle time range
 present in the suite. A task that only runs once per day, for example, must be able to spawn 24 hours
 ahead.
-</p><!--l. 4577--><p class="indent" >   Failed tasks, which are not automatically removed from a suite, are ignored when computing the
+</p><!--l. 4641--><p class="indent" >   Failed tasks, which are not automatically removed from a suite, are ignored when computing the
 runahead limit (but tasks that can&#8217;t run because they depend on a failed task are not ignored, of
 course).
-</p><!--l. 4581--><p class="indent" >   Note that it may occasionally be useful to define tasks that are entirely unconstrained even in real time
+</p><!--l. 4645--><p class="indent" >   Note that it may occasionally be useful to define tasks that are entirely unconstrained even in real time
 operation. For instance, consider a tide prediction model that contributes, along with weather and sea state models,
 to a &#8220;seagram&#8221; product, but which does not wait on any real time data (tide is astronomically determined) and does
 not take inputs from other tasks in the suite. Such a task could be prevented from running off into the
@@ -105,41 +105,41 @@ future by giving it artificial dependence on some other task, but the runahead l
 
                                                                                          
 effect.
-</p><!--l. 4591--><p class="noindent" >
+</p><!--l. 4655--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">11.2.2   </span> <a 
- id="x76-13600011.2.2"></a>Internal Queues</h5>
-<!--l. 4594--><p class="noindent" >Large suites could potentially swamp the task host hardware or external batch queueing system, depending on the
+ id="x76-14000011.2.2"></a>Internal Queues</h5>
+<!--l. 4658--><p class="noindent" >Large suites could potentially swamp the task host hardware or external batch queueing system, depending on the
 chosen job submission method, by submitting too many tasks at once. Cylc&#8217;s internal queues prevent this
 by limiting the number of tasks, within defined groups, that are active (submitted or running) at
 once.
-</p><!--l. 4600--><p class="indent" >   A queue is defined by a name; a <span 
+</p><!--l. 4664--><p class="indent" >   A queue is defined by a name; a <span 
 class="cmti-10">limit</span>, which is the maximum number of active tasks allowed for the queue; and a
 list of member tasks, which are assigned by name to the queue.
-</p><!--l. 4604--><p class="indent" >   Queue configuration is done under the [scheduling] section of the suite.rc file, not as part of the runtime
+</p><!--l. 4668--><p class="indent" >   Queue configuration is done under the [scheduling] section of the suite.rc file, not as part of the runtime
 namespace hierarchy, because like dependencies queues constrain <span 
 class="cmti-10">when </span>a task runs rather than <span 
 class="cmti-10">what </span>runs
 after it is submitted. When runtime family relationships and queues do coincide you can assign task
 family members en masse to queues by using the family name, as shown in the example suite listing
 below.
-</p><!--l. 4612--><p class="indent" >   By default every task is assigned to a <span 
+</p><!--l. 4676--><p class="indent" >   By default every task is assigned to a <span 
 class="cmti-10">default </span>queue, which by default has a zero limit (interpreted by cylc as no
-limit). To use a single queue for the whole suite just set the default queue limit:  </p><!--l. 4617--><div class="lstlisting">
+limit). To use a single queue for the whole suite just set the default queue limit:  </p><!--l. 4681--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136001r1"></a></span><span 
+ id="x76-140001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136002r2"></a></span><span 
+ id="x76-140002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136003r3"></a></span><span 
+ id="x76-140003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -149,7 +149,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">queues</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136004r4"></a></span><span 
+ id="x76-140004r4"></a></span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -180,7 +180,7 @@ class="pcrro7t-">at</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">once</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136005r5"></a></span><span 
+ id="x76-140005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -193,7 +193,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">default</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136006r6"></a></span><span 
+ id="x76-140006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -214,21 +214,21 @@ class="pcrr7t-">5</span>
 
 
    </div>
-<!--l. 4625--><p class="indent" >   To use other queues just name each one, set the limit, and assign member tasks: </p><!--l. 4627--><div class="lstlisting">
+<!--l. 4689--><p class="indent" >   To use other queues just name each one, set the limit, and assign member tasks: </p><!--l. 4691--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136007r1"></a></span><span 
+ id="x76-140007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136008r2"></a></span><span 
+ id="x76-140008r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136009r3"></a></span><span 
+ id="x76-140009r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -238,7 +238,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">queues</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136010r4"></a></span><span 
+ id="x76-140010r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -251,7 +251,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">q_foo</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136011r5"></a></span><span 
+ id="x76-140011r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -270,7 +270,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">5</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136012r6"></a></span><span 
+ id="x76-140012r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -297,16 +297,16 @@ class="pcrr7t-">baz</span>
 
 
    </div>
-<!--l. 4635--><p class="indent" >   Any tasks not assigned to a particular queue will remain in the default queue. The <span 
+<!--l. 4699--><p class="indent" >   Any tasks not assigned to a particular queue will remain in the default queue. The <span 
 class="cmti-10">queues </span>example suite
 illustrates how queues work by running two task trees side by side (as seen in the graph GUI) each limited to 2 and
 3 tasks respectively:
 <a 
- id="x76-136013"></a>
+ id="x76-140013"></a>
 </p>
-   <!--l. 4640--><pre class="listings"><!--l. 4640--><div class="lstinputlisting"><span 
+   <!--l. 4704--><pre class="listings"><!--l. 4704--><div class="lstinputlisting"><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136014r1"></a></span><span 
+ id="x76-140014r1"></a></span><span 
 class="pcrr7t-">title</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -317,7 +317,7 @@ class="pcrr7t-">internal</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">queueing</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136015r2"></a></span><span 
+ id="x76-140015r2"></a></span><span 
 class="pcrr7t-">description</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">=</span><span 
@@ -326,7 +326,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136016r3"></a></span></span><span 
+ id="x76-140016r3"></a></span></span><span 
 class="pcrr7t-">Two</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">trees</span><span 
@@ -358,7 +358,7 @@ class="pcrr7t-">limit</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">of</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136017r4"></a></span></span><span 
+ id="x76-140017r4"></a></span></span><span 
 class="pcrr7t-">two</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">active</span><span 
@@ -386,7 +386,7 @@ class="pcrr7t-">to</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">three</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136018r5"></a></span></span><span 
+ id="x76-140018r5"></a></span></span><span 
 class="pcrr7t-">active</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">tasks</span><span 
@@ -417,7 +417,7 @@ class="pcrr7t-">&#x00A0;</span><span
 class="pcrr7t-">view</span><span 
 class="pcrr7t-">.</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136019r6"></a></span></span><span 
+ id="x76-140019r6"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -436,12 +436,12 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136020r7"></a></span><span 
+ id="x76-140020r7"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">scheduling</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136021r8"></a></span><span 
+ id="x76-140021r8"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -450,7 +450,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">queues</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136022r9"></a></span><span 
+ id="x76-140022r9"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -463,7 +463,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">default</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136023r10"></a></span><span 
+ id="x76-140023r10"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -482,7 +482,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">2</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136024r11"></a></span><span 
+ id="x76-140024r11"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -495,7 +495,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136025r12"></a></span><span 
+ id="x76-140025r12"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -514,7 +514,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">3</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136026r13"></a></span><span 
+ id="x76-140026r13"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -560,7 +560,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">z</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136027r14"></a></span><span 
+ id="x76-140027r14"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -569,7 +569,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">dependencies</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136028r15"></a></span><span 
+ id="x76-140028r15"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -586,7 +586,7 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136029r16"></a></span></span><span 
+ id="x76-140029r16"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -637,7 +637,7 @@ class="pcrr7t-">&amp;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">m</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136030r17"></a></span></span><span 
+ id="x76-140030r17"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -688,7 +688,7 @@ class="pcrr7t-">&amp;</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">z</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136031r18"></a></span></span><span 
+ id="x76-140031r18"></a></span></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -709,12 +709,12 @@ class="pcrr7t-">"</span><span
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">"</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136032r19"></a></span><span 
+ id="x76-140032r19"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136033r20"></a></span><span 
+ id="x76-140033r20"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -725,7 +725,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">fam2</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136034r21"></a></span><span 
+ id="x76-140034r21"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -740,7 +740,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">g</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136035r22"></a></span><span 
+ id="x76-140035r22"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -755,7 +755,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">fam1</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136036r23"></a></span><span 
+ id="x76-140036r23"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -770,7 +770,7 @@ class="pcrr7t-">,</span><span
 class="pcrr7t-">t</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x76-136037r24"></a></span><span 
+ id="x76-140037r24"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -789,12 +789,12 @@ Note assignment of runtime task family members to queues using the family name.
                                                                                          
 
                                                                                          
-   <!--l. 4644--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4708--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu52.html" >next</a>] [<a 
 href="cug-htmlsu50.html" >prev</a>] [<a 
 href="cug-htmlsu50.html#tailcug-htmlsu50.html" >prev-tail</a>] [<a 
 href="cug-htmlsu51.html" >front</a>] [<a 
 href="cug-htmlse11.html#cug-htmlsu51.html" >up</a>] </p></div>
-<!--l. 4644--><p class="indent" >   <a 
+<!--l. 4708--><p class="indent" >   <a 
  id="tailcug-htmlsu51.html"></a>  </p> 
 </body></html> 

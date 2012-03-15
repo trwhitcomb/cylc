@@ -10,58 +10,58 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,3,next,html --> 
 <meta name="src" content="cug-html.tex" /> 
-<meta name="date" content="2012-02-10 08:20:00" /> 
+<meta name="date" content="2012-03-15 23:47:00" /> 
 <link rel="stylesheet" type="text/css" href="cug-html.css" /> 
 </head><body 
 >
-   <!--l. 4096--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4160--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="#tailcug-htmlsu46.html">tail</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
    <h4 class="subsectionHead"><span class="titlemark">10.2   </span> <a 
- id="x70-11900010.2"></a>Built-in Job Submission Methods</h4>
-<!--l. 4099--><p class="noindent" >Cylc has a number of built-in job submission methods. If these do not suite your needs Section&#x00A0;<a 
-href="cug-htmlsu49.html#x73-12900010.5">10.5<!--tex4ht:ref: DefiningNewJobSubmissionMethods --></a> shows how to
+ id="x70-12300010.2"></a>Built-in Job Submission Methods</h4>
+<!--l. 4163--><p class="noindent" >Cylc has a number of built-in job submission methods. If these do not suite your needs Section&#x00A0;<a 
+href="cug-htmlsu49.html#x73-13300010.5">10.5<!--tex4ht:ref: DefiningNewJobSubmissionMethods --></a> shows how to
 extend cylc with new user-defined job submission methods.
-</p><!--l. 4103--><p class="noindent" >
+</p><!--l. 4167--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.1   </span> <a 
- id="x70-12000010.2.1"></a>background</h5>
-<!--l. 4105--><p class="noindent" >This job submission method runs tasks directly in a background shell.
-</p><!--l. 4107--><p class="noindent" >
+ id="x70-12400010.2.1"></a>background</h5>
+<!--l. 4169--><p class="noindent" >This job submission method runs tasks directly in a background shell.
+</p><!--l. 4171--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.2   </span> <a 
- id="x70-12100010.2.2"></a>at</h5>
-<!--l. 4109--><p class="noindent" >This job submission method submits tasks to the rudimentary Unix <span class="lstinline"><span 
+ id="x70-12500010.2.2"></a>at</h5>
+<!--l. 4173--><p class="noindent" >This job submission method submits tasks to the rudimentary Unix <span class="lstinline"><span 
 class="pcrr7t-">at</span></span> scheduler. The <span class="lstinline"><span 
 class="pcrr7t-">atd</span></span> daemon must be
 running.
-</p><!--l. 4112--><p class="noindent" >
+</p><!--l. 4176--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.3   </span> <a 
- id="x70-12200010.2.3"></a>loadleveler</h5>
-<!--l. 4114--><p class="noindent" >This job submission method submits tasks to loadleveler using the <span class="lstinline"><span 
+ id="x70-12600010.2.3"></a>loadleveler</h5>
+<!--l. 4178--><p class="noindent" >This job submission method submits tasks to loadleveler using the <span class="lstinline"><span 
 class="pcrr7t-">llsubmit</span></span> command. Loadleveler directives can
 be provided in the suite.rc file:
 </p>
-   <!--l. 4119--><div class="lstlisting">
+   <!--l. 4183--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122001r1"></a></span><span 
+ id="x70-126001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122002r2"></a></span><span 
+ id="x70-126002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122003r3"></a></span><span 
+ id="x70-126003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -70,7 +70,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">__NAME__</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122004r4"></a></span><span 
+ id="x70-126004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -83,7 +83,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122005r5"></a></span><span 
+ id="x70-126005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -102,7 +102,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122006r6"></a></span><span 
+ id="x70-126006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -123,22 +123,22 @@ class="pcrr7t-">waz</span>
 
 
    </div>
-<!--l. 4127--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4129--><div class="lstlisting">
+<!--l. 4191--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4193--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122007r1"></a></span><span 
+ id="x70-126007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">bin</span><span 
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">bash</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122008r2"></a></span><span 
+ id="x70-126008r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">DIRECTIVES</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122009r3"></a></span><span 
+ id="x70-126009r3"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">@</span><span 
@@ -149,7 +149,7 @@ class="pcrro7t-">=</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">bar</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122010r4"></a></span><span 
+ id="x70-126010r4"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">@</span><span 
@@ -160,7 +160,7 @@ class="pcrro7t-">=</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">waz</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-122011r5"></a></span><span 
+ id="x70-126011r5"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">@</span><span 
@@ -169,28 +169,28 @@ class="pcrro7t-">queue</span>
 
 
    </div>
-<!--l. 4137--><p class="noindent" >
+<!--l. 4201--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.4   </span> <a 
- id="x70-12300010.2.4"></a>pbs</h5>
-<!--l. 4139--><p class="noindent" >This job submission method submits tasks to PBS (or Torque) using the <span class="lstinline"><span 
+ id="x70-12700010.2.4"></a>pbs</h5>
+<!--l. 4203--><p class="noindent" >This job submission method submits tasks to PBS (or Torque) using the <span class="lstinline"><span 
 class="pcrr7t-">qsub</span></span> command. PBS directives can be
-provided in the suite.rc file:  </p><!--l. 4143--><div class="lstlisting">
+provided in the suite.rc file:  </p><!--l. 4207--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123001r1"></a></span><span 
+ id="x70-127001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123002r2"></a></span><span 
+ id="x70-127002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123003r3"></a></span><span 
+ id="x70-127003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -199,7 +199,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">__NAME__</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123004r4"></a></span><span 
+ id="x70-127004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -212,7 +212,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123005r5"></a></span><span 
+ id="x70-127005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -232,7 +232,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123006r6"></a></span><span 
+ id="x70-127006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -261,22 +261,22 @@ class="pcrr7t-">=00:01:00'</span>
 
 
    </div>
-<!--l. 4151--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4153--><div class="lstlisting">
+<!--l. 4215--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4217--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123007r1"></a></span><span 
+ id="x70-127007r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">bin</span><span 
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">bash</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123008r2"></a></span><span 
+ id="x70-127008r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">DIRECTIVES</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123009r3"></a></span><span 
+ id="x70-127009r3"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">PBS</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -285,7 +285,7 @@ class="pcrro7t-">q</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-123010r4"></a></span><span 
+ id="x70-127010r4"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">PBS</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -299,28 +299,28 @@ class="pcrro7t-">=00:01:00</span>
 
 
    </div>
-<!--l. 4160--><p class="noindent" >
+<!--l. 4224--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.5   </span> <a 
- id="x70-12400010.2.5"></a>sge</h5>
-<!--l. 4162--><p class="noindent" >This job submission method submits tasks to Sun Grid Engine using the <span class="lstinline"><span 
+ id="x70-12800010.2.5"></a>sge</h5>
+<!--l. 4226--><p class="noindent" >This job submission method submits tasks to Sun Grid Engine using the <span class="lstinline"><span 
 class="pcrr7t-">qsub</span></span> command. SGE directives can be
-provided in the suite.rc file:  </p><!--l. 4166--><div class="lstlisting">
+provided in the suite.rc file:  </p><!--l. 4230--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124001r1"></a></span><span 
+ id="x70-128001r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">SUITE</span><span 
 class="pcrro7t-">.</span><span 
 class="pcrro7t-">RC</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124002r2"></a></span><span 
+ id="x70-128002r2"></a></span><span 
 class="pcrr7t-">[</span><span 
 class="pcrr7t-">runtime</span><span 
 class="pcrr7t-">]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124003r3"></a></span><span 
+ id="x70-128003r3"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -329,7 +329,7 @@ class="pcrr7t-">[[</span><span
 class="pcrr7t-">__NAME__</span><span 
 class="pcrr7t-">]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124004r4"></a></span><span 
+ id="x70-128004r4"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -342,7 +342,7 @@ class="pcrr7t-">[[[</span><span
 class="pcrr7t-">directives</span><span 
 class="pcrr7t-">]]]</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124005r5"></a></span><span 
+ id="x70-128005r5"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -364,7 +364,7 @@ class="pcrr7t-">'</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">'</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124006r6"></a></span><span 
+ id="x70-128006r6"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -384,7 +384,7 @@ class="pcrr7t-">=</span><span
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124007r7"></a></span><span 
+ id="x70-128007r7"></a></span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
 class="pcrr7t-">&#x00A0;</span><span 
@@ -412,29 +412,29 @@ class="pcrr7t-">=24:00:00'</span>
 
 
    </div>
-<!--l. 4175--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4177--><div class="lstlisting">
+<!--l. 4239--><p class="indent" >   These are written to the top of the task job script like this:  </p><!--l. 4241--><div class="lstlisting">
 <span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124008r1"></a></span><span 
+ id="x70-128008r1"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">!/</span><span 
 class="pcrro7t-">bin</span><span 
 class="pcrro7t-">/</span><span 
 class="pcrro7t-">bash</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124009r2"></a></span><span 
+ id="x70-128009r2"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">DIRECTIVES</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124010r3"></a></span><span 
+ id="x70-128010r3"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro8c-">$</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">-</span><span 
 class="pcrro7t-">cwd</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124011r4"></a></span><span 
+ id="x70-128011r4"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro8c-">$</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -443,7 +443,7 @@ class="pcrro7t-">q</span><span
 class="pcrro7t-">&#x00A0;</span><span 
 class="pcrro7t-">foo</span><span 
 class="pcrr7t-">&#x00A0;</span><br /><span class="label"><a 
- id="x70-124012r5"></a></span><span 
+ id="x70-128012r5"></a></span><span 
 class="pcrro7t-">#</span><span 
 class="pcrro8c-">$</span><span 
 class="pcrro7t-">&#x00A0;</span><span 
@@ -459,22 +459,22 @@ class="pcrro7t-">=24:00:00</span>
 
 
    </div>
-<!--l. 4185--><p class="noindent" >
+<!--l. 4249--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.6   </span> <a 
- id="x70-12500010.2.6"></a>Default Directives Provided</h5>
-<!--l. 4187--><p class="noindent" >For loadleveler, pbs, and sge job submission, default directives are provided to set the job name and stdout and
+ id="x70-12900010.2.6"></a>Default Directives Provided</h5>
+<!--l. 4251--><p class="noindent" >For loadleveler, pbs, and sge job submission, default directives are provided to set the job name and stdout and
 stderr file paths.
-</p><!--l. 4190--><p class="noindent" >
+</p><!--l. 4254--><p class="noindent" >
 </p>
    <h5 class="subsubsectionHead"><span class="titlemark">10.2.7   </span> <a 
- id="x70-12600010.2.7"></a>PBS and SGE Cylc Quirks</h5>
-<!--l. 4192--><p class="noindent" >As shown in the example above, multiple entries for the same PBS or SGE directive option must be
+ id="x70-13000010.2.7"></a>PBS and SGE Cylc Quirks</h5>
+<!--l. 4256--><p class="noindent" >As shown in the example above, multiple entries for the same PBS or SGE directive option must be
 comma-separated on the same line, in the suite.rc file. Otherwise, repeating the option on another
 line will override the previous entry, not add to it. Also, the right-hand side must be quoted to hide
 the comma from the suite.rc parser (commas indicate list values, whereas directives are treated as
 singular).
-</p><!--l. 4199--><p class="indent" >   As also shown in the example above, to get a naked option flag such as <span class="lstinline"><span 
+</p><!--l. 4263--><p class="indent" >   As also shown in the example above, to get a naked option flag such as <span class="lstinline"><span 
 class="pcrr7t-">-</span><span 
 class="pcrr7t-">cwd</span></span> in SGE you must give a quoted
 blank space as the directive value in the suite.rc file.
@@ -482,12 +482,12 @@ blank space as the directive value in the suite.rc file.
 
                                                                                          
 </p>
-   <!--l. 4203--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4267--><div class="crosslinks"><p class="noindent">[<a 
 href="cug-htmlsu47.html" >next</a>] [<a 
 href="cug-htmlsu45.html" >prev</a>] [<a 
 href="cug-htmlsu45.html#tailcug-htmlsu45.html" >prev-tail</a>] [<a 
 href="cug-htmlsu46.html" >front</a>] [<a 
 href="cug-htmlse10.html#cug-htmlsu46.html" >up</a>] </p></div>
-<!--l. 4203--><p class="indent" >   <a 
+<!--l. 4267--><p class="indent" >   <a 
  id="tailcug-htmlsu46.html"></a>  </p> 
 </body></html> 
