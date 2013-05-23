@@ -51,3 +51,68 @@ SLURM job submission.
             command_template = self.__class__.COMMAND_TEMPLATE
         self.command = command_template % ( self.jobfile_path )
 
+
+    def get_id( self, out, err ):
+        """
+        Extract the job submit ID from job submission command
+        output. For SLURM jobs the submission command returns
+        the process ID to stdout.
+        """
+        return out.strip()
+
+    def get_job_poll_command( self, jid ):
+        """
+        Given the job submit ID, return a command string that uses
+        'cylc get-task-status' (on the task host) to determine current
+        job status:
+           cylc get-job-status <QUEUED> <RUNNING>
+        where:
+            QUEUED  = true if job is waiting or running, else false
+            RUNNING = true if job is running, else false
+
+        WARNING: 'cylc get-task-status' prints a task status message -
+        the final result - to stdout, so any stdout from scripting prior
+        to the call must be dumped to /dev/null.
+
+        There are many held job states, but we really only care about
+          * 'PD' (queueing) = waiting in the SLURM queue
+          * 'R' (running) = running
+        """
+        job_data = {
+            'job_id': jid,
+            'jobfile': jobfile_path,
+        }
+
+        # Calling squeue with "-h" disables the header, so we only get
+        # back one line with our job information.
+        cmd_template = r"""
+            RUNNING=false
+            QUEUED=false
+            # Look for a running job
+            squeue -h -j %(job_id) | awk '{print $5}' | egrep "^R$" > /dev/null
+            if [[ $? == 0 ]]; then
+                # Found a running job
+                RUNNING=true
+                QUEUED=true
+            fi
+            if [[ QUEUED != true ]]; then
+                # Not running - see if it's queued
+                squeue -h -j %(job_id) | awk '{print $5}' | egrep "^PD$" > /dev/null
+                if [[ $? == 0 ]]; then
+                    QUEUED=true
+                fi
+            fi
+
+            cylc get-task-status %(jobfile).status $QUEUED $RUNNING
+        """
+        cmd = cmd_template % job_data
+
+        return cmd
+
+    def get_job_kill_command( self, jid ):
+        """
+        Given the job submit ID, return a command to kill the job.
+        """
+        cmd = "scancel " + jid
+        return cmd
+
